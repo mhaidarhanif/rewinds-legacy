@@ -1,19 +1,27 @@
-# Welcome to Remix!
+# Remix Tailwind Starter
 
-- [Remix Docs](https://remix.run/docs)
+Remix starter kit with Tailwind CSS family of libraries.
 
-## Deployment
+Demo to combine the best Tailwind-related ecosystem such as Tailwind
+CSS, Headless UI, Radix UI, VechaiUI, daisyUI, and more.
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+## Stack
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
-
-```sh
-npm i -g vercel
-vercel
-```
-
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+- Core
+  - Remix
+  - TypeScript
+- Frontend
+  - Tailwind CSS
+  - PostCSS
+  - Headless UI
+  - Radix UI
+  - Heroicons
+  - Vechaiui
+  - daisyUI
+- Config
+  - ESLint
+  - Prettier
+  - Vercel
 
 ## Development
 
@@ -32,3 +40,16 @@ npm run dev
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+
+## Deployment
+
+After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+
+If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+
+```sh
+npm i -g vercel
+vercel
+```
+
+It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
