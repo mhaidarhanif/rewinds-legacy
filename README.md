@@ -12,19 +12,21 @@ Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-
 ## Stack
 
 - Core
-  - Remix
-  - TypeScript
+  - React v17
+  - Remix v1
+  - TypeScript v4
 - Frontend
-  - Tailwind CSS
-  - PostCSS
-  - Headless UI
-  - Radix UI
-  - Heroicons
-  - Vechaiui
-  - daisyUI
+  - Tailwind CSS v3
+  - PostCSS v8
+  - Headless UI v1 — Unstyled accessible UI components
+  - Radix UI v0 — Unstyled accessible UI components
+  - Heroicons v1
+  - VechaiUI v0 — React Tailwind CSS components
+  - daisyUI v2 — Tailwind CSS components
+  - Flowbite v1 — Tailwind CSS components
 - Config
-  - ESLint
-  - Prettier
+  - ESLint v8
+  - Prettier v2
   - Vercel
 
 ## Development
