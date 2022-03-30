@@ -16,32 +16,32 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="flex space-x-4">
           <ThemeSwitcher />
-          <RemixLink to="/">
-            <span className="text-2xl font-black tracking-wide hover:text-primary-500">
-              RTSK
-            </span>
+          <RemixLink
+            to="/"
+            className="text-2xl font-black tracking-wide hover:text-primary-500"
+          >
+            RTSK
           </RemixLink>
         </div>
 
-        <div className="flex space-x-2 md:order-2">
-          <Button variant="ghost">Sign in</Button>
-          <Button color="primary">Sign up</Button>
-
-          <NavbarMenu />
-        </div>
-
-        <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
+        <div className="hidden w-full items-center justify-between md:flex md:w-auto">
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
             {configNavigationLinks.map((navItem) => {
               return (
                 <li key={navItem.text}>
-                  <Link as={RemixLink} to={navItem.to}>
+                  <RemixLink className="p-2" to={navItem.to}>
                     {navItem.text}
-                  </Link>
+                  </RemixLink>
                 </li>
               );
             })}
           </ul>
+        </div>
+
+        <div className="flex space-x-2">
+          <Button variant="ghost">Sign in</Button>
+          <Button color="primary">Sign up</Button>
+          <NavbarMenu />
         </div>
       </div>
     </nav>
