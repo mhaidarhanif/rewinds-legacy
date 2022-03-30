@@ -1,3 +1,60 @@
 {
-  "extends": ["@remix-run/eslint-config", "@remix-run/eslint-config/node"]
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "@remix-run/eslint-config",
+    "@remix-run/eslint-config/node",
+    "@remix-run/eslint-config/jest",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "unused-imports"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "arrow-body-style": ["error", "always"],
+    "comma-dangle": ["error", "only-multiline"],
+    "import/no-cycle": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unescaped-entities": "off",
+    "unused-imports/no-unused-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "external",
+          ["index", "sibling", "parent"],
+          "internal",
+          ["type", "unknown", "object"]
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "object",
+            "pattern": "*.css",
+            "patternOptions": { "matchBase": true },
+            "position": "after"
+          },
+          {
+            "group": "object",
+            "pattern": "*.svg",
+            "patternOptions": { "matchBase": true },
+            "position": "after"
+          }
+        ],
+        "warnOnUnassignedImports": true
+      }
+    ]
+  }
 }

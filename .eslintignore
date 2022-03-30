@@ -1,0 +1,10 @@
+.cache
+.vscode
+api/
+node_modules/
+postcss.config.js
+public/
+styles/
+remix.config.js
+server.js
+tailwind.config.js
