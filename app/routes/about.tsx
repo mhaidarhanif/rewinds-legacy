@@ -1,16 +1,14 @@
-import { P } from '~/components';
-
 export default function AboutRoute() {
   return (
     <article className="prose dark:prose-invert">
       <h1>About this project</h1>
-      <P>
+      <p>
         Remix Tailwind Starter Kit is a demo project template you can freely
         use.
-      </P>
-      <P>
+      </p>
+      <p>
         Example demo to combine the best Tailwind-related ecosystem such as:
-      </P>
+      </p>
       <ul>
         <li>Tailwind CSS v3 with its plugins</li>
         <li>PostCSS v8</li>
