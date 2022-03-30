@@ -41,22 +41,22 @@ interface DocumentProps {
 
 export function Document({ children }: DocumentProps) {
   return (
-    <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
+    <ThemeProvider>
+      <html lang="en">
+        <head>
+          <Meta />
+          <Links />
+        </head>
 
-      <body>
-        <ThemeProvider>
+        <body>
           <Layout>{children}</Layout>
-        </ThemeProvider>
 
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
 
