@@ -8,10 +8,10 @@ import { FunctionComponent } from 'react';
 import { clsx } from '~/utils';
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
-  const { children } = props;
+  const { variant, children } = props;
 
   return (
-    <VechaiButton variant="solid" {...props}>
+    <VechaiButton variant={variant || 'solid'} {...props}>
       {children}
     </VechaiButton>
   );
@@ -21,11 +21,7 @@ export const ButtonGroup: FunctionComponent<ButtonGroupProps> = (props) => {
   const { attached, children } = props;
 
   return (
-    <VechaiButton.Group
-      className={clsx(!attached && 'space-x-2')}
-      variant="solid"
-      {...props}
-    >
+    <VechaiButton.Group className={clsx(!attached && 'space-x-2')} {...props}>
       {children}
     </VechaiButton.Group>
   );

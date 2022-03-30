@@ -7,14 +7,14 @@ export const light: ColorScheme = {
   type: 'light',
   colors: {
     bg: {
-      base: colors.white,
+      base: colors.gray['100'],
       fill: colors.gray['100'],
     },
     text: {
       foreground: colors.gray['900'],
       muted: colors.gray['700'],
     },
-    primary: colors.cyan,
+    primary: colors.sky,
     neutral: colors.gray,
   },
 };
@@ -31,7 +31,7 @@ export const dark: ColorScheme = {
       foreground: colors.gray['100'],
       muted: colors.gray['300'],
     },
-    primary: colors.cyan,
+    primary: colors.sky,
     neutral: colors.gray,
   },
 };
@@ -147,4 +147,15 @@ export const swiss: ColorScheme = {
     primary: colors.red,
     neutral: colors.stone,
   },
+};
+
+export const configThemes = {
+  light,
+  dark,
+  cool,
+  midnight,
+  pale,
+  dawn,
+  bee,
+  swiss,
 };

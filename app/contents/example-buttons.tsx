@@ -6,11 +6,14 @@ interface ExampleButtonsProps {}
 
 export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
   return (
-    <div>
+    <article className="space-y-4">
       <H2>Buttons</H2>
 
-      <div className="flex w-full flex-wrap space-x-2 py-2">
-        <Button color="primary">Normal</Button>
+      <div className="flex w-full flex-wrap gap-2 py-2">
+        <Button>Normal</Button>
+        <Button variant="solid" color="primary">
+          Solid
+        </Button>
         <Button variant="light" color="primary">
           Light
         </Button>
@@ -22,7 +25,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <div className="flex w-full flex-wrap space-x-2 py-2">
+      <div className="flex w-full flex-wrap gap-2 py-2">
         <Button variant="light" color="info">
           Info
         </Button>
@@ -37,7 +40,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <div className="flex w-full flex-wrap space-x-2 py-2">
+      <div className="flex w-full flex-wrap gap-2 py-2">
         <Button loading>Button</Button>
         <Button color="primary" loading loadingText="Loading...">
           Button
@@ -57,6 +60,6 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           <Button>Button 3</Button>
         </ButtonGroup>
       </div>
-    </div>
+    </article>
   );
 };

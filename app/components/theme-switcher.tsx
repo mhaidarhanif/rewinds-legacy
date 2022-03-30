@@ -8,8 +8,7 @@ import {
   themes,
   radiusItems,
   ThemeContextType,
-} from './theme-provider';
-
+} from '~/components/theme-provider';
 import { clsx } from '~/utils';
 
 export const ThemeSwitcher = () => {
@@ -29,14 +28,17 @@ export const ThemeSwitcher = () => {
       {({ open }) => {
         return (
           <>
-            <Popover.Button>
-              <IconButton size="md" variant="solid" color="primary">
-                <Icon
-                  as={AdjustmentsIcon}
-                  label="Preferences"
-                  className="h-4 w-4"
-                />
-              </IconButton>
+            <Popover.Button
+              as={IconButton}
+              size="md"
+              color="primary"
+              variant="solid"
+            >
+              <Icon
+                as={AdjustmentsIcon}
+                label="Preferences"
+                className="h-4 w-4"
+              />
             </Popover.Button>
 
             <Transition
@@ -46,26 +48,17 @@ export const ThemeSwitcher = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Popover.Panel
-                className={clsx(
-                  'absolute max-w-[280px]',
-                  'left-0 z-50 mt-2 origin-top-right rounded-md border shadow-sm outline-none',
-                  'py-2 px-2',
-                  'border-neutral-300 bg-white text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white'
-                )}
-              >
+              <Popover.Panel className="absolute left-0 z-50 mt-2 w-80 origin-top-left rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
                 <div className="flow-root">
-                  <span className="flex items-center">
-                    <span className="text-md font-medium">
-                      Theme Preferences
-                    </span>
+                  <span className="text-md flex items-center font-medium">
+                    Theme Appearance
                   </span>
                 </div>
                 <Divider
                   orientation="horizontal"
                   className="border-neutral-200 dark:border-neutral-700"
                 />
-                <div className="">
+                <div>
                   <div role="group">
                     <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between rounded text-left text-sm focus:outline-none">
                       <span className="text-smm">Pointer Cursors</span>
@@ -147,7 +140,7 @@ export const ThemeSwitcher = () => {
                   className="border-neutral-200 dark:border-neutral-700"
                 />
 
-                <div className="" role="group">
+                <div role="group">
                   <div className="flex w-full flex-shrink-0 cursor-base flex-col space-y-2 text-left text-sm focus:outline-none">
                     <span className="text-smm">Color</span>
                     <RadioGroup value={colorScheme} onChange={setColorScheme}>

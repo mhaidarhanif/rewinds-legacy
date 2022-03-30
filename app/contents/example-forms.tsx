@@ -48,6 +48,7 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
           <Input
             {...register('email', { required: true })}
             placeholder="yourname@email.com"
+            size="lg"
           />
           <FormHelperText>
             <span>We'll never share your email. Promise :)</span>
@@ -65,6 +66,7 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
           <Input
             {...register('username', { required: true })}
             placeholder="Enter your username"
+            size="lg"
           />
           {errors.username && errors.username.type === 'required' && (
             <FormErrorMessage>Username is required</FormErrorMessage>
@@ -76,14 +78,13 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
             Password
             <RequiredIndicator />
           </FormLabel>
-          <Input.Group>
+          <Input.Group size="lg">
             <Input
-              className="pr-16"
+              {...register('password', { required: true })}
               type={showPassword ? 'text' : 'password'}
               placeholder="Enter password"
-              {...register('password', { required: true })}
             />
-            <Input.RightElement className="w-16">
+            <Input.RightElement className="mr-1 w-16">
               <Button
                 type="button"
                 size="xs"
@@ -101,15 +102,16 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
 
         <FormControl>
           <FormLabel>Gender</FormLabel>
-          <Select {...register('gender')}>
-            <option value="other">other</option>
-            <option value="female">female</option>
-            <option value="male">male</option>
+          <Select {...register('gender')} size="lg">
+            <option value="">Choose...</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
           </Select>
         </FormControl>
 
         <Button type="submit" variant="solid" color="primary" loading={loading}>
-          Sign up
+          Create new account
         </Button>
       </form>
     </div>

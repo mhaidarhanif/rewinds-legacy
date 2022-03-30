@@ -1,9 +1,9 @@
 # Remix Tailwind Starter Kit
 
-Remix starter kit with Tailwind CSS family of libraries.
+Remix starter kit with Tailwind CSS v3 family of libraries.
 
-Demo to combine the best Tailwind-related ecosystem such as Tailwind
-CSS, Headless UI, Radix UI, VechaiUI, daisyUI, and more.
+Example demo to combine the best Tailwind-related ecosystem such as Tailwind
+CSS, Headless UI, Radix UI, VechaiUI, Flowbite, daisyUI, and more.
 
 Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
 
@@ -18,12 +18,15 @@ Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-
 - Frontend
   - Tailwind CSS v3
   - PostCSS v8
+  - Heroicons v1
   - Headless UI v1 — Unstyled accessible UI components
   - Radix UI v0 — Unstyled accessible UI components
-  - Heroicons v1
   - VechaiUI v0 — React Tailwind CSS components
-  - daisyUI v2 — Tailwind CSS components
+    - Fully featured React component
   - Flowbite v1 — Tailwind CSS components
+    - Only to get the class names
+  - daisyUI v2 — Tailwind CSS components
+    - Unused if using VechaiUI
 - Config
   - ESLint v8
   - Prettier v2

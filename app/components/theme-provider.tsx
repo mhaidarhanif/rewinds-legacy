@@ -5,8 +5,7 @@ import {
 } from '@vechaiui/react';
 import { createContext, useContext, useMemo, useState } from 'react';
 
-import { configDefaults } from '~/configs';
-import { light, dark, midnight, pale, dawn, bee, cool, swiss } from '~/utils';
+import { configDefaults, configThemes } from '~/configs';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -25,50 +24,50 @@ export const themes = [
   {
     name: 'Light',
     id: 'light',
-    backgroundColor: light.colors.bg.base,
-    primaryColor: light.colors.primary['500'],
+    backgroundColor: configThemes.light.colors.bg.base,
+    primaryColor: configThemes.light.colors.primary['500'],
   },
   {
     name: 'Dark',
     id: 'dark',
-    backgroundColor: dark.colors.bg.base,
-    primaryColor: dark.colors.primary['500'],
+    backgroundColor: configThemes.dark.colors.bg.base,
+    primaryColor: configThemes.dark.colors.primary['500'],
   },
   {
     name: 'Cool',
     id: 'cool',
-    backgroundColor: cool.colors.bg.base,
-    primaryColor: cool.colors.primary['500'],
+    backgroundColor: configThemes.cool.colors.bg.base,
+    primaryColor: configThemes.cool.colors.primary['500'],
   },
   {
     name: 'Midnight',
     id: 'midnight',
-    backgroundColor: midnight.colors.bg.base,
-    primaryColor: midnight.colors.primary['500'],
+    backgroundColor: configThemes.midnight.colors.bg.base,
+    primaryColor: configThemes.midnight.colors.primary['500'],
   },
   {
     name: 'Pale',
     id: 'pale',
-    backgroundColor: pale.colors.bg.base,
-    primaryColor: pale.colors.primary['500'],
+    backgroundColor: configThemes.pale.colors.bg.base,
+    primaryColor: configThemes.pale.colors.primary['500'],
   },
   {
     name: 'Dawn',
     id: 'dawn',
-    backgroundColor: dawn.colors.bg.base,
-    primaryColor: dawn.colors.primary['500'],
+    backgroundColor: configThemes.dawn.colors.bg.base,
+    primaryColor: configThemes.dawn.colors.primary['500'],
   },
   {
     name: 'Bee',
     id: 'bee',
-    backgroundColor: bee.colors.bg.base,
-    primaryColor: bee.colors.primary['500'],
+    backgroundColor: configThemes.bee.colors.bg.base,
+    primaryColor: configThemes.bee.colors.primary['500'],
   },
   {
     name: 'Swiss',
     id: 'swiss',
-    backgroundColor: swiss.colors.bg.base,
-    primaryColor: swiss.colors.primary['500'],
+    backgroundColor: configThemes.swiss.colors.bg.base,
+    primaryColor: configThemes.swiss.colors.primary['500'],
   },
 ];
 
@@ -82,26 +81,22 @@ export const radiusItems = [
 ];
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [cursorPointer, setCursorPointer] = useState(true);
-  const [radius, setRadius] = useState(radiusItems[2].value);
-  const [colorScheme, setColorScheme] = useState(configDefaults.colorScheme);
-  const [density, setDensity] =
-    useState<VechaiProviderProps['density']>('comfortable');
+  const [colorScheme, setColorScheme] = useState(
+    configDefaults.theme.colorScheme
+  );
+  const [density, setDensity] = useState<VechaiProviderProps['density']>(
+    configDefaults.theme.density
+  );
+  const [cursorPointer, setCursorPointer] = useState(
+    configDefaults.theme.cursorPointer
+  );
+  const [radius, setRadius] = useState(configDefaults.theme.radius);
 
   const theme = useMemo(() => {
     return extendTheme({
       cursor: cursorPointer ? 'pointer' : 'default',
       rounded: radius,
-      colorSchemes: {
-        light,
-        dark,
-        midnight,
-        pale,
-        dawn,
-        bee,
-        swiss,
-        cool,
-      },
+      colorSchemes: configThemes,
     });
   }, [cursorPointer, radius]);
 
@@ -130,9 +125,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 export const useTheme = (): ThemeContextType => {
   return (
     useContext(ThemeContext) || {
-      colorScheme: 'light',
-      radius: '0.375rem',
-      cursorPointer: false,
+      colorScheme: configDefaults.theme.colorScheme,
+      density: configDefaults.theme.density,
+      radius: configDefaults.theme.radius,
+      cursorPointer: configDefaults.theme.cursorPointer,
       setColorScheme: () => {
         return null;
       },

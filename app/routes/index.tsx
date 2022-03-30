@@ -1,20 +1,23 @@
-import { Layout } from '~/components';
 import {
   ExampleAlerts,
   ExampleButtons,
+  ExampleFooters,
   ExampleForms,
   ExampleToasts,
+  Intro,
 } from '~/contents';
 import { ExampleNotifications } from '~/contents/example-notifications';
 
-export default function Index() {
+export default function IndexRoute() {
   return (
-    <Layout>
+    <>
+      <Intro />
       <ExampleButtons />
       <ExampleForms />
       <ExampleAlerts />
       <ExampleToasts />
       <ExampleNotifications />
-    </Layout>
+      <ExampleFooters />
+    </>
   );
 }
