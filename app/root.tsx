@@ -19,7 +19,7 @@ export function links() {
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Remix Tailwind Starter by @mhaidarhanif',
+    title: 'Remix Tailwind Starter Kit by @mhaidarhanif',
     description: 'Remix starter kit with Tailwind CSS family of libraries',
     charset: 'utf-8',
     viewport: 'width=device-width,initial-scale=1',

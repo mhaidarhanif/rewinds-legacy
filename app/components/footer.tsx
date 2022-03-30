@@ -14,19 +14,30 @@ export const Footer: FunctionComponent<FooterProps> = () => {
           <span>{year}</span>
           <span>•</span>
           <a
+            className="hover:underline"
+            href="https://github.com/mhaidarhanif/remix-tailwind-starter-kit"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <code>remix-tailwind-starter-kit</code>
+          </a>
+          <span>•</span>
+          <a
+            className="hover:underline"
             href="https://twitter.com/mhaidarhanif"
             target="_blank"
             rel="noreferrer"
           >
-            twitter.com/mhaidarhanif
+            Twitter
           </a>
           <span>•</span>
           <a
+            className="hover:underline"
             href="https://github.com/mhaidarhanif"
             target="_blank"
             rel="noreferrer"
           >
-            github.com/mhaidarhanif
+            GitHub
           </a>
         </p>
       </div>
