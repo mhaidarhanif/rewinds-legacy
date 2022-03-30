@@ -5,6 +5,8 @@ Remix starter kit with Tailwind CSS family of libraries.
 Demo to combine the best Tailwind-related ecosystem such as Tailwind
 CSS, Headless UI, Radix UI, VechaiUI, daisyUI, and more.
 
+![Screenshot](public/screenshot.png)
+
 ## Stack
 
 - Core
