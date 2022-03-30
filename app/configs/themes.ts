@@ -75,8 +75,8 @@ export const pale: ColorScheme = {
   type: 'dark',
   colors: {
     bg: {
-      base: colors.slate['800'],
-      fill: colors.slate['900'],
+      base: colors.slate['900'],
+      fill: colors.slate['800'],
     },
     text: {
       foreground: colors.slate['100'],
@@ -92,8 +92,8 @@ export const dawn: ColorScheme = {
   type: 'dark',
   colors: {
     bg: {
-      base: '#322937',
-      fill: '#0f0a13',
+      base: '#0f0a13',
+      fill: '#28212c',
     },
     text: {
       foreground: '#dad3de',

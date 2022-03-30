@@ -11,7 +11,7 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <nav
       id="navbar"
-      className="mt-4 rounded border-gray-200 bg-white p-4 dark:bg-gray-800 "
+      className="mt-4 rounded-[var(--vc-rounded)] border-gray-200 bg-white p-4 dark:bg-gray-800"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="flex space-x-4">
