@@ -5,7 +5,7 @@ import {
 } from '@vechaiui/react';
 import { createContext, useContext, useMemo, useState } from 'react';
 
-import { configDefaults } from '~/config';
+import { configDefaults } from '~/configs';
 import { light, dark, midnight, pale, dawn, bee, cool, swiss } from '~/utils';
 
 export type ThemeContextType = {
