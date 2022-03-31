@@ -4,7 +4,7 @@ import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
 import * as React from 'react';
 
 import { useTheme, ThemeContextType } from '~/components/theme-provider';
-import { availableThemes, radiusItems } from '~/configs';
+import { availableThemes, availableRadiuses } from '~/configs';
 import { clsx } from '~/utils';
 
 export const ThemeSwitcher = () => {
@@ -104,7 +104,7 @@ export const ThemeSwitcher = () => {
                           Radius
                         </RadioGroup.Label>
                         <div className="inline-flex space-x-0 rounded-base bg-neutral-200 p-0.5 dark:bg-neutral-700">
-                          {radiusItems.map((item) => {
+                          {availableRadiuses.map((item) => {
                             return (
                               <RadioGroup.Option
                                 key={item.name}

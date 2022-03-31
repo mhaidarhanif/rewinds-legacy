@@ -1,4 +1,5 @@
 import { prefersLightMQ, useTheme } from '~/components';
+import { availableThemes } from '~/configs';
 
 /**
  * clientThemeCode
@@ -24,6 +25,7 @@ const clientThemeCode = `
    }
    
    const meta = document.querySelector('meta[name=color-scheme]');
+   
    if (meta) {
      if (theme === 'dark') {
        meta.content = 'dark light';
@@ -41,7 +43,10 @@ const clientThemeCode = `
  */
 
 export function PreventFlashOnWrongTheme({ ssrTheme }: { ssrTheme: boolean }) {
-  const theme = useTheme();
+  const { colorScheme } = useTheme();
+  const chosenTheme = availableThemes.find((availableTheme) => {
+    return availableTheme.id === colorScheme;
+  });
 
   return (
     <>
@@ -51,7 +56,7 @@ export function PreventFlashOnWrongTheme({ ssrTheme }: { ssrTheme: boolean }) {
        */}
       <meta
         name="color-scheme"
-        content={theme.colorScheme === 'light' ? 'light dark' : 'dark light'}
+        content={chosenTheme?.type === 'light' ? 'light dark' : 'dark light'}
       />
       {/**
        * If we know what the theme is from the server then we don't need
