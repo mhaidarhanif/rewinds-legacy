@@ -62,3 +62,33 @@ vercel
 ```
 
 It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+
+## Notes
+
+### VechaiUI
+
+Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size.
+`cssBase` is still required to get the default Tailwind CSS colors into VechaiUI themes.
+
+```diff
+module.exports = {
+  // ...
+  theme: {
+    extend: {
+      colors: {
+-       info: colors.blue,
+-       success: colors.green,
+-       warning: colors.yellow,
+-       error: colors.red,
+      },
+    },
+  },
+  plugins: [
+    // ...
+   require('@vechaiui/core')({
+     cssBase: true,
+-    colors: ['info', 'success', 'warning', 'error'],
+   }),
+  ],
+};
+```
