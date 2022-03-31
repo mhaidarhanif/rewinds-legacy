@@ -3,12 +3,8 @@ import { AdjustmentsIcon } from '@heroicons/react/solid';
 import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
 import * as React from 'react';
 
-import {
-  useTheme,
-  themes,
-  radiusItems,
-  ThemeContextType,
-} from '~/components/theme-provider';
+import { useTheme, ThemeContextType } from '~/components/theme-provider';
+import { availableThemes, radiusItems } from '~/configs';
 import { clsx } from '~/utils';
 
 export const ThemeSwitcher = () => {
@@ -148,7 +144,7 @@ export const ThemeSwitcher = () => {
                         Color
                       </RadioGroup.Label>
                       <div className="flex flex-wrap">
-                        {themes.map((theme: any) => {
+                        {availableThemes.map((theme: any) => {
                           return (
                             <RadioGroup.Option
                               key={theme.id}

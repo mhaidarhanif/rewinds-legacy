@@ -159,3 +159,63 @@ export const configThemes = {
   bee,
   swiss,
 };
+
+export const availableThemes = [
+  {
+    name: 'Light',
+    id: 'light',
+    backgroundColor: configThemes.light.colors.bg.base,
+    primaryColor: configThemes.light.colors.primary['500'],
+  },
+  {
+    name: 'Dark',
+    id: 'dark',
+    backgroundColor: configThemes.dark.colors.bg.base,
+    primaryColor: configThemes.dark.colors.primary['500'],
+  },
+  {
+    name: 'Cool',
+    id: 'cool',
+    backgroundColor: configThemes.cool.colors.bg.base,
+    primaryColor: configThemes.cool.colors.primary['500'],
+  },
+  {
+    name: 'Midnight',
+    id: 'midnight',
+    backgroundColor: configThemes.midnight.colors.bg.base,
+    primaryColor: configThemes.midnight.colors.primary['500'],
+  },
+  {
+    name: 'Pale',
+    id: 'pale',
+    backgroundColor: configThemes.pale.colors.bg.base,
+    primaryColor: configThemes.pale.colors.primary['500'],
+  },
+  {
+    name: 'Dawn',
+    id: 'dawn',
+    backgroundColor: configThemes.dawn.colors.bg.base,
+    primaryColor: configThemes.dawn.colors.primary['500'],
+  },
+  {
+    name: 'Bee',
+    id: 'bee',
+    backgroundColor: configThemes.bee.colors.bg.base,
+    primaryColor: configThemes.bee.colors.primary['500'],
+  },
+  {
+    name: 'Swiss',
+    id: 'swiss',
+    backgroundColor: configThemes.swiss.colors.bg.base,
+    primaryColor: configThemes.swiss.colors.primary['500'],
+  },
+];
+
+export const radiusItems = [
+  { name: 'none', value: 'none' },
+  { name: 'sm', value: '0.125rem' },
+  { name: 'md', value: '0.375rem' },
+  { name: 'lg', value: '0.5rem' },
+  { name: 'xl', value: '0.75rem' },
+  { name: 'full', value: '9999px' },
+];
