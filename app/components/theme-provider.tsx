@@ -82,8 +82,13 @@ export function ThemeProvider({
    */
   const persistTheme = useFetcher();
   const persistThemeRef = useRef(persistTheme);
+  const mountRun = useRef(false);
 
   useEffect(() => {
+    if (!mountRun.current) {
+      mountRun.current = true;
+      return;
+    }
     if (!colorScheme) return;
 
     persistThemeRef.current.submit(

@@ -36,7 +36,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
   const themeFromSession = await session.get('theme');
 
-  // Only prase if theme string exist
+  // Only parse if theme string exist
   const themeParsed = themeFromSession
     ? JSON.parse(themeFromSession)
     : configDefaults?.theme;
