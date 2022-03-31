@@ -26,6 +26,24 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
       </div>
 
       <div className="flex w-full flex-wrap gap-2 py-2">
+        <Button size="xs" variant="solid" color="primary">
+          Extra Small
+        </Button>
+        <Button size="sm" variant="solid" color="primary">
+          Small
+        </Button>
+        <Button size="md" variant="solid" color="primary">
+          Medium
+        </Button>
+        <Button size="lg" variant="solid" color="primary">
+          Large
+        </Button>
+        <Button size="xl" variant="solid" color="primary">
+          Extra Large
+        </Button>
+      </div>
+
+      <div className="flex w-full flex-wrap gap-2 py-2">
         <Button variant="light" color="info">
           Info
         </Button>

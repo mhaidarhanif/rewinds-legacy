@@ -1,5 +1,5 @@
 import { MenuIcon } from '@heroicons/react/solid';
-import { Icon, IconButton, Link } from '@vechaiui/react';
+import { Icon, IconButton } from '@vechaiui/react';
 import { FunctionComponent } from 'react';
 
 import { Button, RemixLink, ThemeSwitcher } from '~/components';
