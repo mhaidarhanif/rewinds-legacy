@@ -7,7 +7,7 @@ CSS, Headless UI, Radix UI, VechaiUI, Flowbite, daisyUI, and more.
 
 Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
 
-![Screenshot](public/screenshot.png)
+![Screenshot](public/rtsk-screenshot.png)
 
 ## Stack
 
