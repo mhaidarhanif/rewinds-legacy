@@ -13,7 +13,7 @@ Features:
 
 Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
 
-![Screenshot](public/remix-tailwind-starter-kit.png)
+![Screenshot](public/screenshot.png)
 
 ## Stack
 
