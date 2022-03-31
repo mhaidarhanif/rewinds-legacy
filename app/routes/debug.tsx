@@ -11,9 +11,15 @@ import { getSession, commitSession } from '~/sessions';
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
 
-  console.log({ session, user: session.has('user') });
+  session.set('theme', 'cool');
 
-  const data = { error: session.get('error') };
+  const data = {
+    user: session.get('user'),
+    theme: session.get('theme'),
+    error: session.get('error'),
+  };
+
+  console.log({ data });
 
   return json(data, {
     headers: {
@@ -25,24 +31,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 export const action: ActionFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
 
-  // const form = await request.formData();
-  // const username = form.get("username");
-  // const password = form.get("password");
-
-  const user = '123';
-
-  if (user === null) {
-    session.flash('error', 'Invalid username/password');
-
-    // Redirect back to the Sign In page with errors.
-    return redirect('/signin', {
-      headers: {
-        'Set-Cookie': await commitSession(session),
-      },
-    });
-  }
-
-  session.set('user', user);
+  session.set('user', '123');
 
   // Sign In succeeded, send them to the home page.
   return redirect('/', {
