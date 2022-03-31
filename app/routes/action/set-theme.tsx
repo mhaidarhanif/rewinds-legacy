@@ -9,6 +9,7 @@ export const action: ActionFunction = async ({ request }) => {
   const requestText = await request.text();
   const form = new URLSearchParams(requestText);
   const theme = form.get('theme');
+
   session.set('theme', theme);
 
   return json(

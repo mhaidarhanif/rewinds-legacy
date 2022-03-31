@@ -11,8 +11,6 @@ import { getSession, commitSession } from '~/sessions';
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
 
-  session.set('theme', 'cool');
-
   const data = {
     user: session.get('user'),
     theme: session.get('theme'),

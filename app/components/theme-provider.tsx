@@ -3,7 +3,15 @@ import {
   extendTheme,
   VechaiProviderProps,
 } from '@vechaiui/react';
-import { createContext, useContext, useMemo, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { useFetcher } from 'remix';
 
 import { configDefaults, configThemes } from '~/configs';
 
@@ -111,6 +119,25 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setDensity,
       setRadius,
     };
+  }, [colorScheme, cursorPointer, density, radius]);
+
+  const persistTheme = useFetcher();
+  const persistThemeRef = useRef(persistTheme);
+
+  useEffect(() => {
+    if (!colorScheme) return;
+
+    persistThemeRef.current.submit(
+      {
+        theme: JSON.stringify({
+          colorScheme,
+          cursorPointer,
+          density,
+          radius,
+        }),
+      },
+      { action: 'action/set-theme', method: 'post' }
+    );
   }, [colorScheme, cursorPointer, density, radius]);
 
   return (
