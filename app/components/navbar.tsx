@@ -1,8 +1,9 @@
 import { MenuIcon } from '@heroicons/react/solid';
 import { Icon, IconButton } from '@vechaiui/react';
+import clsx from 'clsx';
 import { FunctionComponent } from 'react';
 
-import { Button, RemixLink, ThemeSwitcher } from '~/components';
+import { Button, RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
 import { configNavigationLinks } from '~/configs';
 
 interface NavbarProps {}
@@ -29,9 +30,17 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
             {configNavigationLinks.map((navItem) => {
               return (
                 <li key={navItem.text}>
-                  <RemixLink className="p-2" to={navItem.to}>
+                  <RemixNavLink
+                    to={navItem.to}
+                    className={({ isActive }) => {
+                      return clsx(
+                        'border-b-2 p-2 font-bold',
+                        isActive && 'border-primary-500'
+                      );
+                    }}
+                  >
                     {navItem.text}
-                  </RemixLink>
+                  </RemixNavLink>
                 </li>
               );
             })}
