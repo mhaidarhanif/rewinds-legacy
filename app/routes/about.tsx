@@ -9,6 +9,19 @@ export default function AboutRoute() {
       <p>
         Example demo to combine the best Tailwind-related ecosystem such as:
       </p>
+      <p>
+        GitHub repo:{' '}
+        <a href="https://github.com/mhaidarhanif/remix-tailwind-starter-kit">
+          mhaidarhanif/remix-tailwind-starter-kit
+        </a>
+      </p>
+      <p>
+        Preview demo:{' '}
+        <a href="https://remix-tailwind-starter-kit.vercel.app">
+          remix-tailwind-starter-kit.vercel.app
+        </a>
+      </p>
+      <h2>Stack</h2>
       <ul>
         <li>Tailwind CSS v3 with its plugins</li>
         <li>PostCSS v8</li>

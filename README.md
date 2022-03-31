@@ -5,9 +5,15 @@ Remix starter kit with Tailwind CSS v3 family of libraries.
 Example demo to combine the best Tailwind-related ecosystem such as Tailwind
 CSS, Headless UI, Radix UI, VechaiUI, Flowbite, daisyUI, and more.
 
+Features:
+
+- Remix as the React framework
+- Tailwind CSS using VechaiUI as primary components
+- Theme switcher and persist theme with a session cookie
+
 Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
 
-![Screenshot](public/rtsk-screenshot.png)
+![Screenshot](public/remix-tailwind-starter-kit.png)
 
 ## Stack
 
@@ -30,6 +36,7 @@ Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-
 - Config
   - ESLint v8
   - Prettier v2
+- Deployment
   - Vercel
 
 ## Development
@@ -38,6 +45,18 @@ To run your Remix app locally, make sure your project's local dependencies are i
 
 ```sh
 npm install
+```
+
+Copy the `.env.example` into `.env`:
+
+```sh
+cp .env.example .env
+```
+
+Setup the environment variables here and Vercel if want to deploy there:
+
+```
+SESSION_SECRET=type_the_secret_here
 ```
 
 Afterwards, start the Remix development server like so:
@@ -49,6 +68,14 @@ npm run dev
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+
+## Build
+
+Make sure that it can build just fine:
+
+```sh
+npm run build
+```
 
 ## Deployment
 

@@ -1,7 +1,6 @@
 import {
   ExampleAlerts,
   ExampleButtons,
-  ExampleFooters,
   ExampleForms,
   ExampleToasts,
   Intro,
@@ -17,7 +16,6 @@ export default function IndexRoute() {
       <ExampleAlerts />
       <ExampleToasts />
       <ExampleNotifications />
-      <ExampleFooters />
     </>
   );
 }
