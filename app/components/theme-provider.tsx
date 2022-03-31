@@ -38,6 +38,9 @@ export function ThemeProvider({
   specifiedTheme: ThemeConfig;
   children: React.ReactNode;
 }) {
+  /**
+   * VechaiTheme
+   */
   const [colorScheme, setColorScheme] = useState(specifiedTheme?.colorScheme);
   const [density, setDensity] = useState<VechaiProviderProps['density']>(
     specifiedTheme?.density

@@ -13,12 +13,7 @@ import {
   useLoaderData,
 } from 'remix';
 
-import {
-  H1,
-  Layout,
-  PreventFlashOnWrongTheme,
-  ThemeProvider,
-} from '~/components';
+import { H1, Layout, ThemeProvider } from '~/components';
 import { configDefaults } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
 
@@ -79,7 +74,6 @@ export function Document({ children }: DocumentProps) {
       <head>
         <Meta />
         <Links />
-        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
       </head>
 
       <body>

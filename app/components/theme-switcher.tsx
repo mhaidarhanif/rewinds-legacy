@@ -44,7 +44,7 @@ export const ThemeSwitcher = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Popover.Panel className="absolute left-0 z-50 mt-2 w-80 origin-top-left rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
+              <Popover.Panel className="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
                 <div className="flow-root">
                   <span className="text-md flex items-center font-medium">
                     Theme Appearance

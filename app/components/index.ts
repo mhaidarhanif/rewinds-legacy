@@ -6,5 +6,4 @@ export * from './navbar';
 export * from './paragraph';
 export * from './remix-link';
 export * from './theme-provider';
-export * from './theme-ssr';
 export * from './theme-switcher';
