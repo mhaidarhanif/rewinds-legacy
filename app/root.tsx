@@ -1,16 +1,20 @@
 import {
+  json,
   Links,
   LinksFunction,
   LiveReload,
+  LoaderFunction,
   Meta,
   MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from 'remix';
 
 import { H1, Layout, ThemeProvider } from '~/components';
+import { commitSession, getSession } from '~/sessions';
 
 import styles from '~/styles/app.css';
 
@@ -27,6 +31,22 @@ export const meta: MetaFunction = () => {
   };
 };
 
+export const loader: LoaderFunction = async ({ request }) => {
+  const session = await getSession(request.headers.get('Cookie'));
+
+  const data = {
+    user: session.get('user'),
+    theme: JSON.parse(session.get('theme')),
+    error: session.get('error'),
+  };
+
+  return json(data, {
+    headers: {
+      'Set-Cookie': await commitSession(session),
+    },
+  });
+};
+
 export default function App() {
   return (
     <Document>
@@ -40,6 +60,10 @@ interface DocumentProps {
 }
 
 export function Document({ children }: DocumentProps) {
+  const data = useLoaderData();
+
+  console.log(data);
+
   return (
     <html lang="en">
       <head>
@@ -48,7 +72,7 @@ export function Document({ children }: DocumentProps) {
       </head>
 
       <body>
-        <ThemeProvider>
+        <ThemeProvider specifiedTheme={data.theme}>
           <Layout>{children}</Layout>
         </ThemeProvider>
 

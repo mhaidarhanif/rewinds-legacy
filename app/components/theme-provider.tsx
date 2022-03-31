@@ -14,6 +14,7 @@ import {
 import { useFetcher } from 'remix';
 
 import { configDefaults, configThemes } from '~/configs';
+import { ThemeConfig } from '~/types';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -88,18 +89,29 @@ export const radiusItems = [
   { name: 'full', value: '9999px' },
 ];
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({
+  specifiedTheme,
+  children,
+}: {
+  specifiedTheme: ThemeConfig;
+  children: React.ReactNode;
+}) {
   const [colorScheme, setColorScheme] = useState(
-    configDefaults.theme.colorScheme
+    specifiedTheme.colorScheme || configDefaults.theme.colorScheme
   );
   const [density, setDensity] = useState<VechaiProviderProps['density']>(
-    configDefaults.theme.density
+    specifiedTheme.density || configDefaults.theme.density
   );
   const [cursorPointer, setCursorPointer] = useState(
-    configDefaults.theme.cursorPointer
+    specifiedTheme.cursorPointer || configDefaults.theme.cursorPointer
   );
-  const [radius, setRadius] = useState(configDefaults.theme.radius);
+  const [radius, setRadius] = useState(
+    specifiedTheme.radius || configDefaults.theme.radius
+  );
 
+  /**
+   * VechaiProvider
+   */
   const theme = useMemo(() => {
     return extendTheme({
       cursor: cursorPointer ? 'pointer' : 'default',
@@ -108,6 +120,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     });
   }, [cursorPointer, radius]);
 
+  /**
+   * ThemeContext.Provider
+   */
   const themeValue = useMemo(() => {
     return {
       colorScheme,
@@ -121,6 +136,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     };
   }, [colorScheme, cursorPointer, density, radius]);
 
+  /**
+   * Persist theme into session cookie
+   */
   const persistTheme = useFetcher();
   const persistThemeRef = useRef(persistTheme);
 

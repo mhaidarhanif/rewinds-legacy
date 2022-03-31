@@ -13,11 +13,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   const data = {
     user: session.get('user'),
-    theme: session.get('theme'),
+    theme: JSON.parse(session.get('theme')),
     error: session.get('error'),
   };
-
-  console.log({ data });
 
   return json(data, {
     headers: {
@@ -29,9 +27,6 @@ export const loader: LoaderFunction = async ({ request }) => {
 export const action: ActionFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
 
-  session.set('user', '123');
-
-  // Sign In succeeded, send them to the home page.
   return redirect('/', {
     headers: {
       'Set-Cookie': await commitSession(session),
