@@ -13,6 +13,8 @@ import {
   useLoaderData,
 } from 'remix';
 
+import { configDefaults } from '~/configs';
+
 import { H1, Layout, ThemeProvider } from '~/components';
 import { commitSession, getSession } from '~/sessions';
 
@@ -33,11 +35,17 @@ export const meta: MetaFunction = () => {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
+  const themeFromSession = await session.get('theme');
+
+  // Only prase if theme string exist
+  const themeParsed = themeFromSession
+    ? JSON.parse(themeFromSession)
+    : configDefaults?.theme;
 
   const data = {
-    user: session.get('user'),
-    theme: JSON.parse(session.get('theme')),
-    error: session.get('error'),
+    user: await session.get('user'),
+    theme: themeParsed,
+    error: await session.get('error'),
   };
 
   return json(data, {
@@ -62,8 +70,6 @@ interface DocumentProps {
 export function Document({ children }: DocumentProps) {
   const data = useLoaderData();
 
-  console.log(data);
-
   return (
     <html lang="en">
       <head>
@@ -72,7 +78,7 @@ export function Document({ children }: DocumentProps) {
       </head>
 
       <body>
-        <ThemeProvider specifiedTheme={data.theme}>
+        <ThemeProvider specifiedTheme={data?.theme}>
           <Layout>{children}</Layout>
         </ThemeProvider>
 

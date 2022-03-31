@@ -90,23 +90,19 @@ export const radiusItems = [
 ];
 
 export function ThemeProvider({
-  specifiedTheme,
+  specifiedTheme = configDefaults?.theme,
   children,
 }: {
   specifiedTheme: ThemeConfig;
   children: React.ReactNode;
 }) {
-  const [colorScheme, setColorScheme] = useState(
-    specifiedTheme.colorScheme || configDefaults.theme.colorScheme
-  );
+  const [colorScheme, setColorScheme] = useState(specifiedTheme?.colorScheme);
   const [density, setDensity] = useState<VechaiProviderProps['density']>(
-    specifiedTheme.density || configDefaults.theme.density
+    specifiedTheme?.density
   );
+  const [radius, setRadius] = useState(specifiedTheme?.radius);
   const [cursorPointer, setCursorPointer] = useState(
-    specifiedTheme.cursorPointer || configDefaults.theme.cursorPointer
-  );
-  const [radius, setRadius] = useState(
-    specifiedTheme.radius || configDefaults.theme.radius
+    specifiedTheme?.cursorPointer
   );
 
   /**
@@ -126,9 +122,9 @@ export function ThemeProvider({
   const themeValue = useMemo(() => {
     return {
       colorScheme,
-      cursorPointer,
       density,
       radius,
+      cursorPointer,
       setColorScheme,
       setCursorPointer,
       setDensity,
@@ -149,9 +145,9 @@ export function ThemeProvider({
       {
         theme: JSON.stringify({
           colorScheme,
-          cursorPointer,
           density,
           radius,
+          cursorPointer,
         }),
       },
       { action: 'action/set-theme', method: 'post' }
@@ -170,10 +166,10 @@ export function ThemeProvider({
 export const useTheme = (): ThemeContextType => {
   return (
     useContext(ThemeContext) || {
-      colorScheme: configDefaults.theme.colorScheme,
-      density: configDefaults.theme.density,
-      radius: configDefaults.theme.radius,
-      cursorPointer: configDefaults.theme.cursorPointer,
+      colorScheme: configDefaults?.theme.colorScheme,
+      density: configDefaults?.theme.density,
+      radius: configDefaults?.theme.radius,
+      cursorPointer: configDefaults?.theme.cursorPointer,
       setColorScheme: () => {
         return null;
       },
