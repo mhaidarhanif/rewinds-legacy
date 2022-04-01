@@ -33,6 +33,7 @@ Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-
     - Only to get the class names
   - daisyUI v2 — Tailwind CSS components
     - Unused if using VechaiUI
+  - NProgress
 - Config
   - ESLint v8
   - Prettier v2

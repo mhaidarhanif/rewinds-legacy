@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .flex-section {
+    @apply flex w-full flex-wrap gap-2 py-2;
+  }
+}

@@ -2,7 +2,7 @@ export * from './button';
 export * from './footer';
 export * from './heading';
 export * from './layout';
-export * from './navbar';
+export * from './navigation-bar';
 export * from './paragraph';
 export * from './remix-link';
 export * from './theme-provider';

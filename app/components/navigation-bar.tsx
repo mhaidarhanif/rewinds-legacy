@@ -6,12 +6,12 @@ import { FunctionComponent } from 'react';
 import { Button, RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
 import { configNavigationLinks } from '~/configs';
 
-interface NavbarProps {}
+interface NavigationBarProps {}
 
-export const Navbar: FunctionComponent<NavbarProps> = () => {
+export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   return (
     <nav
-      id="navbar"
+      id="navigation-bar"
       className="mt-4 rounded-[var(--vc-rounded)] border-gray-200 bg-white p-4 dark:bg-gray-800"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -34,8 +34,8 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
                     to={navItem.to}
                     className={({ isActive }) => {
                       return clsx(
-                        'border-b-2 p-2 font-bold',
-                        isActive && 'border-primary-500'
+                        'p-2 font-bold',
+                        isActive && 'text-primary-500'
                       );
                     }}
                   >
@@ -50,16 +50,18 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
         <div className="flex space-x-2">
           <Button variant="ghost">Sign in</Button>
           <Button color="primary">Sign up</Button>
-          <NavbarMenu />
+          <NavigationBarMenu />
         </div>
       </div>
     </nav>
   );
 };
 
-interface NavbarMenuProps {}
+interface NavigationBarMenuProps {}
 
-export const NavbarMenu: FunctionComponent<NavbarMenuProps> = () => {
+export const NavigationBarMenu: FunctionComponent<
+  NavigationBarMenuProps
+> = () => {
   return (
     <div className="md:hidden">
       <IconButton

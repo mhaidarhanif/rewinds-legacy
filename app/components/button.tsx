@@ -8,13 +8,9 @@ import { FunctionComponent } from 'react';
 import { clsx } from '~/utils';
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
-  const { variant, children } = props;
+  const { children } = props;
 
-  return (
-    <VechaiButton variant={variant || 'solid'} {...props}>
-      {children}
-    </VechaiButton>
-  );
+  return <VechaiButton {...props}>{children}</VechaiButton>;
 };
 
 export const ButtonGroup: FunctionComponent<ButtonGroupProps> = (props) => {

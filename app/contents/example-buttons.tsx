@@ -9,8 +9,9 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
     <article className="space-y-4">
       <H2>Buttons</H2>
 
-      <div className="flex w-full flex-wrap gap-2 py-2">
+      <div className="flex-section">
         <Button>Normal</Button>
+        <Button color="primary">Primary</Button>
         <Button variant="solid" color="primary">
           Solid
         </Button>
@@ -25,7 +26,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <div className="flex w-full flex-wrap gap-2 py-2">
+      <div className="flex-section">
         <Button size="xs" variant="solid" color="primary">
           Extra Small
         </Button>
@@ -43,7 +44,22 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <div className="flex w-full flex-wrap gap-2 py-2">
+      <div className="flex-section">
+        <Button variant="solid" color="info">
+          Info
+        </Button>
+        <Button variant="solid" color="success">
+          Success/Valid
+        </Button>
+        <Button variant="solid" color="warning">
+          Warning/Pending
+        </Button>
+        <Button variant="solid" color="error">
+          Error/Danger/Bug
+        </Button>
+      </div>
+
+      <div className="flex-section">
         <Button variant="light" color="info">
           Info
         </Button>
@@ -58,7 +74,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <div className="flex w-full flex-wrap gap-2 py-2">
+      <div className="flex-section">
         <Button loading>Button</Button>
         <Button color="primary" loading loadingText="Loading...">
           Button
@@ -66,13 +82,13 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
       </div>
 
       <div className="flex w-full flex-col space-y-4 py-2">
-        <ButtonGroup>
+        <ButtonGroup variant="solid" color="primary" attached>
           <Button>Button 1</Button>
           <Button>Button 2</Button>
           <Button>Button 3</Button>
         </ButtonGroup>
 
-        <ButtonGroup color="primary" attached>
+        <ButtonGroup attached>
           <Button>Button 1</Button>
           <Button>Button 2</Button>
           <Button>Button 3</Button>
