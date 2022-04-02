@@ -3,6 +3,7 @@ export * from './footer';
 export * from './heading';
 export * from './layout';
 export * from './navigation-bar';
+export * from './nprogress';
 export * from './paragraph';
 export * from './remix-link';
 export * from './theme-provider';

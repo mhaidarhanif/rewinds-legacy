@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   json,
   Links,
@@ -11,9 +12,10 @@ import {
   ScrollRestoration,
   useCatch,
   useLoaderData,
+  useTransition,
 } from 'remix';
 
-import { H1, Layout, ThemeProvider } from '~/components';
+import { H1, Layout, NProgress, ThemeProvider } from '~/components';
 import { configDefaults } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
 
@@ -68,6 +70,14 @@ interface DocumentProps {
 
 export function Document({ children }: DocumentProps) {
   const data = useLoaderData();
+  const transition = useTransition();
+
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    if (transition.state === 'idle') setIsTransitioning(false);
+    else setIsTransitioning(false);
+  }, [transition.state]);
 
   return (
     <html lang="en">
@@ -78,6 +88,7 @@ export function Document({ children }: DocumentProps) {
 
       <body>
         <ThemeProvider specifiedTheme={data?.theme}>
+          <NProgress isAnimating={isTransitioning} />
           <Layout>{children}</Layout>
         </ThemeProvider>
 
