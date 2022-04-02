@@ -10,9 +10,9 @@ export const NProgress: FunctionComponent<NProgressProps> = ({
 }) => {
   const { animationDuration, isFinished, progress } = useNProgress({
     isAnimating,
-    // minimum: 0,
-    // animationDuration: 250,
-    // incrementDuration: 500,
+    minimum: 0,
+    animationDuration: 250,
+    incrementDuration: 500,
   });
 
   return (
@@ -20,11 +20,7 @@ export const NProgress: FunctionComponent<NProgressProps> = ({
       animationDuration={animationDuration}
       isFinished={isFinished}
     >
-      <NProgressBar
-        animationDuration={animationDuration}
-        isFinished={isFinished}
-        progress={progress}
-      />
+      <NProgressBar animationDuration={animationDuration} progress={progress} />
     </NProgressContainer>
   );
 };
@@ -63,7 +59,7 @@ const NProgressBar: FunctionComponent<ProgressBarProps> = ({
 }) => {
   return (
     <div
-      className="fixed left-0 top-0 z-tooltip h-3 w-full bg-primary-500"
+      className="fixed left-0 top-0 z-tooltip h-1 w-full bg-primary-500"
       style={{
         marginLeft: `${(-1 + progress) * 100}%`,
         transition: `margin ${animationDuration}ms linear`,

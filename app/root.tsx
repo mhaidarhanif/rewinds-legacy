@@ -76,7 +76,7 @@ export function Document({ children }: DocumentProps) {
 
   useEffect(() => {
     if (transition.state === 'idle') setIsTransitioning(false);
-    else setIsTransitioning(false);
+    else setIsTransitioning(true);
   }, [transition.state]);
 
   return (
