@@ -64,14 +64,6 @@ const NProgressBar: FunctionComponent<ProgressBarProps> = ({
         marginLeft: `${(-1 + progress) * 100}%`,
         transition: `margin ${animationDuration}ms linear`,
       }}
-    >
-      <div
-        className="absolute right-0 block h-full  opacity-100"
-        style={{
-          boxShadow: '0 0 10px #29d, 0 0 5px #29d',
-          transform: 'rotate(3deg) translate(0px, -4px)',
-        }}
-      />
-    </div>
+    />
   );
 };

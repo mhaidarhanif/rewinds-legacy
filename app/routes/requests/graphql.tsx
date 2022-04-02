@@ -3,7 +3,7 @@ import { json, LoaderFunction, useLoaderData } from 'remix';
 import { sleep } from '~/utils';
 
 export const loader: LoaderFunction = async () => {
-  await sleep(3000);
+  await sleep(1000);
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = response.json();
 
