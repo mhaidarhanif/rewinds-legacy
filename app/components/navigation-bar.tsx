@@ -3,7 +3,7 @@ import { Icon, IconButton } from '@vechaiui/react';
 import clsx from 'clsx';
 import { FunctionComponent } from 'react';
 
-import { Button, RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
+import { RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
 import { configNavigationLinks } from '~/configs';
 
 interface NavigationBarProps {}
@@ -25,8 +25,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
           </RemixLink>
         </div>
 
-        <div className="hidden w-full items-center justify-between md:flex md:w-auto">
-          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+        <div className="hidden w-full items-center justify-between lg:flex lg:w-auto">
+          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-4 md:text-sm md:font-medium">
             {configNavigationLinks.map((navItem) => {
               return (
                 <li key={navItem.text}>
@@ -48,8 +48,20 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
         </div>
 
         <div className="flex space-x-2">
-          <Button variant="ghost">Sign in</Button>
-          <Button color="primary">Sign up</Button>
+          <RemixLink
+            to="/signin"
+            className="btn btn-md btn-ghost"
+            data-color="primary"
+          >
+            Sign in
+          </RemixLink>
+          <RemixLink
+            to="/signup"
+            className="btn btn-md btn-outline"
+            data-color="primary"
+          >
+            Sign up
+          </RemixLink>
           <NavigationBarMenu />
         </div>
       </div>
@@ -63,7 +75,7 @@ export const NavigationBarMenu: FunctionComponent<
   NavigationBarMenuProps
 > = () => {
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <IconButton
         variant="solid"
         color="primary"
