@@ -60,95 +60,17 @@ export const ThemeSwitcher = () => {
                     Theme Appearance
                   </span>
                 </div>
-                <Divider
-                  orientation="horizontal"
-                  className="border-neutral-200 dark:border-neutral-700"
-                />
-                <div>
-                  <div role="group">
-                    <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between rounded text-left text-sm focus:outline-none">
-                      <span className="text-smm">Pointer Cursors</span>
-                      <Switch
-                        size="md"
-                        checked={cursorPointer}
-                        onChange={() => {
-                          return setCursorPointer(!cursorPointer);
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <Divider
-                    orientation="horizontal"
-                    className="border-neutral-200 dark:border-neutral-700"
-                  />
-
-                  <div role="group">
-                    <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between space-x-6 rounded text-left text-sm focus:outline-none">
-                      <span className="text-smm">Density</span>
-                      <Select
-                        value={density}
-                        size="xs"
-                        onChange={(e) => {
-                          setDensity(
-                            e.target.value as ThemeContextType['density']
-                          );
-                        }}
-                      >
-                        <option value="compact">Compact</option>
-                        <option value="comfortable">Comfortable</option>
-                      </Select>
-                    </div>
-                  </div>
-
-                  <Divider
-                    orientation="horizontal"
-                    className="border-neutral-200 dark:border-neutral-700"
-                  />
-
-                  <div role="group">
-                    <div className="flex w-full flex-shrink-0 cursor-base flex-col space-y-2 rounded-base text-left text-sm focus:outline-none">
-                      <span className="text-smm">Radius</span>
-                      <RadioGroup value={radius} onChange={setRadius}>
-                        <RadioGroup.Label className="sr-only">
-                          Radius
-                        </RadioGroup.Label>
-                        <div className="inline-flex space-x-0 rounded-base bg-neutral-200 p-0.5 dark:bg-neutral-700">
-                          {configAvailableRadiuses.map((item) => {
-                            return (
-                              <RadioGroup.Option
-                                key={item.name}
-                                value={item.value}
-                                className={({ checked }) => {
-                                  return clsx(
-                                    'relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold',
-                                    `${
-                                      checked
-                                        ? 'bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white'
-                                        : 'text-neutral-600 dark:text-neutral-400'
-                                    }
-                          `
-                                  );
-                                }}
-                              >
-                                {item.name}
-                              </RadioGroup.Option>
-                            );
-                          })}
-                        </div>
-                      </RadioGroup>
-                    </div>
-                  </div>
-                </div>
 
                 <Divider
                   orientation="horizontal"
                   className="border-neutral-200 dark:border-neutral-700"
                 />
 
-                <div role="group">
+                <section role="group">
                   <div className="flex w-full flex-shrink-0 cursor-base flex-col space-y-2 text-left text-sm focus:outline-none">
-                    <span className="text-smm">Color</span>
+                    <span className="text-smm">
+                      Color Scheme: {colorScheme}
+                    </span>
                     <RadioGroup
                       value={colorScheme}
                       onChange={changeColorScheme}
@@ -184,7 +106,87 @@ export const ThemeSwitcher = () => {
                       </div>
                     </RadioGroup>
                   </div>
-                </div>
+                </section>
+
+                <Divider
+                  orientation="horizontal"
+                  className="border-neutral-200 dark:border-neutral-700"
+                />
+
+                <section role="group">
+                  <div className="flex w-full flex-shrink-0 cursor-base flex-col space-y-2 rounded-base text-left text-sm focus:outline-none">
+                    <span className="text-smm">Border Radius: {radius}</span>
+                    <RadioGroup value={radius} onChange={setRadius}>
+                      <RadioGroup.Label className="sr-only">
+                        Radius
+                      </RadioGroup.Label>
+                      <div className="inline-flex space-x-0 rounded-base bg-neutral-200 p-0.5 dark:bg-neutral-700">
+                        {configAvailableRadiuses.map((item) => {
+                          return (
+                            <RadioGroup.Option
+                              key={item.name}
+                              value={item.value}
+                              className={({ checked }) => {
+                                return clsx(
+                                  'relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold',
+                                  `${
+                                    checked
+                                      ? 'bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white'
+                                      : 'text-neutral-600 dark:text-neutral-400'
+                                  }
+                          `
+                                );
+                              }}
+                            >
+                              {item.name}
+                            </RadioGroup.Option>
+                          );
+                        })}
+                      </div>
+                    </RadioGroup>
+                  </div>
+                </section>
+
+                <Divider
+                  orientation="horizontal"
+                  className="border-neutral-200 dark:border-neutral-700"
+                />
+
+                <section role="group">
+                  <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between space-x-6 rounded text-left text-sm focus:outline-none">
+                    <span className="text-smm">Density</span>
+                    <Select
+                      value={density}
+                      size="xs"
+                      onChange={(e) => {
+                        setDensity(
+                          e.target.value as ThemeContextType['density']
+                        );
+                      }}
+                    >
+                      <option value="compact">Compact</option>
+                      <option value="comfortable">Comfortable</option>
+                    </Select>
+                  </div>
+                </section>
+
+                <Divider
+                  orientation="horizontal"
+                  className="border-neutral-200 dark:border-neutral-700"
+                />
+
+                <section role="group">
+                  <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between rounded text-left text-sm focus:outline-none">
+                    <span className="text-smm">Pointer Cursors</span>
+                    <Switch
+                      size="md"
+                      checked={cursorPointer}
+                      onChange={() => {
+                        return setCursorPointer(!cursorPointer);
+                      }}
+                    />
+                  </div>
+                </section>
               </Popover.Panel>
             </Transition>
           </>

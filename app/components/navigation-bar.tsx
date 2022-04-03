@@ -3,7 +3,7 @@ import { Icon, IconButton } from '@vechaiui/react';
 import clsx from 'clsx';
 import { FunctionComponent } from 'react';
 
-import { RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
+import { Button, RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
 import { configNavigationLinks } from '~/configs';
 
 interface NavigationBarProps {}
@@ -48,24 +48,34 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
         </div>
 
         <div className="flex space-x-2">
-          <RemixLink
-            to="/signin"
-            className="btn btn-md btn-ghost"
-            data-color="primary"
-          >
-            Sign in
-          </RemixLink>
-          <RemixLink
-            to="/signup"
-            className="btn-solid btn btn-md"
-            data-color="primary"
-          >
-            Sign up
-          </RemixLink>
+          <NavigationBarAuth />
           <NavigationBarMenu />
         </div>
       </div>
     </nav>
+  );
+};
+
+interface NavigationBarAuthProps {}
+
+const NavigationBarAuth: FunctionComponent<NavigationBarAuthProps> = () => {
+  return (
+    <div className="hidden space-x-2 lg:flex">
+      <RemixLink
+        to="/signin"
+        className="btn btn-md btn-ghost"
+        data-color="primary"
+      >
+        Sign in
+      </RemixLink>
+      <RemixLink
+        to="/signup"
+        className="btn-solid btn btn-md"
+        data-color="primary"
+      >
+        Sign up
+      </RemixLink>
+    </div>
   );
 };
 
@@ -76,14 +86,22 @@ export const NavigationBarMenu: FunctionComponent<
 > = () => {
   return (
     <div className="lg:hidden">
-      <IconButton
+      {/* <IconButton
         variant="solid"
         color="primary"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
         <Icon as={MenuIcon} label="Menu" className="h-4 w-4" />
-      </IconButton>
+      </IconButton> */}
+
+      <Button
+        variant="solid"
+        color="primary"
+        leftIcon={<Icon as={MenuIcon} label="gift" className="mr-1 h-4 w-4" />}
+      >
+        Menu
+      </Button>
     </div>
   );
 };
