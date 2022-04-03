@@ -1,8 +1,8 @@
 import { Config } from '~/types';
 
-export const configDefaults: Config = {
+export const configApp: Config = {
   theme: {
-    colorScheme: 'cool',
+    colorScheme: 'day',
     density: 'comfortable',
     radius: '0.375rem',
     cursorPointer: true,
