@@ -11,18 +11,20 @@ export const ExampleNotifications: FunctionComponent<
   const notify = useNotification();
   const toast = useToast();
 
-  const showNotification = (description: string, status?: any) => {
+  const showNotification = (
+    title: string,
+    description: string,
+    status?: any
+  ) => {
     notify({
-      title: 'Hello',
+      title,
       description,
       status,
-      position: 'top-right',
+      position: 'top',
       undoText: 'Undo',
       onUndo: () => {
         toast({
           message: 'Undoing changes...',
-          position: 'bottom-right',
-          duration: 2000,
         });
       },
     });
@@ -36,7 +38,7 @@ export const ExampleNotifications: FunctionComponent<
         <Button
           color="primary"
           onClick={() => {
-            showNotification('This is Normal');
+            showNotification('Notification', 'This is a normal message');
           }}
         >
           Normal
@@ -44,7 +46,11 @@ export const ExampleNotifications: FunctionComponent<
         <Button
           color="info"
           onClick={() => {
-            showNotification('This is Info', 'info');
+            showNotification(
+              'Info Notification',
+              'This is an info message',
+              'info'
+            );
           }}
         >
           Info
@@ -52,7 +58,11 @@ export const ExampleNotifications: FunctionComponent<
         <Button
           color="success"
           onClick={() => {
-            showNotification('This is Success', 'success');
+            showNotification(
+              'Success Notification',
+              'This is a success message',
+              'success'
+            );
           }}
         >
           Success
@@ -60,7 +70,11 @@ export const ExampleNotifications: FunctionComponent<
         <Button
           color="warning"
           onClick={() => {
-            showNotification('This is Warning', 'warning');
+            showNotification(
+              'Warning Notification',
+              'This is a warning message',
+              'warning'
+            );
           }}
         >
           Warning
@@ -68,7 +82,11 @@ export const ExampleNotifications: FunctionComponent<
         <Button
           color="error"
           onClick={() => {
-            showNotification('This is Error', 'error');
+            showNotification(
+              'Error Notification',
+              'This is an error message',
+              'error'
+            );
           }}
         >
           Error

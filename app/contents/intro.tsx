@@ -5,8 +5,8 @@ export const Intro = () => {
       <h2>Remix starter kit with Tailwind family of libraries</h2>
       <p>
         Example demo to combine the best Tailwind-related ecosystem such as
-        Tailwind CSS v3, Tailwind UI, Headless UI, Radix UI, VechaiUI, Flowbite,
-        daisyUI, and more.
+        Tailwind CSS v3, Tailwind UI, Headless UI, Radix UI, Vechai UI, and
+        more.
       </p>
     </div>
   );

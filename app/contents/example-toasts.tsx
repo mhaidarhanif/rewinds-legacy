@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { Button, ButtonGroup, H2 } from '~/components';
+import { Button, H2 } from '~/components';
 import { useToast } from '~/hooks';
 
 interface ExampleToastsProps {}
@@ -12,16 +12,14 @@ export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
     toast({
       message,
       status,
-      position: 'bottom-right',
-      duration: 2000,
     });
   };
 
   return (
-    <div>
+    <article>
       <H2>Toasts</H2>
 
-      <ButtonGroup>
+      <section className="flex-section">
         <Button
           color="primary"
           onClick={() => {
@@ -62,7 +60,7 @@ export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
         >
           Error
         </Button>
-      </ButtonGroup>
-    </div>
+      </section>
+    </article>
   );
 };

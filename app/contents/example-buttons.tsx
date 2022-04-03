@@ -6,10 +6,10 @@ interface ExampleButtonsProps {}
 
 export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
   return (
-    <article className="space-y-4">
+    <div className="space-y-4">
       <H2>Buttons</H2>
 
-      <div className="flex-section">
+      <section className="flex-section">
         <Button>Normal</Button>
         <Button color="primary">Primary</Button>
         <Button variant="solid" color="primary">
@@ -24,9 +24,9 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="link" color="primary">
           Link
         </Button>
-      </div>
+      </section>
 
-      <H3>Button size</H3>
+      <H3>Different size</H3>
 
       <div className="flex-section">
         <Button size="xs" variant="solid" color="primary">
@@ -46,9 +46,34 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <H3>Custom color solid button</H3>
+      <H3>Loading state</H3>
 
-      <div className="flex-section">
+      <section className="flex-section">
+        <Button loading>Button</Button>
+        <Button color="primary" loading loadingText="Loading...">
+          Button
+        </Button>
+      </section>
+
+      <H3>Button group</H3>
+
+      <section className="flex w-full flex-col space-y-4 py-2">
+        <ButtonGroup variant="solid" color="primary" attached>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+
+        <ButtonGroup attached>
+          <Button>Button 1</Button>
+          <Button>Button 2</Button>
+          <Button>Button 3</Button>
+        </ButtonGroup>
+      </section>
+
+      <H3>Custom color solid</H3>
+
+      <section className="flex-section">
         <Button variant="solid" color="info">
           Info
         </Button>
@@ -61,11 +86,11 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="solid" color="error">
           Error/Danger/Bug
         </Button>
-      </div>
+      </section>
 
-      <H3>Custom color light button</H3>
+      <H3>Custom color light</H3>
 
-      <div className="flex-section">
+      <section className="flex-section">
         <Button variant="light" color="info">
           Info
         </Button>
@@ -78,36 +103,11 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="light" color="error">
           Error/Danger/Bug
         </Button>
-      </div>
+      </section>
 
-      <H3>Loading button</H3>
+      <H3>Custom elements</H3>
 
-      <div className="flex-section">
-        <Button loading>Button</Button>
-        <Button color="primary" loading loadingText="Loading...">
-          Button
-        </Button>
-      </div>
-
-      <H3>Button group</H3>
-
-      <div className="flex w-full flex-col space-y-4 py-2">
-        <ButtonGroup variant="solid" color="primary" attached>
-          <Button>Button 1</Button>
-          <Button>Button 2</Button>
-          <Button>Button 3</Button>
-        </ButtonGroup>
-
-        <ButtonGroup attached>
-          <Button>Button 1</Button>
-          <Button>Button 2</Button>
-          <Button>Button 3</Button>
-        </ButtonGroup>
-      </div>
-
-      <H3>Custom buttons</H3>
-
-      <div className="flex-section">
+      <section className="flex-section">
         <Button className="rounded-lg shadow-md shadow-primary-500/20">
           Vechai + Tailwind
         </Button>
@@ -122,7 +122,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           href="https://rtsk.vercel.app"
           target="_blank"
           rel="noreferrer"
-          className="btn-solid btn btn-md rounded-2xl border-4 tracking-widest"
+          className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 tracking-widest hover:border-primary-200"
         >
           Anchor Button
         </a>
@@ -133,7 +133,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         >
           Remix Link Button
         </RemixLink>
-      </div>
-    </article>
+      </section>
+    </div>
   );
 };
