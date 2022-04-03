@@ -3,19 +3,19 @@
 Remix starter kit with Tailwind CSS v3 family of libraries.
 
 Example demo to combine the best Tailwind-related ecosystem such as Tailwind
-CSS, Headless UI, Radix UI, VechaiUI, Flowbite, daisyUI, and more.
+CSS, Headless UI, Radix UI, Vechai UI, and more.
 
 Features:
 
 - Remix as the React framework
-- Tailwind CSS using VechaiUI as primary components
+- Tailwind CSS using Vechai UI as primary components
 - Theme switcher and persist theme with a session cookie
 
 Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
 
 ![Screenshot](public/screenshot.png)
 
-## Stack
+## Stacks
 
 - Core
   - React v17
@@ -27,16 +27,17 @@ Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-
   - Heroicons v1
   - Headless UI v1 — Unstyled accessible UI components
   - Radix UI v0 — Unstyled accessible UI components
-  - VechaiUI v0 — React Tailwind CSS components
-    - Fully featured React component
+  - Vechai UI v0 — React Tailwind CSS components
+  - HyperUI — Collection of free Tailwind CSS components
+  - LaLoka Layouts — Useful layouts for Tailwind CSS
   - Flowbite v1 — Tailwind CSS components
-    - Only to get the class names
   - daisyUI v2 — Tailwind CSS components
-    - Unused if using VechaiUI
   - NProgress
 - Config
   - ESLint v8
   - Prettier v2
+- Utility
+  - clsx
 - Deployment
   - Vercel
 
@@ -93,10 +94,10 @@ It is generally recommended to use a Git repository, because future commits will
 
 ## Notes
 
-### VechaiUI
+### Vechai UI
 
 Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size.
-`cssBase` is still required to get the default Tailwind CSS colors into VechaiUI themes.
+`cssBase` is still required to get the default Tailwind CSS colors into Vechai UI themes.
 
 ```diff
 module.exports = {
