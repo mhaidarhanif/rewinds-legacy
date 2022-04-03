@@ -4,7 +4,8 @@ import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
 import * as React from 'react';
 
 import { useTheme, ThemeContextType } from '~/components/theme-provider';
-import { availableThemes, availableRadiuses } from '~/configs';
+import { configAvailableThemes, configAvailableRadiuses } from '~/configs';
+import { useToast } from '~/hooks';
 import { clsx } from '~/utils';
 
 export const ThemeSwitcher = () => {
@@ -18,6 +19,12 @@ export const ThemeSwitcher = () => {
     setDensity,
     density,
   } = useTheme();
+  const toast = useToast();
+
+  const changeColorScheme = (value: string) => {
+    setColorScheme(value);
+    toast({ message: `Changed theme to ${value}` });
+  };
 
   return (
     <Popover className="relative">
@@ -40,6 +47,9 @@ export const ThemeSwitcher = () => {
             <Transition
               show={open}
               as={React.Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
               leave="transition ease-in duration-100"
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
@@ -104,7 +114,7 @@ export const ThemeSwitcher = () => {
                           Radius
                         </RadioGroup.Label>
                         <div className="inline-flex space-x-0 rounded-base bg-neutral-200 p-0.5 dark:bg-neutral-700">
-                          {availableRadiuses.map((item) => {
+                          {configAvailableRadiuses.map((item) => {
                             return (
                               <RadioGroup.Option
                                 key={item.name}
@@ -139,19 +149,20 @@ export const ThemeSwitcher = () => {
                 <div role="group">
                   <div className="flex w-full flex-shrink-0 cursor-base flex-col space-y-2 text-left text-sm focus:outline-none">
                     <span className="text-smm">Color</span>
-                    <RadioGroup value={colorScheme} onChange={setColorScheme}>
+                    <RadioGroup
+                      value={colorScheme}
+                      onChange={changeColorScheme}
+                    >
                       <RadioGroup.Label className="sr-only">
                         Color
                       </RadioGroup.Label>
-                      <div className="flex flex-wrap">
-                        {availableThemes.map((theme: any) => {
+                      <div className="flex max-w-[180px] flex-wrap">
+                        {configAvailableThemes.map((theme: any) => {
                           return (
                             <RadioGroup.Option
                               key={theme.id}
                               value={theme.id}
-                              style={{
-                                backgroundColor: theme.backgroundColor,
-                              }}
+                              style={{ backgroundColor: theme.backgroundColor }}
                               className={({ checked }) => {
                                 return clsx(
                                   'mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-full border-2 p-0',
@@ -164,9 +175,7 @@ export const ThemeSwitcher = () => {
                               }}
                             >
                               <span
-                                style={{
-                                  backgroundColor: theme.primaryColor,
-                                }}
+                                style={{ backgroundColor: theme.primaryColor }}
                                 className="-m-1 flex h-2.5 w-2.5 items-center justify-center rounded-full"
                               />
                             </RadioGroup.Option>

@@ -12,7 +12,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   return (
     <nav
       id="navigation-bar"
-      className="mt-4 rounded-[var(--vc-rounded)] border-gray-200 bg-white p-4 dark:bg-gray-800"
+      className="mt-4 rounded-[var(--vc-rounded)] border-gray-200 bg-neutral-50 p-4 dark:bg-neutral-800"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="flex space-x-4">
@@ -57,7 +57,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
           </RemixLink>
           <RemixLink
             to="/signup"
-            className="btn btn-md btn-outline"
+            className="btn-solid btn btn-md"
             data-color="primary"
           >
             Sign up

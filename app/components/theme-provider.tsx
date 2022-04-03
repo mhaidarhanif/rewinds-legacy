@@ -13,8 +13,8 @@ import {
 } from 'react';
 import { useFetcher } from 'remix';
 
-import { configDefaults, configThemes } from '~/configs';
-import { ThemeConfig } from '~/types';
+import { configApp, configThemes } from '~/configs';
+import { Theme } from '~/types';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -32,10 +32,10 @@ export const prefersLightMQ = '(prefers-color-scheme: light)';
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({
-  specifiedTheme = configDefaults?.theme,
+  specifiedTheme = configApp?.theme,
   children,
 }: {
-  specifiedTheme: ThemeConfig;
+  specifiedTheme: Theme;
   children: React.ReactNode;
 }) {
   /**
@@ -116,10 +116,10 @@ export function ThemeProvider({
 export const useTheme = (): ThemeContextType => {
   return (
     useContext(ThemeContext) || {
-      colorScheme: configDefaults?.theme.colorScheme,
-      density: configDefaults?.theme.density,
-      radius: configDefaults?.theme.radius,
-      cursorPointer: configDefaults?.theme.cursorPointer,
+      colorScheme: configApp?.theme.colorScheme,
+      density: configApp?.theme.density,
+      radius: configApp?.theme.radius,
+      cursorPointer: configApp?.theme.cursorPointer,
       setColorScheme: () => {
         return null;
       },

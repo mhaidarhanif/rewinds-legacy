@@ -5,7 +5,7 @@ interface HeadingProps {
 }
 
 export const H1: FunctionComponent<HeadingProps> = ({ children }) => {
-  return <h1 className="mt-2 mb-8 text-4xl font-black">{children}</h1>;
+  return <h1 className="mt-0 mb-8 text-4xl font-extrabold">{children}</h1>;
 };
 
 export const H2: FunctionComponent<HeadingProps> = ({ children }) => {
@@ -13,17 +13,17 @@ export const H2: FunctionComponent<HeadingProps> = ({ children }) => {
 };
 
 export const H3: FunctionComponent<HeadingProps> = ({ children }) => {
-  return <h3 className="mb-3 text-xl font-bold">{children}</h3>;
+  return <h3 className="mb-3 text-xl font-semibold">{children}</h3>;
 };
 
 export const H4: FunctionComponent<HeadingProps> = ({ children }) => {
-  return <h4 className="mb-2 text-lg font-bold">{children}</h4>;
+  return <h4 className="mb-2 text-lg font-semibold">{children}</h4>;
 };
 
 export const H5: FunctionComponent<HeadingProps> = ({ children }) => {
-  return <h5 className="text-md mb-1 font-bold">{children}</h5>;
+  return <h5 className="text-md mb-1 font-medium">{children}</h5>;
 };
 
 export const H6: FunctionComponent<HeadingProps> = ({ children }) => {
-  return <h6 className="text-md mb-1 font-bold">{children}</h6>;
+  return <h6 className="text-md mb-1 font-medium">{children}</h6>;
 };

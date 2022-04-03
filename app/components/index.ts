@@ -1,3 +1,4 @@
+export * from './anchor';
 export * from './button';
 export * from './footer';
 export * from './heading';
@@ -5,6 +6,8 @@ export * from './layout';
 export * from './navigation-bar';
 export * from './nprogress';
 export * from './paragraph';
+export * from './pre';
 export * from './remix-link';
+export * from './scroll-area';
 export * from './theme-provider';
 export * from './theme-switcher';
