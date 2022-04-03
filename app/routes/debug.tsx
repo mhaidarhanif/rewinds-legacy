@@ -6,28 +6,34 @@ import {
   useLoaderData,
 } from 'remix';
 
-import { configDefaults } from '~/configs';
+import { H1, H2, Pre, RadixScrollArea } from '~/components';
+import { configAvailableThemes, configApp, configThemes } from '~/configs';
 import { getSession, commitSession } from '~/sessions';
+import { Theme } from '~/types';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
   const themeFromSession = await session.get('theme');
 
-  // Only prase if theme string exist
-  const themeParsed = themeFromSession
+  const themeParsed: Theme = themeFromSession
     ? JSON.parse(themeFromSession)
-    : configDefaults?.theme;
+    : configApp?.theme;
 
-  const data = {
-    user: await session.get('user'),
+  const sessionInfo = {
     theme: themeParsed,
-    error: await session.get('error'),
+    user: (await session.get('user')) || {},
+    error: (await session.get('error')) || false,
   };
 
-  return json(data, {
-    headers: {
-      'Set-Cookie': await commitSession(session),
-    },
+  const currentTheme = configAvailableThemes.find((item) => {
+    return item.id === themeParsed.colorScheme;
+  });
+
+  return json({
+    sessionInfo,
+    currentTheme,
+    themes: configThemes,
+    availableThemes: configAvailableThemes,
   });
 };
 
@@ -42,12 +48,28 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function DebugRoute() {
-  const data = useLoaderData();
+  const { sessionInfo, currentTheme, themes, availableThemes } =
+    useLoaderData();
 
   return (
-    <article className="prose dark:prose-invert">
-      <h1>Debug</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </article>
+    <div>
+      <H1>Debug</H1>
+
+      <H2>Session Data</H2>
+      <Pre data={sessionInfo} />
+
+      <H2>Current Theme</H2>
+      <Pre data={currentTheme} />
+
+      <H2>Config Themes</H2>
+      <RadixScrollArea>
+        <Pre data={themes} />
+      </RadixScrollArea>
+
+      <H2>Config Available Themes</H2>
+      <RadixScrollArea>
+        <Pre data={availableThemes} />
+      </RadixScrollArea>
+    </div>
   );
 }
