@@ -16,7 +16,7 @@ import {
 } from 'remix';
 
 import { H1, Layout, NProgress, ThemeProvider } from '~/components';
-import { configDefaults } from '~/configs';
+import { configApp } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
 
 import styles from '~/styles/app.css';
@@ -41,7 +41,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   // Only parse if theme string exist
   const themeParsed = themeFromSession
     ? JSON.parse(themeFromSession)
-    : configDefaults?.theme;
+    : configApp?.theme;
 
   const data = {
     user: await session.get('user'),
