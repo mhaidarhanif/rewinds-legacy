@@ -1,23 +1,29 @@
+export type { ColorScheme, VechaiTheme } from '@vechaiui/react';
+
 export type Config = {
-  theme: ThemeConfig;
+  theme: Theme;
 };
 
-export type ThemeConfig = {
-  colorScheme: ThemeColorSchemeID;
-  density: ThemeDensity;
+export type Theme = {
+  colorScheme: string;
+  density: 'compact' | 'comfortable' | 'unset';
   radius: string;
   cursorPointer: boolean;
 };
 
-export type ThemeColorSchemeID =
-  | string
-  | 'light'
-  | 'dark'
-  | 'cool'
-  | 'midnight'
-  | 'pale'
-  | 'dawn'
-  | 'bee'
-  | 'swiss';
+export type StackItem = {
+  name: string;
+  href: string;
+  description?: string;
+  subStacks?: {
+    name: string;
+  }[];
+};
 
-export type ThemeDensity = 'compact' | 'comfortable' | 'unset';
+export type ComponentItem = {
+  name: string;
+};
+
+export type UtilityItem = {
+  name: string;
+};
