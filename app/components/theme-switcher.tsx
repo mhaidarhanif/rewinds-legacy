@@ -27,7 +27,7 @@ export const ThemeSwitcher = () => {
   };
 
   return (
-    <Popover className="relative">
+    <Popover className="relative select-none">
       {({ open }) => {
         return (
           <>

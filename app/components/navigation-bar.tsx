@@ -1,5 +1,5 @@
 import { MenuIcon } from '@heroicons/react/solid';
-import { Icon, IconButton } from '@vechaiui/react';
+import { Icon } from '@vechaiui/react';
 import clsx from 'clsx';
 import { FunctionComponent } from 'react';
 
@@ -12,7 +12,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   return (
     <nav
       id="navigation-bar"
-      className="mt-4 rounded-[var(--vc-rounded)] border-gray-200 bg-neutral-50 p-4 dark:bg-neutral-800"
+      className="mt-4 select-none rounded-base border-gray-200 bg-neutral-50 p-4 dark:bg-neutral-800"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="flex space-x-4">
@@ -34,8 +34,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
                     to={navItem.to}
                     className={({ isActive }) => {
                       return clsx(
-                        'p-2 font-bold',
-                        isActive && 'text-primary-500'
+                        isActive && 'text-primary-500',
+                        'p-2 font-bold'
                       );
                     }}
                   >
@@ -60,7 +60,7 @@ interface NavigationBarAuthProps {}
 
 const NavigationBarAuth: FunctionComponent<NavigationBarAuthProps> = () => {
   return (
-    <div className="hidden space-x-2 lg:flex">
+    <div id="navigation-bar-auth" className="hidden space-x-2 lg:flex">
       <RemixLink
         to="/signin"
         className="btn btn-md btn-ghost"
@@ -85,7 +85,7 @@ export const NavigationBarMenu: FunctionComponent<
   NavigationBarMenuProps
 > = () => {
   return (
-    <div className="lg:hidden">
+    <div id="navigation-bar-menu" className="select-none lg:hidden">
       {/* <IconButton
         variant="solid"
         color="primary"
