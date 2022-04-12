@@ -122,7 +122,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           href="https://rtsk.vercel.app"
           target="_blank"
           rel="noreferrer"
-          className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 tracking-widest hover:border-primary-200"
+          className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 hover:border-primary-200"
         >
           Anchor Button
         </a>
