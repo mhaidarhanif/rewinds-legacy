@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a:focus {
+    @apply rounded-base focus:ring-4 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  a:focus-visible {
+    @apply outline-none;
+  }
+}
+
 @layer components {
   .flex-section {
     @apply flex w-full flex-wrap gap-2 py-1;
@@ -24,7 +33,7 @@
   }
 
   .scroll-area-thumb {
-    @apply relative flex-1 cursor-pointer rounded-[var(--vc-rounded)] bg-primary-900;
+    @apply relative flex-1 cursor-pointer rounded-base bg-primary-900;
   }
 
   .scroll-area-thumb::before {
