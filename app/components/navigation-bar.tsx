@@ -32,6 +32,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
               return (
                 <li key={navItem.text}>
                   <RemixNavLink
+                    end
                     to={navItem.to}
                     className={({ isActive }) => {
                       return clsx(

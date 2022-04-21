@@ -52,6 +52,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
                       {({ active, disabled }) => {
                         return (
                           <RemixNavLink
+                            end
                             to={item.to}
                             className={({ isActive }) => {
                               return clsx(
