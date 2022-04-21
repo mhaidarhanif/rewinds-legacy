@@ -1,6 +1,6 @@
 {
-  "name": "remix-tailwind-starter-kit",
-  "description": "Remix starter kit with Tailwind CSS family of libraries",
+  "name": "rewinds",
+  "description": "Rewinds, a Remix starter kit with Tailwind CSS family of libraries",
   "private": true,
   "license": "MIT",
   "sideEffects": false,

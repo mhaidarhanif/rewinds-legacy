@@ -11,7 +11,7 @@ Features:
 - Tailwind CSS using Vechai UI as primary components
 - Theme switcher and persist theme with a session cookie
 
-Preview: [remix-tailwind-starter-kit.vercel.app](https://remix-tailwind-starter-kit.vercel.app)
+Preview: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
 ![Screenshot](public/screenshot.png)
 

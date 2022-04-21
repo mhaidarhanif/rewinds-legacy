@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'react';
+import { Anchor } from '~/components';
 
 interface FooterProps {}
 
@@ -13,32 +14,13 @@ export const Footer: FunctionComponent<FooterProps> = () => {
           <span>&copy;</span>
           <span>{year}</span>
           <span>•</span>
-          <a
-            className="hover:underline"
-            href="https://github.com/mhaidarhanif/remix-tailwind-starter-kit"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <code>remix-tailwind-starter-kit</code>
-          </a>
+          <Anchor href="https://github.com/mhaidarhanif/rewinds">
+            <code>rewinds</code>
+          </Anchor>
           <span>•</span>
-          <a
-            className="hover:underline"
-            href="https://twitter.com/mhaidarhanif"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Twitter
-          </a>
+          <Anchor href="https://twitter.com/mhaidarhanif">Twitter</Anchor>
           <span>•</span>
-          <a
-            className="hover:underline"
-            href="https://github.com/mhaidarhanif"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
+          <Anchor href="https://github.com/mhaidarhanif">GitHub</Anchor>
         </p>
       </div>
     </footer>

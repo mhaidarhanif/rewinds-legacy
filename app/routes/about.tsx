@@ -24,6 +24,23 @@ export default function AboutRoute() {
         Rewinds is a Remix Tailwind Starter Kit is a demo project template you
         can freely use.
       </p>
+
+      <h2>Links</h2>
+      <ul>
+        <li>
+          GitHub repo:{' '}
+          <Anchor href="https://github.com/mhaidarhanif/rewinds">
+            mhaidarhanif/rewinds
+          </Anchor>
+        </li>
+        <li>
+          Preview demo:{' '}
+          <Anchor href="https://rewinds.mhaidarhanif.com">
+            rewinds.mhaidarhanif.com
+          </Anchor>
+        </li>
+      </ul>
+
       <h2>Features</h2>
       <ul>
         <li>TypeScript for type-safety</li>
@@ -32,21 +49,7 @@ export default function AboutRoute() {
         <li>Headless UI and Radix UI for accessible unstyled components</li>
         <li>Theme switcher and persist theme with a session cookie</li>
       </ul>
-      <h2>Links</h2>
-      <ul>
-        <li>
-          GitHub repo:{' '}
-          <a href="https://github.com/mhaidarhanif/remix-tailwind-starter-kit">
-            mhaidarhanif/remix-tailwind-starter-kit
-          </a>
-        </li>
-        <li>
-          Preview demo:{' '}
-          <a href="https://remix-tailwind-starter-kit.vercel.app">
-            remix-tailwind-starter-kit.vercel.app
-          </a>
-        </li>
-      </ul>
+
       <h2>Stacks</h2>
       <ul>
         {data.stacks.map((item) => {
