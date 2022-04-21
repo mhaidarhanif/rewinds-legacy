@@ -15,7 +15,7 @@ export const loader: LoaderFunction = async () => {
   return json(data);
 };
 
-export default function RequestsRestRoute() {
+export default function RequestsRESTRoute() {
   const data = useLoaderData();
 
   return (
