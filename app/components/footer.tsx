@@ -13,6 +13,7 @@ export const Footer: FunctionComponent<FooterProps> = () => {
         <p className="space-x-1">
           <span>&copy;</span>
           <span>{year}</span>
+          <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor>
           <span>•</span>
           <Anchor href="https://github.com/mhaidarhanif/rewinds">
             <code>rewinds</code>
