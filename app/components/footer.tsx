@@ -1,5 +1,6 @@
-import type { FunctionComponent } from 'react';
 import { Anchor } from '~/components';
+
+import type { FunctionComponent } from 'react';
 
 interface FooterProps {}
 
