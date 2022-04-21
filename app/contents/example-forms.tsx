@@ -8,10 +8,12 @@ import {
   Button,
   Select,
 } from '@vechaiui/react';
-import { FunctionComponent, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { H2 } from '~/components';
+
+import type { FunctionComponent } from 'react';
 
 interface ExampleFormsProps {}
 

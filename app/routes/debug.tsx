@@ -1,15 +1,11 @@
-import {
-  ActionFunction,
-  json,
-  LoaderFunction,
-  redirect,
-  useLoaderData,
-} from 'remix';
+import { json, redirect, useLoaderData } from 'remix';
 
 import { H1, H2, Pre, RadixScrollArea } from '~/components';
 import { configAvailableThemes, configApp, configThemes } from '~/configs';
 import { getSession, commitSession } from '~/sessions';
-import { Theme } from '~/types';
+
+import type { ActionFunction, LoaderFunction } from 'remix';
+import type { Theme } from '~/types';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));

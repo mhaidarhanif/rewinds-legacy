@@ -1,8 +1,10 @@
-import { json, LoaderFunction, useLoaderData } from 'remix';
+import { json, useLoaderData } from 'remix';
 
 import { Anchor } from '~/components';
 import { dataStacks } from '~/data';
-import { StackItem } from '~/types';
+
+import type { LoaderFunction } from 'remix';
+import type { StackItem } from '~/types';
 
 type LoaderData = {
   stacks: StackItem[];

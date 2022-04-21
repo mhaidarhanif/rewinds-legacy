@@ -1,7 +1,9 @@
-import { json, LoaderFunction, useLoaderData } from 'remix';
+import { json, useLoaderData } from 'remix';
 
 import { dataExampleComponents, dataExampleUtilities } from '~/data';
-import { ComponentItem, UtilityItem } from '~/types';
+
+import type { LoaderFunction } from 'remix';
+import type { ComponentItem, UtilityItem } from '~/types';
 
 type LoaderData = {
   exampleComponents: ComponentItem[];

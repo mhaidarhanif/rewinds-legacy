@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-
 import { Button, ButtonGroup, H2 } from '~/components';
 import { useNotification, useToast } from '~/hooks';
+
+import type { FunctionComponent } from 'react';
 
 interface ExampleNotificationsProps {}
 

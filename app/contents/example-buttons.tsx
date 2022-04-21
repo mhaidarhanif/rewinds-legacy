@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
-
 import { Button, ButtonGroup, H2, H3, RemixLink } from '~/components';
+
+import type { FunctionComponent } from 'react';
 
 interface ExampleButtonsProps {}
 

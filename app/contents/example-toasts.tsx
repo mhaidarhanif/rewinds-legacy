@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-
 import { Button, H2 } from '~/components';
 import { useToast } from '~/hooks';
+
+import type { FunctionComponent } from 'react';
 
 interface ExampleToastsProps {}
 

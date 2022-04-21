@@ -1,5 +1,6 @@
 import { useNProgress } from '@tanem/react-nprogress';
-import { FunctionComponent } from 'react';
+
+import type { FunctionComponent } from 'react';
 
 interface NProgressProps {
   isAnimating: any;

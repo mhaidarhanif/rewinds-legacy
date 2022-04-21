@@ -2,11 +2,8 @@ import { useEffect, useState } from 'react';
 import {
   json,
   Links,
-  LinksFunction,
   LiveReload,
-  LoaderFunction,
   Meta,
-  MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -18,6 +15,8 @@ import {
 import { H1, Layout, NProgress, ThemeProvider } from '~/components';
 import { configApp } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
+
+import type { LinksFunction, LoaderFunction, MetaFunction } from 'remix';
 
 import styles from '~/styles/app.css';
 

@@ -4,10 +4,10 @@ import { Button, Divider, Icon } from '@vechaiui/react';
 import React from 'react';
 
 import { RemixNavLink } from '~/components';
+import { configNavigationLinksMenu } from '~/configs';
 import { clsx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
-import { configNavigationLinksMenu } from '~/configs';
 
 export { Menu } from '@headlessui/react';
 

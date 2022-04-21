@@ -1,7 +1,8 @@
 import { Alert } from '@vechaiui/react';
-import { FunctionComponent } from 'react';
 
 import { H2 } from '~/components';
+
+import type { FunctionComponent } from 'react';
 
 interface ExampleAlertsProps {}
 

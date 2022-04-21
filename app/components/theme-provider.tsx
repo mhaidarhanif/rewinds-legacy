@@ -1,8 +1,4 @@
-import {
-  VechaiProvider,
-  extendTheme,
-  VechaiProviderProps,
-} from '@vechaiui/react';
+import { VechaiProvider, extendTheme } from '@vechaiui/react';
 import {
   createContext,
   useContext,
@@ -14,7 +10,9 @@ import {
 import { useFetcher } from 'remix';
 
 import { configApp, configThemes } from '~/configs';
-import { Theme } from '~/types';
+
+import type { VechaiProviderProps } from '@vechaiui/react';
+import type { Theme } from '~/types';
 
 export type ThemeContextType = {
   colorScheme?: string;

@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
-
 import { Footer, NavigationBar } from '~/components';
+
+import type { FunctionComponent } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;

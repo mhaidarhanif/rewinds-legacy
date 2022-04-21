@@ -1,4 +1,4 @@
-import { StackItem } from '~/types';
+import type { StackItem } from '~/types';
 
 export const dataStacks: StackItem[] = [
   {

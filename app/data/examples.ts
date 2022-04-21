@@ -1,4 +1,4 @@
-import { ComponentItem, UtilityItem } from '~/types';
+import type { ComponentItem, UtilityItem } from '~/types';
 
 export const dataExampleComponents: ComponentItem[] = [
   { name: 'Button' },

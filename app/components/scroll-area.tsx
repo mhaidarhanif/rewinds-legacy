@@ -1,5 +1,6 @@
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import { FunctionComponent } from 'react';
+
+import type { FunctionComponent } from 'react';
 
 interface ScrollAreaProps {}
 

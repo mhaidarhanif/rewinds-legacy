@@ -1,7 +1,9 @@
-import { json, LoaderFunction, useLoaderData } from 'remix';
+import { json, useLoaderData } from 'remix';
 
 import { H1, Pre, RadixScrollArea } from '~/components';
 import { sleep } from '~/utils';
+
+import type { LoaderFunction } from 'remix';
 
 export const loader: LoaderFunction = async () => {
   const url = 'https://echo.hoppscotch.io';

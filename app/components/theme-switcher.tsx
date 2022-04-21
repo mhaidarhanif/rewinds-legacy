@@ -3,10 +3,12 @@ import { AdjustmentsIcon } from '@heroicons/react/solid';
 import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
 import * as React from 'react';
 
-import { useTheme, ThemeContextType } from '~/components/theme-provider';
+import { useTheme } from '~/components/theme-provider';
 import { configAvailableThemes, configAvailableRadiuses } from '~/configs';
 import { useToast } from '~/hooks';
 import { clsx } from '~/utils';
+
+import type { ThemeContextType } from '~/components/theme-provider';
 
 export const ThemeSwitcher = () => {
   const {
