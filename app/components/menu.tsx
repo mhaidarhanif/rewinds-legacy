@@ -7,22 +7,11 @@ import { RemixNavLink } from '~/components';
 import { clsx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
+import { configNavigationLinksMenu } from '~/configs';
 
 export { Menu } from '@headlessui/react';
 
 interface MenuNavigationProps {}
-
-const navigationLinksData = [
-  { text: 'Home', to: '/' },
-  { text: 'About', to: '/about' },
-  { text: 'Examples', to: '/examples' },
-  { text: 'Debug', to: '/debug' },
-  { text: 'REST', to: '/rest' },
-  { text: 'GraphQL', to: '/graphql' },
-  { text: 'Sign up', to: '/signup' },
-  { text: 'Sign in', to: '/signin' },
-  { text: 'Sign out', to: '/signout' },
-];
 
 export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
   return (
@@ -57,7 +46,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
           >
             <div className="px-1 py-1">
               <div role="group">
-                {navigationLinksData.map((item) => {
+                {configNavigationLinksMenu.map((item) => {
                   return (
                     <Menu.Item key={item.to}>
                       {({ active, disabled }) => {
