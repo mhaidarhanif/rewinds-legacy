@@ -1,5 +1,6 @@
 export * from './anchor';
 export * from './button';
+export * from './collapsible';
 export * from './footer';
 export * from './heading';
 export * from './layout';

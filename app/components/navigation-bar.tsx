@@ -1,10 +1,18 @@
 import { MenuIcon } from '@heroicons/react/solid';
 import { Icon } from '@vechaiui/react';
 import clsx from 'clsx';
-import { FunctionComponent } from 'react';
+import { useState } from 'react';
 
-import { Button, RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
+import {
+  Button,
+  Collapsible,
+  RemixLink,
+  RemixNavLink,
+  ThemeSwitcher,
+} from '~/components';
 import { configNavigationLinks } from '~/configs';
+
+import type { FunctionComponent } from 'react';
 
 interface NavigationBarProps {}
 
@@ -12,7 +20,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   return (
     <nav
       id="navigation-bar"
-      className="mt-4 select-none rounded-base border-gray-200 bg-neutral-50 p-4 dark:bg-neutral-800"
+      className="mt-2 select-none rounded-base border-gray-200 bg-neutral-50 p-2 dark:bg-neutral-800 md:mt-2 md:p-4"
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="flex space-x-4">
@@ -84,24 +92,30 @@ interface NavigationBarMenuProps {}
 export const NavigationBarMenu: FunctionComponent<
   NavigationBarMenuProps
 > = () => {
-  return (
-    <div id="navigation-bar-menu" className="select-none lg:hidden">
-      {/* <IconButton
-        variant="solid"
-        color="primary"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-      >
-        <Icon as={MenuIcon} label="Menu" className="h-4 w-4" />
-      </IconButton> */}
+  const [open, setOpen] = useState(false);
 
-      <Button
-        variant="solid"
-        color="primary"
-        leftIcon={<Icon as={MenuIcon} label="gift" className="mr-1 h-4 w-4" />}
-      >
-        Menu
-      </Button>
-    </div>
+  return (
+    <Collapsible.Root
+      id="navigation-bar-menu"
+      className="select-none"
+      open={open}
+      onOpenChange={setOpen}
+    >
+      <Collapsible.Trigger asChild>
+        <Button
+          variant="solid"
+          color="primary"
+          leftIcon={
+            <Icon as={MenuIcon} label="gift" className="mr-1 h-4 w-4" />
+          }
+        >
+          Menu
+        </Button>
+      </Collapsible.Trigger>
+
+      <Collapsible.Content>
+        <p>Hello</p>
+      </Collapsible.Content>
+    </Collapsible.Root>
   );
 };
