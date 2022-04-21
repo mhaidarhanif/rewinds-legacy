@@ -17,10 +17,10 @@ export default function AboutRoute() {
 
   return (
     <div className="prose dark:prose-invert">
-      <h1>About this project</h1>
+      <h1>About Rewinds</h1>
       <p>
-        Remix Tailwind Starter Kit is a demo project template you can freely
-        use.
+        Rewinds is a Remix Tailwind Starter Kit is a demo project template you
+        can freely use.
       </p>
       <h2>Features</h2>
       <ul>

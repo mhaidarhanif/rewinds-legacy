@@ -22,7 +22,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
             to="/"
             className="text-2xl font-black tracking-wide hover:text-primary-500"
           >
-            RTSK
+            Rewinds
           </RemixLink>
         </div>
 

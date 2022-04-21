@@ -27,8 +27,9 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Remix Tailwind Starter Kit by @mhaidarhanif',
-    description: 'Remix starter kit with Tailwind CSS family of libraries',
+    title: 'Rewinds - Remix Tailwind Starter Kit - by @mhaidarhanif',
+    description:
+      'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
     charset: 'utf-8',
     viewport: 'width=device-width,initial-scale=1',
   };

@@ -1,6 +1,6 @@
-# Remix Tailwind Starter Kit
+# Rewinds - Remix Tailwind Starter Kit
 
-Remix starter kit with Tailwind CSS v3 family of libraries.
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
 
 Example demo to combine the best Tailwind-related ecosystem such as Tailwind
 CSS, Headless UI, Radix UI, Vechai UI, and more.

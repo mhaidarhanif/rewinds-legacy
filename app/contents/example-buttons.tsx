@@ -119,7 +119,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           HTML Button
         </button>
         <a
-          href="https://rtsk.vercel.app"
+          href="https://rewinds.vercel.app"
           target="_blank"
           rel="noreferrer"
           className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 hover:border-primary-200"

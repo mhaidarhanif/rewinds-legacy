@@ -6,7 +6,7 @@ export const { getSession, commitSession, destroySession } =
   createCookieSessionStorage({
     // a Cookie from `createCookie` or the CookieOptions to create one
     cookie: {
-      name: '__rtsk_session',
+      name: '__session',
 
       // all of these are optional
       // domain: "mhaidarhanif.com",
