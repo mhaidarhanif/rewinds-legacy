@@ -15,7 +15,7 @@ interface MenuNavigationProps {}
 
 export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
   return (
-    <div className="flex w-full flex-wrap">
+    <div className="flex w-full select-none flex-wrap">
       <Menu as="div" className="relative inline-block ">
         <Menu.Button
           as={Button}
@@ -56,8 +56,9 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
                             className={({ isActive }) => {
                               return clsx(
                                 'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold focus:outline-none',
-                                isActive && 'bg-primary-50 text-primary-500',
-                                active && 'bg-primary-100',
+                                isActive &&
+                                  'bg-primary-50 text-primary-500 dark:bg-neutral-900 dark:text-primary-500',
+                                active && 'bg-primary-100 dark:bg-primary-900',
                                 disabled &&
                                   'disabled:cursor-not-allowed disabled:opacity-60'
                               );
