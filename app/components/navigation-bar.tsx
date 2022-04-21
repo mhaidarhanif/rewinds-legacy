@@ -1,15 +1,8 @@
-import { MenuIcon } from '@heroicons/react/solid';
-import { Icon } from '@vechaiui/react';
 import clsx from 'clsx';
-import { useState } from 'react';
 
-import {
-  Button,
-  Collapsible,
-  RemixLink,
-  RemixNavLink,
-  ThemeSwitcher,
-} from '~/components';
+import { MenuNavigation } from './menu';
+
+import { RemixLink, RemixNavLink, ThemeSwitcher } from '~/components';
 import { configNavigationLinks } from '~/configs';
 
 import type { FunctionComponent } from 'react';
@@ -92,30 +85,5 @@ interface NavigationBarMenuProps {}
 export const NavigationBarMenu: FunctionComponent<
   NavigationBarMenuProps
 > = () => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <Collapsible.Root
-      id="navigation-bar-menu"
-      className="select-none"
-      open={open}
-      onOpenChange={setOpen}
-    >
-      <Collapsible.Trigger asChild>
-        <Button
-          variant="solid"
-          color="primary"
-          leftIcon={
-            <Icon as={MenuIcon} label="gift" className="mr-1 h-4 w-4" />
-          }
-        >
-          Menu
-        </Button>
-      </Collapsible.Trigger>
-
-      <Collapsible.Content>
-        <p>Hello</p>
-      </Collapsible.Content>
-    </Collapsible.Root>
-  );
+  return <MenuNavigation />;
 };

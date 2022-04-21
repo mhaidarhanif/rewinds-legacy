@@ -1,11 +1,9 @@
-import {
-  Button as VechaiButton,
-  ButtonProps,
-  ButtonGroupProps,
-} from '@vechaiui/react';
-import { FunctionComponent } from 'react';
+import { Button as VechaiButton } from '@vechaiui/react';
 
 import { clsx } from '~/utils';
+
+import type { ButtonProps, ButtonGroupProps } from '@vechaiui/react';
+import type { FunctionComponent } from 'react';
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
   const { children } = props;
