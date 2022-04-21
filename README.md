@@ -61,6 +61,8 @@ Setup the environment variables here and Vercel if want to deploy there:
 SESSION_SECRET=type_the_secret_here
 ```
 
+- `SESSION_SECRET` is used to persist the themes on browser sessions.
+
 Afterwards, start the Remix development server like so:
 
 ```sh

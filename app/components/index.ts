@@ -5,6 +5,7 @@ export * from './divider';
 export * from './dropdown-menu';
 export * from './footer';
 export * from './heading';
+export * from './image';
 export * from './layout';
 export * from './menu';
 export * from './navigation-bar';

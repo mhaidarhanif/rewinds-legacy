@@ -1,6 +1,6 @@
 import { json, useLoaderData } from 'remix';
 
-import { Anchor } from '~/components';
+import { Anchor, Image } from '~/components';
 import { dataStacks } from '~/data';
 
 import type { LoaderFunction } from 'remix';
@@ -21,9 +21,14 @@ export default function AboutRoute() {
     <div className="prose dark:prose-invert">
       <h1>About Rewinds</h1>
       <p>
-        Rewinds is a Remix Tailwind Starter Kit is a demo project template you
-        can freely use.
+        <Anchor href="https://rewinds.mhaidarhanif.com">
+          Rewinds = Remix Tailwind Starter Kit
+        </Anchor>{' '}
+        by <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor>
       </p>
+      <p>It is a demo project template you can freely use for any purpose</p>
+
+      <Image src="/screenshot.png" alt="Screenshot" />
 
       <h2>Links</h2>
       <ul>
