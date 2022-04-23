@@ -14,18 +14,6 @@ module.exports = {
         success: colors.green,
         warning: colors.yellow,
         error: colors.red,
-        brand: {
-          50: '#f2fbfb',
-          100: '#e6f7f7',
-          200: '#bfeaea',
-          300: '#99dddd',
-          400: '#4dc4c4',
-          500: '#00aaaa',
-          600: '#009999',
-          700: '#008080',
-          800: '#006666',
-          900: '#005353',
-        },
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',

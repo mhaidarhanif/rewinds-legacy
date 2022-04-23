@@ -12,7 +12,7 @@ import {
   useTransition,
 } from 'remix';
 
-import { H1, Layout, NProgress, ThemeProvider } from '~/components';
+import { H1, NProgress, ThemeProvider } from '~/components';
 import { configApp } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
 
@@ -21,16 +21,69 @@ import type { LinksFunction, LoaderFunction, MetaFunction } from 'remix';
 import styles from '~/styles/app.css';
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [
+    {
+      rel: 'shortcut icon',
+      href: '/favicons/favicon.ico',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicons/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicons/favicon-16x16.png',
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/favicons/apple-touch-icon.png',
+    },
+    {
+      rel: 'mask-icon',
+      href: '/favicons/safari-pinned-tab.svg',
+      color: '#0081f1',
+    },
+    {
+      rel: 'manifest',
+      href: '/site.webmanifest',
+    },
+    {
+      href: 'https://fontbit.io',
+      rel: 'preconnect',
+    },
+    {
+      href: 'https://fontbit.io/css2?family=Lato&display=swap',
+      rel: 'stylesheet',
+    },
+    {
+      rel: 'stylesheet',
+      href: styles,
+    },
+  ];
 };
 
 export const meta: MetaFunction = () => {
   return {
+    charset: 'utf-8',
+    viewport: 'width=device-width,initial-scale=1',
     title: 'Rewinds - Remix Tailwind Starter Kit - by @mhaidarhanif',
     description:
       'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
-    charset: 'utf-8',
-    viewport: 'width=device-width,initial-scale=1',
+    name: 'Rewinds',
+    url: 'https://rewinds.mhaidarhanif.com/',
+    route: '',
+    color: '#ffffff',
+    ogImageAlt: 'Rewinds - Remix Tailwind Starter Kit',
+    ogImageType: 'image/jpeg',
+    ogImageUrl: 'assets/opengraph/rewinds-og.jpg',
+    twiterImageUrl: 'assets/opengraph/rewinds-og.jpg',
+    fbAppId: '',
+    locale: 'en_US',
   };
 };
 
@@ -86,10 +139,10 @@ export function Document({ children }: DocumentProps) {
         <Links />
       </head>
 
-      <body>
+      <body className="scroll-smooth">
         <ThemeProvider specifiedTheme={data?.theme}>
           <NProgress isAnimating={isTransitioning} />
-          <Layout>{children}</Layout>
+          {children}
         </ThemeProvider>
 
         <ScrollRestoration />
