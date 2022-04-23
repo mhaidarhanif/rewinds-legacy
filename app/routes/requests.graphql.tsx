@@ -2,6 +2,7 @@ import { request, gql } from 'graphql-request';
 import { json, useLoaderData } from 'remix';
 
 import { H1, Pre, RadixScrollArea } from '~/components';
+import { Layout } from '~/layouts';
 import { sleep } from '~/utils';
 
 import type { LoaderFunction } from 'remix';
@@ -30,11 +31,11 @@ export default function RequestsGraphQLRoute() {
   const data = useLoaderData();
 
   return (
-    <div>
+    <Layout>
       <H1>Data from GraphQL</H1>
       <RadixScrollArea>
         <Pre data={data} />
       </RadixScrollArea>
-    </div>
+    </Layout>
   );
 }

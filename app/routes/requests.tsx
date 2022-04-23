@@ -1,8 +1,17 @@
 import { RemixLink } from '~/components';
+import { Layout } from '~/layouts';
+
+import type { SEOHandle } from '~/utils';
+
+export const handle: SEOHandle = {
+  getSitemapEntries: () => {
+    return [{ route: `/requests`, priority: 0.8 }];
+  },
+};
 
 export default function RequestsRoute() {
   return (
-    <div className="prose dark:prose-invert">
+    <Layout className="prose dark:prose-invert">
       <h1>Example requests</h1>
       <ul>
         <li>
@@ -12,6 +21,6 @@ export default function RequestsRoute() {
           <RemixLink to="graphql">GraphQL</RemixLink>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

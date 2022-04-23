@@ -1,7 +1,17 @@
+import { Layout } from '~/layouts';
+
+import type { SEOHandle } from '~/utils';
+
+export const handle: SEOHandle = {
+  getSitemapEntries: () => {
+    return [{ route: `/signup`, priority: 0.8 }];
+  },
+};
+
 export default function SignUpRoute() {
   return (
-    <div>
+    <Layout>
       <h1>Create your new account</h1>
-    </div>
+    </Layout>
   );
 }

@@ -1,13 +1,16 @@
 import { json, useLoaderData } from 'remix';
 
 import { dataExampleComponents, dataExampleUtilities } from '~/data';
+import { Layout } from '~/layouts';
 
 import type { LoaderFunction } from 'remix';
 import type { ComponentItem, UtilityItem } from '~/types';
+import type { SEOHandle } from '~/utils';
 
-type LoaderData = {
-  exampleComponents: ComponentItem[];
-  exampleUtilities: UtilityItem[];
+export const handle: SEOHandle = {
+  getSitemapEntries: () => {
+    return [{ route: `/examples`, priority: 0.9 }];
+  },
 };
 
 export const loader: LoaderFunction = async () => {
@@ -17,11 +20,16 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
+type LoaderData = {
+  exampleComponents: ComponentItem[];
+  exampleUtilities: UtilityItem[];
+};
+
 export default function ExamplesRoute() {
   const data = useLoaderData<LoaderData>();
 
   return (
-    <div className="prose dark:prose-invert">
+    <Layout className="prose dark:prose-invert">
       <h1>Examples</h1>
 
       <h2>Example components</h2>
@@ -39,6 +47,6 @@ export default function ExamplesRoute() {
           return <li key={availableUtility.name}>{availableUtility.name}</li>;
         })}
       </ul>
-    </div>
+    </Layout>
   );
 }

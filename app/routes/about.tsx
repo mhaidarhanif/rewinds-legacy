@@ -2,6 +2,7 @@ import { json, useLoaderData } from 'remix';
 
 import { Anchor, Image } from '~/components';
 import { dataStacks } from '~/data';
+import { Layout } from '~/layouts';
 
 import type { LoaderFunction } from 'remix';
 import type { StackItem } from '~/types';
@@ -18,7 +19,7 @@ export default function AboutRoute() {
   const data = useLoaderData<LoaderData>();
 
   return (
-    <div className="prose dark:prose-invert">
+    <Layout className="prose dark:prose-invert">
       <h1>About Rewinds</h1>
       <p>
         <Anchor href="https://rewinds.mhaidarhanif.com">
@@ -72,6 +73,6 @@ export default function AboutRoute() {
           awesome-tailwindcss
         </Anchor>
       </p>
-    </div>
+    </Layout>
   );
 }

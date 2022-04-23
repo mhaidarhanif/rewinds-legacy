@@ -9,7 +9,6 @@ export * from './footer';
 export * from './heading';
 export * from './icon';
 export * from './image';
-export * from './layout';
 export * from './logo';
 export * from './menu';
 export * from './navigation-bar';
