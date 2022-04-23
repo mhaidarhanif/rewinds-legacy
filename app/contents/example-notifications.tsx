@@ -34,7 +34,7 @@ export const ExampleNotifications: FunctionComponent<
     <div>
       <H2>Notifications</H2>
 
-      <ButtonGroup>
+      <ButtonGroup variant="light">
         <Button
           color="primary"
           onClick={() => {

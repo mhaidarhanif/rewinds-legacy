@@ -1,4 +1,4 @@
-import { Button, H2 } from '~/components';
+import { Button, ButtonGroup, H2 } from '~/components';
 import { useToast } from '~/hooks';
 
 import type { FunctionComponent } from 'react';
@@ -19,7 +19,7 @@ export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
     <article>
       <H2>Toasts</H2>
 
-      <section className="flex-section">
+      <ButtonGroup variant="solid">
         <Button
           color="primary"
           onClick={() => {
@@ -60,7 +60,7 @@ export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
         >
           Error
         </Button>
-      </section>
+      </ButtonGroup>
     </article>
   );
 };
