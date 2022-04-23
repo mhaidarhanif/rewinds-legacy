@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import clsx from 'clsx';
+import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
 
@@ -16,7 +16,7 @@ export const Anchor: FunctionComponent<AnchorProps> = ({
 }) => {
   return (
     <a
-      className={clsx('hover:underline', className)}
+      className={classx('hover:underline', className)}
       href={href}
       target="_blank"
       rel="noreferrer"

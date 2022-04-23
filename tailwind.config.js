@@ -39,15 +39,15 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
-    require('@vechaiui/core')({
-      cssBase: true,
-      colors: ['info', 'success', 'warning', 'error'],
-    }),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         { 'text-shadow': (value) => ({ textShadow: value }) },
         { values: theme('textShadow') }
       );
+    }),
+    require('@vechaiui/core')({
+      cssBase: true,
+      colors: ['info', 'success', 'warning', 'error'],
     }),
   ],
 };

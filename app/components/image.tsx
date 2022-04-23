@@ -1,10 +1,29 @@
+import { classx } from '~/utils';
+
 import type { FunctionComponent } from 'react';
 
 interface ImageProps {
-  src: string;
   alt: string;
+  src?: string;
+  height?: number | string;
+  width?: number | string;
+  className?: string;
 }
 
-export const Image: FunctionComponent<ImageProps> = ({ src, alt }) => {
-  return <img src={src} alt={alt} />;
+export const Image: FunctionComponent<ImageProps> = ({
+  alt,
+  src,
+  height,
+  width,
+  className,
+}) => {
+  return (
+    <img
+      alt={alt}
+      src={src}
+      height={height}
+      width={width}
+      className={classx('rounded-md object-contain', className)}
+    />
+  );
 };

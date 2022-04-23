@@ -9,7 +9,7 @@ import {
 } from 'react';
 import { useFetcher } from 'remix';
 
-import { configApp, configThemes } from '~/configs';
+import { configApp, configAvailableThemes, configThemes } from '~/configs';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
 import type { Theme } from '~/types';
@@ -29,6 +29,9 @@ export const prefersLightMQ = '(prefers-color-scheme: light)';
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
+/**
+ * ThemeProvider wrapper
+ */
 export function ThemeProvider({
   specifiedTheme = configApp?.theme,
   children,
@@ -111,27 +114,39 @@ export function ThemeProvider({
   );
 }
 
-export const useTheme = (): ThemeContextType => {
-  return (
-    useContext(ThemeContext) || {
-      colorScheme: configApp?.theme.colorScheme,
-      density: configApp?.theme.density,
-      radius: configApp?.theme.radius,
-      cursorPointer: configApp?.theme.cursorPointer,
-      setColorScheme: () => {
-        return null;
-      },
-      setRadius: () => {
-        return null;
-      },
-      setCursorPointer: () => {
-        return null;
-      },
-      setDensity: () => {
-        return null;
-      },
-    }
-  );
+/**
+ * useTheme hook
+ */
+export const useTheme = () => {
+  const theme = useContext(ThemeContext) || {
+    colorScheme: configApp?.theme.colorScheme,
+    density: configApp?.theme.density,
+    radius: configApp?.theme.radius,
+    cursorPointer: configApp?.theme.cursorPointer,
+    setColorScheme: () => {
+      return null;
+    },
+    setRadius: () => {
+      return null;
+    },
+    setCursorPointer: () => {
+      return null;
+    },
+    setDensity: () => {
+      return null;
+    },
+  };
+
+  const currentTheme = configAvailableThemes.find((item) => {
+    return item.id === theme.colorScheme;
+  });
+
+  return {
+    ...theme,
+    ...currentTheme,
+    isLight: currentTheme?.type === 'light',
+    isDark: currentTheme?.type === 'dark',
+  };
 };
 
 export default ThemeProvider;

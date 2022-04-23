@@ -6,7 +6,7 @@ import * as React from 'react';
 import { useTheme } from '~/components/theme-provider';
 import { configAvailableThemes, configAvailableRadiuses } from '~/configs';
 import { useToast } from '~/hooks';
-import { clsx } from '~/utils';
+import { classx } from '~/utils';
 
 import type { ThemeContextType } from '~/components/theme-provider';
 
@@ -33,12 +33,7 @@ export const ThemeSwitcher = () => {
       {({ open }) => {
         return (
           <>
-            <Popover.Button
-              as={IconButton}
-              size="md"
-              color="primary"
-              variant="solid"
-            >
+            <Popover.Button as={IconButton} size="md" color="primary">
               <Icon
                 as={AdjustmentsIcon}
                 label="Preferences"
@@ -56,7 +51,7 @@ export const ThemeSwitcher = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Popover.Panel className="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
+              <Popover.Panel className="absolute right-0 z-50 mt-2 w-64 origin-top-right rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
                 <div className="flow-root">
                   <span className="text-md flex items-center font-medium">
                     Theme Appearance
@@ -88,7 +83,7 @@ export const ThemeSwitcher = () => {
                               value={theme.id}
                               style={{ backgroundColor: theme.backgroundColor }}
                               className={({ checked }) => {
-                                return clsx(
+                                return classx(
                                   'mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-full border-2 p-0',
                                   `${
                                     checked
@@ -129,7 +124,7 @@ export const ThemeSwitcher = () => {
                               key={item.name}
                               value={item.value}
                               className={({ checked }) => {
-                                return clsx(
+                                return classx(
                                   'relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold',
                                   `${
                                     checked

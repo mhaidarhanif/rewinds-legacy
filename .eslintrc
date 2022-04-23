@@ -24,6 +24,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": "off",
     "react/no-unescaped-entities": "off",
+    "react/require-default-props": "off",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
       "error",
