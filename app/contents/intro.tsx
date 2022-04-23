@@ -12,7 +12,12 @@ export const Intro = () => {
       <p>
         The goal is to have several examples and demos to combine the best
         Tailwind-related ecosystem such as Tailwind CSS v3, Tailwind UI,
-        Headless UI, Radix UI, Vechai UI, and more.
+        Headless UI, Radix UI, Vechai UI, and more. Another thing is that we
+        want to encourage to follow{' '}
+        <Anchor href="https://web.dev/accessibility">
+          the accessibility guidelines
+        </Anchor>
+        .
       </p>
     </div>
   );

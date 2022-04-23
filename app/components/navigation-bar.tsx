@@ -44,10 +44,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
                       to={navItem.to}
                       className={({ isActive }) => {
                         return classx(
-                          isActive &&
-                            'bg-neutral-100 text-primary-500 dark:bg-neutral-900',
-                          'rounded-base p-2 font-bold',
-                          'hover:bg-primary-100 dark:hover:bg-primary-900'
+                          isActive && 'navlink-active',
+                          'navlink-hover rounded-base p-2 font-bold'
                         );
                       }}
                     >

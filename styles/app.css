@@ -15,6 +15,18 @@
 }
 
 @layer components {
+  .navlink-active {
+    @apply bg-neutral-100 text-primary-500 dark:bg-neutral-900;
+  }
+
+  .navlink-hover {
+    @apply hover:bg-primary-100 dark:hover:bg-primary-900;
+  }
+
+  .navlink-hover-menu {
+    @apply bg-primary-100 dark:bg-primary-900;
+  }
+
   .flex-section {
     @apply flex w-full flex-wrap gap-2 py-1;
   }
