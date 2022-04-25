@@ -13,78 +13,36 @@ import {
 } from 'remix';
 
 import { H1, NProgress, ThemeProvider } from '~/components';
-import { configApp } from '~/configs';
+import { configApp, configDocumentLinks } from '~/configs';
 import { commitSession, getSession } from '~/sessions';
+import { createMetaData, getEnv } from '~/utils';
 
-import type { LinksFunction, LoaderFunction, MetaFunction } from 'remix';
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+  HeadersFunction,
+} from 'remix';
 
-import styles from '~/styles/app.css';
+type LoaderData = {
+  user: any;
+  theme: any;
+  error: any;
+  ENV: ReturnType<typeof getEnv>;
+};
+
+export const headers: HeadersFunction = () => {
+  return {
+    'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
+  };
+};
 
 export const links: LinksFunction = () => {
-  return [
-    {
-      rel: 'shortcut icon',
-      href: '/favicons/favicon.ico',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      href: '/favicons/favicon-32x32.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      href: '/favicons/favicon-16x16.png',
-    },
-    {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      href: '/favicons/apple-touch-icon.png',
-    },
-    {
-      rel: 'mask-icon',
-      href: '/favicons/safari-pinned-tab.svg',
-      color: '#0081f1',
-    },
-    {
-      rel: 'manifest',
-      href: '/site.webmanifest',
-    },
-    {
-      href: 'https://fontbit.io',
-      rel: 'preconnect',
-    },
-    {
-      href: 'https://fontbit.io/css2?family=Lato&display=swap',
-      rel: 'stylesheet',
-    },
-    {
-      rel: 'stylesheet',
-      href: styles,
-    },
-  ];
+  return configDocumentLinks;
 };
 
 export const meta: MetaFunction = () => {
-  return {
-    charset: 'utf-8',
-    viewport: 'width=device-width,initial-scale=1',
-    title: 'Rewinds - Remix Tailwind Starter Kit - by @mhaidarhanif',
-    description:
-      'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
-    name: 'Rewinds',
-    url: 'https://rewinds.mhaidarhanif.com/',
-    route: '',
-    color: '#ffffff',
-    ogImageAlt: 'Rewinds - Remix Tailwind Starter Kit',
-    ogImageType: 'image/jpeg',
-    ogImageUrl: 'assets/opengraph/rewinds-og.jpg',
-    twiterImageUrl: 'assets/opengraph/rewinds-og.jpg',
-    fbAppId: '',
-    locale: 'en_US',
-  };
+  return createMetaData();
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -96,10 +54,11 @@ export const loader: LoaderFunction = async ({ request }) => {
     ? JSON.parse(themeFromSession)
     : configApp?.theme;
 
-  const data = {
+  const data: LoaderData = {
     user: await session.get('user'),
     theme: themeParsed,
     error: await session.get('error'),
+    ENV: getEnv(),
   };
 
   return json(data, {
@@ -122,7 +81,7 @@ interface DocumentProps {
 }
 
 export function Document({ children }: DocumentProps) {
-  const data = useLoaderData();
+  const data = useLoaderData<LoaderData>();
   const transition = useTransition();
 
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -148,6 +107,13 @@ export function Document({ children }: DocumentProps) {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
+          }}
+        />
       </body>
     </html>
   );

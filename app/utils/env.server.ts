@@ -8,7 +8,11 @@ const processEnv = {
   APP_ENV: process.env.APP_ENV /* local | development | staging | production */,
   API_URL: process.env.API_URL /* localhost | api.domain.com */,
   VERCEL: process.env.VERCEL,
-  SPLITBEE_ID: process.env.SPLITBEE_ID,
+  GRAPHQL_ENDPOINT: process.env.GRAPHQL_ENDPOINT,
+  GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
+  CONVERTKIT_API_KEY: process.env.CONVERTKIT_API_KEY,
+  GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
+  // Never expose the SESSION_SECRET!
 };
 
 export function getEnv() {
