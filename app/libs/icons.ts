@@ -1,11 +1,20 @@
 import {
-  // General
+  List as IconMenu,
+  // External links
+  // DiscordLogo as IconDiscord,
+  // GithubLogo as IconGitHub,
+  // LinkedinLogo as IconLinkedIn,
+  // MediumLogo as IconMedium,
+  // TelegramLogo as IconTelegram,
+  // TwitterLogo as IconTwitter,
+  // YoutubeLogo as IconYouTube,
+} from 'phosphor-react';
+import {
   FaCircle as IconCircle,
   FaGlobe as IconWebsite,
-  // Theme
-  FaSun as IconDark,
   FaMoon as IconLight,
-  // Social media
+  FaSun as IconDark,
+  // External links
   FaTelegram as IconTelegram,
   FaTwitter as IconTwitter,
   FaDiscord as IconDiscord,
@@ -23,6 +32,7 @@ export {
   IconLight,
   IconLinkedIn,
   IconMedium,
+  IconMenu,
   IconTelegram,
   IconTwitter,
   IconWebsite,

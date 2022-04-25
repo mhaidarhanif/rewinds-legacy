@@ -6,6 +6,7 @@ import {
   IconLight,
   IconLinkedIn,
   IconMedium,
+  IconMenu,
   IconTelegram,
   IconTwitter,
   IconWebsite,
@@ -21,11 +22,12 @@ import type { FunctionComponent } from 'react';
 export const iconMaps = {
   // General
   circle: <IconCircle />,
+  menu: <IconMenu />,
   website: <IconWebsite />,
   // Theme
   light: <IconLight />,
   dark: <IconDark />,
-  // Social media
+  // External links
   telegram: <IconTelegram />,
   twitter: <IconTwitter />,
   discord: <IconDiscord />,
