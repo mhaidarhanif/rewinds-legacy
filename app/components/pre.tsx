@@ -6,7 +6,7 @@ interface PreProps {
 
 export const Pre: FunctionComponent<PreProps> = ({ children }) => {
   return (
-    <pre className="rounded-base bg-primary-900/10 p-2">
+    <pre className="rounded-base bg-primary-900/10 p-2 text-xs">
       {JSON.stringify(children, null, 2)}
     </pre>
   );

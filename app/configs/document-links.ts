@@ -1,4 +1,6 @@
-import styles from '~/styles/app.css';
+import styles from '~/styles/out.css';
+
+const fontFamiles = `family=Archivo:wght@400;700;900`;
 
 export const configDocumentLinks = [
   {
@@ -36,7 +38,7 @@ export const configDocumentLinks = [
     rel: 'preconnect',
   },
   {
-    href: 'https://fontbit.io/css2?family=Lato&display=swap',
+    href: `https://fontbit.io/css2?${fontFamiles}&display=swap`,
     rel: 'stylesheet',
   },
   {

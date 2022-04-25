@@ -12,7 +12,7 @@ export const Logo: FunctionComponent<LogoProps> = () => {
 
 export const LogoSpan = () => {
   return (
-    <span className="text-2xl tracking-tighter text-primary-500 hover:text-primary-600 sm:text-3xl">
+    <span className="text-2xl font-black tracking-[-0.1em] text-primary-500 hover:text-primary-600 sm:text-3xl">
       Rewinds
     </span>
   );

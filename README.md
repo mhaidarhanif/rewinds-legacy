@@ -32,7 +32,7 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
 - PostCSS v8
 - Fonts
   - Google Fonts
-  - Fontbit
+  - Fontbit CDN
 - Icons
   - Heroicons v1
   - Font Awesome
