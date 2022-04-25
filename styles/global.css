@@ -21,6 +21,10 @@
 }
 
 @layer components {
+  .btn {
+    @apply font-bold;
+  }
+
   .navlink-active {
     @apply bg-neutral-100 text-primary-500 dark:bg-neutral-900;
   }
