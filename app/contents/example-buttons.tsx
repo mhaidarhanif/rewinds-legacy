@@ -46,15 +46,6 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </div>
 
-      <H3>Loading state</H3>
-
-      <section className="flex-section">
-        <Button loading>Button</Button>
-        <Button color="primary" loading loadingText="Loading...">
-          Button
-        </Button>
-      </section>
-
       <H3>Button group</H3>
 
       <section className="flex w-full flex-col space-y-4 py-2">
@@ -133,6 +124,15 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         >
           Remix Link Button
         </RemixLink>
+      </section>
+
+      <H3>Loading state</H3>
+
+      <section className="flex-section">
+        <Button loading>Button</Button>
+        <Button color="primary" loading loadingText="Loading...">
+          Button
+        </Button>
       </section>
     </div>
   );

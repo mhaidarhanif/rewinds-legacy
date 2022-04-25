@@ -29,7 +29,7 @@ export default function AboutRoute() {
       </p>
       <p>It is a demo project template you can freely use for any purpose</p>
 
-      <Image src="/screenshot.png" alt="Screenshot" />
+      <Image src="/assets/screenshots/home.png" alt="Home Page Screenshot" />
 
       <h2>Links</h2>
       <ul>

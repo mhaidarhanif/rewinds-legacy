@@ -1,45 +1,65 @@
-# Rewinds - Remix Tailwind Starter Kit
+# Rewinds — Remix Tailwind Starter Kit
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
+> Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
 
-Example demo to combine the best Tailwind-related ecosystem such as Tailwind
+This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind
 CSS, Headless UI, Radix UI, Vechai UI, and more.
 
-Features:
+Visit live: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+
+Main features:
 
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
-- Theme switcher and persist theme with a session cookie
+- Multiple themes switcher and persist theme with a session cookie
+- More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
-Preview: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
-
-![Screenshot](public/screenshot.png)
+[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
 
 ## Stacks
 
-- Core
-  - React v17
-  - Remix v1
-  - TypeScript v4
-- Frontend
-  - Tailwind CSS v3
-  - PostCSS v8
+Check the complete tech stack in the [the about page](https://rewinds.mhaidarhanif.com/about)
+
+### Core
+
+- React v17
+- Remix v1
+- TypeScript v4
+
+### Frontend
+
+- Tailwind CSS v3
+- PostCSS v8
+- Fonts
+  - Google Fonts
+  - Fontbit
+- Icons
   - Heroicons v1
+  - Font Awesome
+  - Phospor Icons
+- Components
   - Headless UI v1 — Unstyled accessible UI components
   - Radix UI v0 — Unstyled accessible UI components
+    - Tailwind Radix
   - Vechai UI v0 — React Tailwind CSS components
   - HyperUI — Collection of free Tailwind CSS components
   - LaLoka Layouts — Useful layouts for Tailwind CSS
   - Flowbite v1 — Tailwind CSS components
   - daisyUI v2 — Tailwind CSS components
   - NProgress
-- Config
-  - ESLint v8
-  - Prettier v2
-- Utility
-  - clsx
-- Deployment
-  - Vercel
+
+### Config
+
+- ESLint v8
+- Prettier v2
+
+### Utility
+
+- `clsx` aliased as `classx`
+
+### Deployment
+
+- Vercel
 
 ## Development
 
