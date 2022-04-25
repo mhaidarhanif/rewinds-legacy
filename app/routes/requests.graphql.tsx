@@ -1,15 +1,14 @@
-import { request, gql } from 'graphql-request';
+import { gql } from 'graphql-request';
 import { json, useLoaderData } from 'remix';
 
 import { H1, Pre, RadixScrollArea } from '~/components';
 import { Layout } from '~/layouts';
+import { graphqlClient } from '~/libs';
 import { sleep } from '~/utils';
 
 import type { LoaderFunction } from 'remix';
 
 export const loader: LoaderFunction = async () => {
-  const url = 'https://echo.hoppscotch.io/graphql';
-
   const query = gql`
     query Request {
       method
@@ -22,7 +21,7 @@ export const loader: LoaderFunction = async () => {
   `;
 
   await sleep(500);
-  const data = await request(url, query);
+  const data = await graphqlClient.request(query);
 
   return json(data);
 };
@@ -34,7 +33,7 @@ export default function RequestsGraphQLRoute() {
     <Layout>
       <H1>Data from GraphQL</H1>
       <RadixScrollArea>
-        <Pre data={data} />
+        <Pre>{data}</Pre>
       </RadixScrollArea>
     </Layout>
   );

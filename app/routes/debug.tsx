@@ -60,19 +60,19 @@ export default function DebugRoute() {
       <H1>Debug</H1>
 
       <H2>Session Data</H2>
-      <Pre data={sessionInfo} />
+      <Pre>{sessionInfo}</Pre>
 
       <H2>Current Theme</H2>
-      <Pre data={currentTheme} />
+      <Pre>{currentTheme}</Pre>
 
       <H2>Config Themes</H2>
       <RadixScrollArea>
-        <Pre data={themes} />
+        <Pre>{themes}</Pre>
       </RadixScrollArea>
 
       <H2>Config Available Themes</H2>
       <RadixScrollArea>
-        <Pre data={availableThemes} />
+        <Pre>{availableThemes}</Pre>
       </RadixScrollArea>
     </Layout>
   );

@@ -53,7 +53,14 @@ export default function AboutRoute() {
         <li>Remix as the React framework</li>
         <li>Tailwind CSS using Vechai UI for primary React components</li>
         <li>Headless UI and Radix UI for accessible unstyled components</li>
-        <li>Theme switcher and persist theme with a session cookie</li>
+        <li>
+          Vechai UI theme switcher and persist theme with a session cookie
+        </li>
+        <li>NProgress navigation loading bar indicator</li>
+        <li>
+          ENV setup for frontend library such as analytics: Google Analytics,
+          Splitbee, Posthog, etc
+        </li>
       </ul>
 
       <h2>Stacks</h2>

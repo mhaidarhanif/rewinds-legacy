@@ -23,7 +23,7 @@ export default function RequestsRESTRoute() {
     <Layout>
       <H1>Data from REST API</H1>
       <RadixScrollArea>
-        <Pre data={data} />
+        <Pre>{data}</Pre>
       </RadixScrollArea>
     </Layout>
   );

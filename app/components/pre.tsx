@@ -1,13 +1,13 @@
 import type { FunctionComponent } from 'react';
 
 interface PreProps {
-  data: string;
+  children: string;
 }
 
-export const Pre: FunctionComponent<PreProps> = ({ data }) => {
+export const Pre: FunctionComponent<PreProps> = ({ children }) => {
   return (
     <pre className="rounded-base bg-primary-900/10 p-2">
-      {JSON.stringify(data, null, 2)}
+      {JSON.stringify(children, null, 2)}
     </pre>
   );
 };
