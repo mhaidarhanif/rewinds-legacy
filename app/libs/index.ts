@@ -1,4 +1,5 @@
-export * from './google-analytics.client';
+export * from './google-analytics';
 export * from './graphql-request.server';
-export * from './splitbee.client';
+export * from './icons';
+export * from './splitbee';
 export * from './urql.server';
