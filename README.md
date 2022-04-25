@@ -57,11 +57,22 @@ cp .env.example .env
 
 Setup the environment variables here and Vercel if want to deploy there:
 
-```
-SESSION_SECRET=type_the_secret_here
+```sh
+# SERVER
+SESSION_SECRET="put_the_secret_here"
+GRAPHQL_ENDPOINT="https://echo.hoppscotch.io/graphql"
+GRAPHCMS_ENDPOINT="https://api.graphcms.com/v2/id123/master"
+CONVERTKIT_API_KEY=
+
+# CLIENT
+GA_MEASUREMENT_ID=
 ```
 
-- `SESSION_SECRET` is used to persist the themes on browser sessions.
+- `SESSION_SECRET` for persisting the themes on browser sessions
+- `GRAPHQL_ENDPOINT` for `graphql-request` or `urql`
+  - `GRAPHCMS_ENDPOINT` for GraphCMS
+- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform
+- `GA_MEASUREMENT_ID` for Google Analytics 4
 
 Afterwards, start the Remix development server like so:
 
