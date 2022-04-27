@@ -20,7 +20,7 @@ export const loader: LoaderFunction = async () => {
     }
   `;
 
-  await sleep(500);
+  await sleep(100);
   const data = await graphqlClient.request(query);
 
   return json(data);

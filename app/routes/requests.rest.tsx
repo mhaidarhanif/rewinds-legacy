@@ -9,7 +9,7 @@ import type { LoaderFunction } from 'remix';
 export const loader: LoaderFunction = async () => {
   const url = 'https://echo.hoppscotch.io';
 
-  await sleep(500);
+  await sleep(100);
   const response = await fetch(url);
   const data = await response.json();
 

@@ -8,7 +8,7 @@ export const RadixScrollArea: FunctionComponent<ScrollAreaProps> = ({
   children,
 }) => {
   return (
-    <ScrollArea.Root className="max-h-96 overflow-hidden rounded-base">
+    <ScrollArea.Root className="h-96 overflow-hidden rounded-base">
       <ScrollArea.Viewport className="h-full w-full rounded-base">
         {children}
       </ScrollArea.Viewport>
