@@ -7,10 +7,10 @@ import { sleep } from '~/utils';
 import type { LoaderFunction } from 'remix';
 
 export const loader: LoaderFunction = async () => {
-  const url = 'https://echo.hoppscotch.io';
+  const endpoint = process.env.REST_ENDPOINT as string;
 
   await sleep(100);
-  const response = await fetch(url);
+  const response = await fetch(endpoint);
   const data = await response.json();
 
   return json(data);
