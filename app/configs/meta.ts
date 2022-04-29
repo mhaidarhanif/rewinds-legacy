@@ -9,9 +9,9 @@ export const configMetaDefault = {
   route: '',
   color: '#ffffff',
   ogImageAlt: 'Rewinds — Remix Tailwind Starter Kit',
-  ogImageType: 'image/jpeg',
-  ogImageUrl: 'assets/opengraph/rewinds-og.jpg',
-  twiterImageUrl: 'assets/opengraph/rewinds-og.jpg',
+  ogImageType: 'image/png',
+  ogImageUrl: 'assets/opengraph/rewinds-og.png',
+  twiterImageUrl: 'assets/opengraph/rewinds-og.png',
   fbAppId: '',
   locale: 'en_US',
 };
