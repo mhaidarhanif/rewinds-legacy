@@ -8,6 +8,7 @@ export const configMetaDefault = {
   url: 'https://rewinds.mhaidarhanif.com',
   route: '',
   color: '#ffffff',
+  ogType: 'website',
   ogImageAlt: 'Rewinds — Remix Tailwind Starter Kit',
   ogImageType: 'image/png',
   ogImageUrl: 'assets/opengraph/rewinds-og.png',

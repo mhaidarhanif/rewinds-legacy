@@ -5,6 +5,7 @@ type CreateMeta = {
   description: string;
   name?: string;
   color?: string;
+  ogType?: string;
   ogImageAlt?: string;
   ogImageUrl?: string;
   twiterImageUrl?: string;
@@ -19,6 +20,7 @@ export const createMetaData = (meta = configMetaDefault) => {
     description,
     name,
     color,
+    ogType,
     ogImageAlt,
     ogImageUrl,
     twiterImageUrl,
@@ -44,6 +46,7 @@ export const createMetaData = (meta = configMetaDefault) => {
     'og:url': route
       ? `${configMetaDefault.url}/${route}`
       : url || configMetaDefault.url,
+    'og:type': ogType || configMetaDefault.ogType,
     'og:image:alt': ogImageAlt || title || configMetaDefault.ogImageAlt,
     'og:image:type': configMetaDefault.ogImageType || 'image/jpeg',
     'og:image': ogImageUrl
