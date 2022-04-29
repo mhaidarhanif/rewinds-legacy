@@ -5,7 +5,7 @@ export const configMetaDefault = {
   description:
     'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
   name: 'Rewinds',
-  url: 'https://rewinds.mhaidarhanif.com/',
+  url: 'https://rewinds.mhaidarhanif.com',
   route: '',
   color: '#ffffff',
   ogImageAlt: 'Rewinds — Remix Tailwind Starter Kit',

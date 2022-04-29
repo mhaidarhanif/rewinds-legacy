@@ -108,12 +108,14 @@ export function Document({ children }: DocumentProps) {
         <Scripts />
         <LiveReload />
 
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
-          }}
-        />
+        {data?.ENV && (
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(data?.ENV)};`,
+            }}
+          />
+        )}
       </body>
     </html>
   );
