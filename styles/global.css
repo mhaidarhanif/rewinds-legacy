@@ -21,6 +21,10 @@
 }
 
 @layer components {
+  .text-inherit {
+    font-size: inherit;
+  }
+
   .btn {
     @apply font-bold;
   }

@@ -9,7 +9,7 @@ interface LayoutProps {
   className?: string;
 }
 
-export const Layout: FunctionComponent<LayoutProps> = ({
+export const LayoutFull: FunctionComponent<LayoutProps> = ({
   children,
   className,
 }) => {
@@ -17,12 +17,8 @@ export const Layout: FunctionComponent<LayoutProps> = ({
     <div className="flex min-h-screen flex-col">
       <NavigationBar />
 
-      <div className="container mx-auto flex-[1] px-4">
-        <div className="flex justify-center">
-          <main className={classx('mt-20 w-full max-w-[65ch]', className)}>
-            {children}
-          </main>
-        </div>
+      <div className="flex flex-[1] justify-center px-4">
+        <main className={classx('w-full', className)}>{children}</main>
       </div>
 
       <Footer />

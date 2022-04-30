@@ -6,6 +6,7 @@ export const configNavigationLinks = [
   { to: '/requests', text: 'Requests' },
   { to: '/requests/rest', text: 'REST' },
   { to: '/requests/graphql', text: 'GraphQL' },
+  { to: '/gallery', text: 'Gallery' },
   { to: '/subscribe', text: 'Subscribe' },
 ];
 

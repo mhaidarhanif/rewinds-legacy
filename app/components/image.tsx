@@ -23,7 +23,7 @@ export const Image: FunctionComponent<ImageProps> = ({
       src={src}
       height={height}
       width={width}
-      className={classx('rounded-md object-contain', className)}
+      className={classx('rounded-md', className)}
     />
   );
 };
