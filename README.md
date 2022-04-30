@@ -1,4 +1,4 @@
-# Rewinds — Remix Tailwind Starter Kit
+# Rewinds – Remix Tailwind Starter Kit
 
 > Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
 
@@ -7,14 +7,15 @@ CSS, Headless UI, Radix UI, Vechai UI, and more.
 
 Visit live: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
+[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
+
 Main features:
 
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
 - Multiple themes switcher and persist theme with a session cookie
+- Only focus on the frontend, without particular in testing, backend, and database
 - More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
-
-[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
 
 ## Stacks
 
@@ -38,14 +39,14 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
   - Font Awesome
   - Phospor Icons
 - Components
-  - Headless UI v1 — Unstyled accessible UI components
-  - Radix UI v0 — Unstyled accessible UI components
+  - Headless UI v1 – Unstyled accessible UI components
+  - Radix UI v0 – Unstyled accessible UI components
     - Tailwind Radix
-  - Vechai UI v0 — React Tailwind CSS components
-  - HyperUI — Collection of free Tailwind CSS components
-  - LaLoka Layouts — Useful layouts for Tailwind CSS
-  - Flowbite v1 — Tailwind CSS components
-  - daisyUI v2 — Tailwind CSS components
+  - Vechai UI v0 – React Tailwind CSS components
+  - HyperUI – Collection of free Tailwind CSS components
+  - LaLoka Layouts – Useful layouts for Tailwind CSS
+  - Flowbite v1 – Tailwind CSS components
+  - daisyUI v2 – Tailwind CSS components
   - NProgress
 
 ### Config

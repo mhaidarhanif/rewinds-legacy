@@ -23,7 +23,7 @@ export default function AboutRoute() {
       <h1>About Rewinds</h1>
       <p>
         <Anchor href="https://rewinds.mhaidarhanif.com">
-          Rewinds = Remix Tailwind Starter Kit
+          Rewinds - Remix Tailwind Starter Kit
         </Anchor>{' '}
         by <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor>
       </p>
@@ -69,7 +69,7 @@ export default function AboutRoute() {
           return (
             <li key={item.name}>
               <Anchor href={item.href}>{item.name}</Anchor>
-              {item.description && <span> — {item.description}</span>}
+              {item.description && <span> – {item.description}</span>}
             </li>
           );
         })}
