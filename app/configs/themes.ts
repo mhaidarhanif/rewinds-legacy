@@ -1,4 +1,4 @@
-import type { ColorScheme } from '@vechaiui/react';
+import type { ColorScheme } from '~/types';
 
 const colors = require('tailwindcss/colors');
 

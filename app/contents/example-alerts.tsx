@@ -1,6 +1,4 @@
-import { Alert } from '@vechaiui/react';
-
-import { H2 } from '~/components';
+import { Alert, H2 } from '~/components';
 
 import type { FunctionComponent } from 'react';
 

@@ -5,6 +5,7 @@ export const configMetaDefault = {
   description:
     'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
   name: 'Rewinds',
+  newsletterName: 'The Haidar Newsletter',
   url: 'https://rewinds.mhaidarhanif.com',
   route: '',
   color: '#ffffff',

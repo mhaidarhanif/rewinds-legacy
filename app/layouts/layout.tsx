@@ -14,10 +14,10 @@ export const Layout: FunctionComponent<LayoutProps> = ({
   className,
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <NavigationBar />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto flex-[1] px-4">
         <div className="flex justify-center">
           <main
             className={classx(

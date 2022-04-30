@@ -1,3 +1,4 @@
+export * from './alert';
 export * from './anchor';
 export * from './badge';
 export * from './button';
@@ -6,6 +7,7 @@ export * from './divider';
 export * from './dropdown-menu';
 export * from './external-links';
 export * from './footer';
+export * from './form';
 export * from './heading';
 export * from './icon';
 export * from './image';

@@ -3,22 +3,16 @@ export const configNavigationLinks = [
   { to: '/about', text: 'About' },
   { to: '/examples', text: 'Examples' },
   { to: '/debug', text: 'Debug' },
+  { to: '/requests', text: 'Requests' },
   { to: '/requests/rest', text: 'REST' },
   { to: '/requests/graphql', text: 'GraphQL' },
+  { to: '/subscribe', text: 'Subscribe' },
 ];
 
 export const configNavigationLinksMenu = [
   {
     name: 'Pages',
-    links: [
-      { to: '/', text: 'Home' },
-      { to: '/about', text: 'About' },
-      { to: '/examples', text: 'Examples' },
-      { to: '/debug', text: 'Debug' },
-      { to: '/requests', text: 'Requests' },
-      { to: '/requests/rest', text: 'Request REST API' },
-      { to: '/requests/graphql', text: 'Request GraphQL' },
-    ],
+    links: [...configNavigationLinks],
   },
   {
     name: 'Account',
