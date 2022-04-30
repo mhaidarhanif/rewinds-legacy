@@ -18,7 +18,7 @@ export const handle: SEOHandle = {
 
 export default function IndexRoute() {
   return (
-    <Layout>
+    <Layout className="prose dark:prose-invert">
       <Intro />
       <ExampleButtons />
       <ExampleForms />
