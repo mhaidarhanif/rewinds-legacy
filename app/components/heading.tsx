@@ -4,9 +4,9 @@ import type { FunctionComponent } from 'react';
 
 const headingClasses = {
   h1: 'mb-8 text-4xl font-extrabold',
-  h2: 'mb-6 text-2xl font-bold',
-  h3: 'mb-3 text-xl font-semibold',
-  h4: 'mb-2 text-lg font-semibold',
+  h2: 'my-6 text-2xl font-bold',
+  h3: 'my-3 text-xl font-semibold',
+  h4: 'my-2 text-lg font-semibold',
   h5: 'text-md mb-1 font-medium',
   h6: 'text-md mb-1',
 };
