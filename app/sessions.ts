@@ -1,18 +1,24 @@
 import { createCookieSessionStorage } from 'remix';
 
+import { dateFns } from '~/libs';
 import { getEnvServer } from '~/utils';
+
+const expiryInDays = 30;
+const expiryInSeconds = expiryInDays * 24 * 60; // days * hours * minutes
+const expiryDate = dateFns.addDays(Date.now(), expiryInDays);
 
 export const { getSession, commitSession, destroySession } =
   createCookieSessionStorage({
     // a Cookie from `createCookie` or the CookieOptions to create one
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
     cookie: {
       name: '__session',
 
       // all of these are optional
       // domain: "mhaidarhanif.com",
-      expires: new Date(Date.now() + 60_000),
+      maxAge: expiryInSeconds, // precede `expires`
+      expires: expiryDate,
       httpOnly: true,
-      maxAge: 60,
       path: '/',
       sameSite: 'lax',
       secrets: [getEnvServer('SESSION_SECRET')],
