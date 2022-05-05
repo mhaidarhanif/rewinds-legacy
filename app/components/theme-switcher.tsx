@@ -1,18 +1,17 @@
 import { Popover, RadioGroup, Transition } from '@headlessui/react';
-import { AdjustmentsIcon } from '@heroicons/react/solid';
 import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
-import * as React from 'react';
 
-import { useTheme } from '~/components/theme-provider';
+import { Fragment, useTheme } from '~/components';
 import {
   configAvailableThemes,
   configAvailableRadiuses,
   configApp,
 } from '~/configs';
 import { useToast } from '~/hooks';
+import { IconGear } from '~/libs';
 import { classx } from '~/utils';
 
-import type { ThemeContextType } from '~/components/theme-provider';
+import type { ThemeContextType } from '~/components';
 
 export const ThemeSwitcher = () => {
   const {
@@ -40,17 +39,22 @@ export const ThemeSwitcher = () => {
       {({ open }) => {
         return (
           <>
-            <Popover.Button as={IconButton} size="md" color="primary">
-              <Icon
-                as={AdjustmentsIcon}
-                label="Preferences"
+            <Popover.Button
+              as={IconButton}
+              size="md"
+              color="primary"
+              variant="ghost"
+            >
+              <IconGear
+                aria-label="Settings"
+                weight="fill"
                 className="h-4 w-4"
               />
             </Popover.Button>
 
             <Transition
               show={open}
-              as={React.Fragment}
+              as={Fragment}
               enter="transition ease-out duration-100"
               enterFrom="opacity-0"
               enterTo="opacity-100"
@@ -61,7 +65,7 @@ export const ThemeSwitcher = () => {
               <Popover.Panel className="absolute right-0 z-50 mt-2 w-64 origin-top-right rounded-md border border-neutral-300 bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-white">
                 <div className="flow-root">
                   <span className="text-md flex items-center font-medium">
-                    Theme Appearance
+                    Theme Appearance Settings
                   </span>
                 </div>
 

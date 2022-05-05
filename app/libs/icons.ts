@@ -1,6 +1,8 @@
+import { AdjustmentsIcon as IconAdjustments } from '@heroicons/react/solid';
 import {
   // General
   List as IconMenu,
+  GearSix as IconGear,
 
   // External
   // DiscordLogo as IconDiscord,
@@ -43,4 +45,6 @@ export {
   IconTwitter,
   IconWebsite,
   IconYouTube,
+  IconAdjustments,
+  IconGear,
 };

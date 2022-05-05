@@ -28,7 +28,7 @@ export const iconMaps = {
   // Theme
   light: <IconLight />,
   dark: <IconDark />,
-  // External links
+  // External
   telegram: <IconTelegram />,
   twitter: <IconTwitter />,
   discord: <IconDiscord />,

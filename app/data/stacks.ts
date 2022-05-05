@@ -6,7 +6,7 @@ export const dataMainStacks: StackItem[] = [
     name: 'Remix',
     description:
       'Remix is a full stack web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience',
-    subStacks: [
+    subItems: [
       {
         name: '@balavishnuvj/remix-seo',
       },
@@ -16,12 +16,18 @@ export const dataMainStacks: StackItem[] = [
     href: 'https://tailwindcss.com',
     name: 'Tailwind CSS v3.0.23',
     description: 'A utility-first CSS framework',
-    subStacks: [
+    subItems: [
       {
         name: '@tailwindcss/typography',
       },
       {
-        name: '@tailwindcss/typography',
+        name: '@tailwindcss/forms',
+      },
+      {
+        name: '@tailwindcss/line-clamp',
+      },
+      {
+        name: '@tailwindcss/aspect-ratio',
       },
     ],
   },
@@ -66,7 +72,7 @@ export const dataMainStacks: StackItem[] = [
     name: 'Google Fonts',
     description:
       'Making the web more beautiful, fast, and open through great typography.',
-    subStacks: [
+    subItems: [
       {
         href: 'https://fontbit.io',
         name: 'fontbit.io',

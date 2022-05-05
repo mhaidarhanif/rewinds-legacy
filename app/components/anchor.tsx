@@ -14,13 +14,13 @@ interface AnchorProps {
 export const Anchor: FunctionComponent<AnchorProps> = ({
   href,
   children,
-  className,
+  className = null,
   underline,
   'data-color': dataColor,
 }) => {
   return (
     <a
-      className={classx(underline && 'hover:underline', className)}
+      className={classx(underline && 'hover:underline', className && className)}
       href={href}
       target="_blank"
       rel="noreferrer"

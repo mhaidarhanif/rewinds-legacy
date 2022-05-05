@@ -8,9 +8,9 @@ import type { LoaderFunction } from 'remix';
 import type { StackItem } from '~/types';
 
 type LoaderData = {
+  features: string[];
   mainStacks: StackItem[];
   referenceStacks: StackItem[];
-  features: string[];
 };
 
 export const loader: LoaderFunction = async () => {
@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function AboutRoute() {
-  const { mainStacks, referenceStacks, features } = useLoaderData<LoaderData>();
+  const { features, mainStacks, referenceStacks } = useLoaderData<LoaderData>();
 
   return (
     <Layout className="prose dark:prose-invert">
@@ -72,7 +72,7 @@ export default function AboutRoute() {
       <h2>Features</h2>
       <ul>
         {features.map((item) => {
-          return <li key={item.substring(0, 3)}>{item}</li>;
+          return <li key={item.substring(0, 20)}>{item}</li>;
         })}
       </ul>
 
@@ -85,8 +85,8 @@ export default function AboutRoute() {
               <Anchor href={item.href}>{item.name}</Anchor>
               {item.description && <span> – {item.description}</span>}
               <ul>
-                {item.subStacks &&
-                  item.subStacks.map((subItem) => {
+                {item.subItems &&
+                  item.subItems.map((subItem) => {
                     return (
                       <li key={subItem.name}>
                         {subItem.href ? (

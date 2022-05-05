@@ -17,7 +17,7 @@ export type StackItem = {
   name: string;
   href: string;
   description?: string;
-  subStacks?: {
+  subItems?: {
     name: string;
     href?: string;
     description?: string;
