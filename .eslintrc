@@ -26,6 +26,7 @@
     "react/no-unescaped-entities": "off",
     "react/require-default-props": "off",
     "unused-imports/no-unused-imports": "error",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "import/order": [
       "error",
       {

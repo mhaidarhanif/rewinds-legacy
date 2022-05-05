@@ -5,7 +5,6 @@ import type { FunctionComponent } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
-  // eslint-disable-next-line react/require-default-props
   className?: string;
 }
 
