@@ -11,6 +11,7 @@ import {
   IconTwitter,
   IconWebsite,
   IconYouTube,
+  IconDev,
 } from '~/libs';
 
 import type { FunctionComponent } from 'react';
@@ -35,6 +36,7 @@ export const iconMaps = {
   github: <IconGitHub />,
   youtube: <IconYouTube />,
   linkedin: <IconLinkedIn />,
+  dev: <IconDev />,
   // Default
   default: <IconCircle />,
 };

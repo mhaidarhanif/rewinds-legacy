@@ -29,3 +29,9 @@ export type ComponentItem = {
 export type UtilityItem = {
   name: string;
 };
+
+export type ExternalLinkItem = {
+  name: string;
+  url: string;
+  isEnabled?: boolean;
+};
