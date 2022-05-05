@@ -1,6 +1,6 @@
-import type { Config } from '~/types';
+import type { ConfigApp } from '~/types';
 
-export const configApp: Config = {
+export const configApp: ConfigApp = {
   theme: {
     colorScheme: 'day',
     density: 'comfortable',

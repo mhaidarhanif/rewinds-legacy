@@ -20,8 +20,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
       id="navigation-bar"
       className={classx(
         'sticky top-0 z-40 w-full flex-none select-none p-2 transition-colors duration-500 md:p-4 lg:z-50',
+        'border-b border-neutral-900/10',
         'supports-backdrop-blur:bg-neutral-50/80 bg-neutral-50/80 backdrop-blur dark:border-neutral-50/[0.06] dark:bg-neutral-800/80',
-        'border-b border-neutral-900/10'
       )}
     >
       <div className="flex flex-wrap items-center justify-between">
@@ -49,7 +49,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
                       className={({ isActive }) => {
                         return classx(
                           isActive && 'navlink-active',
-                          'navlink-hover rounded-base p-2 font-bold'
+                          'navlink-hover rounded-base p-2 font-bold',
                         );
                       }}
                     >

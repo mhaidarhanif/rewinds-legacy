@@ -20,13 +20,13 @@
     "comma-dangle": ["error", "only-multiline"],
     "import/no-cycle": "off",
     "import/prefer-default-export": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": "off",
     "react/no-unescaped-entities": "off",
     "react/require-default-props": "off",
     "unused-imports/no-unused-imports": "error",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
     "import/order": [
       "error",
       {

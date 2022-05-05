@@ -1,20 +1,25 @@
-import { useEffect, useState } from 'react';
+import { json } from 'remix';
+
 import {
-  json,
   Links,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  H1,
+  NProgress,
+  ThemeProvider,
+} from '~/components';
+import { configApp, configDocumentLinks } from '~/configs';
+import { commitSession, getSession } from '~/features';
+import {
+  useEffect,
+  useState,
   useCatch,
   useLoaderData,
   useTransition,
-} from 'remix';
-
-import { H1, NProgress, ThemeProvider } from '~/components';
-import { configApp, configDocumentLinks } from '~/configs';
-import { commitSession, getSession } from '~/features';
+} from '~/hooks';
 import { createMetaData, getEnv } from '~/utils';
 
 import type {
@@ -22,14 +27,8 @@ import type {
   LoaderFunction,
   MetaFunction,
   HeadersFunction,
-} from 'remix';
-
-type LoaderData = {
-  user: any;
-  theme: any;
-  error: any;
-  ENV: ReturnType<typeof getEnv>;
-};
+  LoaderDataSession,
+} from '~/types';
 
 export const headers: HeadersFunction = () => {
   return {
@@ -54,7 +53,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     ? JSON.parse(themeFromSession)
     : configApp?.theme;
 
-  const data: LoaderData = {
+  const data: LoaderDataSession = {
     user: await session.get('user'),
     theme: themeParsed,
     error: await session.get('error'),
@@ -81,7 +80,7 @@ interface DocumentProps {
 }
 
 export function Document({ children }: DocumentProps) {
-  const data = useLoaderData<LoaderData>();
+  const data = useLoaderData<LoaderDataSession>();
   const transition = useTransition();
 
   const [isTransitioning, setIsTransitioning] = useState(false);

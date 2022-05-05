@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
-import axios from 'axios';
 import { json } from 'remix';
 
+import { axiosConvertKitClient } from '~/libs/axios';
 import { getEnvServer, sleep } from '~/utils';
 
 import type { ActionFunction } from 'remix';
@@ -66,17 +65,12 @@ const subscribeToConvertKit = async ({
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
-    const payload = {
+    const response = await axiosConvertKitClient.post('/', {
       api_key: getEnvServer('CONVERTKIT_API_KEY'),
       email,
       first_name: firstName,
-      // tags: ['rewinds'],
-    };
-
-    const response = await axios.post(
-      getEnvServer('CONVERTKIT_SUBSCRIBE_URL'),
-      payload
-    );
+      // tags: ['rewinds'], // use it as necessary
+    });
 
     return response.data;
   } catch (error: any) {

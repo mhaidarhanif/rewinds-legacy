@@ -18,6 +18,7 @@ export * from './navigation-bar';
 export * from './nprogress';
 export * from './paragraph';
 export * from './pre';
+export * from './remix';
 export * from './remix-link';
 export * from './scroll-area';
 export * from './theme-provider';
