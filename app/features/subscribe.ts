@@ -8,7 +8,7 @@ import type { ActionFunction } from 'remix';
 
 export const actionSubscribe: ActionFunction = async ({ request }) => {
   try {
-    await sleep(1000);
+    await sleep(1);
 
     const form = await request.formData();
 

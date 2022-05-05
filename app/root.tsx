@@ -14,7 +14,7 @@ import {
 
 import { H1, NProgress, ThemeProvider } from '~/components';
 import { configApp, configDocumentLinks } from '~/configs';
-import { commitSession, getSession } from '~/sessions';
+import { commitSession, getSession } from '~/features';
 import { createMetaData, getEnv } from '~/utils';
 
 import type {
