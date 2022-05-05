@@ -1,8 +1,8 @@
 import styles from '~/styles/out.css';
 
-const fontFamiles = `family=Archivo:wght@400;700;900`;
+const fontFamilies = `family=Archivo:wght@400;700;900`;
 
-export const configDocumentLinks = [
+const faviconLinks = [
   {
     rel: 'shortcut icon',
     href: '/favicons/favicon.ico',
@@ -24,25 +24,36 @@ export const configDocumentLinks = [
     sizes: '180x180',
     href: '/favicons/apple-touch-icon.png',
   },
-  {
-    rel: 'mask-icon',
-    href: '/favicons/safari-pinned-tab.svg',
-    color: '#0081f1',
-  },
+];
+
+const manifestLinks = [
   {
     rel: 'manifest',
     href: '/site.webmanifest',
   },
+];
+
+const fontLinks = [
   {
     href: 'https://fontbit.io',
     rel: 'preconnect',
   },
   {
-    href: `https://fontbit.io/css2?${fontFamiles}&display=swap`,
+    href: `https://fontbit.io/css2?${fontFamilies}&display=swap`,
     rel: 'stylesheet',
   },
+];
+
+const stylesheetLinks = [
   {
     rel: 'stylesheet',
     href: styles,
   },
+];
+
+export const configDocumentLinks = [
+  ...faviconLinks,
+  ...manifestLinks,
+  ...fontLinks,
+  ...stylesheetLinks,
 ];
