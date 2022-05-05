@@ -8,10 +8,11 @@ const processEnv = {
   APP_ENV: process.env.APP_ENV /* local | development | staging | production */,
   API_URL: process.env.API_URL /* localhost | api.domain.com */,
   VERCEL: process.env.VERCEL,
-  GRAPHQL_ENDPOINT: process.env.GRAPHQL_ENDPOINT,
-  GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
-  CONVERTKIT_API_KEY: process.env.CONVERTKIT_API_KEY,
-  GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
+  REST_ENDPOINT: process.env.REST_ENDPOINT || '',
+  GRAPHQL_ENDPOINT: process.env.GRAPHQL_ENDPOINT || '',
+  GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT || '',
+  CONVERTKIT_API_KEY: process.env.CONVERTKIT_API_KEY || '',
+  GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID || '',
   // Never expose the SESSION_SECRET!
 };
 
@@ -29,7 +30,7 @@ export function getEnvServer(key: string, devValue?: string) {
 export function getEnvRequired(
   obj: Record<string, string | undefined>,
   key: string,
-  devValue: string = `${key}-dev-value`
+  devValue: string = `${key}-dev-value`,
 ) {
   let value = devValue;
   const envVal = obj[key];

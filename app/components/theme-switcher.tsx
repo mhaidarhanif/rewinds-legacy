@@ -1,5 +1,5 @@
 import { Popover, RadioGroup, Transition } from '@headlessui/react';
-import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
+import { Divider, Switch, Select, IconButton } from '@vechaiui/react';
 
 import { Fragment, useTheme } from '~/components';
 import {

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { getEnvServer } from '~/utils';
 
 export const axiosClient = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: getEnvServer('REST_ENDPOINT'),
 });
 
 export const axiosConvertKitClient = axios.create({
