@@ -3,9 +3,10 @@ import { createCookieSessionStorage } from 'remix';
 import { dateFns } from '~/libs';
 import { getEnvServer } from '~/utils';
 
+const currentDate = Date.now();
 const expiryInDays = 30;
-const expiryInSeconds = expiryInDays * 24 * 60; // days * hours * minutes
-const expiryDate = dateFns.addDays(Date.now(), expiryInDays);
+const expiryInSeconds = dateFns.daysToSeconds(expiryInDays);
+const expiryDate = dateFns.addDays(currentDate, expiryInDays);
 
 export const { getSession, commitSession, destroySession } =
   createCookieSessionStorage({
