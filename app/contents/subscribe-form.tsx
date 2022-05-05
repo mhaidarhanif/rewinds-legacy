@@ -22,11 +22,13 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
 }) => {
   const isLoading = transition.state === 'submitting';
   const buttonSubmitText = isLoading ? 'Subscribing...' : 'Subscribe';
-  const placeholderText = {
+
+  const defaultPlaceholderText = {
     firstName: 'Miles Tails Prower',
     email: 'tails@tailwind.run',
   };
-  const actionText = {
+
+  const defaultActionText = {
     success: 'Thank you for subscribing. Please check your inbox.',
     error: 'Sorry something went wrong. Please try again.',
   };
@@ -40,7 +42,7 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
             <Input
               name="firstName"
               type="text"
-              placeholder={placeholderText.firstName}
+              placeholder={defaultPlaceholderText.firstName}
               size="lg"
             />
           </FormControl>
@@ -50,7 +52,7 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
             <Input
               name="email"
               type="email"
-              placeholder={placeholderText.email}
+              placeholder={defaultPlaceholderText.email}
               size="lg"
             />
             <FormHelperText>
@@ -74,13 +76,13 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
 
           {actionData?.subscription && (
             <Alert variant="subtle" color="success">
-              {actionData.message ?? actionText.success}
+              {actionData.message ?? defaultActionText.success}
             </Alert>
           )}
 
           {actionData?.error && (
             <Alert variant="subtle" color="error">
-              {actionData.message ?? actionText.error}
+              {actionData.message ?? defaultActionText.error}
             </Alert>
           )}
         </div>

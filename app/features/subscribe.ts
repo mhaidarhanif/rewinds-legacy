@@ -43,8 +43,10 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
 
     // Return success
     return json({
-      error: false,
-      message: `${email} is subscribed! Please check your inbox.`,
+      success: true,
+      firstName,
+      email,
+      message: `Thank you ${firstName}, ${email} is subscribed! Please check your inbox.`,
       ...data,
     });
   } catch (error) {
@@ -65,8 +67,10 @@ const subscribeToConvertKit = async ({
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
-    const response = await axiosConvertKitClient.post('/', {
-      api_key: getEnvServer('CONVERTKIT_API_KEY'),
+    const apiKey = getEnvServer('CONVERTKIT_API_KEY');
+
+    const response = await axiosConvertKitClient.post('/subscribe', {
+      api_key: apiKey,
       email,
       first_name: firstName,
       // tags: ['rewinds'], // use it as necessary

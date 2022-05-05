@@ -39,7 +39,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
           </div>
 
           <div className="hidden w-auto items-center justify-between xl:flex">
-            <ul className="text-md flex flex-row font-medium">
+            <ul className="text-md flex flex-row gap-1 font-medium">
               {configNavigationLinks.map((navItem) => {
                 return (
                   <li key={navItem.text}>
