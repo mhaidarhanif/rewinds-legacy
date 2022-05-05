@@ -4,7 +4,11 @@ import { Divider, Switch, Select, IconButton, Icon } from '@vechaiui/react';
 import * as React from 'react';
 
 import { useTheme } from '~/components/theme-provider';
-import { configAvailableThemes, configAvailableRadiuses } from '~/configs';
+import {
+  configAvailableThemes,
+  configAvailableRadiuses,
+  configApp,
+} from '~/configs';
 import { useToast } from '~/hooks';
 import { classx } from '~/utils';
 
@@ -25,7 +29,10 @@ export const ThemeSwitcher = () => {
 
   const changeColorScheme = (value: string) => {
     setColorScheme(value);
-    toast({ message: `Changed theme to ${value}` });
+    toast({
+      message: `Changed theme to ${value}`,
+      position: configApp.toast.position,
+    });
   };
 
   return (
@@ -89,7 +96,7 @@ export const ThemeSwitcher = () => {
                                     checked
                                       ? 'border-primary-500'
                                       : 'border-transparent'
-                                  }`
+                                  }`,
                                 );
                               }}
                             >
@@ -131,7 +138,7 @@ export const ThemeSwitcher = () => {
                                       ? 'bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white'
                                       : 'text-neutral-600 dark:text-neutral-400'
                                   }
-                          `
+                          `,
                                 );
                               }}
                             >
@@ -157,7 +164,7 @@ export const ThemeSwitcher = () => {
                       size="xs"
                       onChange={(e) => {
                         setDensity(
-                          e.target.value as ThemeContextType['density']
+                          e.target.value as ThemeContextType['density'],
                         );
                       }}
                     >

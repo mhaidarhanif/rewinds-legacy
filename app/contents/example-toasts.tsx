@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, H2 } from '~/components';
+import { configApp } from '~/configs';
 import { useToast } from '~/hooks';
 
 import type { FunctionComponent } from 'react';
@@ -12,6 +13,7 @@ export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
     toast({
       message,
       status,
+      position: configApp.toast.position,
     });
   };
 

@@ -1,5 +1,9 @@
+import type { IToast } from '~/types';
+
 export type ConfigApp = {
   theme: Theme;
+  toast: IToast;
+  notification: IToast;
 };
 
 export type Theme = {

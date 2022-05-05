@@ -7,4 +7,10 @@ export const configApp: ConfigApp = {
     radius: '0.375rem',
     cursorPointer: true,
   },
+  toast: {
+    position: 'bottom-right',
+  },
+  notification: {
+    position: 'bottom-right',
+  },
 };

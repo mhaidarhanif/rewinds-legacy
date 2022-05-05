@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, H2 } from '~/components';
+import { configApp } from '~/configs';
 import { useNotification, useToast } from '~/hooks';
 
 import type { FunctionComponent } from 'react';
@@ -14,13 +15,13 @@ export const ExampleNotifications: FunctionComponent<
   const showNotification = (
     title: string,
     description: string,
-    status?: any
+    status?: any,
   ) => {
     notify({
       title,
       description,
       status,
-      position: 'top',
+      position: configApp.notification.position,
       undoText: 'Undo',
       onUndo: () => {
         toast({
@@ -49,7 +50,7 @@ export const ExampleNotifications: FunctionComponent<
             showNotification(
               'Info Notification',
               'This is an info message',
-              'info'
+              'info',
             );
           }}
         >
@@ -61,7 +62,7 @@ export const ExampleNotifications: FunctionComponent<
             showNotification(
               'Success Notification',
               'This is a success message',
-              'success'
+              'success',
             );
           }}
         >
@@ -73,7 +74,7 @@ export const ExampleNotifications: FunctionComponent<
             showNotification(
               'Warning Notification',
               'This is a warning message',
-              'warning'
+              'warning',
             );
           }}
         >
@@ -85,7 +86,7 @@ export const ExampleNotifications: FunctionComponent<
             showNotification(
               'Error Notification',
               'This is an error message',
-              'error'
+              'error',
             );
           }}
         >
