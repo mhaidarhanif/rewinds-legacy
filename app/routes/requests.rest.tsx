@@ -9,7 +9,7 @@ import type { LoaderFunction } from 'remix';
 export const loader: LoaderFunction = async () => {
   const endpoint = process.env.REST_ENDPOINT as string;
 
-  await sleep(100);
+  await sleep(1);
   const response = await fetch(endpoint);
   const data = await response.json();
 

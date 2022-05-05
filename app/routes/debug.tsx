@@ -2,8 +2,8 @@ import { json, redirect, useLoaderData } from 'remix';
 
 import { H1, H2, Pre, RadixScrollArea } from '~/components';
 import { configAvailableThemes, configApp, configThemes } from '~/configs';
+import { getSession, commitSession } from '~/features';
 import { Layout } from '~/layouts';
-import { getSession, commitSession } from '~/sessions';
 
 import type { ActionFunction, LoaderFunction } from 'remix';
 import type { Theme } from '~/types';
