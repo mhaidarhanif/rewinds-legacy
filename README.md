@@ -2,8 +2,7 @@
 
 > Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
 
-This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind
-CSS, Headless UI, Radix UI, Vechai UI, and more.
+This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Vechai UI, and more.
 
 Visit live: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
@@ -81,18 +80,21 @@ Setup the environment variables here and Vercel if want to deploy there:
 ```sh
 # SERVER
 SESSION_SECRET="put_the_secret_here"
+REST_ENDPOINT="https://echo.hoppscotch.io"
 GRAPHQL_ENDPOINT="https://echo.hoppscotch.io/graphql"
 GRAPHCMS_ENDPOINT="https://api.graphcms.com/v2/id123/master"
-CONVERTKIT_API_KEY=
+CONVERTKIT_API_KEY="abcdefghijklmnopqrstuv"
+CONVERTKIT_FORM_ID="1234567"
 
 # CLIENT
-GA_MEASUREMENT_ID=
+GA_MEASUREMENT_ID="G-ABCDEFGHIJ"
 ```
 
 - `SESSION_SECRET` for persisting the themes on browser sessions
 - `GRAPHQL_ENDPOINT` for `graphql-request` or `urql`
-  - `GRAPHCMS_ENDPOINT` for GraphCMS
-- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform
+- `GRAPHCMS_ENDPOINT` for GraphCMS
+- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform account
+- `CONVERTKIT_FORM_ID` for ConvertKit actual subscription form
 - `GA_MEASUREMENT_ID` for Google Analytics 4
 
 Afterwards, start the Remix development server like so:

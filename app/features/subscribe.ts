@@ -73,7 +73,7 @@ const subscribeToConvertKit = async ({
       api_key: apiKey,
       email,
       first_name: firstName,
-      // tags: ['rewinds'], // use it as necessary
+      tags: [3096588], // use tag id (not the name)
     });
 
     return response.data;

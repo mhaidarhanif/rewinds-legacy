@@ -1,6 +1,6 @@
 import { Layout } from '~/layouts';
 
-export default function SubscribedRoute() {
+export default function SubscriptionConfirmedRoute() {
   return (
     <Layout className="prose dark:prose-invert">
       <h1 className="font-comic text-primary-500">Subscription confirmed!</h1>
