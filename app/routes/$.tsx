@@ -1,10 +1,16 @@
 /* eslint-disable no-console */
 import { useParams } from '@remix-run/react';
 
-import { H1, RemixLink } from '~/components';
+import { RemixLink } from '~/components';
 import { Layout } from '~/layouts';
 
-import type { LoaderFunction, ActionFunction } from '@remix-run/node';
+import type { LoaderFunction, ActionFunction, MetaFunction } from '~/types';
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Error 404 (Not Found)!?',
+  };
+};
 
 export const loader: LoaderFunction = async ({ params }) => {
   console.info(params['*']);
@@ -16,13 +22,20 @@ export const action: ActionFunction = async ({ params }) => {
   return null;
 };
 
+/**
+ * Splat everything that is not specified in the routes
+ * Similar with CatchBoundary
+ */
+
 export default function SplatRoute() {
   const params = useParams();
-  console.info(params['*']);
+  const pathName = params['*'];
 
   return (
-    <Layout>
-      <H1>Sorry, page not found</H1>
+    <Layout className="prose-config">
+      <h1 className="text-info-500">404</h1>
+      <h2>Sorry, page not found</h2>
+      <p>The requested URL /{pathName} was not found</p>
       <RemixLink
         to="/"
         className="btn-solid btn btn-lg rounded-base"
