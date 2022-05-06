@@ -1,3 +1,5 @@
+import { customColors } from '~/styles';
+
 import type { ColorScheme } from '~/types';
 
 const colors = require('tailwindcss/colors');
@@ -63,8 +65,48 @@ export const ash: ColorScheme = {
   colors: {
     primary: colors.indigo,
     neutral: colors.slate,
-    bg: { base: colors.slate['100'], fill: colors.slate['100'] },
-    text: { foreground: colors.slate['900'], muted: colors.slate['700'] },
+    bg: {
+      base: colors.slate['100'],
+      fill: colors.slate['100'],
+    },
+    text: {
+      foreground: colors.slate['900'],
+      muted: colors.slate['700'],
+    },
+  },
+};
+
+export const silver: ColorScheme = {
+  id: 'silver',
+  type: 'light',
+  colors: {
+    primary: customColors.silver,
+    neutral: customColors.silver,
+    bg: {
+      base: customColors.silver['100'],
+      fill: customColors.silver['200'],
+    },
+    text: {
+      foreground: customColors.silver['900'],
+      muted: customColors.silver['700'],
+    },
+  },
+};
+
+export const white: ColorScheme = {
+  id: 'white',
+  type: 'light',
+  colors: {
+    primary: customColors.black,
+    neutral: customColors.white,
+    bg: {
+      base: customColors.white['100'],
+      fill: customColors.white['200'],
+    },
+    text: {
+      foreground: customColors.white['900'],
+      muted: customColors.white['700'],
+    },
   },
 };
 
@@ -72,10 +114,10 @@ export const night: ColorScheme = {
   id: 'light',
   type: 'dark',
   colors: {
-    bg: { base: colors.gray['900'], fill: colors.gray['800'] },
-    text: { foreground: colors.gray['100'], muted: colors.gray['300'] },
     primary: colors.sky,
     neutral: colors.gray,
+    bg: { base: colors.gray['900'], fill: colors.gray['800'] },
+    text: { foreground: colors.gray['100'], muted: colors.gray['300'] },
   },
 };
 
@@ -128,39 +170,82 @@ export const dawn: ColorScheme = {
   type: 'dark',
   colors: {
     primary: colors.pink,
-    neutral: {
-      50: '#f6eff8',
-      100: '#dad3de',
-      200: '#c1b7c7',
-      300: '#a89ab0',
-      400: '#8f7d99',
-      500: '#766380',
-      600: '#5c4d64',
-      700: '#413647',
-      800: '#28212c',
-      900: '#0f0a13',
+    neutral: customColors.dawn,
+    bg: {
+      base: customColors.dawn['900'],
+      fill: customColors.dawn['800'],
     },
-    bg: { base: '#0f0a13', fill: '#28212c' },
-    text: { foreground: '#dad3de', muted: '#a89ab0' },
+    text: {
+      foreground: customColors.dawn['100'],
+      muted: customColors.dawn['300'],
+    },
   },
 };
 
+export const pebble: ColorScheme = {
+  id: 'pebble',
+  type: 'dark',
+  colors: {
+    primary: customColors.silver,
+    neutral: customColors.silver,
+    bg: {
+      base: customColors.silver['900'],
+      fill: customColors.silver['800'],
+    },
+    text: {
+      foreground: customColors.silver['100'],
+      muted: customColors.silver['300'],
+    },
+  },
+};
+
+export const black: ColorScheme = {
+  id: 'black',
+  type: 'dark',
+  colors: {
+    primary: customColors.white,
+    neutral: customColors.black,
+    bg: {
+      base: customColors.black['900'],
+      fill: customColors.black['600'],
+    },
+    text: {
+      foreground: customColors.black['100'],
+      muted: customColors.black['300'],
+    },
+  },
+};
+
+/**
+ * Theme Provider colors data
+ */
 export const configThemes = {
+  // Light
   day,
   wind,
   rose,
   emerald,
   amber,
   ash,
+  silver,
+  white,
+
+  // Dark
   night,
   cool,
   midnight,
   terminal,
   dawn,
   pale,
+  pebble,
+  black,
 };
 
+/**
+ * Theme Switcher buttons
+ */
 export const configAvailableThemes = [
+  // Light
   {
     name: 'Day',
     id: 'day',
@@ -204,6 +289,22 @@ export const configAvailableThemes = [
     backgroundColor: configThemes.ash.colors.bg.base,
   },
   {
+    name: 'Silver',
+    id: 'silver',
+    type: 'light',
+    primaryColor: configThemes.silver.colors.primary['500'],
+    backgroundColor: configThemes.silver.colors.bg.base,
+  },
+  {
+    name: 'White',
+    id: 'white',
+    type: 'light',
+    primaryColor: configThemes.white.colors.primary['500'],
+    backgroundColor: configThemes.white.colors.bg.base,
+  },
+
+  // Dark
+  {
     name: 'Night',
     id: 'night',
     type: 'dark',
@@ -244,6 +345,20 @@ export const configAvailableThemes = [
     type: 'dark',
     primaryColor: configThemes.pale.colors.primary['500'],
     backgroundColor: configThemes.pale.colors.bg.base,
+  },
+  {
+    name: 'Pebble',
+    id: 'pebble',
+    type: 'dark',
+    primaryColor: configThemes.pebble.colors.primary['500'],
+    backgroundColor: configThemes.pebble.colors.bg.base,
+  },
+  {
+    name: 'Black',
+    id: 'black',
+    type: 'light',
+    primaryColor: configThemes.black.colors.primary['500'],
+    backgroundColor: configThemes.black.colors.bg.base,
   },
 ];
 

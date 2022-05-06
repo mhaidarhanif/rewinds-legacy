@@ -86,7 +86,7 @@ export const ThemeSwitcher = () => {
                       <RadioGroup.Label className="sr-only">
                         Color
                       </RadioGroup.Label>
-                      <div className="flex max-w-[180px] flex-wrap">
+                      <div className="flex max-w-[240px] flex-wrap">
                         {configAvailableThemes.map((theme: any) => {
                           return (
                             <RadioGroup.Option
