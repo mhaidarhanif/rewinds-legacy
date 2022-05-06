@@ -13,7 +13,7 @@ export default function SubscribeRoute() {
   const actionData = useActionData();
 
   return (
-    <Layout className="prose dark:prose-invert">
+    <Layout className="prose-config">
       <h1>Subscribe</h1>
       <p>
         Subscribe to updates on <b>Rewinds</b> from{' '}

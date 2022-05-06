@@ -4,15 +4,15 @@ interface LogoProps {}
 
 export const Logo: FunctionComponent<LogoProps> = () => {
   return (
-    <div className="flex items-center gap-1">
-      <LogoSpan />
+    <div className="flex items-center gap-1 text-2xl   sm:text-3xl">
+      ⏪ <LogoSpan />
     </div>
   );
 };
 
 export const LogoSpan = () => {
   return (
-    <span className="text-2xl font-black tracking-[-0.1em] text-primary-500 transition duration-500 hover:text-primary-700 sm:text-3xl">
+    <span className="font-black tracking-tightest text-primary-500 transition-colors duration-500 hover:text-primary-700">
       Rewinds
     </span>
   );

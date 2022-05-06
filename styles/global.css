@@ -21,6 +21,10 @@
 }
 
 @layer components {
+  .prose-config {
+    @apply prose dark:prose-invert md:prose-lg lg:prose-xl;
+  }
+
   a.btn {
     @apply no-underline;
   }

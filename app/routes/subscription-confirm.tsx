@@ -2,7 +2,7 @@ import { Layout } from '~/layouts';
 
 export default function SubscriptionConfirmRoute() {
   return (
-    <Layout className="prose dark:prose-invert">
+    <Layout className="prose-config">
       <h1 className="font-comic text-primary-500">
         Please confirm your subscription
       </h1>

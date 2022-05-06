@@ -26,7 +26,7 @@ export default function AboutRoute() {
   const { features, mainStacks, referenceStacks } = useLoaderData<LoaderData>();
 
   return (
-    <Layout className="prose dark:prose-invert">
+    <Layout className="prose-config">
       <h1>About</h1>
       <p>
         <Anchor href="https://rewinds.mhaidarhanif.com">Rewinds</Anchor> is a

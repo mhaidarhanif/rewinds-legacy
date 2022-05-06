@@ -11,7 +11,7 @@ export const handle: SEOHandle = {
 
 export default function RequestsRoute() {
   return (
-    <Layout className="prose dark:prose-invert">
+    <Layout className="prose-config">
       <h1>Example requests</h1>
       <ul>
         <li>

@@ -1,8 +1,7 @@
 import { json } from '@remix-run/node';
 
-
 import { dataExampleComponents, dataExampleUtilities } from '~/data';
-import {useLoaderData} from '~/hooks'
+import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
 
 import type { LoaderFunction, ComponentItem, UtilityItem } from '~/types';
@@ -30,7 +29,7 @@ export default function ExamplesRoute() {
   const data = useLoaderData<LoaderData>();
 
   return (
-    <Layout className="prose dark:prose-invert">
+    <Layout className="prose-config">
       <h1>Examples</h1>
 
       <h2>Example components</h2>
