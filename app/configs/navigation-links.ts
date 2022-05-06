@@ -3,7 +3,6 @@ export const configNavigationLinks = [
   { to: '/about', text: 'About' },
   { to: '/examples', text: 'Examples' },
   { to: '/debug', text: 'Debug' },
-  { to: '/requests', text: 'Requests' },
   { to: '/requests/rest', text: 'REST' },
   { to: '/requests/graphql', text: 'GraphQL' },
   { to: '/gallery', text: 'Gallery' },

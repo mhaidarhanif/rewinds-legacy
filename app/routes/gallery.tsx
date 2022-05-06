@@ -27,7 +27,7 @@ export default function GalleryRoute() {
 
   return (
     <LayoutFull>
-      <header className="my-12 flex flex-col md:items-center">
+      <header className="my-12 flex flex-col px-4 md:items-center">
         <H1 className="text-6xl">Gallery</H1>
         <H2>
           Full width layout example with{' '}
