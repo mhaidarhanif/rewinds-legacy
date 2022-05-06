@@ -1,4 +1,4 @@
-import { Form } from "@remix-run/react";
+import { Form } from '@remix-run/react';
 
 import {
   Alert,
@@ -10,6 +10,11 @@ import {
 } from '~/components';
 
 import type { FunctionComponent } from 'react';
+
+/**
+ * Subscribe Form
+ * Using native browser form behavior with Remix Form component
+ */
 
 interface PrivateSaleFormProps {
   transition: any;
@@ -35,7 +40,7 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
 
   return (
     <div className="flex justify-start">
-      <Form method="post" className="w-full max-w-xs">
+      <Form method="post" className="w-full max-w-xs space-y-4">
         <div className="space-y-4">
           <FormControl id="email">
             <FormLabel>Your name</FormLabel>
@@ -56,7 +61,7 @@ export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
               size="lg"
             />
             <FormHelperText>
-              We'll never share your email, promise
+              <span>We'll never share your email. Promise :)</span>
             </FormHelperText>
           </FormControl>
         </div>

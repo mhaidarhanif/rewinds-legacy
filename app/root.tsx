@@ -7,7 +7,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  H1,
   NProgress,
   ThemeProvider,
 } from '~/components';
@@ -20,6 +19,7 @@ import {
   useLoaderData,
   useTransition,
 } from '~/hooks';
+import { Layout } from '~/layouts';
 import { createMetaData, getEnv } from '~/utils';
 
 import type {
@@ -75,11 +75,19 @@ export default function App() {
   );
 }
 
+/**
+ * Main document component to be used in:
+ * - App
+ * - CatchBoundary
+ * - ErrorBoundary
+ */
+
 interface DocumentProps {
+  title?: string;
   children: React.ReactNode;
 }
 
-export function Document({ children }: DocumentProps) {
+export function Document({ title, children }: DocumentProps) {
   const data = useLoaderData<LoaderDataSession>();
   const transition = useTransition();
 
@@ -95,6 +103,7 @@ export function Document({ children }: DocumentProps) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {title && <title>{title}</title>}
         <Meta />
         <Links />
       </head>
@@ -122,33 +131,56 @@ export function Document({ children }: DocumentProps) {
   );
 }
 
+/**
+ * Catch an expected error
+ * Status: 400-500
+ */
+
 export function CatchBoundary() {
   const caught = useCatch();
 
   return (
-    <Document>
-      <H1>Remix Caught</H1>
-
-      <div>
-        <p>Status: {caught.status}</p>
-        <pre>
-          <code>{JSON.stringify(caught.data, null, 2)}</code>
-        </pre>
-      </div>
+    <Document title="Hmm, something went wrong">
+      <Layout className="prose-config">
+        <h1 className="text-warning-500">Wut?</h1>
+        <p>
+          Hmm, something went wrong. Let's just{' '}
+          <a href="/">go back to homepage</a>.
+        </p>
+        <h3>Status Message</h3>
+        <p>
+          {caught.status} {caught.statusText}
+        </p>
+        <h3>Caught error data</h3>
+        <pre>{JSON.stringify(caught, null, 2)}</pre>
+      </Layout>
     </Document>
   );
 }
 
-export function ErrorBoundary({ error }: { error: Error }) {
-  return (
-    <Document>
-      <H1>Remix Error</H1>
+/**
+ * Error means there is an unexpected error
+ */
+interface ErrorBoundaryProps {
+  error: Error;
+}
 
-      <div>
-        <p>{error.message}</p>
-        <p>The stack trace is:</p>
-        <pre>{error.stack}</pre>
-      </div>
+export function ErrorBoundary({ error }: ErrorBoundaryProps) {
+  console.error(error);
+
+  return (
+    <Document title="Error, something crashed">
+      <Layout className="prose-config">
+        <h1 className="text-error-500">Error!</h1>
+        <p>
+          Sorry, something crashed and we didn't expect that to happen. But no
+          worries, we can just <a href="/">go back to homepage</a>.
+        </p>
+        <h3>Error message</h3>
+        <pre>{error.message}</pre>
+        <h3>Stack trace</h3>
+        <pre>{error.stack as string}</pre>
+      </Layout>
     </Document>
   );
 }

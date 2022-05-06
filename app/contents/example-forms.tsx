@@ -15,6 +15,11 @@ import { sleep } from '~/utils';
 
 import type { FunctionComponent } from 'react';
 
+/**
+ * Example Forms
+ * Using React Hook Form with regular form element
+ */
+
 interface ExampleFormsProps {}
 
 export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {

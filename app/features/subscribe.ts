@@ -3,7 +3,20 @@ import { json } from '@remix-run/node';
 import { axiosConvertKitClient } from '~/libs/axios';
 import { getEnvServer, sleep } from '~/utils';
 
-import type { ActionFunction } from '~/types';
+import type { LoaderFunction, ActionFunction } from '~/types';
+
+export const loaderSubscribe: LoaderFunction = async () => {
+  const CONVERTKIT_API_KEY = getEnvServer('CONVERTKIT_API_KEY');
+  const CONVERTKIT_FORM_ID = getEnvServer('CONVERTKIT_FORM_ID');
+
+  if (!CONVERTKIT_API_KEY || !CONVERTKIT_FORM_ID) {
+    throw new Response('ConvertKit API key and form ID are not found', {
+      status: 500,
+    });
+  }
+
+  return json({ ok: true });
+};
 
 export const actionSubscribe: ActionFunction = async ({ request }) => {
   try {

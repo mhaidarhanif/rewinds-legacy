@@ -1,10 +1,13 @@
+import { H1, P } from '~/components';
 import { configMetaDefault } from '~/configs';
 import { SubscribeForm } from '~/contents';
-import { actionSubscribe } from '~/features';
+import { actionSubscribe, loaderSubscribe } from '~/features';
 import { useActionData, useTransition } from '~/hooks';
 import { Layout } from '~/layouts';
 
-import type { ActionFunction } from '~/types';
+import type { LoaderFunction, ActionFunction } from '~/types';
+
+export const loader: LoaderFunction = loaderSubscribe;
 
 export const action: ActionFunction = actionSubscribe;
 
@@ -13,12 +16,12 @@ export default function SubscribeRoute() {
   const actionData = useActionData();
 
   return (
-    <Layout className="prose-config">
-      <h1>Subscribe</h1>
-      <p>
+    <Layout>
+      <H1>Subscribe</H1>
+      <P>
         Subscribe to updates on <b>Rewinds</b> from{' '}
         <b>{configMetaDefault.newsletterName}</b>.
-      </p>
+      </P>
 
       <SubscribeForm transition={transition} actionData={actionData} />
     </Layout>
