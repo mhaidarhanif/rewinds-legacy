@@ -14,6 +14,8 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "check": "ncu --reject *remix*,react*,@types/react*",
+    "check:upgrade": "ncu --upgrade --reject *remix*,react*,@types/react*",
     "postinstall": "remix setup node"
   },
   "dependencies": {
