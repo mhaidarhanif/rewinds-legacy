@@ -3,6 +3,7 @@ import {
   // General
   List as IconMenu,
   GearSix as IconGear,
+  Rewind as IconRewind,
 
   // External
   // DiscordLogo as IconDiscord,
@@ -32,19 +33,20 @@ import {
 } from 'react-icons/fa';
 
 export {
+  IconAdjustments,
   IconCircle,
   IconDark,
   IconDev,
   IconDiscord,
+  IconGear,
   IconGitHub,
   IconLight,
   IconLinkedIn,
   IconMedium,
   IconMenu,
+  IconRewind,
   IconTelegram,
   IconTwitter,
   IconWebsite,
   IconYouTube,
-  IconAdjustments,
-  IconGear,
 };

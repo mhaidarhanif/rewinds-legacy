@@ -3,6 +3,8 @@
  * https://tailwind.simeongriggs.dev
  */
 
+export const configMainColor = '#38BEF8';
+
 export const configCustomColors = {
   white: {
     '50': '#FFFFFF',
