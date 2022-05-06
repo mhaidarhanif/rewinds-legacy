@@ -15,7 +15,8 @@
     "build:remix": "remix build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "remix setup node"
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "1.0.2",
