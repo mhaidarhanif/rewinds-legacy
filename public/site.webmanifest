@@ -1,6 +1,7 @@
 {
   "name": "Rewinds",
   "short_name": "Rewinds",
+  "description": "Remix Tailwind Starter Kit with Tailwind CSS family of libraries",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
@@ -15,5 +16,6 @@
   ],
   "theme_color": "#38BEF8",
   "background_color": "#38BEF8",
+  "orientation": "portrait-primary",
   "display": "standalone"
 }
