@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react';
 import MenuIcon from '@heroicons/react/solid/MenuIcon';
 import { Button, Divider, Icon } from '@vechaiui/react';
-import React from 'react';
+import { Fragment } from 'react';
 
 import { RemixNavLink } from '~/components';
 import { configNavigationLinksMenu } from '~/configs';
@@ -29,7 +29,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
         </Menu.Button>
 
         <Transition
-          as={React.Fragment}
+          as={Fragment}
           enter="transition ease-in-out duration-150"
           enterFrom="transform opacity-0 scale-90"
           enterTo="transform opacity-100 scale-100"

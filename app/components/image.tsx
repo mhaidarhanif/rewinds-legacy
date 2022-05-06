@@ -1,5 +1,3 @@
-import { classx } from '~/utils';
-
 import type { FunctionComponent } from 'react';
 
 interface ImageProps {
