@@ -6,15 +6,17 @@ This is an example demo to combine the best Tailwind-related ecosystem such as T
 
 Visit live: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
-[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
-
-Main features:
+Features:
 
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
 - Multiple themes switcher and persist theme with a session cookie
-- Only focus on the frontend, without particular in testing, backend, and database
+- Only focus on the frontend styling and project structure, without particular in testing, backend, and database. For that matters, check out the official Remix Stacks instead: https://remix.run/stacks
 - More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
+
+Screenshots:
+
+[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
 
 ## Stacks
 
