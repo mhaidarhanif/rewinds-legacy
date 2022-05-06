@@ -1,4 +1,3 @@
-// const customColors = require('./app/styles/colors');
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 

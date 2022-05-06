@@ -1,4 +1,4 @@
-import { customColors } from '~/styles';
+import { configCustomColors } from '~/configs';
 
 import type { ColorScheme } from '~/types';
 
@@ -80,15 +80,15 @@ export const silver: ColorScheme = {
   id: 'silver',
   type: 'light',
   colors: {
-    primary: customColors.silver,
-    neutral: customColors.silver,
+    primary: configCustomColors.silver,
+    neutral: configCustomColors.silver,
     bg: {
-      base: customColors.silver['100'],
-      fill: customColors.silver['200'],
+      base: configCustomColors.silver['100'],
+      fill: configCustomColors.silver['200'],
     },
     text: {
-      foreground: customColors.silver['900'],
-      muted: customColors.silver['700'],
+      foreground: configCustomColors.silver['900'],
+      muted: configCustomColors.silver['700'],
     },
   },
 };
@@ -97,15 +97,15 @@ export const white: ColorScheme = {
   id: 'white',
   type: 'light',
   colors: {
-    primary: customColors.black,
-    neutral: customColors.white,
+    primary: configCustomColors.black,
+    neutral: configCustomColors.white,
     bg: {
-      base: customColors.white['100'],
-      fill: customColors.white['200'],
+      base: configCustomColors.white['100'],
+      fill: configCustomColors.white['200'],
     },
     text: {
-      foreground: customColors.white['900'],
-      muted: customColors.white['700'],
+      foreground: configCustomColors.white['900'],
+      muted: configCustomColors.white['700'],
     },
   },
 };
@@ -170,14 +170,14 @@ export const dawn: ColorScheme = {
   type: 'dark',
   colors: {
     primary: colors.pink,
-    neutral: customColors.dawn,
+    neutral: configCustomColors.dawn,
     bg: {
-      base: customColors.dawn['900'],
-      fill: customColors.dawn['800'],
+      base: configCustomColors.dawn['900'],
+      fill: configCustomColors.dawn['800'],
     },
     text: {
-      foreground: customColors.dawn['100'],
-      muted: customColors.dawn['300'],
+      foreground: configCustomColors.dawn['100'],
+      muted: configCustomColors.dawn['300'],
     },
   },
 };
@@ -186,15 +186,15 @@ export const pebble: ColorScheme = {
   id: 'pebble',
   type: 'dark',
   colors: {
-    primary: customColors.silver,
-    neutral: customColors.silver,
+    primary: configCustomColors.silver,
+    neutral: configCustomColors.silver,
     bg: {
-      base: customColors.silver['900'],
-      fill: customColors.silver['800'],
+      base: configCustomColors.silver['900'],
+      fill: configCustomColors.silver['800'],
     },
     text: {
-      foreground: customColors.silver['100'],
-      muted: customColors.silver['300'],
+      foreground: configCustomColors.silver['100'],
+      muted: configCustomColors.silver['300'],
     },
   },
 };
@@ -203,15 +203,15 @@ export const black: ColorScheme = {
   id: 'black',
   type: 'dark',
   colors: {
-    primary: customColors.white,
-    neutral: customColors.black,
+    primary: configCustomColors.white,
+    neutral: configCustomColors.black,
     bg: {
-      base: customColors.black['900'],
-      fill: customColors.black['600'],
+      base: configCustomColors.black['900'],
+      fill: configCustomColors.black['600'],
     },
     text: {
-      foreground: customColors.black['100'],
-      muted: customColors.black['300'],
+      foreground: configCustomColors.black['100'],
+      muted: configCustomColors.black['300'],
     },
   },
 };

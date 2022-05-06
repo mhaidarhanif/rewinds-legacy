@@ -1,4 +1,5 @@
 export * from './app';
+export * from './colors';
 export * from './document-links';
 export * from './external-links';
 export * from './features';
