@@ -5,7 +5,7 @@ export const Intro = () => {
     <div className="prose-config">
       <h1 className="tracking-tighter">
         <LogoSpan />
-        <span> – Remix Tailwind Starter Kit!</span>
+        <span> – Remix Tailwind Starter Kit</span>
       </h1>
       <p>
         <b>Rewinds</b> is a Remix starter kit with Tailwind family of libraries.

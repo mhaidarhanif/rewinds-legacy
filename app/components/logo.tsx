@@ -12,7 +12,7 @@ export const Logo: FunctionComponent<LogoProps> = () => {
 
 export const LogoSpan = () => {
   return (
-    <span className="font-black tracking-tightest text-primary-500 transition-colors duration-500 hover:text-primary-700">
+    <span className="font-black tracking-tightest text-primary-500 transition-colors duration-300 hover:text-primary-700">
       Rewinds
     </span>
   );

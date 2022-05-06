@@ -16,7 +16,7 @@ export const LayoutFull: FunctionComponent<LayoutProps> = ({
     <div className="flex min-h-screen flex-col">
       <NavigationBar />
 
-      <div className="flex flex-[1] justify-center px-4">
+      <div className="flex flex-[1] justify-center">
         <main className={classx('w-full', className)}>{children}</main>
       </div>
 
