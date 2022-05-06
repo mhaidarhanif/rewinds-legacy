@@ -21,6 +21,10 @@
 }
 
 @layer components {
+  a.btn {
+    @apply no-underline;
+  }
+
   .text-inherit {
     font-size: inherit;
   }

@@ -41,7 +41,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
             className={classx(
               'absolute right-0 z-dropdown mt-2 w-56 min-w-max origin-top-right rounded-sm shadow-sm outline-none',
               'border border-gray-200 bg-white',
-              'dark:border-gray-700 dark:bg-neutral-800'
+              'dark:border-gray-700 dark:bg-neutral-800',
             )}
           >
             <div className="px-1 py-1">
@@ -59,11 +59,11 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
                                   to={link.to}
                                   className={({ isActive }) => {
                                     return classx(
-                                      'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold focus:outline-none',
+                                      'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold transition focus:outline-none',
                                       isActive && 'navlink-active', // REMIX
                                       active && 'navlink-hover-menu', // HUI
                                       disabled &&
-                                        'disabled:cursor-not-allowed disabled:opacity-60'
+                                        'disabled:cursor-not-allowed disabled:opacity-60',
                                     );
                                   }}
                                 >

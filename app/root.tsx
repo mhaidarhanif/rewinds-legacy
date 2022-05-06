@@ -99,7 +99,7 @@ export function Document({ children }: DocumentProps) {
         <Links />
       </head>
 
-      <body className="scroll-smooth">
+      <body className="scroll-smooth transition-colors duration-500">
         <ThemeProvider specifiedTheme={data?.theme}>
           <NProgress isAnimating={isTransitioning} />
           {children}

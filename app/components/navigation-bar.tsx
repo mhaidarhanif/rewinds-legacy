@@ -19,7 +19,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
     <nav
       id="navigation-bar"
       className={classx(
-        'sticky top-0 z-40 w-full flex-none select-none p-2 transition-colors duration-500 md:p-4 lg:z-50',
+        'sticky top-0 z-40 w-full flex-none select-none p-2 md:p-4 lg:z-50',
         'border-b border-neutral-900/10',
         'supports-backdrop-blur:bg-neutral-50/80 bg-neutral-50/80 backdrop-blur dark:border-neutral-50/[0.06] dark:bg-neutral-800/80',
       )}
@@ -48,8 +48,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
                       to={navItem.to}
                       className={({ isActive }) => {
                         return classx(
+                          'navlink-hover rounded-base p-2 font-bold transition',
                           isActive && 'navlink-active',
-                          'navlink-hover rounded-base p-2 font-bold',
                         );
                       }}
                     >

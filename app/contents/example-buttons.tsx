@@ -8,8 +8,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
   return (
     <div className="space-y-4">
       <H2>Buttons</H2>
-
-      <section className="flex-section">
+      <ButtonGroup>
         <Button>Normal</Button>
         <Button color="primary">Primary</Button>
         <Button variant="solid" color="primary">
@@ -24,11 +23,10 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="link" color="primary">
           Link
         </Button>
-      </section>
+      </ButtonGroup>
 
       <H3>Different size</H3>
-
-      <div className="flex-section">
+      <ButtonGroup>
         <Button size="xs" variant="solid" color="primary">
           Extra Small
         </Button>
@@ -44,10 +42,9 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button size="xl" variant="solid" color="primary">
           Extra Large
         </Button>
-      </div>
+      </ButtonGroup>
 
       <H3>Button group</H3>
-
       <section className="flex w-full flex-col space-y-4 py-2">
         <ButtonGroup variant="solid" color="primary" attached>
           <Button>Button 1</Button>
@@ -63,8 +60,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
       </section>
 
       <H3>Custom color solid</H3>
-
-      <section className="flex-section">
+      <ButtonGroup>
         <Button variant="solid" color="info">
           Info
         </Button>
@@ -77,11 +73,10 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="solid" color="error">
           Error/Danger/Bug
         </Button>
-      </section>
+      </ButtonGroup>
 
       <H3>Custom color light</H3>
-
-      <section className="flex-section">
+      <ButtonGroup>
         <Button variant="light" color="info">
           Info
         </Button>
@@ -94,17 +89,16 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         <Button variant="light" color="error">
           Error/Danger/Bug
         </Button>
-      </section>
+      </ButtonGroup>
 
       <H3>Custom elements</H3>
-
-      <section className="flex-section">
+      <ButtonGroup>
         <Button className="rounded-lg shadow-md shadow-primary-500/20">
           Vechai + Tailwind
         </Button>
         <button
           type="button"
-          className="btn btn-md btn-light rounded-xl tracking-widest"
+          className="btn-solid btn btn-md rounded-xl tracking-widest"
           data-color="primary"
         >
           HTML Button
@@ -124,16 +118,15 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         >
           Remix Link Button
         </RemixLink>
-      </section>
+      </ButtonGroup>
 
       <H3>Loading state</H3>
-
-      <section className="flex-section">
+      <ButtonGroup>
         <Button loading>Button</Button>
         <Button color="primary" loading loadingText="Loading...">
           Button
         </Button>
-      </section>
+      </ButtonGroup>
     </div>
   );
 };
