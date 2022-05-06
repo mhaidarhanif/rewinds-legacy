@@ -1,3 +1,11 @@
+/**
+ * Config Navigation Links
+ *
+ * To be used in the navigation bar in 2 modes:
+ * - Large screen mode (desktop, TV)
+ * - Small screen mode (mobile, tablet)
+ */
+
 export const configNavigationLinks = [
   { to: '/', text: 'Home' },
   { to: '/about', text: 'About' },
@@ -7,6 +15,7 @@ export const configNavigationLinks = [
   { to: '/requests/graphql', text: 'GraphQL' },
   { to: '/gallery', text: 'Gallery' },
   { to: '/subscribe', text: 'Subscribe' },
+  // In large screen, the auth links are as buttons
 ];
 
 export const configNavigationLinksMenu = [
@@ -15,6 +24,7 @@ export const configNavigationLinksMenu = [
     links: [...configNavigationLinks],
   },
   {
+    // In small screen, the auth links are inside the menu modal
     name: 'Account',
     links: [
       { to: '/signup', text: 'Sign up' },

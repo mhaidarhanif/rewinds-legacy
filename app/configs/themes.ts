@@ -4,6 +4,15 @@ import type { ColorScheme } from '~/types';
 
 const colors = require('tailwindcss/colors');
 
+/**
+ * Config Themes
+ * Based on Vechai UI
+ *
+ * - ColorScheme objects
+ * - Exported object of ColorScheme objects, used in the ThemeProvider
+ * - Array of available themes, used in the ThemeSwitcher
+ */
+
 export const day: ColorScheme = {
   id: 'day',
   type: 'light',

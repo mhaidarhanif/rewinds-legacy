@@ -1,6 +1,8 @@
 import type { ExternalLinkItem } from '~/types';
 
 /**
+ * Config External Links
+ *
  * The intention is so have this URL format:
  * https://oursite.com/r/name
  * to make it easier to type, then redirect instead of accessing directly

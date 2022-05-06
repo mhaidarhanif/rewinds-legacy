@@ -1,5 +1,14 @@
 import styles from '~/styles/out.css';
 
+/**
+ * Config Document Links
+ *
+ * Favicons
+ * Manifest
+ * Fonts
+ * Style Sheets
+ */
+
 const fontFamilies = `family=Archivo:wght@400;700;900`;
 
 const faviconLinks = [

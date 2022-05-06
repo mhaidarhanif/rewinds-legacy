@@ -1,5 +1,12 @@
 import type { ConfigApp } from '~/types';
 
+/**
+ * Config App
+ *
+ * Theme
+ * Component configuration
+ */
+
 export const configApp: ConfigApp = {
   theme: {
     colorScheme: 'day',
