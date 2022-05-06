@@ -98,7 +98,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
         <button
           type="button"
-          className="btn-solid btn btn-md rounded-xl tracking-widest"
+          className="btn-solid btn btn-md rounded-xl uppercase tracking-wider"
           data-color="primary"
         >
           HTML Button
