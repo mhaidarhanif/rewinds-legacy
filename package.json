@@ -10,9 +10,9 @@
     "dev": "npm-run-all -p dev:*",
     "dev:remix": "remix dev",
     "dev:css": "tailwindcss -w -i ./styles/global.css -o app/styles/out.css",
-    "build": "npm-run-all -p build:*",
-    "build:remix": "remix build",
+    "build": "npm-run-all build:*",
     "build:css": "tailwindcss -m -i ./styles/global.css -o app/styles/out.css",
+    "build:remix": "remix build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write ."
