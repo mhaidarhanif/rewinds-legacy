@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-
 import {
   FormControl,
   FormLabel,
@@ -12,6 +9,9 @@ import {
   Select,
   H2,
 } from '~/components';
+import { configApp } from '~/configs';
+import { useState, useForm, useNotification } from '~/hooks';
+import { sleep } from '~/utils';
 
 import type { FunctionComponent } from 'react';
 
@@ -25,19 +25,24 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
     return setShowPassword(!showPassword);
   };
 
+  const notify = useNotification();
+
   const {
     register,
-    formState: { errors },
     handleSubmit,
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (data: any) => {
     setLoading(true);
-    setTimeout(() => {
-      // eslint-disable-next-line no-alert
-      alert(JSON.stringify(data));
-      setLoading(false);
-    }, 500);
+    await sleep(3000);
+    notify({
+      title: 'Created your account',
+      description: 'Your email is now registered.',
+      status: 'success',
+      position: configApp.notification.position,
+    });
+    setLoading(false);
   };
 
   return (
@@ -117,7 +122,10 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
             type="submit"
             variant="solid"
             color="primary"
+            size="lg"
+            className="w-full"
             loading={loading}
+            loadingText="Creating..."
           >
             Create new account
           </Button>
