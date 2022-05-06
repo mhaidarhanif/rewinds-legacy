@@ -1,9 +1,9 @@
-import { json } from 'remix';
+import { json } from '@remix-run/node';
 
 import { configApp } from '~/configs';
 import { commitSession, getSession } from '~/features';
 
-import type { ActionFunction } from 'remix';
+import type { ActionFunction } from '~/types';
 
 export const actionSetTheme: ActionFunction = async ({ request }) => {
   const session = await getSession(request.headers.get('Cookie'));
@@ -15,6 +15,6 @@ export const actionSetTheme: ActionFunction = async ({ request }) => {
 
   return json(
     { success: true },
-    { headers: { 'Set-Cookie': await commitSession(session) } }
+    { headers: { 'Set-Cookie': await commitSession(session) } },
   );
 };

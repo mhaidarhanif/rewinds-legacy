@@ -1,9 +1,9 @@
-import { json } from 'remix';
+import { json } from '@remix-run/node';
 
 import { axiosConvertKitClient } from '~/libs/axios';
 import { getEnvServer, sleep } from '~/utils';
 
-import type { ActionFunction } from 'remix';
+import type { ActionFunction } from '~/types';
 
 export const actionSubscribe: ActionFunction = async ({ request }) => {
   try {

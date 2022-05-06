@@ -1,8 +1,8 @@
-import { redirect } from 'remix';
+import { redirect } from '@remix-run/node';
 
 import { configUrls } from '~/configs';
 
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction } from '~/types';
 
 const url = configUrls.TWITTER_URL;
 

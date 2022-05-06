@@ -1,11 +1,10 @@
-import { useActionData, useTransition } from 'remix';
-
 import { configMetaDefault } from '~/configs';
 import { SubscribeForm } from '~/contents';
 import { actionSubscribe } from '~/features';
+import { useActionData, useTransition } from '~/hooks';
 import { Layout } from '~/layouts';
 
-import type { ActionFunction } from 'remix';
+import type { ActionFunction } from '~/types';
 
 export const action: ActionFunction = actionSubscribe;
 

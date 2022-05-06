@@ -1,10 +1,11 @@
-import { json, useLoaderData } from 'remix';
+import { json } from '@remix-run/node';
+
 
 import { dataExampleComponents, dataExampleUtilities } from '~/data';
+import {useLoaderData} from '~/hooks'
 import { Layout } from '~/layouts';
 
-import type { LoaderFunction } from 'remix';
-import type { ComponentItem, UtilityItem } from '~/types';
+import type { LoaderFunction, ComponentItem, UtilityItem } from '~/types';
 import type { SEOHandle } from '~/utils';
 
 export const handle: SEOHandle = {

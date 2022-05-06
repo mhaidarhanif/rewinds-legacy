@@ -1,5 +1,5 @@
+import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
-import { RemixBrowser } from 'remix';
 
 import { splitbee, ReactGA } from '~/libs';
 

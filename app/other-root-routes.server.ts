@@ -4,11 +4,11 @@
 import { configMetaDefault } from '~/configs';
 import { generateRobotsTxt, generateSitemap } from '~/utils';
 
-import type { EntryContext } from 'remix';
+import type { EntryContext } from '@remix-run/node';
 
 type Handler = (
   request: Request,
-  remixContext: EntryContext
+  remixContext: EntryContext,
 ) => Promise<Response | null> | null;
 
 export const otherRootRoutes: Record<string, Handler> = {

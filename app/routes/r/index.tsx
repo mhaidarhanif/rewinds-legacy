@@ -1,6 +1,6 @@
-import { redirect } from 'remix';
+import { redirect } from '@remix-run/node';
 
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction } from '~/types';
 import type { SEOHandle } from '~/utils';
 
 const url = '/';

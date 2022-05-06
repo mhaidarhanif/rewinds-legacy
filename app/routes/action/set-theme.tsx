@@ -1,8 +1,8 @@
-import { redirect } from 'remix';
+import { redirect } from '@remix-run/node';
 
 import { actionSetTheme } from '~/features';
 
-import type { ActionFunction } from 'remix';
+import type { ActionFunction } from '~/types';
 
 export const action: ActionFunction = actionSetTheme;
 

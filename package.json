@@ -8,6 +8,7 @@
   "scripts": {
     "start": "doppler run -- npm run dev",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:quick": "remix dev",
     "dev:css": "tailwindcss -w -i ./styles/global.css -o app/styles/out.css",
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/global.css -o app/styles/out.css",

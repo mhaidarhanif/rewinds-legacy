@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from 'remix';
+import { createCookieSessionStorage } from '@remix-run/node';
 
 import { dateFns } from '~/libs';
 import { getEnvServer } from '~/utils';

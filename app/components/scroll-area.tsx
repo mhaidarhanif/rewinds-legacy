@@ -2,7 +2,9 @@ import * as ScrollArea from '@radix-ui/react-scroll-area';
 
 import type { FunctionComponent } from 'react';
 
-interface ScrollAreaProps {}
+interface ScrollAreaProps {
+  children: React.ReactNode;
+}
 
 export const RadixScrollArea: FunctionComponent<ScrollAreaProps> = ({
   children,

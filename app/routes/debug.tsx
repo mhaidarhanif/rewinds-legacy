@@ -1,12 +1,12 @@
-import { json, redirect, useLoaderData } from 'remix';
+import { json, redirect } from '@remix-run/node';
 
 import { H1, H2, Pre, RadixScrollArea } from '~/components';
 import { configAvailableThemes, configApp, configThemes } from '~/configs';
 import { getSession, commitSession } from '~/features';
+import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
 
-import type { ActionFunction, LoaderFunction } from 'remix';
-import type { Theme } from '~/types';
+import type { ActionFunction, LoaderFunction, Theme } from '~/types';
 import type { SEOHandle } from '~/utils';
 
 export const handle: SEOHandle = {

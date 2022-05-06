@@ -7,9 +7,9 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useFetcher } from 'remix';
 
 import { configApp, configAvailableThemes, configThemes } from '~/configs';
+import { useFetcher } from '~/hooks';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
 import type { Theme } from '~/types';
@@ -44,11 +44,11 @@ export function ThemeProvider({
    */
   const [colorScheme, setColorScheme] = useState(specifiedTheme?.colorScheme);
   const [density, setDensity] = useState<VechaiProviderProps['density']>(
-    specifiedTheme?.density
+    specifiedTheme?.density,
   );
   const [radius, setRadius] = useState(specifiedTheme?.radius);
   const [cursorPointer, setCursorPointer] = useState(
-    specifiedTheme?.cursorPointer
+    specifiedTheme?.cursorPointer,
   );
 
   /**
@@ -101,7 +101,7 @@ export function ThemeProvider({
           cursorPointer,
         }),
       },
-      { action: 'action/set-theme', method: 'post' }
+      { action: 'action/set-theme', method: 'post' },
     );
   }, [colorScheme, cursorPointer, density, radius]);
 
