@@ -29,7 +29,7 @@
     "react/require-default-props": "off",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
-      "error",
+      "warn",
       {
         "alphabetize": {
           "caseInsensitive": true,

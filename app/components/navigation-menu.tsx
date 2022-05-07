@@ -2,6 +2,11 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import React from 'react';
 
 import { Anchor, RemixNavLink } from '~/components';
+import {
+  configNavigationContentExamples1,
+  configNavigationContentExamples2,
+  configNavigationContentPages,
+} from '~/configs';
 import { IconCaretDown } from '~/libs';
 import { classx } from '~/utils';
 
@@ -12,24 +17,6 @@ import type { NavLinkProps } from '~/types';
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
  * Used in Navigation Bar
  */
-
-const dataNavigationContentPages = [
-  { to: '/about', text: 'About' },
-  { to: '/blog', text: 'Blog' },
-  { to: '/subscribe', text: 'Subscribe' },
-];
-
-const dataNavigationContentExamples1 = [
-  { to: '/examples/button', text: 'Button' },
-  { to: '/examples/form', text: 'Form' },
-  { to: '/examples/navigation-menu', text: 'Navigation Menu' },
-];
-
-const dataNavigationContentExamples2 = [
-  { to: '/examples/rest', text: 'REST API' },
-  { to: '/examples/graphql', text: 'GraphQL' },
-  { to: '/examples/debug', text: 'Debug' },
-];
 
 interface NavigationBarNavMenuProps {}
 
@@ -106,7 +93,7 @@ export const NavigationMenuContentPages = () => {
 
         <div className="col-span-2">
           <div className="flex w-full flex-col space-y-2">
-            {dataNavigationContentPages.map((item) => {
+            {configNavigationContentPages.map((item) => {
               return (
                 <NavigationMenuLink key={item.text} asChild>
                   <RemixNavLink end to={item.to}>
@@ -138,7 +125,7 @@ export const NavigationMenuContentExamples = () => {
     <div className="w-[21rem] p-3 lg:w-[23rem]">
       <div className="grid grid-cols-4 gap-2">
         <div className="col-span-2 flex w-full flex-col space-y-2">
-          {dataNavigationContentExamples1.map((item) => {
+          {configNavigationContentExamples1.map((item) => {
             return (
               <NavigationMenuNavLink key={item.text} to={item.to}>
                 {item.text}
@@ -147,7 +134,7 @@ export const NavigationMenuContentExamples = () => {
           })}
         </div>
         <div className="col-span-2 flex w-full flex-col space-y-2">
-          {dataNavigationContentExamples2.map((item) => {
+          {configNavigationContentExamples2.map((item) => {
             return (
               <NavigationMenuNavLink key={item.text} to={item.to}>
                 {item.text}
