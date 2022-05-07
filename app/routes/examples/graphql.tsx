@@ -27,7 +27,7 @@ export const loader: LoaderFunction = async () => {
   return json(data);
 };
 
-export default function RequestsGraphQLRoute() {
+export default function ExampleGraphQLRoute() {
   const data = useLoaderData();
 
   return (

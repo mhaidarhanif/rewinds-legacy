@@ -4,4 +4,6 @@ export type {
   LinksFunction,
   LoaderFunction,
   MetaFunction,
+  LinkProps,
+  NavLinkProps,
 } from 'remix';

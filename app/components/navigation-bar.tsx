@@ -1,14 +1,15 @@
 import {
-  MenuNavigation,
   ExternalLinks,
   Logo,
   RemixLink,
   RemixNavLink,
   ThemeSwitcher,
   Badge,
+  NavigationBarNavMenu,
+  NavigationBarMenu,
 } from '~/components';
-import { configNavigationLinks } from '~/configs';
-import { classx, packageJson } from '~/utils';
+import { configApp, configNavigationLinks } from '~/configs';
+import { packageJson } from '~/utils';
 
 import type { FunctionComponent } from 'react';
 
@@ -16,60 +17,72 @@ interface NavigationBarProps {}
 
 export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   return (
-    <nav
-      id="navigation-bar"
-      className={classx(
-        'sticky top-0 z-40 w-full flex-none select-none p-2 md:p-4 lg:z-50',
-        'border-b border-neutral-900/10',
-        'supports-backdrop-blur:bg-neutral-50/80 bg-neutral-50/80 backdrop-blur dark:border-neutral-50/[0.06] dark:bg-neutral-800/80',
-      )}
-    >
+    <nav id="navigation-bar" className="navigation-bar">
       <div className="flex flex-wrap items-center justify-between">
-        <div className="flex space-x-4">
-          <div className="flex items-center gap-2">
-            <RemixLink
-              to="/"
-              className="text-2xl font-black tracking-wide hover:text-primary-500"
-            >
-              <Logo />
-            </RemixLink>
-            <Badge color="primary" variant="solid">
-              v{packageJson.version}
-            </Badge>
-          </div>
-
-          <div className="hidden w-auto items-center justify-between xl:flex">
-            <ul className="text-md flex flex-row gap-1 font-medium">
-              {configNavigationLinks.map((navItem) => {
-                return (
-                  <li key={navItem.text}>
-                    <RemixNavLink
-                      end
-                      to={navItem.to}
-                      className={({ isActive }) => {
-                        return classx(
-                          'navlink-hover rounded-base p-2 font-bold transition-colors',
-                          isActive && 'navlink-active',
-                        );
-                      }}
-                    >
-                      {navItem.text}
-                    </RemixNavLink>
-                  </li>
-                );
-              })}
-            </ul>
+        <div className="flex gap-4">
+          <NavigationBarLogo />
+          <div className="flex gap-1">
+            {configApp.navigationBarStyle === 'simple' && (
+              <NavigationBarLinks />
+            )}
+            {configApp.navigationBarStyle === 'complex' && (
+              <NavigationBarNavMenu />
+            )}
           </div>
         </div>
 
         <div className="flex items-center space-x-2">
           <ExternalLinks className="hidden text-xl sm:flex" />
           <ThemeSwitcher />
-          <NavigationBarMenu />
           <NavigationBarAuth />
+          <div className="flex xl:hidden">
+            <NavigationBarMenu />
+          </div>
         </div>
       </div>
     </nav>
+  );
+};
+
+interface NavigationBarLogoProps {}
+
+export const NavigationBarLogo: FunctionComponent<
+  NavigationBarLogoProps
+> = () => {
+  return (
+    <div className="flex items-center gap-2">
+      <RemixLink
+        to="/"
+        className="text-2xl font-black tracking-wide hover:text-primary-500"
+      >
+        <Logo />
+      </RemixLink>
+      <Badge color="primary" variant="solid">
+        v{packageJson.version}
+      </Badge>
+    </div>
+  );
+};
+
+interface NavigationBarLinksProps {}
+
+export const NavigationBarLinks: FunctionComponent<
+  NavigationBarLinksProps
+> = () => {
+  return (
+    <div className="hidden w-auto items-center justify-between xl:flex">
+      <ul className="text-md flex flex-row gap-1 font-medium">
+        {configNavigationLinks.map((navItem) => {
+          return (
+            <li key={navItem.text}>
+              <RemixNavLink end to={navItem.to}>
+                {navItem.text}
+              </RemixNavLink>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
@@ -94,18 +107,6 @@ export const NavigationBarAuth: FunctionComponent<
       >
         Sign up
       </RemixLink>
-    </div>
-  );
-};
-
-interface NavigationBarMenuProps {}
-
-export const NavigationBarMenu: FunctionComponent<
-  NavigationBarMenuProps
-> = () => {
-  return (
-    <div className="flex xl:hidden">
-      <MenuNavigation />
     </div>
   );
 };

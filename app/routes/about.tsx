@@ -83,15 +83,15 @@ export default function AboutRoute() {
         {mainStacks.map((item) => {
           return (
             <li key={item.name}>
-              <Anchor href={item.href}>{item.name}</Anchor>
+              <Anchor href={item.url}>{item.name}</Anchor>
               {item.description && <span> – {item.description}</span>}
               <ul>
                 {item.subItems &&
                   item.subItems.map((subItem) => {
                     return (
                       <li key={subItem.name}>
-                        {subItem.href ? (
-                          <Anchor href={subItem.href}>{subItem.name}</Anchor>
+                        {subItem.url ? (
+                          <Anchor href={subItem.url}>{subItem.name}</Anchor>
                         ) : (
                           <span>{subItem.name}</span>
                         )}
@@ -117,7 +117,7 @@ export default function AboutRoute() {
         {referenceStacks.map((item) => {
           return (
             <li key={item.name}>
-              <Anchor href={item.href}>{item.name}</Anchor>
+              <Anchor href={item.url}>{item.name}</Anchor>
               {item.description && <span> – {item.description}</span>}
             </li>
           );

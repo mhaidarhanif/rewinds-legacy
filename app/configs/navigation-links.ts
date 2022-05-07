@@ -9,12 +9,11 @@
 export const configNavigationLinks = [
   { to: '/', text: 'Home' },
   { to: '/about', text: 'About' },
-  { to: '/examples', text: 'Examples' },
-  { to: '/debug', text: 'Debug' },
-  { to: '/requests/rest', text: 'REST' },
-  { to: '/requests/graphql', text: 'GraphQL' },
-  { to: '/gallery', text: 'Gallery' },
   { to: '/subscribe', text: 'Subscribe' },
+  { to: '/debug', text: 'Debug' },
+  { to: '/examples', text: 'Examples' },
+  { to: '/examples/rest', text: 'REST' },
+  { to: '/examples/graphql', text: 'GraphQL' },
   // In large screen, the auth links are as buttons
 ];
 

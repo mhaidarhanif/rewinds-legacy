@@ -3,8 +3,9 @@ import type { ConfigApp } from '~/types';
 /**
  * Config App
  *
- * Theme
- * Component configuration
+ * Configuration for:
+ * - Themes
+ * - Components
  */
 
 export const configApp: ConfigApp = {
@@ -20,4 +21,5 @@ export const configApp: ConfigApp = {
   notification: {
     position: 'bottom-right',
   },
+  navigationBarStyle: 'complex',
 };

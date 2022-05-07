@@ -4,6 +4,7 @@ export type ConfigApp = {
   theme: Theme;
   toast: IToast;
   notification: IToast;
+  navigationBarStyle: 'simple' | 'complex';
 };
 
 export type Theme = {
@@ -15,11 +16,11 @@ export type Theme = {
 
 export type StackItem = {
   name: string;
-  href: string;
+  url: string;
   description?: string;
   subItems?: {
     name: string;
-    href?: string;
+    url?: string;
     description?: string;
   }[];
 };

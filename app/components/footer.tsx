@@ -9,7 +9,7 @@ export const Footer: FunctionComponent<FooterProps> = () => {
   const year = date.getFullYear();
 
   return (
-    <footer className="mt-16 flex justify-center border-t border-slate-200 dark:border-slate-200/5">
+    <footer className="mt-32 flex justify-center border-t border-slate-200 dark:border-slate-200/5">
       <div className="flex flex-col items-center gap-2 py-8">
         <ExternalLinks />
         <p className="space-x-1">

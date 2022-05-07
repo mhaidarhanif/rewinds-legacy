@@ -1,9 +1,9 @@
 import { Menu, Transition } from '@headlessui/react';
 import MenuIcon from '@heroicons/react/solid/MenuIcon';
+import { NavLink } from '@remix-run/react';
 import { Button, Divider, Icon } from '@vechaiui/react';
 import { Fragment } from 'react';
 
-import { RemixNavLink } from '~/components';
 import { configNavigationLinksMenu } from '~/configs';
 import { classx } from '~/utils';
 
@@ -11,9 +11,11 @@ import type { FunctionComponent } from 'react';
 
 export { Menu } from '@headlessui/react';
 
-interface MenuNavigationProps {}
+interface NavigationBarMenuProps {}
 
-export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
+export const NavigationBarMenu: FunctionComponent<
+  NavigationBarMenuProps
+> = () => {
   return (
     <div className="flex w-full select-none flex-wrap">
       <Menu as="div" className="relative inline-block ">
@@ -54,7 +56,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
                           <Menu.Item key={link.text}>
                             {({ active, disabled }) => {
                               return (
-                                <RemixNavLink
+                                <NavLink
                                   end
                                   to={link.to}
                                   className={({ isActive }) => {
@@ -68,7 +70,7 @@ export const MenuNavigation: FunctionComponent<MenuNavigationProps> = () => {
                                   }}
                                 >
                                   {link.text}
-                                </RemixNavLink>
+                                </NavLink>
                               );
                             }}
                           </Menu.Item>

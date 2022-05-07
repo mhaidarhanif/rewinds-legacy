@@ -4,6 +4,7 @@ import {
   List as IconMenu,
   GearSix as IconGear,
   Rewind as IconRewind,
+  CaretDown as IconCaretDown,
 
   // External
   // DiscordLogo as IconDiscord,
@@ -34,6 +35,7 @@ import {
 
 export {
   IconAdjustments,
+  IconCaretDown,
   IconCircle,
   IconDark,
   IconDev,
