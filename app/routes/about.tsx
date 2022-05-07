@@ -43,8 +43,7 @@ export default function AboutRoute() {
       <p>
         The goal is to have several examples and demos to combine the best
         Tailwind-related ecosystem such as Tailwind CSS v3, Tailwind UI,
-        Headless UI, Radix UI, Vechai UI, and more. Another thing is that we
-        want to encourage to follow{' '}
+        Headless UI, Radix UI, Vechai UI, and more. We also encourage{' '}
         <Anchor href="https://web.dev/accessibility">
           the accessibility guidelines
         </Anchor>
@@ -85,15 +84,15 @@ export default function AboutRoute() {
             <li key={item.name}>
               <Anchor href={item.url}>{item.name}</Anchor>
               {item.description && <span> – {item.description}</span>}
-              <ul>
-                {item.subItems &&
-                  item.subItems.map((subItem) => {
+              {item.subItems && (
+                <ul>
+                  {item.subItems.map((subItem) => {
                     return (
                       <li key={subItem.name}>
                         {subItem.url ? (
                           <Anchor href={subItem.url}>{subItem.name}</Anchor>
                         ) : (
-                          <span>{subItem.name}</span>
+                          <span className="font-bold">{subItem.name}</span>
                         )}
                         {subItem.description && (
                           <span> – {subItem.description}</span>
@@ -101,7 +100,8 @@ export default function AboutRoute() {
                       </li>
                     );
                   })}
-              </ul>
+                </ul>
+              )}
             </li>
           );
         })}
