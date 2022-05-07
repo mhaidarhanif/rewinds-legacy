@@ -1,6 +1,7 @@
 import { IconRewind } from '~/libs';
 
 import type { FunctionComponent } from 'react';
+import { classx } from '~/utils';
 
 interface LogoProps {}
 
@@ -17,9 +18,14 @@ export const LogoIcon = () => {
   return <IconRewind weight="fill" className="h-8 w-8 fill-primary-500" />;
 };
 
-export const LogoSpan = () => {
+export const LogoSpan = ({ className }: { className?: string }) => {
   return (
-    <span className="font-black tracking-tightest text-primary-500 ">
+    <span
+      className={classx(
+        'pr-2 font-black tracking-tightest text-primary-500',
+        className,
+      )}
+    >
       Rewinds
     </span>
   );

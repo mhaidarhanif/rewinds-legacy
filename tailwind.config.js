@@ -25,15 +25,20 @@ module.exports = {
         warning: colors.yellow,
         error: colors.red,
       },
+      boxShadow: {
+        slider: '0 0 0 5px rgba(0, 0, 0, 0.3)',
+      },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
-      boxShadow: {
-        slider: '0 0 0 5px rgba(0, 0, 0, 0.3)',
-      },
       keyframes: {
+        // Text shimmer
+        'text-shimmer': {
+          from: { backgroundPosition: '0 0' },
+          to: { backgroundPosition: '-200% 0' },
+        },
         // Dropdown menu
         'scale-in': {
           '0%': { opacity: 0, transform: 'scale(0)' },
@@ -118,6 +123,8 @@ module.exports = {
         },
       },
       animation: {
+        // Text shimmer
+        'text-shimmer': 'text-shimmer 5s ease-in-out infinite alternate',
         // Dropdown menu
         'scale-in': 'scale-in 0.2s ease-in-out',
         'slide-down': 'slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1)',

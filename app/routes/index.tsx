@@ -3,7 +3,7 @@ import {
   ExampleButtons,
   ExampleForms,
   ExampleToasts,
-  Intro,
+  HomeIntro,
 } from '~/contents';
 import { ExampleNotifications } from '~/contents/example-notifications';
 import { Layout } from '~/layouts';
@@ -19,7 +19,7 @@ export const handle: SEOHandle = {
 export default function IndexRoute() {
   return (
     <Layout className="divide space-y-20 divide-y-2 divide-primary-100 dark:divide-primary-900">
-      <Intro />
+      <HomeIntro />
       <ExampleButtons />
       <ExampleForms />
       <ExampleAlerts />

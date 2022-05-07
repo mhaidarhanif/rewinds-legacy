@@ -132,6 +132,25 @@
     font-size: inherit;
   }
 
+  .text-shimmer {
+    @apply animate-text-shimmer;
+    @apply bg-clip-text text-transparent;
+    @apply bg-[length:250%_100%];
+  }
+
+  .text-shimmer.bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-200 via-primary-500 to-primary-800;
+  }
+
+  .text-shimmer.bg-gradient-glossy {
+    @apply bg-[linear-gradient(110deg,#e2e8f0,45%,#1e293b,55%,#e2e8f0)];
+  }
+
+  .text-underline-left-right {
+    @apply after:bg-primary-500;
+    @apply relative after:absolute after:-bottom-1 after:left-0 after:h-[4px] after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
   .prose-config {
     @apply prose dark:prose-invert md:prose-lg lg:prose-xl;
     @apply prose-a:prose-a-styles;
@@ -139,7 +158,7 @@
   }
 
   .prose-a-styles {
-    @apply active-underline-left-right font-bold no-underline;
+    @apply text-underline-left-right font-bold no-underline;
     @apply text-primary-900 dark:text-primary-100;
   }
 
@@ -147,12 +166,7 @@
     @apply space-y-3 pl-5 marker:text-primary-500;
   }
 
-  .active-underline-left-right {
-    @apply after:bg-primary-500;
-    @apply relative after:absolute after:-bottom-1 after:left-0 after:h-[4px] after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
-  }
-
   .container-active a {
-    @apply active-underline-left-right;
+    @apply text-underline-left-right;
   }
 }
