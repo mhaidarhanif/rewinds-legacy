@@ -3,7 +3,6 @@ import { useResolvedPath, NavLink } from '@remix-run/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useMatch } from 'react-router-dom';
 
-import { RemixNavLink } from '~/components';
 import {
   configNavigationContentExamples1,
   configNavigationContentExamples2,
@@ -81,14 +80,12 @@ export const NavigationMenuContentPages = () => {
   return (
     <div className="w-[21rem] p-3 lg:w-[23rem]">
       <div className="grid grid-cols-4 gap-2">
-        <NavigationMenuLink
-          asChild
+        <NavigationMenuNavLink
+          to="/"
           className="border-panel col-span-2 flex w-full items-center justify-center rounded-base p-4"
         >
-          <RemixNavLink end to="/">
-            Home
-          </RemixNavLink>
-        </NavigationMenuLink>
+          Home
+        </NavigationMenuNavLink>
 
         <div className="col-span-2">
           <div className="flex w-full flex-col space-y-2">
@@ -352,10 +349,14 @@ export const NavigationMenuViewport = ({
  * https://www.radix-ui.com/docs/primitives/components/navigation-menu#with-router-links
  */
 
-export const NavigationMenuNavLink = ({ children, to, end }: NavLinkProps) => {
+export const NavigationMenuNavLink = ({
+  children,
+  to,
+  end,
+  className,
+}: NavLinkProps) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
-  // const matches = useMatches();
   const isActive = Boolean(match);
 
   return (
@@ -363,7 +364,10 @@ export const NavigationMenuNavLink = ({ children, to, end }: NavLinkProps) => {
       <NavLink
         to={to}
         end={end}
-        className="navlink-hover rounded-base p-2 font-bold transition-colors"
+        className={classx(
+          'navlink-hover rounded-base p-2 font-bold transition-colors',
+          className,
+        )}
       >
         {children}
       </NavLink>
