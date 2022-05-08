@@ -7,13 +7,6 @@ import type { NavLinkProps } from '~/types';
 
 export { Link as RemixLink } from '@remix-run/react';
 
-// interface RemixNavLinkProps {
-//   children?: React.ReactNode;
-//   end?: boolean;
-//   to: string;
-//   className?: string;
-// }
-
 export const RemixNavLink: FunctionComponent<NavLinkProps> = ({
   children,
   end,
@@ -22,8 +15,8 @@ export const RemixNavLink: FunctionComponent<NavLinkProps> = ({
 }) => {
   return (
     <NavLink
-      end
       to={to}
+      end={end}
       className={({ isActive }) => {
         return classx(
           'navlink-hover rounded-base p-2 font-bold transition-colors',

@@ -15,11 +15,11 @@ export const Anchor: FunctionComponent<AnchorProps> = ({
 }) => {
   return (
     <a
-      className={className}
       href={href}
+      className={className}
+      data-color={dataColor}
       target="_blank"
       rel="noreferrer"
-      data-color={dataColor}
     >
       {children}
     </a>

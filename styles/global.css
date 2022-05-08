@@ -70,6 +70,18 @@
   }
 
   /**
+   * Radix UI - Navigation Menu
+   */
+
+  .nav-menu-root > div {
+    @apply flex;
+  }
+
+  .nav-menu-link {
+    @apply navlink-hover rounded-base px-3 py-2 font-bold transition-colors;
+  }
+
+  /**
    * Radix UI - Scroll Area
    */
 
@@ -152,7 +164,7 @@
   }
 
   .prose-config {
-    @apply prose dark:prose-invert md:prose-lg lg:prose-xl;
+    @apply prose dark:prose-invert md:prose-lg lg:prose-lg;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
   }

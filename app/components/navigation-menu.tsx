@@ -1,7 +1,9 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import React from 'react';
+import { useResolvedPath, NavLink } from '@remix-run/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useMatch } from 'react-router-dom';
 
-import { Anchor, RemixNavLink } from '~/components';
+import { RemixNavLink } from '~/components';
 import {
   configNavigationContentExamples1,
   configNavigationContentExamples2,
@@ -10,8 +12,8 @@ import {
 import { IconCaretDown } from '~/libs';
 import { classx } from '~/utils';
 
+import type { NavLinkProps } from '@remix-run/react';
 import type { FunctionComponent } from 'react';
-import type { NavLinkProps } from '~/types';
 
 /**
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
@@ -35,19 +37,16 @@ export const NavigationBarNavMenu: FunctionComponent<
       <NavigationMenuList>
         <NavigationMenuItemPages />
         <NavigationMenuItemExamples />
+
+        {/* need-fix: issue with forwardRef  */}
+        {/* <NavigationMenuItem>
+          <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
+        </NavigationMenuItem> */}
+
         <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <RemixNavLink end to="/pricing">
-              Pricing
-            </RemixNavLink>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Anchor href="https://github.com/mhaidarhanif/rewinds">
-              GitHub
-            </Anchor>
-          </NavigationMenuLink>
+          <NavigationMenuAnchor href="https://github.com/mhaidarhanif/rewinds">
+            GitHub
+          </NavigationMenuAnchor>
         </NavigationMenuItem>
 
         {withIndicator && <NavigationMenuIndicator />}
@@ -95,11 +94,9 @@ export const NavigationMenuContentPages = () => {
           <div className="flex w-full flex-col space-y-2">
             {configNavigationContentPages.map((item) => {
               return (
-                <NavigationMenuLink key={item.text} asChild>
-                  <RemixNavLink end to={item.to}>
-                    {item.text}
-                  </RemixNavLink>
-                </NavigationMenuLink>
+                <NavigationMenuNavLink key={item.text} end to={item.to}>
+                  {item.text}
+                </NavigationMenuNavLink>
               );
             })}
           </div>
@@ -117,6 +114,25 @@ export const NavigationMenuItemExamples = () => {
         <NavigationMenuContentExamples />
       </NavigationMenuContent>
     </NavigationMenuItem>
+  );
+};
+
+export const NavigationMenuAnchor = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <NavigationMenu.Link
+      className="nav-menu-link"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {children}
+    </NavigationMenu.Link>
   );
 };
 
@@ -237,36 +253,22 @@ export const NavigationMenuContent = ({
 };
 
 export const NavigationMenuLink = ({
-  children,
-  className,
-  asChild,
   href,
+  asChild,
+  className,
+  children,
 }: DefaultProps & {
-  asChild?: boolean;
   href?: string;
+  asChild?: boolean;
 }) => {
   return (
     <NavigationMenu.Link
-      asChild={asChild}
       href={href}
-      className={classx(
-        'nav-menu-link',
-        'navlink-hover rounded-base px-3 py-2 font-bold transition-colors',
-        className,
-      )}
+      asChild={asChild}
+      className={classx('nav-menu-link', className)}
     >
       {children}
     </NavigationMenu.Link>
-  );
-};
-
-export const NavigationMenuNavLink = ({ to, children }: NavLinkProps) => {
-  return (
-    <NavigationMenuLink asChild>
-      <RemixNavLink end to={to}>
-        {children}
-      </RemixNavLink>
-    </NavigationMenuLink>
   );
 };
 
@@ -307,7 +309,7 @@ export const NavigationMenuViewportPosition = ({
       className={classx(
         'absolute flex justify-center',
         'left-[-20%] top-[100%] w-[140%]',
-        // 'z-40',
+        'z-40',
       )}
       style={{
         perspective: '2000px',
@@ -330,7 +332,7 @@ export const NavigationMenuViewport = ({
       forceMount={forceMount}
       className={classx(
         'nav-menu-viewport',
-        // 'z-40',
+        'z-40',
         'bg-panel border-panel',
         'relative mt-2 overflow-hidden rounded-base shadow-lg',
         'w-radix-navigation-menu-viewport',
@@ -341,5 +343,30 @@ export const NavigationMenuViewport = ({
       )}
       {...props}
     />
+  );
+};
+
+/**
+ * need-fix: issue with React.forwardRef() and reading 'focus'
+ *
+ * https://www.radix-ui.com/docs/primitives/components/navigation-menu#with-router-links
+ */
+
+export const NavigationMenuNavLink = ({ children, to, end }: NavLinkProps) => {
+  const resolved = useResolvedPath(to);
+  const match = useMatch({ path: resolved.pathname, end: true });
+  // const matches = useMatches();
+  const isActive = Boolean(match);
+
+  return (
+    <NavigationMenu.Link active={isActive} asChild>
+      <NavLink
+        to={to}
+        end={end}
+        className="navlink-hover rounded-base p-2 font-bold transition-colors"
+      >
+        {children}
+      </NavLink>
+    </NavigationMenu.Link>
   );
 };
