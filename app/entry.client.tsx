@@ -10,8 +10,8 @@ const isProductionAllowed =
   ENV.NODE_ENV !== 'development' && configMeta.url === window.location.hostname;
 
 if (isProductionAllowed) {
-  splitbeeInit(); // Splitbee Analytics
   googleAnalyticsInit(); // Google Analytics
+  splitbeeInit(); // Splitbee Analytics
   posthogInit(); // PostHog Product Analytics
 }
 

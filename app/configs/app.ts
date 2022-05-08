@@ -6,7 +6,6 @@ import type { ConfigApp } from '~/types';
  * Configuration for:
  * - Themes
  * - Components
- * - API
  */
 
 export const configApp: ConfigApp = {
@@ -23,4 +22,14 @@ export const configApp: ConfigApp = {
     position: 'bottom-right',
   },
   navigationBarStyle: 'complex',
+};
+
+/**
+ * Config App Features
+ */
+
+export const configAppFeatures = {
+  googleAnalytics: true,
+  splitbee: true,
+  posthog: true,
 };
