@@ -164,7 +164,7 @@
   }
 
   .prose-config {
-    @apply mb-10;
+    @apply my-10;
     @apply prose dark:prose-invert md:prose-lg lg:prose-lg;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;

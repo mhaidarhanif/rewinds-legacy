@@ -1,6 +1,11 @@
 import type { Position } from '@vechaiui/toasted-notes';
 
-export type { ColorScheme, VechaiTheme } from '@vechaiui/react';
+export type {
+  ColorScheme,
+  VechaiTheme,
+  ButtonProps,
+  ButtonGroupProps,
+} from '@vechaiui/react';
 
 export interface IToast {
   /**

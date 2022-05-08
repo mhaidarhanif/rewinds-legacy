@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
   NProgress,
   ThemeProvider,
+  MitigationButtons,
 } from '~/components';
 import { configDocumentLinks } from '~/configs';
 import { loaderSession } from '~/features';
@@ -126,8 +127,8 @@ export function DocumentBoundary({ title, children }: DocumentProps) {
         {children}
 
         <Scripts />
-        {/* <ScrollRestoration /> */}
-        {/* <LiveReload /> */}
+        <ScrollRestoration />
+        <LiveReload />
       </body>
     </html>
   );
@@ -143,18 +144,22 @@ export function CatchBoundary() {
 
   return (
     <DocumentBoundary title="Hmm, something went wrong">
-      <LayoutError className="prose-config">
-        <h1 className="text-warning-500">Wut?</h1>
-        <p>
-          Hmm, something went wrong. Let's just{' '}
-          <a href="/">go back to homepage</a>.
-        </p>
-        <h3>Status Message</h3>
-        <p>
-          {caught.status} {caught.statusText}
-        </p>
-        <h3>Caught error data</h3>
-        <pre>{JSON.stringify(caught, null, 2)}</pre>
+      <LayoutError>
+        <div className="prose-config">
+          <h1 className="text-warning-500">Wut?</h1>
+          <p>Hmm, something went wrong.</p>
+        </div>
+
+        <MitigationButtons />
+
+        <div className="prose-config">
+          <h3>Status Message</h3>
+          <p>
+            {caught.status} {caught.statusText}
+          </p>
+          <h3>Caught error data</h3>
+          <pre>{JSON.stringify(caught, null, 2)}</pre>
+        </div>
       </LayoutError>
     </DocumentBoundary>
   );
@@ -173,15 +178,19 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   return (
     <DocumentBoundary title="Error, something crashed">
       <LayoutError className="prose-config">
-        <h1 className="text-error-500">Error!</h1>
-        <p>
-          Sorry, something crashed and we didn't expect that to happen. But no
-          worries, we can just <a href="/">go back to homepage</a>.
-        </p>
-        <h3>Error message</h3>
-        <pre>{error.message}</pre>
-        <h3>Stack trace</h3>
-        <pre>{error.stack as string}</pre>
+        <div className="prose-config">
+          <h1 className="text-error-500">Error!</h1>
+          <p>Sorry, something crashed and we didn't expect that to happen.</p>
+        </div>
+
+        <MitigationButtons />
+
+        <div className="prose-config">
+          <h3>Error message</h3>
+          <pre>{error.message}</pre>
+          <h3>Stack trace</h3>
+          <pre>{error.stack as string}</pre>
+        </div>
       </LayoutError>
     </DocumentBoundary>
   );

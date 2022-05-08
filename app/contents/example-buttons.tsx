@@ -1,4 +1,11 @@
-import { Button, ButtonGroup, H2, H3, RemixLink } from '~/components';
+import {
+  Button,
+  ButtonGroup,
+  H2,
+  H3,
+  MitigationButtons,
+  RemixLink,
+} from '~/components';
 
 import type { FunctionComponent } from 'react';
 
@@ -127,6 +134,9 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           Button
         </Button>
       </ButtonGroup>
+
+      <H3>Mitigation buttons: Go to home / Go back / Reload page</H3>
+      <MitigationButtons />
     </div>
   );
 };
