@@ -1,5 +1,3 @@
-import { json } from '@remix-run/node';
-
 import {
   Links,
   LiveReload,
@@ -10,8 +8,8 @@ import {
   NProgress,
   ThemeProvider,
 } from '~/components';
-import { configApp, configDocumentLinks } from '~/configs';
-import { commitSession, getSession } from '~/features';
+import { configDocumentLinks } from '~/configs';
+import { loaderSession } from '~/features';
 import {
   useEffect,
   useState,
@@ -20,7 +18,7 @@ import {
   useTransition,
 } from '~/hooks';
 import { Layout } from '~/layouts';
-import { createMetaData, getEnv } from '~/utils';
+import { createMetaData } from '~/utils';
 
 import type {
   LinksFunction,
@@ -44,28 +42,7 @@ export const meta: MetaFunction = () => {
   return createMetaData();
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const session = await getSession(request.headers.get('Cookie'));
-  const themeFromSession = await session.get('theme');
-
-  // Only parse if theme string exist
-  const themeParsed = themeFromSession
-    ? JSON.parse(themeFromSession)
-    : configApp?.theme;
-
-  const data: LoaderDataSession = {
-    user: await session.get('user'),
-    theme: themeParsed,
-    error: await session.get('error'),
-    ENV: getEnv(),
-  };
-
-  return json(data, {
-    headers: {
-      'Set-Cookie': await commitSession(session),
-    },
-  });
-};
+export const loader: LoaderFunction = loaderSession;
 
 export default function App() {
   return (

@@ -1,7 +1,16 @@
-import { createCookieSessionStorage } from '@remix-run/node';
+import {
+  ActionFunction,
+  createCookieSessionStorage,
+  json,
+  redirect,
+} from '@remix-run/node';
 
+import { configApp, configAvailableThemes } from '~/configs';
 import { dateFns } from '~/libs';
-import { getEnvServer } from '~/utils';
+import { getEnv, getEnvServer } from '~/utils';
+
+import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderDataSession, Theme } from '~/types';
 
 const currentDate = Date.now();
 const expiryInDays = 30;
@@ -26,3 +35,43 @@ export const { getSession, commitSession, destroySession } =
       secure: true,
     },
   });
+
+export const loaderSession: LoaderFunction = async ({ request }) => {
+  const session = await getSession(request.headers.get('Cookie'));
+  const themeFromSession = await session.get('theme');
+
+  // Only parse if theme string exist
+  const themeParsed: Theme = themeFromSession
+    ? JSON.parse(themeFromSession)
+    : configApp?.theme;
+
+  const currentTheme = configAvailableThemes.find((item) => {
+    return item.id === themeParsed.colorScheme;
+  });
+
+  const data: LoaderDataSession = {
+    theme: {
+      ...themeParsed,
+      currentTheme,
+    },
+    user: (await session.get('user')) || {},
+    error: (await session.get('error')) || false,
+    ENV: getEnv(),
+  };
+
+  return json(data, {
+    headers: {
+      'Set-Cookie': await commitSession(session),
+    },
+  });
+};
+
+export const actionSession: ActionFunction = async ({ request }) => {
+  const session = await getSession(request.headers.get('Cookie'));
+
+  return redirect('/', {
+    headers: {
+      'Set-Cookie': await commitSession(session),
+    },
+  });
+};

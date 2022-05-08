@@ -21,7 +21,7 @@
     "comma-dangle": ["error", "only-multiline"],
     "import/no-cycle": "off",
     "import/prefer-default-export": "off",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": "off",
