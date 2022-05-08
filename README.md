@@ -26,18 +26,20 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
 
 ### Core
 
-- React v17
-- Remix v1
-- TypeScript v4
+- React v18
+- Remix v1.4
+- TypeScript v4.6
 
 ### Frontend
 
 - Tailwind CSS v3
+  - Tailwind CSS plugins
 - PostCSS v8
 - Fonts
   - Google Fonts
   - Fontbit CDN
 - Icons
+  - React Icons
   - Heroicons v1
   - Font Awesome
   - Phospor Icons
@@ -46,20 +48,15 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
   - Radix UI v0 – Unstyled accessible UI components
     - Tailwind Radix
   - Vechai UI v0 – React Tailwind CSS components
-  - HyperUI – Collection of free Tailwind CSS components
-  - LaLoka Layouts – Useful layouts for Tailwind CSS
-  - Flowbite v1 – Tailwind CSS components
-  - daisyUI v2 – Tailwind CSS components
   - NProgress
-
-### Config
-
-- ESLint v8
-- Prettier v2
 
 ### Utility
 
+- ESLint v8
+- Prettier v2
 - `clsx` aliased as `classx`
+- `urql` and `graphql-request`
+- `axios`
 
 ### Deployment
 
