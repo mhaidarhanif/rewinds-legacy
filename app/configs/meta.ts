@@ -4,7 +4,7 @@
  * Meta data mostly for information and SEO purpose
  */
 
-export const configMetaDefault = {
+export const configMeta = {
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
   name: 'Rewinds',

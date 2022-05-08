@@ -1,5 +1,5 @@
 import { H1, P } from '~/components';
-import { configMetaDefault } from '~/configs';
+import { configMeta } from '~/configs';
 import { SubscribeForm } from '~/contents';
 import { actionSubscribe, loaderSubscribe } from '~/features';
 import { useActionData, useTransition } from '~/hooks';
@@ -20,7 +20,7 @@ export default function SubscribeRoute() {
       <H1>Subscribe</H1>
       <P>
         Subscribe to updates on <b>Rewinds</b> from{' '}
-        <b>{configMetaDefault.newsletterName}</b>.
+        <b>{configMeta.newsletterName}</b>.
       </P>
 
       <SubscribeForm transition={transition} actionData={actionData} />
