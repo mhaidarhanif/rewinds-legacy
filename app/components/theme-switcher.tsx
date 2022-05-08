@@ -64,9 +64,9 @@ export const ThemeSwitcher = () => {
             >
               <Popover.Panel className="border-panel absolute right-0 z-50 mt-2 w-64 origin-top-right rounded-md bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:bg-neutral-800 dark:text-white">
                 <div className="flow-root">
-                  <span className="text-md flex items-center font-medium">
+                  <b className="text-md flex items-center">
                     Theme Appearance Settings
-                  </span>
+                  </b>
                 </div>
 
                 <Divider

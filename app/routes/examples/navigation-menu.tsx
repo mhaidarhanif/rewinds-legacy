@@ -1,13 +1,25 @@
-import { H1, H2, NavigationBarNavMenu, P, Pre } from '~/components';
+import { NavigationBarNavMenu } from '~/components';
 import { Layout } from '~/layouts';
 
 export default function ExampleNavigationMenuRoute() {
   return (
     <Layout>
       <article className="prose-config">
-        <H1>Navigation Menu with Radix UI</H1>
-        <P>A collection of links for navigating websites.</P>
-        <P>Features:</P>
+        <h1>Example: Navigation Menu</h1>
+        <p>
+          Complex navigation menu component with Radix UI. A collection of links
+          for navigating websites.
+        </p>
+      </article>
+
+      <article className="demo">
+        <nav className="navigation-bar">
+          <NavigationBarNavMenu />
+        </nav>
+      </article>
+
+      <article className="prose-config">
+        <p>Features</p>
         <ul>
           <li>Can be controlled or uncontrolled.</li>
           <li>Flexible layout structure with managed tab focus.</li>
@@ -16,15 +28,9 @@ export default function ExampleNavigationMenuRoute() {
           <li>Full keyboard navigation.</li>
           <li>Exposes CSS variables for advanced animation.</li>
         </ul>
-        <H2>Installation</H2>
-        <Pre>npm install @radix-ui/react-navigation-menu</Pre>
+        <h2>Installation</h2>
+        <pre>npm install @radix-ui/react-navigation-menu</pre>
       </article>
-
-      <div className="mt-10">
-        <nav className="navigation-bar">
-          <NavigationBarNavMenu />
-        </nav>
-      </div>
     </Layout>
   );
 }

@@ -1,16 +1,16 @@
-import { ExampleButtons } from '~/contents';
+import { ExampleAlerts } from '~/contents';
 import { Layout } from '~/layouts';
 
 export default function ExampleButtonRoute() {
   return (
     <Layout>
       <article className="prose-config">
-        <h1>Example: Button</h1>
-        <p>Button components with Vechai UI.</p>
+        <h1>Example: Alert</h1>
+        <p>Alert components with Vechai UI.</p>
       </article>
 
       <article className="demo">
-        <ExampleButtons />
+        <ExampleAlerts />
       </article>
     </Layout>
   );

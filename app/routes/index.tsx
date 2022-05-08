@@ -2,10 +2,10 @@ import {
   ExampleAlerts,
   ExampleButtons,
   ExampleForms,
+  ExampleNotifications,
   ExampleToasts,
   HomeIntro,
 } from '~/contents';
-import { ExampleNotifications } from '~/contents/example-notifications';
 import { Layout } from '~/layouts';
 
 import type { SEOHandle } from '~/utils';
