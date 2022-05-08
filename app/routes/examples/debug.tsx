@@ -1,4 +1,4 @@
-import { H1, H2, Pre } from '~/components';
+import { H1, Pre, RadixScrollArea } from '~/components';
 import { loaderSession } from '~/features';
 import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
@@ -21,8 +21,9 @@ export default function DebugRoute() {
     <Layout>
       <H1>Debug</H1>
 
-      <H2>Data</H2>
-      <Pre>{data}</Pre>
+      <RadixScrollArea>
+        <Pre>{data}</Pre>
+      </RadixScrollArea>
     </Layout>
   );
 }

@@ -17,7 +17,7 @@ import {
   useLoaderData,
   useTransition,
 } from '~/hooks';
-import { Layout } from '~/layouts';
+import { LayoutError } from '~/layouts';
 import { createMetaData } from '~/utils';
 
 import type {
@@ -86,10 +86,9 @@ export function Document({ title, children }: DocumentProps) {
       </head>
 
       <body>
-        <ThemeProvider specifiedTheme={data?.theme}>
-          <NProgress isAnimating={isTransitioning} />
-          {children}
-        </ThemeProvider>
+        <NProgress isAnimating={isTransitioning} />
+
+        <ThemeProvider specifiedTheme={data?.theme}>{children}</ThemeProvider>
 
         <ScrollRestoration />
         <Scripts />
@@ -109,6 +108,32 @@ export function Document({ title, children }: DocumentProps) {
 }
 
 /**
+ * Document Boundary for Catch and Error
+ */
+
+export function DocumentBoundary({ title, children }: DocumentProps) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {title && <title>{title}</title>}
+        <Meta />
+        <Links />
+      </head>
+
+      <body>
+        {children}
+
+        <Scripts />
+        {/* <ScrollRestoration /> */}
+        {/* <LiveReload /> */}
+      </body>
+    </html>
+  );
+}
+
+/**
  * Catch an expected error
  * Status: 400-500
  */
@@ -117,8 +142,8 @@ export function CatchBoundary() {
   const caught = useCatch();
 
   return (
-    <Document title="Hmm, something went wrong">
-      <Layout className="prose-config">
+    <DocumentBoundary title="Hmm, something went wrong">
+      <LayoutError className="prose-config">
         <h1 className="text-warning-500">Wut?</h1>
         <p>
           Hmm, something went wrong. Let's just{' '}
@@ -130,8 +155,8 @@ export function CatchBoundary() {
         </p>
         <h3>Caught error data</h3>
         <pre>{JSON.stringify(caught, null, 2)}</pre>
-      </Layout>
-    </Document>
+      </LayoutError>
+    </DocumentBoundary>
   );
 }
 
@@ -146,8 +171,8 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   console.error(error);
 
   return (
-    <Document title="Error, something crashed">
-      <Layout className="prose-config">
+    <DocumentBoundary title="Error, something crashed">
+      <LayoutError className="prose-config">
         <h1 className="text-error-500">Error!</h1>
         <p>
           Sorry, something crashed and we didn't expect that to happen. But no
@@ -157,7 +182,7 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
         <pre>{error.message}</pre>
         <h3>Stack trace</h3>
         <pre>{error.stack as string}</pre>
-      </Layout>
-    </Document>
+      </LayoutError>
+    </DocumentBoundary>
   );
 }

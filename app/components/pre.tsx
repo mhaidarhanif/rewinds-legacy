@@ -1,3 +1,5 @@
+import { classx } from '~/utils';
+
 import type { FunctionComponent } from 'react';
 
 interface PreProps {
@@ -6,7 +8,12 @@ interface PreProps {
 
 export const Pre: FunctionComponent<PreProps> = ({ children }) => {
   return (
-    <pre className="border-panel rounded-base bg-primary-900/10 p-2 text-xs">
+    <pre
+      className={classx(
+        'border-panel rounded-base bg-primary-900/10 p-2 ',
+        'text-xs sm:text-sm md:text-base',
+      )}
+    >
       {JSON.stringify(children, null, 2)}
     </pre>
   );

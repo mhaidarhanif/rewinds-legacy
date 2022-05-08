@@ -28,3 +28,5 @@ export const Layout: FunctionComponent<LayoutProps> = ({
     </div>
   );
 };
+
+export const LayoutGlobal = Layout;
