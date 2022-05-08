@@ -1,15 +1,15 @@
 import { H1 } from '~/components';
-import { ExampleForms } from '~/contents';
+import { ExampleButtons } from '~/contents';
 import { Layout } from '~/layouts';
 
-export default function ExampleFormRoute() {
+export default function ExampleButtonRoute() {
   return (
     <Layout>
       <article className="prose-config">
-        <H1>Form with Vechai UI</H1>
+        <H1>Button with Vechai UI</H1>
       </article>
 
-      <ExampleForms />
+      <ExampleButtons />
     </Layout>
   );
 }
