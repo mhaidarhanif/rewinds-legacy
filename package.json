@@ -54,6 +54,7 @@
     "react-ga4": "1.4.1",
     "react-hook-form": "7.30.0",
     "react-icons": "4.3.1",
+    "react-router-dom": "6.3.0",
     "remix": "1.4.3",
     "tailwindcss": "3.0.24",
     "tailwindcss-radix": "2.2.0"
