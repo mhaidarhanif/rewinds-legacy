@@ -1,15 +1,16 @@
 import { json } from '@remix-run/node';
-import { gql } from 'graphql-request';
 
-import { H1, Pre, RadixScrollArea } from '~/components';
+import { Pre, RadixScrollArea } from '~/components';
 import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
-import { graphqlClient } from '~/libs';
+import { gql, graphqlClient } from '~/libs';
 import { sleep } from '~/utils';
 
 import type { LoaderFunction } from '~/types';
 
 export const loader: LoaderFunction = async () => {
+  const endpoint = process.env.GRAPHQL_ENDPOINT as string;
+
   const query = gql`
     query Request {
       method
@@ -24,7 +25,10 @@ export const loader: LoaderFunction = async () => {
   await sleep(1);
   const data = await graphqlClient.request(query);
 
-  return json(data);
+  return json({
+    endpoint,
+    ...data,
+  });
 };
 
 export default function ExampleGraphQLRoute() {
@@ -32,10 +36,19 @@ export default function ExampleGraphQLRoute() {
 
   return (
     <Layout>
-      <H1>Data from GraphQL</H1>
-      <RadixScrollArea>
-        <Pre>{data}</Pre>
-      </RadixScrollArea>
+      <article className="prose-config">
+        <h1>Example: GraphQL</h1>
+        <p>
+          Query data from GraphQL with <code>graphql-request</code>.
+        </p>
+      </article>
+
+      <article className="demo">
+        <Pre>{data.endpoint}</Pre>
+        <RadixScrollArea>
+          <Pre>{data}</Pre>
+        </RadixScrollArea>
+      </article>
     </Layout>
   );
 }

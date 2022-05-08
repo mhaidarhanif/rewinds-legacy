@@ -1,6 +1,6 @@
 import { json } from '@remix-run/node';
 
-import { H1, Pre, RadixScrollArea } from '~/components';
+import { Pre, RadixScrollArea } from '~/components';
 import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
 import { sleep } from '~/utils';
@@ -14,7 +14,10 @@ export const loader: LoaderFunction = async () => {
   const response = await fetch(endpoint);
   const data = await response.json();
 
-  return json(data);
+  return json({
+    endpoint,
+    ...data,
+  });
 };
 
 export default function ExampleRESTRoute() {
@@ -22,10 +25,19 @@ export default function ExampleRESTRoute() {
 
   return (
     <Layout>
-      <H1>Data from REST API</H1>
-      <RadixScrollArea>
-        <Pre>{data}</Pre>
-      </RadixScrollArea>
+      <article className="prose-config">
+        <h1>Example: REST API</h1>
+        <p>
+          Fetch data from REST API with <code>axios</code>.
+        </p>
+      </article>
+
+      <article className="demo">
+        <Pre>{data.endpoint}</Pre>
+        <RadixScrollArea>
+          <Pre>{data}</Pre>
+        </RadixScrollArea>
+      </article>
     </Layout>
   );
 }

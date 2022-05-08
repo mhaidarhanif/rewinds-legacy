@@ -180,7 +180,7 @@
   }
 
   .demo {
-    @apply my-20;
+    @apply my-20 space-y-5;
   }
 
   .container-active a {
