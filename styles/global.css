@@ -61,7 +61,7 @@
   }
 
   .navlink-hover {
-    @apply leading-none hover:bg-primary-200 dark:hover:bg-primary-900;
+    @apply leading-tight hover:bg-primary-200 dark:hover:bg-primary-900;
   }
 
   /* Used with Headless UI */
