@@ -1,4 +1,4 @@
-import { H1, Pre, RadixScrollArea } from '~/components';
+import { Pre, RadixScrollArea } from '~/components';
 import { loaderSession } from '~/features';
 import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
@@ -19,7 +19,10 @@ export default function DebugRoute() {
 
   return (
     <Layout>
-      <H1>Debug</H1>
+      <article className="prose-config">
+        <h1>Example: Debug</h1>
+        <p>The data shown here is public, not secret.</p>
+      </article>
 
       <RadixScrollArea>
         <Pre>{data}</Pre>

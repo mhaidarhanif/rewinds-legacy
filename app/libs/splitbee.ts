@@ -1,3 +1,7 @@
-import splitbee from '@splitbee/web'
+import splitbee from '@splitbee/web';
 
-export { splitbee }
+export { splitbee };
+
+export const splitbeeInit = () => {
+  splitbee.init();
+};

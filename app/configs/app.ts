@@ -6,6 +6,7 @@ import type { ConfigApp } from '~/types';
  * Configuration for:
  * - Themes
  * - Components
+ * - API
  */
 
 export const configApp: ConfigApp = {

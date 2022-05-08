@@ -3,12 +3,12 @@ import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
 
-interface LayoutProps {
+interface LayoutGlobalProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export const Layout: FunctionComponent<LayoutProps> = ({
+export const LayoutGlobal: FunctionComponent<LayoutGlobalProps> = ({
   children,
   className,
 }) => {
@@ -18,7 +18,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({
 
       <div className="container mx-auto flex-[1] px-4">
         <div className="flex justify-center">
-          <main className={classx('mt-20 w-full max-w-[65ch]', className)}>
+          <main className={classx('mt-10 w-full max-w-[65ch]', className)}>
             {children}
           </main>
         </div>
@@ -29,4 +29,4 @@ export const Layout: FunctionComponent<LayoutProps> = ({
   );
 };
 
-export const LayoutGlobal = Layout;
+export const Layout = LayoutGlobal;

@@ -2,19 +2,17 @@ import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
 
 import { configMeta } from '~/configs';
-import { splitbee, ReactGA } from '~/libs';
+import { googleAnalyticsInit, posthogInit, splitbeeInit } from '~/libs';
 
 hydrate(<RemixBrowser />, document);
 
-if (
-  ENV.NODE_ENV !== 'development' &&
-  configMeta.url === window.location.hostname
-) {
-  // Splitbee Analytics
-  splitbee.init();
+const isProductionAllowed =
+  ENV.NODE_ENV !== 'development' && configMeta.url === window.location.hostname;
 
-  // Google Analytics
-  ReactGA.initialize(String(ENV.GA_MEASUREMENT_ID));
+if (isProductionAllowed) {
+  splitbeeInit(); // Splitbee Analytics
+  googleAnalyticsInit(); // Google Analytics
+  posthogInit(); // PostHog Product Analytics
 }
 
 // If the browser supports Service Worker API
