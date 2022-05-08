@@ -7,6 +7,7 @@ export * from './posthog.client';
 export * from './posthog.server';
 export * from './splitbee';
 export * from './urql.server';
+export * from './remix-utils';
 
 /**
  * Note: Do not re-export from React and Remix modules
