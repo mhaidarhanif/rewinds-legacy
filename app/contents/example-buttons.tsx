@@ -105,7 +105,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
         <button
           type="button"
-          className="btn-solid btn btn-md rounded-xl uppercase tracking-wider"
+          className="btn btn-md btn-solid rounded-xl uppercase tracking-wider"
           data-color="primary"
         >
           HTML Button
@@ -114,13 +114,13 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           href="https://mhaidarhanif.com"
           target="_blank"
           rel="noreferrer"
-          className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 hover:border-primary-200"
+          className="btn btn-md btn-solid rounded-2xl border-4 border-primary-100 hover:border-primary-200"
         >
           Anchor Button
         </a>
         <RemixLink
           to="/about"
-          className="btn-solid btn btn-md rounded-full"
+          className="btn btn-md btn-solid rounded-full"
           data-color="primary"
         >
           Remix Link Button
@@ -135,7 +135,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Mitigation buttons: Go to home / Go back / Reload page</H3>
+      <H3>Mitigation buttons: Go to home / Reload page</H3>
       <MitigationButtons />
     </div>
   );

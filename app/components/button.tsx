@@ -35,7 +35,7 @@ export const MitigationButtons = () => {
 
   return (
     <ButtonGroup>
-      <ButtonAnchor href="/">Go to homepage</ButtonAnchor>
+      <ButtonAnchor href="/">Go to home</ButtonAnchor>
       <Button color="primary" onClick={handleReload}>
         Reload page
       </Button>
