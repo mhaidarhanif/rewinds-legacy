@@ -43,9 +43,9 @@ export const NavigationBarNavMenu: FunctionComponent<
           </NavigationMenuNavLink>
         </NavigationMenuItem>
 
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
 
         <NavigationMenuItem>
           <NavigationMenuAnchor href="https://github.com/mhaidarhanif/rewinds">
