@@ -4,6 +4,8 @@
  * Meta data mostly for information and SEO purpose
  */
 
+const domain = 'rewinds.mhaidarhanif.com';
+
 export const configMeta = {
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
@@ -11,7 +13,8 @@ export const configMeta = {
   title: 'Rewinds – Remix Tailwind Starter Kit by @mhaidarhanif',
   description:
     'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
-  url: 'https://rewinds.mhaidarhanif.com',
+  url: `https://${domain}`,
+  hostname: domain,
   color: '#ffffff',
   ogType: 'website',
   ogImageAlt: 'Rewinds – Remix Tailwind Starter Kit',
