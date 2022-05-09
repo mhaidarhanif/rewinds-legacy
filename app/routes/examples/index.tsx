@@ -30,7 +30,8 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function ExamplesRoute() {
-  const data = useLoaderData<LoaderDataExamples>();
+  const { exampleComponents, exampleUtilities } =
+    useLoaderData<LoaderDataExamples>();
 
   return (
     <Layout>
@@ -39,17 +40,15 @@ export default function ExamplesRoute() {
 
         <h2>Example components</h2>
         <ul>
-          {data.exampleComponents.map((availableComponent) => {
-            return (
-              <li key={availableComponent.name}>{availableComponent.name}</li>
-            );
+          {exampleComponents.map((item) => {
+            return <li key={item.name}>{item.name}</li>;
           })}
         </ul>
 
         <h2>Example utilities</h2>
         <ul>
-          {data.exampleUtilities.map((availableUtility) => {
-            return <li key={availableUtility.name}>{availableUtility.name}</li>;
+          {exampleUtilities.map((item) => {
+            return <li key={item.name}>{item.name}</li>;
           })}
         </ul>
       </article>
