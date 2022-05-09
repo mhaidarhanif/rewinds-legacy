@@ -116,6 +116,10 @@
     @apply flex;
   }
 
+  .nav-menu-content-children {
+    @apply w-[30rem] p-3;
+  }
+
   .nav-menu-link {
     @apply navlink-hover rounded-base px-3 py-2 font-bold transition-colors;
   }

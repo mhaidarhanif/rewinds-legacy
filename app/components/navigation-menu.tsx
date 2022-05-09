@@ -43,9 +43,9 @@ export const NavigationBarNavMenu: FunctionComponent<
           </NavigationMenuNavLink>
         </NavigationMenuItem>
 
-        {/* <NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuAnchor href="https://github.com/mhaidarhanif/rewinds">
@@ -83,7 +83,7 @@ export const NavigationMenuItemPages = ({
 
 export const NavigationMenuContentPages = () => {
   return (
-    <div className="w-[21rem] p-3 lg:w-[23rem]">
+    <div className="nav-menu-content-children">
       <div className="grid grid-cols-4 gap-2">
         <NavigationMenuNavLink
           to="/"
@@ -140,7 +140,7 @@ export const NavigationMenuAnchor = ({
 
 export const NavigationMenuContentExamples = () => {
   return (
-    <div className="w-[21rem] p-3 lg:w-[23rem]">
+    <div className="nav-menu-content-children">
       <div className="grid grid-cols-4 gap-2">
         <div className="col-span-2 flex w-full flex-col space-y-2">
           {configNavigationContentExamples1.map((item) => {
@@ -308,12 +308,11 @@ export const NavigationMenuViewportPosition = ({
 }: DefaultProps) => {
   return (
     <div
-      className={classx(
-        'absolute flex justify-center',
-        'left-[-20%] top-[100%] w-[140%]',
-        'z-40',
-      )}
+      className={classx('absolute z-40 flex')}
       style={{
+        top: '100%',
+        left: '-10%',
+        width: '120%',
         perspective: '2000px',
       }}
     >
