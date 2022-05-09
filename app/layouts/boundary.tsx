@@ -1,12 +1,12 @@
 import type { FunctionComponent } from 'react';
-import type { LayoutProps } from '~/types';
+import type { HTMLElementProps } from '~/types';
 
 /**
  * Layout Boundary
  * for CatchBoundary and ErrorBoundary
  */
 
-export const LayoutBoundary: FunctionComponent<LayoutProps> = ({
+export const LayoutBoundary: FunctionComponent<HTMLElementProps> = ({
   children,
 }) => {
   return (

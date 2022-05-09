@@ -1,9 +1,11 @@
 import { Footer, NavigationBar } from '~/components';
 
 import type { FunctionComponent } from 'react';
-import type { LayoutProps } from '~/types';
+import type { HTMLElementProps } from '~/types';
 
-export const LayoutFull: FunctionComponent<LayoutProps> = ({ children }) => {
+export const LayoutFull: FunctionComponent<HTMLElementProps> = ({
+  children,
+}) => {
   return (
     <div className="layout">
       <NavigationBar />

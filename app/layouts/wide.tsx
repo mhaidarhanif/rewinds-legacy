@@ -1,9 +1,11 @@
 import { Footer, NavigationBar } from '~/components';
 
 import type { FunctionComponent } from 'react';
-import type { LayoutProps } from '~/types';
+import type { HTMLElementProps } from '~/types';
 
-export const LayoutWide: FunctionComponent<LayoutProps> = ({ children }) => {
+export const LayoutWide: FunctionComponent<HTMLElementProps> = ({
+  children,
+}) => {
   return (
     <div className="layout">
       <NavigationBar />
