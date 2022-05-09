@@ -9,7 +9,7 @@ import {
   ThemeProvider,
 } from '~/components';
 import { configDocumentLinks } from '~/configs';
-import { MessageBackReloadButtons } from '~/contents';
+import { MessageCatch, MessageError } from '~/contents';
 import { loaderSession } from '~/features';
 import {
   useEffect,
@@ -151,21 +151,7 @@ export function CatchBoundary() {
   return (
     <DocumentBoundary title="Hmm, something went wrong">
       <LayoutBoundary>
-        <article className="prose-config">
-          <h1 className="text-warning-500">Wut?</h1>
-          <p>Hmm, something went wrong.</p>
-        </article>
-
-        <MessageBackReloadButtons />
-
-        <article className="prose-config">
-          <h3>Status Message</h3>
-          <pre>
-            {caught.status} {caught.statusText}
-          </pre>
-          <h3>Caught error data</h3>
-          <pre>{JSON.stringify(caught, null, 2)}</pre>
-        </article>
+        <MessageCatch caught={caught} />
       </LayoutBoundary>
     </DocumentBoundary>
   );
@@ -184,19 +170,7 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   return (
     <DocumentBoundary title="Error, something crashed">
       <LayoutBoundary>
-        <article className="prose-config">
-          <h1 className="text-error-500">Error!</h1>
-          <p>Sorry, something crashed and we didn't expect that to happen.</p>
-        </article>
-
-        <MessageBackReloadButtons />
-
-        <article className="prose-config">
-          <h3>Error message</h3>
-          <pre>{error.message}</pre>
-          <h3>Stack trace</h3>
-          <pre>{error.stack as string}</pre>
-        </article>
+        <MessageError error={error} />
       </LayoutBoundary>
     </DocumentBoundary>
   );

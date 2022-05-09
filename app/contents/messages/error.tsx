@@ -7,7 +7,6 @@ import type { FunctionComponent } from 'react';
 
 /**
  * Message Not Found
- *
  * Used in splat route $.tsx
  * Used inside ThemeProvider
  */
@@ -21,6 +20,70 @@ export const MessageErrorNotFound: FunctionComponent<
     <>
       <MessageErrorNotFoundGoogle />
       <MessageBackReloadButtons isThemed />
+    </>
+  );
+};
+
+/**
+ * Message Catch
+ * Used in CatchBoundary
+ */
+
+interface MessageCatchProps {
+  caught: any;
+}
+
+export const MessageCatch: FunctionComponent<MessageCatchProps> = ({
+  caught,
+}) => {
+  return (
+    <>
+      <article className="prose-config">
+        <h1 className="text-warning-500">What happened?</h1>
+        <p>Hmm, something went wrong.</p>
+      </article>
+
+      <MessageBackReloadButtons />
+
+      <article className="prose-config">
+        <h3>Status Message</h3>
+        <pre>
+          {caught.status} {caught.statusText}
+        </pre>
+        <h3>Caught error data</h3>
+        <pre>{JSON.stringify(caught, null, 2)}</pre>
+      </article>
+    </>
+  );
+};
+
+/**
+ * Message Error
+ * Used in CatchBoundary
+ */
+
+interface MessageErrorProps {
+  error: any;
+}
+
+export const MessageError: FunctionComponent<MessageErrorProps> = ({
+  error,
+}) => {
+  return (
+    <>
+      <article className="prose-config">
+        <h1 className="text-error-500">Error!</h1>
+        <p>Sorry, something crashed and we didn't expect that to happen.</p>
+      </article>
+
+      <MessageBackReloadButtons />
+
+      <article className="prose-config">
+        <h3>Error message</h3>
+        <pre>{error.message}</pre>
+        <h3>Stack trace</h3>
+        <pre>{error.stack as string}</pre>
+      </article>
     </>
   );
 };
@@ -65,6 +128,10 @@ export const MessageBackReloadButtons: FunctionComponent<
 > = ({ isThemed }) => {
   const navigate = useNavigate();
 
+  const handleBackToPrevious = () => {
+    window.history.back();
+  };
+
   const handleReload = () => {
     navigate(0);
   };
@@ -77,6 +144,7 @@ export const MessageBackReloadButtons: FunctionComponent<
         <ButtonLink variant="solid" to="/">
           Back to home page
         </ButtonLink>
+        <Button onClick={handleBackToPrevious}>Back to previous page</Button>
         <Button onClick={handleReload}>Reload page</Button>
       </ButtonGroup>
     );
