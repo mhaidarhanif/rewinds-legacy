@@ -1,7 +1,7 @@
 import { H1 } from '~/components';
 import { Layout } from '~/layouts';
 
-import type { SEOHandle } from '~/utils';
+import type { SEOHandle } from '~/types';
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {

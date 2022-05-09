@@ -4,8 +4,12 @@ import { dataExampleComponents, dataExampleUtilities } from '~/data';
 import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
 
-import type { LoaderFunction, ComponentItem, UtilityItem } from '~/types';
-import type { SEOHandle } from '~/utils';
+import type {
+  LoaderFunction,
+  ComponentItem,
+  UtilityItem,
+  SEOHandle,
+} from '~/types';
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {

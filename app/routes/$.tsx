@@ -4,8 +4,12 @@ import { configAppFeatures, configExternalLinks } from '~/configs';
 import { MessageErrorNotFound } from '~/contents/messages';
 import { Layout } from '~/layouts';
 
-import type { LoaderFunction, ActionFunction, MetaFunction } from '~/types';
-import type { SEOHandle } from '~/utils';
+import type {
+  SEOHandle,
+  LoaderFunction,
+  ActionFunction,
+  MetaFunction,
+} from '~/types';
 
 /**
  * Splat Route

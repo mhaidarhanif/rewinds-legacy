@@ -8,7 +8,7 @@ import {
 } from '~/contents';
 import { Layout } from '~/layouts';
 
-import type { SEOHandle } from '~/utils';
+import type { SEOHandle } from '~/types';
 
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {
