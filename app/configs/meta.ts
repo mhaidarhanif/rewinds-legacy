@@ -11,7 +11,6 @@ export const configMeta = {
   title: 'Rewinds – Remix Tailwind Starter Kit by @mhaidarhanif',
   description:
     'Rewinds is a Remix starter kit with Tailwind CSS family of libraries',
-  newsletterName: 'Newsletter from M Haidar Hanif',
   url: 'https://rewinds.mhaidarhanif.com',
   color: '#ffffff',
   ogType: 'website',
@@ -21,4 +20,5 @@ export const configMeta = {
   twiterImageUrl: 'assets/opengraph/rewinds-og.png',
   fbAppId: '',
   locale: 'en_US',
+  mailingListName: 'M Haidar Hanif Newsletter',
 };

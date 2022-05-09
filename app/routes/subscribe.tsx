@@ -20,7 +20,7 @@ export default function SubscribeRoute() {
         <h1>Subscribe</h1>
         <p>
           Subscribe to updates on <b>Rewinds</b> from{' '}
-          <b>{configMeta.newsletterName}</b>.
+          <b>{configMeta.mailingListName}</b>.
         </p>
       </article>
 
