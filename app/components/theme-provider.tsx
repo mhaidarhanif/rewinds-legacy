@@ -36,7 +36,7 @@ export function ThemeProvider({
   specifiedTheme = configApp?.theme,
   children,
 }: {
-  specifiedTheme: Theme;
+  specifiedTheme?: Theme;
   children: React.ReactNode;
 }) {
   /**

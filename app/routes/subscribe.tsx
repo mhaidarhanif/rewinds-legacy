@@ -1,4 +1,3 @@
-import { H1, P } from '~/components';
 import { configMeta } from '~/configs';
 import { SubscribeForm } from '~/contents';
 import { actionSubscribe, loaderSubscribe } from '~/features';
@@ -17,11 +16,13 @@ export default function SubscribeRoute() {
 
   return (
     <Layout>
-      <H1>Subscribe</H1>
-      <P>
-        Subscribe to updates on <b>Rewinds</b> from{' '}
-        <b>{configMeta.newsletterName}</b>.
-      </P>
+      <article className="prose-config">
+        <h1>Subscribe</h1>
+        <p>
+          Subscribe to updates on <b>Rewinds</b> from{' '}
+          <b>{configMeta.newsletterName}</b>.
+        </p>
+      </article>
 
       <SubscribeForm transition={transition} actionData={actionData} />
     </Layout>

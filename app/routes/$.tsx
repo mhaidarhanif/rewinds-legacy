@@ -1,10 +1,16 @@
-/* eslint-disable no-console */
-import { useParams } from '@remix-run/react';
-
-import { RemixLink } from '~/components';
+import { MessageErrorNotFound } from '~/contents/messages';
 import { Layout } from '~/layouts';
 
 import type { LoaderFunction, ActionFunction, MetaFunction } from '~/types';
+
+/**
+ * Splat Route
+ *
+ * Catch everything that is not specified in the routes
+ * Similar with CatchBoundary but this one is inside ThemeProvider
+ *
+ * https://remix.run/docs/en/v1/api/conventions#splat-routes
+ */
 
 export const meta: MetaFunction = () => {
   return {
@@ -22,27 +28,10 @@ export const action: ActionFunction = async ({ params }) => {
   return null;
 };
 
-/**
- * Splat everything that is not specified in the routes
- * Similar with CatchBoundary
- */
-
 export default function SplatRoute() {
-  const params = useParams();
-  const pathName = params['*'];
-
   return (
-    <Layout className="prose-config">
-      <h1 className="text-info-500">404</h1>
-      <h2>Sorry, page not found</h2>
-      <p>The requested URL /{pathName} was not found</p>
-      <RemixLink
-        to="/"
-        className="btn-solid btn btn-lg rounded-base"
-        data-color="primary"
-      >
-        Back to home page
-      </RemixLink>
+    <Layout>
+      <MessageErrorNotFound />
     </Layout>
   );
 }

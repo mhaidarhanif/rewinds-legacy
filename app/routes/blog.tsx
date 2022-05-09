@@ -12,7 +12,9 @@ export const handle: SEOHandle = {
 export default function BlogRoute() {
   return (
     <Layout>
-      <H1>Blog Articles</H1>
+      <article className="prose-config">
+        <H1>Blog Articles</H1>
+      </article>
     </Layout>
   );
 }

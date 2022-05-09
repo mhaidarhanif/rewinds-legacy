@@ -7,9 +7,9 @@ import {
   ScrollRestoration,
   NProgress,
   ThemeProvider,
-  MitigationButtons,
 } from '~/components';
 import { configDocumentLinks } from '~/configs';
+import { MessageBackReloadButtons } from '~/contents';
 import { loaderSession } from '~/features';
 import {
   useEffect,
@@ -18,7 +18,7 @@ import {
   useLoaderData,
   useTransition,
 } from '~/hooks';
-import { LayoutError } from '~/layouts';
+import { LayoutBoundary } from '~/layouts';
 import { createMetaData } from '~/utils';
 
 import type {
@@ -112,6 +112,10 @@ export function Document({ title, children }: DocumentProps) {
 
 /**
  * Document Boundary for Catch and Error
+ *
+ * Do not use ThemeProvider here because it will conflict with
+ * the theme data in the session.
+ * Unless there is a config to disable the persistence.
  */
 
 export function DocumentBoundary({ title, children }: DocumentProps) {
@@ -146,23 +150,23 @@ export function CatchBoundary() {
 
   return (
     <DocumentBoundary title="Hmm, something went wrong">
-      <LayoutError>
-        <div className="prose-config">
+      <LayoutBoundary>
+        <article className="prose-config">
           <h1 className="text-warning-500">Wut?</h1>
           <p>Hmm, something went wrong.</p>
-        </div>
+        </article>
 
-        <MitigationButtons />
+        <MessageBackReloadButtons />
 
-        <div className="prose-config">
+        <article className="prose-config">
           <h3>Status Message</h3>
-          <p>
+          <pre>
             {caught.status} {caught.statusText}
-          </p>
+          </pre>
           <h3>Caught error data</h3>
           <pre>{JSON.stringify(caught, null, 2)}</pre>
-        </div>
-      </LayoutError>
+        </article>
+      </LayoutBoundary>
     </DocumentBoundary>
   );
 }
@@ -179,21 +183,21 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
 
   return (
     <DocumentBoundary title="Error, something crashed">
-      <LayoutError className="prose-config">
-        <div className="prose-config">
+      <LayoutBoundary>
+        <article className="prose-config">
           <h1 className="text-error-500">Error!</h1>
           <p>Sorry, something crashed and we didn't expect that to happen.</p>
-        </div>
+        </article>
 
-        <MitigationButtons />
+        <MessageBackReloadButtons />
 
-        <div className="prose-config">
+        <article className="prose-config">
           <h3>Error message</h3>
           <pre>{error.message}</pre>
           <h3>Stack trace</h3>
           <pre>{error.stack as string}</pre>
-        </div>
-      </LayoutError>
+        </article>
+      </LayoutBoundary>
     </DocumentBoundary>
   );
 }

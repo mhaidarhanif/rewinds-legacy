@@ -1,7 +1,7 @@
 import { IconRewind } from '~/libs';
+import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
-import { classx } from '~/utils';
 
 interface LogoProps {}
 

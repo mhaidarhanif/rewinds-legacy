@@ -37,10 +37,9 @@ export const NavigationBarNavMenu: FunctionComponent<
         <NavigationMenuItemPages />
         <NavigationMenuItemExamples />
 
-        {/* need-fix: issue with forwardRef  */}
-        {/* <NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuAnchor href="https://github.com/mhaidarhanif/rewinds">

@@ -1,7 +1,5 @@
-import { useNavigate } from '@remix-run/react';
 import { Button as VechaiButton } from '@vechaiui/react';
 
-import { ButtonAnchor } from '~/components';
 import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
@@ -23,22 +21,5 @@ export const ButtonGroup: FunctionComponent<ButtonGroupProps> = (props) => {
     >
       {children}
     </VechaiButton.Group>
-  );
-};
-
-export const MitigationButtons = () => {
-  const navigate = useNavigate();
-
-  const handleReload = () => {
-    navigate(0);
-  };
-
-  return (
-    <ButtonGroup>
-      <ButtonAnchor href="/">Go to home</ButtonAnchor>
-      <Button color="primary" onClick={handleReload}>
-        Reload page
-      </Button>
-    </ButtonGroup>
   );
 };

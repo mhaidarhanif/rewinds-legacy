@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Tailwind CSS Base
+ */
+
 @layer base {
   html {
     font-family: 'Archivo', ui-sans-serif, system-ui, -apple-system,
@@ -32,9 +36,43 @@
   }
 }
 
+/**
+ * Tailwind CSS Components
+ */
+
 @layer components {
+  .layout {
+    @apply flex min-h-screen flex-col;
+  }
+
+  .layout-container {
+    @apply container mx-auto flex-[1] px-4;
+  }
+
+  .layout-center {
+    @apply flex flex-[1] justify-center;
+  }
+
+  .layout-main {
+    @apply mt-10 w-full max-w-[65ch];
+  }
+
+  .layout-main-wide {
+    @apply mt-10 w-full max-w-[1440px];
+  }
+
+  .layout-main-full {
+    @apply w-full;
+  }
+
   .footer {
     @apply mt-32 flex justify-center border-t border-slate-200 dark:border-slate-200/5;
+  }
+
+  .button {
+    @apply font-bold no-underline;
+    @apply inline-block rounded border px-3 py-2;
+    @apply focus-ring;
   }
 
   /*
@@ -111,6 +149,10 @@
   }
 }
 
+/**
+ * Tailwind CSS Utilities
+ */
+
 @layer utilities {
   .bg-primary {
     @apply bg-neutral-50 dark:bg-neutral-900;
@@ -165,14 +207,19 @@
 
   .prose-config {
     @apply my-10;
-    @apply prose dark:prose-invert md:prose-lg lg:prose-lg;
+    @apply prose dark:prose-invert md:prose-lg;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
   }
 
+  .prose-larger {
+    @apply lg:prose-xl;
+  }
+
   .prose-a-styles {
     @apply text-underline-left-right font-bold no-underline;
-    @apply text-primary-900 dark:text-primary-100;
+    @apply text-primary-600 dark:text-primary-400;
+    @apply visited:text-primary-800 visited:dark:text-primary-200;
   }
 
   .prose-ul-styles {

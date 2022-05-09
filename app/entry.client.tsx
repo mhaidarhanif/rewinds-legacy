@@ -2,12 +2,7 @@ import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
 
 import { configMeta } from '~/configs';
-import {
-  googleAnalyticsInit,
-  juneInit,
-  posthogInit,
-  splitbeeInit,
-} from '~/libs';
+import { googleAnalyticsInit, posthogInit, splitbeeInit } from '~/libs';
 
 hydrate(<RemixBrowser />, document);
 
@@ -19,8 +14,6 @@ if (isProductionAllowed) {
   splitbeeInit(); // Splitbee Analytics
   posthogInit(); // PostHog Product Analytics
 }
-
-juneInit();
 
 // If the browser supports Service Worker API
 if ('serviceWorker' in navigator) {

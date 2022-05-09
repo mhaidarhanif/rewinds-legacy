@@ -1,11 +1,5 @@
-import {
-  Button,
-  ButtonGroup,
-  H2,
-  H3,
-  MitigationButtons,
-  RemixLink,
-} from '~/components';
+import { Button, ButtonGroup, H2, H3, RemixLink } from '~/components';
+import { MessageBackReloadButtons } from '~/contents';
 
 import type { FunctionComponent } from 'react';
 
@@ -105,7 +99,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
         <button
           type="button"
-          className="btn btn-md btn-solid rounded-xl uppercase tracking-wider"
+          className="btn-solid btn btn-md rounded-xl uppercase tracking-wider"
           data-color="primary"
         >
           HTML Button
@@ -114,13 +108,13 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
           href="https://mhaidarhanif.com"
           target="_blank"
           rel="noreferrer"
-          className="btn btn-md btn-solid rounded-2xl border-4 border-primary-100 hover:border-primary-200"
+          className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 hover:border-primary-200"
         >
           Anchor Button
         </a>
         <RemixLink
           to="/about"
-          className="btn btn-md btn-solid rounded-full"
+          className="btn-solid btn btn-md rounded-full"
           data-color="primary"
         >
           Remix Link Button
@@ -135,8 +129,8 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Mitigation buttons: Go to home / Reload page</H3>
-      <MitigationButtons />
+      <H3>Buttons in Message: Back to home page / Reload page</H3>
+      <MessageBackReloadButtons />
     </div>
   );
 };

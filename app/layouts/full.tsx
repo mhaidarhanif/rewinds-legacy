@@ -1,23 +1,15 @@
 import { Footer, NavigationBar } from '~/components';
-import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
+import type { LayoutProps } from '~/types';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const LayoutFull: FunctionComponent<LayoutProps> = ({
-  children,
-  className,
-}) => {
+export const LayoutFull: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="layout">
       <NavigationBar />
 
-      <div className="flex flex-[1] justify-center">
-        <main className={classx('w-full', className)}>{children}</main>
+      <div className="layout-center">
+        <main className="layout-main-full">{children}</main>
       </div>
 
       <Footer />

@@ -1,16 +1,15 @@
-import {
-  ActionFunction,
-  createCookieSessionStorage,
-  json,
-  redirect,
-} from '@remix-run/node';
+import { createCookieSessionStorage, json, redirect } from '@remix-run/node';
 
 import { configApp, configAvailableThemes } from '~/configs';
 import { dateFns } from '~/libs';
 import { getEnv, getEnvServer } from '~/utils';
 
-import type { LoaderFunction } from '@remix-run/node';
-import type { LoaderDataSession, Theme } from '~/types';
+import type {
+  ActionFunction,
+  LoaderDataSession,
+  LoaderFunction,
+  Theme,
+} from '~/types';
 
 const currentDate = Date.now();
 const expiryInDays = 30;
