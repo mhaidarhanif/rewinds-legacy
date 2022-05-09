@@ -1,18 +1,21 @@
-import { H1 } from '~/components';
+import { H1, H2, Header } from '~/components';
 import { Layout } from '~/layouts';
 
 import type { SEOHandle } from '~/utils';
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
-    return [{ route: `/pricing`, priority: 0.8 }];
+    return [{ route: `/pricing`, priority: 0.7 }];
   },
 };
 
-export default function BlogRoute() {
+export default function PricingRoute() {
   return (
     <Layout>
-      <H1>Pricing Plans</H1>
+      <Header>
+        <H1>Pricing Plans</H1>
+        <H2>Choose what's best for you</H2>
+      </Header>
     </Layout>
   );
 }

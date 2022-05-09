@@ -66,6 +66,10 @@
     @apply w-full;
   }
 
+  .header {
+    @apply my-10;
+  }
+
   .footer {
     @apply mt-32 flex justify-center border-t border-slate-200 dark:border-slate-200/5;
   }
