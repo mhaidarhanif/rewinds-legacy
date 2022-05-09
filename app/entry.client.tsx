@@ -3,11 +3,12 @@ import { hydrate } from 'react-dom';
 
 import { configMeta } from '~/configs';
 import { googleAnalyticsInit, posthogInit, splitbeeInit } from '~/libs';
+import { isEnvProduction } from '~/utils';
 
 hydrate(<RemixBrowser />, document);
 
 const isProductionAllowed =
-  ENV.NODE_ENV !== 'development' && configMeta.url === window.location.hostname;
+  isEnvProduction && configMeta.url === window.location.hostname;
 
 if (isProductionAllowed) {
   googleAnalyticsInit(); // Google Analytics

@@ -10,10 +10,11 @@ import {
 
 import { configApp, configAvailableThemes, configThemes } from '~/configs';
 import { useFetcher } from '~/hooks';
+import { useMediaQuery } from '~/libs';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
 import type { Theme } from '~/types';
-import { useMediaQuery } from '~/libs';
+import { isEnvProduction } from '~/utils';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -41,11 +42,15 @@ export function ThemeProvider({
   children: React.ReactNode;
 }) {
   /**
-   * Preferred Theme
+   * TODO: Preferred Theme
+   * Only Light and Dark for now
+   * Because System appearance require to modify the ThemeSwitcher
    */
 
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  console.info({ prefersDarkMode });
+  if (!isEnvProduction) {
+    console.info({ prefersDarkMode });
+  }
 
   /**
    * VechaiTheme

@@ -2,6 +2,18 @@ import type { StackItem } from '~/types';
 
 export const dataMainStacks: StackItem[] = [
   {
+    url: 'https://typescriptlang.org',
+    name: 'TypeScript',
+    description:
+      'TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.',
+    subItems: [
+      {
+        name: 'usehooks-ts',
+        url: 'https://usehooks-ts.com',
+      },
+    ],
+  },
+  {
     url: 'https://remix.run',
     name: 'Remix',
     description:
@@ -9,9 +21,14 @@ export const dataMainStacks: StackItem[] = [
     subItems: [
       {
         name: '@balavishnuvj/remix-seo',
+        url: 'https://github.com/balavishnuvj/remix-seo',
       },
       {
-        name: 'remix-forms',
+        name: 'sergiodxa/remix-utils',
+        url: 'https://github.com/sergiodxa/remix-utils',
+      },
+      {
+        name: 'SeasonedSoftware/remix-forms',
         url: 'https://remix-forms.seasoned.cc',
       },
     ],
