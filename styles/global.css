@@ -144,8 +144,8 @@
   }
 
   .scroll-area-thumb::before {
-    @apply absolute top-1/2 left-1/2 h-full min-h-[50px] w-full min-w-[50px] translate-x-1/2 translate-y-1/2;
     content: '';
+    @apply absolute top-1/2 left-1/2 h-full min-h-[50px] w-full min-w-[50px] translate-x-1/2 translate-y-1/2;
   }
 }
 
@@ -207,9 +207,7 @@
   }
 
   .text-shimmer {
-    @apply animate-text-shimmer;
-    @apply bg-clip-text text-transparent;
-    @apply bg-[length:250%_100%];
+    @apply animate-text-shimmer bg-[length:250%_100%] bg-clip-text text-transparent;
   }
 
   .text-shimmer.bg-gradient-primary {
