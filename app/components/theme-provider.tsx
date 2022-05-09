@@ -13,6 +13,7 @@ import { useFetcher } from '~/hooks';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
 import type { Theme } from '~/types';
+import { useMediaQuery } from '~/libs';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -39,6 +40,13 @@ export function ThemeProvider({
   specifiedTheme?: Theme;
   children: React.ReactNode;
 }) {
+  /**
+   * Preferred Theme
+   */
+
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  console.info({ prefersDarkMode });
+
   /**
    * VechaiTheme
    */
