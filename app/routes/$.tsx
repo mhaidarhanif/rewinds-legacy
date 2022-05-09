@@ -1,3 +1,4 @@
+import { configAppFeatures } from '~/configs';
 import { MessageErrorNotFound } from '~/contents/messages';
 import { Layout } from '~/layouts';
 
@@ -19,12 +20,12 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
-  console.info(params['*']);
+  if (configAppFeatures.console) console.info(params['*']);
   return null;
 };
 
 export const action: ActionFunction = async ({ params }) => {
-  console.info(params['*']);
+  if (configAppFeatures.console) console.info(params['*']);
   return null;
 };
 

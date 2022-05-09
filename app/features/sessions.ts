@@ -1,6 +1,6 @@
 import { createCookieSessionStorage, json, redirect } from '@remix-run/node';
 
-import { configApp, configAvailableThemes } from '~/configs';
+import { configStyle, configAvailableThemes } from '~/configs';
 import { dateFns } from '~/libs';
 import { getEnv, getEnvServer } from '~/utils';
 
@@ -42,7 +42,7 @@ export const loaderSession: LoaderFunction = async ({ request }) => {
   // Only parse if theme string exist
   const themeParsed: Theme = themeFromSession
     ? JSON.parse(themeFromSession)
-    : configApp?.theme;
+    : configStyle?.theme;
 
   const currentTheme = configAvailableThemes.find((item) => {
     return item.id === themeParsed.colorScheme;

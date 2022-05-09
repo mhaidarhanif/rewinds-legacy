@@ -1,4 +1,3 @@
-export * from './app';
 export * from './data';
 export * from './props';
 export * from './react';

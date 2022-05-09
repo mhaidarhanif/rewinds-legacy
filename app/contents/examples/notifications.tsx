@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, H2 } from '~/components';
-import { configApp } from '~/configs';
+import { configStyle } from '~/configs';
 import { useNotification, useToast } from '~/hooks';
 
 import type { FunctionComponent } from 'react';
@@ -21,7 +21,7 @@ export const ExampleNotifications: FunctionComponent<
       title,
       description,
       status,
-      position: configApp.notification.position,
+      position: configStyle.notification.position,
       undoText: 'Undo',
       onUndo: () => {
         toast({

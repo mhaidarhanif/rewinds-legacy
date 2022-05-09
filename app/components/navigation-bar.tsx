@@ -8,7 +8,7 @@ import {
   NavigationBarNavMenu,
   NavigationBarMenu,
 } from '~/components';
-import { configApp, configNavigationLinks } from '~/configs';
+import { configStyle, configNavigationLinks } from '~/configs';
 import { packageJson } from '~/utils';
 
 import type { FunctionComponent } from 'react';
@@ -22,10 +22,8 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
         <div className="flex gap-4">
           <NavigationBarLogo />
           <div className="flex gap-1">
-            {configApp.navigationBarStyle === 'simple' && (
-              <NavigationBarLinks />
-            )}
-            {configApp.navigationBarStyle === 'complex' && (
+            {configStyle.navigationBar === 'simple' && <NavigationBarLinks />}
+            {configStyle.navigationBar === 'complex' && (
               <NavigationBarNavMenu />
             )}
           </div>

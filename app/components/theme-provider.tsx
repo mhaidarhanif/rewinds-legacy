@@ -8,7 +8,12 @@ import {
   useState,
 } from 'react';
 
-import { configApp, configAvailableThemes, configThemes } from '~/configs';
+import {
+  configStyle,
+  configAppFeatures,
+  configAvailableThemes,
+  configThemes,
+} from '~/configs';
 import { useFetcher } from '~/hooks';
 import { useMediaQuery } from '~/libs';
 import { isEnvProduction } from '~/utils';
@@ -35,7 +40,7 @@ export const ThemeContext = createContext<ThemeContextType | null>(null);
  * ThemeProvider wrapper
  */
 export function ThemeProvider({
-  specifiedTheme = configApp?.theme,
+  specifiedTheme = configStyle?.theme,
   children,
 }: {
   specifiedTheme?: Theme;
@@ -48,7 +53,7 @@ export function ThemeProvider({
    */
 
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  if (!isEnvProduction) {
+  if (!isEnvProduction && configAppFeatures.console) {
     console.info({ prefersDarkMode });
   }
 
@@ -132,10 +137,10 @@ export function ThemeProvider({
  */
 export const useTheme = () => {
   const theme = useContext(ThemeContext) || {
-    colorScheme: configApp?.theme.colorScheme,
-    density: configApp?.theme.density,
-    radius: configApp?.theme.radius,
-    cursorPointer: configApp?.theme.cursorPointer,
+    colorScheme: configStyle?.theme.colorScheme,
+    density: configStyle?.theme.density,
+    radius: configStyle?.theme.radius,
+    cursorPointer: configStyle?.theme.cursorPointer,
     setColorScheme: () => {
       return null;
     },

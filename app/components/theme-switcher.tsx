@@ -5,7 +5,7 @@ import { Divider, Fragment, useTheme } from '~/components';
 import {
   configAvailableThemes,
   configAvailableRadiuses,
-  configApp,
+  configStyle,
 } from '~/configs';
 import { useToast } from '~/hooks';
 import { IconGear } from '~/libs';
@@ -30,7 +30,7 @@ export const ThemeSwitcher = () => {
     setColorScheme(value);
     toast({
       message: `Changed theme to ${value}`,
-      position: configApp.toast.position,
+      position: configStyle.toast.position,
     });
   };
 

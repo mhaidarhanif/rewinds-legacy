@@ -9,7 +9,7 @@ import {
   Select,
   H2,
 } from '~/components';
-import { configApp } from '~/configs';
+import { configStyle } from '~/configs';
 import { useState, useForm, useNotification } from '~/hooks';
 import { sleep } from '~/utils';
 
@@ -45,7 +45,7 @@ export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
       title: 'Created your account',
       description: 'Your email is now registered.',
       status: 'success',
-      position: configApp.notification.position,
+      position: configStyle.notification.position,
     });
     setLoading(false);
   };
