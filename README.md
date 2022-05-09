@@ -13,7 +13,9 @@ Features:
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
 - Multiple themes switcher and persist theme with a session cookie
-- Only focus on the frontend styling and project structure, without particular in testing, backend, and database. For that matters, check out the official Remix Stacks instead: https://remix.run/stacks
+- Only focus on the frontend styling and project structure, without particular in testing and database
+  - Only a bit of backend integration through Remix loader
+  - For the full stack integration, check out the official Remix Stacks instead: https://remix.run/stacks
 - More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
 Screenshots:

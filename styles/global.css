@@ -102,7 +102,14 @@
     @apply hover:bg-primary-200 dark:hover:bg-primary-900;
   }
 
-  /* Used with Headless UI */
+  /**
+   * Headless UI - Menu
+   */
+
+  /**
+   * Similar with `navlink-hover` but without `hover` selector
+   * Because Menu.Item has `active` props
+   */
   .navlink-menu-active {
     @apply bg-primary-200 dark:bg-primary-900;
   }
