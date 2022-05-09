@@ -21,13 +21,14 @@
   a {
     @apply font-bold no-underline;
   }
-  a:focus {
-    @apply outline-none;
-  }
   a:focus-visible {
     @apply focus-ring;
   }
-  a.btn {
+  a:focus {
+    @apply outline-none;
+  }
+  a.btn,
+  a.button {
     @apply no-underline;
   }
   input,
@@ -70,9 +71,7 @@
   }
 
   .button {
-    @apply font-bold no-underline;
-    @apply inline-block rounded border px-3 py-2;
-    @apply focus-ring;
+    @apply focus-ring inline-block rounded border px-3 py-2 font-bold;
   }
 
   /*

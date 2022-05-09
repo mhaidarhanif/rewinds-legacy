@@ -205,7 +205,6 @@ export const NavigationMenuItem = ({ children, className }: DefaultProps) => {
 
 /**
  * Navigation Menu Trigger
- * The stylings are inside global.css because need :focus selector
  */
 
 export const NavigationMenuTrigger = ({

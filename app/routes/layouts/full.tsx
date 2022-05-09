@@ -6,13 +6,6 @@ import { useLoaderData } from '~/hooks';
 import { LayoutFull } from '~/layouts';
 
 import type { LoaderFunction } from '~/types';
-import type { SEOHandle } from '~/utils';
-
-export const handle: SEOHandle = {
-  getSitemapEntries: () => {
-    return [{ route: `/gallery`, priority: 0.7 }];
-  },
-};
 
 export const loader: LoaderFunction = async () => {
   return json({
@@ -20,18 +13,18 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function GalleryRoute() {
+export default function LayoutFullRoute() {
   const { images } = useLoaderData();
 
   return (
     <LayoutFull>
-      <header className="prose-config my-12 px-4">
-        <h1>Gallery</h1>
+      <article className="prose-config px-4">
+        <h1>Layout: Full</h1>
         <p>
-          Full width layout example with{' '}
+          Full width layout example without any padding with{' '}
           <Code className="text-inherit">{`<LayoutFull />`}</Code>
         </p>
-      </header>
+      </article>
 
       <div>
         {images.map((item: any) => {

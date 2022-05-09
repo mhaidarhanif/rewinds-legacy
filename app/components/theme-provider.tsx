@@ -11,10 +11,10 @@ import {
 import { configApp, configAvailableThemes, configThemes } from '~/configs';
 import { useFetcher } from '~/hooks';
 import { useMediaQuery } from '~/libs';
+import { isEnvProduction } from '~/utils';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
 import type { Theme } from '~/types';
-import { isEnvProduction } from '~/utils';
 
 export type ThemeContextType = {
   colorScheme?: string;

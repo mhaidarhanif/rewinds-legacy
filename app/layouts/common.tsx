@@ -3,7 +3,7 @@ import { Footer, NavigationBar } from '~/components';
 import type { FunctionComponent } from 'react';
 import type { LayoutProps } from '~/types';
 
-export const LayoutGlobal: FunctionComponent<LayoutProps> = ({ children }) => {
+export const LayoutCommon: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div className="layout">
       <NavigationBar />
@@ -19,4 +19,4 @@ export const LayoutGlobal: FunctionComponent<LayoutProps> = ({ children }) => {
   );
 };
 
-export const Layout = LayoutGlobal;
+export const Layout = LayoutCommon;

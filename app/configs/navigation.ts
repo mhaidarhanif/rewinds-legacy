@@ -29,6 +29,13 @@ export const configNavigationContentExamples2 = [
   { to: '/examples/debug', text: 'Example: Debug' },
 ];
 
+export const configNavigationContentLayouts = [
+  { to: '/layouts/common', text: 'Common' },
+  { to: '/layouts/full', text: 'Full' },
+  { to: '/layouts/wide', text: 'Wide' },
+  { to: '/layouts/boundary', text: 'Boundary' },
+];
+
 /**
  * Config Navigation Links
  *
