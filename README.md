@@ -18,6 +18,12 @@ Features:
   - For the full stack integration, check out the official Remix Stacks instead: https://remix.run/stacks
 - More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
+Caveats:
+
+- Depending on your computer processing power, the Tailwind compilation might take around 3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine.
+  - https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
+  - https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
+
 Screenshots:
 
 [![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
@@ -68,47 +74,54 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
 
 To run your Remix app locally, make sure your project's local dependencies are installed:
 
+### Install dependencies
+
 ```sh
 npm install
 ```
+
+### Environment variables
 
 Copy the `.env.example` into `.env`:
 
 ```sh
 cp .env.example .env
+# edit .env
 ```
 
-Setup the environment variables here and Vercel if want to deploy there:
-
-```sh
-# SERVER
-SESSION_SECRET="put_the_secret_here"
-REST_ENDPOINT="https://echo.hoppscotch.io"
-GRAPHQL_ENDPOINT="https://echo.hoppscotch.io/graphql"
-GRAPHCMS_ENDPOINT="https://api.graphcms.com/v2/id123/master"
-CONVERTKIT_API_KEY="abcdefghijklmnopqrstuv"
-CONVERTKIT_FORM_ID="1234567"
-
-# CLIENT
-GA_MEASUREMENT_ID="G-ABCDEFGHIJ"
-```
+Setup the environment variables here and Vercel if want to deploy there.
+If you don't need some of these, you can remove them in the `.env`, `app/utils/env.server.ts`, and all `getEnvServer()` function calls.
 
 - `SESSION_SECRET` for persisting the themes on browser sessions
+- `REST_ENDPOINT` for `fetch` or `axios`
 - `GRAPHQL_ENDPOINT` for `graphql-request` or `urql`
-- `GRAPHCMS_ENDPOINT` for GraphCMS
-- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform account
-- `CONVERTKIT_FORM_ID` for ConvertKit actual subscription form
+- `GRAPHCMS_ENDPOINT` for GraphCMS headless GraphQL CMS platform
+- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform account API key
+- `CONVERTKIT_FORM_ID` for ConvertKit actual subscription form ID
 - `GA_MEASUREMENT_ID` for Google Analytics 4
+- `POSTHOG_API_HOST` for PostHog analytics platform host
+- `POSTHOG_API_KEY` for PostHog analytics API key
+- `PIRSCH_ID_CODE` for Pirsch Analytics ID code
 
-Afterwards, start the Remix development server like so:
+Afterwards, run the Remix development server with the `dev` script.
 
 ```sh
 npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+It will compile both the Tailwind styles and Remix app.
+Finally, open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+Note if you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+
+### Using Doppler
+
+If you want to use [Doppler](https://doppler.com) to manage the env variables, use the `start` script. Therefore this won't need the `.env` file to be edited manually.
+
+```sh
+npm run start
+# doppler run -- npm run dev
+```
 
 ## Build
 
@@ -163,4 +176,6 @@ module.exports = {
 
 ### ConvertKit
 
-Mailing Address: https://help.convertkit.com/en/articles/2502494-alternatives-for-your-physical-address
+Tips:
+
+- Mailing Address: https://help.convertkit.com/en/articles/2502494-alternatives-for-your-physical-address
