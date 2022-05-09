@@ -204,7 +204,8 @@
   /* Relate to prose-a-styles */
   .text-underline-left-right {
     @apply after:bg-primary-500 dark:after:bg-primary-300;
-    @apply relative after:absolute after:-bottom-1 after:left-0 after:h-[4px] after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+    @apply after:-bottom-1 after:left-0 after:h-[2px];
+    @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
   }
 
   .text-shimmer {
