@@ -9,6 +9,8 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
   return (
     <div className="space-y-4">
       <H2>Buttons</H2>
+
+      <H3>Button Variant</H3>
       <ButtonGroup>
         <Button>Normal</Button>
         <Button color="primary">Primary</Button>
@@ -26,7 +28,7 @@ export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Different size</H3>
+      <H3>Button Size</H3>
       <ButtonGroup>
         <Button size="xs" variant="solid" color="primary">
           Extra Small

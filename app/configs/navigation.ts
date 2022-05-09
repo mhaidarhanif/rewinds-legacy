@@ -13,11 +13,12 @@ export const configNavigationContentPages = [
 export const configNavigationContentExamples1 = [
   { to: '/examples', text: 'Examples' },
   { to: '/examples/button', text: 'Example: Button' },
+  { to: '/examples/badge', text: 'Example: Badge' },
   { to: '/examples/form', text: 'Example: Form' },
-  { to: '/examples/navigation-menu', text: 'Example: Navigation Menu' },
   { to: '/examples/alert', text: 'Example: Alert' },
   { to: '/examples/toast', text: 'Example: Toast' },
   { to: '/examples/notification', text: 'Example: Notification' },
+  { to: '/examples/navigation-menu', text: 'Example: Navigation Menu' },
 ];
 
 export const configNavigationContentExamples2 = [
