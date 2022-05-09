@@ -1,6 +1,6 @@
 import PostHog from 'posthog-node';
 
-import { configAppFeatures } from '~/configs';
+import { configFeatures } from '~/configs';
 
 // Server
 export const posthogNode = new PostHog(String(process.env.POSTHOG_API_KEY), {
@@ -8,7 +8,7 @@ export const posthogNode = new PostHog(String(process.env.POSTHOG_API_KEY), {
 });
 
 export const getPosthogNode = () => {
-  if (configAppFeatures.posthog) {
+  if (configFeatures.posthog) {
     return posthogNode;
   }
   return null;

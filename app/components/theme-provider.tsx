@@ -10,7 +10,7 @@ import {
 
 import {
   configStyle,
-  configAppFeatures,
+  configFeatures,
   configAvailableThemes,
   configThemes,
 } from '~/configs';
@@ -53,7 +53,7 @@ export function ThemeProvider({
    */
 
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  if (!isEnvProduction && configAppFeatures.console) {
+  if (!isEnvProduction && configFeatures.console) {
     console.info({ prefersDarkMode });
   }
 

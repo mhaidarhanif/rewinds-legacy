@@ -1,11 +1,11 @@
 import splitbee from '@splitbee/web';
 
-import { configAppFeatures } from '~/configs';
+import { configFeatures } from '~/configs';
 
 export { splitbee };
 
 export const splitbeeInit = () => {
-  if (configAppFeatures.splitbee) {
+  if (configFeatures.splitbee) {
     splitbee.init();
   }
 };

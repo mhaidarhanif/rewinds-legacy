@@ -1,6 +1,6 @@
 import { redirect } from 'remix';
 
-import { configAppFeatures, configExternalLinks } from '~/configs';
+import { configFeatures, configExternalLinks } from '~/configs';
 import { MessageErrorNotFound } from '~/contents/messages';
 import { Layout } from '~/layouts';
 
@@ -38,7 +38,7 @@ export const meta: MetaFunction = () => {
 
 export const loader: LoaderFunction = async ({ params }) => {
   const pathName = params['*'];
-  if (configAppFeatures.console) console.info(pathName);
+  if (configFeatures.console) console.info(pathName);
 
   const externalLink = configExternalLinks.find((item) => {
     return item.name.toLowerCase() === pathName;
@@ -53,7 +53,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export const action: ActionFunction = async ({ params }) => {
   const pathName = params['*'];
-  if (configAppFeatures.console) console.info(pathName);
+  if (configFeatures.console) console.info(pathName);
   return null;
 };
 

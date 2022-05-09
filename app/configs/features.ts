@@ -2,7 +2,7 @@
  * Config Features
  */
 
-export const configAppFeatures = {
+export const configFeatures = {
   console: false,
   googleAnalytics: true,
   splitbee: true,
