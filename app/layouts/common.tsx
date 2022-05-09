@@ -18,5 +18,3 @@ export const LayoutCommon: FunctionComponent<LayoutProps> = ({ children }) => {
     </div>
   );
 };
-
-export const Layout = LayoutCommon;

@@ -11,10 +11,10 @@ export const handle: SEOHandle = {
 
 export default function PricingRoute() {
   return (
-    <Layout>
-      <Header>
+    <Layout variant="wide">
+      <Header className="header-center">
         <H1>Pricing Plans</H1>
-        <H2>Choose what's best for you</H2>
+        <H2>Choose what's best for you although this is just a demo</H2>
       </Header>
     </Layout>
   );

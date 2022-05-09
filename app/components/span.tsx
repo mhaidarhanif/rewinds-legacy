@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
-interface ComponentProps extends HTMLElementProps {}
+interface SpanProps extends HTMLElementProps {}
 
-export const Component: FunctionComponent<ComponentProps> = ({ children }) => {
+export const Span: FunctionComponent<SpanProps> = ({ children }) => {
   return <span>{children}</span>;
 };

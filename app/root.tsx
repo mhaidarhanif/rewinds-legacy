@@ -18,7 +18,7 @@ import {
   useLoaderData,
   useTransition,
 } from '~/hooks';
-import { LayoutBoundary } from '~/layouts';
+import { Layout } from '~/layouts';
 import { createMetaData } from '~/utils';
 
 import type {
@@ -150,9 +150,9 @@ export function CatchBoundary() {
 
   return (
     <DocumentBoundary title="Hmm, something went wrong">
-      <LayoutBoundary>
+      <Layout variant="boundary">
         <MessageCatch caught={caught} />
-      </LayoutBoundary>
+      </Layout>
     </DocumentBoundary>
   );
 }
@@ -169,9 +169,9 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
 
   return (
     <DocumentBoundary title="Error, something crashed">
-      <LayoutBoundary>
+      <Layout variant="boundary">
         <MessageError error={error} />
-      </LayoutBoundary>
+      </Layout>
     </DocumentBoundary>
   );
 }

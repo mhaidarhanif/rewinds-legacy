@@ -70,6 +70,11 @@
     @apply my-10;
   }
 
+  .header-center {
+    @apply flex flex-col items-center;
+    @apply text-center;
+  }
+
   .footer {
     @apply mt-32 flex justify-center border-t border-slate-200 dark:border-slate-200/5;
   }

@@ -3,7 +3,7 @@ import { json } from '@remix-run/node';
 import { Code, Image } from '~/components';
 import { dataImages } from '~/data';
 import { useLoaderData } from '~/hooks';
-import { LayoutFull } from '~/layouts';
+import { Layout } from '~/layouts';
 
 import type { LoaderFunction } from '~/types';
 
@@ -17,12 +17,12 @@ export default function LayoutFullRoute() {
   const { images } = useLoaderData();
 
   return (
-    <LayoutFull>
+    <Layout variant="full">
       <article className="prose-config px-4">
         <h1>Layout: Full</h1>
         <p>
           Full width layout example without any padding with{' '}
-          <Code>{'<LayoutFull />'}</Code>
+          <Code>{`<Layout variant="full" />`}</Code>
         </p>
       </article>
 
@@ -31,6 +31,6 @@ export default function LayoutFullRoute() {
           return <Image key={item.name} alt={item.name} src={item.url} />;
         })}
       </article>
-    </LayoutFull>
+    </Layout>
   );
 }

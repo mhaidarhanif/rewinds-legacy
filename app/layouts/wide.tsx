@@ -8,8 +8,10 @@ export const LayoutWide: FunctionComponent<LayoutProps> = ({ children }) => {
     <div className="layout">
       <NavigationBar />
 
-      <div className="layout-center">
-        <main className="layout-main-wide">{children}</main>
+      <div className="layout-container">
+        <div className="layout-center">
+          <main className="layout-main-wide">{children}</main>
+        </div>
       </div>
 
       <Footer />
