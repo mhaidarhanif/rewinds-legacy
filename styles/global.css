@@ -99,12 +99,13 @@
   }
 
   .navlink-hover {
-    @apply leading-tight hover:bg-primary-200 dark:hover:bg-primary-900;
+    @apply leading-tight;
+    @apply hover:bg-primary-200 dark:hover:bg-primary-900;
   }
 
   /* Used with Headless UI */
-  .navlink-hover-menu {
-    @apply bg-primary-100 dark:bg-primary-900;
+  .navlink-menu-active {
+    @apply bg-primary-200 dark:bg-primary-900;
   }
 
   /**

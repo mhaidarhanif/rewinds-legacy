@@ -364,7 +364,9 @@ export const NavigationMenuNavLink = ({
         to={to}
         end={end}
         className={classx(
-          'navlink-hover rounded-base p-2 font-bold transition-colors',
+          'navlink-hover',
+          'rounded-base p-2 font-bold transition-colors',
+          isActive && 'navlink-active',
           className,
         )}
       >

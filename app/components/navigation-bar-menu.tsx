@@ -18,7 +18,7 @@ export const NavigationBarMenu: FunctionComponent<
 > = () => {
   return (
     <div className="flex w-full select-none flex-wrap">
-      <Menu as="div" className="relative inline-block ">
+      <Menu as="div" className="menu relative inline-block">
         <Menu.Button
           as={Button}
           variant="solid"
@@ -26,6 +26,7 @@ export const NavigationBarMenu: FunctionComponent<
           leftIcon={
             <Icon as={MenuIcon} label="Menu" className="mr-1 h-4 w-4" />
           }
+          className="menu-button"
         >
           Menu
         </Menu.Button>
@@ -41,55 +42,66 @@ export const NavigationBarMenu: FunctionComponent<
         >
           <Menu.Items
             className={classx(
+              'menu-items',
               'absolute right-0 z-dropdown mt-2 w-56 min-w-max origin-top-right rounded-sm shadow-sm outline-none',
               'border border-gray-200 bg-white',
               'dark:border-gray-700 dark:bg-neutral-800',
             )}
           >
-            <div className="px-1 py-1">
-              <div role="group">
-                {configNavigationLinksMenu.map((group, index) => {
-                  return (
-                    <div role="group" key={group.name}>
-                      {group.links.map((link) => {
-                        return (
-                          <Menu.Item key={link.text}>
-                            {({ active, disabled }) => {
-                              return (
-                                <NavLink
-                                  end
-                                  to={link.to}
-                                  className={({ isActive }) => {
-                                    return classx(
-                                      'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold transition focus:outline-none',
-                                      isActive && 'navlink-active', // REMIX
-                                      active && 'navlink-hover-menu', // HUI
-                                      disabled &&
-                                        'disabled:cursor-not-allowed disabled:opacity-60',
-                                    );
-                                  }}
-                                >
-                                  {link.text}
-                                </NavLink>
-                              );
-                            }}
-                          </Menu.Item>
-                        );
-                      })}
-                      {configNavigationLinksMenu?.length !== index + 1 && (
-                        <Divider
-                          orientation="horizontal"
-                          className="border-neutral-200 dark:border-neutral-700"
-                        />
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <MenuItemsContent />
           </Menu.Items>
         </Transition>
       </Menu>
+    </div>
+  );
+};
+
+interface MenuItemsContentProps {}
+
+export const MenuItemsContent: FunctionComponent<
+  MenuItemsContentProps
+> = () => {
+  return (
+    <div className="menu-items-content px-1 py-1">
+      <div role="group">
+        {configNavigationLinksMenu.map((group, index) => {
+          return (
+            <div role="group" key={group.name}>
+              {group.links.map((link) => {
+                return (
+                  <Menu.Item key={link.text}>
+                    {({ active, disabled }) => {
+                      return (
+                        <NavLink
+                          end
+                          to={link.to}
+                          className={({ isActive }) => {
+                            return classx(
+                              'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold transition focus:outline-none',
+                              isActive && 'navlink-active', // REMIX
+                              active && 'navlink-menu-active', // HUI
+                              disabled &&
+                                'disabled:cursor-not-allowed disabled:opacity-60',
+                            );
+                          }}
+                        >
+                          {link.text}
+                        </NavLink>
+                      );
+                    }}
+                  </Menu.Item>
+                );
+              })}
+              {configNavigationLinksMenu?.length !== index + 1 && (
+                <Divider
+                  orientation="horizontal"
+                  className="border-neutral-200 dark:border-neutral-700"
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>{' '}
     </div>
   );
 };
