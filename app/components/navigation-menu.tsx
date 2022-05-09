@@ -4,15 +4,16 @@ import { useResolvedPath, NavLink } from '@remix-run/react';
 import { useMatch } from 'react-router-dom';
 
 import {
-  configNavigationContentExamples1,
-  configNavigationContentExamples2,
-  configNavigationContentPages,
+  configNavigationExamples1,
+  configNavigationExamples2,
+  configNavigationPages,
 } from '~/configs';
 import { IconCaretDown } from '~/libs';
 import { classx } from '~/utils';
 
 import type { NavLinkProps } from '@remix-run/react';
 import type { FunctionComponent } from 'react';
+import type { HTMLAnchorElementProps, HTMLElementProps } from '~/types';
 
 /**
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
@@ -20,11 +21,6 @@ import type { FunctionComponent } from 'react';
  */
 
 interface NavigationBarNavMenuProps {}
-
-interface DefaultProps {
-  children?: React.ReactNode;
-  className?: string;
-}
 
 export const NavigationBarNavMenu: FunctionComponent<
   NavigationBarNavMenuProps
@@ -66,22 +62,19 @@ export const NavigationBarNavMenu: FunctionComponent<
  * Items
  */
 
-export const NavigationMenuItemPages = ({
-  forceMount,
-}: {
-  forceMount?: true;
-}) => {
+export const NavigationMenuItemPages: FunctionComponent = () => {
   return (
     <NavigationMenuItem>
       <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
-      <NavigationMenuContent forceMount={forceMount}>
+      <NavigationMenuContent>
         <NavigationMenuContentPages />
       </NavigationMenuContent>
     </NavigationMenuItem>
   );
 };
 
-export const NavigationMenuContentPages = () => {
+// Separated to reduce too much nesting
+export const NavigationMenuContentPages: FunctionComponent = () => {
   return (
     <div className="nav-menu-content-children">
       <div className="grid grid-cols-4 gap-2">
@@ -94,7 +87,7 @@ export const NavigationMenuContentPages = () => {
 
         <div className="col-span-2">
           <div className="flex w-full flex-col space-y-2">
-            {configNavigationContentPages.map((item) => {
+            {configNavigationPages.map((item) => {
               return (
                 <NavigationMenuNavLink key={item.text} end to={item.to}>
                   {item.text}
@@ -108,7 +101,7 @@ export const NavigationMenuContentPages = () => {
   );
 };
 
-export const NavigationMenuItemExamples = () => {
+export const NavigationMenuItemExamples: FunctionComponent = () => {
   return (
     <NavigationMenuItem>
       <NavigationMenuTrigger>Examples</NavigationMenuTrigger>
@@ -119,31 +112,13 @@ export const NavigationMenuItemExamples = () => {
   );
 };
 
-export const NavigationMenuAnchor = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <NavigationMenu.Link
-      className="nav-menu-link"
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {children}
-    </NavigationMenu.Link>
-  );
-};
-
-export const NavigationMenuContentExamples = () => {
+// Separated to reduce too much nesting
+export const NavigationMenuContentExamples: FunctionComponent = () => {
   return (
     <div className="nav-menu-content-children">
       <div className="grid grid-cols-4 gap-2">
         <div className="col-span-2 flex w-full flex-col space-y-2">
-          {configNavigationContentExamples1.map((item) => {
+          {configNavigationExamples1.map((item) => {
             return (
               <NavigationMenuNavLink key={item.text} to={item.to}>
                 {item.text}
@@ -152,7 +127,7 @@ export const NavigationMenuContentExamples = () => {
           })}
         </div>
         <div className="col-span-2 flex w-full flex-col space-y-2">
-          {configNavigationContentExamples2.map((item) => {
+          {configNavigationExamples2.map((item) => {
             return (
               <NavigationMenuNavLink key={item.text} to={item.to}>
                 {item.text}
@@ -169,7 +144,10 @@ export const NavigationMenuContentExamples = () => {
  * Aliases
  */
 
-export const NavigationMenuRoot = ({ children, className }: DefaultProps) => {
+export const NavigationMenuRoot: FunctionComponent<HTMLElementProps> = ({
+  children,
+  className,
+}) => {
   return (
     <NavigationMenu.Root
       className={classx('nav-menu-root', 'relative hidden xl:flex', className)}
@@ -179,7 +157,10 @@ export const NavigationMenuRoot = ({ children, className }: DefaultProps) => {
   );
 };
 
-export const NavigationMenuList = ({ children, className }: DefaultProps) => {
+export const NavigationMenuList: FunctionComponent<HTMLElementProps> = ({
+  children,
+  className,
+}) => {
   return (
     <NavigationMenu.List
       className={classx(
@@ -193,7 +174,10 @@ export const NavigationMenuList = ({ children, className }: DefaultProps) => {
   );
 };
 
-export const NavigationMenuItem = ({ children, className }: DefaultProps) => {
+export const NavigationMenuItem: FunctionComponent<HTMLElementProps> = ({
+  children,
+  className,
+}) => {
   return (
     <NavigationMenu.Item
       className={classx('nav-menu-item', 'flex items-center', className)}
@@ -207,20 +191,20 @@ export const NavigationMenuItem = ({ children, className }: DefaultProps) => {
  * Navigation Menu Trigger
  */
 
-export const NavigationMenuTrigger = ({
+export const NavigationMenuTrigger: FunctionComponent<HTMLElementProps> = ({
   children,
   className,
   ...props
-}: DefaultProps) => {
+}) => {
   return (
     <NavigationMenu.Trigger
-      {...props}
       className={classx(
         'nav-menu-trigger',
-        'navlink-hover focus-visible:focus-ring focus:outline-none',
+        'navlink focus-visible:focus-ring focus:outline-none',
         'flex items-center gap-1 rounded-base px-3 py-2 font-bold transition-colors',
         className,
       )}
+      {...props}
     >
       {children}
       <IconCaretDown aria-hidden size={12} weight="bold" />
@@ -228,16 +212,12 @@ export const NavigationMenuTrigger = ({
   );
 };
 
-export const NavigationMenuContent = ({
+export const NavigationMenuContent: FunctionComponent<HTMLElementProps> = ({
   children,
   className,
-  forceMount,
-}: DefaultProps & {
-  forceMount?: true;
 }) => {
   return (
     <NavigationMenu.Content
-      forceMount={forceMount}
       className={classx(
         'nav-menu-content',
         'absolute top-0 left-0 w-auto rounded-lg',
@@ -253,14 +233,16 @@ export const NavigationMenuContent = ({
   );
 };
 
-export const NavigationMenuLink = ({
+interface NavigationMenuLinkProps extends HTMLAnchorElementProps {
+  asChild?: boolean;
+}
+
+// NavigationMenuLink to be used with RemixLink
+export const NavigationMenuLink: FunctionComponent<NavigationMenuLinkProps> = ({
   href,
   asChild,
   className,
   children,
-}: DefaultProps & {
-  href?: string;
-  asChild?: boolean;
 }) => {
   return (
     <NavigationMenu.Link
@@ -273,16 +255,27 @@ export const NavigationMenuLink = ({
   );
 };
 
-export const NavigationMenuIndicator = ({
+// NavigationMenuLink that to be used with directly and open in new tab
+export const NavigationMenuAnchor: FunctionComponent<
+  HTMLAnchorElementProps
+> = ({ className, href, children }) => {
+  return (
+    <NavigationMenu.Link
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={classx('nav-menu-link', className)}
+    >
+      {children}
+    </NavigationMenu.Link>
+  );
+};
+
+export const NavigationMenuIndicator: FunctionComponent<HTMLElementProps> = ({
   className,
-  forceMount,
-}: {
-  className?: string;
-  forceMount?: true;
 }) => {
   return (
     <NavigationMenu.Indicator
-      forceMount={forceMount}
       className={classx(
         'nav-menu-indicator',
         'overflow-hidden shadow-2xl',
@@ -301,13 +294,13 @@ export const NavigationMenuIndicator = ({
   );
 };
 
-export const NavigationMenuViewportPosition = ({
-  children,
-  className,
-}: DefaultProps) => {
+export const NavigationMenuViewportPosition: FunctionComponent<
+  HTMLElementProps
+> = ({ children }) => {
+  // Styles are half inside `style` props to ease debugging
   return (
     <div
-      className={classx('absolute z-40 flex')}
+      className="absolute z-40 flex"
       style={{
         top: '100%',
         left: '-10%',
@@ -320,16 +313,11 @@ export const NavigationMenuViewportPosition = ({
   );
 };
 
-export const NavigationMenuViewport = ({
-  className,
-  forceMount,
+export const NavigationMenuViewport: FunctionComponent<HTMLElementProps> = ({
   ...props
-}: DefaultProps & {
-  forceMount?: true;
 }) => {
   return (
     <NavigationMenu.Viewport
-      forceMount={forceMount}
       className={classx(
         'nav-menu-viewport',
         'z-40',
@@ -352,12 +340,12 @@ export const NavigationMenuViewport = ({
  * https://www.radix-ui.com/docs/primitives/components/navigation-menu#with-router-links
  */
 
-export const NavigationMenuNavLink = ({
+export const NavigationMenuNavLink: FunctionComponent<NavLinkProps> = ({
   children,
   to,
   end,
   className,
-}: NavLinkProps) => {
+}) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
   const isActive = Boolean(match);
@@ -368,7 +356,7 @@ export const NavigationMenuNavLink = ({
         to={to}
         end={end}
         className={classx(
-          'navlink-hover',
+          'navlink',
           'rounded-base p-2 font-bold transition-colors',
           isActive && 'navlink-active',
           className,

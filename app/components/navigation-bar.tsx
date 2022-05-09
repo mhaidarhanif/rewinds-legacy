@@ -8,7 +8,7 @@ import {
   NavigationBarNavMenu,
   NavigationBarMenu,
 } from '~/components';
-import { configStyle, configNavigationLinks } from '~/configs';
+import { configStyle, configNavigationBarLinks } from '~/configs';
 import { packageJson } from '~/utils';
 
 import type { FunctionComponent } from 'react';
@@ -70,7 +70,7 @@ export const NavigationBarLinks: FunctionComponent<
   return (
     <div className="hidden w-auto items-center justify-between xl:flex">
       <ul className="text-md flex flex-row gap-1 font-medium">
-        {configNavigationLinks.map((navItem) => {
+        {configNavigationBarLinks.map((navItem) => {
           return (
             <li key={navItem.text}>
               <RemixNavLink end to={navItem.to}>

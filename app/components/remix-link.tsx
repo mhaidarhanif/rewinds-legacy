@@ -19,7 +19,7 @@ export const RemixNavLink: FunctionComponent<NavLinkProps> = ({
       end={end}
       className={({ isActive }) => {
         return classx(
-          'navlink-hover',
+          'navlink',
           'rounded-base p-2 font-bold transition-colors',
           isActive && 'navlink-active',
           className,

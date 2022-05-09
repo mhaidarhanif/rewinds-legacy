@@ -4,13 +4,13 @@
  * Used in the Navigation Menu with Radix UI
  */
 
-export const configNavigationContentPages = [
+export const configNavigationPages = [
   { to: '/about', text: 'About' },
   { to: '/blog', text: 'Blog' },
   { to: '/subscribe', text: 'Subscribe' },
 ];
 
-export const configNavigationContentExamples1 = [
+export const configNavigationExamples1 = [
   { to: '/examples', text: 'Examples' },
   { to: '/examples/button', text: 'Example: Button' },
   { to: '/examples/badge', text: 'Example: Badge' },
@@ -21,7 +21,7 @@ export const configNavigationContentExamples1 = [
   { to: '/examples/navigation-menu', text: 'Example: Navigation Menu' },
 ];
 
-export const configNavigationContentExamples2 = [
+export const configNavigationExamples2 = [
   { to: '/examples/rest', text: 'Example: REST API' },
   { to: '/examples/graphql', text: 'Example: GraphQL' },
   { to: '/examples/catch', text: 'Example: Catch' },
@@ -29,7 +29,7 @@ export const configNavigationContentExamples2 = [
   { to: '/examples/debug', text: 'Example: Debug' },
 ];
 
-export const configNavigationContentLayouts = [
+export const configNavigationLayouts = [
   { to: '/layouts/common', text: 'Common' },
   { to: '/layouts/full', text: 'Full' },
   { to: '/layouts/wide', text: 'Wide' },
@@ -44,21 +44,27 @@ export const configNavigationContentLayouts = [
  * - Small screen mode (mobile, tablet)
  */
 
-export const configNavigationLinks = [
+export const configNavigationBarLinks = [
   { to: '/', text: 'Home' },
-  ...configNavigationContentPages,
-  ...configNavigationContentExamples1,
-  ...configNavigationContentExamples2,
+  ...configNavigationPages,
+  ...configNavigationExamples1,
+  ...configNavigationExamples2,
   // In large screen, the auth links are as buttons
 ];
 
-export const configNavigationLinksMenu = [
+/**
+ * Config Navigation Menu
+ *
+ * Used in the Navigation Menu Button for small screen
+ */
+
+export const configNavigationMenu = [
   {
     name: 'Pages',
-    links: [...configNavigationLinks],
+    links: [...configNavigationBarLinks],
   },
   {
-    // In small screen, the auth links are inside the menu modal
+    // In small screen, the auth links are in the Dropdown Menu
     name: 'Account',
     links: [
       { to: '/signup', text: 'Sign up' },

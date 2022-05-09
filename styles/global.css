@@ -102,13 +102,13 @@
     @apply bg-secondary-blur;
   }
 
-  .navlink-active {
-    @apply bg-primary-100 text-primary-500 dark:bg-neutral-900;
-  }
-
-  .navlink-hover {
+  .navlink {
     @apply leading-tight;
     @apply hover:bg-primary-200 dark:hover:bg-primary-900;
+  }
+
+  .navlink-active {
+    @apply bg-primary-100 text-primary-500 dark:bg-neutral-900;
   }
 
   /**
@@ -116,7 +116,7 @@
    */
 
   /**
-   * Similar with `navlink-hover` but without `hover` selector
+   * Similar with `navlink` but without `hover` selector
    * Because Menu.Item has `active` props
    */
   .navlink-menu-active {
@@ -136,7 +136,7 @@
   }
 
   .nav-menu-link {
-    @apply navlink-hover rounded-base px-3 py-2 font-bold transition-colors;
+    @apply navlink rounded-base px-3 py-2 font-bold transition-colors;
   }
 
   /**

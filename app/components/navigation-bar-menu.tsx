@@ -4,7 +4,7 @@ import { NavLink } from '@remix-run/react';
 import { Button, Divider, Icon } from '@vechaiui/react';
 import { Fragment } from 'react';
 
-import { configNavigationLinksMenu } from '~/configs';
+import { configNavigationMenu } from '~/configs';
 import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
@@ -64,7 +64,7 @@ export const MenuItemsContent: FunctionComponent<
   return (
     <div className="menu-items-content px-1 py-1">
       <div role="group">
-        {configNavigationLinksMenu.map((group, index) => {
+        {configNavigationMenu.map((group, index) => {
           return (
             <div role="group" key={group.name}>
               {group.links.map((link) => {
@@ -92,7 +92,7 @@ export const MenuItemsContent: FunctionComponent<
                   </Menu.Item>
                 );
               })}
-              {configNavigationLinksMenu?.length !== index + 1 && (
+              {configNavigationMenu?.length !== index + 1 && (
                 <Divider
                   orientation="horizontal"
                   className="border-neutral-200 dark:border-neutral-700"
