@@ -8,14 +8,14 @@ import { Layout } from '~/layouts';
 import type { LoaderFunction } from '@remix-run/node';
 import type { StackItem } from '~/types';
 
-type LoaderData = {
+export type LoaderDataAbout = {
   features: string[];
   mainStacks: StackItem[];
   referenceStacks: StackItem[];
 };
 
 export const loader: LoaderFunction = async () => {
-  return json({
+  return json<LoaderDataAbout>({
     features: dataFeatures,
     mainStacks: dataMainStacks,
     referenceStacks: dataReferenceStacks,
@@ -23,7 +23,8 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function AboutRoute() {
-  const { features, mainStacks, referenceStacks } = useLoaderData<LoaderData>();
+  const { features, mainStacks, referenceStacks } =
+    useLoaderData<LoaderDataAbout>();
 
   return (
     <Layout>

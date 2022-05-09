@@ -5,11 +5,16 @@ import { useLoaderData } from '~/hooks';
 import { Layout } from '~/layouts';
 
 import type {
-  LoaderFunction,
   ComponentItem,
-  UtilityItem,
+  LoaderFunction,
   SEOHandle,
+  UtilityItem,
 } from '~/types';
+
+type LoaderDataExamples = {
+  exampleComponents: ComponentItem[];
+  exampleUtilities: UtilityItem[];
+};
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -18,19 +23,14 @@ export const handle: SEOHandle = {
 };
 
 export const loader: LoaderFunction = async () => {
-  return json({
+  return json<LoaderDataExamples>({
     exampleComponents: dataExampleComponents,
     exampleUtilities: dataExampleUtilities,
   });
 };
 
-type LoaderData = {
-  exampleComponents: ComponentItem[];
-  exampleUtilities: UtilityItem[];
-};
-
 export default function ExamplesRoute() {
-  const data = useLoaderData<LoaderData>();
+  const data = useLoaderData<LoaderDataExamples>();
 
   return (
     <Layout>

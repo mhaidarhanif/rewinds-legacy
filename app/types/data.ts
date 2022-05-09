@@ -12,12 +12,6 @@ export type LoaderDataSession = {
   ENV: ReturnType<typeof getEnv>;
 };
 
-export type LoaderDataAbout = {
-  mainStacks: StackItem[];
-  referenceStacks: StackItem[];
-  features: string[];
-};
-
 /**
  * Used inside the LoaderData and ActionData types
  */
@@ -26,11 +20,11 @@ export type StackItem = {
   name: string;
   url: string;
   description?: string;
-  subItems?: {
+  subItems?: Array<{
     name: string;
     url?: string;
     description?: string;
-  }[];
+  }>;
 };
 
 export type ComponentItem = {
