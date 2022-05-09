@@ -1,4 +1,5 @@
-import { configAppFeatures } from '~/configs';
+import { redirect } from 'remix';
+import { configAppFeatures, configExternalLinks } from '~/configs';
 import { MessageErrorNotFound } from '~/contents/messages';
 import { Layout } from '~/layouts';
 
@@ -20,12 +21,23 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
-  if (configAppFeatures.console) console.info(params['*']);
+  const pathName = params['*'];
+  if (configAppFeatures.console) console.info(pathName);
+
+  const externalLink = configExternalLinks.find((item) => {
+    return item.name.toLowerCase() === pathName;
+  });
+
+  if (externalLink) {
+    return redirect(externalLink.url);
+  }
+
   return null;
 };
 
 export const action: ActionFunction = async ({ params }) => {
-  if (configAppFeatures.console) console.info(params['*']);
+  const pathName = params['*'];
+  if (configAppFeatures.console) console.info(pathName);
   return null;
 };
 
