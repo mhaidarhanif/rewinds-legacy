@@ -1,14 +1,10 @@
 import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
 
-import { configMeta } from '~/configs';
 import { googleAnalyticsInit, posthogInit, splitbeeInit } from '~/libs';
-import { isEnvProduction } from '~/utils';
+import { isProductionAllowed } from '~/utils';
 
 hydrate(<RemixBrowser />, document);
-
-const isProductionAllowed =
-  isEnvProduction && configMeta.url === window.location.hostname;
 
 if (isProductionAllowed) {
   googleAnalyticsInit(); // Google Analytics
