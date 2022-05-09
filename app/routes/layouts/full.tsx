@@ -22,15 +22,15 @@ export default function LayoutFullRoute() {
         <h1>Layout: Full</h1>
         <p>
           Full width layout example without any padding with{' '}
-          <Code className="text-inherit">{`<LayoutFull />`}</Code>
+          <Code>{'<LayoutFull />'}</Code>
         </p>
       </article>
 
-      <div>
+      <article>
         {images.map((item: any) => {
           return <Image key={item.name} alt={item.name} src={item.url} />;
         })}
-      </div>
+      </article>
     </LayoutFull>
   );
 }

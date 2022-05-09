@@ -4,6 +4,7 @@ export type {
   ColorScheme,
   VechaiTheme,
   ButtonProps,
+  CodeProps,
   ButtonGroupProps,
 } from '@vechaiui/react';
 
