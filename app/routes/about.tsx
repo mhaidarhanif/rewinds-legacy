@@ -39,7 +39,11 @@ export default function AboutRoute() {
 
         <p>
           It is a demo project template you can freely use for any purpose. On
-          GitHub, you can directly use this template as your own repo.
+          GitHub, you can directly{' '}
+          <Anchor href="https://github.com/mhaidarhanif/rewinds/generate">
+            use this template
+          </Anchor>{' '}
+          as your own repo.
         </p>
 
         <p>

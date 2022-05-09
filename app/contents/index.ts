@@ -1,4 +1,4 @@
 export * from './examples';
-export * from './intro';
+export * from './global';
+export * from './home';
 export * from './messages';
-export * from './subscribe-form';

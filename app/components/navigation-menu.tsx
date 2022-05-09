@@ -38,6 +38,12 @@ export const NavigationBarNavMenu: FunctionComponent<
         <NavigationMenuItemExamples />
 
         <NavigationMenuItem>
+          <NavigationMenuNavLink to="/subscribe">
+            Subscribe
+          </NavigationMenuNavLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
           <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
         </NavigationMenuItem>
 
