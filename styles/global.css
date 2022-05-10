@@ -59,7 +59,7 @@
   }
 
   .layout-main-wide {
-    @apply mt-10 w-full max-w-[1440px];
+    @apply mt-10 w-full max-w-screen-xl;
   }
 
   .layout-main-full {
@@ -76,7 +76,7 @@
   }
 
   .footer {
-    @apply mt-32 flex justify-center border-t border-slate-200 dark:border-slate-200/5;
+    @apply mt-32;
   }
 
   .button {

@@ -23,5 +23,9 @@ export const configMeta = {
   twiterImageUrl: 'assets/opengraph/rewinds-og.png',
   fbAppId: '',
   locale: 'en_US',
+  author: {
+    name: 'M Haidar Hanif',
+    url: 'https://mhaidarhanif.com',
+  },
   mailingListName: 'M Haidar Hanif Newsletter',
 };
