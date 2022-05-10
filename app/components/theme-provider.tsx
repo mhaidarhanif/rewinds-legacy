@@ -19,7 +19,7 @@ import { useMediaQuery } from '~/libs';
 import { isEnvProduction } from '~/utils';
 
 import type { VechaiProviderProps } from '@vechaiui/react';
-import type { Theme } from '~/types';
+import type { SpecifiedTheme } from '~/types';
 
 export type ThemeContextType = {
   colorScheme?: string;
@@ -43,7 +43,7 @@ export function ThemeProvider({
   specifiedTheme = configStyle?.theme,
   children,
 }: {
-  specifiedTheme?: Theme;
+  specifiedTheme?: SpecifiedTheme;
   children: React.ReactNode;
 }) {
   /**

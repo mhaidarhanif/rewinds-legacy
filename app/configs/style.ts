@@ -1,4 +1,4 @@
-import type { IToast } from '~/types';
+import type { IToast, SpecifiedTheme } from '~/types';
 
 /**
  * Config Style
@@ -21,15 +21,8 @@ export const configStyle: ConfigStyle = {
   navigationBar: 'complex',
 };
 
-export type Theme = {
-  colorScheme: string;
-  density: 'compact' | 'comfortable' | 'unset';
-  radius: string;
-  cursorPointer: boolean;
-};
-
 export type ConfigStyle = {
-  theme: Theme;
+  theme: SpecifiedTheme;
   toast: IToast;
   notification: IToast;
   navigationBar: 'simple' | 'complex';
