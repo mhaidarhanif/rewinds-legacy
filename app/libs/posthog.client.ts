@@ -13,7 +13,5 @@ if (configFeatures.console) console.info({ posthogApiKey, posthogApiHost });
 export const posthogInit = () => {
   if (configFeatures.posthog) {
     posthog.init(posthogApiKey, { api_host: posthogApiHost });
-
-    if (configFeatures.console) console.info({ posthog });
   }
 };
