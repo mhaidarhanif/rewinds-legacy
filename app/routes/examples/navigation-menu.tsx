@@ -3,7 +3,7 @@ import { Layout } from '~/layouts';
 
 export default function ExampleNavigationMenuRoute() {
   return (
-    <Layout>
+    <Layout variant="wide">
       <article className="prose-config">
         <h1>Example: Navigation Menu</h1>
         <p>
