@@ -142,7 +142,7 @@ export const FooterComplexSitemap = () => {
         return (
           <div
             key={item.name}
-            className="col-span-1 border-t border-primary-300 pt-6 dark:border-primary-900 sm:col-span-1"
+            className="col-span-1 border-t border-primary-300 pt-2 dark:border-primary-900 sm:col-span-1"
           >
             <H4 className="font-bold">{item.name}</H4>
             <nav className="mt-6 flex flex-col space-y-2 text-sm">
