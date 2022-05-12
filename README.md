@@ -146,6 +146,26 @@ It is generally recommended to use a Git repository, because future commits will
 
 ## Notes
 
+### Remix
+
+If you have older way of importing from `remix` package prior to `remix@1.4.3, you can use the `migrate` script to change the import statements.
+
+```sh
+npx remix migrate --migration replace-remix-imports
+```
+
+Before:
+
+```jsx
+import { json } from 'remix';
+```
+
+After:
+
+```jsx
+import { json } from '@remix-run/node';
+```
+
 ### Vechai UI
 
 Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size.
@@ -176,6 +196,12 @@ module.exports = {
 
 ### ConvertKit
 
+1. Sign up a new account on ConvertKit
+2. Edit the profile
+3. Get the API key to be used as `CONVERTKIT_API_KEY`
+4. Create a Form
+5. Get the form ID to be used as `CONVERTKIT_FORM_ID`
+
 Tips:
 
-- Mailing Address: https://help.convertkit.com/en/articles/2502494-alternatives-for-your-physical-address
+- Setup the Mailing Address: https://help.convertkit.com/en/articles/2502494-alternatives-for-your-physical-address
