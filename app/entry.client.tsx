@@ -13,9 +13,9 @@ if (isProductionAllowed) {
 }
 
 // If the browser supports Service Worker API
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    // Register after the page complete the load
-    navigator.serviceWorker.register("/sw.js");
-  });
-}
+// if ("serviceWorker" in navigator) {
+//   window.addEventListener("load", () => {
+//     // Register after the page complete the load
+//     navigator.serviceWorker.register("/sw.js");
+//   });
+// }

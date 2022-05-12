@@ -76,8 +76,6 @@ export function Document({ title, children }: DocumentProps) {
     else setIsTransitioning(true);
   }, [transition.state]);
 
-  // posthog.capture('Startup event', { property: 'success' });
-
   return (
     <html lang="en">
       <head>
@@ -160,6 +158,7 @@ export function CatchBoundary() {
 /**
  * Error means there is an unexpected error
  */
+
 interface ErrorBoundaryProps {
   error: Error;
 }
