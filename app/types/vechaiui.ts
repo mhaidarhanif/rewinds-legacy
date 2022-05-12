@@ -8,7 +8,7 @@ export type {
   ButtonGroupProps,
 } from '@vechaiui/react';
 
-export type Theme = {
+export type SpecifiedTheme = {
   colorScheme: string;
   density: 'compact' | 'comfortable' | 'unset';
   radius: string;
