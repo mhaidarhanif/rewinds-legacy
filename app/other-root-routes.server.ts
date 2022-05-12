@@ -1,7 +1,7 @@
 import { configMeta } from "~/configs";
 import { generateRobotsTxt, generateSitemap } from "~/utils";
 
-import type { EntryContext } from "~/types";
+import type { EntryContext } from "@remix-run/node";
 
 type Handler = (
   request: Request,

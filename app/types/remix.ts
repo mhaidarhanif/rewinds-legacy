@@ -1,6 +1,5 @@
 export type {
   ActionFunction,
-  EntryContext,
   HeadersFunction,
   LinkProps,
   LinksFunction,
@@ -8,3 +7,7 @@ export type {
   MetaFunction,
   NavLinkProps,
 } from "remix";
+
+/**
+ * Note: Do not re-export EntryContext
+ */
