@@ -9,7 +9,7 @@ export default function ExampleButtonRoute() {
         <p>Notification components with Vechai UI.</p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <ExampleNotifications />
       </article>
     </Layout>

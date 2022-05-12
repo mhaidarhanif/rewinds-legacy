@@ -32,7 +32,7 @@ export default function ExampleRESTRoute() {
         </p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <Pre>{data.endpoint}</Pre>
         <RadixScrollArea>
           <Pre>{data}</Pre>

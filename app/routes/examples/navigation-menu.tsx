@@ -12,7 +12,7 @@ export default function ExampleNavigationMenuRoute() {
         </p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <nav className="navigation-bar">
           <NavigationBarNavMenu />
         </nav>

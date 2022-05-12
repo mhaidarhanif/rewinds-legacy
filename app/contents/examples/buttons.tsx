@@ -7,7 +7,7 @@ interface ExampleButtonsProps {}
 
 export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-8">
       <H2>Buttons</H2>
 
       <H3>Button Variant</H3>

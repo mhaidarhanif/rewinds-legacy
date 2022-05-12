@@ -9,7 +9,7 @@ export default function ExampleButtonRoute() {
         <p>Button components with Vechai UI.</p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <ExampleButtons />
       </article>
     </Layout>

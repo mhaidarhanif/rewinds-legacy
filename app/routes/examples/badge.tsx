@@ -9,7 +9,7 @@ export default function ExampleBadgeRoute() {
         <p>Badge components with Vechai UI.</p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <ExampleBadges />
       </article>
     </Layout>

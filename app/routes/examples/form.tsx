@@ -9,7 +9,7 @@ export default function ExampleFormRoute() {
         <p>Form components with Vechai UI.</p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <ExampleForms />
       </article>
     </Layout>

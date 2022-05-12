@@ -43,7 +43,7 @@ export default function ExampleGraphQLRoute() {
         </p>
       </article>
 
-      <article className="demo">
+      <article className="example">
         <Pre>{data.endpoint}</Pre>
         <RadixScrollArea>
           <Pre>{data}</Pre>
