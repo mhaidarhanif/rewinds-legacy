@@ -3,7 +3,7 @@
  */
 
 export const configFeatures = {
-  console: true,
+  console: false,
   googleAnalytics: true,
   splitbee: true,
   posthog: true,

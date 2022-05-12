@@ -1,16 +1,45 @@
+import type { ConfigNavigation, LinkItem, LinkItems } from '~/types';
+
 /**
- * Config Navigation Menu Content Links
+ * Config Navigation Links
  *
- * Used in the Navigation Menu with Radix UI
+ * Used in:
+ * - Multiple purpose for other navigation components
+ * - Navigation Menu with Radix UI that has complex layout and positioning
  */
 
-export const configNavigationPages = [
+export const configNavigationHome: LinkItem = { to: '/', text: 'Home' };
+
+export const configNavigationPages: LinkItems = [
   { to: '/about', text: 'About' },
   { to: '/blog', text: 'Blog' },
   { to: '/subscribe', text: 'Subscribe' },
+  { to: '/pricing', text: 'Pricing' },
+  { to: '/search', text: 'Search' },
 ];
 
-export const configNavigationExamples1 = [
+export const configNavigationAccount: LinkItems = [
+  { to: '/signup', text: 'Sign up' },
+  { to: '/signin', text: 'Sign in' },
+  { to: '/signout', text: 'Sign out' },
+];
+
+export const configNavigationEducation: LinkItems = [
+  { to: '/learn', text: 'Learn' },
+  { to: '/tracks', text: 'Tracks' },
+  { to: '/members', text: 'Members' },
+  { to: '/projects', text: 'Projects' },
+  { to: '/discussions', text: 'Discussions' },
+];
+
+export const configNavigationCareer: LinkItems = [
+  { to: '/work', text: 'Work' },
+  { to: '/companies', text: 'Companies' },
+  { to: '/jobs', text: 'Jobs' },
+  { to: '/freelance', text: 'Freelance' },
+];
+
+export const configNavigationExamples1: LinkItems = [
   { to: '/examples', text: 'Examples' },
   { to: '/examples/button', text: 'Example: Button' },
   { to: '/examples/badge', text: 'Example: Badge' },
@@ -21,7 +50,7 @@ export const configNavigationExamples1 = [
   { to: '/examples/navigation-menu', text: 'Example: Navigation Menu' },
 ];
 
-export const configNavigationExamples2 = [
+export const configNavigationExamples2: LinkItems = [
   { to: '/examples/rest', text: 'Example: REST API' },
   { to: '/examples/graphql', text: 'Example: GraphQL' },
   { to: '/examples/catch', text: 'Example: Catch' },
@@ -29,7 +58,7 @@ export const configNavigationExamples2 = [
   { to: '/examples/debug', text: 'Example: Debug' },
 ];
 
-export const configNavigationLayouts = [
+export const configNavigationLayouts: LinkItems = [
   { to: '/layouts/common', text: 'Common' },
   { to: '/layouts/full', text: 'Full' },
   { to: '/layouts/wide', text: 'Wide' },
@@ -44,8 +73,8 @@ export const configNavigationLayouts = [
  * - Small screen mode (mobile, tablet)
  */
 
-export const configNavigationBarLinks = [
-  { to: '/', text: 'Home' },
+export const configNavigationBarLinks: LinkItems = [
+  configNavigationHome,
   ...configNavigationPages,
   ...configNavigationExamples1,
   ...configNavigationExamples2,
@@ -55,21 +84,48 @@ export const configNavigationBarLinks = [
 /**
  * Config Navigation Menu
  *
- * Used in the Navigation Menu Button for small screen
+ * Used in:
+ * - Navigation Menu Button for small screen with Headless UI
+ * - Navigation Dropdown Menu for small screen with Radix UI
  */
 
-export const configNavigationMenu = [
+export const configNavigationMenu: ConfigNavigation = [
   {
     name: 'Pages',
-    links: [...configNavigationBarLinks],
+    links: [configNavigationHome, ...configNavigationPages],
   },
   {
     // In small screen, the auth links are in the Dropdown Menu
     name: 'Account',
-    links: [
-      { to: '/signup', text: 'Sign up' },
-      { to: '/signin', text: 'Sign in' },
-      { to: '/signout', text: 'Sign out' },
-    ],
+    links: [...configNavigationAccount],
+  },
+];
+
+/**
+ * Config Navigation Sitemap
+ *
+ * Used in the Footer with sitemap
+ */
+
+export const configNavigationSitemap: ConfigNavigation = [
+  {
+    name: 'Pages',
+    links: [configNavigationHome, ...configNavigationPages],
+  },
+  {
+    name: 'Account',
+    links: [...configNavigationAccount],
+  },
+  {
+    name: 'Education',
+    links: [...configNavigationEducation],
+  },
+  {
+    name: 'Career',
+    links: [...configNavigationCareer],
+  },
+  {
+    name: 'Examples',
+    links: [...configNavigationExamples1, ...configNavigationExamples2],
   },
 ];
