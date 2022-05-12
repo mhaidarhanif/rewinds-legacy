@@ -1,10 +1,7 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable import/no-mutable-exports */
-// Dependencies
 import { configMeta } from "~/configs";
 import { generateRobotsTxt, generateSitemap } from "~/utils";
 
-import type { EntryContext } from "@remix-run/node";
+import type { EntryContext } from "~/types";
 
 type Handler = (
   request: Request,

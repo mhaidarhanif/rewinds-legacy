@@ -158,6 +158,19 @@
     "description": "handle allows you to create application conventions with the useMatches() hook."
   },
 
+  "Rewinds Remix SEO Handle": {
+    "prefix": "rrseo",
+    "body": [
+      "export const handle: SEOHandle = {",
+      "  getSitemapEntries: () => {",
+      "    return $1;",
+      "  },",
+      "};",
+      ""
+    ],
+    "description": "SEO handle to be used with sitemap.xml file"
+  },
+
   "Rewinds Remix Session": {
     "prefix": "remix-session",
     "body": [

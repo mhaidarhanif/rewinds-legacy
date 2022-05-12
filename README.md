@@ -114,7 +114,7 @@ Finally, open up [http://localhost:3000](http://localhost:3000) and you should b
 
 Note if you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
 
-### Using Doppler
+### Environment variables using Doppler
 
 If you want to use [Doppler](https://doppler.com) to manage the env variables, use the `start` script. Therefore this won't need the `.env` file to be edited manually.
 
@@ -122,6 +122,47 @@ If you want to use [Doppler](https://doppler.com) to manage the env variables, u
 npm run start
 # doppler run -- npm run dev
 ```
+
+### Project structure
+
+- `.vscode`
+- `api`
+- `app`
+  - `components`
+  - `configs`
+  - `contents`
+  - `data`
+  - `features`
+  - `hooks`
+  - `layouts`
+  - `libs`
+  - `routes`
+  - `styles`
+  - `types`
+  - `utils`
+  - `entry.client.tsx`
+  - `entry.server.tsx`
+  - `root.tsx`
+  - `other-root-routes.server.ts`
+- `public`
+- `styles`
+  - `global.css`
+- `.env`
+- `.env.example`
+- `.eslintrc`
+- `.eslintignore`
+- `.gitignore`
+- `.prettierrc`
+- `.prettierignore`
+- `package.json`
+- `postcss.config.js`
+- `README.md`
+- `remix.config.js`
+- `remix.env.d.ts`
+- `server.js`
+- `tailwind.config.js`
+- `tsconfig.json`
+- `vercel.json`
 
 ## Build
 
