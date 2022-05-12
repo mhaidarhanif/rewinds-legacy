@@ -1,4 +1,4 @@
-import type { getEnv } from '~/utils';
+import type { getEnv } from "~/utils";
 
 /**
  * Used inside of LoaderFunction and ActionFunction

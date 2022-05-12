@@ -1,11 +1,11 @@
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 
-import { Pre, RadixScrollArea } from '~/components';
-import { useLoaderData } from '~/hooks';
-import { Layout } from '~/layouts';
-import { sleep } from '~/utils';
+import { Pre, RadixScrollArea } from "~/components";
+import { useLoaderData } from "~/hooks";
+import { Layout } from "~/layouts";
+import { sleep } from "~/utils";
 
-import type { LoaderFunction } from '~/types';
+import type { LoaderFunction } from "~/types";
 
 export const loader: LoaderFunction = async () => {
   const endpoint = process.env.REST_ENDPOINT as string;

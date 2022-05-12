@@ -1,1 +1,1 @@
-export { Divider } from '@vechaiui/react';
+export { Divider } from "@vechaiui/react";

@@ -1,22 +1,22 @@
-const colors = require('tailwindcss/colors');
-const plugin = require('tailwindcss/plugin');
+const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@vechaiui/**/*.{js,ts,jsx,tsx}',
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@vechaiui/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     letterSpacing: {
-      tightest: '-.1em',
-      tighter: '-.05em',
-      tight: '-.025em',
-      normal: '0',
-      wide: '.025em',
-      wider: '.05em',
-      widest: '.1em',
-      widest: '.25em',
+      tightest: "-.1em",
+      tighter: "-.05em",
+      tight: "-.025em",
+      normal: "0",
+      wide: ".025em",
+      wider: ".05em",
+      widest: ".1em",
+      widest: ".25em",
     },
     extend: {
       colors: {
@@ -26,149 +26,149 @@ module.exports = {
         error: colors.red,
       },
       boxShadow: {
-        slider: '0 0 0 5px rgba(0, 0, 0, 0.3)',
+        slider: "0 0 0 5px rgba(0, 0, 0, 0.3)",
       },
       textShadow: {
-        sm: '0 1px 2px var(--tw-shadow-color)',
-        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-        lg: '0 8px 16px var(--tw-shadow-color)',
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
       },
       keyframes: {
         // Text shimmer
-        'text-shimmer': {
-          from: { backgroundPosition: '0 0' },
-          to: { backgroundPosition: '-200% 0' },
+        "text-shimmer": {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
         },
         // Dropdown menu
-        'scale-in': {
-          '0%': { opacity: 0, transform: 'scale(0)' },
-          '100%': { opacity: 1, transform: 'scale(1)' },
+        "scale-in": {
+          "0%": { opacity: 0, transform: "scale(0)" },
+          "100%": { opacity: 1, transform: "scale(1)" },
         },
-        'slide-down': {
-          '0%': { opacity: 0, transform: 'translateY(-10px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+        "slide-down": {
+          "0%": { opacity: 0, transform: "translateY(-10px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
-        'slide-up': {
-          '0%': { opacity: 0, transform: 'translateY(10px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+        "slide-up": {
+          "0%": { opacity: 0, transform: "translateY(10px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
         // Tooltip
-        'slide-up-fade': {
-          '0%': { opacity: 0, transform: 'translateY(2px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+        "slide-up-fade": {
+          "0%": { opacity: 0, transform: "translateY(2px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
-        'slide-right-fade': {
-          '0%': { opacity: 0, transform: 'translateX(-2px)' },
-          '100%': { opacity: 1, transform: 'translateX(0)' },
+        "slide-right-fade": {
+          "0%": { opacity: 0, transform: "translateX(-2px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
         },
-        'slide-down-fade': {
-          '0%': { opacity: 0, transform: 'translateY(-2px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+        "slide-down-fade": {
+          "0%": { opacity: 0, transform: "translateY(-2px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
-        'slide-left-fade': {
-          '0%': { opacity: 0, transform: 'translateX(2px)' },
-          '100%': { opacity: 1, transform: 'translateX(0)' },
+        "slide-left-fade": {
+          "0%": { opacity: 0, transform: "translateX(2px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
         },
         // Navigation menu
-        'enter-from-right': {
-          '0%': { transform: 'translateX(200px)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
+        "enter-from-right": {
+          "0%": { transform: "translateX(200px)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
         },
-        'enter-from-left': {
-          '0%': { transform: 'translateX(-200px)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
+        "enter-from-left": {
+          "0%": { transform: "translateX(-200px)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
         },
-        'exit-to-right': {
-          '0%': { transform: 'translateX(0)', opacity: 1 },
-          '100%': { transform: 'translateX(200px)', opacity: 0 },
+        "exit-to-right": {
+          "0%": { transform: "translateX(0)", opacity: 1 },
+          "100%": { transform: "translateX(200px)", opacity: 0 },
         },
-        'exit-to-left': {
-          '0%': { transform: 'translateX(0)', opacity: 1 },
-          '100%': { transform: 'translateX(-200px)', opacity: 0 },
+        "exit-to-left": {
+          "0%": { transform: "translateX(0)", opacity: 1 },
+          "100%": { transform: "translateX(-200px)", opacity: 0 },
         },
-        'scale-in-content': {
-          '0%': { transform: 'rotateX(-30deg) scale(0.9)', opacity: 0 },
-          '100%': { transform: 'rotateX(0deg) scale(1)', opacity: 1 },
+        "scale-in-content": {
+          "0%": { transform: "rotateX(-30deg) scale(0.9)", opacity: 0 },
+          "100%": { transform: "rotateX(0deg) scale(1)", opacity: 1 },
         },
-        'scale-out-content': {
-          '0%': { transform: 'rotateX(0deg) scale(1)', opacity: 1 },
-          '100%': { transform: 'rotateX(-10deg) scale(0.95)', opacity: 0 },
+        "scale-out-content": {
+          "0%": { transform: "rotateX(0deg) scale(1)", opacity: 1 },
+          "100%": { transform: "rotateX(-10deg) scale(0.95)", opacity: 0 },
         },
-        'fade-in': {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+        "fade-in": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
-        'fade-out': {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
+        "fade-out": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
         // Toast
-        'toast-hide': {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
+        "toast-hide": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
-        'toast-slide-in-right': {
-          '0%': { transform: `translateX(calc(100% + 1rem))` },
-          '100%': { transform: 'translateX(0)' },
+        "toast-slide-in-right": {
+          "0%": { transform: `translateX(calc(100% + 1rem))` },
+          "100%": { transform: "translateX(0)" },
         },
-        'toast-slide-in-bottom': {
-          '0%': { transform: `translateY(calc(100% + 1rem))` },
-          '100%': { transform: 'translateY(0)' },
+        "toast-slide-in-bottom": {
+          "0%": { transform: `translateY(calc(100% + 1rem))` },
+          "100%": { transform: "translateY(0)" },
         },
-        'toast-swipe-out': {
-          '0%': { transform: 'translateX(var(--radix-toast-swipe-end-x))' },
-          '100%': {
+        "toast-swipe-out": {
+          "0%": { transform: "translateX(var(--radix-toast-swipe-end-x))" },
+          "100%": {
             transform: `translateX(calc(100% + 1rem))`,
           },
         },
       },
       animation: {
         // Text shimmer
-        'text-shimmer': 'text-shimmer 5s ease-in-out infinite alternate',
+        "text-shimmer": "text-shimmer 5s ease-in-out infinite alternate",
         // Dropdown menu
-        'scale-in': 'scale-in 0.2s ease-in-out',
-        'slide-down': 'slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+        "scale-in": "scale-in 0.2s ease-in-out",
+        "slide-down": "slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-up": "slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
         // Tooltip
-        'slide-up-fade': 'slide-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-right-fade':
-          'slide-right-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-down-fade': 'slide-down-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        'slide-left-fade': 'slide-left-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        "slide-up-fade": "slide-up-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-right-fade":
+          "slide-right-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-down-fade": "slide-down-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-left-fade": "slide-left-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         // Navigation menu
-        'enter-from-right': 'enter-from-right 0.25s ease',
-        'enter-from-left': 'enter-from-left 0.25s ease',
-        'exit-to-right': 'exit-to-right 0.25s ease',
-        'exit-to-left': 'exit-to-left 0.25s ease',
-        'scale-in-content': 'scale-in-content 0.2s ease',
-        'scale-out-content': 'scale-out-content 0.2s ease',
-        'fade-in': 'fade-in 0.2s ease',
-        'fade-out': 'fade-out 0.2s ease',
+        "enter-from-right": "enter-from-right 0.25s ease",
+        "enter-from-left": "enter-from-left 0.25s ease",
+        "exit-to-right": "exit-to-right 0.25s ease",
+        "exit-to-left": "exit-to-left 0.25s ease",
+        "scale-in-content": "scale-in-content 0.2s ease",
+        "scale-out-content": "scale-out-content 0.2s ease",
+        "fade-in": "fade-in 0.2s ease",
+        "fade-out": "fade-out 0.2s ease",
         // Toast
-        'toast-hide': 'toast-hide 100ms ease-in forwards',
-        'toast-slide-in-right':
-          'toast-slide-in-right 150ms cubic-bezier(0.16, 1, 0.3, 1)',
-        'toast-slide-in-bottom':
-          'toast-slide-in-bottom 150ms cubic-bezier(0.16, 1, 0.3, 1)',
-        'toast-swipe-out': 'toast-swipe-out 100ms ease-out forwards',
+        "toast-hide": "toast-hide 100ms ease-in forwards",
+        "toast-slide-in-right":
+          "toast-slide-in-right 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "toast-slide-in-bottom":
+          "toast-slide-in-bottom 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "toast-swipe-out": "toast-swipe-out 100ms ease-out forwards",
       },
     },
   },
   plugins: [
-    require('tailwindcss-radix')(),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
+    require("tailwindcss-radix")(),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
-        { 'text-shadow': (value) => ({ textShadow: value }) },
-        { values: theme('textShadow') },
+        { "text-shadow": (value) => ({ textShadow: value }) },
+        { values: theme("textShadow") },
       );
     }),
-    require('@vechaiui/core')({
+    require("@vechaiui/core")({
       cssBase: true,
-      colors: ['info', 'success', 'warning', 'error'],
+      colors: ["info", "success", "warning", "error"],
     }),
   ],
 };

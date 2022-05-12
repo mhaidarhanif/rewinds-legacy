@@ -1,4 +1,4 @@
-import { hoursToSeconds, addDays } from 'date-fns';
+import { hoursToSeconds, addDays } from "date-fns";
 
 export const dateFns = {
   daysToSeconds: (days: number) => {

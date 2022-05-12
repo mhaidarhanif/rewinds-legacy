@@ -1,4 +1,4 @@
-import { useNProgress } from '@tanem/react-nprogress';
+import { useNProgress } from "@tanem/react-nprogress";
 
 interface NProgressProps {
   isAnimating: any;
@@ -37,7 +37,7 @@ const NProgressContainer = ({
     <div
       style={{
         opacity: isFinished ? 0 : 1,
-        pointerEvents: 'none',
+        pointerEvents: "none",
         transition: `opacity ${animationDuration}ms ease-in-out`,
       }}
     >

@@ -32,11 +32,11 @@ export {
   useRouteData,
   useShouldHydrate,
   verifyAuthenticityToken,
-} from 'remix-utils';
+} from "remix-utils";
 
 export type {
   DynamicLinksFunction,
   ExternalScriptsFunction,
   HandleStructuredData,
   StructuredDataFunction,
-} from 'remix-utils';
+} from "remix-utils";

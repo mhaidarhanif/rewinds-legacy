@@ -1,5 +1,5 @@
-import { ExampleAlerts } from '~/contents';
-import { Layout } from '~/layouts';
+import { ExampleAlerts } from "~/contents";
+import { Layout } from "~/layouts";
 
 export default function ExampleButtonRoute() {
   return (

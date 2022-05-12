@@ -1,11 +1,11 @@
-import { LogoSpan, RemixLink } from '~/components';
-import { classx } from '~/utils';
+import { LogoSpan, RemixLink } from "~/components";
+import { classx } from "~/utils";
 
 export const HomeIntro = () => {
   return (
     <div className="prose-config">
       <h1 className="tracking-tighter">
-        <LogoSpan className={classx('bg-gradient-primary', 'text-shimmer')} />
+        <LogoSpan className={classx("bg-gradient-primary", "text-shimmer")} />
         <span> – Remix Tailwind Starter Kit</span>
       </h1>
       <p>

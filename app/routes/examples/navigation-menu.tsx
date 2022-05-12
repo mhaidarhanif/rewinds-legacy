@@ -1,5 +1,5 @@
-import { NavigationBarNavMenu } from '~/components';
-import { Layout } from '~/layouts';
+import { NavigationBarNavMenu } from "~/components";
+import { Layout } from "~/layouts";
 
 export default function ExampleNavigationMenuRoute() {
   return (

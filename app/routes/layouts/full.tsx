@@ -1,11 +1,11 @@
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 
-import { Code, Image } from '~/components';
-import { dataImages } from '~/data';
-import { useLoaderData } from '~/hooks';
-import { Layout } from '~/layouts';
+import { Code, Image } from "~/components";
+import { dataImages } from "~/data";
+import { useLoaderData } from "~/hooks";
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction } from '~/types';
+import type { LoaderFunction } from "~/types";
 
 export const loader: LoaderFunction = async () => {
   return json({
@@ -21,7 +21,7 @@ export default function LayoutFullRoute() {
       <article className="prose-config px-4">
         <h1>Layout: Full</h1>
         <p>
-          Full width layout example without any padding with{' '}
+          Full width layout example without any padding with{" "}
           <Code>{`<Layout variant="full" />`}</Code>
         </p>
       </article>

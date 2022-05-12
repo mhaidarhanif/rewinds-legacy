@@ -1,4 +1,4 @@
-import { Footer, H2 } from '~/components';
+import { Footer, H2 } from "~/components";
 
 export const ExampleFooters = () => {
   return (

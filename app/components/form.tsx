@@ -1,4 +1,4 @@
-export { Form as RemixForm } from 'remix';
+export { Form as RemixForm } from "remix";
 
 export {
   FormControl,
@@ -9,4 +9,4 @@ export {
   RequiredIndicator,
   Select,
   Textarea,
-} from '@vechaiui/react';
+} from "@vechaiui/react";

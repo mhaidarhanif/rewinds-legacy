@@ -1,6 +1,6 @@
-import { Footer, NavigationBar } from '~/components';
+import { Footer, NavigationBar } from "~/components";
 
-import type { HTMLElementProps } from '~/types';
+import type { HTMLElementProps } from "~/types";
 
 export const LayoutWide = ({ children }: HTMLElementProps) => {
   return (

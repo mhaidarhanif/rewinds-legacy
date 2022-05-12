@@ -1,12 +1,12 @@
-import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
-import { Anchor, Image } from '~/components';
-import { dataMainStacks, dataReferenceStacks, dataFeatures } from '~/data';
-import { Layout } from '~/layouts';
+import { Anchor, Image } from "~/components";
+import { dataMainStacks, dataReferenceStacks, dataFeatures } from "~/data";
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction } from '@remix-run/node';
-import type { StackItem } from '~/types';
+import type { LoaderFunction } from "@remix-run/node";
+import type { StackItem } from "~/types";
 
 export type LoaderDataAbout = {
   features: string[];
@@ -32,7 +32,7 @@ export default function AboutRoute() {
         <h1>About</h1>
         <p>
           <Anchor href="https://rewinds.mhaidarhanif.com">Rewinds</Anchor> is a
-          Remix Tailwind Starter Kit made by{' '}
+          Remix Tailwind Starter Kit made by{" "}
           <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor> (
           <Anchor href="https://github.com/mhaidarhanif">@mhaidarhanif</Anchor>
           ).
@@ -40,17 +40,17 @@ export default function AboutRoute() {
 
         <p>
           It is a demo project template you can freely use for any purpose. On
-          GitHub, you can directly{' '}
+          GitHub, you can directly{" "}
           <Anchor href="https://github.com/mhaidarhanif/rewinds/generate">
             use this template
-          </Anchor>{' '}
+          </Anchor>{" "}
           as your own repo.
         </p>
 
         <p>
           The goal is to have several examples and demos to combine the best
           Tailwind-related ecosystem such as Tailwind CSS v3, Tailwind UI,
-          Headless UI, Radix UI, Vechai UI, and more. We also encourage{' '}
+          Headless UI, Radix UI, Vechai UI, and more. We also encourage{" "}
           <Anchor href="https://web.dev/accessibility">
             the accessibility guidelines
           </Anchor>
@@ -64,13 +64,13 @@ export default function AboutRoute() {
           <h2>Links</h2>
           <ul>
             <li>
-              Preview demo:{' '}
+              Preview demo:{" "}
               <Anchor href="https://rewinds.mhaidarhanif.com">
                 rewinds.mhaidarhanif.com
               </Anchor>
             </li>
             <li>
-              GitHub repo:{' '}
+              GitHub repo:{" "}
               <Anchor href="https://github.com/mhaidarhanif/rewinds">
                 mhaidarhanif/rewinds
               </Anchor>
@@ -139,7 +139,7 @@ export default function AboutRoute() {
           </ul>
 
           <p>
-            If you need more resources, check out{' '}
+            If you need more resources, check out{" "}
             <Anchor href="https://github.com/aniftyco/awesome-tailwindcss">
               awesome-tailwindcss
             </Anchor>

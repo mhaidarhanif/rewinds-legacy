@@ -1,4 +1,4 @@
-import type { ConfigNavigation, LinkItem, LinkItems } from '~/types';
+import type { ConfigNavigation, LinkItem, LinkItems } from "~/types";
 
 /**
  * Config Navigation Links
@@ -8,62 +8,62 @@ import type { ConfigNavigation, LinkItem, LinkItems } from '~/types';
  * - Navigation Menu with Radix UI that has complex layout and positioning
  */
 
-export const configNavigationHome: LinkItem = { to: '/', text: 'Home' };
+export const configNavigationHome: LinkItem = { to: "/", text: "Home" };
 
 export const configNavigationPages: LinkItems = [
-  { to: '/about', text: 'About' },
-  { to: '/blog', text: 'Blog' },
-  { to: '/subscribe', text: 'Subscribe' },
-  { to: '/pricing', text: 'Pricing' },
-  { to: '/search', text: 'Search' },
+  { to: "/about", text: "About" },
+  { to: "/blog", text: "Blog" },
+  { to: "/subscribe", text: "Subscribe" },
+  { to: "/pricing", text: "Pricing" },
+  { to: "/search", text: "Search" },
 ];
 
 export const configNavigationAccount: LinkItems = [
-  { to: '/signup', text: 'Sign up' },
-  { to: '/signin', text: 'Sign in' },
-  { to: '/signout', text: 'Sign out' },
+  { to: "/signup", text: "Sign up" },
+  { to: "/signin", text: "Sign in" },
+  { to: "/signout", text: "Sign out" },
 ];
 
 export const configNavigationEducation: LinkItems = [
-  { to: '/learn', text: 'Learn' },
-  { to: '/tracks', text: 'Tracks' },
-  { to: '/members', text: 'Members' },
-  { to: '/projects', text: 'Projects' },
-  { to: '/discussions', text: 'Discussions' },
+  { to: "/learn", text: "Learn" },
+  { to: "/tracks", text: "Tracks" },
+  { to: "/members", text: "Members" },
+  { to: "/projects", text: "Projects" },
+  { to: "/discussions", text: "Discussions" },
 ];
 
 export const configNavigationCareer: LinkItems = [
-  { to: '/work', text: 'Work' },
-  { to: '/companies', text: 'Companies' },
-  { to: '/jobs', text: 'Jobs' },
-  { to: '/freelance', text: 'Freelance' },
+  { to: "/work", text: "Work" },
+  { to: "/companies", text: "Companies" },
+  { to: "/jobs", text: "Jobs" },
+  { to: "/freelance", text: "Freelance" },
 ];
 
 export const configNavigationExamples1: LinkItems = [
-  { to: '/examples', text: 'Examples' },
-  { to: '/examples/button', text: 'Example: Button' },
-  { to: '/examples/badge', text: 'Example: Badge' },
-  { to: '/examples/form', text: 'Example: Form' },
-  { to: '/examples/alert', text: 'Example: Alert' },
-  { to: '/examples/toast', text: 'Example: Toast' },
-  { to: '/examples/notification', text: 'Example: Notification' },
-  { to: '/examples/navigation-menu', text: 'Example: Navigation Menu' },
-  { to: '/examples/footer', text: 'Example: Footer' },
+  { to: "/examples", text: "Examples" },
+  { to: "/examples/button", text: "Example: Button" },
+  { to: "/examples/badge", text: "Example: Badge" },
+  { to: "/examples/form", text: "Example: Form" },
+  { to: "/examples/alert", text: "Example: Alert" },
+  { to: "/examples/toast", text: "Example: Toast" },
+  { to: "/examples/notification", text: "Example: Notification" },
+  { to: "/examples/navigation-menu", text: "Example: Navigation Menu" },
+  { to: "/examples/footer", text: "Example: Footer" },
 ];
 
 export const configNavigationExamples2: LinkItems = [
-  { to: '/examples/rest', text: 'Example: REST API' },
-  { to: '/examples/graphql', text: 'Example: GraphQL' },
-  { to: '/examples/catch', text: 'Example: Catch' },
-  { to: '/examples/error', text: 'Example: Error' },
-  { to: '/examples/debug', text: 'Example: Debug' },
+  { to: "/examples/rest", text: "Example: REST API" },
+  { to: "/examples/graphql", text: "Example: GraphQL" },
+  { to: "/examples/catch", text: "Example: Catch" },
+  { to: "/examples/error", text: "Example: Error" },
+  { to: "/examples/debug", text: "Example: Debug" },
 ];
 
 export const configNavigationLayouts: LinkItems = [
-  { to: '/layouts/common', text: 'Common' },
-  { to: '/layouts/full', text: 'Full' },
-  { to: '/layouts/wide', text: 'Wide' },
-  { to: '/layouts/boundary', text: 'Boundary' },
+  { to: "/layouts/common", text: "Common" },
+  { to: "/layouts/full", text: "Full" },
+  { to: "/layouts/wide", text: "Wide" },
+  { to: "/layouts/boundary", text: "Boundary" },
 ];
 
 /**
@@ -92,12 +92,12 @@ export const configNavigationBarLinks: LinkItems = [
 
 export const configNavigationMenu: ConfigNavigation = [
   {
-    name: 'Pages',
+    name: "Pages",
     links: [configNavigationHome, ...configNavigationPages],
   },
   {
     // In small screen, the auth links are in the Dropdown Menu
-    name: 'Account',
+    name: "Account",
     links: [...configNavigationAccount],
   },
 ];
@@ -110,23 +110,23 @@ export const configNavigationMenu: ConfigNavigation = [
 
 export const configNavigationSitemap: ConfigNavigation = [
   {
-    name: 'Pages',
+    name: "Pages",
     links: [configNavigationHome, ...configNavigationPages],
   },
   {
-    name: 'Account',
+    name: "Account",
     links: [...configNavigationAccount],
   },
   {
-    name: 'Education',
+    name: "Education",
     links: [...configNavigationEducation],
   },
   {
-    name: 'Career',
+    name: "Career",
     links: [...configNavigationCareer],
   },
   {
-    name: 'Examples',
+    name: "Examples",
     links: [...configNavigationExamples1, ...configNavigationExamples2],
   },
 ];

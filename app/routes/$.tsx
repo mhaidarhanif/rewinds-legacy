@@ -1,15 +1,15 @@
-import { redirect } from 'remix';
+import { redirect } from "remix";
 
-import { configFeatures, configExternalLinks } from '~/configs';
-import { MessageErrorNotFound } from '~/contents/messages';
-import { Layout } from '~/layouts';
+import { configFeatures, configExternalLinks } from "~/configs";
+import { MessageErrorNotFound } from "~/contents/messages";
+import { Layout } from "~/layouts";
 
 import type {
   SEOHandle,
   LoaderFunction,
   ActionFunction,
   MetaFunction,
-} from '~/types';
+} from "~/types";
 
 /**
  * Splat Route
@@ -28,7 +28,7 @@ export const handle: SEOHandle = {
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Error 404 (Not Found)!?',
+    title: "Error 404 (Not Found)!?",
   };
 };
 
@@ -37,7 +37,7 @@ export const meta: MetaFunction = () => {
  */
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const pathName = params['*'];
+  const pathName = params["*"];
   if (configFeatures.console) console.info(pathName);
 
   const externalLink = configExternalLinks.find((item) => {
@@ -52,7 +52,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const action: ActionFunction = async ({ params }) => {
-  const pathName = params['*'];
+  const pathName = params["*"];
   if (configFeatures.console) console.info(pathName);
   return null;
 };

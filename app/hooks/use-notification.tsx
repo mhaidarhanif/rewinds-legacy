@@ -1,1 +1,1 @@
-export { useNotification } from '@vechaiui/react';
+export { useNotification } from "@vechaiui/react";

@@ -1,15 +1,15 @@
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 
-import { dataExampleComponents, dataExampleUtilities } from '~/data';
-import { useLoaderData } from '~/hooks';
-import { Layout } from '~/layouts';
+import { dataExampleComponents, dataExampleUtilities } from "~/data";
+import { useLoaderData } from "~/hooks";
+import { Layout } from "~/layouts";
 
 import type {
   ComponentItem,
   LoaderFunction,
   SEOHandle,
   UtilityItem,
-} from '~/types';
+} from "~/types";
 
 type LoaderDataExamples = {
   exampleComponents: ComponentItem[];

@@ -1,17 +1,17 @@
-import { Popover, RadioGroup, Transition } from '@headlessui/react';
-import { Switch, Select, IconButton } from '@vechaiui/react';
+import { Popover, RadioGroup, Transition } from "@headlessui/react";
+import { Switch, Select, IconButton } from "@vechaiui/react";
 
-import { Divider, Fragment, useTheme } from '~/components';
+import { Divider, Fragment, useTheme } from "~/components";
 import {
   configAvailableThemes,
   configAvailableRadiuses,
   configStyle,
-} from '~/configs';
-import { useToast } from '~/hooks';
-import { IconGear } from '~/libs';
-import { classx } from '~/utils';
+} from "~/configs";
+import { useToast } from "~/hooks";
+import { IconGear } from "~/libs";
+import { classx } from "~/utils";
 
-import type { ThemeContextType } from '~/components';
+import type { ThemeContextType } from "~/components";
 
 export const ThemeSwitcher = () => {
   const {
@@ -95,11 +95,11 @@ export const ThemeSwitcher = () => {
                               style={{ backgroundColor: theme.backgroundColor }}
                               className={({ checked }) => {
                                 return classx(
-                                  'mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-full border-2 p-0',
+                                  "mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-full border-2 p-0",
                                   `${
                                     checked
-                                      ? 'border-primary-500'
-                                      : 'border-transparent'
+                                      ? "border-primary-500"
+                                      : "border-transparent"
                                   }`,
                                 );
                               }}
@@ -136,11 +136,11 @@ export const ThemeSwitcher = () => {
                               value={item.value}
                               className={({ checked }) => {
                                 return classx(
-                                  'relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold',
+                                  "relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold",
                                   `${
                                     checked
-                                      ? 'bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white'
-                                      : 'text-neutral-600 dark:text-neutral-400'
+                                      ? "bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white"
+                                      : "text-neutral-600 dark:text-neutral-400"
                                   }
                           `,
                                 );
@@ -168,7 +168,7 @@ export const ThemeSwitcher = () => {
                       size="xs"
                       onChange={(e) => {
                         setDensity(
-                          e.target.value as ThemeContextType['density'],
+                          e.target.value as ThemeContextType["density"],
                         );
                       }}
                     >

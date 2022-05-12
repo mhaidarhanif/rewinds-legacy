@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
 const classx = clsx;
 const cx = classx;

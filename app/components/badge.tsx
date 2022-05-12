@@ -1,1 +1,1 @@
-export { Badge } from '@vechaiui/react';
+export { Badge } from "@vechaiui/react";

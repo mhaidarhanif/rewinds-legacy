@@ -1,4 +1,4 @@
-import * as ScrollArea from '@radix-ui/react-scroll-area';
+import * as ScrollArea from "@radix-ui/react-scroll-area";
 
 interface ScrollAreaProps {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ export const RadixScrollArea = ({ children }: ScrollAreaProps) => {
 const ScrollAreaScrollbar = ({
   orientation,
 }: {
-  orientation: 'horizontal' | 'vertical';
+  orientation: "horizontal" | "vertical";
 }) => {
   return (
     <ScrollArea.Scrollbar

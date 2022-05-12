@@ -1,10 +1,10 @@
-import { configMeta } from '~/configs';
-import { SubscribeForm } from '~/contents';
-import { actionSubscribe, loaderSubscribe } from '~/features';
-import { useActionData, useTransition } from '~/hooks';
-import { Layout } from '~/layouts';
+import { configMeta } from "~/configs";
+import { SubscribeForm } from "~/contents";
+import { actionSubscribe, loaderSubscribe } from "~/features";
+import { useActionData, useTransition } from "~/hooks";
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction, ActionFunction } from '~/types';
+import type { LoaderFunction, ActionFunction } from "~/types";
 
 export const loader: LoaderFunction = loaderSubscribe;
 
@@ -19,7 +19,7 @@ export default function SubscribeRoute() {
       <article className="prose-config">
         <h1>Subscribe</h1>
         <p>
-          Subscribe to updates on <b>Rewinds</b> from{' '}
+          Subscribe to updates on <b>Rewinds</b> from{" "}
           <b>{configMeta.mailingListName}</b>.
         </p>
       </article>

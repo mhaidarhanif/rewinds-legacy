@@ -8,10 +8,10 @@
 
 @layer base {
   html {
-    font-family: 'Archivo', ui-sans-serif, system-ui, -apple-system,
-      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: "Archivo", ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
   }
   body {
     @apply scroll-smooth transition-colors duration-300;
@@ -167,11 +167,11 @@
     @apply flex touch-none select-none bg-primary-800/20 p-[2px] transition-all duration-200 ease-out hover:bg-primary-800/30;
   }
 
-  .scroll-area-scrollbar[data-orientation='vertical'] {
+  .scroll-area-scrollbar[data-orientation="vertical"] {
     @apply w-3;
   }
 
-  .scroll-area-scrollbar[data-orientation='horizontal'] {
+  .scroll-area-scrollbar[data-orientation="horizontal"] {
     @apply h-3 flex-col;
   }
 
@@ -180,7 +180,7 @@
   }
 
   .scroll-area-thumb::before {
-    content: '';
+    content: "";
     @apply absolute top-1/2 left-1/2 h-full min-h-[50px] w-full min-w-[50px] translate-x-1/2 translate-y-1/2;
   }
 }

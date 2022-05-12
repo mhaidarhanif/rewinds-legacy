@@ -5,4 +5,4 @@ export {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react';
+} from "@remix-run/react";

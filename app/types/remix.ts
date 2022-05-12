@@ -6,4 +6,4 @@ export type {
   MetaFunction,
   LinkProps,
   NavLinkProps,
-} from 'remix';
+} from "remix";

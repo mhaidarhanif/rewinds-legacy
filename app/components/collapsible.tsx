@@ -1,4 +1,4 @@
-import * as Collapsible from '@radix-ui/react-collapsible';
+import * as Collapsible from "@radix-ui/react-collapsible";
 
 const CollapsibleExample = () => {
   return (

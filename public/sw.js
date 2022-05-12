@@ -2,22 +2,22 @@
  * Service Worker for PWA
  */
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener("fetch", (event) => {
   let url = new URL(event.request.url);
   let method = event.request.method;
 
   // Any non GET request is ignored
-  if (method.toLowerCase() !== 'get') return;
+  if (method.toLowerCase() !== "get") return;
 
   // If the request is for the favicons, fonts, or the built files (which are hashed in the name)
   if (
-    url.pathname.startsWith('/favicons/') ||
-    url.pathname.startsWith('/fonts/') ||
-    url.pathname.startsWith('/build/')
+    url.pathname.startsWith("/favicons/") ||
+    url.pathname.startsWith("/fonts/") ||
+    url.pathname.startsWith("/build/")
   ) {
     event.respondWith(
       //Open the assets cache
-      caches.open('assets').then(async (cache) => {
+      caches.open("assets").then(async (cache) => {
         // If the request is cached we will use the cache
         let cacheResponse = await cache.match(event.request);
         if (cacheResponse) return cacheResponse;
@@ -33,10 +33,10 @@ self.addEventListener('fetch', (event) => {
   }
 
   // If the URL is for a localized message
-  if (url.pathname.startsWith('/locales/')) {
+  if (url.pathname.startsWith("/locales/")) {
     event.respondWith(
       // Use the locales cache
-      caches.open('locales').then(async (cache) => {
+      caches.open("locales").then(async (cache) => {
         // Run the fetch
         let fetchResponsePromise = fetch(event.request);
         try {

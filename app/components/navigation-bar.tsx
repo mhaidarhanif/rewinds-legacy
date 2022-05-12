@@ -7,9 +7,9 @@ import {
   Badge,
   NavigationBarNavMenu,
   NavigationBarMenu,
-} from '~/components';
-import { configStyle, configNavigationBarLinks } from '~/configs';
-import { packageJson } from '~/utils';
+} from "~/components";
+import { configStyle, configNavigationBarLinks } from "~/configs";
+import { packageJson } from "~/utils";
 
 export const NavigationBar = () => {
   return (
@@ -18,8 +18,8 @@ export const NavigationBar = () => {
         <div className="flex gap-4">
           <NavigationBarLogo />
           <div className="flex gap-1">
-            {configStyle.navigationBar === 'simple' && <NavigationBarLinks />}
-            {configStyle.navigationBar === 'complex' && (
+            {configStyle.navigationBar === "simple" && <NavigationBarLinks />}
+            {configStyle.navigationBar === "complex" && (
               <NavigationBarNavMenu />
             )}
           </div>

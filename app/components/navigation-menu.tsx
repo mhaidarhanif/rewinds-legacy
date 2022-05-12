@@ -1,18 +1,18 @@
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { useResolvedPath, NavLink } from '@remix-run/react';
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { useResolvedPath, NavLink } from "@remix-run/react";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { useMatch } from 'react-router-dom';
+import { useMatch } from "react-router-dom";
 
 import {
   configNavigationExamples1,
   configNavigationExamples2,
   configNavigationPages,
-} from '~/configs';
-import { IconCaretDown } from '~/libs';
-import { classx } from '~/utils';
+} from "~/configs";
+import { IconCaretDown } from "~/libs";
+import { classx } from "~/utils";
 
-import type { NavLinkProps } from '@remix-run/react';
-import type { HTMLAnchorElementProps, HTMLElementProps } from '~/types';
+import type { NavLinkProps } from "@remix-run/react";
+import type { HTMLAnchorElementProps, HTMLElementProps } from "~/types";
 
 /**
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
@@ -145,7 +145,7 @@ export const NavigationMenuRoot = ({
 }: HTMLElementProps) => {
   return (
     <NavigationMenu.Root
-      className={classx('nav-menu-root', 'relative hidden xl:flex', className)}
+      className={classx("nav-menu-root", "relative hidden xl:flex", className)}
     >
       {children}
     </NavigationMenu.Root>
@@ -159,8 +159,8 @@ export const NavigationMenuList = ({
   return (
     <NavigationMenu.List
       className={classx(
-        'nav-menu-list',
-        'flex flex-row items-center gap-1 rounded-lg font-medium',
+        "nav-menu-list",
+        "flex flex-row items-center gap-1 rounded-lg font-medium",
         className,
       )}
     >
@@ -175,7 +175,7 @@ export const NavigationMenuItem = ({
 }: HTMLElementProps) => {
   return (
     <NavigationMenu.Item
-      className={classx('nav-menu-item', 'flex items-center', className)}
+      className={classx("nav-menu-item", "flex items-center", className)}
     >
       {children}
     </NavigationMenu.Item>
@@ -194,9 +194,9 @@ export const NavigationMenuTrigger = ({
   return (
     <NavigationMenu.Trigger
       className={classx(
-        'nav-menu-trigger',
-        'navlink focus-visible:focus-ring focus:outline-none',
-        'flex items-center gap-1 rounded-base px-3 py-2 font-bold transition-colors',
+        "nav-menu-trigger",
+        "navlink focus-visible:focus-ring focus:outline-none",
+        "flex items-center gap-1 rounded-base px-3 py-2 font-bold transition-colors",
         className,
       )}
       {...props}
@@ -214,12 +214,12 @@ export const NavigationMenuContent = ({
   return (
     <NavigationMenu.Content
       className={classx(
-        'nav-menu-content',
-        'absolute top-0 left-0 w-auto rounded-lg',
-        'radix-motion-from-start:animate-enter-from-left',
-        'radix-motion-from-end:animate-enter-from-right',
-        'radix-motion-to-start:animate-exit-to-left',
-        'radix-motion-to-end:animate-exit-to-right',
+        "nav-menu-content",
+        "absolute top-0 left-0 w-auto rounded-lg",
+        "radix-motion-from-start:animate-enter-from-left",
+        "radix-motion-from-end:animate-enter-from-right",
+        "radix-motion-to-start:animate-exit-to-left",
+        "radix-motion-to-end:animate-exit-to-right",
         className,
       )}
     >
@@ -243,7 +243,7 @@ export const NavigationMenuLink = ({
     <NavigationMenu.Link
       href={href}
       asChild={asChild}
-      className={classx('nav-menu-link', className)}
+      className={classx("nav-menu-link", className)}
     >
       {children}
     </NavigationMenu.Link>
@@ -261,7 +261,7 @@ export const NavigationMenuAnchor = ({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={classx('nav-menu-link', className)}
+      className={classx("nav-menu-link", className)}
     >
       {children}
     </NavigationMenu.Link>
@@ -272,18 +272,18 @@ export const NavigationMenuIndicator = ({ className }: HTMLElementProps) => {
   return (
     <NavigationMenu.Indicator
       className={classx(
-        'nav-menu-indicator',
-        'overflow-hidden shadow-2xl',
-        'top-[100%] flex h-2 items-end justify-center',
-        'radix-state-visible:animate-fade-in',
-        'radix-state-hidden:animate-fade-out',
-        'transition-[width_transform] duration-[250ms] ease-[ease]',
-        'z-40',
+        "nav-menu-indicator",
+        "overflow-hidden shadow-2xl",
+        "top-[100%] flex h-2 items-end justify-center",
+        "radix-state-visible:animate-fade-in",
+        "radix-state-hidden:animate-fade-out",
+        "transition-[width_transform] duration-[250ms] ease-[ease]",
+        "z-40",
         className,
       )}
     >
       <div
-        className={classx('bg-panel ', 'relative top-2 h-3 w-3 rotate-45')}
+        className={classx("bg-panel ", "relative top-2 h-3 w-3 rotate-45")}
       />
     </NavigationMenu.Indicator>
   );
@@ -297,10 +297,10 @@ export const NavigationMenuViewportPosition = ({
     <div
       className="absolute z-40 flex"
       style={{
-        top: '100%',
-        left: '-10%',
-        width: '120%',
-        perspective: '2000px',
+        top: "100%",
+        left: "-10%",
+        width: "120%",
+        perspective: "2000px",
       }}
     >
       {children}
@@ -312,15 +312,15 @@ export const NavigationMenuViewport = ({ ...props }: HTMLElementProps) => {
   return (
     <NavigationMenu.Viewport
       className={classx(
-        'nav-menu-viewport',
-        'z-40',
-        'bg-panel border-panel',
-        'relative mt-2 overflow-hidden rounded-base shadow-lg',
-        'w-radix-navigation-menu-viewport',
-        'h-radix-navigation-menu-viewport',
-        'radix-state-open:animate-scale-in-content',
-        'radix-state-closed:animate-scale-out-content',
-        'origin-[top_center] transition-[width_height] duration-300 ease-[ease]',
+        "nav-menu-viewport",
+        "z-40",
+        "bg-panel border-panel",
+        "relative mt-2 overflow-hidden rounded-base shadow-lg",
+        "w-radix-navigation-menu-viewport",
+        "h-radix-navigation-menu-viewport",
+        "radix-state-open:animate-scale-in-content",
+        "radix-state-closed:animate-scale-out-content",
+        "origin-[top_center] transition-[width_height] duration-300 ease-[ease]",
       )}
       {...props}
     />
@@ -349,9 +349,9 @@ export const NavigationMenuNavLink = ({
         to={to}
         end={end}
         className={classx(
-          'navlink',
-          'rounded-base p-2 font-bold transition-colors',
-          isActive && 'navlink-active',
+          "navlink",
+          "rounded-base p-2 font-bold transition-colors",
+          isActive && "navlink-active",
           className,
         )}
       >

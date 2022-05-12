@@ -1,4 +1,4 @@
-import type { Position } from '@vechaiui/toasted-notes';
+import type { Position } from "@vechaiui/toasted-notes";
 
 export type {
   ColorScheme,
@@ -6,11 +6,11 @@ export type {
   ButtonProps,
   CodeProps,
   ButtonGroupProps,
-} from '@vechaiui/react';
+} from "@vechaiui/react";
 
 export type SpecifiedTheme = {
   colorScheme: string;
-  density: 'compact' | 'comfortable' | 'unset';
+  density: "compact" | "comfortable" | "unset";
   radius: string;
   cursorPointer: boolean;
 };
@@ -25,7 +25,7 @@ export interface IToast {
   duration?: number | null;
   position?: keyof typeof Position;
   message?: string;
-  status?: 'info' | 'success' | 'error' | 'warning';
+  status?: "info" | "success" | "error" | "warning";
   icon?: React.ElementType;
   closeIcon?: React.ElementType;
 }

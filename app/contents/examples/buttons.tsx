@@ -1,5 +1,5 @@
-import { Button, ButtonGroup, H2, H3, RemixLink } from '~/components';
-import { MessageBackReloadButtons } from '~/contents';
+import { Button, ButtonGroup, H2, H3, RemixLink } from "~/components";
+import { MessageBackReloadButtons } from "~/contents";
 
 export const ExampleButtons = () => {
   return (

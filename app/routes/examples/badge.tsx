@@ -1,5 +1,5 @@
-import { ExampleBadges } from '~/contents';
-import { Layout } from '~/layouts';
+import { ExampleBadges } from "~/contents";
+import { Layout } from "~/layouts";
 
 export default function ExampleBadgeRoute() {
   return (

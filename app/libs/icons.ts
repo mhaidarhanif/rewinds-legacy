@@ -1,4 +1,4 @@
-import { AdjustmentsIcon as IconAdjustments } from '@heroicons/react/solid';
+import { AdjustmentsIcon as IconAdjustments } from "@heroicons/react/solid";
 import {
   // General
   List as IconMenu,
@@ -14,7 +14,7 @@ import {
   // TelegramLogo as IconTelegram,
   // TwitterLogo as IconTwitter,
   // YoutubeLogo as IconYouTube,
-} from 'phosphor-react';
+} from "phosphor-react";
 import {
   // General
   FaCircle as IconCircle,
@@ -31,7 +31,7 @@ import {
   FaTelegram as IconTelegram,
   FaTwitter as IconTwitter,
   FaYoutube as IconYouTube,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 export {
   IconAdjustments,

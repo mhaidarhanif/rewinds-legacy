@@ -2,14 +2,14 @@ interface AnchorProps {
   href: string;
   children: React.ReactNode;
   className?: string;
-  'data-color'?: string;
+  "data-color"?: string;
 }
 
 export const Anchor = ({
   href,
   children,
   className,
-  'data-color': dataColor,
+  "data-color": dataColor,
 }: AnchorProps) => {
   return (
     <a

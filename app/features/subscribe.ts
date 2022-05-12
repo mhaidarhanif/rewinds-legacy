@@ -1,16 +1,16 @@
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 
-import { axiosConvertKitClient } from '~/libs/axios';
-import { getEnvServer, sleep } from '~/utils';
+import { axiosConvertKitClient } from "~/libs/axios";
+import { getEnvServer, sleep } from "~/utils";
 
-import type { LoaderFunction, ActionFunction } from '~/types';
+import type { LoaderFunction, ActionFunction } from "~/types";
 
 export const loaderSubscribe: LoaderFunction = async () => {
-  const CONVERTKIT_API_KEY = getEnvServer('CONVERTKIT_API_KEY');
-  const CONVERTKIT_FORM_ID = getEnvServer('CONVERTKIT_FORM_ID');
+  const CONVERTKIT_API_KEY = getEnvServer("CONVERTKIT_API_KEY");
+  const CONVERTKIT_FORM_ID = getEnvServer("CONVERTKIT_FORM_ID");
 
   if (!CONVERTKIT_API_KEY || !CONVERTKIT_FORM_ID) {
-    throw new Response('ConvertKit API key and form ID are not found', {
+    throw new Response("ConvertKit API key and form ID are not found", {
       status: 500,
     });
   }
@@ -24,14 +24,14 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
 
     const form = await request.formData();
 
-    const email = form.get('email');
-    const firstName = form.get('firstName');
+    const email = form.get("email");
+    const firstName = form.get("firstName");
 
     // Check proper texts
-    if (typeof email !== 'string' || typeof firstName !== 'string') {
+    if (typeof email !== "string" || typeof firstName !== "string") {
       return json({
         error: true,
-        message: 'Sorry, please provide proper name and email.',
+        message: "Sorry, please provide proper name and email.",
       });
     }
 
@@ -39,7 +39,7 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
     if (!email && !firstName) {
       return json({
         error: true,
-        message: 'Sorry, please provide name and email.',
+        message: "Sorry, please provide name and email.",
       });
     }
 
@@ -65,7 +65,7 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
   } catch (error) {
     return json({
       error: true,
-      message: 'Sorry, failed for unknown reason.',
+      message: "Sorry, failed for unknown reason.",
     });
   }
 };
@@ -80,9 +80,9 @@ const subscribeToConvertKit = async ({
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
-    const apiKey = getEnvServer('CONVERTKIT_API_KEY');
+    const apiKey = getEnvServer("CONVERTKIT_API_KEY");
 
-    const response = await axiosConvertKitClient.post('/subscribe', {
+    const response = await axiosConvertKitClient.post("/subscribe", {
       api_key: apiKey,
       email,
       first_name: firstName,

@@ -1,10 +1,10 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/no-mutable-exports */
 // Dependencies
-import { configMeta } from '~/configs';
-import { generateRobotsTxt, generateSitemap } from '~/utils';
+import { configMeta } from "~/configs";
+import { generateRobotsTxt, generateSitemap } from "~/utils";
 
-import type { EntryContext } from '@remix-run/node';
+import type { EntryContext } from "@remix-run/node";
 
 type Handler = (
   request: Request,
@@ -12,17 +12,17 @@ type Handler = (
 ) => Promise<Response | null> | null;
 
 export const otherRootRoutes: Record<string, Handler> = {
-  '/sitemap.xml': async (request, remixContext) => {
+  "/sitemap.xml": async (request, remixContext) => {
     return generateSitemap(request, remixContext, {
       siteUrl: configMeta.url,
       headers: {
-        'Cache-Control': `public, max-age=${60 * 5}`,
+        "Cache-Control": `public, max-age=${60 * 5}`,
       },
     });
   },
-  '/robots.txt': async () => {
+  "/robots.txt": async () => {
     return generateRobotsTxt([
-      { type: 'sitemap', value: `${configMeta.url}/sitemap.xml` },
+      { type: "sitemap", value: `${configMeta.url}/sitemap.xml` },
     ]);
   },
 };

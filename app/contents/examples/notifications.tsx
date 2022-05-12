@@ -1,6 +1,6 @@
-import { Button, ButtonGroup, H2 } from '~/components';
-import { configStyle } from '~/configs';
-import { useNotification, useToast } from '~/hooks';
+import { Button, ButtonGroup, H2 } from "~/components";
+import { configStyle } from "~/configs";
+import { useNotification, useToast } from "~/hooks";
 
 export const ExampleNotifications = () => {
   const notify = useNotification();
@@ -16,10 +16,10 @@ export const ExampleNotifications = () => {
       description,
       status,
       position: configStyle.notification.position,
-      undoText: 'Undo',
+      undoText: "Undo",
       onUndo: () => {
         toast({
-          message: 'Undoing changes...',
+          message: "Undoing changes...",
         });
       },
     });
@@ -33,7 +33,7 @@ export const ExampleNotifications = () => {
         <Button
           color="primary"
           onClick={() => {
-            showNotification('Notification', 'This is a normal message');
+            showNotification("Notification", "This is a normal message");
           }}
         >
           Normal
@@ -42,9 +42,9 @@ export const ExampleNotifications = () => {
           color="info"
           onClick={() => {
             showNotification(
-              'Info Notification',
-              'This is an info message',
-              'info',
+              "Info Notification",
+              "This is an info message",
+              "info",
             );
           }}
         >
@@ -54,9 +54,9 @@ export const ExampleNotifications = () => {
           color="success"
           onClick={() => {
             showNotification(
-              'Success Notification',
-              'This is a success message',
-              'success',
+              "Success Notification",
+              "This is a success message",
+              "success",
             );
           }}
         >
@@ -66,9 +66,9 @@ export const ExampleNotifications = () => {
           color="warning"
           onClick={() => {
             showNotification(
-              'Warning Notification',
-              'This is a warning message',
-              'warning',
+              "Warning Notification",
+              "This is a warning message",
+              "warning",
             );
           }}
         >
@@ -78,9 +78,9 @@ export const ExampleNotifications = () => {
           color="error"
           onClick={() => {
             showNotification(
-              'Error Notification',
-              'This is an error message',
-              'error',
+              "Error Notification",
+              "This is an error message",
+              "error",
             );
           }}
         >

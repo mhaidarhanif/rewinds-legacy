@@ -1,5 +1,5 @@
-import { IconRewind } from '~/libs';
-import { classx } from '~/utils';
+import { IconRewind } from "~/libs";
+import { classx } from "~/utils";
 
 export const Logo = () => {
   return (
@@ -18,7 +18,7 @@ export const LogoSpan = ({ className }: { className?: string }) => {
   return (
     <span
       className={classx(
-        'pr-2 font-black tracking-tightest text-primary-500',
+        "pr-2 font-black tracking-tightest text-primary-500",
         className,
       )}
     >

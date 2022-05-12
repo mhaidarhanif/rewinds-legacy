@@ -1,4 +1,4 @@
-import { Badge, H2, H3 } from '~/components';
+import { Badge, H2, H3 } from "~/components";
 
 export const ExampleBadges = () => {
   return (

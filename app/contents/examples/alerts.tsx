@@ -1,4 +1,4 @@
-import { Alert, H2 } from '~/components';
+import { Alert, H2 } from "~/components";
 
 export const ExampleAlerts = () => {
   return (

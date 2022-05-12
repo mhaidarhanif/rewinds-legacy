@@ -1,18 +1,18 @@
-import { RemixLink } from '~/components';
-import { classx } from '~/utils';
+import { RemixLink } from "~/components";
+import { classx } from "~/utils";
 
-import type { LinkProps } from '~/types';
+import type { LinkProps } from "~/types";
 
 interface ButtonLinkProps extends LinkProps {
   color?: string;
-  variant?: 'solid' | 'outline';
+  variant?: "solid" | "outline";
 }
 
 export const ButtonLink = ({
   to,
   children,
-  color = 'primary',
-  variant = 'solid',
+  color = "primary",
+  variant = "solid",
   className,
 }: ButtonLinkProps) => {
   return (

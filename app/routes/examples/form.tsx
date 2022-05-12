@@ -1,5 +1,5 @@
-import { ExampleForms } from '~/contents';
-import { Layout } from '~/layouts';
+import { ExampleForms } from "~/contents";
+import { Layout } from "~/layouts";
 
 export default function ExampleFormRoute() {
   return (

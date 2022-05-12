@@ -1,4 +1,4 @@
-import { Form } from '@remix-run/react';
+import { Form } from "@remix-run/react";
 
 import {
   Alert,
@@ -7,7 +7,7 @@ import {
   FormLabel,
   Input,
   Button,
-} from '~/components';
+} from "~/components";
 
 /**
  * Subscribe Form
@@ -23,17 +23,17 @@ export const SubscribeForm = ({
   transition,
   actionData,
 }: PrivateSaleFormProps) => {
-  const isLoading = transition.state === 'submitting';
-  const buttonSubmitText = isLoading ? 'Subscribing...' : 'Subscribe';
+  const isLoading = transition.state === "submitting";
+  const buttonSubmitText = isLoading ? "Subscribing..." : "Subscribe";
 
   const defaultPlaceholderText = {
-    firstName: 'Miles Tails Prower',
-    email: 'tails@tailwind.run',
+    firstName: "Miles Tails Prower",
+    email: "tails@tailwind.run",
   };
 
   const defaultActionText = {
-    success: 'Thank you for subscribing. Please check your inbox.',
-    error: 'Sorry something went wrong. Please try again.',
+    success: "Thank you for subscribing. Please check your inbox.",
+    error: "Sorry something went wrong. Please try again.",
   };
 
   return (

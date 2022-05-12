@@ -8,10 +8,10 @@ import {
   Button,
   Select,
   H2,
-} from '~/components';
-import { configStyle } from '~/configs';
-import { useState, useForm, useNotification } from '~/hooks';
-import { sleep } from '~/utils';
+} from "~/components";
+import { configStyle } from "~/configs";
+import { useState, useForm, useNotification } from "~/hooks";
+import { sleep } from "~/utils";
 
 /**
  * Example Forms
@@ -38,9 +38,9 @@ export const ExampleForms = () => {
     setLoading(true);
     await sleep(3000);
     notify({
-      title: 'Created your account',
-      description: 'Your email is now registered.',
-      status: 'success',
+      title: "Created your account",
+      description: "Your email is now registered.",
+      status: "success",
       position: configStyle.notification.position,
     });
     setLoading(false);
@@ -55,13 +55,13 @@ export const ExampleForms = () => {
           <FormControl invalid={Boolean(errors.email)}>
             <FormLabel>Email address</FormLabel>
             <Input
-              {...register('email', { required: true })}
+              {...register("email", { required: true })}
               placeholder="yourname@email.com"
               size="lg"
             />
             <FormHelperText>
               <span>We'll never share your email. Promise :)</span>
-              {errors.email && errors.email.type === 'required' && (
+              {errors.email && errors.email.type === "required" && (
                 <FormErrorMessage>Email is required</FormErrorMessage>
               )}
             </FormHelperText>
@@ -73,11 +73,11 @@ export const ExampleForms = () => {
               <RequiredIndicator />
             </FormLabel>
             <Input
-              {...register('username', { required: true })}
+              {...register("username", { required: true })}
               placeholder="Enter your username"
               size="lg"
             />
-            {errors.username && errors.username.type === 'required' && (
+            {errors.username && errors.username.type === "required" && (
               <FormErrorMessage>Username is required</FormErrorMessage>
             )}
           </FormControl>
@@ -89,8 +89,8 @@ export const ExampleForms = () => {
             </FormLabel>
             <Input.Group size="lg">
               <Input
-                {...register('password', { required: true })}
-                type={showPassword ? 'text' : 'password'}
+                {...register("password", { required: true })}
+                type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
               />
               <Input.RightElement className="mr-1 w-16">
@@ -100,18 +100,18 @@ export const ExampleForms = () => {
                   variant="solid"
                   onClick={handleToggleShowPassword}
                 >
-                  {showPassword ? 'Hide' : 'Show'}
+                  {showPassword ? "Hide" : "Show"}
                 </Button>
               </Input.RightElement>
             </Input.Group>
-            {errors.password && errors.password.type === 'required' && (
+            {errors.password && errors.password.type === "required" && (
               <FormErrorMessage>Password is required</FormErrorMessage>
             )}
           </FormControl>
 
           <FormControl>
             <FormLabel>Gender</FormLabel>
-            <Select {...register('gender')} size="lg">
+            <Select {...register("gender")} size="lg">
               <option value="">Choose...</option>
               <option value="female">Female</option>
               <option value="male">Male</option>

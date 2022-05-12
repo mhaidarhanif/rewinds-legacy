@@ -1,9 +1,9 @@
-import { Layout } from '~/layouts';
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction } from '~/types';
+import type { LoaderFunction } from "~/types";
 
 export const loader: LoaderFunction = async () => {
-  throw new Response('Not Found', {
+  throw new Response("Not Found", {
     status: 404,
   });
 };

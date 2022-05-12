@@ -1,3 +1,3 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from "dayjs";
 
 export { dayjs };

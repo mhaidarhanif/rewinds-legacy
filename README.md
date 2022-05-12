@@ -157,13 +157,13 @@ npx remix migrate --migration replace-remix-imports
 Before:
 
 ```jsx
-import { json } from 'remix';
+import { json } from "remix";
 ```
 
 After:
 
 ```jsx
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 ```
 
 ### Tailwind CSS

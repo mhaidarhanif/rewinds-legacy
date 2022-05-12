@@ -1,1 +1,1 @@
-export { Alert } from '@vechaiui/react';
+export { Alert } from "@vechaiui/react";

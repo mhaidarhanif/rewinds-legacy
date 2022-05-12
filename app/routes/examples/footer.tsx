@@ -1,5 +1,5 @@
-import { ExampleFooters } from '~/contents';
-import { Layout } from '~/layouts';
+import { ExampleFooters } from "~/contents";
+import { Layout } from "~/layouts";
 
 export default function ExampleFooter() {
   return (

@@ -7,19 +7,19 @@ import {
   ScrollRestoration,
   NProgress,
   ThemeProvider,
-} from '~/components';
-import { configDocumentLinks } from '~/configs';
-import { MessageCatch, MessageError } from '~/contents';
-import { loaderSession } from '~/features';
+} from "~/components";
+import { configDocumentLinks } from "~/configs";
+import { MessageCatch, MessageError } from "~/contents";
+import { loaderSession } from "~/features";
 import {
   useEffect,
   useState,
   useCatch,
   useLoaderData,
   useTransition,
-} from '~/hooks';
-import { Layout } from '~/layouts';
-import { createMetaData } from '~/utils';
+} from "~/hooks";
+import { Layout } from "~/layouts";
+import { createMetaData } from "~/utils";
 
 import type {
   LinksFunction,
@@ -27,11 +27,11 @@ import type {
   MetaFunction,
   HeadersFunction,
   LoaderDataSession,
-} from '~/types';
+} from "~/types";
 
 export const headers: HeadersFunction = () => {
   return {
-    'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
+    "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
   };
 };
 
@@ -72,7 +72,7 @@ export function Document({ title, children }: DocumentProps) {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    if (transition.state === 'idle') setIsTransitioning(false);
+    if (transition.state === "idle") setIsTransitioning(false);
     else setIsTransitioning(true);
   }, [transition.state]);
 

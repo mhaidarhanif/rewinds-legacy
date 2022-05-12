@@ -1,1 +1,1 @@
-export { redirect } from '@remix-run/node';
+export { redirect } from "@remix-run/node";

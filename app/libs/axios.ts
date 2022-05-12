@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { getEnvServer } from '~/utils';
+import { getEnvServer } from "~/utils";
 
-const convertKitformId = getEnvServer('CONVERTKIT_FORM_ID');
+const convertKitformId = getEnvServer("CONVERTKIT_FORM_ID");
 
 export const axiosClient = axios.create({
-  baseURL: getEnvServer('REST_ENDPOINT'),
+  baseURL: getEnvServer("REST_ENDPOINT"),
 });
 
 export const axiosConvertKitClient = axios.create({

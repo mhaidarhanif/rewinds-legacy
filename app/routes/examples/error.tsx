@@ -1,9 +1,9 @@
-import { Layout } from '~/layouts';
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction } from '~/types';
+import type { LoaderFunction } from "~/types";
 
 export const loader: LoaderFunction = async () => {
-  throw new Error('System crashed!');
+  throw new Error("System crashed!");
 };
 
 export default function DemoErrorRoute() {

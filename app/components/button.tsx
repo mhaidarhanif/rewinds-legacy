@@ -1,8 +1,8 @@
-import { Button as VechaiButton } from '@vechaiui/react';
+import { Button as VechaiButton } from "@vechaiui/react";
 
-import { classx } from '~/utils';
+import { classx } from "~/utils";
 
-import type { ButtonProps, ButtonGroupProps } from '~/types';
+import type { ButtonProps, ButtonGroupProps } from "~/types";
 
 export const Button = (props: ButtonProps) => {
   const { children } = props;
@@ -15,7 +15,7 @@ export const ButtonGroup = (props: ButtonGroupProps) => {
 
   return (
     <VechaiButton.Group
-      className={classx(!attached && 'flex flex-wrap gap-4')}
+      className={classx(!attached && "flex flex-wrap gap-4")}
       {...props}
     >
       {children}

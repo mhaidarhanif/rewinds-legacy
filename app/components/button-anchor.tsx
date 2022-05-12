@@ -1,18 +1,18 @@
-import { classx } from '~/utils';
+import { classx } from "~/utils";
 
 interface ButtonAnchorProps {
   href: string;
   children: React.ReactNode;
   color?: string;
-  variant?: 'solid' | 'outline';
+  variant?: "solid" | "outline";
   className?: string;
 }
 
 export const ButtonAnchor = ({
   href,
   children,
-  color = 'primary',
-  variant = 'solid',
+  color = "primary",
+  variant = "solid",
   className,
 }: ButtonAnchorProps) => {
   return (

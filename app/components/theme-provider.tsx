@@ -1,4 +1,4 @@
-import { VechaiProvider, extendTheme } from '@vechaiui/react';
+import { VechaiProvider, extendTheme } from "@vechaiui/react";
 import {
   createContext,
   useContext,
@@ -6,33 +6,33 @@ import {
   useMemo,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
 import {
   configStyle,
   configFeatures,
   configAvailableThemes,
   configThemes,
-} from '~/configs';
-import { useFetcher } from '~/hooks';
-import { useMediaQuery } from '~/libs';
-import { isEnvProduction } from '~/utils';
+} from "~/configs";
+import { useFetcher } from "~/hooks";
+import { useMediaQuery } from "~/libs";
+import { isEnvProduction } from "~/utils";
 
-import type { VechaiProviderProps } from '@vechaiui/react';
-import type { SpecifiedTheme } from '~/types';
+import type { VechaiProviderProps } from "@vechaiui/react";
+import type { SpecifiedTheme } from "~/types";
 
 export type ThemeContextType = {
   colorScheme?: string;
   radius?: string;
-  density?: VechaiProviderProps['density'];
+  density?: VechaiProviderProps["density"];
   cursorPointer?: boolean;
   setColorScheme: (colorScheme: string) => void;
   setRadius: (radius: string) => void;
   setCursorPointer: (cursorPointer: boolean) => void;
-  setDensity: (density: VechaiProviderProps['density']) => void;
+  setDensity: (density: VechaiProviderProps["density"]) => void;
 };
 
-export const prefersLightMQ = '(prefers-color-scheme: light)';
+export const prefersLightMQ = "(prefers-color-scheme: light)";
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
@@ -52,7 +52,7 @@ export function ThemeProvider({
    * Because System appearance require to modify the ThemeSwitcher
    */
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   if (!isEnvProduction && configFeatures.console) {
     console.info({ prefersDarkMode });
   }
@@ -61,7 +61,7 @@ export function ThemeProvider({
    * VechaiTheme
    */
   const [colorScheme, setColorScheme] = useState(specifiedTheme?.colorScheme);
-  const [density, setDensity] = useState<VechaiProviderProps['density']>(
+  const [density, setDensity] = useState<VechaiProviderProps["density"]>(
     specifiedTheme?.density,
   );
   const [radius, setRadius] = useState(specifiedTheme?.radius);
@@ -74,7 +74,7 @@ export function ThemeProvider({
    */
   const theme = useMemo(() => {
     return extendTheme({
-      cursor: cursorPointer ? 'pointer' : 'default',
+      cursor: cursorPointer ? "pointer" : "default",
       rounded: radius,
       colorSchemes: configThemes,
     });
@@ -119,7 +119,7 @@ export function ThemeProvider({
           cursorPointer,
         }),
       },
-      { action: 'action/set-theme', method: 'post' },
+      { action: "action/set-theme", method: "post" },
     );
   }, [colorScheme, cursorPointer, density, radius]);
 
@@ -162,8 +162,8 @@ export const useTheme = () => {
   return {
     ...theme,
     ...currentTheme,
-    isLight: currentTheme?.type === 'light',
-    isDark: currentTheme?.type === 'dark',
+    isLight: currentTheme?.type === "light",
+    isDark: currentTheme?.type === "dark",
   };
 };
 

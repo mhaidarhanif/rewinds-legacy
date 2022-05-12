@@ -12,7 +12,7 @@ import {
   IconWebsite,
   IconYouTube,
   IconDev,
-} from '~/libs';
+} from "~/libs";
 
 /**
  * Icon list mapping
@@ -43,13 +43,13 @@ export const iconMaps = {
  * Switch function to enable mapping
  */
 
-const switchFunction = (lookupObject: any, defaultCase = 'default') => {
+const switchFunction = (lookupObject: any, defaultCase = "default") => {
   return (expression: string | number) => {
     return lookupObject[expression] || lookupObject[defaultCase];
   };
 };
 
-const iconSwitch = switchFunction(iconMaps, 'default');
+const iconSwitch = switchFunction(iconMaps, "default");
 
 /**
  * Icon component

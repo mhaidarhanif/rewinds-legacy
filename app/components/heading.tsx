@@ -1,12 +1,12 @@
-import { classx } from '~/utils';
+import { classx } from "~/utils";
 
 const headingStyles = {
-  h1: 'text-5xl font-extrabold',
-  h2: 'text-2xl font-bold',
-  h3: 'text-xl font-semibold',
-  h4: 'text-lg font-semibold',
-  h5: 'text-md font-medium',
-  h6: 'text-md',
+  h1: "text-5xl font-extrabold",
+  h2: "text-2xl font-bold",
+  h3: "text-xl font-semibold",
+  h4: "text-lg font-semibold",
+  h5: "text-md font-medium",
+  h6: "text-md",
 };
 
 interface HeadingProps {

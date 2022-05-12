@@ -1,6 +1,6 @@
-import splitbee from '@splitbee/web';
+import splitbee from "@splitbee/web";
 
-import { configFeatures } from '~/configs';
+import { configFeatures } from "~/configs";
 
 export { splitbee };
 

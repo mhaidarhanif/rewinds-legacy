@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'remix';
+import { useNavigate } from "react-router-dom";
+import { useParams } from "remix";
 
-import { Button, ButtonGroup, ButtonLink } from '~/components';
+import { Button, ButtonGroup, ButtonLink } from "~/components";
 
 /**
  * Message Not Found
@@ -86,7 +86,7 @@ export const MessageError = ({ error }: MessageErrorProps) => {
 
 export const MessageErrorNotFoundGoogle = () => {
   const params = useParams();
-  const pathName = params['*'];
+  const pathName = params["*"];
 
   return (
     <article className="prose-config">

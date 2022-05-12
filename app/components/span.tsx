@@ -1,4 +1,4 @@
-import type { HTMLElementProps } from '~/types';
+import type { HTMLElementProps } from "~/types";
 
 interface SpanProps extends HTMLElementProps {}
 

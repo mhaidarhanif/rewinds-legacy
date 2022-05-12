@@ -1,15 +1,15 @@
-import { createCookieSessionStorage, json, redirect } from '@remix-run/node';
+import { createCookieSessionStorage, json, redirect } from "@remix-run/node";
 
-import { configStyle, configAvailableThemes } from '~/configs';
-import { dateFns } from '~/libs';
-import { getEnv, getEnvServer } from '~/utils';
+import { configStyle, configAvailableThemes } from "~/configs";
+import { dateFns } from "~/libs";
+import { getEnv, getEnvServer } from "~/utils";
 
 import type {
   ActionFunction,
   LoaderDataSession,
   LoaderFunction,
   SpecifiedTheme,
-} from '~/types';
+} from "~/types";
 
 const currentDate = Date.now();
 const expiryInDays = 30;
@@ -21,23 +21,23 @@ export const { getSession, commitSession, destroySession } =
     // a Cookie from `createCookie` or the CookieOptions to create one
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
     cookie: {
-      name: '__session',
+      name: "__session",
 
       // all of these are optional
       // domain: "mhaidarhanif.com",
       maxAge: expiryInSeconds, // precede `expires`
       expires: expiryDate,
       httpOnly: true,
-      path: '/',
-      sameSite: 'lax',
-      secrets: [getEnvServer('SESSION_SECRET')],
+      path: "/",
+      sameSite: "lax",
+      secrets: [getEnvServer("SESSION_SECRET")],
       secure: true,
     },
   });
 
 export const loaderSession: LoaderFunction = async ({ request }) => {
-  const session = await getSession(request.headers.get('Cookie'));
-  const themeFromSession = await session.get('theme');
+  const session = await getSession(request.headers.get("Cookie"));
+  const themeFromSession = await session.get("theme");
 
   // Only parse if theme string exist
   const themeParsed: SpecifiedTheme = themeFromSession
@@ -53,24 +53,24 @@ export const loaderSession: LoaderFunction = async ({ request }) => {
       ...themeParsed,
       currentTheme,
     },
-    user: (await session.get('user')) || {},
-    error: (await session.get('error')) || false,
+    user: (await session.get("user")) || {},
+    error: (await session.get("error")) || false,
     ENV: getEnv(),
   };
 
   return json(data, {
     headers: {
-      'Set-Cookie': await commitSession(session),
+      "Set-Cookie": await commitSession(session),
     },
   });
 };
 
 export const actionSession: ActionFunction = async ({ request }) => {
-  const session = await getSession(request.headers.get('Cookie'));
+  const session = await getSession(request.headers.get("Cookie"));
 
-  return redirect('/', {
+  return redirect("/", {
     headers: {
-      'Set-Cookie': await commitSession(session),
+      "Set-Cookie": await commitSession(session),
     },
   });
 };

@@ -1,13 +1,13 @@
-import { Menu, Transition } from '@headlessui/react';
-import MenuIcon from '@heroicons/react/solid/MenuIcon';
-import { NavLink } from '@remix-run/react';
-import { Button, Divider, Icon } from '@vechaiui/react';
-import { Fragment } from 'react';
+import { Menu, Transition } from "@headlessui/react";
+import MenuIcon from "@heroicons/react/solid/MenuIcon";
+import { NavLink } from "@remix-run/react";
+import { Button, Divider, Icon } from "@vechaiui/react";
+import { Fragment } from "react";
 
-import { configNavigationMenu } from '~/configs';
-import { classx } from '~/utils';
+import { configNavigationMenu } from "~/configs";
+import { classx } from "~/utils";
 
-export { Menu } from '@headlessui/react';
+export { Menu } from "@headlessui/react";
 
 export const NavigationBarMenu = () => {
   return (
@@ -36,10 +36,10 @@ export const NavigationBarMenu = () => {
         >
           <Menu.Items
             className={classx(
-              'menu-items',
-              'absolute right-0 z-dropdown mt-2 w-56 min-w-max origin-top-right rounded-sm shadow-sm outline-none',
-              'border border-gray-200 bg-white',
-              'dark:border-gray-700 dark:bg-neutral-800',
+              "menu-items",
+              "absolute right-0 z-dropdown mt-2 w-56 min-w-max origin-top-right rounded-sm shadow-sm outline-none",
+              "border border-gray-200 bg-white",
+              "dark:border-gray-700 dark:bg-neutral-800",
             )}
           >
             <MenuItemsContent />
@@ -67,11 +67,11 @@ export const MenuItemsContent = () => {
                           to={link.to}
                           className={({ isActive }) => {
                             return classx(
-                              'flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold transition focus:outline-none',
-                              isActive && 'navlink-active', // REMIX
-                              active && 'navlink-menu-active', // HUI
+                              "flex h-8 w-full flex-shrink-0 cursor-base items-center rounded p-2 px-3 text-left text-sm font-bold transition focus:outline-none",
+                              isActive && "navlink-active", // REMIX
+                              active && "navlink-menu-active", // HUI
                               disabled &&
-                                'disabled:cursor-not-allowed disabled:opacity-60',
+                                "disabled:cursor-not-allowed disabled:opacity-60",
                             );
                           }}
                         >
@@ -91,7 +91,7 @@ export const MenuItemsContent = () => {
             </div>
           );
         })}
-      </div>{' '}
+      </div>{" "}
     </div>
   );
 };

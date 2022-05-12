@@ -1,6 +1,6 @@
-import { Anchor, Icon } from '~/components';
-import { configExternalLinks } from '~/configs';
-import { classx } from '~/utils';
+import { Anchor, Icon } from "~/components";
+import { configExternalLinks } from "~/configs";
+import { classx } from "~/utils";
 
 interface ExternalLinksProps {
   // eslint-disable-next-line react/require-default-props
@@ -9,7 +9,7 @@ interface ExternalLinksProps {
 
 export const ExternalLinks = ({ className }: ExternalLinksProps) => {
   return (
-    <div className={classx('flex gap-3 text-2xl', className)}>
+    <div className={classx("flex gap-3 text-2xl", className)}>
       {configExternalLinks
         .filter((item) => {
           return item.isEnabled;

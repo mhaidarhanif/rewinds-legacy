@@ -1,9 +1,9 @@
-import { Pre, RadixScrollArea } from '~/components';
-import { loaderSession } from '~/features';
-import { useLoaderData } from '~/hooks';
-import { Layout } from '~/layouts';
+import { Pre, RadixScrollArea } from "~/components";
+import { loaderSession } from "~/features";
+import { useLoaderData } from "~/hooks";
+import { Layout } from "~/layouts";
 
-import type { LoaderFunction, SEOHandle } from '~/types';
+import type { LoaderFunction, SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {

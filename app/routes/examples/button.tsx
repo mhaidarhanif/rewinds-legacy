@@ -1,5 +1,5 @@
-import { ExampleButtons } from '~/contents';
-import { Layout } from '~/layouts';
+import { ExampleButtons } from "~/contents";
+import { Layout } from "~/layouts";
 
 export default function ExampleButtonRoute() {
   return (

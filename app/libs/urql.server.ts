@@ -1,4 +1,4 @@
-import { createClient } from '@urql/core';
+import { createClient } from "@urql/core";
 
 export const urqlClient = createClient({
   url: process.env.GRAPHQL_ENDPOINT as string,

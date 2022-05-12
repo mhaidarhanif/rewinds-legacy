@@ -5,10 +5,10 @@ import {
   ExampleNotifications,
   ExampleToasts,
   HomeIntro,
-} from '~/contents';
-import { Layout } from '~/layouts';
+} from "~/contents";
+import { Layout } from "~/layouts";
 
-import type { SEOHandle } from '~/types';
+import type { SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {

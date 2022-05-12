@@ -1,6 +1,6 @@
-import { Button, ButtonGroup, H2 } from '~/components';
-import { configStyle } from '~/configs';
-import { useToast } from '~/hooks';
+import { Button, ButtonGroup, H2 } from "~/components";
+import { configStyle } from "~/configs";
+import { useToast } from "~/hooks";
 
 export const ExampleToasts = () => {
   const toast = useToast();
@@ -21,7 +21,7 @@ export const ExampleToasts = () => {
         <Button
           color="primary"
           onClick={() => {
-            showToast('This is Normal');
+            showToast("This is Normal");
           }}
         >
           Normal
@@ -29,7 +29,7 @@ export const ExampleToasts = () => {
         <Button
           color="info"
           onClick={() => {
-            showToast('This is Info', 'info');
+            showToast("This is Info", "info");
           }}
         >
           Info
@@ -37,7 +37,7 @@ export const ExampleToasts = () => {
         <Button
           color="success"
           onClick={() => {
-            showToast('This is Success', 'success');
+            showToast("This is Success", "success");
           }}
         >
           Success
@@ -45,7 +45,7 @@ export const ExampleToasts = () => {
         <Button
           color="warning"
           onClick={() => {
-            showToast('This is Warning', 'warning');
+            showToast("This is Warning", "warning");
           }}
         >
           Warning
@@ -53,7 +53,7 @@ export const ExampleToasts = () => {
         <Button
           color="error"
           onClick={() => {
-            showToast('This is Error', 'error');
+            showToast("This is Error", "error");
           }}
         >
           Error
