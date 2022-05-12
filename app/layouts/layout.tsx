@@ -8,6 +8,10 @@ import {
 import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
+/**
+ * Layout with variants
+ */
+
 interface LayoutProps extends HTMLElementProps {
   variant?: 'common' | 'wide' | 'full' | 'boundary';
 }

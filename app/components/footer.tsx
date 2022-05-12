@@ -8,33 +8,67 @@ import {
   Logo,
   RemixLink,
 } from '~/components';
-import { configMeta } from '~/configs';
+import { configMeta, configNavigationSitemap } from '~/configs';
+import { classx } from '~/utils';
 
 import type { FunctionComponent } from 'react';
+import type { HTMLElementProps } from '~/types';
 
 const date = new Date();
 const year = date.getFullYear();
 
-interface FooterProps {}
+/**
+ * Footer with variants
+ */
 
-export const Footer: FunctionComponent<FooterProps> = () => {
+interface FooterProps {
+  variant?: 'common' | 'complex';
+}
+
+export const Footer: FunctionComponent<FooterProps> = ({
+  variant = 'complex',
+  children,
+}) => {
+  if (variant === 'common') {
+    return <FooterCommon>{children}</FooterCommon>;
+  }
+
+  if (variant === 'complex') {
+    return <FooterComplex>{children}</FooterComplex>;
+  }
+
+  return <footer className="footer-none">{children}</footer>;
+};
+
+/**
+ * Footer Complex
+ *
+ * Used with:
+ * - ExternalLinks
+ * - FooterCopyrightText
+ */
+
+export const FooterCommon: FunctionComponent<FooterProps> = () => {
   return (
     <footer className="footer flex justify-center border-t border-slate-200 dark:border-slate-200/5">
       <div className="flex flex-col items-center gap-2 py-8">
         <ExternalLinks />
-        <p className="container-active space-x-1">
-          <span>&copy;</span>
-          <span>{year}</span>
-          <Anchor href="https://github.com/mhaidarhanif/rewinds">
-            {configMeta.name}
-          </Anchor>
-          <span>by</span>
-          <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>
-        </p>
+        <FooterCopyrightText />
       </div>
     </footer>
   );
 };
+
+/**
+ * Footer Complex
+ *
+ * Used with:
+ * - Logo
+ * - ExternalLinks
+ * - FooterComplexFormNewsletter
+ * - FooterComplexSitemap
+ * - FooterComplexBottomTexts
+ */
 
 export const FooterComplex: FunctionComponent<FooterProps> = () => {
   return (
@@ -45,159 +79,103 @@ export const FooterComplex: FunctionComponent<FooterProps> = () => {
             <RemixLink to="/">
               <Logo />
             </RemixLink>
-            <div>
-              <ExternalLinks />
-            </div>
+            <ExternalLinks />
           </div>
-
-          <div className="container-active mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <div className="col-span-2">
-              <div>
-                <h2 className="text-2xl font-bold">Get some updates</h2>
-
-                <p className="mt-6">{configMeta.description}</p>
-              </div>
-            </div>
-
-            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-              <form className="w-full">
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-
-                <div className="gap-2 sm:flex sm:items-center">
-                  <Input
-                    name="email"
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    size="lg"
-                  />
-                  <Button
-                    type="submit"
-                    size="lg"
-                    variant="solid"
-                    color="primary"
-                  >
-                    Sign Up
-                  </Button>
-                </div>
-              </form>
-            </div>
-
-            <div className="col-span-2 border-t border-white/10 pt-6 sm:col-span-1">
-              <H4 className="font-bold">Services</H4>
-
-              <nav className="mt-6 flex flex-col space-y-4 text-sm">
-                <a className="inline-block" href="https://domain.com">
-                  1on1 Coaching
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Company Review
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Accounts Review
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  HR Consulting
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  SEO Optimisation
-                </a>
-              </nav>
-            </div>
-
-            <div className="col-span-2 border-t border-white/10 pt-6 sm:col-span-1">
-              <H4 className="font-bold">Company</H4>
-
-              <nav className="mt-6 flex flex-col space-y-4 text-sm">
-                <a className="inline-block" href="https://domain.com">
-                  About
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Meet the Team
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  History
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Careers
-                </a>
-              </nav>
-            </div>
-
-            <div className="col-span-2 border-t border-white/10 pt-6 sm:col-span-1">
-              <H4 className="font-bold">Helpful Links</H4>
-
-              <nav className="mt-6 flex flex-col space-y-4 text-sm">
-                <a className="inline-block" href="https://domain.com">
-                  Contact
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  FAQs
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Live Chat
-                </a>
-              </nav>
-            </div>
-
-            <div className="col-span-2 border-t border-white/10 pt-6 sm:col-span-1">
-              <H4 className="font-bold">Legal</H4>
-
-              <nav className="mt-6 flex flex-col space-y-4 text-sm">
-                <a className="inline-block" href="https://domain.com">
-                  Accessibility
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Returns Policy
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Refund Policy
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  Hiring Statistics
-                </a>
-              </nav>
-            </div>
-
-            <div className="col-span-2 border-t border-white/10 pt-6 sm:col-span-1">
-              <H4 className="font-bold">Downloads</H4>
-
-              <nav className="mt-6 flex flex-col space-y-4 text-sm">
-                <a className="inline-block" href="https://domain.com">
-                  Marketing Calendar
-                </a>
-                <a className="inline-block" href="https://domain.com">
-                  SEO Infographics
-                </a>
-              </nav>
-            </div>
+          <div className="container-active mt-8 grid grid-cols-2 gap-4 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+            <FooterComplexFormNewsletter />
+            <FooterComplexSitemap />
           </div>
         </div>
-
-        <div className="mt-12 border-t border-white/10 pt-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <p className="container-active space-x-1 text-center text-sm text-gray-400 lg:text-left">
-              <span>&copy;</span>
-              <span>{year}</span>
-              <Anchor href="https://github.com/mhaidarhanif/rewinds">
-                {configMeta.name}
-              </Anchor>
-              <span>by</span>
-              <Anchor href={configMeta.author.url}>
-                {configMeta.author.name}
-              </Anchor>
-            </p>
-
-            <nav className="container-active flex justify-center space-x-4 text-sm text-gray-400 lg:justify-end">
-              <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
-              <RemixLink to="/terms">Privacy Policy</RemixLink>
-              <RemixLink to="/terms">Cookies</RemixLink>
-            </nav>
-          </div>
+        <div className="mt-12 border-t border-primary-300 pt-8 dark:border-primary-900">
+          <FooterComplexBottomTexts />
         </div>
       </div>
     </footer>
+  );
+};
+
+export const FooterCopyrightText: FunctionComponent<HTMLElementProps> = ({
+  className,
+}) => {
+  return (
+    <p className={classx('container-active space-x-1 space-y-1', className)}>
+      <span>&copy;</span>
+      <span>{year}</span>
+      <Anchor href={configMeta.url}>{configMeta.name}</Anchor>
+      <span>by</span>
+      <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>
+    </p>
+  );
+};
+
+export const FooterComplexFormNewsletter = () => {
+  return (
+    <>
+      <div className="col-span-2 space-y-2">
+        <h2 className="text-2xl font-bold">Get some updates</h2>
+        <p>{configMeta.description}</p>
+      </div>
+
+      <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+        <form className="w-full">
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
+
+          <div className="flex gap-2 sm:items-center">
+            <Input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              size="lg"
+            />
+            <Button type="submit" size="lg" variant="solid" color="primary">
+              Subscribe
+            </Button>
+          </div>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export const FooterComplexSitemap = () => {
+  return (
+    <>
+      {configNavigationSitemap.map((item) => {
+        return (
+          <div
+            key={item.name}
+            className="col-span-2 border-t border-primary-300 pt-6 dark:border-primary-900 sm:col-span-1"
+          >
+            <H4 className="font-bold">{item.name}</H4>
+            <nav className="mt-6 flex flex-col space-y-4 text-sm">
+              {item.links.map((subItem) => {
+                return (
+                  <RemixLink key={subItem.text} to={subItem.to}>
+                    {subItem.text}
+                  </RemixLink>
+                );
+              })}
+            </nav>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+export const FooterComplexBottomTexts = () => {
+  return (
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <FooterCopyrightText className="text-center text-sm text-gray-400 lg:text-left" />
+
+      <nav className="container-active flex justify-center space-x-4 text-sm text-gray-400 lg:justify-end">
+        <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
+        <RemixLink to="/privacy">Privacy Policy</RemixLink>
+        <RemixLink to="/cookies">Cookies</RemixLink>
+      </nav>
+    </div>
   );
 };

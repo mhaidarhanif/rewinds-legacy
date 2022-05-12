@@ -1,4 +1,4 @@
-import { FooterComplex, NavigationBar } from '~/components';
+import { Footer, NavigationBar } from '~/components';
 
 import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
@@ -16,8 +16,7 @@ export const LayoutWide: FunctionComponent<HTMLElementProps> = ({
         </div>
       </div>
 
-      {/* <Footer /> */}
-      <FooterComplex />
+      <Footer />
     </div>
   );
 };
