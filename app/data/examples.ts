@@ -7,6 +7,7 @@ export const dataExampleComponents: ComponentItem[] = [
   { name: 'Alert' },
   { name: 'Toast' },
   { name: 'Notification' },
+  { name: 'Footer with Hyper UI' },
   { name: 'Scroll Area with Radix UI' },
   { name: 'Navigation Menu with Radix UI' },
   { name: 'Navigation Progress with NProgress' },

@@ -50,7 +50,7 @@ export const Footer: FunctionComponent<FooterProps> = ({
 
 export const FooterCommon: FunctionComponent<FooterProps> = () => {
   return (
-    <footer className="footer flex justify-center border-t border-slate-200 dark:border-slate-200/5">
+    <footer className="footer footer-common">
       <div className="flex flex-col items-center gap-2 py-8">
         <ExternalLinks />
         <FooterCopyrightText />
@@ -72,7 +72,7 @@ export const FooterCommon: FunctionComponent<FooterProps> = () => {
 
 export const FooterComplex: FunctionComponent<FooterProps> = () => {
   return (
-    <footer className="footer bg-neutral-200 dark:bg-neutral-800">
+    <footer className="footer footer-complex">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:gap-8">
           <div className="space-y-4 text-neutral-900 dark:text-neutral-100">

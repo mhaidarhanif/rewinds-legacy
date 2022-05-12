@@ -75,15 +75,31 @@
     @apply text-center;
   }
 
+  /**
+   * Footer
+   */
+
   .footer {
     @apply mt-32;
   }
+
+  .footer-common {
+    @apply flex justify-center;
+  }
+
+  .footer-complex {
+    @apply bg-secondary border-secondary border-t;
+  }
+
+  /**
+   * Button
+   */
 
   .button {
     @apply focus-ring inline-block rounded border px-3 py-2 font-bold;
   }
 
-  /*
+  /**
    * Vechai UI
    */
 
@@ -98,8 +114,8 @@
 
   .navigation-bar {
     @apply sticky top-0 z-10 w-full flex-none select-none p-2 md:p-4;
-    @apply border-b border-neutral-900/10;
     @apply bg-secondary-blur;
+    @apply border-secondary border-b;
   }
 
   .navlink {
@@ -179,11 +195,17 @@
   }
 
   .bg-secondary {
-    @apply bg-neutral-100 dark:bg-neutral-800;
+    @apply bg-neutral-50 dark:bg-neutral-800;
+    @apply dark:border-neutral-50/[0.06];
   }
 
   .bg-secondary-blur {
-    @apply bg-neutral-50/90 backdrop-blur dark:border-neutral-50/[0.06] dark:bg-neutral-800/90;
+    @apply bg-neutral-50/90 dark:bg-neutral-800/90;
+    @apply backdrop-blur;
+  }
+
+  .border-secondary {
+    @apply border-neutral-200 dark:border-neutral-200/5;
   }
 
   .bg-panel {
@@ -243,8 +265,12 @@
     font-size: inherit;
   }
 
-  .demo {
+  .example {
     @apply my-20 space-y-5;
+  }
+
+  .example-box {
+    @apply border border-primary-500;
   }
 
   .container-active a {
