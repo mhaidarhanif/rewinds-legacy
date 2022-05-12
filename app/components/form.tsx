@@ -1,3 +1,5 @@
+export { Form as RemixForm } from 'remix';
+
 export {
   FormControl,
   FormLabel,

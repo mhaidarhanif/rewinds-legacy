@@ -47,7 +47,7 @@
   }
 
   .layout-container {
-    @apply container mx-auto flex-[1] px-4;
+    @apply container mx-auto min-h-[420px] flex-[1] px-4;
   }
 
   .layout-center {
@@ -245,7 +245,7 @@
   /* Relate to prose-a-styles */
   .text-underline-left-right {
     @apply after:bg-primary-500 dark:after:bg-primary-300;
-    @apply after:-bottom-1 after:left-0 after:h-[2px];
+    @apply after:-bottom-0.5 after:left-0 after:h-[2px];
     @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
   }
 

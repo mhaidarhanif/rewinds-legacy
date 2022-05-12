@@ -6,6 +6,7 @@ import {
   H4,
   Input,
   Logo,
+  RemixForm,
   RemixLink,
 } from '~/components';
 import { configMeta, configNavigationSitemap } from '~/configs';
@@ -81,7 +82,7 @@ export const FooterComplex: FunctionComponent<FooterProps> = () => {
             </RemixLink>
             <ExternalLinks />
           </div>
-          <div className="container-active mt-8 grid grid-cols-2 gap-4 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div className="container-active mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <FooterComplexFormNewsletter />
             <FooterComplexSitemap />
           </div>
@@ -116,8 +117,8 @@ export const FooterComplexFormNewsletter = () => {
         <p>{configMeta.description}</p>
       </div>
 
-      <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-        <form className="w-full">
+      <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
+        <RemixForm className="w-full max-w-[500px]">
           <label htmlFor="email" className="sr-only">
             Email
           </label>
@@ -134,7 +135,7 @@ export const FooterComplexFormNewsletter = () => {
               Subscribe
             </Button>
           </div>
-        </form>
+        </RemixForm>
       </div>
     </>
   );
@@ -147,10 +148,10 @@ export const FooterComplexSitemap = () => {
         return (
           <div
             key={item.name}
-            className="col-span-2 border-t border-primary-300 pt-6 dark:border-primary-900 sm:col-span-1"
+            className="col-span-1 border-t border-primary-300 pt-6 dark:border-primary-900 sm:col-span-1"
           >
             <H4 className="font-bold">{item.name}</H4>
-            <nav className="mt-6 flex flex-col space-y-4 text-sm">
+            <nav className="mt-6 flex flex-col space-y-2 text-sm">
               {item.links.map((subItem) => {
                 return (
                   <RemixLink key={subItem.text} to={subItem.to}>
@@ -168,10 +169,10 @@ export const FooterComplexSitemap = () => {
 
 export const FooterComplexBottomTexts = () => {
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
       <FooterCopyrightText className="text-center text-sm text-gray-400 lg:text-left" />
 
-      <nav className="container-active flex justify-center space-x-4 text-sm text-gray-400 lg:justify-end">
+      <nav className="container-active flex justify-center gap-4 text-sm text-gray-400 lg:justify-end">
         <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
         <RemixLink to="/privacy">Privacy Policy</RemixLink>
         <RemixLink to="/cookies">Cookies</RemixLink>
