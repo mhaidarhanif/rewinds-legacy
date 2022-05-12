@@ -5,7 +5,6 @@ import {
   LayoutWide,
 } from '~/layouts';
 
-import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
 /**
@@ -16,10 +15,7 @@ interface LayoutProps extends HTMLElementProps {
   variant?: 'common' | 'wide' | 'full' | 'boundary';
 }
 
-export const Layout: FunctionComponent<LayoutProps> = ({
-  variant = 'common',
-  children,
-}) => {
+export const Layout = ({ variant = 'common', children }: LayoutProps) => {
   if (variant === 'common') {
     return <LayoutCommon>{children}</LayoutCommon>;
   }

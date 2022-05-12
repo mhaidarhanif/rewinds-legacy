@@ -2,16 +2,15 @@ import { Button as VechaiButton } from '@vechaiui/react';
 
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
 import type { ButtonProps, ButtonGroupProps } from '~/types';
 
-export const Button: FunctionComponent<ButtonProps> = (props) => {
+export const Button = (props: ButtonProps) => {
   const { children } = props;
 
   return <VechaiButton {...props}>{children}</VechaiButton>;
 };
 
-export const ButtonGroup: FunctionComponent<ButtonGroupProps> = (props) => {
+export const ButtonGroup = (props: ButtonGroupProps) => {
   const { attached, children } = props;
 
   return (

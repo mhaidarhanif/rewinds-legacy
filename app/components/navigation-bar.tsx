@@ -11,11 +11,7 @@ import {
 import { configStyle, configNavigationBarLinks } from '~/configs';
 import { packageJson } from '~/utils';
 
-import type { FunctionComponent } from 'react';
-
-interface NavigationBarProps {}
-
-export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
+export const NavigationBar = () => {
   return (
     <nav id="navigation-bar" className="navigation-bar">
       <div className="flex flex-wrap items-center justify-between">
@@ -42,11 +38,7 @@ export const NavigationBar: FunctionComponent<NavigationBarProps> = () => {
   );
 };
 
-interface NavigationBarLogoProps {}
-
-export const NavigationBarLogo: FunctionComponent<
-  NavigationBarLogoProps
-> = () => {
+export const NavigationBarLogo = () => {
   return (
     <div className="flex items-center gap-2">
       <RemixLink
@@ -62,11 +54,7 @@ export const NavigationBarLogo: FunctionComponent<
   );
 };
 
-interface NavigationBarLinksProps {}
-
-export const NavigationBarLinks: FunctionComponent<
-  NavigationBarLinksProps
-> = () => {
+export const NavigationBarLinks = () => {
   return (
     <div className="hidden w-auto items-center justify-between xl:flex">
       <ul className="text-md flex flex-row gap-1 font-medium">
@@ -84,11 +72,7 @@ export const NavigationBarLinks: FunctionComponent<
   );
 };
 
-interface NavigationBarAuthProps {}
-
-export const NavigationBarAuth: FunctionComponent<
-  NavigationBarAuthProps
-> = () => {
+export const NavigationBarAuth = () => {
   return (
     <div id="navigation-bar-auth" className="hidden space-x-2 xl:flex">
       <RemixLink

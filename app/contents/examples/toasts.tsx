@@ -2,11 +2,7 @@ import { Button, ButtonGroup, H2 } from '~/components';
 import { configStyle } from '~/configs';
 import { useToast } from '~/hooks';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleToastsProps {}
-
-export const ExampleToasts: FunctionComponent<ExampleToastsProps> = () => {
+export const ExampleToasts = () => {
   const toast = useToast();
 
   const showToast = (message: string, status?: any) => {

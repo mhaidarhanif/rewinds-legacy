@@ -1,10 +1,6 @@
 import { Footer, H2 } from '~/components';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleFootersProps {}
-
-export const ExampleFooters: FunctionComponent<ExampleFootersProps> = () => {
+export const ExampleFooters = () => {
   return (
     <div className="space-y-8">
       <H2>Footer Common</H2>

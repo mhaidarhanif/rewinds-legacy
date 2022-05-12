@@ -1,5 +1,3 @@
-import type { FunctionComponent } from 'react';
-
 interface AnchorProps {
   href: string;
   children: React.ReactNode;
@@ -7,12 +5,12 @@ interface AnchorProps {
   'data-color'?: string;
 }
 
-export const Anchor: FunctionComponent<AnchorProps> = ({
+export const Anchor = ({
   href,
   children,
   className,
   'data-color': dataColor,
-}) => {
+}: AnchorProps) => {
   return (
     <a
       href={href}

@@ -1,11 +1,8 @@
 import { Footer, NavigationBar } from '~/components';
 
-import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
-export const LayoutCommon: FunctionComponent<HTMLElementProps> = ({
-  children,
-}) => {
+export const LayoutCommon = ({ children }: HTMLElementProps) => {
   return (
     <div className="layout">
       <NavigationBar />

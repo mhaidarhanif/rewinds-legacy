@@ -1,5 +1,3 @@
-import type { FunctionComponent } from 'react';
-
 interface ImageProps {
   alt: string;
   src?: string;
@@ -8,13 +6,7 @@ interface ImageProps {
   className?: string;
 }
 
-export const Image: FunctionComponent<ImageProps> = ({
-  alt,
-  src,
-  height,
-  width,
-  className,
-}) => {
+export const Image = ({ alt, src, height, width, className }: ImageProps) => {
   return (
     <img
       alt={alt}

@@ -1,11 +1,7 @@
 import { IconRewind } from '~/libs';
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
-
-interface LogoProps {}
-
-export const Logo: FunctionComponent<LogoProps> = () => {
+export const Logo = () => {
   return (
     <div className="flex items-center gap-1 text-3xl transition-[opacity] duration-300 hover:opacity-80">
       <LogoIcon />

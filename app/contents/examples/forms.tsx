@@ -13,16 +13,12 @@ import { configStyle } from '~/configs';
 import { useState, useForm, useNotification } from '~/hooks';
 import { sleep } from '~/utils';
 
-import type { FunctionComponent } from 'react';
-
 /**
  * Example Forms
  * Using React Hook Form with regular form element
  */
 
-interface ExampleFormsProps {}
-
-export const ExampleForms: FunctionComponent<ExampleFormsProps> = () => {
+export const ExampleForms = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 

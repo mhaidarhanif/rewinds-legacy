@@ -1,14 +1,10 @@
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 
-import type { FunctionComponent } from 'react';
-
 interface ScrollAreaProps {
   children: React.ReactNode;
 }
 
-export const RadixScrollArea: FunctionComponent<ScrollAreaProps> = ({
-  children,
-}) => {
+export const RadixScrollArea = ({ children }: ScrollAreaProps) => {
   return (
     <ScrollArea.Root className="h-96 overflow-hidden rounded-base">
       <ScrollArea.Viewport className="h-full w-full rounded-base">
@@ -22,9 +18,11 @@ export const RadixScrollArea: FunctionComponent<ScrollAreaProps> = ({
   );
 };
 
-const ScrollAreaScrollbar: FunctionComponent<{
+const ScrollAreaScrollbar = ({
+  orientation,
+}: {
   orientation: 'horizontal' | 'vertical';
-}> = ({ orientation }) => {
+}) => {
   return (
     <ScrollArea.Scrollbar
       orientation={orientation}

@@ -1,7 +1,6 @@
 import { RemixLink } from '~/components';
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
 import type { LinkProps } from '~/types';
 
 interface ButtonLinkProps extends LinkProps {
@@ -9,13 +8,13 @@ interface ButtonLinkProps extends LinkProps {
   variant?: 'solid' | 'outline';
 }
 
-export const ButtonLink: FunctionComponent<ButtonLinkProps> = ({
+export const ButtonLink = ({
   to,
   children,
   color = 'primary',
   variant = 'solid',
   className,
-}) => {
+}: ButtonLinkProps) => {
   return (
     <RemixLink
       to={to}

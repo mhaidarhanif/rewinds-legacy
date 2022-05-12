@@ -7,15 +7,9 @@ import { Fragment } from 'react';
 import { configNavigationMenu } from '~/configs';
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
-
 export { Menu } from '@headlessui/react';
 
-interface NavigationBarMenuProps {}
-
-export const NavigationBarMenu: FunctionComponent<
-  NavigationBarMenuProps
-> = () => {
+export const NavigationBarMenu = () => {
   return (
     <div className="flex w-full select-none flex-wrap">
       <Menu as="div" className="menu relative inline-block">
@@ -56,11 +50,7 @@ export const NavigationBarMenu: FunctionComponent<
   );
 };
 
-interface MenuItemsContentProps {}
-
-export const MenuItemsContent: FunctionComponent<
-  MenuItemsContentProps
-> = () => {
+export const MenuItemsContent = () => {
   return (
     <div className="menu-items-content px-1 py-1">
       <div role="group">

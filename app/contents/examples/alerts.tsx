@@ -1,10 +1,6 @@
 import { Alert, H2 } from '~/components';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleAlertsProps {}
-
-export const ExampleAlerts: FunctionComponent<ExampleAlertsProps> = () => {
+export const ExampleAlerts = () => {
   return (
     <div>
       <H2>Alerts</H2>

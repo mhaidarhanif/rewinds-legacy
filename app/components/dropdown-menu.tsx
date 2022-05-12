@@ -1,10 +1,8 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-import type { FunctionComponent } from 'react';
+export { DropdownMenu };
 
-interface DropdownMenuExampleProps {}
-
-const DropdownMenuExample: FunctionComponent<DropdownMenuExampleProps> = () => {
+export const DropdownMenuExample = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger />
@@ -32,5 +30,3 @@ const DropdownMenuExample: FunctionComponent<DropdownMenuExampleProps> = () => {
     </DropdownMenu.Root>
   );
 };
-
-export { DropdownMenu, DropdownMenuExample };

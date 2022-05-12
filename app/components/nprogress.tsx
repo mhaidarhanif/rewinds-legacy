@@ -1,14 +1,10 @@
 import { useNProgress } from '@tanem/react-nprogress';
 
-import type { FunctionComponent } from 'react';
-
 interface NProgressProps {
   isAnimating: any;
 }
 
-export const NProgress: FunctionComponent<NProgressProps> = ({
-  isAnimating,
-}) => {
+export const NProgress = ({ isAnimating }: NProgressProps) => {
   const { animationDuration, isFinished, progress } = useNProgress({
     isAnimating,
     minimum: 0,
@@ -29,13 +25,14 @@ export const NProgress: FunctionComponent<NProgressProps> = ({
 interface NProgressContainerProps {
   animationDuration: number;
   isFinished: boolean;
+  children: React.ReactNode;
 }
 
-const NProgressContainer: FunctionComponent<NProgressContainerProps> = ({
+const NProgressContainer = ({
   animationDuration,
   isFinished,
   children,
-}) => {
+}: NProgressContainerProps) => {
   return (
     <div
       style={{
@@ -54,10 +51,7 @@ interface ProgressBarProps {
   progress: number;
 }
 
-const NProgressBar: FunctionComponent<ProgressBarProps> = ({
-  animationDuration,
-  progress,
-}) => {
+const NProgressBar = ({ animationDuration, progress }: ProgressBarProps) => {
   return (
     <div
       className="fixed left-0 top-0 z-tooltip h-1 w-full bg-primary-500"

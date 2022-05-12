@@ -3,19 +3,13 @@ import { useParams } from 'remix';
 
 import { Button, ButtonGroup, ButtonLink } from '~/components';
 
-import type { FunctionComponent } from 'react';
-
 /**
  * Message Not Found
  * Used in splat route $.tsx
  * Used inside ThemeProvider
  */
 
-interface MessageErrorNotFoundProps {}
-
-export const MessageErrorNotFound: FunctionComponent<
-  MessageErrorNotFoundProps
-> = () => {
+export const MessageErrorNotFound = () => {
   return (
     <>
       <MessageErrorNotFoundGoogle />
@@ -33,9 +27,7 @@ interface MessageCatchProps {
   caught: any;
 }
 
-export const MessageCatch: FunctionComponent<MessageCatchProps> = ({
-  caught,
-}) => {
+export const MessageCatch = ({ caught }: MessageCatchProps) => {
   return (
     <>
       <article className="prose-config">
@@ -66,9 +58,7 @@ interface MessageErrorProps {
   error: any;
 }
 
-export const MessageError: FunctionComponent<MessageErrorProps> = ({
-  error,
-}) => {
+export const MessageError = ({ error }: MessageErrorProps) => {
   return (
     <>
       <article className="prose-config">
@@ -123,9 +113,9 @@ interface MessageBackReloadButtonsProps {
   isThemed?: boolean;
 }
 
-export const MessageBackReloadButtons: FunctionComponent<
-  MessageBackReloadButtonsProps
-> = ({ isThemed }) => {
+export const MessageBackReloadButtons = ({
+  isThemed,
+}: MessageBackReloadButtonsProps) => {
   const navigate = useNavigate();
 
   const handleBackToPrevious = () => {

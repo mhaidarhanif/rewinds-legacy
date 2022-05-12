@@ -1,10 +1,6 @@
 import { Badge, H2, H3 } from '~/components';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleBadgesProps {}
-
-export const ExampleBadges: FunctionComponent<ExampleBadgesProps> = () => {
+export const ExampleBadges = () => {
   return (
     <div className="space-y-4">
       <H2>Badges</H2>

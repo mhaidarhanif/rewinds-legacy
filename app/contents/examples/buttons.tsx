@@ -1,11 +1,7 @@
 import { Button, ButtonGroup, H2, H3, RemixLink } from '~/components';
 import { MessageBackReloadButtons } from '~/contents';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleButtonsProps {}
-
-export const ExampleButtons: FunctionComponent<ExampleButtonsProps> = () => {
+export const ExampleButtons = () => {
   return (
     <div className="space-y-8">
       <H2>Buttons</H2>

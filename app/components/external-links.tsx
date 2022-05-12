@@ -2,16 +2,12 @@ import { Anchor, Icon } from '~/components';
 import { configExternalLinks } from '~/configs';
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
-
 interface ExternalLinksProps {
   // eslint-disable-next-line react/require-default-props
   className?: string;
 }
 
-export const ExternalLinks: FunctionComponent<ExternalLinksProps> = ({
-  className,
-}) => {
+export const ExternalLinks = ({ className }: ExternalLinksProps) => {
   return (
     <div className={classx('flex gap-3 text-2xl', className)}>
       {configExternalLinks

@@ -9,8 +9,6 @@ import {
   Button,
 } from '~/components';
 
-import type { FunctionComponent } from 'react';
-
 /**
  * Subscribe Form
  * Using native browser form behavior with Remix Form component
@@ -21,10 +19,10 @@ interface PrivateSaleFormProps {
   actionData: any;
 }
 
-export const SubscribeForm: FunctionComponent<PrivateSaleFormProps> = ({
+export const SubscribeForm = ({
   transition,
   actionData,
-}) => {
+}: PrivateSaleFormProps) => {
   const isLoading = transition.state === 'submitting';
   const buttonSubmitText = isLoading ? 'Subscribing...' : 'Subscribe';
 

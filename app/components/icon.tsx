@@ -14,8 +14,6 @@ import {
   IconDev,
 } from '~/libs';
 
-import type { FunctionComponent } from 'react';
-
 /**
  * Icon list mapping
  */
@@ -61,7 +59,7 @@ interface IconProps {
   name: string;
 }
 
-export const Icon: FunctionComponent<IconProps> = ({ name }) => {
+export const Icon = ({ name }: IconProps) => {
   return iconSwitch(name);
 };
 
@@ -75,10 +73,7 @@ interface IconSpanProps {
   className?: any;
 }
 
-export const IconSpan: FunctionComponent<IconSpanProps> = ({
-  name,
-  className,
-}) => {
+export const IconSpan = ({ name, className }: IconSpanProps) => {
   return (
     <span className={className}>
       <Icon name={name} />

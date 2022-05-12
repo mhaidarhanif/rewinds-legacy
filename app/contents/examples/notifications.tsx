@@ -2,13 +2,7 @@ import { Button, ButtonGroup, H2 } from '~/components';
 import { configStyle } from '~/configs';
 import { useNotification, useToast } from '~/hooks';
 
-import type { FunctionComponent } from 'react';
-
-interface ExampleNotificationsProps {}
-
-export const ExampleNotifications: FunctionComponent<
-  ExampleNotificationsProps
-> = () => {
+export const ExampleNotifications = () => {
   const notify = useNotification();
   const toast = useToast();
 

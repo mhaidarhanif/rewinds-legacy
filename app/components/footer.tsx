@@ -12,7 +12,6 @@ import {
 import { configMeta, configNavigationSitemap } from '~/configs';
 import { classx } from '~/utils';
 
-import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
 const date = new Date();
@@ -26,19 +25,16 @@ interface FooterProps {
   variant?: 'common' | 'complex';
 }
 
-export const Footer: FunctionComponent<FooterProps> = ({
-  variant = 'complex',
-  children,
-}) => {
+export const Footer = ({ variant = 'complex' }: FooterProps) => {
   if (variant === 'common') {
-    return <FooterCommon>{children}</FooterCommon>;
+    return <FooterCommon />;
   }
 
   if (variant === 'complex') {
-    return <FooterComplex>{children}</FooterComplex>;
+    return <FooterComplex />;
   }
 
-  return <footer className="footer-none">{children}</footer>;
+  return <footer className="footer-none">{configMeta.name}</footer>;
 };
 
 /**
@@ -49,7 +45,7 @@ export const Footer: FunctionComponent<FooterProps> = ({
  * - FooterCopyrightText
  */
 
-export const FooterCommon: FunctionComponent<FooterProps> = () => {
+export const FooterCommon = () => {
   return (
     <footer className="footer footer-common">
       <div className="flex flex-col items-center gap-2 py-8">
@@ -71,7 +67,7 @@ export const FooterCommon: FunctionComponent<FooterProps> = () => {
  * - FooterComplexBottomTexts
  */
 
-export const FooterComplex: FunctionComponent<FooterProps> = () => {
+export const FooterComplex = () => {
   return (
     <footer className="footer footer-complex">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -95,9 +91,7 @@ export const FooterComplex: FunctionComponent<FooterProps> = () => {
   );
 };
 
-export const FooterCopyrightText: FunctionComponent<HTMLElementProps> = ({
-  className,
-}) => {
+export const FooterCopyrightText = ({ className }: HTMLElementProps) => {
   return (
     <p className={classx('container-active space-x-1 space-y-1', className)}>
       <span>&copy;</span>

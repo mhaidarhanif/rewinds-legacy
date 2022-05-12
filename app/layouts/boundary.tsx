@@ -1,4 +1,3 @@
-import type { FunctionComponent } from 'react';
 import type { HTMLElementProps } from '~/types';
 
 /**
@@ -6,9 +5,7 @@ import type { HTMLElementProps } from '~/types';
  * for CatchBoundary and ErrorBoundary
  */
 
-export const LayoutBoundary: FunctionComponent<HTMLElementProps> = ({
-  children,
-}) => {
+export const LayoutBoundary = ({ children }: HTMLElementProps) => {
   return (
     <div className="layout border border-4 border-red-600">
       <div className="layout-container">
