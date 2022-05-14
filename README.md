@@ -6,9 +6,44 @@ Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
 
 This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Vechai UI, and more.
 
-Visit live: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
-Features:
+> Note that this repo is ongoing active development
+
+## Screenshots
+
+<div style="max-width: 720px;">
+
+[![Home Light](public/assets/screenshots/home-light.png)](https://rewinds.mhaidarhanif.com)
+
+[![Home Dark](public/assets/screenshots/home-dark.png)](https://rewinds.mhaidarhanif.com)
+
+</div>
+
+## Table of Contents
+
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Stacks](#stacks)
+  - [Core](#core)
+  - [Frontend](#frontend)
+  - [Utility](#utility)
+  - [Deployment](#deployment)
+- [Development](#development)
+  - [Install dependencies](#install-dependencies)
+  - [Environment variables](#environment-variables)
+  - [Environment variables using Doppler](#environment-variables-using-doppler)
+  - [Project structure](#project-structure)
+- [Build](#build)
+- [Lint](#lint)
+- [Deployment](#deployment-1)
+- [Notes](#notes)
+  - [Remix](#remix)
+  - [Tailwind CSS](#tailwind-css)
+  - [Vechai UI](#vechai-ui)
+  - [ConvertKit](#convertkit)
+
+## Features
 
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
@@ -18,15 +53,10 @@ Features:
   - For the full stack integration, check out the official Remix Stacks instead: https://remix.run/stacks
 - More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
-Caveats:
+Note: Depending on your computer processing power, the first Tailwind compilation might take around ~3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine enabled by default.
 
-- Depending on your computer processing power, the Tailwind compilation might take around 3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine.
-  - https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
-  - https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
-
-Screenshots:
-
-[![Screenshot](public/assets/screenshots/home.png)](https://rewinds.mhaidarhanif.com)
+- https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
+- https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
 
 ## Stacks
 
@@ -34,9 +64,11 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
 
 ### Core
 
+- TypeScript v4.6
+- Node.js v14-v17
+- npm v8
 - React v18
 - Remix v1.4
-- TypeScript v4.6
 
 ### Frontend
 
@@ -86,7 +118,7 @@ Copy the `.env.example` into `.env`:
 
 ```sh
 cp .env.example .env
-# edit .env
+# Edit .env as you prefer
 ```
 
 Setup the environment variables here and Vercel if want to deploy there.
@@ -172,6 +204,14 @@ Make sure that it can build just fine:
 npm run build
 ```
 
+## Lint
+
+Make sure to lint the code with ESLint:
+
+```sh
+npm run lint
+```
+
 ## Deployment
 
 After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
@@ -209,12 +249,11 @@ import { json } from "@remix-run/node";
 
 ### Tailwind CSS
 
-Note that [Tailwind CSS IntelliSense extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) might currently not work since `tailwindcss@3.0.24`.
+Note that [Tailwind CSS IntelliSense extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) might currently not work with `tailwindcss@3.0.24` at the moment.
 
 ### Vechai UI
 
-Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size.
-`cssBase` is still required to get the default Tailwind CSS colors into Vechai UI themes.
+Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size. `cssBase` is still required to get the default Tailwind CSS colors into Vechai UI themes.
 
 ```diff
 module.exports = {
@@ -242,10 +281,10 @@ module.exports = {
 ### ConvertKit
 
 1. Sign up a new account on ConvertKit
-2. Edit the profile
-3. Get the API key to be used as `CONVERTKIT_API_KEY`
-4. Create a Form
-5. Get the form ID to be used as `CONVERTKIT_FORM_ID`
+2. Edit your profile information
+3. Get the API Key to be used as `CONVERTKIT_API_KEY`
+4. Create a Subscribe Form
+5. Get the Form ID to be used as `CONVERTKIT_FORM_ID`
 
 Tips:
 
