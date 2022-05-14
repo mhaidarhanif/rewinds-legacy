@@ -26,7 +26,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function ExamplesRoute() {
+export default function Examples() {
   const { examples, utilities } = useLoaderData<LoaderDataExamples>();
 
   return (

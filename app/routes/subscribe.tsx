@@ -10,7 +10,7 @@ export const loader: LoaderFunction = loaderSubscribe;
 
 export const action: ActionFunction = actionSubscribe;
 
-export default function SubscribeRoute() {
+export default function Subscribe() {
   const transition = useTransition();
   const actionData = useActionData();
 

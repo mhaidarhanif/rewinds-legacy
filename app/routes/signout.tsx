@@ -8,7 +8,7 @@ export const handle: SEOHandle = {
   },
 };
 
-export default function SignOutRoute() {
+export default function SignOut() {
   return (
     <Layout>
       <h1>Sure to sign out?</h1>

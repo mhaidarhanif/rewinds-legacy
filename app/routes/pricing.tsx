@@ -9,7 +9,7 @@ export const handle: SEOHandle = {
   },
 };
 
-export default function PricingRoute() {
+export default function Pricing() {
   return (
     <Layout variant="wide">
       <Header className="header-center">

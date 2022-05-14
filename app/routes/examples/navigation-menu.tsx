@@ -1,7 +1,7 @@
 import { NavigationBarNavMenu } from "~/components";
 import { Layout } from "~/layouts";
 
-export default function ExampleNavigationMenuRoute() {
+export default function ExampleNavigationMenu() {
   return (
     <Layout variant="wide">
       <article className="prose-config">

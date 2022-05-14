@@ -1,7 +1,7 @@
 import { ExampleForms } from "~/contents";
 import { Layout } from "~/layouts";
 
-export default function ExampleFormRoute() {
+export default function ExampleForm() {
   return (
     <Layout>
       <article className="prose-config">

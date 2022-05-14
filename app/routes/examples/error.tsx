@@ -6,7 +6,7 @@ export const loader: LoaderFunction = async () => {
   throw new Error("System crashed!");
 };
 
-export default function DemoErrorRoute() {
+export default function DemoError() {
   return (
     <Layout>
       <h1>Demo Error</h1>

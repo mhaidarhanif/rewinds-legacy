@@ -1,7 +1,7 @@
 import { ExampleBadges } from "~/contents";
 import { Layout } from "~/layouts";
 
-export default function ExampleBadgeRoute() {
+export default function ExampleBadge() {
   return (
     <Layout>
       <article className="prose-config">

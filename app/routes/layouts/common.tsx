@@ -1,6 +1,6 @@
 import { Layout } from "~/layouts";
 
-export default function LayoutsCommonRoute() {
+export default function LayoutsCommon() {
   return (
     <Layout>
       <article className="prose-config">

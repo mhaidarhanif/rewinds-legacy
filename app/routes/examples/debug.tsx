@@ -13,7 +13,7 @@ export const handle: SEOHandle = {
 
 export const loader: LoaderFunction = loaderSession;
 
-export default function DebugRoute() {
+export default function Debug() {
   const data = useLoaderData();
 
   return (

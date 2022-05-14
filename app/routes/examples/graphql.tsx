@@ -31,7 +31,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function ExampleGraphQLRoute() {
+export default function ExampleGraphQL() {
   const data = useLoaderData();
 
   return (

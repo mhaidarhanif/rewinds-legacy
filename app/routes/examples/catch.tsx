@@ -8,7 +8,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function DemoCatchRoute() {
+export default function DemoCatch() {
   return (
     <Layout>
       <h1>Demo Catch</h1>

@@ -1,7 +1,7 @@
 import { ExampleNotifications } from "~/contents";
 import { Layout } from "~/layouts";
 
-export default function ExampleButtonRoute() {
+export default function ExampleButton() {
   return (
     <Layout>
       <article className="prose-config">

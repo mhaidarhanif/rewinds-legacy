@@ -8,7 +8,7 @@ export const handle: SEOHandle = {
   },
 };
 
-export default function SignUpRoute() {
+export default function SignUp() {
   return (
     <Layout>
       <h1>Create your new account</h1>

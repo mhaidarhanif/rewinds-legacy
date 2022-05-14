@@ -20,7 +20,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function ExampleRESTRoute() {
+export default function ExampleREST() {
   const data = useLoaderData();
 
   return (

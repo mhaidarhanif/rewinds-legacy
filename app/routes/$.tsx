@@ -61,7 +61,7 @@ export const action: ActionFunction = async ({ params }) => {
  * Show not found information if there is no redirect link url found
  */
 
-export default function SplatRoute() {
+export default function Splat() {
   return (
     <Layout>
       <MessageErrorNotFound />

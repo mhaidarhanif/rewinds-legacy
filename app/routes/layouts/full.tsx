@@ -13,7 +13,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function LayoutFullRoute() {
+export default function LayoutFull() {
   const { images } = useLoaderData();
 
   return (

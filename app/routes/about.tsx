@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function AboutRoute() {
+export default function About() {
   const { features, mainStacks, referenceStacks } =
     useLoaderData<LoaderDataAbout>();
 

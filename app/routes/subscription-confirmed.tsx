@@ -1,6 +1,6 @@
 import { Layout } from "~/layouts";
 
-export default function SubscriptionConfirmedRoute() {
+export default function SubscriptionConfirmed() {
   return (
     <Layout className="prose-config">
       <h1 className="font-comic text-primary-500">Subscription confirmed!</h1>

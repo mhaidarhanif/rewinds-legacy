@@ -8,7 +8,7 @@ export const handle: SEOHandle = {
   },
 };
 
-export default function SignInRoute() {
+export default function SignIn() {
   return (
     <Layout>
       <h1>Welcome back! Let's sign in</h1>
