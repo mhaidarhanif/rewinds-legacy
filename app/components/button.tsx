@@ -28,6 +28,7 @@ export const ButtonGroup = ({
 }: ButtonGroupProps) => {
   return (
     <VechaiButton.Group
+      attached={attached}
       className={classx(!attached && "flex flex-wrap gap-4")}
       {...props}
     >
