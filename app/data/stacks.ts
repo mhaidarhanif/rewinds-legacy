@@ -81,6 +81,12 @@ export const dataMainStacks: StackItems = [
     url: "https://radix-ui.com",
     name: "Radix UI v0",
     description: "Unstyled accessible UI components",
+    subItems: [
+      {
+        name: "@radix-ui/react-icons",
+        url: "",
+      },
+    ],
   },
   {
     url: "https://tailwindcss-radix.vercel.app",

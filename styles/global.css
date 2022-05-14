@@ -145,6 +145,10 @@
     @apply bg-primary-100 text-primary-500 dark:bg-neutral-900;
   }
 
+  .navlink-focus {
+    @apply focus:bg-primary-100 dark:focus:bg-neutral-900;
+  }
+
   /**
    * Headless UI - Menu
    */
@@ -226,8 +230,16 @@
     @apply border-neutral-200 dark:border-neutral-200/5;
   }
 
+  .bg-separator {
+    @apply bg-neutral-200 dark:bg-neutral-700;
+  }
+
   .bg-panel {
     @apply bg-white dark:bg-neutral-800;
+  }
+
+  .shadow-panel {
+    @apply shadow-xl;
   }
 
   .border-panel {

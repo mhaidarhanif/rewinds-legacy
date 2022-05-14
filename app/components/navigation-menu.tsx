@@ -273,7 +273,7 @@ export const NavigationMenuIndicator = ({ className }: HTMLElementProps) => {
     <NavigationMenu.Indicator
       className={classx(
         "nav-menu-indicator",
-        "overflow-hidden shadow-2xl",
+        "shadow-panel overflow-hidden",
         "top-[100%] flex h-2 items-end justify-center",
         "radix-state-visible:animate-fade-in",
         "radix-state-hidden:animate-fade-out",
@@ -282,9 +282,7 @@ export const NavigationMenuIndicator = ({ className }: HTMLElementProps) => {
         className,
       )}
     >
-      <div
-        className={classx("bg-panel ", "relative top-2 h-3 w-3 rotate-45")}
-      />
+      <div className={classx("bg-panel", "relative top-2 h-3 w-3 rotate-45")} />
     </NavigationMenu.Indicator>
   );
 };
@@ -314,8 +312,8 @@ export const NavigationMenuViewport = ({ ...props }: HTMLElementProps) => {
       className={classx(
         "nav-menu-viewport",
         "z-40",
-        "bg-panel border-panel",
-        "relative mt-2 overflow-hidden rounded-base shadow-lg",
+        "bg-panel border-panel shadow-panel",
+        "relative mt-2 overflow-hidden rounded-base",
         "w-radix-navigation-menu-viewport",
         "h-radix-navigation-menu-viewport",
         "radix-state-open:animate-scale-in-content",

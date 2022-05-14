@@ -41,22 +41,23 @@ export const configNavigationCareer: LinkItems = [
 
 export const configNavigationExamples1: LinkItems = [
   { to: "/examples", text: "Examples" },
-  { to: "/examples/button", text: "Example: Button" },
-  { to: "/examples/badge", text: "Example: Badge" },
-  { to: "/examples/form", text: "Example: Form" },
-  { to: "/examples/alert", text: "Example: Alert" },
-  { to: "/examples/toast", text: "Example: Toast" },
-  { to: "/examples/notification", text: "Example: Notification" },
-  { to: "/examples/navigation-menu", text: "Example: Navigation Menu" },
-  { to: "/examples/footer", text: "Example: Footer" },
+  { to: "/examples/button", text: "Button" },
+  { to: "/examples/badge", text: "Badge" },
+  { to: "/examples/form", text: "Form" },
+  { to: "/examples/alert", text: "Alert" },
+  { to: "/examples/toast", text: "Toast" },
+  { to: "/examples/notification", text: "Notification" },
+  { to: "/examples/navigation-menu", text: "Navigation Menu" },
+  { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
+  { to: "/examples/footer", text: "Footer" },
 ];
 
 export const configNavigationExamples2: LinkItems = [
-  { to: "/examples/rest", text: "Example: REST API" },
-  { to: "/examples/graphql", text: "Example: GraphQL" },
-  { to: "/examples/catch", text: "Example: Catch" },
-  { to: "/examples/error", text: "Example: Error" },
-  { to: "/examples/debug", text: "Example: Debug" },
+  { to: "/examples/rest", text: "REST API" },
+  { to: "/examples/graphql", text: "GraphQL" },
+  { to: "/examples/catch", text: "Catch" },
+  { to: "/examples/error", text: "Error" },
+  { to: "/examples/debug", text: "Debug" },
 ];
 
 export const configNavigationExamples: LinkItems = [
@@ -104,11 +105,11 @@ export const configNavigationMenu: ConfigNavigation = [
     name: "Examples",
     links: [...configNavigationExamples1],
   },
-  {
-    // In small screen, the auth links are in the Dropdown Menu
-    name: "Account",
-    links: [...configNavigationAuth],
-  },
+  // In small screen, the auth links are in the Dropdown Menu or User Menu
+  // {
+  //   name: "Account",
+  //   links: [...configNavigationAuth],
+  // },
 ];
 
 /**
