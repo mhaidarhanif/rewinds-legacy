@@ -18,7 +18,7 @@ export const configNavigationPages: LinkItems = [
   { to: "/search", text: "Search" },
 ];
 
-export const configNavigationAccount: LinkItems = [
+export const configNavigationAuth: LinkItems = [
   { to: "/signup", text: "Sign up" },
   { to: "/signin", text: "Sign in" },
   { to: "/signout", text: "Sign out" },
@@ -96,9 +96,13 @@ export const configNavigationMenu: ConfigNavigation = [
     links: [configNavigationHome, ...configNavigationPages],
   },
   {
+    name: "Examples",
+    links: [...configNavigationExamples1],
+  },
+  {
     // In small screen, the auth links are in the Dropdown Menu
     name: "Account",
-    links: [...configNavigationAccount],
+    links: [...configNavigationAuth],
   },
 ];
 
@@ -115,7 +119,7 @@ export const configNavigationSitemap: ConfigNavigation = [
   },
   {
     name: "Account",
-    links: [...configNavigationAccount],
+    links: [...configNavigationAuth],
   },
   {
     name: "Education",
