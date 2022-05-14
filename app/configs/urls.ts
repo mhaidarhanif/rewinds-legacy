@@ -1,4 +1,4 @@
-import type { ExternalLinkItem } from "~/types";
+import type { ExternalLinkItems } from "~/types";
 
 /**
  * Config External Anchor URLs
@@ -12,7 +12,7 @@ import type { ExternalLinkItem } from "~/types";
  * https://theirsite.com/username
  */
 
-export const configExternalLinks: Array<ExternalLinkItem> = [
+export const configExternalLinks: ExternalLinkItems = [
   {
     name: "GitHub",
     url: "https://a.mhaidarhanif.com/github",

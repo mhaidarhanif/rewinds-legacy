@@ -1,19 +1,16 @@
 import { json } from "@remix-run/node";
 
-import { dataExampleComponents, dataExampleUtilities } from "~/data";
+import { RemixLink } from "~/components";
+import { configNavigationExamples } from "~/configs";
+import { dataUtilities } from "~/data";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 
-import type {
-  ComponentItem,
-  LoaderFunction,
-  SEOHandle,
-  UtilityItem,
-} from "~/types";
+import type { LinkItems, LoaderFunction, SEOHandle, TextItems } from "~/types";
 
 type LoaderDataExamples = {
-  exampleComponents: ComponentItem[];
-  exampleUtilities: UtilityItem[];
+  examples: LinkItems;
+  utilities: TextItems;
 };
 
 export const handle: SEOHandle = {
@@ -24,31 +21,34 @@ export const handle: SEOHandle = {
 
 export const loader: LoaderFunction = async () => {
   return json<LoaderDataExamples>({
-    exampleComponents: dataExampleComponents,
-    exampleUtilities: dataExampleUtilities,
+    examples: configNavigationExamples,
+    utilities: dataUtilities,
   });
 };
 
 export default function ExamplesRoute() {
-  const { exampleComponents, exampleUtilities } =
-    useLoaderData<LoaderDataExamples>();
+  const { examples, utilities } = useLoaderData<LoaderDataExamples>();
 
   return (
     <Layout>
       <article className="prose-config">
         <h1>Examples</h1>
 
-        <h2>Example components</h2>
+        <h2>Example Components</h2>
         <ul>
-          {exampleComponents.map((item) => {
-            return <li key={item.name}>{item.name}</li>;
+          {examples.map((item) => {
+            return (
+              <li key={item.text}>
+                <RemixLink to={item.to}>{item.text}</RemixLink>
+              </li>
+            );
           })}
         </ul>
 
-        <h2>Example utilities</h2>
+        <h2>Example Utilities</h2>
         <ul>
-          {exampleUtilities.map((item) => {
-            return <li key={item.name}>{item.name}</li>;
+          {utilities.map((item) => {
+            return <li key={item.text}>{item.text}</li>;
           })}
         </ul>
       </article>

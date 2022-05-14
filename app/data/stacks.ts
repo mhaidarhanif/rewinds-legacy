@@ -1,6 +1,6 @@
-import type { StackItem } from "~/types";
+import type { StackItems } from "~/types";
 
-export const dataMainStacks: StackItem[] = [
+export const dataMainStacks: StackItems = [
   {
     url: "https://typescriptlang.org",
     name: "TypeScript",
@@ -35,20 +35,24 @@ export const dataMainStacks: StackItem[] = [
   },
   {
     url: "https://tailwindcss.com",
-    name: "Tailwind CSS v3.0.23",
+    name: "Tailwind CSS v3",
     description: "A utility-first CSS framework",
     subItems: [
       {
         name: "@tailwindcss/typography",
+        url: "",
       },
       {
         name: "@tailwindcss/forms",
+        url: "",
       },
       {
         name: "@tailwindcss/line-clamp",
+        url: "",
       },
       {
         name: "@tailwindcss/aspect-ratio",
+        url: "",
       },
     ],
   },
@@ -103,7 +107,7 @@ export const dataMainStacks: StackItem[] = [
   },
 ];
 
-export const dataReferenceStacks: StackItem[] = [
+export const dataReferenceStacks: StackItems = [
   {
     url: "https://tailwindui.com",
     name: "Tailwind UI",

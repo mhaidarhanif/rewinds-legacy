@@ -6,12 +6,12 @@ import { dataMainStacks, dataReferenceStacks, dataFeatures } from "~/data";
 import { Layout } from "~/layouts";
 
 import type { LoaderFunction } from "@remix-run/node";
-import type { StackItem } from "~/types";
+import type { StackItems, Strings } from "~/types";
 
 export type LoaderDataAbout = {
-  features: string[];
-  mainStacks: StackItem[];
-  referenceStacks: StackItem[];
+  features: Strings;
+  mainStacks: StackItems;
+  referenceStacks: StackItems;
 };
 
 export const loader: LoaderFunction = async () => {

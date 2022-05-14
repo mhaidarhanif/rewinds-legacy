@@ -59,6 +59,11 @@ export const configNavigationExamples2: LinkItems = [
   { to: "/examples/debug", text: "Example: Debug" },
 ];
 
+export const configNavigationExamples: LinkItems = [
+  ...configNavigationExamples1,
+  ...configNavigationExamples2,
+];
+
 export const configNavigationLayouts: LinkItems = [
   { to: "/layouts/common", text: "Common" },
   { to: "/layouts/full", text: "Full" },

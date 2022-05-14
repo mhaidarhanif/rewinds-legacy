@@ -1,7 +1,16 @@
 /**
  * Common Types
- * Used inside the LoaderData and ActionData types
+ *
+ * Used in:
+ * - Config
+ * - Data
+ * - LoaderData
+ * - ActionData
  */
+
+export type TextItem = {
+  text: string;
+};
 
 export type LinkItem = {
   to: string;
@@ -9,29 +18,25 @@ export type LinkItem = {
   isEnabled?: boolean;
 };
 
-export type LinkItems = Array<LinkItem>;
-
-export type StackItem = {
-  name: string;
-  url: string;
-  description?: string;
-  subItems?: Array<{
-    name: string;
-    url?: string;
-    description?: string;
-  }>;
-};
-
-export type ComponentItem = {
-  name: string;
-};
-
-export type UtilityItem = {
-  name: string;
-};
-
 export type ExternalLinkItem = {
   name: string;
   url: string;
   isEnabled?: boolean;
 };
+
+export type StackItem = {
+  name: string;
+  url: string;
+  description?: string;
+};
+
+export type StackItems = Array<
+  StackItem & {
+    subItems?: Array<StackItem>;
+  }
+>;
+
+export type Strings = Array<string>;
+export type TextItems = Array<TextItem>;
+export type LinkItems = Array<LinkItem>;
+export type ExternalLinkItems = Array<ExternalLinkItem>;
