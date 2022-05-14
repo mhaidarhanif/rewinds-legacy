@@ -14,6 +14,8 @@ import {
   IconDev,
 } from "~/libs";
 
+export { Icon as VechaiIcon } from "@vechaiui/react";
+
 /**
  * Icon list mapping
  */

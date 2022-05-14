@@ -10,9 +10,11 @@ import {
   PersonIcon,
 } from "@radix-ui/react-icons";
 
+import { VechaiIcon } from "~/components";
 import { classx } from "~/utils";
 
 import type { HTMLSpanElementProps, RadixUIMenuItems } from "~/types";
+import { IconMenu } from "~/libs";
 
 type User = {
   name: string;
@@ -58,9 +60,10 @@ export const NavigationBarDropdownMenu = () => {
         <DropdownMenu.Trigger asChild>
           <button
             type="button"
-            className="btn-solid btn btn-md rounded-base"
             data-color="primary"
+            className="var(--vc-cursor) btn-solid btn btn-md flex rounded-base"
           >
+            <VechaiIcon as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
             Menu
           </button>
         </DropdownMenu.Trigger>
@@ -80,7 +83,8 @@ export const NavigationBarDropdownMenu = () => {
               <DropdownMenu.Item
                 key={`${label}-${i}`}
                 className={classx(
-                  "navlink flex cursor-default select-none items-center rounded-md px-2 py-2 text-sm outline-none",
+                  "navlink navlink-size",
+                  "flex select-none items-center rounded-md text-sm outline-none",
                 )}
               >
                 {icon}
@@ -92,7 +96,12 @@ export const NavigationBarDropdownMenu = () => {
 
           <DropdownMenu.Separator className="bg-separator my-1 h-px" />
 
-          <DropdownMenu.Label className="select-none px-2 py-2 text-sm text-neutral-700 dark:text-neutral-200">
+          <DropdownMenu.Label
+            className={classx(
+              "navlink-size",
+              "select-none text-sm text-neutral-700 dark:text-neutral-200",
+            )}
+          >
             Region Tools
           </DropdownMenu.Label>
 
@@ -101,7 +110,8 @@ export const NavigationBarDropdownMenu = () => {
               <DropdownMenu.Item
                 key={`${label}-${i}`}
                 className={classx(
-                  "navlink flex cursor-default select-none items-center rounded-md px-2 py-2 text-sm outline-none",
+                  "navlink navlink-size",
+                  "flex select-none items-center rounded-md  text-sm outline-none",
                 )}
               >
                 {icon}
@@ -116,7 +126,10 @@ export const NavigationBarDropdownMenu = () => {
           <DropdownMenu.Root>
             <DropdownMenu.TriggerItem
               className={classx(
-                "navlink flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-sm outline-none",
+                "navlink navlink-size",
+                "flex w-full cursor-default select-none items-center rounded-md text-sm outline-none",
+                "radix-state-open:bg-primary-100",
+                "dark:radix-state-open:bg-neutral-700",
               )}
             >
               <Link2Icon className="mr-2 h-3.5 w-3.5" />
@@ -135,7 +148,8 @@ export const NavigationBarDropdownMenu = () => {
                   <DropdownMenu.Item
                     key={`${name}-${i}`}
                     className={classx(
-                      "navlink flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-sm outline-none md:w-32",
+                      "navlink navlink-size",
+                      "flex w-28 cursor-default select-none items-center rounded-md  text-sm outline-none md:w-32",
                     )}
                   >
                     {url ? (

@@ -141,6 +141,10 @@
     @apply hover:bg-primary-200 dark:hover:bg-primary-900;
   }
 
+  .navlink-size {
+    @apply px-3 py-2;
+  }
+
   .navlink-active {
     @apply bg-primary-100 text-primary-500 dark:bg-neutral-900;
   }
