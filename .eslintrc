@@ -18,7 +18,7 @@
   },
   "rules": {
     "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/no-throw-literal": ["off"],
     "arrow-body-style": ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],
@@ -30,7 +30,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/no-unescaped-entities": "off",
     "react/require-default-props": "off",
-    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-imports": "off", // ~> @ts-eslint/no-unused-vars
     "import/order": [
       "warn",
       {

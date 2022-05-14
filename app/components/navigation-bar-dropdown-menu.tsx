@@ -3,45 +3,31 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   CaretRightIcon,
   CropIcon,
-  FileIcon,
   FrameIcon,
   Link2Icon,
-  MixerHorizontalIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
 
 import { VechaiIcon } from "~/components";
+import { configNavigationDropdownMenuItems } from "~/configs";
+import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
 
-import type { HTMLSpanElementProps, RadixUIMenuItems } from "~/types";
-import { IconMenu } from "~/libs";
+import type { HTMLSpanElementProps, RadixDropdownMenuItems } from "~/types";
 
 type User = {
   name: string;
   url?: string;
 };
 
-const generalMenuItems: RadixUIMenuItems = [
+const regionToolMenuItems: RadixDropdownMenuItems = [
   {
-    label: "New File",
-    shortcut: "⌘+N",
-    icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
-  },
-  {
-    label: "Settings",
-    shortcut: "⌘+,",
-    icon: <MixerHorizontalIcon className="mr-2 h-3.5 w-3.5" />,
-  },
-];
-
-const regionToolMenuItems: RadixUIMenuItems = [
-  {
-    label: "Frame",
+    text: "Frame",
     shortcut: "⌘+F",
     icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
   },
   {
-    label: "Crop",
+    text: "Crop",
     shortcut: "⌘+S",
     icon: <CropIcon className="mr-2 h-3.5 w-3.5" />,
   },
@@ -78,21 +64,23 @@ export const NavigationBarDropdownMenu = () => {
             "bg-panel border-panel",
           )}
         >
-          {generalMenuItems.map(({ label, icon, shortcut }, i) => {
-            return (
-              <DropdownMenu.Item
-                key={`${label}-${i}`}
-                className={classx(
-                  "navlink navlink-size",
-                  "flex select-none items-center rounded-md text-sm outline-none",
-                )}
-              >
-                {icon}
-                <span className="flex-grow">{label}</span>
-                {shortcut && <Shortcut>{shortcut}</Shortcut>}
-              </DropdownMenu.Item>
-            );
-          })}
+          {configNavigationDropdownMenuItems.map(
+            ({ text, icon, shortcut }, i) => {
+              return (
+                <DropdownMenu.Item
+                  key={`${text}-${i}`}
+                  className={classx(
+                    "navlink navlink-size",
+                    "flex select-none items-center rounded-md text-sm outline-none",
+                  )}
+                >
+                  {icon}
+                  <span className="flex-grow">{text}</span>
+                  {shortcut && <Shortcut>{shortcut}</Shortcut>}
+                </DropdownMenu.Item>
+              );
+            },
+          )}
 
           <DropdownMenu.Separator className="bg-separator my-1 h-px" />
 
@@ -105,17 +93,17 @@ export const NavigationBarDropdownMenu = () => {
             Region Tools
           </DropdownMenu.Label>
 
-          {regionToolMenuItems.map(({ label, icon, shortcut }, i) => {
+          {regionToolMenuItems.map(({ text, icon, shortcut }, i) => {
             return (
               <DropdownMenu.Item
-                key={`${label}-${i}`}
+                key={`${text}-${i}`}
                 className={classx(
                   "navlink navlink-size",
-                  "flex select-none items-center rounded-md  text-sm outline-none",
+                  "flex select-none items-center rounded-md text-sm outline-none",
                 )}
               >
                 {icon}
-                <span className="flex-grow">{label}</span>
+                <span className="flex-grow">{text}</span>
                 {shortcut && <Shortcut>{shortcut}</Shortcut>}
               </DropdownMenu.Item>
             );
@@ -126,10 +114,10 @@ export const NavigationBarDropdownMenu = () => {
           <DropdownMenu.Root>
             <DropdownMenu.TriggerItem
               className={classx(
-                "navlink navlink-size",
-                "flex w-full cursor-default select-none items-center rounded-md text-sm outline-none",
                 "radix-state-open:bg-primary-100",
                 "dark:radix-state-open:bg-neutral-700",
+                "navlink navlink-size",
+                "flex w-full select-none items-center rounded-md text-sm outline-none",
               )}
             >
               <Link2Icon className="mr-2 h-3.5 w-3.5" />
@@ -149,7 +137,7 @@ export const NavigationBarDropdownMenu = () => {
                     key={`${name}-${i}`}
                     className={classx(
                       "navlink navlink-size",
-                      "flex w-28 cursor-default select-none items-center rounded-md  text-sm outline-none md:w-32",
+                      "flex w-28 select-none items-center rounded-md text-sm outline-none md:w-32",
                     )}
                   >
                     {url ? (
