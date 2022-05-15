@@ -91,16 +91,20 @@
   },
 
   "Rewinds Remix Meta": {
-    "prefix": "remix-meta",
+    "prefix": "rrm",
+    "description": "Function to define meta tags by route.",
     "body": [
+      "import { createMetaData } from \"~/utils\";",
+      "",
+      "import type { MetaFunction } from \"~/types\";",
+      "",
       "export const meta: MetaFunction = () => {",
-      "  return {",
-      "    title: \"$1\",",
-      "    description: \"$2\"",
-      "  };",
+      "  return createMetaData({",
+      "    title: `$1`,",
+      "    description: `$2`,",
+      "  });",
       "};"
-    ],
-    "description": "Function to define meta tags by route."
+    ]
   },
 
   "Rewinds Remix Links": {

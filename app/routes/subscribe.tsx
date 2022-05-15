@@ -3,8 +3,16 @@ import { SubscribeForm } from "~/contents";
 import { actionSubscribe, loaderSubscribe } from "~/features";
 import { useActionData, useTransition } from "~/hooks";
 import { Layout } from "~/layouts";
+import { createMetaData } from "~/utils";
 
-import type { LoaderFunction, ActionFunction } from "~/types";
+import type { LoaderFunction, ActionFunction, MetaFunction } from "~/types";
+
+export const meta: MetaFunction = () => {
+  return createMetaData({
+    title: `Subscribe`,
+    description: `Get to more updates from Rewinds via email.`,
+  });
+};
 
 export const loader: LoaderFunction = loaderSubscribe;
 

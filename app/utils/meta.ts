@@ -14,23 +14,27 @@ type CreateMeta = {
   locale?: string;
 };
 
-export const createMetaData = (meta = configMeta) => {
-  const {
-    title,
-    description,
-    name,
-    color,
-    ogType,
-    ogImageAlt,
-    ogImageUrl,
-    twiterImageUrl,
-    url,
-    route,
-    locale,
-  }: CreateMeta = meta;
-
+export const createMetaData = ({
+  title,
+  description,
+  name,
+  color,
+  ogType,
+  ogImageAlt,
+  ogImageUrl,
+  twiterImageUrl,
+  url,
+  route,
+  locale,
+}: CreateMeta = configMeta) => {
   return {
-    title: title || name || configMeta.title,
+    // eslint-disable-next-line no-nested-ternary
+    title: title
+      ? `${title} – ${configMeta.name}`
+      : name
+      ? `${name} – ${configMeta.name}`
+      : configMeta.title,
+
     description: description || configMeta.description,
 
     "application-name": name || title || configMeta.name,
