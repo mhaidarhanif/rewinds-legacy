@@ -7,4 +7,8 @@ export const configFeatures = {
   googleAnalytics: true,
   splitbee: true,
   posthog: true,
+  posthogBrowser: true,
+  posthogNode: true,
+  sentryBrowser: true,
+  sentryNode: true
 };

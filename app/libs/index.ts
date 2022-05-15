@@ -6,6 +6,8 @@ export * from "./icons";
 export * from "./posthog.client";
 export * from "./posthog.server";
 export * from "./remix-utils";
+export * from "./sentry.client";
+export * from "./sentry.server";
 export * from "./splitbee";
 export * from "./urql.server";
 export * from "./usehooks-ts";

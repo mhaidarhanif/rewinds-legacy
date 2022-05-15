@@ -47,7 +47,7 @@ export function ThemeProvider({
   children: React.ReactNode;
 }) {
   /**
-   * TODO: Preferred Theme
+   * WIP: Preferred Theme
    * Only Light and Dark for now
    * Because System appearance require to modify the ThemeSwitcher
    */

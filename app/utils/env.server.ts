@@ -1,6 +1,7 @@
 /**
  * This will expose all variables within global ENV
  * Only for client-side env
+ * Never expose the SESSION_SECRET or any server/node/non-browser env
  */
 
 const processEnv = {
@@ -13,10 +14,10 @@ const processEnv = {
   GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
   POSTHOG_API_HOST: process.env.POSTHOG_API_HOST,
   POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
+  SENTRY_BROWSER_DSN: process.env.SENTRY_BROWSER_DSN,
   // GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
   // CONVERTKIT_API_KEY: process.env.CONVERTKIT_API_KEY,
   // CONVERTKIT_FORM_ID: process.env.CONVERTKIT_FORM_ID,
-  // Never expose the SESSION_SECRET!
 };
 
 export function getEnv() {

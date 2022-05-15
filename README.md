@@ -124,17 +124,6 @@ cp .env.example .env
 Setup the environment variables here and Vercel if want to deploy there.
 If you don't need some of these, you can remove them in the `.env`, `app/utils/env.server.ts`, and all `getEnvServer()` function calls.
 
-- `SESSION_SECRET` for persisting the themes on browser sessions
-- `REST_ENDPOINT` for `fetch` or `axios`
-- `GRAPHQL_ENDPOINT` for `graphql-request` or `urql`
-- `GRAPHCMS_ENDPOINT` for GraphCMS headless GraphQL CMS platform
-- `CONVERTKIT_API_KEY` for ConvertKit newsletter platform account API key
-- `CONVERTKIT_FORM_ID` for ConvertKit actual subscription form ID
-- `GA_MEASUREMENT_ID` for Google Analytics 4
-- `POSTHOG_API_HOST` for PostHog analytics platform host
-- `POSTHOG_API_KEY` for PostHog analytics API key
-- `PIRSCH_ID_CODE` for Pirsch Analytics ID code
-
 Afterwards, run the Remix development server with the `dev` script.
 
 ```sh
