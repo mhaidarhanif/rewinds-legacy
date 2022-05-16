@@ -1,3 +1,4 @@
+import { H1, H2, Header } from "~/components";
 import { configMeta } from "~/configs";
 import { SubscribeForm } from "~/contents";
 import { actionSubscribe, loaderSubscribe } from "~/features";
@@ -5,7 +6,18 @@ import { useActionData, useTransition } from "~/hooks";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
-import type { LoaderFunction, ActionFunction, MetaFunction } from "~/types";
+import type {
+  LoaderFunction,
+  ActionFunction,
+  MetaFunction,
+  SEOHandle,
+} from "~/types";
+
+export const handle: SEOHandle = {
+  getSitemapEntries: () => {
+    return [{ route: `/subscribe`, priority: 0.9 }];
+  },
+};
 
 export const meta: MetaFunction = () => {
   return createMetaData({
@@ -23,16 +35,18 @@ export default function Subscribe() {
   const actionData = useActionData();
 
   return (
-    <Layout>
-      <article className="prose-config">
-        <h1>Subscribe</h1>
-        <p>
+    <Layout variant="wide">
+      <Header className="header-center">
+        <H1>Subscribe</H1>
+        <H2>
           Subscribe to updates on <b>Rewinds</b> from{" "}
-          <b>{configMeta.mailingListName}</b>.
-        </p>
-      </article>
+          <b>{configMeta.mailingListName}</b>
+        </H2>
+      </Header>
 
-      <SubscribeForm transition={transition} actionData={actionData} />
+      <div className="stack-v items-center">
+        <SubscribeForm transition={transition} actionData={actionData} />
+      </div>
     </Layout>
   );
 }

@@ -37,7 +37,7 @@ export const SubscribeForm = ({
   };
 
   return (
-    <div className="flex justify-start">
+    <div className="flex w-full justify-center">
       <Form method="post" className="w-full max-w-xs space-y-4">
         <div className="space-y-4">
           <FormControl id="email">
