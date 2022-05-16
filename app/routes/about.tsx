@@ -42,19 +42,18 @@ export default function About() {
         <h1>About</h1>
         <p>
           <Anchor href="https://rewinds.mhaidarhanif.com">Rewinds</Anchor> is a
-          Remix Tailwind Starter Kit made by{" "}
-          <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor> (
-          <Anchor href="https://github.com/mhaidarhanif">@mhaidarhanif</Anchor>
-          ).
-        </p>
-
-        <p>
-          It is a demo project template you can freely use for any purpose. On
-          GitHub, you can directly{" "}
+          Remix starter kit with Tailwind family of libraries. It is a demo
+          project template you can freely use for any purpose. On GitHub, you
+          can directly{" "}
           <Anchor href="https://github.com/mhaidarhanif/rewinds/generate">
             use this template
           </Anchor>{" "}
-          as your own repo.
+          as your own repo. Made by{" "}
+          <Anchor href="https://mhaidarhanif.com">
+            <span className="whitespace-nowrap">M Haidar Hanif</span>
+          </Anchor>{" "}
+          (<Anchor href="https://github.com/mhaidarhanif">@mhaidarhanif</Anchor>
+          ).
         </p>
 
         <p>
