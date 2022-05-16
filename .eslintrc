@@ -19,7 +19,7 @@
   },
   "rules": {
     "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
-    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/no-throw-literal": ["off"],
     "arrow-body-style": ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],

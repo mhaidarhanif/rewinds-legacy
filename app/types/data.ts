@@ -1,3 +1,4 @@
+import type { LinkItems, StackItems, Strings, TextItems } from "~/types";
 import type { getEnv } from "~/utils";
 
 /**
@@ -10,4 +11,15 @@ export type LoaderDataSession = {
   theme: any;
   error: any;
   ENV: ReturnType<typeof getEnv>;
+};
+
+export type LoaderDataAbout = {
+  features: Strings;
+  mainStacks: StackItems;
+  referenceStacks: StackItems;
+};
+
+export type LoaderDataExamples = {
+  examples: LinkItems;
+  utilities: TextItems;
 };

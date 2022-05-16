@@ -6,12 +6,7 @@ import { dataUtilities } from "~/data";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 
-import type { LinkItems, LoaderFunction, SEOHandle, TextItems } from "~/types";
-
-type LoaderDataExamples = {
-  examples: LinkItems;
-  utilities: TextItems;
-};
+import type { LoaderDataExamples, LoaderFunction, SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {

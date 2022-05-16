@@ -1,17 +1,17 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { Anchor, Image } from "~/components";
+import { Anchor, Image, useTheme } from "~/components";
 import { dataMainStacks, dataReferenceStacks, dataFeatures } from "~/data";
 import { Layout } from "~/layouts";
 
 import type { LoaderFunction } from "@remix-run/node";
-import type { StackItems, Strings } from "~/types";
+import type { LoaderDataAbout, SEOHandle } from "~/types";
 
-export type LoaderDataAbout = {
-  features: Strings;
-  mainStacks: StackItems;
-  referenceStacks: StackItems;
+export const handle: SEOHandle = {
+  getSitemapEntries: () => {
+    return [{ route: `/about`, priority: 0.9 }];
+  },
 };
 
 export const loader: LoaderFunction = async () => {
@@ -25,6 +25,16 @@ export const loader: LoaderFunction = async () => {
 export default function About() {
   const { features, mainStacks, referenceStacks } =
     useLoaderData<LoaderDataAbout>();
+
+  const { setColorScheme } = useTheme();
+
+  const changeThemeDay = () => {
+    setColorScheme("day");
+  };
+
+  const changeThemeNight = () => {
+    setColorScheme("night");
+  };
 
   return (
     <Layout>
@@ -55,10 +65,26 @@ export default function About() {
             the accessibility guidelines
           </Anchor>
           . So keep in mind this is not intended towards simplicity, rather to
-          collect as much as styling practices as it can.
+          collect as much as design practices as it can. Focusing more on the
+          styling only instead of the integration with backend, database, and
+          testing.
         </p>
 
-        <Image src="/assets/screenshots/home.png" alt="Home Page Screenshot" />
+        <Image
+          src="/assets/screenshots/home-light.png"
+          alt="Screenshot Home Light"
+          className="cursor-pointer"
+          onClick={changeThemeDay}
+          onKeyPress={changeThemeDay}
+        />
+
+        <Image
+          src="/assets/screenshots/home-dark.png"
+          alt="Screenshot Home Dark"
+          className="cursor-pointer"
+          onClick={changeThemeNight}
+          onKeyPress={changeThemeNight}
+        />
 
         <section>
           <h2>Links</h2>
