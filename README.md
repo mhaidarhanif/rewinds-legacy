@@ -121,7 +121,8 @@ cp .env.example .env
 # Edit .env as you prefer
 ```
 
-Setup the environment variables here and Vercel if want to deploy there.
+> ⚠️ Make sure to setup the environment variables here, on Vercel, or on your preferred deployment target. Otherwise the app will break.
+
 If you don't need some of these, you can remove them in the `.env`, `app/utils/env.server.ts`, and all `getEnvServer()` function calls.
 
 Afterwards, run the Remix development server with the `dev` script.
@@ -213,6 +214,8 @@ vercel
 ```
 
 It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+
+> ⚠️ Make sure to setup the environment variables in the project settings.
 
 ## Notes
 
