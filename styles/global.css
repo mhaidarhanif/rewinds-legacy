@@ -60,6 +60,9 @@
  */
 
 @layer components {
+  /**
+   * Layout
+   */
   .layout {
     @apply flex min-h-screen flex-col;
   }
@@ -83,6 +86,34 @@
   .layout-main-full {
     @apply w-full;
   }
+
+  /**
+   * Skip Link
+   */
+
+  .skip-link {
+    clip: rect(1px, 1px, 1px, 1px);
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    padding: 20px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 1px;
+    z-index: 999;
+  }
+
+  .skip-link:focus {
+    clip: auto;
+    height: auto;
+    overflow: visible;
+    width: auto;
+  }
+
+  /**
+   * Header
+   */
 
   .header {
     @apply my-10;
@@ -154,12 +185,29 @@
   }
 
   /**
+   * Stack
+   * Similar with Chakra UI
+   */
+
+  .stack {
+    @apply flex justify-start;
+  }
+
+  .stack-v {
+    @apply stack flex-col;
+  }
+
+  .stack-h {
+    @apply stack flex-row;
+  }
+
+  /**
    * Headless UI - Menu
    */
 
   /**
    * Similar with `navlink` but without `hover` selector
-   * Because Menu.Item has `active` props
+   * Because Menu.Item has `active` props to handle the hover/selected state
    */
   .navlink-menu-active {
     @apply bg-primary-200 dark:bg-primary-900;

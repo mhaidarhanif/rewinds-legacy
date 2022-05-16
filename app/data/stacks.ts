@@ -5,7 +5,7 @@ export const dataMainStacks: StackItems = [
     url: "https://typescriptlang.org",
     name: "TypeScript",
     description:
-      "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+      "Strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
     subItems: [
       {
         name: "usehooks-ts",
@@ -17,7 +17,7 @@ export const dataMainStacks: StackItems = [
     url: "https://remix.run",
     name: "Remix",
     description:
-      "Remix is a full stack web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience",
+      "Full stack web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience",
     subItems: [
       {
         name: "@balavishnuvj/remix-seo",
@@ -36,7 +36,7 @@ export const dataMainStacks: StackItems = [
   {
     url: "https://tailwindcss.com",
     name: "Tailwind CSS v3",
-    description: "A utility-first CSS framework",
+    description: "Utility-first CSS framework",
     subItems: [
       {
         name: "@tailwindcss/typography",
@@ -59,7 +59,7 @@ export const dataMainStacks: StackItems = [
   {
     url: "https://postcss.org",
     name: "PostCSS v8",
-    description: "A tool for transforming CSS with JavaScript",
+    description: "Tool for transforming CSS with JavaScript",
   },
   {
     url: "https://react-icons.github.io/react-icons",
@@ -128,6 +128,12 @@ export const dataReferenceStacks: StackItems = [
     url: "https://layoutsfortailwind.lalokalabs.dev",
     name: "LaLoka Layouts",
     description: "Useful layouts for Tailwind CSS",
+  },
+  {
+    url: "https://captaincss.hexdigital.com",
+    name: "CaptainCSS",
+    description:
+      "Tailwind plugin to rapidly build layouts and compositions that scale with elegance",
   },
   {
     url: "https://flowbite.com",
