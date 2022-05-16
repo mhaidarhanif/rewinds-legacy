@@ -60,7 +60,7 @@ export const NavigationBarDropdownMenu = () => {
           className={classx(
             "radix-side-top:animate-slide-up",
             "radix-side-bottom:animate-slide-down",
-            "shadow-panel w-48 rounded-lg px-1 py-1 md:w-56",
+            "shadow-panel w-48 rounded-md px-1 py-1 md:w-56",
             "bg-panel border-panel",
           )}
         >

@@ -95,7 +95,7 @@ export const ThemeSwitcher = () => {
                               style={{ backgroundColor: theme.backgroundColor }}
                               className={({ checked }) => {
                                 return classx(
-                                  "mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-full border-2 p-0",
+                                  "focus-ring mr-2 mb-2 flex h-5 w-5 items-center justify-center rounded-base border-2 p-0",
                                   `${
                                     checked
                                       ? "border-primary-500"
@@ -106,7 +106,7 @@ export const ThemeSwitcher = () => {
                             >
                               <span
                                 style={{ backgroundColor: theme.primaryColor }}
-                                className="-m-1 flex h-2.5 w-2.5 items-center justify-center rounded-full"
+                                className="-m-1 flex h-2.5 w-2.5 items-center justify-center rounded-base"
                               />
                             </RadioGroup.Option>
                           );
@@ -136,7 +136,7 @@ export const ThemeSwitcher = () => {
                               value={item.value}
                               className={({ checked }) => {
                                 return classx(
-                                  "relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold",
+                                  "focus-ring relative inline-flex min-w-[35px] select-none appearance-none items-center justify-center whitespace-nowrap rounded-base px-0.5 py-0.5 align-middle text-xs font-semibold",
                                   `${
                                     checked
                                       ? "bg-white text-neutral-900 shadow dark:bg-neutral-800 dark:text-white"
@@ -171,6 +171,7 @@ export const ThemeSwitcher = () => {
                           e.target.value as ThemeContextType["density"],
                         );
                       }}
+                      className="focus-ring"
                     >
                       <option value="compact">Compact</option>
                       <option value="comfortable">Comfortable</option>
@@ -184,7 +185,7 @@ export const ThemeSwitcher = () => {
                 />
 
                 <section role="group">
-                  <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between rounded text-left text-sm focus:outline-none">
+                  <div className="flex h-8 w-full flex-shrink-0 cursor-base items-center justify-between rounded-base text-left text-sm focus:outline-none">
                     <span className="text-smm">Pointer Cursors</span>
                     <Switch
                       size="md"
@@ -192,6 +193,7 @@ export const ThemeSwitcher = () => {
                       onChange={() => {
                         return setCursorPointer(!cursorPointer);
                       }}
+                      className="focus-ring"
                     />
                   </div>
                 </section>
