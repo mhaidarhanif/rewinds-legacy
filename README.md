@@ -2,9 +2,7 @@
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries.
-
-This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Vechai UI, and more.
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Vechai UI, and more.
 
 Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
@@ -67,8 +65,10 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
 - TypeScript v4.6
 - Node.js v14-v17
 - npm v8
-- React v18
+- React v17
 - Remix v1.4
+
+> ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
 
 ### Frontend
 
@@ -146,6 +146,8 @@ npm run start
 ```
 
 ### Project structure
+
+Keep in mind that the structure is designed for scalability for medium-large project. If your project scope is too simple or too small, Rewinds might be a bit too much to handle.
 
 - `.vscode`
 - `api`

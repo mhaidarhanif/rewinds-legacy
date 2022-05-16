@@ -9,9 +9,10 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
+    "plugin:markdown/recommended",
     "prettier"
   ],
-  "plugins": ["react", "@typescript-eslint", "unused-imports"],
+  "plugins": ["react", "@typescript-eslint", "unused-imports", "markdown"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"

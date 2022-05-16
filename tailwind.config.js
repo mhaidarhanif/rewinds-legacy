@@ -3,7 +3,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{jsx,tsx}",
     "./node_modules/@vechaiui/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",

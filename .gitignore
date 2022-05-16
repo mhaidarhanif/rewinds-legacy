@@ -1,11 +1,16 @@
 .cache
 .DS_Store
 .env
+.eslintcache
 .output
+.tmp
 .vercel
 /api/index.js
 /api/index.js.map
 /app/styles/
 /build/
+/playwright-report
 /public/build/
-node_modules
+/test-results
+node_modules/
+yarn-error.log
