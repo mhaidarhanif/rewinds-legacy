@@ -1,6 +1,15 @@
 {
   "cSpell.diagnosticLevel": "Hint",
-  "cSpell.words": ["classx", "vechaiui"],
+  "cSpell.words": [
+    "classx",
+    "convertkit",
+    "posthog",
+    "splitbee",
+    "stylelint",
+    "urql",
+    "usehooks",
+    "vechaiui"
+  ],
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "emmet.includeLanguages": {

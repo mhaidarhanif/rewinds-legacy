@@ -1,27 +1,12 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import {
-  Anchor,
-  Button,
   ExternalLinks,
+  FooterComplexFormSubscribe,
   FooterCopyrightText,
-  FormControl,
-  FormErrorMessage,
-  FormHelperText,
-  FormLabel,
   H4,
-  Input,
   Logo,
-  RemixForm,
   RemixLink,
 } from "~/components";
-import { configMeta, configNavigationSitemap, configStyle } from "~/configs";
-import { classx, sleep } from "~/utils";
-
-import type { HTMLElementProps } from "~/types";
-import { useEffect, useForm, useNotification, useState } from "~/hooks";
-
-const date = new Date();
-const year = date.getFullYear();
+import { configNavigationSitemap } from "~/configs";
 
 /**
  * Footer Complex
@@ -95,99 +80,5 @@ export const FooterComplexBottomTexts = () => {
         <RemixLink to="/cookies">Cookies</RemixLink>
       </nav>
     </div>
-  );
-};
-
-/**
- * Footer Complex Form Subscribe
- *
- * For now use react-hook-form, not Remix Form
- * Because this will be used in all routes
- * Still looking a better way
- */
-
-export const FooterComplexFormSubscribe = () => {
-  const [loading, setLoading] = useState(false);
-
-  const notify = useNotification();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (data: any) => {
-    try {
-      setLoading(true);
-      await sleep(1);
-
-      console.log(data);
-
-      notify({
-        title: "Subscribed!",
-        description: "Your email is now subscribed.",
-        status: "success",
-        position: configStyle.notification.position,
-      });
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (errors.email && errors.email.type === "required") {
-      notify({
-        title: "Error",
-        description: "Email address is required.",
-        status: "error",
-        position: configStyle.notification.position,
-      });
-    }
-  }, [errors]);
-
-  return (
-    <>
-      <div className="col-span-2 space-y-2">
-        <h2 className="text-2xl font-bold">Get some updates</h2>
-        <p>{configMeta.description}</p>
-      </div>
-
-      <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-[500px]"
-        >
-          <div className="flex gap-2 sm:items-center">
-            <FormControl invalid={Boolean(errors.email)}>
-              <FormLabel htmlFor="email" className="sr-only">
-                Email
-              </FormLabel>
-              <Input
-                {...register("email", { required: true })}
-                name="email"
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                size="lg"
-              />
-            </FormControl>
-
-            <Button
-              type="submit"
-              size="lg"
-              variant="solid"
-              color="primary"
-              loading={loading}
-              loadingText="Subscribing"
-            >
-              Subscribe
-            </Button>
-          </div>
-        </form>
-      </div>
-    </>
   );
 };

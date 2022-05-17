@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 
-import { axiosConvertKitClient } from "~/libs/axios";
+import { axiosConvertKitServer, axiosConvertKitClient } from "~/libs";
 import { getEnvServer, sleep } from "~/utils";
 
 import type { LoaderFunction, ActionFunction } from "~/types";
@@ -75,18 +75,41 @@ interface SubscribeToConvertKitProps {
   firstName: string;
 }
 
-const subscribeToConvertKit = async ({
+export const subscribeToConvertKit = async ({
   email,
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
     const apiKey = getEnvServer("CONVERTKIT_API_KEY");
+    const tagId = 3096588;
+
+    const response = await axiosConvertKitServer.post("/subscribe", {
+      api_key: apiKey,
+      email,
+      first_name: firstName,
+      tags: [tagId],
+    });
+
+    return response.data;
+  } catch (error: any) {
+    console.error(error.response.status, error.response.data);
+    return error.response.data[0];
+  }
+};
+
+export const subscribeToConvertKitBrowser = async ({
+  email,
+  firstName,
+}: SubscribeToConvertKitProps) => {
+  try {
+    const apiKey = ENV.CONVERTKIT_API_KEY;
+    const tagId = 3096588;
 
     const response = await axiosConvertKitClient.post("/subscribe", {
       api_key: apiKey,
       email,
       first_name: firstName,
-      tags: [3096588], // use tag id (not the name)
+      tags: [tagId],
     });
 
     return response.data;
