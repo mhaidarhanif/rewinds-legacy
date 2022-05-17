@@ -1,3 +1,10 @@
 {
-  "recommendations": ["amimaro.remix-run-snippets", "austenc.tailwind-docs"]
+  "recommendations": [
+    "amimaro.remix-run-snippets",
+    "austenc.tailwind-docs",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint"
+  ]
 }

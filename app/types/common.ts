@@ -10,6 +10,7 @@
 
 export type TextItem = {
   text: string;
+  neme: string;
 };
 
 export type LinkItem = {

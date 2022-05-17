@@ -1,4 +1,17 @@
 {
+  "cSpell.diagnosticLevel": "Hint",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescript": "jsx",
+    "typescriptreact": "jsx"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "peacock.color": "38bdf8",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#69cdfa",
     "activityBar.activeBorder": "#f708ad",
@@ -17,6 +30,5 @@
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#38bdf899",
     "titleBar.inactiveForeground": "#15202b99"
-  },
-  "peacock.color": "38bdf8"
+  }
 }

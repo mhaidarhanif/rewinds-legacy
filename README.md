@@ -6,7 +6,7 @@ Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is
 
 Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
-> Note that this repo is ongoing active development
+> Note that this repo is ongoing active development so thing might quickly change at the moment.
 
 ## Screenshots
 
@@ -23,10 +23,6 @@ Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com
 - [Screenshots](#screenshots)
 - [Features](#features)
 - [Stacks](#stacks)
-  - [Core](#core)
-  - [Frontend](#frontend)
-  - [Utility](#utility)
-  - [Deployment](#deployment)
 - [Development](#development)
   - [Install dependencies](#install-dependencies)
   - [Environment variables](#environment-variables)
@@ -43,35 +39,29 @@ Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com
 
 ## Features
 
+The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
+
 - Remix as the React framework
 - Tailwind CSS using Vechai UI as primary components
 - Multiple themes switcher and persist theme with a session cookie
 - Only focus on the frontend styling and project structure, without particular in testing and database
   - Only a bit of backend integration through Remix loader
-  - For the full stack integration, check out the official Remix Stacks instead: https://remix.run/stacks
-- More features listed in [the about page](https://rewinds.mhaidarhanif.com/about)
+  - For the full stack integration with database and testing, check out the official Remix Stacks instead: https://remix.run/stacks
 
-Note: Depending on your computer processing power, the first Tailwind compilation might take around ~3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine enabled by default.
+> ℹ️ Depending on your computer processing power, the first Tailwind compilation might take around ~3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine enabled by default.
 
 - https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
 - https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
 
 ## Stacks
 
-Check the complete tech stack in the [the about page](https://rewinds.mhaidarhanif.com/about)
-
-### Core
+The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
 - TypeScript v4.6
 - Node.js v14-v17
 - npm v8
 - React v17
 - Remix v1.4
-
-> ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
-
-### Frontend
-
 - Tailwind CSS v3
   - Tailwind CSS plugins
 - PostCSS v8
@@ -80,8 +70,8 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
   - Fontbit CDN
 - Icons
   - React Icons
-  - Heroicons v1
-  - Font Awesome
+    - Heroicons v1
+    - Font Awesome
   - Phospor Icons
 - Components
   - Headless UI v1 – Unstyled accessible UI components
@@ -89,18 +79,15 @@ Check the complete tech stack in the [the about page](https://rewinds.mhaidarhan
     - Tailwind Radix
   - Vechai UI v0 – React Tailwind CSS components
   - NProgress
-
-### Utility
-
 - ESLint v8
+- Stylelint v14
 - Prettier v2
-- `clsx` aliased as `classx`
+- `clsx` or `cx` aliased as `classx`
 - `urql` and `graphql-request`
 - `axios`
-
-### Deployment
-
 - Vercel
+
+> ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
 
 ## Development
 
@@ -198,10 +185,14 @@ npm run build
 
 ## Lint
 
-Make sure to lint the code with ESLint:
+Make sure to lint the code with ESLint and Stylelint:
 
 ```sh
-npm run lint
+npm run eslint
+```
+
+```sh
+npm run stylelint
 ```
 
 ## Deployment
@@ -223,7 +214,7 @@ It is generally recommended to use a Git repository, because future commits will
 
 ### Remix
 
-If you have older way of importing from `remix` package prior to `remix@1.4.3, you can use the `migrate` script to change the import statements.
+If you have older way of importing from `remix` package prior to `remix@1.4.3`, you can use the `migrate` script to change the import statements.
 
 ```sh
 npx remix migrate --migration replace-remix-imports

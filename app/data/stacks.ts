@@ -14,10 +14,21 @@ export const dataMainStacks: StackItems = [
     ],
   },
   {
+    url: "https://nodejs.org",
+    name: "Node.js",
+    description: "JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    subItems: [
+      {
+        name: "npm",
+        url: "https://npmjs.com",
+      },
+    ],
+  },
+  {
     url: "https://remix.run",
     name: "Remix",
     description:
-      "Full stack web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience",
+      "Full stack web framework that lets you focus on the user interface and work back through web standards to deliver a fast, slick, and resilient user experience.",
     subItems: [
       {
         name: "@balavishnuvj/remix-seo",
@@ -107,9 +118,21 @@ export const dataMainStacks: StackItems = [
       {
         url: "https://fontbit.io",
         name: "fontbit.io",
-        description: "Simple and privacy-friendly Google Fonts proxy",
+        description: "Simple and privacy-friendly Google Fonts proxy.",
       },
     ],
+  },
+  {
+    url: "https://eslint.org",
+    name: "ESLint v8",
+    description:
+      "Find and fix problems in your JavaScript code. Plugable JavaScript/TypeScript linter.",
+  },
+  {
+    url: "https://stylelint.io",
+    name: "Stylelint v14",
+    description:
+      "Mighty, modern linter that helps you avoid errors and enforce conventions in your styles.",
   },
 ];
 
