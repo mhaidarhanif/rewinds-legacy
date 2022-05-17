@@ -56,6 +56,9 @@ export const ExampleForms = () => {
             <FormLabel>Email address</FormLabel>
             <Input
               {...register("email", { required: true })}
+              name="email"
+              type="email"
+              id="email"
               placeholder="yourname@email.com"
               size="lg"
             />

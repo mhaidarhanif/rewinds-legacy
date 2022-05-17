@@ -4,6 +4,10 @@ import {
   Button,
   ExternalLinks,
   FooterCopyrightText,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  FormLabel,
   H4,
   Input,
   Logo,
@@ -14,7 +18,7 @@ import { configMeta, configNavigationSitemap, configStyle } from "~/configs";
 import { classx, sleep } from "~/utils";
 
 import type { HTMLElementProps } from "~/types";
-import { useForm, useNotification, useState } from "~/hooks";
+import { useEffect, useForm, useNotification, useState } from "~/hooks";
 
 const date = new Date();
 const year = date.getFullYear();
@@ -114,16 +118,35 @@ export const FooterComplexFormSubscribe = () => {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    setLoading(true);
-    await sleep(1);
-    notify({
-      title: "Subscribed!",
-      description: "Your email is now subscribed.",
-      status: "success",
-      position: configStyle.notification.position,
-    });
-    setLoading(false);
+    try {
+      setLoading(true);
+      await sleep(1);
+
+      console.log(data);
+
+      notify({
+        title: "Subscribed!",
+        description: "Your email is now subscribed.",
+        status: "success",
+        position: configStyle.notification.position,
+      });
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    if (errors.email && errors.email.type === "required") {
+      notify({
+        title: "Error",
+        description: "Email address is required.",
+        status: "error",
+        position: configStyle.notification.position,
+      });
+    }
+  }, [errors]);
 
   return (
     <>
@@ -133,24 +156,37 @@ export const FooterComplexFormSubscribe = () => {
       </div>
 
       <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
-        <RemixForm className="w-full max-w-[500px]">
-          <label htmlFor="email" className="sr-only">
-            Email
-          </label>
-
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full max-w-[500px]"
+        >
           <div className="flex gap-2 sm:items-center">
-            <Input
-              name="email"
-              type="email"
-              id="email"
-              placeholder="Enter your email"
+            <FormControl invalid={Boolean(errors.email)}>
+              <FormLabel htmlFor="email" className="sr-only">
+                Email
+              </FormLabel>
+              <Input
+                {...register("email", { required: true })}
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                size="lg"
+              />
+            </FormControl>
+
+            <Button
+              type="submit"
               size="lg"
-            />
-            <Button type="submit" size="lg" variant="solid" color="primary">
+              variant="solid"
+              color="primary"
+              loading={loading}
+              loadingText="Subscribing"
+            >
               Subscribe
             </Button>
           </div>
-        </RemixForm>
+        </form>
       </div>
     </>
   );
