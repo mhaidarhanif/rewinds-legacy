@@ -1,5 +1,6 @@
 {
   "cSpell.diagnosticLevel": "Hint",
+  "cSpell.words": ["classx", "vechaiui"],
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "emmet.includeLanguages": {

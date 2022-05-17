@@ -1,4 +1,4 @@
-# Rewinds – Remix Tailwind Starter Kit
+# ⏪ Rewinds – Remix Tailwind Starter Kit
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 

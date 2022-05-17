@@ -3,58 +3,21 @@ import {
   Anchor,
   Button,
   ExternalLinks,
+  FooterCopyrightText,
   H4,
   Input,
   Logo,
   RemixForm,
   RemixLink,
 } from "~/components";
-import { configMeta, configNavigationSitemap } from "~/configs";
-import { classx } from "~/utils";
+import { configMeta, configNavigationSitemap, configStyle } from "~/configs";
+import { classx, sleep } from "~/utils";
 
 import type { HTMLElementProps } from "~/types";
+import { useForm, useNotification, useState } from "~/hooks";
 
 const date = new Date();
 const year = date.getFullYear();
-
-/**
- * Footer with variants
- */
-
-interface FooterProps {
-  variant?: "common" | "complex";
-}
-
-export const Footer = ({ variant = "complex" }: FooterProps) => {
-  if (variant === "common") {
-    return <FooterCommon />;
-  }
-
-  if (variant === "complex") {
-    return <FooterComplex />;
-  }
-
-  return <footer className="footer-none">{configMeta.name}</footer>;
-};
-
-/**
- * Footer Complex
- *
- * Used with:
- * - ExternalLinks
- * - FooterCopyrightText
- */
-
-export const FooterCommon = () => {
-  return (
-    <footer className="footer footer-common">
-      <div className="flex flex-col items-center gap-2 py-8">
-        <ExternalLinks />
-        <FooterCopyrightText />
-      </div>
-    </footer>
-  );
-};
 
 /**
  * Footer Complex
@@ -62,7 +25,7 @@ export const FooterCommon = () => {
  * Used with:
  * - Logo
  * - ExternalLinks
- * - FooterComplexFormNewsletter
+ * - FooterComplexFormSubscribe
  * - FooterComplexSitemap
  * - FooterComplexBottomTexts
  */
@@ -79,7 +42,7 @@ export const FooterComplex = () => {
             <ExternalLinks />
           </div>
           <div className="container-active mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <FooterComplexFormNewsletter />
+            <FooterComplexFormSubscribe />
             <FooterComplexSitemap />
           </div>
         </div>
@@ -88,50 +51,6 @@ export const FooterComplex = () => {
         </div>
       </div>
     </footer>
-  );
-};
-
-export const FooterCopyrightText = ({ className }: HTMLElementProps) => {
-  return (
-    <p className={classx("container-active space-x-1 space-y-1", className)}>
-      <span>&copy;</span>
-      <span>{year}</span>
-      <Anchor href={configMeta.url}>{configMeta.name}</Anchor>
-      <span>by</span>
-      <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>
-    </p>
-  );
-};
-
-export const FooterComplexFormNewsletter = () => {
-  return (
-    <>
-      <div className="col-span-2 space-y-2">
-        <h2 className="text-2xl font-bold">Get some updates</h2>
-        <p>{configMeta.description}</p>
-      </div>
-
-      <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
-        <RemixForm className="w-full max-w-[500px]">
-          <label htmlFor="email" className="sr-only">
-            Email
-          </label>
-
-          <div className="flex gap-2 sm:items-center">
-            <Input
-              name="email"
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              size="lg"
-            />
-            <Button type="submit" size="lg" variant="solid" color="primary">
-              Subscribe
-            </Button>
-          </div>
-        </RemixForm>
-      </div>
-    </>
   );
 };
 
@@ -172,5 +91,67 @@ export const FooterComplexBottomTexts = () => {
         <RemixLink to="/cookies">Cookies</RemixLink>
       </nav>
     </div>
+  );
+};
+
+/**
+ * Footer Complex Form Subscribe
+ *
+ * For now use react-hook-form, not Remix Form
+ * Because this will be used in all routes
+ * Still looking a better way
+ */
+
+export const FooterComplexFormSubscribe = () => {
+  const [loading, setLoading] = useState(false);
+
+  const notify = useNotification();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data: any) => {
+    setLoading(true);
+    await sleep(1);
+    notify({
+      title: "Subscribed!",
+      description: "Your email is now subscribed.",
+      status: "success",
+      position: configStyle.notification.position,
+    });
+    setLoading(false);
+  };
+
+  return (
+    <>
+      <div className="col-span-2 space-y-2">
+        <h2 className="text-2xl font-bold">Get some updates</h2>
+        <p>{configMeta.description}</p>
+      </div>
+
+      <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
+        <RemixForm className="w-full max-w-[500px]">
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
+
+          <div className="flex gap-2 sm:items-center">
+            <Input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              size="lg"
+            />
+            <Button type="submit" size="lg" variant="solid" color="primary">
+              Subscribe
+            </Button>
+          </div>
+        </RemixForm>
+      </div>
+    </>
   );
 };
