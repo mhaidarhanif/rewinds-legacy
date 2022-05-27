@@ -1,16 +1,16 @@
 import { Button, FormControl, FormLabel, Input } from "~/components";
 import { configMeta, configStyle } from "~/configs";
-import { subscribeToConvertKitBrowser } from "~/features";
+import { convertkitSubscribeClient } from "~/features";
 import { useEffect, useForm, useNotification, useState } from "~/hooks";
 import { sleep } from "~/utils";
 
 /**
  * Footer Complex Form Subscribe
  *
- * For now use react-hook-form, not Remix Form
+ * For now use React Hook Form, not Remix Form
  * Because this will be used in all routes
  * Also need client-side toast notification
- * Still looking a better way
+ * Still looking a better way if will be using Remix Form
  */
 
 export const FooterComplexFormSubscribe = () => {
@@ -28,30 +28,24 @@ export const FooterComplexFormSubscribe = () => {
       setLoading(true);
       await sleep(1);
 
-      console.log(data);
-
-      const response = await subscribeToConvertKitBrowser({
-        email: data.email,
-        firstName: data.firstName,
-      });
+      const { email, firstName } = data;
+      const response = await convertkitSubscribeClient({ email, firstName });
 
       if (!response) {
         throw new Error("Failed to subscribe");
       }
 
-      console.log(response);
-
       notify({
         title: "Subscribed!",
-        description: "Your email is now subscribed.",
+        description: `Thank you ${firstName}, ${email} is subscribed! Please check your inbox.`,
         status: "success",
         position: configStyle.notification.position,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       notify({
         title: "Error",
-        description: JSON.stringify(error),
+        description: JSON.stringify(error.message),
         status: "error",
         position: configStyle.notification.position,
       });
@@ -69,7 +63,7 @@ export const FooterComplexFormSubscribe = () => {
         position: configStyle.notification.position,
       });
     }
-  }, [errors]);
+  }, [errors, notify]);
 
   return (
     <>
@@ -83,8 +77,8 @@ export const FooterComplexFormSubscribe = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-[500px]"
         >
-          <div className="flex gap-2 sm:items-center">
-            <FormControl invalid={Boolean(errors.email)}>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <FormControl invalid={Boolean(errors.email)} className="flex-[2]">
               <FormLabel htmlFor="firstName" className="sr-only">
                 Your Name
               </FormLabel>
@@ -98,7 +92,7 @@ export const FooterComplexFormSubscribe = () => {
               />
             </FormControl>
 
-            <FormControl invalid={Boolean(errors.email)}>
+            <FormControl invalid={Boolean(errors.email)} className="flex-[3]">
               <FormLabel htmlFor="email" className="sr-only">
                 Your Email
               </FormLabel>
@@ -107,7 +101,7 @@ export const FooterComplexFormSubscribe = () => {
                 name="email"
                 type="email"
                 id="email"
-                placeholder="Your email address"
+                placeholder="youremail@address.com"
                 size="lg"
               />
             </FormControl>

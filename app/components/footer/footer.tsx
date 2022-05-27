@@ -1,6 +1,5 @@
-import { FooterCommon, FooterComplex } from "~/components";
+import { FooterCommon, FooterComplex, Anchor } from "~/components";
 import { configMeta } from "~/configs";
-import { Anchor } from "~/components";
 import { classx } from "~/utils";
 
 import type { HTMLElementProps } from "~/types";

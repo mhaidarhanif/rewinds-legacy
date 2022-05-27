@@ -13,8 +13,8 @@
     "build": "npm-run-all build:*",
     "build:css": "tailwindcss -m -i ./styles/global.css -o app/styles/out.css",
     "build:remix": "remix build",
-    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "eslint": "eslint . --ext .ts,.tsx",
+    "eslint:fix": "eslint . --ext .ts,.tsx",
     "stylelint": "stylelint styles/*.css",
     "format": "prettier --write .",
     "postinstall": "remix setup node"

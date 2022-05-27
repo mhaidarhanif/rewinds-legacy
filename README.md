@@ -79,6 +79,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
     - Tailwind Radix
   - Vechai UI v0 – React Tailwind CSS components
   - NProgress
+- React Hook Form
 - ESLint v8
 - Stylelint v14
 - Prettier v2

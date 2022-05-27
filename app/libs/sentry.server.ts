@@ -1,5 +1,5 @@
 import * as SentryNode from "@sentry/node";
-import * as Tracing from "@sentry/tracing";
+// import * as Tracing from "@sentry/tracing";
 // Importing @sentry/tracing patches the global hub for tracing to work.
 import "@sentry/tracing";
 // If you want to use `@sentry/tracing` in your project directly, use a named import instead:

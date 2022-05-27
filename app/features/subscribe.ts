@@ -5,6 +5,10 @@ import { getEnvServer, sleep } from "~/utils";
 
 import type { LoaderFunction, ActionFunction } from "~/types";
 
+/**
+ * Remix Loader to Subscribe
+ */
+
 export const loaderSubscribe: LoaderFunction = async () => {
   const CONVERTKIT_API_KEY = getEnvServer("CONVERTKIT_API_KEY");
   const CONVERTKIT_FORM_ID = getEnvServer("CONVERTKIT_FORM_ID");
@@ -17,6 +21,10 @@ export const loaderSubscribe: LoaderFunction = async () => {
 
   return json({ ok: true });
 };
+
+/**
+ * Remix Action to Subscribe
+ */
 
 export const actionSubscribe: ActionFunction = async ({ request }) => {
   try {
@@ -44,7 +52,7 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
     }
 
     // Submit to API
-    const data = await subscribeToConvertKit({ email, firstName });
+    const data = await convertkitSubscribeServer({ email, firstName });
 
     // Check response
     if (!data.subscription) {
@@ -70,24 +78,28 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
   }
 };
 
+/**
+ * Custom function subscribe to ConvertKit in the client or server
+ */
+
 interface SubscribeToConvertKitProps {
   email: string;
   firstName: string;
 }
 
-export const subscribeToConvertKit = async ({
+export const convertkitSubscribeClient = async ({
   email,
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
-    const apiKey = getEnvServer("CONVERTKIT_API_KEY");
-    const tagId = 3096588;
+    const apiKey = ENV.CONVERTKIT_API_KEY;
+    const tagIds = [3096588];
 
-    const response = await axiosConvertKitServer.post("/subscribe", {
+    const response = await axiosConvertKitClient.post("/subscribe", {
       api_key: apiKey,
       email,
       first_name: firstName,
-      tags: [tagId],
+      tags: tagIds,
     });
 
     return response.data;
@@ -97,19 +109,19 @@ export const subscribeToConvertKit = async ({
   }
 };
 
-export const subscribeToConvertKitBrowser = async ({
+export const convertkitSubscribeServer = async ({
   email,
   firstName,
 }: SubscribeToConvertKitProps) => {
   try {
-    const apiKey = ENV.CONVERTKIT_API_KEY;
-    const tagId = 3096588;
+    const apiKey = getEnvServer("CONVERTKIT_API_KEY");
+    const tagIds = [3096588];
 
-    const response = await axiosConvertKitClient.post("/subscribe", {
+    const response = await axiosConvertKitServer.post("/subscribe", {
       api_key: apiKey,
       email,
       first_name: firstName,
-      tags: [tagId],
+      tags: tagIds,
     });
 
     return response.data;
