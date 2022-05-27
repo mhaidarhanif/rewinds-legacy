@@ -52,8 +52,8 @@ export const FooterComplexSitemap = () => {
             key={item.name}
             className="col-span-1 border-t border-primary-300 pt-2 dark:border-primary-900 sm:col-span-1"
           >
-            <H4 className="font-bold">{item.name}</H4>
-            <nav className="mt-6 flex flex-col space-y-2 text-sm">
+            <H4 className="font-bold uppercase tracking-wider">{item.name}</H4>
+            <nav className="text-md mt-6 flex flex-col space-y-2">
               {item.links.map((subItem) => {
                 return (
                   <RemixLink key={subItem.text} to={subItem.to}>
@@ -72,9 +72,9 @@ export const FooterComplexSitemap = () => {
 export const FooterComplexBottomTexts = () => {
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-      <FooterCopyrightText className="text-center text-sm text-gray-400 lg:text-left" />
+      <FooterCopyrightText className="text-left text-sm text-gray-400" />
 
-      <nav className="container-active flex justify-center gap-4 text-sm text-gray-400 lg:justify-end">
+      <nav className="container-active flex justify-start gap-4 text-sm text-gray-400 lg:justify-end">
         <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
         <RemixLink to="/privacy">Privacy Policy</RemixLink>
         <RemixLink to="/cookies">Cookies</RemixLink>

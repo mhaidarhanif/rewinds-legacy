@@ -21,8 +21,9 @@ export default function Pricing() {
   return (
     <Layout variant="wide">
       <Header className="header-center">
-        <H1>Pricing Plans</H1>
-        <H2>Choose what's best for you although this is just a demo</H2>
+        <H1>Pricing</H1>
+        <H2>Choose what's the best plan for you</H2>
+        <p>(Note this is just a demo)</p>
       </Header>
     </Layout>
   );

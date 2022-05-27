@@ -156,6 +156,10 @@
     @apply font-bold;
   }
 
+  .alert-close-button:focus-visible {
+    @apply focus-ring;
+  }
+
   /**
    * Navigation Bar
    * Navigation Link in Navigation Bar
@@ -272,6 +276,12 @@
  */
 
 @layer utilities {
+  .focus-ring {
+    @apply outline-none focus:ring;
+    @apply ring-offset-neutral-900/50 focus:ring-neutral-900/50;
+    @apply dark:ring-offset-neutral-100/50 dark:focus:ring-neutral-100/50;
+  }
+
   .bg-primary {
     @apply bg-neutral-50 dark:bg-neutral-900;
   }
@@ -304,10 +314,6 @@
 
   .border-panel {
     @apply border border-neutral-300 dark:border-neutral-700;
-  }
-
-  .focus-ring {
-    @apply outline-none ring-offset-primary-500/50 focus:ring focus:ring-primary-500/50;
   }
 
   .prose-config {

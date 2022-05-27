@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Input } from "~/components";
+import { Anchor, Button, FormControl, FormLabel, Input } from "~/components";
 import { configMeta, configStyle } from "~/configs";
 import { convertkitSubscribeClient } from "~/features";
 import { useEffect, useForm, useNotification, useState } from "~/hooks";
@@ -69,13 +69,18 @@ export const FooterComplexFormSubscribe = () => {
     <>
       <div className="col-span-2 space-y-2">
         <h2 className="text-2xl font-bold">Get some updates</h2>
-        <p>{configMeta.description}</p>
+        <p className="max-w-[53ch]">
+          {configMeta.description} made by{" "}
+          <Anchor className="whitespace-nowrap" href={configMeta.author.url}>
+            {configMeta.author.name}
+          </Anchor>
+        </p>
       </div>
 
       <div className="col-span-2 sm:col-span-3 lg:flex lg:items-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-[500px]"
+          className="w-full max-w-[300px] sm:max-w-[500px] lg:max-w-none"
         >
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <FormControl invalid={Boolean(errors.email)} className="flex-[2]">
