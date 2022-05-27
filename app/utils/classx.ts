@@ -3,4 +3,4 @@ import clsx from "clsx";
 const classx = clsx;
 const cx = classx;
 
-export { classx, cx };
+export { classx, clsx, cx };

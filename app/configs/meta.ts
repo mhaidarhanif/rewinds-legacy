@@ -4,6 +4,7 @@
  * Meta data mostly for information and SEO purpose
  */
 
+// EDITME
 const domain = "rewinds.mhaidarhanif.com";
 
 export const configMeta = {

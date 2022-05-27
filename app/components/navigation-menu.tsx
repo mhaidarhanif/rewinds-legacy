@@ -15,10 +15,13 @@ import type { NavLinkProps } from "@remix-run/react";
 import type { HTMLAnchorElementProps, HTMLElementProps } from "~/types";
 
 /**
+ * Navigation Bar Nav Menu
+ *
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
  * Used in Navigation Bar
  */
 
+// EDITME
 export const NavigationBarNavMenu = () => {
   const withIndicator = false;
 

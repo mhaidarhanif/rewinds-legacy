@@ -1,6 +1,7 @@
 import { LogoSpan, RemixLink } from "~/components";
 import { classx } from "~/utils";
 
+// EDITME
 export const HomeIntro = () => {
   return (
     <div className="prose-config">

@@ -22,6 +22,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
+// EDITME
 export default function About() {
   const { features, mainStacks, referenceStacks } =
     useLoaderData<LoaderDataAbout>();

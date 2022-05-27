@@ -16,6 +16,7 @@ export const LogoIcon = () => {
   return <IconRewind weight="fill" className="h-8 w-8 fill-primary-500" />;
 };
 
+// EDITME
 export const LogoSpan = ({ className }: HTMLSpanElementProps) => {
   return (
     <span

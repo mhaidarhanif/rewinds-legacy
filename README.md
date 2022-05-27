@@ -137,6 +137,8 @@ npm run start
 
 Keep in mind that the structure is designed for scalability for medium-large project. If your project scope is too simple or too small, Rewinds might be a bit too much to handle.
 
+> There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` (Use Search in your editor) and other things like `site.webmanifest`.
+
 - `.vscode`
 - `api`
 - `app`
