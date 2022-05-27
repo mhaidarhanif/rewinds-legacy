@@ -188,7 +188,13 @@ npm run build
 
 ## Lint
 
-Make sure to lint the code with ESLint and Stylelint:
+Make sure to lint the code with both ESLint and Stylelint:
+
+```sh
+npm run lint
+```
+
+Or individually:
 
 ```sh
 npm run eslint

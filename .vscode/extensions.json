@@ -4,6 +4,7 @@
     "austenc.tailwind-docs",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "richie5um2.vscode-sort-json",
     "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint"
   ]
