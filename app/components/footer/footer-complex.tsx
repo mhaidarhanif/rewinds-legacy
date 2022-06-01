@@ -70,10 +70,10 @@ export const FooterComplexSitemap = () => {
 
 export const FooterComplexBottomTexts = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <FooterCopyrightText className="text-left text-sm text-gray-400" />
 
-      <nav className="container-active flex justify-start gap-4 text-sm text-gray-400 lg:justify-end">
+      <nav className="container-active flex justify-start gap-4 text-sm text-gray-400 md:justify-end">
         <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
         <RemixLink to="/privacy">Privacy Policy</RemixLink>
         <RemixLink to="/cookies">Cookies</RemixLink>
