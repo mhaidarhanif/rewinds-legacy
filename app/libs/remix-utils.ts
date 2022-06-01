@@ -14,7 +14,7 @@ export {
   html,
   isPrefetch,
   javascript,
-  json,
+  // json, // This will return stringified JSON
   notFound,
   notModified,
   pdf,

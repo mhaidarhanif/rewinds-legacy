@@ -27,7 +27,7 @@
   }
 
   body {
-    @apply scroll-smooth transition-colors duration-300;
+    @apply scroll-smooth transition duration-200;
     @apply selection:bg-primary-500/20 selection:text-primary-900;
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
@@ -81,6 +81,10 @@
   input,
   textarea {
     @apply caret-primary-500;
+  }
+
+  header {
+    @apply header;
   }
 }
 
@@ -200,7 +204,7 @@
 
   .navigation-bar {
     @apply sticky top-0 z-10 w-full flex-none select-none p-2 md:p-4;
-    @apply border-b border-transparent transition;
+    @apply border-b border-transparent;
   }
 
   .navigation-bar-scrolled {
@@ -266,12 +270,16 @@
   }
 
   .nav-menu-link {
-    @apply navlink rounded-base px-3 py-2 font-bold transition-colors;
+    @apply navlink rounded-base px-3 py-2 font-bold;
   }
 
   /**
    * Radix UI - Dropdown Menu
    */
+
+  .dropdown-menu-item {
+    @apply flex select-none items-center rounded-md text-sm outline-none;
+  }
 
   .dropdown-menu-icon {
     @apply mr-2 h-3.5 w-3.5;
