@@ -12,7 +12,7 @@ export const handle: SEOHandle = {
 export const meta: MetaFunction = () => {
   return createMetaData({
     title: `Continue with account`,
-    description: `Sign in to continue to Rewinds`,
+    description: `Sign in to continue to Rewinds.`,
   });
 };
 

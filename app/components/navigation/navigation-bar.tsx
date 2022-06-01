@@ -6,7 +6,7 @@ import {
   ThemeSwitcher,
   Badge,
   NavigationBarNavMenu,
-  NavigationBarMenu,
+  NavigationBarDropdownMenu,
 } from "~/components";
 import { configStyle, configNavigationBarLinks } from "~/configs";
 import { classx, packageJson } from "~/utils";
@@ -35,11 +35,12 @@ export const NavigationBar = () => {
 
           <ThemeSwitcher />
 
-          <div className="hidden  xl:flex">
+          <div className="hidden xl:flex">
             <NavigationBarAuth />
           </div>
+
           <div className="flex xl:hidden">
-            <NavigationBarMenu />
+            <NavigationBarDropdownMenu />
           </div>
         </div>
       </div>

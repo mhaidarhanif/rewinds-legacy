@@ -1,6 +1,7 @@
 import { Layout } from "~/layouts";
+import { createMetaData } from "~/utils";
 
-import type { SEOHandle } from "~/types";
+import type { MetaFunction, SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -8,10 +9,19 @@ export const handle: SEOHandle = {
   },
 };
 
+export const meta: MetaFunction = () => {
+  return createMetaData({
+    title: `Sign out`,
+    description: `Sign out from Rewinds account.`,
+  });
+};
+
 export default function SignOut() {
   return (
     <Layout>
-      <h1>Sure to sign out?</h1>
+      <header className="header-center">
+        <h1>Sure to sign out?</h1>
+      </header>
     </Layout>
   );
 }

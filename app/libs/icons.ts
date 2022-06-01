@@ -5,6 +5,9 @@ import {
   GearSix as IconGear,
   Rewind as IconRewind,
   CaretDown as IconCaretDown,
+  LockLaminated as IconSignUp,
+  LockSimpleOpen as IconSignIn,
+  LockSimple as IconSignOut,
 
   // External
   // DiscordLogo as IconDiscord,
@@ -47,6 +50,9 @@ export {
   IconMedium,
   IconMenu,
   IconRewind,
+  IconSignIn,
+  IconSignOut,
+  IconSignUp,
   IconTelegram,
   IconTwitter,
   IconWebsite,

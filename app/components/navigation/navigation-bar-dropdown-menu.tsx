@@ -2,12 +2,13 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CaretRightIcon, FileIcon } from "@radix-ui/react-icons";
 
-import { VechaiIcon } from "~/components";
+import { RemixLink, VechaiIcon } from "~/components";
 import {
   configNavigationDropdownMenuItems,
   configNavigationExamples1,
+  configNavigationExamples2,
 } from "~/configs";
-import { IconMenu } from "~/libs";
+import { IconMenu, IconSignIn, IconSignOut, IconSignUp } from "~/libs";
 import { classx } from "~/utils";
 
 import type { HTMLElementProps, HTMLSpanElementProps } from "~/types";
@@ -40,31 +41,74 @@ export const NavigationBarDropdownMenu = () => {
           {configNavigationDropdownMenuItems.map(
             ({ to, text, icon, shortcut }) => {
               return (
-                <DropdownMenuItem key={to}>
-                  {icon}
-                  <span className="flex-grow">{text}</span>
-                  {shortcut && <Shortcut>{shortcut}</Shortcut>}
-                </DropdownMenuItem>
+                <RemixLink key={to} to={to as string}>
+                  <DropdownMenuItem>
+                    {icon}
+                    <span className="flex-grow">{text}</span>
+                    {shortcut && <Shortcut>{shortcut}</Shortcut>}
+                  </DropdownMenuItem>
+                </RemixLink>
               );
             },
           )}
 
-          <DropdownMenu.Separator className="bg-separator my-1 h-px" />
+          <DropdownMenuSeparator />
+
+          <DropdownMenuLabel>Auth</DropdownMenuLabel>
+          <RemixLink to="/signup">
+            <DropdownMenuItem>
+              <IconSignUp className="dropdown-menu-icon" />
+              <span className="flex-grow">Sign Up</span>
+              <Shortcut>⌘+⇧+U</Shortcut>
+            </DropdownMenuItem>
+          </RemixLink>
+          <RemixLink to="/signin">
+            <DropdownMenuItem>
+              <IconSignIn className="dropdown-menu-icon" />
+              <span className="flex-grow">Sign In</span>
+              <Shortcut>⌘+⇧+I</Shortcut>
+            </DropdownMenuItem>
+          </RemixLink>
+          <RemixLink to="/signout">
+            <DropdownMenuItem>
+              <IconSignOut className="dropdown-menu-icon" />
+              <span className="flex-grow">Sign Out</span>
+              <Shortcut>⌘+⇧+O</Shortcut>
+            </DropdownMenuItem>
+          </RemixLink>
+
+          <DropdownMenuSeparator />
 
           <DropdownMenu.Root>
             <DropdownMenuTriggerItem>
               <FileIcon className="dropdown-menu-icon" />
               <span className="flex-grow">Examples 1</span>
             </DropdownMenuTriggerItem>
-            <DropdownMenuContent>
+            <DropdownMenuSubContent>
               {configNavigationExamples1.map(({ to, text }) => {
                 return (
-                  <DropdownMenuItem key={to}>
-                    <span>{text}</span>
-                  </DropdownMenuItem>
+                  <RemixLink key={to} to={to as string}>
+                    <DropdownMenuItem>{text}</DropdownMenuItem>
+                  </RemixLink>
                 );
               })}
-            </DropdownMenuContent>
+            </DropdownMenuSubContent>
+          </DropdownMenu.Root>
+
+          <DropdownMenu.Root>
+            <DropdownMenuTriggerItem>
+              <FileIcon className="dropdown-menu-icon" />
+              <span className="flex-grow">Examples 2</span>
+            </DropdownMenuTriggerItem>
+            <DropdownMenuSubContent>
+              {configNavigationExamples2.map(({ to, text }) => {
+                return (
+                  <RemixLink key={to} to={to as string}>
+                    <DropdownMenuItem>{text}</DropdownMenuItem>
+                  </RemixLink>
+                );
+              })}
+            </DropdownMenuSubContent>
           </DropdownMenu.Root>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
@@ -73,14 +117,26 @@ export const NavigationBarDropdownMenu = () => {
 };
 
 export const Shortcut = ({ children }: HTMLSpanElementProps) => {
-  return <span className="text-xs text-neutral-500">{children}</span>;
+  return <span className="text-sm text-neutral-500">{children}</span>;
+};
+
+export const DropdownMenuSeparator = () => {
+  return <DropdownMenu.Separator className="bg-separator my-1 h-px" />;
+};
+
+export const DropdownMenuLabel = ({ children }: HTMLElementProps) => {
+  return (
+    <DropdownMenu.Label className="select-none px-2 py-2 text-sm text-gray-700 dark:text-gray-200">
+      {children}
+    </DropdownMenu.Label>
+  );
 };
 
 export const DropdownMenuTriggerItem = ({ children }: HTMLElementProps) => {
   return (
     <DropdownMenu.TriggerItem
       className={classx(
-        "navlink navlink-size dropdown-menu-item-focus",
+        "dropdown-menu-item",
         "radix-state-open:bg-primary-100",
         "dark:radix-state-open:bg-neutral-700",
         "flex w-full select-none items-center rounded-md text-sm outline-none",
@@ -92,12 +148,13 @@ export const DropdownMenuTriggerItem = ({ children }: HTMLElementProps) => {
   );
 };
 
-export const DropdownMenuContent = ({ children }: HTMLElementProps) => {
+export const DropdownMenuSubContent = ({ children }: HTMLElementProps) => {
   return (
     <DropdownMenu.Content
       className={classx(
         "origin-radix-dropdown-menu",
-        "radix-side-right:animate-scale-in",
+        "radix-side-right:animate-slide-right-fade",
+        "radix-side-left:animate-slide-left-fade",
         "bg-panel shadow-panel border-panel w-full rounded-md px-1 py-1 text-sm",
       )}
     >
@@ -110,7 +167,7 @@ export const DropdownMenuItem = ({ children }: HTMLElementProps) => {
   return (
     <DropdownMenu.Item
       className={classx(
-        "navlink navlink-size dropdown-menu-item-focus",
+        "dropdown-menu-item",
         "flex select-none items-center rounded-md text-sm outline-none",
       )}
     >

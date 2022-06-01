@@ -11,8 +11,8 @@ export const handle: SEOHandle = {
 
 export const meta: MetaFunction = () => {
   return createMetaData({
-    title: `Create your new Rewinds Account`,
-    description: `Sign up to have a Rewinds account`,
+    title: `Create your new Rewinds account`,
+    description: `Sign up to have a new Rewinds account.`,
   });
 };
 

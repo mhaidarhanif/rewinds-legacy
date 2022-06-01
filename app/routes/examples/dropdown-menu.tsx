@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 
-import { DropdownMenu, NavigationBarDropdownMenu } from "~/components";
+import { DropdownMenuExample, NavigationBarDropdownMenu } from "~/components";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
@@ -35,7 +35,7 @@ export default function ExampleDropdownMenu() {
 
       <article className="example">
         <h3>Dropdown Menu from Tailwind CSS Radix</h3>
-        <DropdownMenu />
+        <DropdownMenuExample />
       </article>
 
       <div className=" h-[600px]">

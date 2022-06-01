@@ -61,7 +61,7 @@ const users: User[] = [
   { name: "Robin", url: "https://github.com/robinmalfait.png" },
 ];
 
-export const DropdownMenu = () => {
+export const DropdownMenuExample = () => {
   const [showGrid, setShowGrid] = useState(false);
   const [showUi, setShowUi] = useState(false);
 

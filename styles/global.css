@@ -101,7 +101,7 @@
   }
 
   .layout-container {
-    @apply container mx-auto min-h-[420px] flex-[1] px-4;
+    @apply mx-auto min-h-[420px] w-full flex-[1] px-4;
   }
 
   .layout-center {
@@ -109,7 +109,7 @@
   }
 
   .layout-main {
-    @apply mt-10 w-full sm:max-w-[65ch];
+    @apply mt-10 w-full max-w-[65ch];
   }
 
   .layout-main-wide {
@@ -213,7 +213,7 @@
 
   .navlink {
     @apply leading-tight;
-    @apply hover:bg-primary-200 dark:hover:bg-primary-900;
+    @apply hover:bg-primary-100 dark:hover:bg-primary-800;
   }
 
   .navlink-size {
@@ -278,10 +278,7 @@
    */
 
   .dropdown-menu-item {
-    @apply flex select-none items-center rounded-md text-sm outline-none;
-  }
-
-  .dropdown-menu-item-focus {
+    @apply px-3 py-2;
     @apply focus:bg-primary-100 dark:focus:bg-primary-900;
   }
 
@@ -340,9 +337,9 @@
   }
 
   .focus-ring {
-    @apply outline-none ring-offset-1 focus:ring-1;
-    @apply ring-offset-neutral-900/50 focus:ring-neutral-900/50;
-    @apply dark:ring-offset-neutral-100/50 dark:focus:ring-neutral-100/50;
+    @apply outline-none ring-offset-2 focus:ring-1;
+    @apply ring-offset-primary-400/80 focus:ring-primary-400/80;
+    @apply dark:ring-offset-primary-500/80 dark:focus:ring-primary-500/80;
   }
 
   .bg-primary {
