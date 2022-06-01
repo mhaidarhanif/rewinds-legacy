@@ -68,7 +68,7 @@ export const FooterComplexFormSubscribe = () => {
   return (
     <>
       <div className="col-span-2 space-y-2">
-        <h2 className="mt-0 text-2xl font-bold">Get some updates</h2>
+        <h2 className="m-0 text-2xl font-bold">Get some updates</h2>
         <p className="max-w-[53ch]">
           {configMeta.description} made by{" "}
           <Anchor className="whitespace-nowrap" href={configMeta.author.url}>
@@ -105,7 +105,6 @@ export const FooterComplexFormSubscribe = () => {
                 {...register("email", { required: true })}
                 name="email"
                 type="email"
-                id="email"
                 placeholder="youremail@address.com"
                 size="lg"
               />

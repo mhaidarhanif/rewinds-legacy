@@ -144,7 +144,7 @@ export const MessageBackReloadButtons = ({
   // Need to be plain, not using Vechai UI components
   return (
     <ButtonGroup>
-      <a href="/" className="button">
+      <a href="/" className="button solid">
         Back to home page
       </a>
       <button type="button" onClick={handleReload} className="button">

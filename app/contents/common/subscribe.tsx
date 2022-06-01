@@ -40,7 +40,7 @@ export const SubscribeForm = ({
     <div className="flex w-full justify-center">
       <Form method="post" className="w-full max-w-xs space-y-4">
         <div className="space-y-4">
-          <FormControl id="email">
+          <FormControl id="name">
             <FormLabel>Your name</FormLabel>
             <Input
               name="firstName"

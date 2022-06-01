@@ -33,27 +33,27 @@
   }
 
   .h0 {
-    @apply mb-10 text-8xl font-black;
+    @apply mb-10 text-6xl font-black sm:text-8xl;
   }
 
   h1,
   .h1 {
-    @apply mb-8 text-5xl font-extrabold;
+    @apply mb-8 text-3xl font-extrabold sm:text-5xl;
   }
 
   h2,
   .h2 {
-    @apply my-6 text-2xl font-bold;
+    @apply my-6 text-xl font-bold sm:text-2xl;
   }
 
   h3,
   .h3 {
-    @apply my-3 text-xl font-semibold;
+    @apply my-3 text-lg font-semibold sm:text-xl;
   }
 
   h4,
   .h4 {
-    @apply my-2 text-lg font-semibold;
+    @apply my-2 font-semibold sm:text-lg;
   }
 
   a {
@@ -165,11 +165,16 @@
   }
 
   /**
-   * Button
+   * Special Case Button
+   * When Vechai UI is not available
    */
 
   .button {
     @apply focus-ring inline-block rounded border px-3 py-2 font-bold;
+  }
+
+  .button.solid {
+    @apply bg-white text-black;
   }
 
   /**

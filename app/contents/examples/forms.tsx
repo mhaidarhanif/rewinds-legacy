@@ -58,7 +58,6 @@ export const ExampleForms = () => {
               {...register("email", { required: true })}
               name="email"
               type="email"
-              id="email"
               placeholder="yourname@email.com"
               size="lg"
             />

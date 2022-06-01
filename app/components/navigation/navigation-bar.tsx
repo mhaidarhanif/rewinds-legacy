@@ -72,7 +72,7 @@ export const NavigationBarLogo = () => {
       >
         <Logo />
       </RemixLink>
-      <Badge className="hidden sm:flex" color="primary" variant="solid">
+      <Badge className="hidden xs:flex" color="primary" variant="solid">
         v{packageJson.version}
       </Badge>
     </div>
