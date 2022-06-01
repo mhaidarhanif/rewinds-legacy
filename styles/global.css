@@ -149,8 +149,7 @@
   }
 
   .header-center {
-    @apply flex flex-col items-center;
-    @apply text-center;
+    @apply header flex flex-col items-center text-center;
   }
 
   /**
