@@ -2,7 +2,6 @@ import {
   ExternalLinks,
   FooterComplexFormSubscribe,
   FooterCopyrightText,
-  H4,
   Logo,
   RemixLink,
 } from "~/components";
@@ -52,7 +51,7 @@ export const FooterComplexSitemap = () => {
             key={item.name}
             className="col-span-1 border-t border-primary-300 pt-2 dark:border-primary-900 sm:col-span-1"
           >
-            <H4 className="font-bold uppercase tracking-wider">{item.name}</H4>
+            <h4 className="font-bold uppercase tracking-wider">{item.name}</h4>
             <nav className="text-md mt-6 flex flex-col space-y-2">
               {item.links.map((subItem) => {
                 return (

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, H2 } from "~/components";
+import { Button, ButtonGroup } from "~/components";
 import { configStyle } from "~/configs";
 import { useNotification, useToast } from "~/hooks";
 
@@ -27,7 +27,7 @@ export const ExampleNotifications = () => {
 
   return (
     <div>
-      <H2>Notifications</H2>
+      <h2>Notifications</h2>
 
       <ButtonGroup variant="light">
         <Button

@@ -15,7 +15,7 @@
     "build:remix": "remix build",
     "lint": "npm-run-all -p eslint stylelint",
     "eslint": "eslint . --ext .ts,.tsx",
-    "eslint:fix": "eslint . --ext .ts,.tsx",
+    "eslint:fix": "eslint --fix . --ext .ts,.tsx",
     "stylelint": "stylelint styles/*.css",
     "format": "prettier --write .",
     "postinstall": "remix setup node"
@@ -80,6 +80,7 @@
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-autofix": "1.1.0",
     "eslint-plugin-markdown": "2.2.1",
     "eslint-plugin-unused-imports": "2.0.0",
     "npm-run-all": "4.1.5",

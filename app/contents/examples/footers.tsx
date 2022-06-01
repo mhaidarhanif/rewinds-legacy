@@ -1,14 +1,14 @@
-import { Footer, H2 } from "~/components";
+import { Footer } from "~/components";
 
 export const ExampleFooters = () => {
   return (
     <div className="space-y-8 px-4">
-      <H2>Footer Common</H2>
+      <h2>Footer Common</h2>
       <div className="example-box">
         <Footer variant="common" />
       </div>
 
-      <H2>Footer Complex</H2>
+      <h2>Footer Complex</h2>
       <div className="example-box">
         <Footer variant="complex" />
       </div>

@@ -1,12 +1,12 @@
-import { Button, ButtonGroup, H2, H3, RemixLink } from "~/components";
+import { Button, ButtonGroup, RemixLink } from "~/components";
 import { MessageBackReloadButtons } from "~/contents";
 
 export const ExampleButtons = () => {
   return (
     <div className="space-y-8">
-      <H2>Buttons</H2>
+      <h2>Buttons</h2>
 
-      <H3>Buttons with variant</H3>
+      <h3>Buttons with variant</h3>
       <ButtonGroup>
         <Button>Normal</Button>
         <Button color="primary">Primary</Button>
@@ -24,7 +24,7 @@ export const ExampleButtons = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Buttons with different size</H3>
+      <h3>Buttons with different size</h3>
       <ButtonGroup>
         <Button size="xs" variant="solid" color="primary">
           Extra Small
@@ -43,7 +43,7 @@ export const ExampleButtons = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Buttons with button group</H3>
+      <h3>Buttons with button group</h3>
       <section className="flex w-full flex-col space-y-4 py-2">
         <ButtonGroup variant="solid" color="primary" attached>
           <Button>Button 1</Button>
@@ -58,7 +58,7 @@ export const ExampleButtons = () => {
         </ButtonGroup>
       </section>
 
-      <H3>Buttons with custom color variant solid</H3>
+      <h3>Buttons with custom color variant solid</h3>
       <ButtonGroup>
         <Button variant="solid" color="info">
           Info
@@ -74,7 +74,7 @@ export const ExampleButtons = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Buttons with custom color variant light</H3>
+      <h3>Buttons with custom color variant light</h3>
       <ButtonGroup>
         <Button variant="light" color="info">
           Info
@@ -90,7 +90,7 @@ export const ExampleButtons = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Buttons with custom elements</H3>
+      <h3>Buttons with custom elements</h3>
       <ButtonGroup>
         <Button className="rounded-lg shadow-md shadow-primary-500/20">
           Vechai + Tailwind
@@ -119,7 +119,7 @@ export const ExampleButtons = () => {
         </RemixLink>
       </ButtonGroup>
 
-      <H3>Buttons with loading state</H3>
+      <h3>Buttons with loading state</h3>
       <ButtonGroup>
         <Button loading>Button</Button>
         <Button color="primary" loading loadingText="Loading...">
@@ -127,7 +127,7 @@ export const ExampleButtons = () => {
         </Button>
       </ButtonGroup>
 
-      <H3>Buttons for special case</H3>
+      <h3>Buttons for special case</h3>
       <MessageBackReloadButtons />
     </div>
   );

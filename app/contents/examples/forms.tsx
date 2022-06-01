@@ -7,7 +7,6 @@ import {
   RequiredIndicator,
   Button,
   Select,
-  H2,
 } from "~/components";
 import { configStyle } from "~/configs";
 import { useState, useForm, useNotification } from "~/hooks";
@@ -37,6 +36,7 @@ export const ExampleForms = () => {
   const onSubmit = async (data: any) => {
     setLoading(true);
     await sleep(3000);
+    console.info(data);
     notify({
       title: "Created your account",
       description: "Your email is now registered.",
@@ -49,7 +49,7 @@ export const ExampleForms = () => {
   return (
     <div>
       <div className="w-full max-w-xs">
-        <H2>Forms</H2>
+        <h2>Forms</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <FormControl invalid={Boolean(errors.email)}>

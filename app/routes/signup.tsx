@@ -1,4 +1,4 @@
-import { H1, Header, P } from "~/components";
+import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -21,8 +21,8 @@ export default function SignUp() {
   return (
     <Layout variant="common">
       <Header className="header-center">
-        <H1>Create a new account</H1>
-        <P>The ultimate account for Rewinds</P>
+        <h1>Create a new account</h1>
+        <p>The ultimate account for Rewinds</p>
       </Header>
     </Layout>
   );

@@ -3,6 +3,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./app/**/*.tsx", "./node_modules/@vechaiui/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     letterSpacing: {
       tightest: "-.1em",

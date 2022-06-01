@@ -1,4 +1,4 @@
-import { H1, H2, Header } from "~/components";
+import {   Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -21,8 +21,8 @@ export default function Pricing() {
   return (
     <Layout variant="wide">
       <Header className="header-center">
-        <H1>Pricing</H1>
-        <H2>Choose what's the best plan for you</H2>
+        <h1>Pricing</h1>
+        <h2>Choose what's the best plan for you</h2>
         <p>(Note this is just a demo)</p>
       </Header>
     </Layout>

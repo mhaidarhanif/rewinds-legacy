@@ -1,11 +1,11 @@
-import { Badge, H2, H3 } from "~/components";
+import { Badge } from "~/components";
 
 export const ExampleBadges = () => {
   return (
     <div className="space-y-4">
-      <H2>Badges</H2>
+      <h2>Badges</h2>
 
-      <H3>Badge Variant</H3>
+      <h3>Badge Variant</h3>
       <div className="flex w-full flex-wrap space-x-2">
         <Badge>Normal</Badge>
         <Badge variant="solid">Solid</Badge>
@@ -15,7 +15,7 @@ export const ExampleBadges = () => {
         </Badge>
       </div>
 
-      <H3>Badge Size</H3>
+      <h3>Badge Size</h3>
       <div className="flex w-full flex-wrap space-x-2">
         <Badge size="sm" variant="solid" color="primary">
           Small

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, H2 } from "~/components";
+import { Button, ButtonGroup } from "~/components";
 import { configStyle } from "~/configs";
 import { useToast } from "~/hooks";
 
@@ -15,7 +15,7 @@ export const ExampleToasts = () => {
 
   return (
     <article>
-      <H2>Toasts</H2>
+      <h2>Toasts</h2>
 
       <ButtonGroup variant="solid">
         <Button

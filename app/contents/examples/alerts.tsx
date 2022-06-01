@@ -1,11 +1,11 @@
-import { Alert, H2, H3 } from "~/components";
+import { Alert } from "~/components";
 
 export const ExampleAlerts = () => {
   return (
     <div className="space-y-8">
-      <H2>Alerts</H2>
+      <h2>Alerts</h2>
 
-      <H3>Alerts with variants</H3>
+      <h3>Alerts with variants</h3>
       <div className="flex w-full flex-col space-y-4">
         <Alert variant="solid">
           Alert solid
@@ -23,7 +23,7 @@ export const ExampleAlerts = () => {
         </Alert>
       </div>
 
-      <H3>Alerts with solid colors</H3>
+      <h3>Alerts with solid colors</h3>
       <div className="flex w-full flex-col space-y-4">
         <Alert variant="solid" color="info">
           Alert solid info
@@ -46,7 +46,7 @@ export const ExampleAlerts = () => {
         </Alert>
       </div>
 
-      <H3>Alerts with subtle colors</H3>
+      <h3>Alerts with subtle colors</h3>
       <div className="flex w-full flex-col space-y-4">
         <Alert variant="subtle" color="info">
           Alert subtle info
@@ -69,7 +69,7 @@ export const ExampleAlerts = () => {
         </Alert>
       </div>
 
-      <H3>Alerts with left accent colors</H3>
+      <h3>Alerts with left accent colors</h3>
       <div className="flex w-full flex-col space-y-4">
         <Alert variant="left-accent" color="info">
           Alert left accent info

@@ -1,4 +1,3 @@
-import { H1, P } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -21,11 +20,11 @@ export default function Blog() {
   return (
     <Layout>
       <article className="prose-config">
-        <H1>Blog</H1>
-        <P>
+        <h1>Blog</h1>
+        <p>
           Articles from Rewinds around UI, UX, styling, CSS, design system, and
           more beyond.
-        </P>
+        </p>
       </article>
     </Layout>
   );

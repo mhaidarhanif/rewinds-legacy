@@ -1,4 +1,4 @@
-import { H1, Header, P } from "~/components";
+import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -21,8 +21,8 @@ export default function SignUp() {
   return (
     <Layout variant="common">
       <Header className="header-center">
-        <H1>Welcome back!</H1>
-        <P>Let's sign in to your account</P>
+        <h1>Welcome back!</h1>
+        <p>Let's sign in to your account</p>
       </Header>
     </Layout>
   );

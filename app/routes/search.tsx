@@ -1,4 +1,4 @@
-import { H1, H2, Header } from "~/components";
+import {   Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -21,8 +21,8 @@ export default function Search() {
   return (
     <Layout variant="wide">
       <Header className="header">
-        <H1>Search</H1>
-        <H2>This is the search you're looking for.</H2>
+        <h1>Search</h1>
+        <h2>This is the search you're looking for.</h2>
       </Header>
     </Layout>
   );
