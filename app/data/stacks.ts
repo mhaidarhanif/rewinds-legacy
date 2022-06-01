@@ -134,6 +134,11 @@ export const dataMainStacks: StackItems = [
     description:
       "Mighty, modern linter that helps you avoid errors and enforce conventions in your styles.",
   },
+  {
+    url: "https://commitlint.js.org",
+    name: "commitlint",
+    description: "Lint commit messages.",
+  },
 ];
 
 export const dataReferenceStacks: StackItems = [

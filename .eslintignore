@@ -15,3 +15,4 @@ remix.config.js
 server.js
 styles/
 tailwind.config.js
+commitlint.config.js

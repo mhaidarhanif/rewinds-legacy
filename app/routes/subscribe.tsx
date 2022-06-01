@@ -1,4 +1,4 @@
-import { Anchor,   Header } from "~/components";
+import { Anchor, Header } from "~/components";
 import { SubscribeForm } from "~/contents";
 import { actionSubscribe, loaderSubscribe } from "~/features";
 import { useActionData, useTransition } from "~/hooks";

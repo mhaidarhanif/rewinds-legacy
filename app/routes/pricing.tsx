@@ -1,4 +1,4 @@
-import {   Header } from "~/components";
+import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
