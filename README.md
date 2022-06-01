@@ -114,13 +114,18 @@ cp .env.example .env
 
 If you don't need some of these, you can remove them in the `.env`, `app/utils/env.server.ts`, and all `getEnvServer()` function calls.
 
-Afterwards, run the Remix development server with the `dev` script.
+Afterwards, run the Remix development server with the `dev` script. This will watch and compile for both the Tailwind styles and Remix app.
 
 ```sh
 npm run dev
 ```
 
-It will compile both the Tailwind styles and Remix app.
+You can also use the `d` script for a quick way. This will compile Tailwind styles once and only watch the Remix app changes.
+
+```sh
+npm run d
+```
+
 Finally, open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 Note if you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
