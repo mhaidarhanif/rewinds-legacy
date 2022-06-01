@@ -4,14 +4,22 @@ import { useLoaderData } from "@remix-run/react";
 import { Anchor, Image, useTheme } from "~/components";
 import { dataMainStacks, dataReferenceStacks, dataFeatures } from "~/data";
 import { Layout } from "~/layouts";
+import { createMetaData } from "~/utils";
 
 import type { LoaderFunction } from "@remix-run/node";
-import type { LoaderDataAbout, SEOHandle } from "~/types";
+import type { LoaderDataAbout, SEOHandle, MetaFunction } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
     return [{ route: `/about`, priority: 0.9 }];
   },
+};
+
+export const meta: MetaFunction = () => {
+  return createMetaData({
+    title: `About`,
+    description: `Remix starter kit with Tailwind family of libraries. It is a demo project template you can freely use for any purpose.`,
+  });
 };
 
 export const loader: LoaderFunction = async () => {

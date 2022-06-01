@@ -9,12 +9,14 @@ export default function ExampleDropdownMenu() {
         <p>Dropdown Menu with Radix UI.</p>
       </article>
 
-      <article className="prose-config h-[600px]">
-        <h2>Dropdown Menu</h2>
-        <DropdownMenu />
+      <article className="example">
+        <div className="prose-config h-[600px]">
+          <h2>Dropdown Menu</h2>
+          <DropdownMenu />
 
-        <h2>Navigation Bar Dropdown Menu</h2>
-        <NavigationBarDropdownMenu />
+          <h2>Navigation Bar Dropdown Menu</h2>
+          <NavigationBarDropdownMenu />
+        </div>
       </article>
     </Layout>
   );

@@ -41,20 +41,20 @@ export const configNavigationCareer: LinkItems = [
 
 export const configNavigationExamples1: LinkItems = [
   { to: "/examples", text: "Examples" },
-  { to: "/examples/button", text: "Button" },
-  { to: "/examples/badge", text: "Badge" },
-  { to: "/examples/form", text: "Form" },
   { to: "/examples/alert", text: "Alert" },
-  { to: "/examples/toast", text: "Toast" },
-  { to: "/examples/notification", text: "Notification" },
-  { to: "/examples/navigation-menu", text: "Navigation Menu" },
+  { to: "/examples/badge", text: "Badge" },
+  { to: "/examples/button", text: "Button" },
   { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
   { to: "/examples/footer", text: "Footer" },
+  { to: "/examples/form", text: "Form" },
+  { to: "/examples/navigation-menu", text: "Navigation Menu" },
+  { to: "/examples/notification", text: "Notification" },
+  { to: "/examples/toast", text: "Toast" },
 ];
 
 export const configNavigationExamples2: LinkItems = [
-  { to: "/examples/rest", text: "REST API" },
   { to: "/examples/graphql", text: "GraphQL" },
+  { to: "/examples/rest", text: "REST API" },
   { to: "/examples/catch", text: "Catch" },
   { to: "/examples/error", text: "Error" },
   { to: "/examples/debug", text: "Debug" },

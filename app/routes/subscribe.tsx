@@ -21,7 +21,7 @@ export const handle: SEOHandle = {
 export const meta: MetaFunction = () => {
   return createMetaData({
     title: `Subscribe`,
-    description: `Get to more updates from Rewinds via email.`,
+    description: `Get some updates from Rewinds via email.`,
   });
 };
 

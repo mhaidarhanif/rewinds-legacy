@@ -9,7 +9,7 @@ export default function ExampleFooter() {
         <p>Footer components with plain Tailwind and Hyper UI.</p>
       </article>
 
-      <article className="example px-4">
+      <article className="example">
         <ExampleFooters />
       </article>
     </Layout>

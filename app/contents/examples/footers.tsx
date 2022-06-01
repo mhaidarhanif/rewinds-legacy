@@ -2,7 +2,7 @@ import { Footer, H2 } from "~/components";
 
 export const ExampleFooters = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 px-4">
       <H2>Footer Common</H2>
       <div className="example-box">
         <Footer variant="common" />

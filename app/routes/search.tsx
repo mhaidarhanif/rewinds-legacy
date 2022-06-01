@@ -20,9 +20,9 @@ export const meta: MetaFunction = () => {
 export default function Search() {
   return (
     <Layout variant="wide">
-      <Header className="header-center">
+      <Header className="header">
         <H1>Search</H1>
-        <H2>This is the search you're looking for</H2>
+        <H2>This is the search you're looking for.</H2>
       </Header>
     </Layout>
   );
