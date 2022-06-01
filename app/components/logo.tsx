@@ -5,7 +5,12 @@ import type { HTMLSpanElementProps } from "~/types";
 
 export const Logo = () => {
   return (
-    <div className="flex items-center gap-1 text-3xl transition-[opacity] duration-300 hover:opacity-80">
+    <div
+      className={classx(
+        "text-2xl sm:text-3xl",
+        "flex items-center gap-1 transition-[opacity] duration-300 hover:opacity-80",
+      )}
+    >
       <LogoIcon />
       <LogoSpan />
     </div>
@@ -13,7 +18,12 @@ export const Logo = () => {
 };
 
 export const LogoIcon = () => {
-  return <IconRewind weight="fill" className="h-8 w-8 fill-primary-500" />;
+  return (
+    <IconRewind
+      weight="fill"
+      className={classx("h-6 w-6 sm:h-8 sm:w-8", "fill-primary-500")}
+    />
+  );
 };
 
 // EDITME

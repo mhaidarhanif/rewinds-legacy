@@ -16,6 +16,9 @@ module.exports = {
       widest: ".25em",
     },
     extend: {
+      screens: {
+        xs: "425px",
+      },
       colors: {
         info: colors.blue,
         success: colors.green,

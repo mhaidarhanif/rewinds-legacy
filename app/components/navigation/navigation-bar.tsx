@@ -33,8 +33,8 @@ export const NavigationBar = () => {
       id="navigation-bar"
       className={classx("navigation-bar", !onTop && "navigation-bar-scrolled")}
     >
-      <div className="flex flex-wrap items-center justify-between">
-        <div className="flex gap-4">
+      <div className="flex items-center justify-between">
+        <div className="flex gap-2 sm:gap-4">
           <NavigationBarLogo />
           <div className="flex gap-1">
             {configStyle.navigationBar === "simple" && <NavigationBarLinks />}
@@ -45,9 +45,15 @@ export const NavigationBar = () => {
         </div>
 
         <div className="flex items-center space-x-2">
-          <ExternalLinks className="hidden text-xl sm:flex" />
+          <div className="hidden text-xl sm:flex">
+            <ExternalLinks />
+          </div>
+
           <ThemeSwitcher />
-          <NavigationBarAuth />
+
+          <div className="hidden  xl:flex">
+            <NavigationBarAuth />
+          </div>
           <div className="flex xl:hidden">
             <NavigationBarMenu />
           </div>
@@ -66,7 +72,7 @@ export const NavigationBarLogo = () => {
       >
         <Logo />
       </RemixLink>
-      <Badge color="primary" variant="solid">
+      <Badge className="hidden sm:flex" color="primary" variant="solid">
         v{packageJson.version}
       </Badge>
     </div>
@@ -93,7 +99,7 @@ export const NavigationBarLinks = () => {
 
 export const NavigationBarAuth = () => {
   return (
-    <div id="navigation-bar-auth" className="hidden space-x-2 xl:flex">
+    <div id="navigation-bar-auth" className="space-x-2">
       <RemixLink
         to="/signin"
         className="btn btn-md btn-light"

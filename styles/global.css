@@ -56,16 +56,6 @@
     @apply my-2 text-lg font-semibold;
   }
 
-  h5,
-  .h5 {
-    @apply text-md mb-1 font-medium;
-  }
-
-  h6,
-  .h6 {
-    @apply text-md mb-1;
-  }
-
   a {
     @apply font-bold no-underline;
   }
