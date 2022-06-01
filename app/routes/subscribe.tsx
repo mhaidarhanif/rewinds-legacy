@@ -1,4 +1,4 @@
-import { Anchor, Header } from "~/components";
+import { Anchor } from "~/components";
 import { SubscribeForm } from "~/contents";
 import { actionSubscribe, loaderSubscribe } from "~/features";
 import { useActionData, useTransition } from "~/hooks";
@@ -36,14 +36,14 @@ export default function Subscribe() {
 
   return (
     <Layout variant="wide">
-      <Header className="header-center">
+      <header className="header-center">
         <h1>Subscribe</h1>
         <h2>
           <Anchor href="https://twitter.com/mhaidarhanif">
             Follow the updates on <b>Rewinds</b>
           </Anchor>
         </h2>
-      </Header>
+      </header>
 
       <div className="stack-v items-center">
         <SubscribeForm transition={transition} actionData={actionData} />

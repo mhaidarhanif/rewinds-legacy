@@ -1,4 +1,3 @@
-import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -20,10 +19,10 @@ export const meta: MetaFunction = () => {
 export default function Search() {
   return (
     <Layout variant="wide">
-      <Header className="header">
+      <header className="header">
         <h1>Search</h1>
         <h2>This is the search you're looking for.</h2>
-      </Header>
+      </header>
     </Layout>
   );
 }

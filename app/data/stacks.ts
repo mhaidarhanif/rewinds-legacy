@@ -123,6 +123,19 @@ export const dataMainStacks: StackItems = [
     ],
   },
   {
+    url: "https://prettier.io",
+    name: "Prettier",
+    description: "Opinionated Code Formatter",
+    subItems: [
+      {
+        url: "https://prettier.io/docs/en/precommit.html",
+        name: "Pre-commit Hook with Prettier",
+        description:
+          "You can use Prettier with a pre-commit tool. This can re-format your files that are marked as `staged` via `git add` before you commit.",
+      },
+    ],
+  },
+  {
     url: "https://eslint.org",
     name: "ESLint v8",
     description:
@@ -138,6 +151,22 @@ export const dataMainStacks: StackItems = [
     url: "https://commitlint.js.org",
     name: "commitlint",
     description: "Lint commit messages.",
+  },
+  {
+    url: "https://typicode.github.io/husky",
+    name: "Husky Git hooks",
+    description: "Modern native git hooks made easy",
+  },
+  {
+    url: "https://github.com/okonet/lint-staged",
+    name: "lint-staged",
+    description:
+      "Run linters against staged git files and don't let 💩 slip into your code base!",
+  },
+  {
+    url: "",
+    name: "",
+    description: "",
   },
 ];
 

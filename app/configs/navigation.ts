@@ -13,9 +13,9 @@ export const configNavigationHome: LinkItem = { to: "/", text: "Home" };
 export const configNavigationPages: LinkItems = [
   { to: "/about", text: "About" },
   { to: "/blog", text: "Blog" },
+  { to: "/search", text: "Search" },
   { to: "/subscribe", text: "Subscribe" },
   { to: "/pricing", text: "Pricing" },
-  { to: "/search", text: "Search" },
 ];
 
 export const configNavigationAuth: LinkItems = [

@@ -1,4 +1,3 @@
-import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -20,11 +19,11 @@ export const meta: MetaFunction = () => {
 export default function Pricing() {
   return (
     <Layout variant="wide">
-      <Header className="header-center">
+      <header className="header-center">
         <h1>Pricing</h1>
         <h2>Choose what's the best plan for you</h2>
         <p>(Note this is just a demo)</p>
-      </Header>
+      </header>
     </Layout>
   );
 }

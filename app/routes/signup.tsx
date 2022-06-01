@@ -1,4 +1,3 @@
-import { Header } from "~/components";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -19,11 +18,11 @@ export const meta: MetaFunction = () => {
 
 export default function SignUp() {
   return (
-    <Layout variant="common">
-      <Header className="header-center">
+    <Layout>
+      <header className="header-center">
         <h1>Create a new account</h1>
         <p>The ultimate account for Rewinds</p>
-      </Header>
+      </header>
     </Layout>
   );
 }

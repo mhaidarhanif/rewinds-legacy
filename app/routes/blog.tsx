@@ -18,14 +18,15 @@ export const meta: MetaFunction = () => {
 
 export default function Blog() {
   return (
-    <Layout>
-      <article className="prose-config">
+    <Layout variant="wide">
+      <header className="header">
         <h1>Blog</h1>
+        <h2>All available articles</h2>
         <p>
-          Articles from Rewinds around UI, UX, styling, CSS, design system, and
-          more beyond.
+          Discussing around UI, UX, styling, CSS, design system, and more
+          beyond.
         </p>
-      </article>
+      </header>
     </Layout>
   );
 }

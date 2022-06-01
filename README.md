@@ -60,6 +60,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - TypeScript v4.6
 - Node.js v14-v17
 - npm v8
+  - Not Yarn because v1 & v2 difference
 - React v17
 - Remix v1.4
 - Tailwind CSS v3
@@ -286,6 +287,7 @@ Tips:
 
 ### Other references
 
+- [Bulletproof React - A simple, scalable, and powerful architecture for building production ready React applications](https://github.com/alan2207/bulletproof-react)
 - [Why we use Tailwind CSS as our primary framework | Clean Commit](https://cleancommit.io/blog/why-we-use-tailwind-css-as-our-primary-framework)
 - [An Honest Look at Tailwind as an API for CSS | thoughtbot, inc.](https://thoughtbot.com/blog/an-honest-look-at-tailwind-as-an-api-for-css)
 - [Styling Best Practices I Use With Tailwind CSS | theodorusclarence.com](https://theodorusclarence.com/blog/tailwindcss-best-practice)

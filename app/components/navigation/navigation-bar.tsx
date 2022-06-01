@@ -64,6 +64,8 @@ export const NavigationBar = () => {
 };
 
 export const NavigationBarLogo = () => {
+  const badgeText = `v${packageJson.version}`;
+
   return (
     <div className="flex items-center gap-2">
       <RemixLink
@@ -73,7 +75,7 @@ export const NavigationBarLogo = () => {
         <Logo />
       </RemixLink>
       <Badge className="hidden xs:flex" color="primary" variant="solid">
-        v{packageJson.version}
+        {badgeText}
       </Badge>
     </div>
   );

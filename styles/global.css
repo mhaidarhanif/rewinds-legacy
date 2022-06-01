@@ -43,7 +43,7 @@
 
   h2,
   .h2 {
-    @apply my-6 text-xl font-bold sm:text-2xl;
+    @apply my-6 text-xl font-bold sm:text-3xl;
   }
 
   h3,
