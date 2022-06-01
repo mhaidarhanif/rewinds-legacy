@@ -39,13 +39,13 @@ export const ThemeContext = createContext<ThemeContextType | null>(null);
 /**
  * ThemeProvider wrapper
  */
-export function ThemeProvider({
+export const ThemeProvider = ({
   specifiedTheme = configStyle?.theme,
   children,
 }: {
   specifiedTheme?: SpecifiedTheme;
   children: React.ReactNode;
-}) {
+}) => {
   /**
    * WIP: Preferred Theme
    * Only Light and Dark for now
@@ -123,6 +123,13 @@ export function ThemeProvider({
     );
   }, [colorScheme, cursorPointer, density, radius]);
 
+  /**
+   * Note: VechaiProvider currently causes this error in the console
+   * But might be ignored for now
+   *
+   * Warning: Extra attributes from the server: class
+   */
+
   return (
     <ThemeContext.Provider value={themeValue}>
       <VechaiProvider theme={theme} colorScheme={colorScheme} density={density}>
@@ -130,7 +137,7 @@ export function ThemeProvider({
       </VechaiProvider>
     </ThemeContext.Provider>
   );
-}
+};
 
 /**
  * useTheme hook
@@ -166,5 +173,3 @@ export const useTheme = () => {
     isDark: currentTheme?.type === "dark",
   };
 };
-
-export default ThemeProvider;

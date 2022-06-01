@@ -65,7 +65,7 @@ interface DocumentProps {
   children: React.ReactNode;
 }
 
-export function Document({ title, children }: DocumentProps) {
+export const Document = ({ title, children }: DocumentProps) => {
   const data = useLoaderData<LoaderDataSession>();
   const transition = useTransition();
 
@@ -106,7 +106,7 @@ export function Document({ title, children }: DocumentProps) {
       </body>
     </html>
   );
-}
+};
 
 /**
  * Document Boundary for Catch and Error
@@ -116,7 +116,7 @@ export function Document({ title, children }: DocumentProps) {
  * Unless there is a config to disable the persistence.
  */
 
-export function DocumentBoundary({ title, children }: DocumentProps) {
+export const DocumentBoundary = ({ title, children }: DocumentProps) => {
   return (
     <html lang="en">
       <head>
@@ -136,7 +136,7 @@ export function DocumentBoundary({ title, children }: DocumentProps) {
       </body>
     </html>
   );
-}
+};
 
 /**
  * Catch an expected error

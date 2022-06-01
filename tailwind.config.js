@@ -2,11 +2,7 @@ const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: [
-    "./app/**/*.{jsx,tsx}",
-    "./node_modules/@vechaiui/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode: "class",
+  content: ["./app/**/*.tsx", "./node_modules/@vechaiui/**/*.{js,jsx,ts,tsx}"],
   theme: {
     letterSpacing: {
       tightest: "-.1em",
