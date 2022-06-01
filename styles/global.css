@@ -168,8 +168,11 @@
 
   .navigation-bar {
     @apply sticky top-0 z-10 w-full flex-none select-none p-2 md:p-4;
-    @apply bg-secondary-blur;
-    @apply border-secondary border-b;
+    @apply border-b border-transparent transition;
+  }
+
+  .navigation-bar-scrolled {
+    @apply bg-secondary-blur border-secondary;
   }
 
   .navlink {

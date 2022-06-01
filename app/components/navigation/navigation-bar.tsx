@@ -9,11 +9,30 @@ import {
   NavigationBarMenu,
 } from "~/components";
 import { configStyle, configNavigationBarLinks } from "~/configs";
-import { packageJson } from "~/utils";
+import { useEffect, useState } from "~/hooks";
+import { classx, packageJson } from "~/utils";
 
 export const NavigationBar = () => {
+  const [onTop, setOnTop] = useState(true);
+
+  const handleScroll = () => {
+    if (onTop !== (window.pageYOffset === 0)) {
+      setOnTop(window.pageYOffset === 0);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
-    <nav id="navigation-bar" className="navigation-bar">
+    <nav
+      id="navigation-bar"
+      className={classx("navigation-bar", !onTop && "navigation-bar-scrolled")}
+    >
       <div className="flex flex-wrap items-center justify-between">
         <div className="flex gap-4">
           <NavigationBarLogo />

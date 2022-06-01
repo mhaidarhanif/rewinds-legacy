@@ -17,8 +17,9 @@ import type { HTMLAnchorElementProps, HTMLElementProps } from "~/types";
 /**
  * Navigation Bar Nav Menu
  *
- * Radix UI Navigation Menu with Trigger Buttons and Viewport
  * Used in Navigation Bar
+ * Radix UI Navigation Menu with Trigger Buttons and Viewport
+ * Named like this because NavigationMenu is already used by Radix UI
  */
 
 // EDITME
