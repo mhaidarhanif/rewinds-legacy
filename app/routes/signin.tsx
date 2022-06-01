@@ -1,17 +1,29 @@
+import { H1, Header, P } from "~/components";
 import { Layout } from "~/layouts";
+import { createMetaData } from "~/utils";
 
-import type { SEOHandle } from "~/types";
+import type { SEOHandle, MetaFunction } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
-    return [{ route: `/signin`, priority: 0.8 }];
+    return [{ route: `/signup`, priority: 0.8 }];
   },
 };
 
-export default function SignIn() {
+export const meta: MetaFunction = () => {
+  return createMetaData({
+    title: `Continue with account`,
+    description: `Sign in to continue to Rewinds`,
+  });
+};
+
+export default function SignUp() {
   return (
-    <Layout>
-      <h1>Welcome back! Let's sign in</h1>
+    <Layout variant="common">
+      <Header className="header-center">
+        <H1>Welcome back!</H1>
+        <P>Let's sign in to your account</P>
+      </Header>
     </Layout>
   );
 }
