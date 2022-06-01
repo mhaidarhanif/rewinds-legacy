@@ -32,6 +32,11 @@
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
 
+  p,
+  .p {
+    @apply text-base sm:text-lg;
+  }
+
   .h0 {
     @apply mb-10 text-6xl font-black sm:text-8xl;
   }
@@ -100,7 +105,7 @@
   }
 
   .layout-main {
-    @apply mt-10 w-full max-w-[65ch];
+    @apply mt-10 w-full sm:max-w-[65ch];
   }
 
   .layout-main-wide {

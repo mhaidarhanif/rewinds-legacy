@@ -1,12 +1,27 @@
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 
-interface ScrollAreaProps {
-  children: React.ReactNode;
-}
+import { classx } from "~/utils";
 
-export const RadixScrollArea = ({ children }: ScrollAreaProps) => {
+import type { HTMLElementVariantProps } from "~/types";
+
+export const RadixScrollArea = ({
+  variant = "common",
+  className,
+  children,
+}: HTMLElementVariantProps) => {
   return (
-    <ScrollArea.Root className="h-96 overflow-hidden rounded-base">
+    <ScrollArea.Root
+      className={classx(
+        "overflow-hidden rounded-base",
+        [
+          variant === "max" && "h-max",
+          variant === "common" && "h-96",
+          variant === "lg" && "h-[32rem]",
+          variant === "xl" && "h-[42rem]",
+        ],
+        className,
+      )}
+    >
       <ScrollArea.Viewport className="h-full w-full rounded-base">
         {children}
       </ScrollArea.Viewport>

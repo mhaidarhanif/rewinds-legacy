@@ -45,8 +45,10 @@ export default function ExampleGraphQL() {
 
       <article className="example">
         <Pre>{data.endpoint}</Pre>
-        <RadixScrollArea>
-          <Pre>{data}</Pre>
+
+        <h3>Max scroll area with extra small pre text</h3>
+        <RadixScrollArea variant="max">
+          <Pre variant="xs">{data}</Pre>
         </RadixScrollArea>
       </article>
     </Layout>
