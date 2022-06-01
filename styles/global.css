@@ -281,6 +281,10 @@
     @apply flex select-none items-center rounded-md text-sm outline-none;
   }
 
+  .dropdown-menu-item-focus {
+    @apply focus:bg-primary-100 dark:focus:bg-primary-900;
+  }
+
   .dropdown-menu-icon {
     @apply mr-2 h-3.5 w-3.5;
   }
