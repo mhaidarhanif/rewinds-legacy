@@ -19,11 +19,3 @@ if (isProductionAllowed) {
   // WIP: Need to conform with React Router v6
   sentryBrowserInit(); // Sentry App Monitoring and Error Tracking
 }
-
-// If the browser supports Service Worker API
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    // Register after the page complete the load
-    navigator.serviceWorker.register("/sw.js");
-  });
-}
