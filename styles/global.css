@@ -187,7 +187,7 @@
    */
 
   .btn {
-    @apply font-bold;
+    @apply focus-ring font-bold;
   }
 
   .alert-close-button:focus-visible {
@@ -329,7 +329,7 @@
   }
 
   .focus-ring {
-    @apply outline-none focus:ring;
+    @apply outline-none ring-offset-1 focus:ring-1;
     @apply ring-offset-neutral-900/50 focus:ring-neutral-900/50;
     @apply dark:ring-offset-neutral-100/50 dark:focus:ring-neutral-100/50;
   }
