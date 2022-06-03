@@ -32,18 +32,13 @@
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
 
-  p,
-  .p {
-    @apply text-base sm:text-lg;
-  }
-
   .h0 {
-    @apply mb-10 text-6xl font-black sm:text-8xl;
+    @apply mb-10 text-6xl font-bold sm:text-8xl;
   }
 
   h1,
   .h1 {
-    @apply mb-8 text-3xl font-extrabold sm:text-5xl;
+    @apply mb-8 text-3xl font-bold sm:text-5xl;
   }
 
   h2,
@@ -113,7 +108,7 @@
   }
 
   .layout-main.small {
-    @apply max-w-[65ch];
+    @apply max-w-[72ch];
   }
 
   .layout-main.medium {
@@ -395,13 +390,13 @@
   }
 
   .prose-config {
-    @apply my-10;
     @apply prose dark:prose-invert md:prose-lg;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
+    @apply my-10 max-w-none;
   }
 
-  .prose-larger {
+  .prose-config.large {
     @apply lg:prose-xl;
   }
 

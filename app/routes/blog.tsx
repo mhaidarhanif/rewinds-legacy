@@ -2,18 +2,21 @@ import { json } from "@remix-run/node";
 
 import { BlogArticles } from "~/contents";
 import { AllArticles } from "~/graphql";
-import { useLoaderData } from "~/hooks";
+import { useCatch, useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { graphcmsClient } from "~/libs";
 import { createMetaData } from "~/utils";
 
 import type {
-  SEOHandle,
   MetaFunction,
   LoaderFunction,
   LoaderDataBlog,
+  SEOHandle,
 } from "~/types";
 
+/**
+ * Generate sitemap for blog route.
+ */
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
     return [{ route: `/blog`, priority: 0.8 }];
@@ -53,5 +56,30 @@ export default function Blog() {
         <BlogArticles articles={articles} />
       </div>
     </Layout>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <div>
+      <h1>Error</h1>
+      <p>{error.message}</p>
+      <p>The stack trace is:</p>
+      <pre>{error.stack}</pre>
+    </div>
+  );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+
+  return (
+    <div>
+      <h1>Caught</h1>
+      <p>Status: {caught.status}</p>
+      <pre>
+        <code>{JSON.stringify(caught.data, null, 2)}</code>
+      </pre>
+    </div>
   );
 }

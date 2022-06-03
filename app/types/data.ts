@@ -1,5 +1,11 @@
-import type { Articles } from "./common";
-import type { LinkItems, StackItems, Strings, TextItems } from "~/types";
+import type {
+  Article,
+  Articles,
+  LinkItems,
+  StackItems,
+  Strings,
+  TextItems,
+} from "~/types";
 import type { getEnv } from "~/utils";
 
 /**
@@ -27,4 +33,9 @@ export type LoaderDataExamples = {
 
 export type LoaderDataBlog = {
   articles: Articles;
+};
+
+export type LoaderDataBlogArticle = {
+  slug: string;
+  article: Article;
 };

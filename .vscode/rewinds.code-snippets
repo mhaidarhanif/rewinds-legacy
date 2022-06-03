@@ -108,7 +108,7 @@
   },
 
   "Rewinds Remix Links": {
-    "prefix": "remix-links",
+    "prefix": "rrl",
     "body": [
       "export const links: LinksFunction = () => {",
       "  return [",
@@ -120,7 +120,7 @@
   },
 
   "Rewinds Remix CatchBoundary": {
-    "prefix": "remix-catch-boundary",
+    "prefix": "rrcb",
     "body": [
       "export function CatchBoundary() {",
       "  const caught = useCatch();",
@@ -140,7 +140,7 @@
   },
 
   "Rewinds Remix ErrorBoundary": {
-    "prefix": "remix-error-boundary",
+    "prefix": "rreb",
     "body": [
       "export function ErrorBoundary({ error }: { error: Error }) {",
       "  return (",

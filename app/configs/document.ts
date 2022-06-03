@@ -9,7 +9,7 @@ import styles from "~/styles/out.css";
  * Style Sheets
  */
 
-const fontFamilies = `family=Archivo:wght@400;700;900`;
+const fontFamilies = `family=Archivo:wght@400;700`;
 
 const faviconLinks = [
   {
