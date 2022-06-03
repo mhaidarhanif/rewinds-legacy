@@ -1,12 +1,48 @@
-import { Layout } from "~/layouts";
-import { createMetaData } from "~/utils";
+import { json } from "@remix-run/node";
 
-import type { SEOHandle, MetaFunction } from "~/types";
+import { useLoaderData } from "~/hooks";
+import { Layout } from "~/layouts";
+import { gql, graphcmsClient } from "~/libs";
+import { createMetaData, stringifyJSON } from "~/utils";
+
+import type { SEOHandle, MetaFunction, LoaderFunction } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
     return [{ route: `/blog`, priority: 0.8 }];
   },
+};
+
+export const loader: LoaderFunction = async () => {
+  const response = await graphcmsClient
+    .query(
+      gql`
+        query AllArticles {
+          articles {
+            id
+            slug
+            title
+            date
+            excerpt
+            coverImage {
+              id
+              url(
+                transformation: {
+                  image: { resize: { width: 500, height: 300, fit: clip } }
+                  document: { output: { format: jpg } }
+                  validateOptions: true
+                }
+              )
+            }
+          }
+        }
+      `,
+    )
+    .toPromise();
+
+  return json({
+    articles: response.data.articles,
+  });
 };
 
 export const meta: MetaFunction = () => {
@@ -17,6 +53,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Blog() {
+  const { articles } = useLoaderData();
+
   return (
     <Layout variant="medium">
       <header className="header">
@@ -27,6 +65,10 @@ export default function Blog() {
           beyond.
         </p>
       </header>
+
+      <div>
+        <pre>{stringifyJSON(articles)}</pre>
+      </div>
     </Layout>
   );
 }
