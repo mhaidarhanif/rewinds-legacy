@@ -1,11 +1,17 @@
 import { json } from "@remix-run/node";
 
+import { BlogArticles } from "~/contents";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { gql, graphcmsClient } from "~/libs";
-import { createMetaData, stringifyJSON } from "~/utils";
+import { createMetaData } from "~/utils";
 
-import type { SEOHandle, MetaFunction, LoaderFunction } from "~/types";
+import type {
+  SEOHandle,
+  MetaFunction,
+  LoaderFunction,
+  LoaderDataBlog,
+} from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -40,7 +46,7 @@ export const loader: LoaderFunction = async () => {
     )
     .toPromise();
 
-  return json({
+  return json<LoaderDataBlog>({
     articles: response.data.articles,
   });
 };
@@ -53,7 +59,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Blog() {
-  const { articles } = useLoaderData();
+  const { articles } = useLoaderData<LoaderDataBlog>();
 
   return (
     <Layout variant="medium">
@@ -66,9 +72,7 @@ export default function Blog() {
         </p>
       </header>
 
-      <div>
-        <pre>{stringifyJSON(articles)}</pre>
-      </div>
+      <BlogArticles articles={articles} />
     </Layout>
   );
 }

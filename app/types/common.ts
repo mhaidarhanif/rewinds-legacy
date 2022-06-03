@@ -37,7 +37,24 @@ export type StackItems = Array<
   }
 >;
 
+export type Asset = {
+  id: string;
+  url: string;
+};
+
+export type Article = {
+  id: string;
+  slug: string;
+  title?: string;
+  date?: string;
+  excerpt?: string;
+  coverImage?: Asset;
+};
+
 export type Strings = Array<string>;
+export type Numbers = Array<number>;
+export type Booleans = Array<boolean>;
 export type TextItems = Array<TextItem>;
 export type LinkItems = Array<LinkItem>;
 export type ExternalLinkItems = Array<ExternalLinkItem>;
+export type Articles = Array<Articles>;
