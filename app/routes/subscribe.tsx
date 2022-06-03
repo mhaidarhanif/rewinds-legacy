@@ -35,7 +35,7 @@ export default function Subscribe() {
   const actionData = useActionData();
 
   return (
-    <Layout variant="wide">
+    <Layout variant="large">
       <header className="header-center">
         <h1>Subscribe</h1>
         <h2>

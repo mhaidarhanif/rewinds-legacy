@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
 
 export default function Blog() {
   return (
-    <Layout variant="wide">
+    <Layout variant="medium">
       <header className="header">
         <h1>Blog</h1>
         <h2>All available articles</h2>

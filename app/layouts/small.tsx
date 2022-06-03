@@ -2,14 +2,14 @@ import { Footer, NavigationBar } from "~/components";
 
 import type { HTMLElementProps } from "~/types";
 
-export const LayoutCommon = ({ children }: HTMLElementProps) => {
+export const LayoutSmall = ({ children }: HTMLElementProps) => {
   return (
     <div className="layout">
       <NavigationBar />
 
       <div className="layout-container">
         <div className="layout-center">
-          <main className="layout-main">{children}</main>
+          <main className="layout-main small">{children}</main>
         </div>
       </div>
 

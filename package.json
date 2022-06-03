@@ -14,10 +14,11 @@
     "build": "npm-run-all -s build:css build:remix",
     "build:css": "tailwindcss -m -i ./styles/global.css -o app/styles/out.css",
     "build:remix": "remix build",
-    "lint": "npm-run-all -p eslint stylelint",
+    "lint": "npm-run-all -p eslint stylelint prettier",
     "eslint": "eslint . --ext .ts,.tsx",
     "eslint:fix": "eslint --fix . --ext .ts,.tsx",
     "stylelint": "stylelint styles/*.css",
+    "stylelint:fix": "stylelint --fix styles/*.css",
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "postinstall": "remix setup node"
@@ -100,8 +101,13 @@
     "typescript": "^4.6.4"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,json,html,css}": [
-      "npm run prettier"
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.css": [
+      "stylelint --fix",
+      "prettier --write"
     ]
   },
   "engines": {

@@ -109,15 +109,23 @@
   }
 
   .layout-main {
-    @apply mt-10 w-full max-w-[65ch];
+    @apply mt-10 w-full;
   }
 
-  .layout-main-wide {
-    @apply mt-10 w-full max-w-screen-xl;
+  .layout-main.small {
+    @apply max-w-[65ch];
   }
 
-  .layout-main-full {
-    @apply w-full;
+  .layout-main.medium {
+    @apply max-w-[960px];
+  }
+
+  .layout-main.large {
+    @apply max-w-screen-xl;
+  }
+
+  .layout-main.full {
+    @apply mt-0;
   }
 
   /**

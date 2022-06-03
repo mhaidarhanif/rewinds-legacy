@@ -1,6 +1,8 @@
+// Layout index
 export * from "./layout";
-// Variants
+// Layout variants
 export * from "./boundary";
 export * from "./full";
-export * from "./common";
-export * from "./wide";
+export * from "./large";
+export * from "./medium";
+export * from "./small";
