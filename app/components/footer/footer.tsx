@@ -1,11 +1,8 @@
 import { FooterCommon, FooterComplex, Anchor } from "~/components";
 import { configMeta } from "~/configs";
-import { classx } from "~/utils";
+import { classx, getCurrentYear } from "~/utils";
 
 import type { HTMLElementProps } from "~/types";
-
-const date = new Date();
-const year = date.getFullYear();
 
 /**
  * Footer with variants
@@ -31,7 +28,7 @@ export const FooterCopyrightText = ({ className }: HTMLElementProps) => {
   return (
     <p className={classx("container-active space-x-1 space-y-1", className)}>
       <span>&copy;</span>
-      <span>{year}</span>
+      <span>{getCurrentYear()}</span>
       <Anchor href={configMeta.url}>{configMeta.name}</Anchor>
       <span>by</span>
       <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>

@@ -1,3 +1,5 @@
+import type { dayjs } from "~/libs";
+
 /**
  * Common Types
  *
@@ -7,6 +9,10 @@
  * - LoaderData
  * - ActionData
  */
+
+export type DateTime = string | number | Date | null | undefined | dayjs.Dayjs;
+
+export type Locale = string | "en" | "fr";
 
 export type TextItem = {
   text: string;
@@ -42,12 +48,20 @@ export type Asset = {
   url: string;
 };
 
+export type RichText = {
+  html?: string;
+  markdown?: string;
+  raw?: string;
+  text?: string;
+};
+
 export type Article = {
   id: string;
   slug: string;
   title?: string;
   date?: string;
   excerpt?: string;
+  content?: RichText;
   coverImage?: Asset;
 };
 
@@ -57,4 +71,4 @@ export type Booleans = Array<boolean>;
 export type TextItems = Array<TextItem>;
 export type LinkItems = Array<LinkItem>;
 export type ExternalLinkItems = Array<ExternalLinkItem>;
-export type Articles = Array<Articles>;
+export type Articles = Array<Article>;

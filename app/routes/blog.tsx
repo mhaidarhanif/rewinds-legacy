@@ -1,9 +1,10 @@
 import { json } from "@remix-run/node";
 
 import { BlogArticles } from "~/contents";
+import { AllArticles } from "~/graphql";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
-import { gql, graphcmsClient } from "~/libs";
+import { graphcmsClient } from "~/libs";
 import { createMetaData } from "~/utils";
 
 import type {
@@ -20,31 +21,7 @@ export const handle: SEOHandle = {
 };
 
 export const loader: LoaderFunction = async () => {
-  const response = await graphcmsClient
-    .query(
-      gql`
-        query AllArticles {
-          articles {
-            id
-            slug
-            title
-            date
-            excerpt
-            coverImage {
-              id
-              url(
-                transformation: {
-                  image: { resize: { width: 500, height: 300, fit: clip } }
-                  document: { output: { format: jpg } }
-                  validateOptions: true
-                }
-              )
-            }
-          }
-        }
-      `,
-    )
-    .toPromise();
+  const response = await graphcmsClient.query(AllArticles).toPromise();
 
   return json<LoaderDataBlog>({
     articles: response.data.articles,
@@ -72,7 +49,9 @@ export default function Blog() {
         </p>
       </header>
 
-      <BlogArticles articles={articles} />
+      <div>
+        <BlogArticles articles={articles} />
+      </div>
     </Layout>
   );
 }

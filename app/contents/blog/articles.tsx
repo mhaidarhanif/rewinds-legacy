@@ -1,4 +1,4 @@
-import { stringifyJSON } from "~/utils";
+import { BlogArticleLink } from "~/contents";
 
 import type { Articles } from "~/types";
 
@@ -8,8 +8,10 @@ interface BlogArticlesProps {
 
 export const BlogArticles = ({ articles }: BlogArticlesProps) => {
   return (
-    <div className="prose-config">
-      <pre>{stringifyJSON(articles)}</pre>
+    <div className="stack-v gap-10">
+      {articles.map((article) => {
+        return <BlogArticleLink key={article.id} article={article} />;
+      })}
     </div>
   );
 };

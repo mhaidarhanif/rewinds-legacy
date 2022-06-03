@@ -53,7 +53,7 @@
 
   h3,
   .h3 {
-    @apply my-3 text-lg font-semibold sm:text-xl;
+    @apply my-3 text-lg font-semibold sm:text-2xl;
   }
 
   h4,
@@ -61,7 +61,7 @@
     @apply my-2 font-semibold sm:text-lg;
   }
 
-  a {
+  p a {
     @apply font-bold no-underline;
   }
 
@@ -157,7 +157,7 @@
    */
 
   .header {
-    @apply my-10;
+    @apply mt-10 mb-20;
   }
 
   .header-center {
@@ -234,6 +234,16 @@
 
   .navlink-focus {
     @apply focus:bg-primary-100 dark:focus:bg-neutral-900;
+  }
+
+  /**
+   * Card
+   */
+
+  .card {
+    @apply rounded-base p-2;
+    @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
+    @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
   }
 
   /**
@@ -427,6 +437,10 @@
 
   .text-inherit {
     font-size: inherit;
+  }
+
+  .text-dim {
+    @apply text-neutral-600 dark:text-neutral-400;
   }
 
   .example {
