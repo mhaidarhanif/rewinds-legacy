@@ -1,5 +1,5 @@
 import { Breadcrumb, RemixLink } from "~/components";
-import { getCompleteDate, stringifyJSON } from "~/utils";
+import { getCompleteDate } from "~/utils";
 
 import type { Article } from "~/types";
 
@@ -59,12 +59,24 @@ export const BlogArticle = ({ article }: BlogArticleProps) => {
       </div>
 
       <article className="prose-config">
-        <time className="text-dim" dateTime={article.date}>
-          {getCompleteDate(article.date)}
-        </time>
-        <h1>{article.title}</h1>
-        {article?.excerpt && <p>{article.excerpt}</p>}
-        <pre>{stringifyJSON(article)}</pre>
+        <div>
+          <time className="text-dim" dateTime={article.date}>
+            {getCompleteDate(article.date)}
+          </time>
+          <h1>{article.title}</h1>
+          {article?.excerpt && <p>{article.excerpt}</p>}
+        </div>
+
+        <figure className="bg-secondary rounded-base p-2">
+          <img
+            className="bg-secondary  w-full rounded-base"
+            src={article.coverImage?.url}
+            alt={article.title}
+          />
+          <figcaption className="text-center">{article.title}</figcaption>
+        </figure>
+
+        <div>{article.content?.markdown}</div>
       </article>
     </div>
   );

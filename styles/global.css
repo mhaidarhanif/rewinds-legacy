@@ -393,6 +393,7 @@
     @apply prose dark:prose-invert md:prose-lg;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
+    @apply prose-img:m-0;
     @apply my-10 max-w-none;
   }
 
