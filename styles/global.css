@@ -48,12 +48,12 @@
 
   h2,
   .h2 {
-    @apply my-6 text-xl font-bold sm:text-3xl;
+    @apply my-6 text-2xl font-bold sm:text-3xl;
   }
 
   h3,
   .h3 {
-    @apply my-3 text-lg font-semibold sm:text-2xl;
+    @apply my-3 text-xl font-semibold sm:text-2xl;
   }
 
   h4,

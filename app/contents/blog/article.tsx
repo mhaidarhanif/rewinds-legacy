@@ -15,15 +15,15 @@ export const BlogArticleLink = ({ article }: BlogArticleProps) => {
 
   return (
     <RemixLink to={to} className="card">
-      <div className="stack-h gap-5">
+      <div className="stack-v sm:stack-h gap-5">
         <div>
           <img
-            className="rounded-base"
+            className="w-full rounded-base"
             src={article.coverImage?.url}
             alt={article.title}
           />
         </div>
-        <div className="stack-v w-full gap-2">
+        <div className="stack-v w-full max-w-lg gap-2">
           <h3 className="m-0">{article.title}</h3>
           <p className="text-dim">{article.excerpt}</p>
           <time className="text-dim" dateTime={article.date}>
