@@ -1,6 +1,6 @@
 import { Breadcrumb, RemixLink } from "~/components";
 import { markdocRenderReact } from "~/libs";
-import { getCompleteDate } from "~/utils";
+import { getCompleteDateUS } from "~/utils";
 
 import type { Article } from "~/types";
 
@@ -21,10 +21,10 @@ export const BlogArticleLink = ({ article }: { article: Article }) => {
           />
         </div>
         <div className="stack-v w-full max-w-lg gap-2">
-          <h3 className="m-0">{article.title}</h3>
+          <h2 className="m-0">{article.title}</h2>
           <p className="text-dim">{article.excerpt}</p>
           <time className="text-dim" dateTime={article.date}>
-            {getCompleteDate(article.date)}
+            {getCompleteDateUS(article.date)}
           </time>
         </div>
       </article>
@@ -46,38 +46,39 @@ export const BlogArticle = ({
 
   return (
     <>
-      <Breadcrumb id="breadcrumb" className="stack-v gap-4">
-        <Breadcrumb.Item>
-          <RemixLink to="/blog" className="link">
-            Blog
-          </RemixLink>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item currentPage>
-          <RemixLink to={toArticleSlug} className="link">
-            {article.title}
-          </RemixLink>
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <header className="stack-v items-center">
+        <div className="max-w-screen-sm">
+          <Breadcrumb id="breadcrumb" className="stack-v container-high gap-4">
+            <Breadcrumb.Item>
+              <RemixLink to="/blog">Blog</RemixLink>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item currentPage>
+              <RemixLink to={toArticleSlug}>{article.title}</RemixLink>
+            </Breadcrumb.Item>
+          </Breadcrumb>
 
-      <header className="header">
-        <time className="text-dim" dateTime={article.date}>
-          {getCompleteDate(article.date)}
-        </time>
-        <h1>{article.title}</h1>
-        {article?.excerpt && <p className="text-2xl">{article.excerpt}</p>}
+          <div className="mt-10">
+            <time className="text-dim" dateTime={article.date}>
+              {getCompleteDateUS(article.date)}
+            </time>
+            <h1>{article.title}</h1>
+            {article?.excerpt && <p className="text-xl">{article.excerpt}</p>}
+          </div>
+        </div>
       </header>
 
-      <div className="prose-config">
-        <figure className="bg-secondary rounded-base p-2">
-          <img
-            className="bg-secondary  w-full rounded-base"
-            src={article.coverImage?.url}
-            alt={article.title}
-          />
-          <figcaption className="text-center">{article.title}</figcaption>
-        </figure>
+      <figure>
+        <img
+          className="bg-secondary w-full rounded-base"
+          src={article.coverImage?.url}
+          alt={article.title}
+        />
+      </figure>
 
-        {markdocRenderReact(content)}
+      <div className="stack-v mt-10 items-center">
+        <div className="prose-config max-w-screen-sm">
+          {markdocRenderReact(content)}
+        </div>
       </div>
     </>
   );

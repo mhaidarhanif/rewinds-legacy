@@ -43,7 +43,7 @@ export default function Blog() {
 
   return (
     <Layout variant="medium">
-      <header className="header">
+      <header>
         <h1>Blog</h1>
         <h2>All available articles</h2>
         <p>

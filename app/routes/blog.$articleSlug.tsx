@@ -82,7 +82,7 @@ export default function BlogArticleSlug() {
   const { article, content } = useLoaderData<LoaderDataBlogArticle>();
 
   return (
-    <Layout>
+    <Layout variant="medium">
       <BlogArticle article={article} content={content} />
     </Layout>
   );

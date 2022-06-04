@@ -4,7 +4,7 @@ import { classx } from "~/utils";
 // EDITME
 export const HomeIntro = () => {
   return (
-    <header className="header">
+    <header>
       <h1 className="tracking-tighter">
         <LogoSpan className={classx("bg-gradient-primary", "text-shimmer")} />
         <span>— Remix Tailwind Starter Kit</span>

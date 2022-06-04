@@ -29,7 +29,7 @@ export const FooterComplex = () => {
             </RemixLink>
             <ExternalLinks />
           </div>
-          <div className="container-active mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div className="container-low mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <FooterComplexFormSubscribe />
             <FooterComplexSitemap />
           </div>
@@ -73,7 +73,7 @@ export const FooterComplexBottomTexts = () => {
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <FooterCopyrightText className="text-left text-sm text-gray-400" />
 
-      <nav className="container-active flex justify-start gap-4 text-sm text-gray-400 md:justify-end">
+      <nav className="container-low flex justify-start gap-4 text-sm text-gray-400 md:justify-end">
         <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
         <RemixLink to="/privacy">Privacy Policy</RemixLink>
         <RemixLink to="/cookies">Cookies</RemixLink>

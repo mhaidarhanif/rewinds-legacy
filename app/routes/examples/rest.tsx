@@ -38,7 +38,7 @@ export default function ExampleREST() {
 
   return (
     <Layout>
-      <header className="header">
+      <header>
         <h1>Example: REST API</h1>
         <p>
           Fetch data from REST API with <code>axios</code>.

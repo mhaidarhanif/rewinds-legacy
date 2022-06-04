@@ -26,7 +26,7 @@ export const Footer = ({ variant = "complex" }: FooterProps) => {
 
 export const FooterCopyrightText = ({ className }: HTMLElementProps) => {
   return (
-    <p className={classx("container-active space-x-1 space-y-1", className)}>
+    <p className={classx("container-low space-x-1 space-y-1", className)}>
       <span>&copy;</span>
       <span>{getCurrentYear()}</span>
       <Anchor href={configMeta.url}>{configMeta.name}</Anchor>

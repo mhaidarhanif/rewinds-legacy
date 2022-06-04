@@ -56,7 +56,8 @@
     @apply my-2 font-semibold sm:text-lg;
   }
 
-  p a {
+  p a,
+  .a {
     @apply font-bold no-underline;
   }
 
@@ -76,6 +77,10 @@
   input,
   textarea {
     @apply caret-primary-500;
+  }
+
+  header {
+    @apply header;
   }
 }
 
@@ -104,11 +109,11 @@
   }
 
   .layout-main.small {
-    @apply max-w-[72ch];
+    @apply max-w-screen-sm;
   }
 
   .layout-main.medium {
-    @apply max-w-[960px];
+    @apply max-w-screen-lg;
   }
 
   .layout-main.large {
@@ -390,7 +395,6 @@
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
     @apply prose-img:m-0;
-    @apply max-w-none;
   }
 
   .prose-config.extralarge {
@@ -443,8 +447,12 @@
     @apply border border-primary-500;
   }
 
-  .container-active a {
+  .container-low a {
     @apply text-underline-left-right;
+  }
+
+  .container-high a {
+    @apply prose-a-styles;
   }
 
   /* https://css-tricks.com/custom-tailwind-css/#aa-envsafe-area-inset-bottom */
