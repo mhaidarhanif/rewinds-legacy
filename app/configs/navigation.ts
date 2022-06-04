@@ -51,6 +51,7 @@ export const configNavigationExamples1: LinkItems = [
   { to: "/examples/navigation-menu", text: "Navigation Menu" },
   { to: "/examples/notification", text: "Notification" },
   { to: "/examples/toast", text: "Toast" },
+  { to: "/examples/tab", text: "Tab" },
 ];
 
 export const configNavigationExamples2: LinkItems = [

@@ -261,6 +261,19 @@
     @apply bg-primary-200 dark:bg-primary-900;
   }
 
+  .tab-pill {
+    @apply cursor-base whitespace-nowrap font-bold;
+    @apply flex items-center justify-center;
+    @apply -mb-px h-10 px-4 py-2 text-center focus:outline-none;
+    @apply inline-block flex-shrink-0 rounded-md;
+    @apply bg-transparent text-neutral-600;
+    @apply hover:text-neutral-900;
+    @apply selected:bg-primary-200 selected:text-primary-900;
+    @apply dark:bg-transparent dark:text-neutral-400;
+    @apply dark:hover:text-neutral-100;
+    @apply dark:selected:bg-primary-700 dark:selected:text-primary-100;
+  }
+
   /**
    * Radix UI - Navigation Menu
    */

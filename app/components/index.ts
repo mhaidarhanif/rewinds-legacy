@@ -23,4 +23,5 @@ export * from "./remix-link";
 export * from "./remix";
 export * from "./scroll-area";
 export * from "./span";
+export * from "./tab";
 export * from "./themes";
