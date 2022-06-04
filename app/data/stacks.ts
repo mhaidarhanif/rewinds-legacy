@@ -96,6 +96,12 @@ export const dataMainStacks: StackItems = [
       "Unstyled, accessible components for building high‑quality design systems and web apps in React.",
     subItems: [
       {
+        url: "https://tailwindcss-radix.vercel.app",
+        name: "Tailwind CSS Radix",
+        description:
+          "Tailwind CSS utilities and variants for styling Radix state",
+      },
+      {
         name: "@radix-ui/react-icons",
         url: "",
       },
@@ -107,14 +113,27 @@ export const dataMainStacks: StackItems = [
     description: "Accessible foundation of your React-based design system.",
   },
   {
-    url: "https://tailwindcss-radix.vercel.app",
-    name: "Tailwind CSS Radix",
-    description: "Tailwind CSS utilities and variants for styling Radix state",
-  },
-  {
     url: "https://vechaiui.com",
     name: "Vechai UI v0",
     description: "React Tailwind CSS components",
+  },
+  {
+    url: "https://tanstack.com",
+    name: "TanStack",
+    description:
+      "Headless, type-safe, powerful utilities for complex workflows like Data Management, Data Visualization, Charts, Tables, and UI Components.",
+    subItems: [
+      {
+        url: "https://tanstack.com/table/v8",
+        name: "TanStack Table v8",
+        description: "Headless UI for building powerful tables & datagrids.",
+      },
+      {
+        url: "https://tanstack.com/virtual/v3",
+        name: "TanStack Virtual v3",
+        description: "Headless UI for Virtualizing Large Element Lists.",
+      },
+    ],
   },
   {
     url: "https://fonts.google.com",
@@ -133,6 +152,12 @@ export const dataMainStacks: StackItems = [
     url: "https://markdoc.io",
     name: "Markdoc",
     description: "Powerful, flexible, Markdown-based authoring framework.",
+  },
+  {
+    url: "https://prismjs.com",
+    name: "Prism.js",
+    description:
+      "Lightweight, extensible syntax highlighter, built with modern web standards in mind.",
   },
   {
     url: "https://prettier.io",

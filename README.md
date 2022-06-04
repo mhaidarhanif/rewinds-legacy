@@ -83,6 +83,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
   - NProgress
 - React Hook Form
 - Markdoc
+- Prism.js
 - ESLint v8
 - Stylelint v14
 - Prettier v2
