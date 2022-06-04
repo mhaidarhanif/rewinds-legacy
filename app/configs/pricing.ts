@@ -43,9 +43,9 @@ export const configPricingPlans = [
     name: "Hobby",
     price: {
       USD: "5",
-      EUR: "4",
+      EUR: "4.6",
       GBP: "4",
-      CAD: "6",
+      CAD: "6.3",
       SGD: "7",
       MYR: "22",
       IDR: "75k",
@@ -56,6 +56,7 @@ export const configPricingPlans = [
       to: "/signup",
     },
     benefits: [
+      "Including from the Free plan",
       "Shared container",
       "Up to 250 MB database space",
       "Up to 5 GB database transfer bandwidth",
@@ -83,6 +84,7 @@ export const configPricingPlans = [
       to: "/signup",
     },
     benefits: [
+      "Including from the Hobby plan",
       "Dedicated container",
       "Up to 8 GB database space + $0.5 per GB",
       "Up to 50 GB database transfer bandwidth + $0.09 per GB",
@@ -115,6 +117,7 @@ export const configPricingPlans = [
       text: "Coming Soon",
     },
     benefits: [
+      "Including from the Pro plan",
       "Self hosted or on-premise",
       "Point in time recovery",
       "Designated Support manager & SLAs",

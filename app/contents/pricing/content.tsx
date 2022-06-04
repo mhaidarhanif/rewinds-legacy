@@ -27,11 +27,12 @@ export const PricingContent = () => {
 
   return (
     <div className="stack-v items-center gap-10">
-      <ButtonGroup color="primary" className="justify-center">
+      <ButtonGroup className="justify-center">
         {currencies.map((item) => {
           return (
             <Button
               key={item.symbol}
+              color={item.symbol === symbol ? "primary" : "none"}
               variant={item.symbol === symbol ? "solid" : "outline"}
               onClick={() => {
                 return changeCurrency(item.symbol);
@@ -62,14 +63,15 @@ export const PricingPlans = ({ symbol }: PricingTableProps) => {
           >
             <div className="stack-v gap-1">
               <span className="text-lg font-bold">{plan.name}</span>
-              <span className="text-3xl font-bold">
+              <span className="text-4xl font-bold text-primary-500">
                 {price ? priceText : "Contact Us"}
               </span>
               <span>{price ? "/project/month" : "Contract"}</span>
             </div>
 
             <div className="flex-1">
-              <ul className="ul-checklist">
+              <span className="font-bold">{plan.info}</span>
+              <ul className="ul-checklist mt-5">
                 {plan.benefits.map((benefit) => {
                   return <li key={benefit}>{benefit}</li>;
                 })}
