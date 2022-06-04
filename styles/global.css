@@ -38,7 +38,7 @@
 
   h1,
   .h1 {
-    @apply mb-8 text-3xl font-bold sm:text-5xl;
+    @apply mb-8 text-4xl font-bold sm:text-5xl;
   }
 
   h2,
@@ -233,16 +233,6 @@
   }
 
   /**
-   * Card
-   */
-
-  .card {
-    @apply rounded-base p-2;
-    @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
-    @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
-  }
-
-  /**
    * Stack
    * Similar with Chakra UI
    */
@@ -378,6 +368,12 @@
     @apply bg-neutral-200 dark:bg-neutral-700;
   }
 
+  .bg-focusable {
+    @apply rounded-base p-2;
+    @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
+    @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
+  }
+
   .bg-panel {
     @apply bg-white dark:bg-neutral-800;
   }
@@ -453,6 +449,10 @@
 
   .container-high a {
     @apply prose-a-styles;
+  }
+
+  .ul-checklist {
+    @apply list-disc space-y-2 pl-3 marker:text-primary-500;
   }
 
   /* https://css-tricks.com/custom-tailwind-css/#aa-envsafe-area-inset-bottom */

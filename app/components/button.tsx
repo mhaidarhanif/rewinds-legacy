@@ -24,12 +24,13 @@ export const Button = ({ children, ...props }: ButtonProps) => {
 export const ButtonGroup = ({
   attached,
   children,
+  className,
   ...props
 }: ButtonGroupProps) => {
   return (
     <VechaiButton.Group
       attached={attached}
-      className={classx(!attached && "flex flex-wrap gap-4")}
+      className={classx(!attached && "flex flex-wrap gap-2", className)}
       {...props}
     >
       {children}

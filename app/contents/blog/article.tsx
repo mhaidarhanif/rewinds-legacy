@@ -11,7 +11,7 @@ export const BlogArticleLink = ({ article }: { article: Article }) => {
   const toArticleSlug = `/blog/${article.slug}`;
 
   return (
-    <RemixLink to={toArticleSlug} className="card">
+    <RemixLink to={toArticleSlug} className="bg-focusable">
       <article className="stack-v sm:stack-h gap-5">
         <div>
           <img

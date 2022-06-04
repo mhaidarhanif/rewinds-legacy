@@ -4,6 +4,7 @@ export * from "./features";
 export * from "./meta";
 export * from "./navigation";
 export * from "./navigation-menu";
+export * from "./pricing";
 export * from "./style";
 export * from "./themes";
 export * from "./urls";

@@ -30,10 +30,10 @@ interface MessageCatchProps {
 export const MessageCatch = ({ caught }: MessageCatchProps) => {
   return (
     <>
-      <article className="prose-config">
+      <header>
         <h1 className="text-warning-500">What happened?</h1>
         <p>Hmm, something went wrong.</p>
-      </article>
+      </header>
 
       <MessageBackReloadButtons />
 
@@ -61,10 +61,10 @@ interface MessageErrorProps {
 export const MessageError = ({ error }: MessageErrorProps) => {
   return (
     <>
-      <article className="prose-config">
+      <header>
         <h1 className="text-error-500">Error!</h1>
         <p>Sorry, something crashed and we didn't expect that to happen.</p>
-      </article>
+      </header>
 
       <MessageBackReloadButtons />
 

@@ -1,15 +1,13 @@
 import { RemixLink } from "~/components";
 import { classx } from "~/utils";
 
-import type { LinkProps } from "~/types";
+import type { ButtonProps, LinkProps } from "~/types";
 
-interface ButtonLinkProps extends LinkProps {
-  color?: string;
-  variant?: "solid" | "outline";
-}
+type ButtonLinkProps = ButtonProps & LinkProps;
 
 export const ButtonLink = ({
   to,
+  size,
   children,
   color = "primary",
   variant = "solid",
@@ -19,7 +17,10 @@ export const ButtonLink = ({
     <RemixLink
       to={to}
       data-color={color}
-      className={classx(`btn-${variant} btn btn-md rounded-base`, className)}
+      className={classx(
+        `btn-${variant} btn btn-${size} rounded-base`,
+        className,
+      )}
     >
       {children}
     </RemixLink>
