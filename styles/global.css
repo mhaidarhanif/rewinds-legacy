@@ -133,6 +133,18 @@
   }
 
   /**
+   * Example
+   */
+
+  .example {
+    @apply my-20 space-y-5;
+  }
+
+  .example-box {
+    @apply border border-primary-500;
+  }
+
+  /**
    * Skip Link
    */
 
@@ -488,14 +500,6 @@
 
   .text-dim {
     @apply text-neutral-600 dark:text-neutral-400;
-  }
-
-  .example {
-    @apply my-20 space-y-5;
-  }
-
-  .example-box {
-    @apply border border-primary-500;
   }
 
   .container-low a {

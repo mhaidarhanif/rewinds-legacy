@@ -2,7 +2,7 @@
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Vechai UI, and more.
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Reach UI, Vechai UI, and more.
 
 Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
@@ -78,6 +78,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
   - Headless UI v1 — Unstyled accessible UI components
   - Radix UI v0 — Unstyled accessible UI components
     - Tailwind Radix
+  - Reach UI v0 — Unstyled accessible UI components
   - Vechai UI v0 — React Tailwind CSS components
   - NProgress
 - React Hook Form

@@ -70,8 +70,8 @@ export default function About() {
         </p>
         <p>
           The goal is to have several examples and demos to combine the best
-          Tailwind-related ecosystem such as Tailwind CSS v3, Tailwind UI,
-          Headless UI, Radix UI, Vechai UI, and more. We also encourage{" "}
+          Tailwind-related ecosystem such as Tailwind CSS v3, Headless UI, Radix
+          UI, Reach UI, Vechai UI, and more. We also encourage{" "}
           <Anchor href="https://web.dev/accessibility">
             the accessibility guidelines
           </Anchor>

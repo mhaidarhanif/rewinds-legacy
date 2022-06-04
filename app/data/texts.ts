@@ -3,11 +3,11 @@ import type { Strings, TextItems } from "~/types";
 export const dataFeatures: Strings = [
   "TypeScript for type-safety",
   "Remix as the React framework",
-  "Tailwind CSS using Vechai UI for primary React components",
-  "Headless UI and Radix UI for accessible unstyled components",
-  "Vechai UI theme switcher and persist theme with a session cookie",
+  "Tailwind CSS as the styling framework",
+  "Headless UI, Radix UI, and Reach UI for accessible unstyled components",
+  "Vechai UI as the base components, with theme switcher and session cookie persistence",
   "NProgress navigation loading bar indicator",
-  "ENV setup for frontend library such as analytics: Google Analytics,Splitbee, Posthog, etc",
+  "ENV setup for frontend library such as chat and analytics",
 ];
 
 export const dataUtilities: TextItems = [

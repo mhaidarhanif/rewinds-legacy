@@ -86,18 +86,25 @@ export const dataMainStacks: StackItems = [
   {
     url: "https://headlessui.dev",
     name: "Headless UI v1",
-    description: "Unstyled accessible UI components",
+    description:
+      "Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.",
   },
   {
     url: "https://radix-ui.com",
     name: "Radix UI v0",
-    description: "Unstyled accessible UI components",
+    description:
+      "Unstyled, accessible components for building high‑quality design systems and web apps in React.",
     subItems: [
       {
         name: "@radix-ui/react-icons",
         url: "",
       },
     ],
+  },
+  {
+    url: "https://reach.tech",
+    name: "Reach UI v0",
+    description: "Accessible foundation of your React-based design system.",
   },
   {
     url: "https://tailwindcss-radix.vercel.app",
