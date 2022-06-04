@@ -61,7 +61,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - Node.js v14-v17
 - npm v8
   - Not Yarn because v1 & v2 difference
-- React v17
+- React v18
 - Remix v1.4
 - Tailwind CSS v3
   - Tailwind CSS plugins
@@ -86,8 +86,8 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - Stylelint v14
 - Prettier v2
 - `clsx` or `cx` aliased as `classx`
-- `urql` and `graphql-request`
-- `axios`
+- `graphql-request` and `urql`
+- `fetch` and `axios`
 - Vercel
 
 > ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
