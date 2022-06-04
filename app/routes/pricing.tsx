@@ -1,3 +1,4 @@
+import { PricingContent } from "~/contents";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
@@ -5,7 +6,7 @@ import type { MetaFunction, SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
-    return [{ route: `/pricing`, priority: 0.7 }];
+    return [{ route: `/pricing`, priority: 0.8 }];
   },
 };
 
@@ -19,11 +20,12 @@ export const meta: MetaFunction = () => {
 export default function Pricing() {
   return (
     <Layout variant="large">
-      <header className="header-center">
+      <header className="header-center mb-0">
         <h1>Pricing</h1>
         <h2>Choose what's the best plan for you</h2>
-        <p>(Note this is just a demo)</p>
       </header>
+
+      <PricingContent />
     </Layout>
   );
 }

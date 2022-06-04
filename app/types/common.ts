@@ -14,6 +14,20 @@ export type DateTime = string | number | Date | null | undefined | dayjs.Dayjs;
 
 export type Locale = string | "en" | "fr";
 
+export type CurrencySymbol =
+  | "USD"
+  | "EUR"
+  | "GBP"
+  | "CAD"
+  | "SGD"
+  | "MYR"
+  | "IDR";
+
+export type Currency = {
+  symbol: CurrencySymbol;
+  name: string;
+};
+
 export type TextItem = {
   text: string;
   neme: string;
@@ -68,6 +82,7 @@ export type Article = {
 export type Strings = Array<string>;
 export type Numbers = Array<number>;
 export type Booleans = Array<boolean>;
+export type Currencies = Array<Currency>;
 export type TextItems = Array<TextItem>;
 export type LinkItems = Array<LinkItem>;
 export type ExternalLinkItems = Array<ExternalLinkItem>;
