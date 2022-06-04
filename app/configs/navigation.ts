@@ -104,10 +104,6 @@ export const configNavigationMenu: ConfigNavigation = [
     name: "Pages",
     links: [configNavigationHome, ...configNavigationPages],
   },
-  {
-    name: "Examples",
-    links: [...configNavigationExamples1],
-  },
   // In small screen, the auth links are in the Dropdown Menu or User Menu
   // {
   //   name: "Account",

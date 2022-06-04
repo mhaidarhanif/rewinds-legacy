@@ -10,7 +10,13 @@ import { classx } from "~/utils";
 
 export { Menu } from "@headlessui/react";
 
-export const NavigationBarMenu = () => {
+interface NavigationBarMenuProps {
+  originDirection?: "right" | "left";
+}
+
+export const NavigationBarMenu = ({
+  originDirection = "right",
+}: NavigationBarMenuProps) => {
   return (
     <div className="flex w-full select-none flex-wrap">
       <Menu as="div" className="menu relative inline-block">
@@ -37,8 +43,9 @@ export const NavigationBarMenu = () => {
         >
           <Menu.Items
             className={classx(
+              `${originDirection}-0 origin-top-${originDirection}`,
               "menu-items shadow-panel bg-panel border-panel",
-              "absolute right-0 z-dropdown mt-2 w-56 min-w-max origin-top-right rounded-sm outline-none",
+              "absolute z-dropdown mt-2 w-56 min-w-max rounded-md outline-none",
             )}
           >
             <MenuItemsContent />

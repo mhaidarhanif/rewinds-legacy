@@ -31,7 +31,7 @@ export default function ExampleMenu() {
       <article className="example h-[600px]">
         <h3>Navigation Bar Menu</h3>
         <p>Note that the component doesn't have any collision detection.</p>
-        <NavigationBarMenu />
+        <NavigationBarMenu originDirection="left" />
       </article>
     </Layout>
   );

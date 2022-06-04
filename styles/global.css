@@ -32,6 +32,18 @@
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
 
+  header {
+    @apply header;
+  }
+
+  header p {
+    @apply text-lg;
+  }
+
+  header a {
+    @apply prose-a-styles;
+  }
+
   .h0 {
     @apply mb-10 text-6xl font-black sm:text-8xl;
   }
@@ -77,10 +89,6 @@
   input,
   textarea {
     @apply caret-primary-500;
-  }
-
-  header {
-    @apply header;
   }
 }
 
