@@ -54,6 +54,23 @@
     "typescript",
     "typescriptreact"
   ],
+  "explorerExclude.backup": null,
+  "files.exclude": {
+    ".cache": true,
+    ".vercel": false,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true,
+    "api/index.js.map": true,
+    "build": true,
+    "node_modules": true,
+    "out": true,
+    "package-lock.json": true,
+    "public/build": true
+  },
   "peacock.color": "38bdf8",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#69cdfa",

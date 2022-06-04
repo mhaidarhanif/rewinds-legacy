@@ -61,7 +61,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - Node.js v14-v17
 - npm v8
   - Not Yarn because v1 & v2 difference
-- React v18
+- React v17
 - Remix v1.4
 - Tailwind CSS v3
   - Tailwind CSS plugins

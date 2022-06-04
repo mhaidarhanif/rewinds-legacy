@@ -21,7 +21,9 @@
     "stylelint:fix": "stylelint --fix styles/*.css",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "postinstall": "remix setup node"
+    "postinstall": "remix setup node",
+    "ncu": "ncu --reject react,react-dom,@types/react,@types/react-dom",
+    "commit": "cz"
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "1.0.2",
