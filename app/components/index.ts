@@ -5,6 +5,7 @@ export * from "./breadcrumb";
 export * from "./button-anchor";
 export * from "./button-link";
 export * from "./button";
+export * from "./code-highlight";
 export * from "./code";
 export * from "./collapsible";
 export * from "./divider";

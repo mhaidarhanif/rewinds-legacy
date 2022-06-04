@@ -331,6 +331,40 @@
     content: "";
     @apply absolute top-1/2 left-1/2 h-full min-h-[50px] w-full min-w-[50px] translate-x-1/2 translate-y-1/2;
   }
+
+  /**
+   * PrismJS Code Highlight
+   */
+
+  .code-highlight {
+    @apply my-4 overflow-scroll p-2 text-left;
+  }
+
+  .code-highlight .token-line {
+    line-height: 1.3em;
+    height: 1.3em;
+  }
+
+  .code-highlight > div {
+    display: table-row;
+  }
+
+  .code-highlight .line-no {
+    display: table-cell;
+    text-align: right;
+    padding-right: 1em;
+    user-select: none;
+    opacity: 0.5;
+  }
+
+  .code-highlight .line-content {
+    display: table-cell;
+  }
+
+  .code-highlight .line-content .tag {
+    cursor: auto;
+    display: unset;
+  }
 }
 
 /**
