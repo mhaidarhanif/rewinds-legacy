@@ -123,6 +123,11 @@ export const dataMainStacks: StackItems = [
     ],
   },
   {
+    url: "https://markdoc.io",
+    name: "Markdoc",
+    description: "Powerful, flexible, Markdown-based authoring framework.",
+  },
+  {
     url: "https://prettier.io",
     name: "Prettier",
     description: "Opinionated Code Formatter",

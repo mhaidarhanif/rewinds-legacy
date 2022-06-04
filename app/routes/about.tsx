@@ -47,8 +47,12 @@ export default function About() {
 
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>About</h1>
+        <h2>What is it, links, features, and stacks</h2>
+      </header>
+
+      <article className="prose-config">
         <p>
           <Anchor href="https://rewinds.mhaidarhanif.com">Rewinds</Anchor> is a
           Remix starter kit with Tailwind family of libraries. It is a demo
@@ -64,7 +68,6 @@ export default function About() {
           (<Anchor href="https://github.com/mhaidarhanif">@mhaidarhanif</Anchor>
           ).
         </p>
-
         <p>
           The goal is to have several examples and demos to combine the best
           Tailwind-related ecosystem such as Tailwind CSS v3, Tailwind UI,
@@ -126,10 +129,11 @@ export default function About() {
           <p>The list of the main libraries and tools. Used as dependencies.</p>
           <ul>
             {mainStacks.map((item) => {
+              if (!item.name) return null;
               return (
                 <li key={item.name}>
                   <Anchor href={item.url}>{item.name}</Anchor>
-                  {item.description && <span> – {item.description}</span>}
+                  {item.description && <span> — {item.description}</span>}
                   {item.subItems && (
                     <ul>
                       {item.subItems.map((subItem) => {
@@ -141,7 +145,7 @@ export default function About() {
                               <span className="font-bold">{subItem.name}</span>
                             )}
                             {subItem.description && (
-                              <span> – {subItem.description}</span>
+                              <span> — {subItem.description}</span>
                             )}
                           </li>
                         );
@@ -166,7 +170,7 @@ export default function About() {
               return (
                 <li key={item.name}>
                   <Anchor href={item.url}>{item.name}</Anchor>
-                  {item.description && <span> – {item.description}</span>}
+                  {item.description && <span> — {item.description}</span>}
                 </li>
               );
             })}

@@ -30,9 +30,9 @@ export const createMetaData = ({
   return {
     // eslint-disable-next-line no-nested-ternary
     title: title
-      ? `${title} – ${configMeta.name}`
+      ? `${title} — ${configMeta.name}`
       : name
-      ? `${name} – ${configMeta.name}`
+      ? `${name} — ${configMeta.name}`
       : configMeta.title,
 
     description: description || configMeta.description,

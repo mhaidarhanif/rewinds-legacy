@@ -1,4 +1,4 @@
-# ⏪ Rewinds – Remix Tailwind Starter Kit
+# ⏪ Rewinds — Remix Tailwind Starter Kit
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
@@ -75,12 +75,13 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
     - Font Awesome
   - Phospor Icons
 - Components
-  - Headless UI v1 – Unstyled accessible UI components
-  - Radix UI v0 – Unstyled accessible UI components
+  - Headless UI v1 — Unstyled accessible UI components
+  - Radix UI v0 — Unstyled accessible UI components
     - Tailwind Radix
-  - Vechai UI v0 – React Tailwind CSS components
+  - Vechai UI v0 — React Tailwind CSS components
   - NProgress
 - React Hook Form
+- Markdoc
 - ESLint v8
 - Stylelint v14
 - Prettier v2

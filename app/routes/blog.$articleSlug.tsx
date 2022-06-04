@@ -3,7 +3,7 @@ import { json, useLoaderData } from "remix";
 import { BlogArticle } from "~/contents";
 import { OneArticleBySlug } from "~/graphql";
 import { Layout } from "~/layouts";
-import { graphcmsClient } from "~/libs";
+import { graphcmsClient, markdocParse, markdocTransform } from "~/libs";
 import { createMetaData } from "~/utils";
 
 import type {
@@ -66,9 +66,12 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw json("Not Found", { status: 404 });
   }
 
+  const content = markdocTransform(markdocParse(article.content.markdown));
+
   return json<LoaderDataBlogArticle>({
     slug: articleSlug as string,
     article: response.data.article,
+    content,
   });
 };
 
@@ -76,11 +79,11 @@ export const loader: LoaderFunction = async ({ params }) => {
  * Render one article.
  */
 export default function BlogArticleSlug() {
-  const { article } = useLoaderData<LoaderDataBlogArticle>();
+  const { article, content } = useLoaderData<LoaderDataBlogArticle>();
 
   return (
     <Layout>
-      <BlogArticle article={article} />
+      <BlogArticle article={article} content={content} />
     </Layout>
   );
 }

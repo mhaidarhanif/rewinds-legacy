@@ -38,4 +38,5 @@ export type LoaderDataBlog = {
 export type LoaderDataBlogArticle = {
   slug: string;
   article: Article;
+  content: any;
 };

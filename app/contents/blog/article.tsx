@@ -1,16 +1,13 @@
 import { Breadcrumb, RemixLink } from "~/components";
+import { markdocRenderReact } from "~/libs";
 import { getCompleteDate } from "~/utils";
 
 import type { Article } from "~/types";
 
-interface BlogArticleProps {
-  article: Article;
-}
-
 /**
  * The linked snippet of the blog article
  */
-export const BlogArticleLink = ({ article }: BlogArticleProps) => {
+export const BlogArticleLink = ({ article }: { article: Article }) => {
   const toArticleSlug = `/blog/${article.slug}`;
 
   return (
@@ -38,35 +35,39 @@ export const BlogArticleLink = ({ article }: BlogArticleProps) => {
 /**
  * The whole blog article with content
  */
-export const BlogArticle = ({ article }: BlogArticleProps) => {
+export const BlogArticle = ({
+  article,
+  content,
+}: {
+  article: Article;
+  content: any;
+}) => {
   const toArticleSlug = `/blog/${article.slug}`;
 
   return (
-    <div className="w-full">
-      <div className="stack-v gap-4">
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <RemixLink to="/blog" className="link">
-              Blog
-            </RemixLink>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item currentPage>
-            <RemixLink to={toArticleSlug} className="link">
-              {article.title}
-            </RemixLink>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </div>
+    <>
+      <Breadcrumb id="breadcrumb" className="stack-v gap-4">
+        <Breadcrumb.Item>
+          <RemixLink to="/blog" className="link">
+            Blog
+          </RemixLink>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item currentPage>
+          <RemixLink to={toArticleSlug} className="link">
+            {article.title}
+          </RemixLink>
+        </Breadcrumb.Item>
+      </Breadcrumb>
 
-      <article className="prose-config">
-        <div>
-          <time className="text-dim" dateTime={article.date}>
-            {getCompleteDate(article.date)}
-          </time>
-          <h1>{article.title}</h1>
-          {article?.excerpt && <p>{article.excerpt}</p>}
-        </div>
+      <header className="header">
+        <time className="text-dim" dateTime={article.date}>
+          {getCompleteDate(article.date)}
+        </time>
+        <h1>{article.title}</h1>
+        {article?.excerpt && <p className="text-2xl">{article.excerpt}</p>}
+      </header>
 
+      <div className="prose-config">
         <figure className="bg-secondary rounded-base p-2">
           <img
             className="bg-secondary  w-full rounded-base"
@@ -76,8 +77,8 @@ export const BlogArticle = ({ article }: BlogArticleProps) => {
           <figcaption className="text-center">{article.title}</figcaption>
         </figure>
 
-        <div>{article.content?.markdown}</div>
-      </article>
-    </div>
+        {markdocRenderReact(content)}
+      </div>
+    </>
   );
 };

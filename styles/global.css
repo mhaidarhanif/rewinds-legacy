@@ -33,7 +33,7 @@
   }
 
   .h0 {
-    @apply mb-10 text-6xl font-bold sm:text-8xl;
+    @apply mb-10 text-6xl font-black sm:text-8xl;
   }
 
   h1,
@@ -76,10 +76,6 @@
   input,
   textarea {
     @apply caret-primary-500;
-  }
-
-  header {
-    @apply header;
   }
 }
 
@@ -394,10 +390,10 @@
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-ul-styles;
     @apply prose-img:m-0;
-    @apply my-10 max-w-none;
+    @apply max-w-none;
   }
 
-  .prose-config.large {
+  .prose-config.extralarge {
     @apply lg:prose-xl;
   }
 
