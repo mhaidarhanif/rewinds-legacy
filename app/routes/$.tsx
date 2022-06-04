@@ -1,4 +1,4 @@
-import { redirect } from "remix";
+import { redirect } from "@remix-run/node";
 
 import { configFeatures, configExternalLinks } from "~/configs";
 import { MessageErrorNotFound } from "~/contents/messages";

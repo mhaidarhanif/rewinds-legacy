@@ -1,4 +1,4 @@
-export { Form as RemixForm } from "remix";
+export { Form as RemixForm } from "@remix-run/react";
 
 export {
   FormControl,

@@ -4,5 +4,6 @@ export {
   useFetcher,
   useFetchers,
   useLoaderData,
+  useParams,
   useTransition,
-} from "remix";
+} from "@remix-run/react";

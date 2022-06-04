@@ -1,7 +1,8 @@
-import { json, useLoaderData } from "remix";
+import { json } from "@remix-run/node";
 
 import { BlogArticle } from "~/contents";
 import { OneArticleBySlug } from "~/graphql";
+import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { graphcmsClient, markdocParse, markdocTransform } from "~/libs";
 import { createMetaData } from "~/utils";
