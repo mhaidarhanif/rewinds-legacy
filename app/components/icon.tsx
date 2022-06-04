@@ -1,18 +1,21 @@
 import {
   IconCircle,
   IconDark,
+  IconDev,
   IconDiscord,
   IconGitHub,
   IconLight,
   IconLinkedIn,
   IconMedium,
   IconMenu,
+  IconProductHunt,
   IconTelegram,
   IconTwitter,
   IconWebsite,
   IconYouTube,
-  IconDev,
 } from "~/libs";
+
+import type { HTMLElementProps } from "~/types";
 
 export { Icon as VechaiIcon } from "@vechaiui/react";
 
@@ -25,18 +28,18 @@ export const iconMaps = {
   circle: <IconCircle />,
   menu: <IconMenu />,
   website: <IconWebsite />,
-  // Theme
   light: <IconLight />,
   dark: <IconDark />,
   // External
+  dev: <IconDev />,
+  discord: <IconDiscord />,
+  github: <IconGitHub />,
+  linkedin: <IconLinkedIn />,
+  medium: <IconMedium />,
   telegram: <IconTelegram />,
   twitter: <IconTwitter />,
-  discord: <IconDiscord />,
-  medium: <IconMedium />,
-  github: <IconGitHub />,
   youtube: <IconYouTube />,
-  linkedin: <IconLinkedIn />,
-  dev: <IconDev />,
+  producthunt: <IconProductHunt />,
   // Default
   default: <IconCircle />,
 };
@@ -69,10 +72,8 @@ export const Icon = ({ name }: IconProps) => {
  * IconSpan component
  */
 
-interface IconSpanProps {
+interface IconSpanProps extends HTMLElementProps {
   name: string;
-  // eslint-disable-next-line react/require-default-props
-  className?: any;
 }
 
 export const IconSpan = ({ name, className }: IconSpanProps) => {

@@ -34,6 +34,7 @@ import {
   FaTelegram as IconTelegram,
   FaTwitter as IconTwitter,
   FaYoutube as IconYouTube,
+  FaProductHunt as IconProductHunt,
 } from "react-icons/fa";
 
 export {
@@ -49,6 +50,7 @@ export {
   IconLinkedIn,
   IconMedium,
   IconMenu,
+  IconProductHunt,
   IconRewind,
   IconSignIn,
   IconSignOut,
