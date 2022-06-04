@@ -4,10 +4,10 @@ import { Layout } from "~/layouts";
 export default function ExampleBadge() {
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: Badge</h1>
         <p>Badge components with Vechai UI.</p>
-      </article>
+      </header>
 
       <article className="example">
         <ExampleBadges />

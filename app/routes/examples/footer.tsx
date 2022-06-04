@@ -4,10 +4,10 @@ import { Layout } from "~/layouts";
 export default function ExampleFooter() {
   return (
     <Layout variant="full">
-      <article className="prose-config px-4">
+      <header>
         <h1>Example: Footer</h1>
         <p>Footer components with plain Tailwind and Hyper UI.</p>
-      </article>
+      </header>
 
       <article className="example">
         <ExampleFooters />

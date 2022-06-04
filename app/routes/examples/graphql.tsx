@@ -36,12 +36,12 @@ export default function ExampleGraphQL() {
 
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: GraphQL</h1>
         <p>
           Query data from GraphQL with <code>graphql-request</code>.
         </p>
-      </article>
+      </header>
 
       <article className="example">
         <Pre>{data.endpoint}</Pre>

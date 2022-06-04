@@ -18,10 +18,10 @@ export default function Debug() {
 
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: Debug</h1>
         <p>The data shown here is public, not secret.</p>
-      </article>
+      </header>
 
       <RadixScrollArea>
         <Pre>{data}</Pre>

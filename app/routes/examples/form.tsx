@@ -4,10 +4,10 @@ import { Layout } from "~/layouts";
 export default function ExampleForm() {
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: Form</h1>
         <p>Form components with Vechai UI.</p>
-      </article>
+      </header>
 
       <article className="example">
         <ExampleForms />

@@ -18,5 +18,4 @@ export const dataUtilities: TextItems = [
   { text: "Forms" },
   { text: "Line Clamp" },
   { text: "Aspect Ratio" },
-  { text: "Tailwind CSS and Radix UI" },
 ];

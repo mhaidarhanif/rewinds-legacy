@@ -3,9 +3,9 @@ import { Layout } from "~/layouts";
 export default function LayoutsCommon() {
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Layout: Common</h1>
-      </article>
+      </header>
     </Layout>
   );
 }

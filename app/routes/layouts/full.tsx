@@ -18,13 +18,13 @@ export default function LayoutFull() {
 
   return (
     <Layout variant="full">
-      <article className="prose-config px-4">
+      <header className="px-4">
         <h1>Layout: Full</h1>
         <p>
           Full width layout example without any padding with{" "}
           <Code>{`<Layout variant="full" />`}</Code>
         </p>
-      </article>
+      </header>
 
       <article>
         {images.map((item: any) => {

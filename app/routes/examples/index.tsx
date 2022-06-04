@@ -6,7 +6,13 @@ import { dataUtilities } from "~/data";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 
-import type { LoaderDataExamples, LoaderFunction, SEOHandle } from "~/types";
+import type {
+  LinkItem,
+  LoaderDataExamples,
+  LoaderFunction,
+  SEOHandle,
+  TextItem,
+} from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -26,12 +32,12 @@ export default function Examples() {
 
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Examples</h1>
 
         <h2>Example Components</h2>
         <ul>
-          {examples.map((item) => {
+          {examples.map((item: LinkItem) => {
             return (
               <li key={item.text}>
                 <RemixLink to={item.to}>{item.text}</RemixLink>
@@ -42,11 +48,11 @@ export default function Examples() {
 
         <h2>Example Utilities</h2>
         <ul>
-          {utilities.map((item) => {
+          {utilities.map((item: TextItem) => {
             return <li key={item.text}>{item.text}</li>;
           })}
         </ul>
-      </article>
+      </header>
     </Layout>
   );
 }

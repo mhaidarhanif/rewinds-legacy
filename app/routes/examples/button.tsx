@@ -4,10 +4,10 @@ import { Layout } from "~/layouts";
 export default function ExampleButton() {
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: Button</h1>
         <p>Button components with Vechai UI.</p>
-      </article>
+      </header>
 
       <article className="example">
         <ExampleButtons />

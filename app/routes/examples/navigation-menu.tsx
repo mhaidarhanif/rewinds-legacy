@@ -4,13 +4,13 @@ import { Layout } from "~/layouts";
 export default function ExampleNavigationMenu() {
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Example: Navigation Menu</h1>
         <p>
           Complex navigation menu component with Radix UI. A collection of links
           for navigating websites.
         </p>
-      </article>
+      </header>
 
       <article className="example">
         <nav className="navigation-bar">
