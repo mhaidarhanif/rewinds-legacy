@@ -32,7 +32,7 @@ export default function Examples() {
 
   return (
     <Layout>
-      <header>
+      <article className="prose-config">
         <h1>Examples</h1>
 
         <h2>Example Components</h2>
@@ -52,7 +52,7 @@ export default function Examples() {
             return <li key={item.text}>{item.text}</li>;
           })}
         </ul>
-      </header>
+      </article>
     </Layout>
   );
 }

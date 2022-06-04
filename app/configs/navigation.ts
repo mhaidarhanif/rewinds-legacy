@@ -45,6 +45,7 @@ export const configNavigationExamples1: LinkItems = [
   { to: "/examples/badge", text: "Badge" },
   { to: "/examples/button", text: "Button" },
   { to: "/examples/code-highlight", text: "Code Highlight" },
+  { to: "/examples/dialog", text: "Dialog" },
   { to: "/examples/menu", text: "Menu" },
   { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
   { to: "/examples/footer", text: "Footer" },

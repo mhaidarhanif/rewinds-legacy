@@ -1,6 +1,7 @@
 export * from "./alerts";
 export * from "./badges";
 export * from "./buttons";
+export * from "./dialogs";
 export * from "./footers";
 export * from "./forms";
 export * from "./notifications";

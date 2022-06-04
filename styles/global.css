@@ -413,8 +413,14 @@
     @apply dark:ring-offset-primary-500/80 dark:focus:ring-primary-500/80;
   }
 
+  /* Background */
+
   .bg-primary {
     @apply bg-neutral-50 dark:bg-neutral-900;
+  }
+
+  .bg-primary-transparent {
+    @apply bg-neutral-500/80 dark:bg-neutral-900/80;
   }
 
   .bg-secondary {
@@ -427,10 +433,6 @@
     @apply backdrop-blur;
   }
 
-  .border-secondary {
-    @apply border-neutral-200 dark:border-neutral-200/5;
-  }
-
   .bg-separator {
     @apply bg-neutral-200 dark:bg-neutral-700;
   }
@@ -440,6 +442,20 @@
     @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
     @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
   }
+
+  /* Shadow */
+
+  .shadow-primary {
+    @apply shadow-xl shadow-neutral-900/10 dark:shadow-neutral-900;
+  }
+
+  /* Border */
+
+  .border-secondary {
+    @apply border-neutral-200 dark:border-neutral-200/5;
+  }
+
+  /* Panel */
 
   .bg-panel {
     @apply bg-white dark:bg-neutral-800;
@@ -452,6 +468,8 @@
   .border-panel {
     @apply border border-neutral-300 dark:border-neutral-700;
   }
+
+  /* Prose */
 
   .prose-config {
     @apply prose dark:prose-invert md:prose-lg;
