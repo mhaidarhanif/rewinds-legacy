@@ -12,8 +12,17 @@ import { IconGear } from "~/libs";
 import { classx } from "~/utils";
 
 import type { ThemeContextType } from "~/components";
+import type { ButtonProps } from "~/types";
 
-export const ThemeSwitcher = () => {
+interface ThemeSwitcherProps {
+  inNavbar?: boolean;
+  variant?: ButtonProps["variant"];
+}
+
+export const ThemeSwitcher = ({
+  inNavbar = false,
+  variant = "ghost",
+}: ThemeSwitcherProps) => {
   const {
     colorScheme,
     cursorPointer,
@@ -43,7 +52,7 @@ export const ThemeSwitcher = () => {
               as={IconButton}
               size="md"
               color="primary"
-              variant="ghost"
+              variant={variant}
             >
               <IconGear
                 aria-label="Settings"
@@ -64,14 +73,12 @@ export const ThemeSwitcher = () => {
             >
               <Popover.Panel
                 className={classx(
-                  "-right-20 xs:right-0",
+                  inNavbar && "-right-20 xs:right-0",
                   "border-panel absolute  z-50 mt-2 w-64 origin-top-right rounded-md bg-white py-2 px-2 text-neutral-900 shadow-sm outline-none dark:bg-neutral-800 dark:text-white",
                 )}
               >
                 <div className="flow-root">
-                  <b className="text-md flex items-center">
-                    Theme Appearance Settings
-                  </b>
+                  <h6>Theme Switcher</h6>
                 </div>
 
                 <Divider

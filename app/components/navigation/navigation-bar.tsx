@@ -33,7 +33,7 @@ export const NavigationBar = () => {
             <ExternalLinks />
           </div>
 
-          <ThemeSwitcher />
+          <ThemeSwitcher inNavbar />
 
           <div className="hidden xl:flex">
             <NavigationBarAuth />

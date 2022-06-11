@@ -2,11 +2,13 @@
  * Used for React component
  */
 
+import type { ButtonProps } from "~/types";
+
 export interface HTMLElementProps extends React.HTMLAttributes<HTMLElement> {}
 
 export interface HTMLElementVariantProps
   extends React.HTMLAttributes<HTMLElement> {
-  variant?: "common" | "xs" | "sm" | "md" | "lg" | "xl" | "max";
+  variant?: "common" | "max" | ButtonProps["size"];
 }
 
 export interface HTMLAnchorElementProps

@@ -14,7 +14,8 @@ import styles from "~/styles/out.css";
 // EDITME
 export const fontFamilies = [
   `family=Archivo:wght@400;700`,
-  `family=Epilogue:wght@700`,
+  `family=Public+Sans`,
+  `family=Gaegu`,
 ].join("&");
 
 export const faviconLinks = [

@@ -8,16 +8,17 @@
  * CSS Variables
  *
  * Please also check app/configs/document.ts
+ * To import more font families
  */
 
 :root {
   --font-primary: "Archivo";
-  --font-secondary: "Epilogue";
-  --font-tertiary: "Comic Neue";
-  --font-brand: var(--font-secondary);
+  --font-secondary: "Public Sans";
+  --font-tertiary: "Gaegu";
+  --font-brand: var(--font-primary);
   --color-brand-primary: "#00AAAA";
-  --color-brand-secondary: "#00AAAA";
-  --color-brand-tertiary: "#00AAAA";
+  --color-brand-secondary: "#AACCAA";
+  --color-brand-tertiary: "#FFCC55";
 }
 
 /**
@@ -28,7 +29,7 @@
   /* Mostly fonts */
 
   html {
-    @apply font-primary;
+    @apply font-secondary;
 
     /* https://css-tricks.com/custom-tailwind-css/#aa-webkit-tap-highlight-color */
     -webkit-tap-highlight-color: transparent;
@@ -61,13 +62,13 @@
   .h4,
   .h5,
   .h6 {
-    @apply font-secondary;
+    @apply font-primary;
   }
 
   /* Headings */
 
   .h0 {
-    @apply mb-10 text-6xl font-black sm:text-8xl;
+    @apply mb-10 text-5xl font-black sm:text-6xl;
   }
 
   h1,
@@ -77,17 +78,27 @@
 
   h2,
   .h2 {
-    @apply my-6 text-2xl font-bold sm:text-3xl;
+    @apply my-6 text-3xl font-bold;
   }
 
   h3,
   .h3 {
-    @apply my-3 text-xl font-semibold sm:text-2xl;
+    @apply my-3 text-2xl font-bold;
   }
 
   h4,
   .h4 {
-    @apply my-2 font-semibold sm:text-lg;
+    @apply my-2 text-xl font-bold;
+  }
+
+  h5,
+  .h5 {
+    @apply my-1 text-lg font-bold;
+  }
+
+  h6,
+  .h6 {
+    @apply my-1 font-bold;
   }
 
   p a,
@@ -455,7 +466,7 @@
   }
 
   .font-tertiary {
-    font-family: var(--font-tertiary), sans-serif;
+    font-family: var(--font-tertiary), cursive;
   }
 
   .font-brand {
