@@ -27,6 +27,7 @@ import type {
   MetaFunction,
   HeadersFunction,
   LoaderDataSession,
+  Transition,
 } from "~/types";
 
 export const headers: HeadersFunction = () => {
@@ -66,8 +67,8 @@ interface DocumentProps {
 }
 
 export const Document = ({ title, children }: DocumentProps) => {
+  const transition = useTransition() as Transition;
   const data = useLoaderData() as LoaderDataSession;
-  const transition = useTransition();
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 

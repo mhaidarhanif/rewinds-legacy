@@ -1,6 +1,8 @@
-module.exports = {
-  extends: ["@commitlint/config-conventional"],
-  rules: {
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
     "type-enum": [
       2,
       "always",
@@ -16,8 +18,8 @@ module.exports = {
         "revert",
         "style",
         "test",
-        "infra",
-      ],
+        "infra"
+      ]
     ],
     "scope-enum": [
       2,
@@ -46,8 +48,8 @@ module.exports = {
         "subscribe",
         "tailwind",
         "type",
-        "util",
-      ],
-    ],
-  },
-};
+        "util"
+      ]
+    ]
+  }
+}

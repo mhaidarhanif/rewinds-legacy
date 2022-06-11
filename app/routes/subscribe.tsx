@@ -10,6 +10,7 @@ import type {
   ActionFunction,
   MetaFunction,
   SEOHandle,
+  Transition,
 } from "~/types";
 
 export const handle: SEOHandle = {
@@ -29,7 +30,7 @@ export const action: ActionFunction = actionSubscribe;
 
 // EDITME
 export default function Subscribe() {
-  const transition = useTransition();
+  const transition = useTransition() as Transition;
   const actionData = useActionData() as ActionDataSubscribe;
 
   return (

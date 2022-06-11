@@ -23,8 +23,8 @@ export default function Debug() {
         <p>The data shown here is public, not secret.</p>
       </header>
 
-      <RadixScrollArea>
-        <Pre>{data}</Pre>
+      <RadixScrollArea variant="lg">
+        <Pre variant="sm">{data}</Pre>
       </RadixScrollArea>
     </Layout>
   );

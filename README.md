@@ -186,6 +186,7 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `global.css`: Tailwind input file
 - `.gitignore`
 - `package.json`
+  - `.commitlintrc`
   - `.editorconfig`
   - `.eslintignore`
   - `.eslintrc`
@@ -195,7 +196,6 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `.prettierignore`
   - `.prettierrc`
   - `.stylelintrc`
-  - `commitlint.config.js`
   - `tsconfig.json`
   - `vercel.json`
 - `README.md`
