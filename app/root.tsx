@@ -66,7 +66,7 @@ interface DocumentProps {
 }
 
 export const Document = ({ title, children }: DocumentProps) => {
-  const data = useLoaderData<LoaderDataSession>();
+  const data = useLoaderData() as LoaderDataSession;
   const transition = useTransition();
 
   const [isTransitioning, setIsTransitioning] = useState(false);

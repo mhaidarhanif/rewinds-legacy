@@ -28,7 +28,7 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function Examples() {
-  const { examples, utilities } = useLoaderData<LoaderDataExamples>();
+  const { examples, utilities } = useLoaderData() as LoaderDataExamples;
 
   return (
     <Layout>

@@ -1,10 +1,9 @@
 import { json } from "@remix-run/node";
 
 import { BlogArticles } from "~/contents";
-import { AllArticles } from "~/graphql";
 import { useCatch, useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
-import { graphcmsClient } from "~/libs";
+import { getArticles } from "~/models";
 import { createMetaData } from "~/utils";
 
 import type {
@@ -12,23 +11,28 @@ import type {
   LoaderFunction,
   LoaderDataBlog,
   SEOHandle,
+  Article,
 } from "~/types";
 
 /**
- * Generate sitemap for blog route.
+ * Generate sitemap for blog route and the articles.
  */
 export const handle: SEOHandle = {
-  getSitemapEntries: () => {
-    return [{ route: `/blog`, priority: 0.8 }];
+  getSitemapEntries: async () => {
+    const articles = await getArticles();
+    return [
+      { route: `/blog`, priority: 0.8 },
+      ...articles.map(({ slug }: Article) => {
+        return { route: `/blog/${slug}`, priority: 0.8 };
+      }),
+    ];
   },
 };
 
 export const loader: LoaderFunction = async () => {
-  const response = await graphcmsClient.query(AllArticles).toPromise();
+  const articles = await getArticles();
 
-  return json<LoaderDataBlog>({
-    articles: response.data.articles,
-  });
+  return json<LoaderDataBlog>({ articles });
 };
 
 export const meta: MetaFunction = () => {
@@ -39,7 +43,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Blog() {
-  const { articles } = useLoaderData<LoaderDataBlog>();
+  const { articles } = useLoaderData() as LoaderDataBlog;
 
   return (
     <Layout variant="medium">

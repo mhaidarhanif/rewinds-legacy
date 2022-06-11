@@ -1,3 +1,4 @@
+import type { Params } from "react-router-dom";
 import type {
   Article,
   Articles,
@@ -36,7 +37,7 @@ export type LoaderDataBlog = {
 };
 
 export type LoaderDataBlogArticle = {
-  slug: string;
+  params: Params<string>;
   article: Article;
   content: any;
 };

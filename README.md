@@ -4,7 +4,11 @@
 
 Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Reach UI, Vechai UI, and more. Using TypeScript too!
 
-Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+Visit the live demo and repo:
+
+- [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+- [rewinds.vercel.app](https://rewinds.vercel.app)
+- [mhaidarhanif/rewinds](https://github.com/mhaidarhanif/rewinds)
 
 > ⚠️ The repo is ongoing active development so thing might quickly change at the moment.
 
@@ -18,33 +22,21 @@ Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com
 
 </div>
 
-## Table of Contents
+## What's inside
 
-- [Screenshots](#screenshots)
-- [Features](#features)
-- [Stacks](#stacks)
-- [Development](#development)
-  - [Install dependencies](#install-dependencies)
-  - [Environment variables](#environment-variables)
-  - [Environment variables using Doppler](#environment-variables-using-doppler)
-  - [Project structure](#project-structure)
-- [Build](#build)
-- [Lint](#lint)
-- [Deployment](#deployment-1)
-- [Notes](#notes)
-  - [Remix](#remix)
-  - [Tailwind CSS](#tailwind-css)
-  - [Vechai UI](#vechai-ui)
-  - [ConvertKit](#convertkit)
-
-## Features
-
-The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
+The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about). While the complete examples are listed in [the examples page](https://rewinds.mhaidarhanif.com/examples)
 
 - [x] Remix as the React framework
-- [x]Tailwind CSS using Vechai UI as primary components
-- [x]Multiple themes switcher and persist theme with a session cookie
-- [x]Only focus on the frontend styling and project structure, without particular in testing and database
+- [x] Tailwind CSS using Vechai UI as primary components
+- [x] Multiple themes switcher and persist theme with a session cookie
+- [x] Commonly used pages/routes with contents
+- [x] Ready to use components that highly customizable
+- [x] Form submission with either Remix Form or React Hook Form
+- [x] Data fetching with REST API or GraphQL
+- [ ] Optimistic UI
+- [ ] Nested routes use cases
+- [ ] Storybook for components development
+- [x] Only focus on the frontend styling and project structure, without particular in testing and database
   - Just a bit of backend integration through Remix loader
   - For the full stack integration with database and testing, check out the official Remix Stacks instead: https://remix.run/stacks
 

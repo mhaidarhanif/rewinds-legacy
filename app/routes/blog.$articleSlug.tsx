@@ -1,10 +1,10 @@
 import { json } from "@remix-run/node";
 
 import { BlogArticle } from "~/contents";
-import { OneArticleBySlug } from "~/graphql";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
-import { graphcmsClient, markdocParse, markdocTransform } from "~/libs";
+import { markdocParse, markdocTransform } from "~/libs";
+import { getArticleBySlug } from "~/models";
 import { createMetaData } from "~/utils";
 
 import type {
@@ -15,18 +15,9 @@ import type {
   SEOHandle,
 } from "~/types";
 
-/**
- * Generate sitemap for all articles, not just one article by slug.
- */
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {
     return null;
-    // const response = await graphcmsClient.query(AllArticles).toPromise();
-    // const { articles }: { articles: Articles } = response.data;
-
-    // return articles.map((article) => {
-    //   return { route: `/blog/${article.slug}`, priority: 0.8 };
-    // });
   },
 };
 
@@ -55,13 +46,7 @@ export const meta: MetaFunction = ({ data }) => {
  * Response one article by slug data from GraphCMS.
  */
 export const loader: LoaderFunction = async ({ params }) => {
-  const { articleSlug } = params;
-
-  const response = await graphcmsClient
-    .query(OneArticleBySlug, { slug: articleSlug })
-    .toPromise();
-
-  const { article } = response.data;
+  const article = await getArticleBySlug(params.articleSlug as string);
 
   if (!article) {
     throw json("Not Found", { status: 404 });
@@ -69,18 +54,14 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const content = markdocTransform(markdocParse(article.content.markdown));
 
-  return json<LoaderDataBlogArticle>({
-    slug: articleSlug as string,
-    article: response.data.article,
-    content,
-  });
+  return json<LoaderDataBlogArticle>({ params, article, content });
 };
 
 /**
  * Render one article.
  */
 export default function BlogArticleSlug() {
-  const { article, content } = useLoaderData<LoaderDataBlogArticle>();
+  const { article, content } = useLoaderData() as LoaderDataBlogArticle;
 
   return (
     <Layout variant="medium">
