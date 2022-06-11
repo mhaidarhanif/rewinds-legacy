@@ -4,7 +4,6 @@ import { Pre, RadixScrollArea } from "~/components";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { axiosServer } from "~/libs";
-import { sleep } from "~/utils";
 
 import type { LoaderFunction } from "~/types";
 
@@ -12,16 +11,15 @@ export const loader: LoaderFunction = async () => {
   const endpoint = process.env.REST_ENDPOINT as string;
 
   const fetchA = async () => {
-    await sleep(1);
     const response = await fetch(endpoint);
     const dataA = await response.json();
     return dataA;
   };
 
   const fetchB = async () => {
-    await sleep(1);
     const response = await axiosServer.get("/");
-    return response.data;
+    const dataB = response.data;
+    return dataB;
   };
 
   const [dataA, dataB] = await Promise.all([fetchA(), fetchB()]);

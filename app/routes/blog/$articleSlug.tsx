@@ -1,8 +1,7 @@
 import { json } from "@remix-run/node";
 
 import { BlogArticle } from "~/contents";
-import { useLoaderData } from "~/hooks";
-import { Layout } from "~/layouts";
+import { useCatch, useLoaderData, useParams } from "~/hooks";
 import { invariant, markdocParse, markdocTransform } from "~/libs";
 import { getArticleBySlug } from "~/models";
 import { createMetaData } from "~/utils";
@@ -28,16 +27,18 @@ export const handle: SEOHandle = {
 /**
  * Generate metadata when article is not found or found.
  */
-export const meta: MetaFunction = ({ data }) => {
-  const { article }: { article: Article } = data;
+export const meta: MetaFunction = (args) => {
+  const { data } = args;
 
-  if (!article) {
+  if (!data) {
     return createMetaData({
       title: "No article found — Blog",
       description:
         "Sorry, no blog article found. Please check the URL again. Thanks!",
     });
   }
+
+  const article: Article = data.article || null;
 
   return createMetaData({
     route: article?.slug,
@@ -54,7 +55,6 @@ export const loader: LoaderFunction = async ({ params }) => {
   invariant(articleSlug, "Article slug is required");
 
   const article = await getArticleBySlug(articleSlug);
-  // invariant(article, `Article is not found. Slug: ${articleSlug}`);
 
   if (!article) {
     throw json("Not Found", { status: 404 });
@@ -66,14 +66,35 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 /**
- * Render one article.
+ * Render one article by slug
+ * No need to use the Layout as it's already defined in the routes/blog.tsx
  */
+
 export default function BlogArticleSlug() {
   const { article, content } = useLoaderData() as LoaderDataBlogArticle;
 
   return (
-    <Layout variant="medium">
-      <BlogArticle article={article} content={content} />
-    </Layout>
+    <BlogArticle slug={article.slug} article={article} content={content} />
+  );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+  const params = useParams();
+
+  if (caught.status === 404) {
+    return <BlogArticle slug={params.articleSlug} />;
+  }
+
+  return (
+    <div>
+      <header>
+        <h1>Caught an unknown error</h1>
+      </header>
+      <p>Status: {caught.status}</p>
+      <pre>
+        <code>{JSON.stringify(caught.data, null, 2)}</code>
+      </pre>
+    </div>
   );
 }

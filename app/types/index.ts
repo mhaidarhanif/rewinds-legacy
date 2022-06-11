@@ -2,6 +2,7 @@ export * from "./common";
 export * from "./config";
 export * from "./data";
 export * from "./headless-ui";
+export * from "./markdoc";
 export * from "./radix-ui";
 export * from "./reach-ui";
 export * from "./react";

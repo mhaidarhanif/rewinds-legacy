@@ -2,7 +2,7 @@ import { Breadcrumb, LazyLoad, RemixLink } from "~/components";
 import { markdocRenderReact } from "~/libs";
 import { getCompleteDateUS } from "~/utils";
 
-import type { Article } from "~/types";
+import type { Article, RenderableTreeNode } from "~/types";
 
 /**
  * The linked card view of the blog article
@@ -45,57 +45,75 @@ export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
  */
 
 interface BlogArticleProps {
-  article: Article;
-  content: any;
+  slug?: string;
+  article?: Article;
+  content?: RenderableTreeNode;
 }
 
-export const BlogArticle = ({ article, content }: BlogArticleProps) => {
+export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
   return (
     <div>
       <header className="stack-v items-center">
-        <div className="max-w-screen-sm">
+        <div className="w-full max-w-screen-sm">
           <Breadcrumb id="breadcrumb" className="stack-v container-high gap-4">
             <Breadcrumb.Item>
               <RemixLink prefetch="intent" to="/blog">
                 Blog
               </RemixLink>
             </Breadcrumb.Item>
-            <Breadcrumb.Item currentPage>
-              <RemixLink prefetch="intent" to={`/blog/${article.slug}`}>
-                {article.title}
-              </RemixLink>
-            </Breadcrumb.Item>
+            {slug && (
+              <Breadcrumb.Item currentPage>
+                <RemixLink prefetch="intent" to={`/blog/${slug}`}>
+                  {article?.title || slug}
+                </RemixLink>
+              </Breadcrumb.Item>
+            )}
           </Breadcrumb>
 
           <div className="mt-10">
-            <time className="text-dim" dateTime={article.date}>
-              {getCompleteDateUS(article.date)}
-            </time>
-            <h1>{article.title}</h1>
+            {article?.date && (
+              <time className="text-dim" dateTime={article.date}>
+                {getCompleteDateUS(article.date)}
+              </time>
+            )}
+            {article?.title ? (
+              <h1>{article.title}</h1>
+            ) : (
+              <h1>Article Not Found</h1>
+            )}
             {article?.excerpt && <p className="text-xl">{article.excerpt}</p>}
+            {!article && (
+              <p>
+                Sorry, article with the slug <code>`{slug}`</code> is not found.
+              </p>
+            )}
           </div>
         </div>
       </header>
 
-      <LazyLoad
-        once
-        height={580}
-        placeholder={
-          <div className="aspect-video w-full rounded-base bg-neutral-800" />
-        }
-      >
-        <img
-          className="aspect-video w-full rounded-base"
-          src={article.coverImage?.url}
-          alt={article.title}
-        />
-      </LazyLoad>
+      {article?.coverImage?.url && (
+        <LazyLoad
+          once
+          height={580}
+          placeholder={
+            <div className="aspect-video w-full rounded-base bg-neutral-800" />
+          }
+        >
+          <img
+            className="aspect-video w-full rounded-base"
+            src={article.coverImage.url}
+            alt={article.title}
+          />
+        </LazyLoad>
+      )}
 
-      <div className="stack-v mt-10 items-center">
-        <div className="prose-config max-w-screen-sm">
-          {markdocRenderReact(content)}
+      {content && (
+        <div className="stack-v mt-10 items-center">
+          <div className="prose-config max-w-screen-sm">
+            {markdocRenderReact(content)}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

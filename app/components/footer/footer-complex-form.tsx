@@ -2,7 +2,6 @@ import { Anchor, Button, FormControl, FormLabel, Input } from "~/components";
 import { configMeta, configStyle } from "~/configs";
 import { convertkitSubscribeClient } from "~/features";
 import { useEffect, useForm, useNotification, useState } from "~/hooks";
-import { sleep } from "~/utils";
 
 /**
  * Footer Complex Form Subscribe
@@ -26,7 +25,6 @@ export const FooterComplexFormSubscribe = () => {
   const onSubmit = async (data: any) => {
     try {
       setLoading(true);
-      await sleep(1);
 
       const { email, firstName } = data;
       const response = await convertkitSubscribeClient({ email, firstName });

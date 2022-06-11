@@ -4,7 +4,6 @@ import { Pre, RadixScrollArea } from "~/components";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
 import { gql, graphqlClient } from "~/libs";
-import { sleep } from "~/utils";
 
 import type { LoaderFunction } from "~/types";
 
@@ -22,7 +21,6 @@ export const loader: LoaderFunction = async () => {
     }
   `;
 
-  await sleep(1);
   const data = await graphqlClient.request(query);
 
   return json({

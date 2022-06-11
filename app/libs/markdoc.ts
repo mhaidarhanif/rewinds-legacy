@@ -1,7 +1,7 @@
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
 
-import type { Node, Tag } from "@markdoc/markdoc";
+import type { Node, Tag, RenderableTreeNode } from "~/types";
 
 export const markdocParse = (doc: string) => {
   const ast = Markdoc.parse(doc);
@@ -18,7 +18,7 @@ export const markdocRenderHTML = (content: Tag) => {
   return html;
 };
 
-export const markdocRenderReact = (content: Tag) => {
+export const markdocRenderReact = (content: RenderableTreeNode) => {
   const reactComponent = Markdoc.renderers.react(content, React);
   return reactComponent;
 };

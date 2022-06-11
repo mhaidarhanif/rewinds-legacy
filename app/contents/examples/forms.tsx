@@ -36,7 +36,7 @@ export const ExampleForms = () => {
 
   const onSubmit = async (data: any) => {
     setLoading(true);
-    await sleep(3000);
+    await sleep(1000);
     console.info(data);
     notify({
       title: "Created your account",
