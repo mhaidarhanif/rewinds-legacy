@@ -9,21 +9,25 @@ import {
   Button,
 } from "~/components";
 
+import type { ActionDataSubscribe, Transition } from "~/types";
+
 /**
  * Subscribe Form
+ *
  * Using native browser form behavior with Remix Form component
  */
 
-interface PrivateSaleFormProps {
-  transition: any;
-  actionData: any;
+interface SubscribeFormProps {
+  transition: Transition;
+  actionData: ActionDataSubscribe;
 }
 
+// EDITME
 export const SubscribeForm = ({
   transition,
   actionData,
-}: PrivateSaleFormProps) => {
-  const isLoading = transition.state === "submitting";
+}: SubscribeFormProps) => {
+  const isLoading = Boolean(transition.submission);
   const buttonSubmitText = isLoading ? "Subscribing..." : "Subscribe";
 
   const defaultPlaceholderText = {

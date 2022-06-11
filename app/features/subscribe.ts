@@ -1,9 +1,13 @@
 import { json } from "@remix-run/node";
 
-import { axiosConvertKitServer, axiosConvertKitClient } from "~/libs";
+import {
+  axiosConvertKitServer,
+  axiosConvertKitClient,
+  invariant,
+} from "~/libs";
 import { getEnvServer } from "~/utils";
 
-import type { ActionFunction } from "~/types";
+import type { ActionDataSubscribe, ActionFunction } from "~/types";
 
 /**
  * Remix Action to Subscribe
@@ -15,7 +19,7 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
   const firstName = form.get("firstName");
 
   // Prepare error message
-  const errors = {
+  const errors: ActionDataSubscribe = {
     email: email ? null : "Email is required",
     firstName: firstName ? null : "Name is required",
   };
@@ -27,30 +31,26 @@ export const actionSubscribe: ActionFunction = async ({ request }) => {
 
   // Response the errors if any
   if (hasErrors) {
-    return json({ errors });
+    return json<ActionDataSubscribe>({ errors });
   }
 
   // Check types
-  if (typeof email !== "string" || typeof firstName !== "string") {
-    return json({
-      error: true,
-      message: "Please provide a proper name and email.",
-    });
-  }
+  invariant(typeof firstName === "string", "Name should be a text");
+  invariant(typeof email === "string", "Email should be a text");
 
   // Submit to API
   const data = await convertkitSubscribeServer({ email, firstName });
 
   // Check response from ConvertKit
-  if (!data?.subscription) {
-    return json({
+  if (!data.subscription) {
+    return json<ActionDataSubscribe>({
       error: true,
       message: "Failed to subscribe. Could be a wrong email format.",
     });
   }
 
   // Return success
-  return json({
+  return json<ActionDataSubscribe>({
     success: true,
     firstName,
     email,

@@ -5,7 +5,12 @@ import { useActionData, useTransition } from "~/hooks";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
-import type { ActionFunction, MetaFunction, SEOHandle } from "~/types";
+import type {
+  ActionDataSubscribe,
+  ActionFunction,
+  MetaFunction,
+  SEOHandle,
+} from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -25,7 +30,7 @@ export const action: ActionFunction = actionSubscribe;
 // EDITME
 export default function Subscribe() {
   const transition = useTransition();
-  const actionData = useActionData();
+  const actionData = useActionData() as ActionDataSubscribe;
 
   return (
     <Layout variant="large">

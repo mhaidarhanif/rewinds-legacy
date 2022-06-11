@@ -41,3 +41,17 @@ export type LoaderDataBlogArticle = {
   article: Article;
   content: any;
 };
+
+export type UserInfo = {
+  email?: string | null;
+  firstName?: string | null;
+};
+
+export type ActionDataSubscribe =
+  | (UserInfo & {
+      errors?: UserInfo;
+      success?: boolean;
+      error?: boolean;
+      message?: string;
+    })
+  | undefined;
