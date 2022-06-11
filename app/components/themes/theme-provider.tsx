@@ -104,21 +104,22 @@ export const ThemeProvider = ({
   const mountRun = useRef(false);
 
   useEffect(() => {
+    const themeToPersist = { colorScheme, density, radius, cursorPointer };
+
     if (!mountRun.current) {
       mountRun.current = true;
       return;
     }
-    if (!colorScheme) return;
+
+    if (!colorScheme) {
+      persistThemeRef.current.submit(
+        { theme: JSON.stringify(configStyle?.theme) },
+        { action: "action/set-theme", method: "post" },
+      );
+    }
 
     persistThemeRef.current.submit(
-      {
-        theme: JSON.stringify({
-          colorScheme,
-          density,
-          radius,
-          cursorPointer,
-        }),
-      },
+      { theme: JSON.stringify(themeToPersist) },
       { action: "action/set-theme", method: "post" },
     );
   }, [colorScheme, cursorPointer, density, radius]);
@@ -163,7 +164,10 @@ export const useTheme = () => {
   };
 
   const currentTheme = configAvailableThemes.find((item) => {
-    return item.id === theme.colorScheme;
+    if (item.id === theme.colorScheme) {
+      return item;
+    }
+    return configAvailableThemes[0];
   });
 
   return {

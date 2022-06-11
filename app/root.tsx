@@ -167,7 +167,7 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   console.error(error);
 
   return (
-    <DocumentBoundary title="Error, something crashed">
+    <DocumentBoundary>
       <Layout variant="boundary">
         <MessageError error={error} />
       </Layout>
