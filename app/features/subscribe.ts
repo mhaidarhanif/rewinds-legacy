@@ -1,81 +1,62 @@
 import { json } from "@remix-run/node";
 
 import { axiosConvertKitServer, axiosConvertKitClient } from "~/libs";
-import { getEnvServer, sleep } from "~/utils";
+import { getEnvServer } from "~/utils";
 
-import type { LoaderFunction, ActionFunction } from "~/types";
-
-/**
- * Remix Loader to Subscribe
- */
-
-export const loaderSubscribe: LoaderFunction = async () => {
-  const CONVERTKIT_API_KEY = getEnvServer("CONVERTKIT_API_KEY");
-  const CONVERTKIT_FORM_ID = getEnvServer("CONVERTKIT_FORM_ID");
-
-  if (!CONVERTKIT_API_KEY || !CONVERTKIT_FORM_ID) {
-    throw new Response("ConvertKit API key and form ID are not found", {
-      status: 500,
-    });
-  }
-
-  return json({ ok: true });
-};
+import type { ActionFunction } from "~/types";
 
 /**
  * Remix Action to Subscribe
  */
-
 export const actionSubscribe: ActionFunction = async ({ request }) => {
-  try {
-    await sleep(1);
+  // Get data from form
+  const form = await request.formData();
+  const email = form.get("email");
+  const firstName = form.get("firstName");
 
-    const form = await request.formData();
+  // Prepare error message
+  const errors = {
+    email: email ? null : "Email is required",
+    firstName: firstName ? null : "Name is required",
+  };
 
-    const email = form.get("email");
-    const firstName = form.get("firstName");
+  // Check if one of them has an error
+  const hasErrors = Object.values(errors).some((errorMessage) => {
+    return errorMessage;
+  });
 
-    // Check proper texts
-    if (typeof email !== "string" || typeof firstName !== "string") {
-      return json({
-        error: true,
-        message: "Sorry, please provide proper name and email.",
-      });
-    }
+  // Response the errors if any
+  if (hasErrors) {
+    return json({ errors });
+  }
 
-    // Check existence
-    if (!email && !firstName) {
-      return json({
-        error: true,
-        message: "Sorry, please provide name and email.",
-      });
-    }
-
-    // Submit to API
-    const data = await convertkitSubscribeServer({ email, firstName });
-
-    // Check response
-    if (!data.subscription) {
-      return json({
-        error: true,
-        message: data,
-      });
-    }
-
-    // Return success
-    return json({
-      success: true,
-      firstName,
-      email,
-      message: `Thank you ${firstName}, ${email} is subscribed! Please check your inbox.`,
-      ...data,
-    });
-  } catch (error) {
+  // Check types
+  if (typeof email !== "string" || typeof firstName !== "string") {
     return json({
       error: true,
-      message: "Sorry, failed for unknown reason.",
+      message: "Please provide a proper name and email.",
     });
   }
+
+  // Submit to API
+  const data = await convertkitSubscribeServer({ email, firstName });
+
+  // Check response from ConvertKit
+  if (!data?.subscription) {
+    return json({
+      error: true,
+      message: "Failed to subscribe. Could be a wrong email format.",
+    });
+  }
+
+  // Return success
+  return json({
+    success: true,
+    firstName,
+    email,
+    message: `Thank you ${firstName}, your email ${email} is subscribed! Please check your inbox.`,
+    ...data,
+  });
 };
 
 /**

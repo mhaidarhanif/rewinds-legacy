@@ -38,10 +38,17 @@ export const SubscribeForm = ({
 
   return (
     <div className="flex w-full justify-center">
-      <Form method="post" className="w-full max-w-xs space-y-5">
+      <Form method="post" className="w-full space-y-5 xs:max-w-xs">
         <div className="space-y-5">
           <FormControl id="name">
-            <FormLabel>Your name</FormLabel>
+            <FormLabel>
+              Your name:{" "}
+              {actionData?.errors?.firstName && (
+                <span className="text-error-500">
+                  {actionData.errors.firstName}
+                </span>
+              )}
+            </FormLabel>
             <Input
               name="firstName"
               type="text"
@@ -51,7 +58,14 @@ export const SubscribeForm = ({
           </FormControl>
 
           <FormControl id="email">
-            <FormLabel>Email address</FormLabel>
+            <FormLabel>
+              Email address:{" "}
+              {actionData?.errors?.email && (
+                <span className="text-error-500">
+                  {actionData.errors.email}
+                </span>
+              )}
+            </FormLabel>
             <Input
               name="email"
               type="email"
@@ -77,15 +91,15 @@ export const SubscribeForm = ({
             {buttonSubmitText}
           </Button>
 
-          {actionData?.subscription && (
-            <Alert variant="subtle" color="success">
-              {actionData.message ?? defaultActionText.success}
-            </Alert>
-          )}
-
           {actionData?.error && (
             <Alert variant="subtle" color="error">
               {actionData.message ?? defaultActionText.error}
+            </Alert>
+          )}
+
+          {actionData?.success && (
+            <Alert variant="subtle" color="success">
+              {actionData.message ?? defaultActionText.success}
             </Alert>
           )}
         </div>

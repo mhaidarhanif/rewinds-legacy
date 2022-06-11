@@ -1,16 +1,11 @@
 import { Anchor } from "~/components";
 import { SubscribeForm } from "~/contents";
-import { actionSubscribe, loaderSubscribe } from "~/features";
+import { actionSubscribe } from "~/features";
 import { useActionData, useTransition } from "~/hooks";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
-import type {
-  LoaderFunction,
-  ActionFunction,
-  MetaFunction,
-  SEOHandle,
-} from "~/types";
+import type { ActionFunction, MetaFunction, SEOHandle } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -24,8 +19,6 @@ export const meta: MetaFunction = () => {
     description: `Get some updates from Rewinds via email.`,
   });
 };
-
-export const loader: LoaderFunction = loaderSubscribe;
 
 export const action: ActionFunction = actionSubscribe;
 
