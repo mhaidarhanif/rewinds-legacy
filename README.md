@@ -45,6 +45,7 @@ The complete features are listed in [the about page](https://rewinds.mhaidarhani
 The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
 - [x] TypeScript v4.6
+  - [x] Type checking is enforced
 - [x] Node.js v14-v17
 - [x] npm v8
   - Not Yarn because v1 & v2 difference
@@ -70,16 +71,19 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - [x] React Hook Form
 - [x] React Lazyload
 - [x] Markdoc for Markdown parser
+  - Alternatively you can also use Marked
 - [x] Prism.js for code syntax highlighting
+- [x] CSS classname utility with `clsx` or `cx` aliased as `classx`
+- [x] GraphQL query/mutate with `graphql-request` and `urql`
+- [x] REST API request with `fetch` and `axios`
 - [x] ESLint v8
   - [x] `eslint-config-airbnb`
   - [x] `eslint-config-prettier`
 - [x] Stylelint v14
 - [x] Prettier v2
   - [x] `prettier-plugin-tailwindcss`
-- [x] CSS classname `clsx` or `cx` aliased as `classx`
-- [x] GraphQL query/mutate with `graphql-request` and `urql`
-- [x] REST API request with `fetch` and `axios`
+- [x] Git hooks with Husky to lint staged files
+  - eslint, stylelint, prettier, typecheck
 - [x] Deployment to Vercel
 
 > ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
@@ -227,6 +231,14 @@ npm run eslint
 
 ```sh
 npm run stylelint
+```
+
+```sh
+npm run prettier
+```
+
+```sh
+npm run typecheck
 ```
 
 ## Deployment

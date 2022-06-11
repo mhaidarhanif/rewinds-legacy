@@ -22,19 +22,20 @@
     "stylelint": "stylelint styles/*.css",
     "stylelint:fix": "stylelint --fix styles/*.css",
     "prettier": "prettier --write .",
-    "ncu": "ncu --reject react,react-dom,@types/react,@types/react-dom",
-    "ncu:u": "ncu -u --reject react,react-dom,@types/react,@types/react-dom",
     "commit": "cz",
     "typecheck": "tsc --noEmit --incremental false",
     "release": "standard-version",
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch"
+    "release:patch": "standard-version --release-as patch",
+    "ncu": "ncu --reject react,react-dom,@types/react,@types/react-dom",
+    "ncu:u": "ncu -u --reject react,react-dom,@types/react,@types/react-dom"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "tsc -p tsconfig.json --noEmit --incremental false"
     ],
     "**/*.css": [
       "stylelint --fix",
