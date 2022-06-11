@@ -38,7 +38,7 @@ export default function ExampleDropdownMenu() {
         <DropdownMenuExample />
       </article>
 
-      <div className=" h-[600px]">
+      <div className="h-[300px]">
         <small>This is some space to show the popup menu.</small>
       </div>
     </Layout>

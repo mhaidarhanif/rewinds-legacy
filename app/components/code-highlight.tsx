@@ -41,12 +41,12 @@ export const CodeHighlight = ({
   language = defaultLanguage,
   code = defaultExampleCode,
 }: CodeHighlightProps) => {
-  const { isDark } = useTheme();
+  const { isLight } = useTheme();
 
   return (
     <PrismHighlight
       {...defaultProps}
-      theme={theme || isDark ? defaultThemeDark : defaultThemeLight}
+      theme={theme || isLight ? defaultThemeLight : defaultThemeDark}
       language={language}
       code={code}
     >

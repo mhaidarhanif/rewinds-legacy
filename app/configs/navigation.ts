@@ -54,8 +54,8 @@ export const configNavigationExamples1: LinkItems = [
 export const configNavigationExamples2: LinkItems = [
   { to: "/examples/code-highlight", text: "Code Highlight" },
   { to: "/examples/dialog", text: "Dialog" },
-  { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
   { to: "/examples/menu", text: "Menu" },
+  { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
   { to: "/examples/navigation-menu", text: "Navigation Menu" },
 ];
 

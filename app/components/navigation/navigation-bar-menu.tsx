@@ -8,6 +8,8 @@ import { configNavigationMenu } from "~/configs";
 import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
 
+import type { LinkItem } from "~/types";
+
 export { Menu } from "@headlessui/react";
 
 interface NavigationBarMenuProps {
@@ -63,31 +65,10 @@ export const MenuItemsContent = () => {
         {configNavigationMenu.map((group, index) => {
           return (
             <div role="group" key={group.name}>
-              {group.links.map((link) => {
-                return (
-                  <Menu.Item key={link.text}>
-                    {({ active, disabled }) => {
-                      return (
-                        <NavLink
-                          end
-                          to={link.to}
-                          className={({ isActive }) => {
-                            return classx(
-                              "flex h-8 w-full flex-shrink-0 cursor-base items-center rounded-base p-2 px-3 text-left text-sm font-bold transition focus:outline-none",
-                              isActive && "navlink-active", // REMIX
-                              active && "navlink-menu-active", // HUI
-                              disabled &&
-                                "disabled:cursor-not-allowed disabled:opacity-60",
-                            );
-                          }}
-                        >
-                          {link.text}
-                        </NavLink>
-                      );
-                    }}
-                  </Menu.Item>
-                );
-              })}
+              {group?.links &&
+                group.links.map((link) => {
+                  return <MenuItem key={link.text} link={link} />;
+                })}
               {configNavigationMenu?.length !== index + 1 && (
                 <Divider
                   orientation="horizontal"
@@ -99,5 +80,34 @@ export const MenuItemsContent = () => {
         })}
       </div>{" "}
     </div>
+  );
+};
+
+interface MenuItemProps {
+  link: LinkItem;
+}
+
+export const MenuItem = ({ link }: MenuItemProps) => {
+  return (
+    <Menu.Item>
+      {({ active, disabled }) => {
+        return (
+          <NavLink
+            end
+            to={link.to}
+            className={({ isActive }) => {
+              return classx(
+                "flex h-8 w-full flex-shrink-0 cursor-base items-center rounded-base p-2 px-3 text-left text-sm font-bold transition focus:outline-none",
+                isActive && "navlink-active", // REMIX
+                active && "navlink-menu-active", // HUI
+                disabled && "disabled:cursor-not-allowed disabled:opacity-60",
+              );
+            }}
+          >
+            {link.text}
+          </NavLink>
+        );
+      }}
+    </Menu.Item>
   );
 };

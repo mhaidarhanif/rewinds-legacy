@@ -29,8 +29,8 @@ export default function ExampleMenu() {
       </header>
 
       <article className="example h-[600px]">
-        <h3>Navigation Bar Menu</h3>
-        <p>Note that the component doesn't have any collision detection.</p>
+        <h3>Navigation Bar Regular Menu</h3>
+        <p>Note that this component doesn't have any collision detection.</p>
         <NavigationBarMenu originDirection="left" />
       </article>
     </Layout>

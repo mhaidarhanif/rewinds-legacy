@@ -116,7 +116,7 @@ export const NavigationMenuItemExamples = () => {
 export const NavigationMenuContentExamples = () => {
   return (
     <div className="nav-menu-content-children">
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-6 gap-2">
         <div className="col-span-2 flex w-full flex-col space-y-2">
           {configNavigationExamples1.map((item) => {
             return (
