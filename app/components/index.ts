@@ -4,6 +4,7 @@ export * from "./avatar";
 export * from "./badge";
 export * from "./breadcrumb";
 export * from "./button-anchor";
+export * from "./button-icon";
 export * from "./button-link";
 export * from "./button";
 export * from "./code-highlight";

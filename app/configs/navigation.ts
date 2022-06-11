@@ -52,6 +52,7 @@ export const configNavigationExamples1: LinkItems = [
 ];
 
 export const configNavigationExamples2: LinkItems = [
+  { to: "/examples/theme", text: "Theme" },
   { to: "/examples/code-highlight", text: "Code Highlight" },
   { to: "/examples/dialog", text: "Dialog" },
   { to: "/examples/menu", text: "Menu" },

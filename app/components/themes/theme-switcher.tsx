@@ -1,11 +1,18 @@
 import { Popover, RadioGroup, Transition } from "@headlessui/react";
 import { Switch, Select, IconButton } from "@vechaiui/react";
 
-import { Divider, Fragment, useTheme } from "~/components";
+import {
+  ButtonGroup,
+  Divider,
+  Fragment,
+  ThemeToggle,
+  useTheme,
+} from "~/components";
 import {
   configAvailableThemes,
   configAvailableRadiuses,
   configStyle,
+  configFeatures,
 } from "~/configs";
 import { useToast } from "~/hooks";
 import { IconGear } from "~/libs";
@@ -14,14 +21,30 @@ import { classx } from "~/utils";
 import type { ThemeContextType } from "~/components";
 import type { ButtonProps } from "~/types";
 
-interface ThemeSwitcherProps {
-  inNavbar?: boolean;
+interface ThemeSwitcherButtonProps {
   variant?: ButtonProps["variant"];
 }
 
+export const ThemeSwitcherButton = ({
+  variant = "solid",
+}: ThemeSwitcherButtonProps) => {
+  return (
+    <Popover.Button as={IconButton} size="md" color="primary" variant={variant}>
+      <IconGear aria-label="Settings" weight="fill" className="h-4 w-4" />
+    </Popover.Button>
+  );
+};
+
+interface ThemeSwitcherProps {
+  variant?: ButtonProps["variant"];
+  inNavbar?: boolean;
+  isGroup?: boolean;
+}
+
 export const ThemeSwitcher = ({
+  variant = "solid",
   inNavbar = false,
-  variant = "ghost",
+  isGroup = false,
 }: ThemeSwitcherProps) => {
   const {
     colorScheme,
@@ -37,10 +60,12 @@ export const ThemeSwitcher = ({
 
   const changeColorScheme = (value: string) => {
     setColorScheme(value);
-    toast({
-      message: `Changed theme to ${value}`,
-      position: configStyle.toast.position,
-    });
+    if (configFeatures.toast) {
+      toast({
+        message: `Changed theme to ${value}`,
+        position: configStyle.toast.position,
+      });
+    }
   };
 
   return (
@@ -48,18 +73,14 @@ export const ThemeSwitcher = ({
       {({ open }) => {
         return (
           <>
-            <Popover.Button
-              as={IconButton}
-              size="md"
-              color="primary"
-              variant={variant}
-            >
-              <IconGear
-                aria-label="Settings"
-                weight="fill"
-                className="h-4 w-4"
-              />
-            </Popover.Button>
+            {isGroup ? (
+              <ButtonGroup attached variant={variant}>
+                <ThemeToggle />
+                <ThemeSwitcherButton />
+              </ButtonGroup>
+            ) : (
+              <ThemeSwitcherButton variant={variant} />
+            )}
 
             <Transition
               show={open}

@@ -29,12 +29,13 @@ The complete features are listed in [the about page](https://rewinds.mhaidarhani
 - [x] Remix as the React framework
 - [x] Tailwind CSS using Vechai UI as primary components
 - [x] Multiple themes switcher and persist theme with a session cookie
+  - [ ] Not yet with system theme auto detect
 - [x] Commonly used pages/routes with contents
 - [x] Ready to use components that highly customizable
 - [x] Form submission with either Remix Form or React Hook Form
 - [x] Data fetching with REST API or GraphQL
-- [ ] Optimistic UI
-- [ ] Nested routes use cases
+- [x] Nested routes use cases
+- [ ] Optimistic UI on form submit
 - [ ] Storybook for components development
 - [x] Only focus on the frontend styling and project structure, without particular in testing and database
   - Just a bit of backend integration through Remix loader

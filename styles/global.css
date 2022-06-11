@@ -178,7 +178,7 @@
    */
 
   .example {
-    @apply my-20 space-y-5;
+    @apply my-20 space-y-10;
   }
 
   .example-box {

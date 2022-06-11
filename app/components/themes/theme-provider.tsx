@@ -164,10 +164,7 @@ export const useTheme = () => {
   };
 
   const currentTheme = configAvailableThemes.find((item) => {
-    if (item.id === theme.colorScheme) {
-      return item;
-    }
-    return configAvailableThemes[0];
+    return item.id === theme.colorScheme;
   });
 
   return {

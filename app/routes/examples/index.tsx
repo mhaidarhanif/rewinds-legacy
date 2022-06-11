@@ -32,9 +32,11 @@ export default function Examples() {
 
   return (
     <Layout>
-      <article className="prose-config">
+      <header>
         <h1>Examples</h1>
+      </header>
 
+      <article className="prose-config">
         <h2>Example Components</h2>
         <ul>
           {examples.map((item: LinkItem) => {

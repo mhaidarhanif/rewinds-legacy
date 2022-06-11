@@ -4,6 +4,7 @@
 
 export const configFeatures = {
   console: false,
+  toast: true,
   googleAnalytics: true,
   splitbee: true,
   posthog: true,

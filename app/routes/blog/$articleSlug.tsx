@@ -4,7 +4,7 @@ import { BlogArticle } from "~/contents";
 import { useCatch, useLoaderData, useParams } from "~/hooks";
 import { invariant, markdocParse, markdocTransform } from "~/libs";
 import { getArticleBySlug } from "~/models";
-import { createMetaData } from "~/utils";
+import { createMetaData, stringifyJSON } from "~/utils";
 
 import type {
   Article,
@@ -89,12 +89,21 @@ export function CatchBoundary() {
   return (
     <div>
       <header>
-        <h1>Caught an unknown error</h1>
+        <h1>Caught an unknown error in Article</h1>
       </header>
       <p>Status: {caught.status}</p>
-      <pre>
-        <code>{JSON.stringify(caught.data, null, 2)}</code>
-      </pre>
+      <pre>{stringifyJSON(caught.data)}</pre>
+    </div>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <div>
+      <header>
+        <h1>Error in Article</h1>
+      </header>
+      <pre>{error.message}</pre>
     </div>
   );
 }
