@@ -2,11 +2,11 @@
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Reach UI, Vechai UI, and more.
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Reach UI, Vechai UI, and more. Using TypeScript too!
 
 Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 
-> Note that this repo is ongoing active development so thing might quickly change at the moment.
+> ⚠️ The repo is ongoing active development so thing might quickly change at the moment.
 
 ## Screenshots
 
@@ -41,57 +41,51 @@ Visit the live demo: [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com
 
 The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
-- Remix as the React framework
-- Tailwind CSS using Vechai UI as primary components
-- Multiple themes switcher and persist theme with a session cookie
-- Only focus on the frontend styling and project structure, without particular in testing and database
-  - Only a bit of backend integration through Remix loader
+- [x] Remix as the React framework
+- [x]Tailwind CSS using Vechai UI as primary components
+- [x]Multiple themes switcher and persist theme with a session cookie
+- [x]Only focus on the frontend styling and project structure, without particular in testing and database
+  - Just a bit of backend integration through Remix loader
   - For the full stack integration with database and testing, check out the official Remix Stacks instead: https://remix.run/stacks
-
-> ℹ️ Depending on your computer processing power, the first Tailwind compilation might take around ~3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine enabled by default.
-
-- https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
-- https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
 
 ## Stacks
 
 The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
 
-- TypeScript v4.6
-- Node.js v14-v17
-- npm v8
+- [x] TypeScript v4.6
+- [x] Node.js v14-v17
+- [x] npm v8
   - Not Yarn because v1 & v2 difference
-- React v17
-- Remix v1.4
-- Tailwind CSS v3
-  - Tailwind CSS plugins
-- PostCSS v8
-- Fonts
+- [x] React v17
+- [x] Remix v1.5
+- [x] Tailwind CSS v3
+- [x] PostCSS v8
+- [x] Fonts
   - Google Fonts
   - Fontbit CDN
-- Icons
+- [x] Icons
   - React Icons
-    - Heroicons v1
-    - Font Awesome
+  - Heroicons v1
+  - Font Awesome
   - Phospor Icons
-- Components
+- [x] Styled the unstyled components
   - Headless UI v1 — Unstyled accessible UI components
   - Radix UI v0 — Unstyled accessible UI components
     - Tailwind Radix
   - Reach UI v0 — Unstyled accessible UI components
   - Vechai UI v0 — React Tailwind CSS components
   - NProgress
-- React Hook Form
-- React Lazyload
-- Markdoc
-- Prism.js
-- ESLint v8
-- Stylelint v14
-- Prettier v2
-- `clsx` or `cx` aliased as `classx`
-- `graphql-request` and `urql`
-- `fetch` and `axios`
-- Vercel
+- [x] React Hook Form
+- [x] React Lazyload
+- [x] Markdoc for Markdown parser
+- [x] Prism.js for code syntax highlighting
+- [x] ESLint v8
+- [x] Stylelint v14
+- [x] Prettier v2
+- [x] CSS classname `clsx` or `cx` aliased as `classx`
+- [x] GraphQL query/mutate with `graphql-request` and `urql`
+- [x] REST API request with `fetch` and `axios`
+- [x] Deployment to Vercel
 
 > ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
 
@@ -132,7 +126,12 @@ npm run d
 
 Finally, open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
-Note if you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+Note if you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed. Although it can help with the Environment variables setup (no need to use `.env` file).
+
+> ℹ️ Depending on your computer processing power, the first Tailwind compilation might take around ~3 seconds. Although Tailwind CSS v3 already has Just-in-Time engine enabled by default.
+
+- https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css
+- https://tailwindcss.com/docs/upgrade-guide#migrating-to-the-jit-engine
 
 ### Environment variables using Doppler
 
@@ -149,19 +148,22 @@ Keep in mind that the structure is designed for scalability for medium-large pro
 
 > There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` (Use Search in your editor) and other things like `site.webmanifest`.
 
+- `.husky`
 - `.vscode`
 - `api`
 - `app`
-  - `components`
+  - `components`: custom and aliased components
   - `configs`
   - `contents`
   - `data`
   - `features`
+  - `graphql`
   - `hooks`
   - `layouts`
-  - `libs`
-  - `routes`
+  - `libs`: Wrapper for `node_modules`
+  - `routes`: Remix routes
   - `styles`
+    - `out.css`: Tailwind output file
   - `types`
   - `utils`
   - `entry.client.tsx`
@@ -170,23 +172,28 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `other-root-routes.server.ts`
 - `public`
 - `styles`
-  - `global.css`
-- `.env`
-- `.env.example`
-- `.eslintrc`
-- `.eslintignore`
+  - `global.css`: Tailwind input file
 - `.gitignore`
-- `.prettierrc`
-- `.prettierignore`
 - `package.json`
-- `postcss.config.js`
+  - `.eslintignore`
+  - `.eslintrc`
+  - `.npmrc`
+  - `.nvmrc`
+  - `.prettierignore`
+  - `.prettierrc`
+  - `.stylelintrc`
+  - `commitlint.config.js`
+  - `tsconfig.json`
+  - `vercel.json`
 - `README.md`
 - `remix.config.js`
-- `remix.env.d.ts`
+  - `.env`
+  - `.env.example`
+  - `postcss.config.js`
+  - `tailwind.config.js`
+  - `remix.env.d.ts`
+  - `tsconfig.json`
 - `server.js`
-- `tailwind.config.js`
-- `tsconfig.json`
-- `vercel.json`
 
 ## Build
 

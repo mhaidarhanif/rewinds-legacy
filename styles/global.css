@@ -441,6 +441,8 @@
  */
 
 @layer utilities {
+  /* Font Family */
+
   .font-primary {
     font-family: var(--font-primary), ui-sans-serif, system-ui, -apple-system,
       BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
@@ -460,7 +462,7 @@
     font-family: var(--font-brand), sans-serif;
   }
 
-  /* Colors */
+  /* Text Color */
 
   .text-brand-primary {
     color: var(--font-brand-primary);
@@ -482,7 +484,7 @@
     @apply dark:ring-offset-primary-500/80 dark:focus:ring-primary-500/80;
   }
 
-  /* Background */
+  /* Background Color */
 
   .bg-primary {
     @apply bg-neutral-50 dark:bg-neutral-900;
@@ -509,6 +511,17 @@
     @apply rounded-base p-2;
     @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
     @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
+  }
+
+  .bg-conic-gradient {
+    background: linear-gradient(
+      90deg,
+      #44ff9a -0.55%,
+      #44b0ff 22.86%,
+      #8b44ff 48.36%,
+      #f64 73.33%,
+      #ebff70 99.34%
+    );
   }
 
   /* Shadow */

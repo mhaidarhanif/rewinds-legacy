@@ -2,8 +2,8 @@
   "name": "rewinds",
   "description": "Remix Tailwind Starter Kit with Tailwind CSS family of libraries",
   "version": "0.1.0",
-  "private": true,
   "license": "MIT",
+  "private": true,
   "sideEffects": false,
   "scripts": {
     "start": "doppler run -- npm run dev",

@@ -24,16 +24,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.diagnosticLevel": "Hint",
-  "cSpell.words": [
-    "classx",
-    "convertkit",
-    "posthog",
-    "splitbee",
-    "stylelint",
-    "urql",
-    "usehooks",
-    "vechaiui"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -54,7 +44,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "explorerExclude.backup": null,
   "files.exclude": {
     ".cache": true,
     ".vercel": false,
@@ -71,24 +60,24 @@
     "package-lock.json": true,
     "public/build": true
   },
-  "peacock.color": "38bdf8",
+  "peacock.color": "#0ea5e9",
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#69cdfa",
-    "activityBar.activeBorder": "#f708ad",
-    "activityBar.background": "#69cdfa",
+    "activityBar.activeBackground": "#37b9f3",
+    "activityBar.activeBorder": "#0c4a6e",
+    "activityBar.background": "#37b9f3",
     "activityBar.foreground": "#15202b",
     "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#f708ad",
+    "activityBarBadge.background": "#0c4a6e",
     "activityBarBadge.foreground": "#e7e7e7",
-    "sash.hoverBorder": "#69cdfa",
-    "statusBar.background": "#38bdf8",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#09acf4",
-    "statusBarItem.remoteBackground": "#38bdf8",
-    "statusBarItem.remoteForeground": "#15202b",
-    "titleBar.activeBackground": "#38bdf8",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#38bdf899",
-    "titleBar.inactiveForeground": "#15202b99"
+    "sash.hoverBorder": "#37b9f3",
+    "statusBar.background": "#0ea5e9",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#37b9f3",
+    "statusBarItem.remoteBackground": "#0ea5e9",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#0ea5e9",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#0ea5e999",
+    "titleBar.inactiveForeground": "#e7e7e799"
   }
 }
