@@ -55,7 +55,7 @@ export default function ExampleREST() {
 
         <h3>Extra large scroll area with medium pre text</h3>
         <RadixScrollArea variant="xl">
-          <Pre>{data}</Pre>
+          <Pre variant="md">{data}</Pre>
         </RadixScrollArea>
       </article>
     </Layout>

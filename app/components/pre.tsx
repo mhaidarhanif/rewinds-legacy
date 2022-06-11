@@ -12,10 +12,10 @@ export const Pre = ({
       className={classx(
         "border-panel rounded-base bg-primary-900/10 p-2 ",
         [
-          variant === "xs" && "text-xs",
-          variant === "sm" && "text-sm",
-          variant === "md" && "text-base",
           variant === "common" && "text-xs sm:text-sm md:text-base",
+          variant === "md" && "text-base",
+          variant === "sm" && "text-sm",
+          variant === "xs" && "text-xs",
         ],
         className,
       )}

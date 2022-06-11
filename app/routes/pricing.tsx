@@ -20,9 +20,10 @@ export const meta: MetaFunction = () => {
 export default function Pricing() {
   return (
     <Layout variant="large">
-      <header className="header-center mb-0">
+      <header className="header-center">
         <h1>Pricing</h1>
         <h2>Choose what's the best plan for you</h2>
+        <p>(Rewinds is totally free. This is just a demo though)</p>
       </header>
 
       <PricingContent />

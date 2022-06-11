@@ -288,7 +288,7 @@
    */
 
   .stack {
-    @apply flex justify-start;
+    @apply flex;
   }
 
   .stack-v {

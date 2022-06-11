@@ -8,7 +8,7 @@ export const Logo = () => {
     <div
       className={classx(
         "text-2xl sm:text-3xl",
-        "flex items-center gap-1 transition-[opacity] duration-300 hover:opacity-80",
+        "flex gap-1 transition-[opacity] duration-300 hover:opacity-80",
       )}
     >
       <LogoIcon />

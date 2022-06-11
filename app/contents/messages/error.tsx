@@ -1,6 +1,8 @@
 import { Button, ButtonGroup, ButtonLink } from "~/components";
 import { useNavigate, useParams } from "~/hooks";
 
+import type { HTMLElementProps } from "~/types";
+
 /**
  * Message Not Found
  * Used in splat route $.tsx
@@ -29,11 +31,10 @@ export const MessageCatch = ({ caught }: MessageCatchProps) => {
   return (
     <>
       <header>
-        <h1 className="text-warning-500">What happened?</h1>
-        <p>Hmm, something went wrong.</p>
+        <h1>What happened?</h1>
+        <p className="mb-10">Hmm, something went wrong.</p>
+        <MessageBackReloadButtons />
       </header>
-
-      <MessageBackReloadButtons />
 
       <article className="prose-config">
         <h3>Status Message</h3>
@@ -60,11 +61,12 @@ export const MessageError = ({ error }: MessageErrorProps) => {
   return (
     <>
       <header>
-        <h1 className="text-error-500">Error!</h1>
-        <p>Sorry, something crashed and we didn't expect that to happen.</p>
+        <h1>Error!</h1>
+        <p className="mb-10">
+          Sorry, something crashed and we didn't expect that to happen.
+        </p>
+        <MessageBackReloadButtons />
       </header>
-
-      <MessageBackReloadButtons />
 
       <article className="prose-config">
         <h3>Error message</h3>
@@ -107,12 +109,13 @@ export const MessageErrorNotFoundGoogle = () => {
  * - ErrorBoundary
  */
 
-interface MessageBackReloadButtonsProps {
+interface MessageBackReloadButtonsProps extends HTMLElementProps {
   isThemed?: boolean;
 }
 
 export const MessageBackReloadButtons = ({
   isThemed,
+  className,
 }: MessageBackReloadButtonsProps) => {
   const navigate = useNavigate();
 
@@ -128,7 +131,7 @@ export const MessageBackReloadButtons = ({
   // Can use Vechai UI components
   if (isThemed) {
     return (
-      <ButtonGroup>
+      <ButtonGroup className={className}>
         <ButtonLink variant="solid" to="/">
           Back to home page
         </ButtonLink>

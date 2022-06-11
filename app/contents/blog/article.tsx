@@ -5,19 +5,23 @@ import { getCompleteDateUS } from "~/utils";
 import type { Article } from "~/types";
 
 /**
- * The linked snippet of the blog article
+ * The linked card view of the blog article
  */
-export const BlogArticleLink = ({ article }: { article: Article }) => {
-  const toArticleSlug = `/blog/${article.slug}`;
 
+interface BlogArticleLinkProps {
+  article: Article;
+}
+
+export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
   return (
-    <RemixLink to={toArticleSlug} className="bg-focusable">
-      <article className="stack-v sm:stack-h gap-5">
+    <RemixLink to={`/blog/${article.slug}`} className="bg-focusable">
+      <article className="stack-v sm:stack-h justify-between gap-5">
         <div>
           <img
-            className="w-full rounded-base"
+            className="aspect-video w-full rounded-base"
             src={article.coverImage?.url}
             alt={article.title}
+            loading="lazy"
           />
         </div>
         <div className="stack-v w-full max-w-lg gap-2">
@@ -35,15 +39,13 @@ export const BlogArticleLink = ({ article }: { article: Article }) => {
 /**
  * The whole blog article with content
  */
-export const BlogArticle = ({
-  article,
-  content,
-}: {
+
+interface BlogArticleProps {
   article: Article;
   content: any;
-}) => {
-  const toArticleSlug = `/blog/${article.slug}`;
+}
 
+export const BlogArticle = ({ article, content }: BlogArticleProps) => {
   return (
     <>
       <header className="stack-v items-center">
@@ -53,7 +55,9 @@ export const BlogArticle = ({
               <RemixLink to="/blog">Blog</RemixLink>
             </Breadcrumb.Item>
             <Breadcrumb.Item currentPage>
-              <RemixLink to={toArticleSlug}>{article.title}</RemixLink>
+              <RemixLink to={`/blog/${article.slug}`}>
+                {article.title}
+              </RemixLink>
             </Breadcrumb.Item>
           </Breadcrumb>
 

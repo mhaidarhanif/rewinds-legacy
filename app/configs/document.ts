@@ -15,7 +15,6 @@ import styles from "~/styles/out.css";
 export const fontFamilies = [
   `family=Archivo:wght@400;700`,
   `family=Epilogue:wght@700`,
-  `family=Work+Sans:wght@400;700`,
 ].join("&");
 
 export const faviconLinks = [

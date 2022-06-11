@@ -147,7 +147,7 @@ export function CatchBoundary() {
   const caught = useCatch();
 
   return (
-    <DocumentBoundary title="Hmm, something went wrong">
+    <DocumentBoundary title="Something went wrong">
       <Layout variant="boundary">
         <MessageCatch caught={caught} />
       </Layout>
@@ -167,7 +167,7 @@ export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   console.error(error);
 
   return (
-    <DocumentBoundary>
+    <DocumentBoundary title="Something crashed">
       <Layout variant="boundary">
         <MessageError error={error} />
       </Layout>

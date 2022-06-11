@@ -2,6 +2,10 @@ import { BlogArticleLink } from "~/contents";
 
 import type { Articles } from "~/types";
 
+/**
+ * The card view of all blog articles
+ */
+
 interface BlogArticlesProps {
   articles: Articles;
 }
