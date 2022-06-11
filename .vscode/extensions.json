@@ -1,12 +1,31 @@
 {
   "recommendations": [
     "amimaro.remix-run-snippets",
+    "antfu.file-nesting",
+    "antfu.smart-clicks",
+    "artdiniz.quitcontrol-vscode",
     "austenc.tailwind-docs",
+    "burkeholland.simple-react-snippets",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "ellreka.tailwindcss-highlight",
     "esbenp.prettier-vscode",
+    "johnpapa.vscode-peacock",
+    "kisstkondoros.vscode-gutter-preview",
+    "knisterpeter.vscode-commitizen",
+    "mikestead.dotenv",
+    "naumovs.color-highlight",
+    "pkief.material-icon-theme",
+    "pkief.material-product-icons",
+    "praveenpuglia.tailwind-breeze",
     "richie5um2.vscode-sort-json",
+    "shadowblood.tailwind-moon",
+    "sleistner.vscode-fileutils",
     "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint",
-    "antfu.file-nesting"
+    "vincaslt.highlight-matching-tag",
+    "yzhang.markdown-all-in-one",
+    "zh9528.file-size"
   ]
 }

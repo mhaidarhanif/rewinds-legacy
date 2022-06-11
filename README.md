@@ -175,6 +175,7 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `global.css`: Tailwind input file
 - `.gitignore`
 - `package.json`
+  - `.editorconfig`
   - `.eslintignore`
   - `.eslintrc`
   - `.npmrc`

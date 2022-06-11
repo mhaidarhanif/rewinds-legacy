@@ -63,11 +63,11 @@
   "peacock.color": "#0ea5e9",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#37b9f3",
-    "activityBar.activeBorder": "#0c4a6e",
+    "activityBar.activeBorder": "#d20d95",
     "activityBar.background": "#37b9f3",
     "activityBar.foreground": "#15202b",
     "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#0c4a6e",
+    "activityBarBadge.background": "#d20d95",
     "activityBarBadge.foreground": "#e7e7e7",
     "sash.hoverBorder": "#37b9f3",
     "statusBar.background": "#0ea5e9",
