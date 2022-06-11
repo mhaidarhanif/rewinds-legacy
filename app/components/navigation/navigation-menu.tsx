@@ -6,6 +6,7 @@ import { useMatch } from "react-router-dom";
 import {
   configNavigationExamples1,
   configNavigationExamples2,
+  configNavigationExamples3,
   configNavigationPages,
 } from "~/configs";
 import { IconCaretDown } from "~/libs";
@@ -127,6 +128,15 @@ export const NavigationMenuContentExamples = () => {
         </div>
         <div className="col-span-2 flex w-full flex-col space-y-2">
           {configNavigationExamples2.map((item) => {
+            return (
+              <NavigationMenuNavLink key={item.text} to={item.to}>
+                {item.text}
+              </NavigationMenuNavLink>
+            );
+          })}
+        </div>
+        <div className="col-span-2 flex w-full flex-col space-y-2">
+          {configNavigationExamples3.map((item) => {
             return (
               <NavigationMenuNavLink key={item.text} to={item.to}>
                 {item.text}

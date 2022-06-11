@@ -104,7 +104,11 @@ export const ExampleButtons = () => {
           Vechai <code>Button</code> component
         </h4>
         <ButtonGroup>
-          <Button className="rounded-lg shadow-md shadow-primary-500/20">
+          <Button
+            variant="solid"
+            color="primary"
+            className="shadow-xl shadow-primary-500/50"
+          >
             Vechai Button + Tailwind
           </Button>
         </ButtonGroup>
@@ -113,23 +117,13 @@ export const ExampleButtons = () => {
           <code>button</code> element
         </h4>
         <ButtonGroup>
-          <Button className="rounded-lg shadow-md shadow-primary-500/20">
-            Vechai Button + Tailwind
-          </Button>
           <ButtonHTML>Button HTML</ButtonHTML>
           <button
             type="button"
             data-color="primary"
-            className="btn-solid btn btn-md rounded-base"
+            className="btn-outline btn btn-md rounded-base"
           >
-            1st Raw Button HTML
-          </button>
-          <button
-            type="button"
-            data-color="primary"
-            className="btn-solid btn btn-md rounded-xl uppercase tracking-wider"
-          >
-            2nd Raw Button HTML
+            Raw Button HTML
           </button>
         </ButtonGroup>
 
@@ -144,7 +138,8 @@ export const ExampleButtons = () => {
             href="https://mhaidarhanif.com"
             target="_blank"
             rel="noreferrer"
-            className="btn-solid btn btn-md rounded-2xl border-4 border-primary-100 hover:border-primary-200"
+            data-color="primary"
+            className="btn-outline btn btn-md rounded-base"
           >
             Raw Button Anchor
           </a>
@@ -157,7 +152,7 @@ export const ExampleButtons = () => {
           <ButtonLink to=".">Button Remix Link</ButtonLink>
           <RemixLink
             to="/about"
-            className="btn-solid btn btn-md rounded-full"
+            className="btn btn-md btn-solid rounded-full"
             data-color="primary"
           >
             Raw Button Remix Link

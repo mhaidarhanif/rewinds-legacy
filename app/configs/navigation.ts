@@ -44,19 +44,22 @@ export const configNavigationExamples1: LinkItems = [
   { to: "/examples/alert", text: "Alert" },
   { to: "/examples/badge", text: "Badge" },
   { to: "/examples/button", text: "Button" },
-  { to: "/examples/code-highlight", text: "Code Highlight" },
-  { to: "/examples/dialog", text: "Dialog" },
-  { to: "/examples/menu", text: "Menu" },
-  { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
   { to: "/examples/footer", text: "Footer" },
   { to: "/examples/form", text: "Form" },
-  { to: "/examples/navigation-menu", text: "Navigation Menu" },
   { to: "/examples/notification", text: "Notification" },
-  { to: "/examples/toast", text: "Toast" },
   { to: "/examples/tab", text: "Tab" },
+  { to: "/examples/toast", text: "Toast" },
 ];
 
 export const configNavigationExamples2: LinkItems = [
+  { to: "/examples/code-highlight", text: "Code Highlight" },
+  { to: "/examples/dialog", text: "Dialog" },
+  { to: "/examples/dropdown-menu", text: "Dropdown Menu" },
+  { to: "/examples/menu", text: "Menu" },
+  { to: "/examples/navigation-menu", text: "Navigation Menu" },
+];
+
+export const configNavigationExamples3: LinkItems = [
   { to: "/examples/graphql", text: "GraphQL" },
   { to: "/examples/rest", text: "REST API" },
   { to: "/examples/catch", text: "Catch" },
@@ -67,6 +70,7 @@ export const configNavigationExamples2: LinkItems = [
 export const configNavigationExamples: LinkItems = [
   ...configNavigationExamples1,
   ...configNavigationExamples2,
+  ...configNavigationExamples3,
 ];
 
 export const configNavigationLayouts: LinkItems = [

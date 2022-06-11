@@ -6,12 +6,18 @@
 
 /**
  * CSS Variables
+ *
+ * Please also check app/configs/document.ts
  */
 
 :root {
   --font-primary: "Archivo";
-  --font-secondary: "Archivo";
-  --font-tertiary: "Archivo";
+  --font-secondary: "Epilogue";
+  --font-tertiary: "Comic Neue";
+  --font-brand: var(--font-secondary);
+  --color-brand-primary: "#00AAAA";
+  --color-brand-secondary: "#00AAAA";
+  --color-brand-tertiary: "#00AAAA";
 }
 
 /**
@@ -19,6 +25,8 @@
  */
 
 @layer base {
+  /* Mostly fonts */
+
   html {
     @apply font-primary;
 
@@ -32,22 +40,31 @@
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
 
-  p a,
-  .a {
-    @apply font-bold no-underline;
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
   }
 
-  header {
-    @apply header;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h0,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply font-secondary;
   }
 
-  header p {
-    @apply text-base sm:text-lg;
-  }
-
-  header p a {
-    @apply prose-a-styles;
-  }
+  /* Headings */
 
   .h0 {
     @apply mb-10 text-6xl font-black sm:text-8xl;
@@ -71,6 +88,23 @@
   h4,
   .h4 {
     @apply my-2 font-semibold sm:text-lg;
+  }
+
+  p a,
+  .a {
+    @apply font-bold no-underline;
+  }
+
+  header {
+    @apply header;
+  }
+
+  header p {
+    @apply text-base sm:text-lg;
+  }
+
+  header p a {
+    @apply prose-a-styles;
   }
 
   a:focus-visible {
@@ -421,6 +455,26 @@
   .font-tertiary {
     font-family: var(--font-tertiary), sans-serif;
   }
+
+  .font-brand {
+    font-family: var(--font-brand), sans-serif;
+  }
+
+  /* Colors */
+
+  .text-brand-primary {
+    color: var(--font-brand-primary);
+  }
+
+  .text-brand-secondary {
+    color: var(--font-brand-secondary);
+  }
+
+  .text-brand-tertiary {
+    color: var(--font-brand-tertiary);
+  }
+
+  /* Focus */
 
   .focus-ring {
     @apply outline-none ring-offset-2 focus:ring-1;

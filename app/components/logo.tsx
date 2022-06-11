@@ -31,7 +31,7 @@ export const LogoSpan = ({ className }: HTMLSpanElementProps) => {
   return (
     <span
       className={classx(
-        "pr-2 font-black tracking-tightest text-primary-500",
+        "font-brand pr-2 font-bold tracking-tighter text-primary-500",
         className,
       )}
     >

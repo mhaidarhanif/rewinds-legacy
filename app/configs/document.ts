@@ -7,12 +7,18 @@ import styles from "~/styles/out.css";
  * Manifest
  * Fonts
  * Style Sheets
+ *
+ * Please also check styles/global.css
  */
 
 // EDITME
-const fontFamilies = `family=Archivo:wght@400;700;900`;
+export const fontFamilies = [
+  `family=Archivo:wght@400;700`,
+  `family=Epilogue:wght@700`,
+  `family=Work+Sans:wght@400;700`,
+].join("&");
 
-const faviconLinks = [
+export const faviconLinks = [
   {
     rel: "shortcut icon",
     href: "/favicons/favicon.ico",

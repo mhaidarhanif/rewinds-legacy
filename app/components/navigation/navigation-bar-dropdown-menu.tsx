@@ -7,6 +7,7 @@ import {
   configNavigationDropdownMenuItems,
   configNavigationExamples1,
   configNavigationExamples2,
+  configNavigationExamples3,
 } from "~/configs";
 import { IconMenu, IconSignIn, IconSignOut, IconSignUp } from "~/libs";
 import { classx } from "~/utils";
@@ -102,6 +103,22 @@ export const NavigationBarDropdownMenu = () => {
             </DropdownMenuTriggerItem>
             <DropdownMenuSubContent>
               {configNavigationExamples2.map(({ to, text }) => {
+                return (
+                  <RemixLink key={to} to={to as string}>
+                    <DropdownMenuItem>{text}</DropdownMenuItem>
+                  </RemixLink>
+                );
+              })}
+            </DropdownMenuSubContent>
+          </DropdownMenu.Root>
+
+          <DropdownMenu.Root>
+            <DropdownMenuTriggerItem>
+              <FileIcon className="dropdown-menu-icon" />
+              <span className="flex-grow">Examples 3</span>
+            </DropdownMenuTriggerItem>
+            <DropdownMenuSubContent>
+              {configNavigationExamples3.map(({ to, text }) => {
                 return (
                   <RemixLink key={to} to={to as string}>
                     <DropdownMenuItem>{text}</DropdownMenuItem>
