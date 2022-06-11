@@ -173,6 +173,12 @@ export const dataMainStacks: StackItems = [
     description: "Opinionated Code Formatter",
     subItems: [
       {
+        url: "https://github.com/tailwindlabs/prettier-plugin-tailwindcss",
+        name: "prettier-plugin-tailwindcss",
+        description:
+          "A Prettier plugin for Tailwind CSS v3.0+ that automatically sorts classes based on our recommended class order.",
+      },
+      {
         url: "https://prettier.io/docs/en/precommit.html",
         name: "Pre-commit Hook with Prettier",
         description:

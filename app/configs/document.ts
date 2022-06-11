@@ -18,6 +18,11 @@ export const fontFamilies = [
 ].join("&");
 
 export const faviconLinks = [
+  // Use this if you want to change the favicon quickly using emoji
+  // {
+  //   rel: "shortcut icon",
+  //   href: "https://fav.farm/⏪",
+  // },
   {
     rel: "shortcut icon",
     href: "/favicons/favicon.ico",

@@ -80,8 +80,11 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 - [x] Markdoc for Markdown parser
 - [x] Prism.js for code syntax highlighting
 - [x] ESLint v8
+  - [x] `eslint-config-airbnb`
+  - [x] `eslint-config-prettier`
 - [x] Stylelint v14
 - [x] Prettier v2
+  - [x] `prettier-plugin-tailwindcss`
 - [x] CSS classname `clsx` or `cx` aliased as `classx`
 - [x] GraphQL query/mutate with `graphql-request` and `urql`
 - [x] REST API request with `fetch` and `axios`
@@ -91,9 +94,21 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
 
 ## Development
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+### Clone repo
+
+Click [Use this template button](https://github.com/mhaidarhanif/rewinds/generate).
+
+```
+git clone https://github.com/mhaidarhanif/rewinds rewinds-project
+```
+
+```
+npx degit https://github.com/mhaidarhanif/rewinds rewinds-project
+```
 
 ### Install dependencies
+
+To run your Remix app locally, make sure your project's local dependencies are installed:
 
 ```sh
 npm install

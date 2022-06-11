@@ -140,7 +140,7 @@ export const DocumentBoundary = ({ title, children }: DocumentProps) => {
 
 /**
  * Catch an expected error
- * Status: 400-500
+ * This would render the error for 400-status level responses
  */
 
 export function CatchBoundary() {
@@ -157,6 +157,7 @@ export function CatchBoundary() {
 
 /**
  * Error means there is an unexpected error
+ * This would render an "unexpected error" message
  */
 
 interface ErrorBoundaryProps {

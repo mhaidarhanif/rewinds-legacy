@@ -14,10 +14,10 @@ export const RadixScrollArea = ({
       className={classx(
         "overflow-hidden rounded-base",
         [
-          variant === "max" && "h-max",
           variant === "common" && "h-96",
           variant === "lg" && "h-[32rem]",
           variant === "xl" && "h-[42rem]",
+          variant === "max" && "h-max",
         ],
         className,
       )}

@@ -6,7 +6,7 @@ export interface HTMLElementProps extends React.HTMLAttributes<HTMLElement> {}
 
 export interface HTMLElementVariantProps
   extends React.HTMLAttributes<HTMLElement> {
-  variant?: "common" | "xs" | "sm" | "md" | "lg" | "xl";
+  variant?: "common" | "xs" | "sm" | "md" | "lg" | "xl" | "max";
 }
 
 export interface HTMLAnchorElementProps

@@ -9,6 +9,7 @@ export * from "./button";
 export * from "./code-highlight";
 export * from "./code";
 export * from "./collapsible";
+export * from "./component";
 export * from "./dialog";
 export * from "./divider";
 export * from "./dropdown-menu";

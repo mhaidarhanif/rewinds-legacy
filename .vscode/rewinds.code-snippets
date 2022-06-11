@@ -1,4 +1,10 @@
 {
+  "Rewinds React Component": {
+    "prefix": "rrc",
+    "body": ["export const $1 = () => {", "  return <div>$1</div>;", "};", ""],
+    "description": "React component"
+  },
+
   "Rewinds Remix Route": {
     "prefix": "rrr",
     "body": [
@@ -7,7 +13,9 @@
       "export default function $1() {",
       "  return (",
       "    <Layout>",
-      "      <h1>$1</h1>",
+      "      <header>",
+      "        <h1>$1</h1>",
+      "      </header>",
       "    </Layout>",
       "  );",
       "}",

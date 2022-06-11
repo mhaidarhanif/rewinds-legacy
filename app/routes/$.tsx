@@ -51,6 +51,10 @@ export const loader: LoaderFunction = async ({ params }) => {
   return null;
 };
 
+/**
+ * Currently just showcase of using params
+ */
+
 export const action: ActionFunction = async ({ params }) => {
   const pathName = params["*"];
   if (configFeatures.console) console.info(pathName);
