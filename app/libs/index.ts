@@ -1,4 +1,4 @@
-export * from "./markdoc";
+// Note: Do not re-export from React and Remix modules
 export * from "./axios.client";
 export * from "./axios.server";
 export * from "./convertkit.client";
@@ -8,6 +8,8 @@ export * from "./dayjs";
 export * from "./google-analytics";
 export * from "./graphql-request.server";
 export * from "./icons";
+export * from "./invariant";
+export * from "./markdoc";
 export * from "./posthog.client";
 export * from "./posthog.server";
 export * from "./remix-utils";
@@ -16,7 +18,3 @@ export * from "./sentry.server";
 export * from "./splitbee";
 export * from "./urql.server";
 export * from "./usehooks-ts";
-
-/**
- * Note: Do not re-export from React and Remix modules
- */
