@@ -89,7 +89,7 @@ export const MessageErrorNotFoundGoogle = () => {
   const pathName = params["*"];
 
   return (
-    <article className="prose-config">
+    <article className="prose-config mt-10">
       <h1 className="text-info-500">404 Not Found</h1>
       <h2>Sorry, page is not exist or already gone</h2>
       <h3>

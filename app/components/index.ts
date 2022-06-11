@@ -19,6 +19,7 @@ export * from "./icon-button";
 export * from "./icon-theme";
 export * from "./icon";
 export * from "./image";
+export * from "./lazyload";
 export * from "./logo";
 export * from "./navigation";
 export * from "./nprogress";

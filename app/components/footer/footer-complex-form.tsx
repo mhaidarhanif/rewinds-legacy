@@ -7,7 +7,7 @@ import { sleep } from "~/utils";
 /**
  * Footer Complex Form Subscribe
  *
- * For now use React Hook Form, not Remix Form
+ * This is using React Hook Form, not Remix Form, as an example
  * Because this will be used in all routes
  * Also need client-side toast notification
  * Still looking a better way if will be using Remix Form

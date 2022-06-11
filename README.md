@@ -82,6 +82,7 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
   - Vechai UI v0 — React Tailwind CSS components
   - NProgress
 - React Hook Form
+- React Lazyload
 - Markdoc
 - Prism.js
 - ESLint v8

@@ -114,6 +114,18 @@ export const dataMainStacks: StackItems = [
     description: "React Tailwind CSS components",
   },
   {
+    url: "https://react-hook-form.com",
+    name: "React Hook Form",
+    description:
+      "Performant, flexible and extensible forms with easy-to-use validation.",
+  },
+  {
+    url: "https://github.com/twobin/react-lazyload",
+    name: "React Lazyload",
+    description:
+      "Lazyload your components, images, or anything matters the performance.",
+  },
+  {
     url: "https://tanstack.com",
     name: "TanStack",
     description:

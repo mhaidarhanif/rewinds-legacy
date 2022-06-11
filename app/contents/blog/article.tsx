@@ -1,4 +1,4 @@
-import { Breadcrumb, RemixLink } from "~/components";
+import { Breadcrumb, LazyLoad, RemixLink } from "~/components";
 import { markdocRenderReact } from "~/libs";
 import { getCompleteDateUS } from "~/utils";
 
@@ -16,14 +16,14 @@ export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
   return (
     <RemixLink to={`/blog/${article.slug}`} className="bg-focusable">
       <article className="stack-v sm:stack-h justify-between gap-5">
-        <div>
+        <LazyLoad height={270} once>
           <img
             className="aspect-video w-full rounded-base"
             src={article.coverImage?.url}
             alt={article.title}
             loading="lazy"
           />
-        </div>
+        </LazyLoad>
         <div className="stack-v w-full max-w-lg gap-2">
           <h2 className="m-0">{article.title}</h2>
           <p className="text-dim">{article.excerpt}</p>
@@ -47,7 +47,7 @@ interface BlogArticleProps {
 
 export const BlogArticle = ({ article, content }: BlogArticleProps) => {
   return (
-    <>
+    <div>
       <header className="stack-v items-center">
         <div className="max-w-screen-sm">
           <Breadcrumb id="breadcrumb" className="stack-v container-high gap-4">
@@ -71,19 +71,25 @@ export const BlogArticle = ({ article, content }: BlogArticleProps) => {
         </div>
       </header>
 
-      <figure>
+      <LazyLoad
+        once
+        height={580}
+        placeholder={
+          <div className="aspect-video w-full rounded-base bg-neutral-800" />
+        }
+      >
         <img
-          className="bg-secondary w-full rounded-base"
+          className="aspect-video w-full rounded-base"
           src={article.coverImage?.url}
           alt={article.title}
         />
-      </figure>
+      </LazyLoad>
 
       <div className="stack-v mt-10 items-center">
         <div className="prose-config max-w-screen-sm">
           {markdocRenderReact(content)}
         </div>
       </div>
-    </>
+    </div>
   );
 };
