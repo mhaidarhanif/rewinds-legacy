@@ -1,11 +1,9 @@
 import { classx } from "~/utils";
 
-interface ButtonAnchorProps {
+import type { ButtonProps } from "~/types";
+
+interface ButtonAnchorProps extends ButtonProps {
   href: string;
-  children: React.ReactNode;
-  color?: string;
-  variant?: "solid" | "outline";
-  className?: string;
 }
 
 export const ButtonAnchor = ({
@@ -13,15 +11,25 @@ export const ButtonAnchor = ({
   children,
   color = "primary",
   variant = "solid",
+  size = "md",
+  leftIcon,
+  rightIcon,
   className,
 }: ButtonAnchorProps) => {
   return (
     <a
       href={href}
       data-color={color}
-      className={classx(`btn-${variant} btn btn-md rounded-base`, className)}
+      target="_blank"
+      rel="noreferrer"
+      className={classx(
+        `btn-${variant} btn btn-${size} rounded-base`,
+        className,
+      )}
     >
+      {leftIcon}
       {children}
+      {rightIcon}
     </a>
   );
 };

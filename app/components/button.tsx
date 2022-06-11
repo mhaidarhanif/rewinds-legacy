@@ -4,6 +4,8 @@ import { classx } from "~/utils";
 
 import type { ButtonProps, ButtonGroupProps } from "~/types";
 
+export const Button = VechaiButton;
+
 export const ButtonHTML = ({ children, ...props }: ButtonProps) => {
   return (
     <button
@@ -15,10 +17,6 @@ export const ButtonHTML = ({ children, ...props }: ButtonProps) => {
       {children}
     </button>
   );
-};
-
-export const Button = ({ children, ...props }: ButtonProps) => {
-  return <VechaiButton {...props}>{children}</VechaiButton>;
 };
 
 export const ButtonGroup = ({

@@ -32,15 +32,20 @@
     @apply dark:selection:bg-primary-500/20 dark:selection:text-primary-100;
   }
 
+  p a,
+  .a {
+    @apply font-bold no-underline;
+  }
+
   header {
     @apply header;
   }
 
   header p {
-    @apply text-lg;
+    @apply text-base sm:text-lg;
   }
 
-  header a {
+  header p a {
     @apply prose-a-styles;
   }
 
@@ -66,11 +71,6 @@
   h4,
   .h4 {
     @apply my-2 font-semibold sm:text-lg;
-  }
-
-  p a,
-  .a {
-    @apply font-bold no-underline;
   }
 
   a:focus-visible {
@@ -112,24 +112,20 @@
     @apply flex flex-[1] justify-center;
   }
 
-  .layout-main {
-    @apply mt-10 w-full;
+  .layout-content {
+    @apply w-full;
   }
 
-  .layout-main.small {
+  .layout-content.small {
     @apply max-w-screen-sm;
   }
 
-  .layout-main.medium {
+  .layout-content.medium {
     @apply max-w-screen-lg;
   }
 
-  .layout-main.large {
+  .layout-content.large {
     @apply max-w-screen-xl;
-  }
-
-  .layout-main.full {
-    @apply mt-0;
   }
 
   /**
@@ -173,7 +169,7 @@
    */
 
   .header {
-    @apply mt-10 mb-20;
+    @apply my-20;
   }
 
   .header-center {
@@ -350,6 +346,25 @@
   .scroll-area-thumb::before {
     content: "";
     @apply absolute top-1/2 left-1/2 h-full min-h-[50px] w-full min-w-[50px] translate-x-1/2 translate-y-1/2;
+  }
+
+  /**
+   * Radix UI - Tabs
+   */
+
+  .tabs-radix-trigger {
+    @apply inline-block flex flex-shrink-0 items-center justify-center rounded-base;
+    @apply focus-ring -mb-px h-10 cursor-base whitespace-nowrap px-4 py-2 text-center font-bold;
+    @apply bg-transparent text-neutral-600;
+    @apply hover:text-primary-900;
+    @apply selected:bg-primary-500 selected:text-primary-50;
+    @apply dark:bg-transparent dark:text-neutral-400;
+    @apply dark:hover:text-primary-100;
+    @apply dark:selected:bg-primary-700 dark:selected:text-primary-100;
+  }
+
+  .tabs-radix-content {
+    @apply focus-ring py-5;
   }
 
   /**
@@ -530,6 +545,12 @@
 
   .ul-checklist {
     @apply list-disc space-y-2 pl-3 marker:text-primary-500;
+  }
+
+  .filter-dim {
+    @apply contrast-50 grayscale;
+    @apply hover:contrast-100 hover:grayscale-0;
+    @apply focus:contrast-100 focus:grayscale-0;
   }
 
   /* https://css-tricks.com/custom-tailwind-css/#aa-envsafe-area-inset-bottom */

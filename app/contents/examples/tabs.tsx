@@ -1,13 +1,25 @@
-import { TabExampleSimple } from "~/components";
+import {
+  TabHeadlessExample,
+  TabRadixExample,
+  TabSimpleExample,
+} from "~/components";
 
 export const ExampleTabs = () => {
   return (
-    <div className="space-y-4">
-      <h2>Tabs with React</h2>
-
-      <h3>Simple</h3>
+    <div className="space-y-5">
+      <h2>Simple</h2>
       <div className="example">
-        <TabExampleSimple />
+        <TabSimpleExample />
+      </div>
+
+      <h2>Radix UI</h2>
+      <div className="example">
+        <TabRadixExample />
+      </div>
+
+      <h2>Headless UI</h2>
+      <div className="example">
+        <TabHeadlessExample />
       </div>
     </div>
   );

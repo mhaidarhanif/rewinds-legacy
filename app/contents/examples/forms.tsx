@@ -51,7 +51,7 @@ export const ExampleForms = () => {
       <div className="w-full max-w-xs">
         <h2>Forms</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <FormControl invalid={Boolean(errors.email)}>
             <FormLabel>Email address</FormLabel>
             <Input

@@ -1,24 +1,16 @@
-interface AnchorProps {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
+import type { HTMLAnchorElementProps } from "~/types";
+
+interface AnchorProps extends HTMLAnchorElementProps {
   "data-color"?: string;
 }
 
 export const Anchor = ({
-  href,
   children,
-  className,
   "data-color": dataColor,
+  ...props
 }: AnchorProps) => {
   return (
-    <a
-      href={href}
-      className={className}
-      data-color={dataColor}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a data-color={dataColor} target="_blank" rel="noreferrer" {...props}>
       {children}
     </a>
   );

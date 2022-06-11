@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-export const TabExampleSimple = () => {
+export const TabSimpleExample = () => {
   const [openTab, setOpenTab] = useState(1);
+
   return (
     <div className="flex flex-wrap">
       <div className="w-full">
@@ -10,7 +11,7 @@ export const TabExampleSimple = () => {
           className="mb-0 flex list-none flex-row flex-wrap pt-3 pb-4"
           role="tablist"
         >
-          <li className="-mb-px mr-2 flex-auto text-center last:mr-0">
+          <li className="-mb-px mr-2 text-center last:mr-0">
             <a
               className={`block rounded-base p-2 font-bold leading-normal ${
                 openTab === 1

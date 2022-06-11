@@ -10,7 +10,7 @@ export const LayoutBoundary = ({ children }: HTMLElementProps) => {
     <div className="layout border border-4 border-red-600">
       <div className="layout-container">
         <div className="layout-center">
-          <main className="layout-main small">{children}</main>
+          <main className="layout-content small">{children}</main>
         </div>
       </div>
     </div>

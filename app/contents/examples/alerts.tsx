@@ -2,11 +2,11 @@ import { Alert } from "~/components";
 
 export const ExampleAlerts = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <h2>Alerts</h2>
 
       <h3>Alerts with variants</h3>
-      <div className="flex w-full flex-col space-y-4">
+      <div className="flex w-full flex-col space-y-5">
         <Alert variant="solid">
           Alert solid
           <Alert.CloseButton />
@@ -24,7 +24,7 @@ export const ExampleAlerts = () => {
       </div>
 
       <h3>Alerts with solid colors</h3>
-      <div className="flex w-full flex-col space-y-4">
+      <div className="flex w-full flex-col space-y-5">
         <Alert variant="solid" color="info">
           Alert solid info
           <Alert.CloseButton />
@@ -47,7 +47,7 @@ export const ExampleAlerts = () => {
       </div>
 
       <h3>Alerts with subtle colors</h3>
-      <div className="flex w-full flex-col space-y-4">
+      <div className="flex w-full flex-col space-y-5">
         <Alert variant="subtle" color="info">
           Alert subtle info
           <Alert.CloseButton />
@@ -70,7 +70,7 @@ export const ExampleAlerts = () => {
       </div>
 
       <h3>Alerts with left accent colors</h3>
-      <div className="flex w-full flex-col space-y-4">
+      <div className="flex w-full flex-col space-y-5">
         <Alert variant="left-accent" color="info">
           Alert left accent info
           <Alert.CloseButton />

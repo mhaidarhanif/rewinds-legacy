@@ -1,4 +1,5 @@
 import {
+  Anchor,
   ExternalLinks,
   FooterComplexFormSubscribe,
   FooterCopyrightText,
@@ -23,7 +24,7 @@ export const FooterComplex = () => {
     <footer className="footer footer-complex">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:gap-8">
-          <div className="space-y-4 text-neutral-900 dark:text-neutral-100">
+          <div className="space-y-5 text-neutral-900 dark:text-neutral-100">
             <RemixLink to="/" className="flex">
               <Logo />
             </RemixLink>
@@ -53,13 +54,22 @@ export const FooterComplexSitemap = () => {
           >
             <h4 className="font-bold uppercase tracking-wider">{item.name}</h4>
             <nav className="text-md mt-6 flex flex-col space-y-2">
-              {item.links.map((subItem) => {
-                return (
-                  <RemixLink key={subItem.text} to={subItem.to}>
-                    {subItem.text}
-                  </RemixLink>
-                );
-              })}
+              {item.links &&
+                item.links.map((subItem) => {
+                  return (
+                    <RemixLink key={subItem.text} to={subItem.to}>
+                      {subItem.text}
+                    </RemixLink>
+                  );
+                })}
+              {item.anchors &&
+                item.anchors.map((subItem) => {
+                  return (
+                    <Anchor key={subItem.text} href={subItem.href}>
+                      {subItem.text}
+                    </Anchor>
+                  );
+                })}
             </nav>
           </div>
         );

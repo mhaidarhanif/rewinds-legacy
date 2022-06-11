@@ -5,7 +5,7 @@ import type { SEOHandle, MetaFunction } from "~/types";
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
-    return [{ route: `/signup`, priority: 0.8 }];
+    return null;
   },
 };
 

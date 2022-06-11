@@ -9,7 +9,7 @@ export const LayoutMedium = ({ children }: HTMLElementProps) => {
 
       <div className="layout-container">
         <div className="layout-center">
-          <main className="layout-main medium">{children}</main>
+          <main className="layout-content medium">{children}</main>
         </div>
       </div>
 

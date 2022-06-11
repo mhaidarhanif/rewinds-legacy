@@ -61,10 +61,6 @@ export const dataMainStacks: StackItems = [
         name: "@tailwindcss/line-clamp",
         url: "",
       },
-      {
-        name: "@tailwindcss/aspect-ratio",
-        url: "",
-      },
     ],
   },
   {

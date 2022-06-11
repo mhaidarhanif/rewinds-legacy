@@ -2,7 +2,7 @@ import { Badge } from "~/components";
 
 export const ExampleBadges = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <h2>Badges</h2>
 
       <h3>Badge Variant</h3>

@@ -2,17 +2,21 @@ import { Anchor, Icon } from "~/components";
 import { configExternalLinks } from "~/configs";
 import { classx } from "~/utils";
 
-interface ExternalLinksProps {
-  // eslint-disable-next-line react/require-default-props
-  className?: string;
+import type { HTMLElementProps } from "~/types";
+
+interface ExternalLinksProps extends HTMLElementProps {
+  links?: Array<any>;
 }
 
-export const ExternalLinks = ({ className }: ExternalLinksProps) => {
+export const ExternalLinks = ({
+  links = configExternalLinks,
+  className,
+}: ExternalLinksProps) => {
   return (
     <div className={classx("flex gap-3 text-2xl", className)}>
-      {configExternalLinks
+      {links
         .filter((item) => {
-          return item.isEnabled;
+          return !item.isDisabled;
         })
         .map((item) => {
           return (
@@ -21,7 +25,7 @@ export const ExternalLinks = ({ className }: ExternalLinksProps) => {
               href={item.url}
               className="transition-colors hover:text-primary-500"
             >
-              <Icon name={item.name.toLowerCase()} />
+              <Icon name={item.slug} />
             </Anchor>
           );
         })}

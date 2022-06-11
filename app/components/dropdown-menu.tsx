@@ -83,7 +83,7 @@ export const DropdownMenuExample = () => {
           sideOffset={5}
           className={classx(
             " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-            "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
+            "shadow-primary w-48 rounded-lg px-1.5 py-1 md:w-56",
             "bg-white dark:bg-gray-800",
           )}
         >
@@ -191,7 +191,7 @@ export const DropdownMenuExample = () => {
             <DropdownMenuPrimitive.Content
               className={classx(
                 "origin-radix-dropdown-menu radix-side-right:animate-scale-in",
-                "w-full rounded-md px-1 py-1 text-xs shadow-md",
+                "shadow-primary w-full rounded-md px-1 py-1 text-xs",
                 "bg-white dark:bg-gray-800",
               )}
             >

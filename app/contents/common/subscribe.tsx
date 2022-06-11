@@ -38,8 +38,8 @@ export const SubscribeForm = ({
 
   return (
     <div className="flex w-full justify-center">
-      <Form method="post" className="w-full max-w-xs space-y-4">
-        <div className="space-y-4">
+      <Form method="post" className="w-full max-w-xs space-y-5">
+        <div className="space-y-5">
           <FormControl id="name">
             <FormLabel>Your name</FormLabel>
             <Input
@@ -64,7 +64,7 @@ export const SubscribeForm = ({
           </FormControl>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           <Button
             className="w-full"
             type="submit"

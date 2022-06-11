@@ -26,7 +26,7 @@ import {
 
 import type { HTMLElementProps } from "~/types";
 
-export { Icon as VechaiIcon } from "@vechaiui/react";
+export { Icon as IconVechai } from "@vechaiui/react";
 
 /**
  * Icon list mapping

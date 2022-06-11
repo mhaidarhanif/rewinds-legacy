@@ -41,7 +41,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   if (configFeatures.console) console.info(pathName);
 
   const externalLink = configExternalLinks.find((item) => {
-    return item.name.toLowerCase() === pathName;
+    return item.slug === pathName;
   });
 
   if (externalLink) {

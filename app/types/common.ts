@@ -38,10 +38,19 @@ export type LinkItem = {
   isEnabled?: boolean;
 };
 
+export type AnchorItem = {
+  href: string;
+  text: string;
+  isEnabled?: boolean;
+  isDisabled?: boolean;
+};
+
 export type ExternalLinkItem = {
+  slug: string;
   name: string;
   url: string;
   isEnabled?: boolean;
+  isDisabled?: boolean;
 };
 
 export type StackItem = {
@@ -84,5 +93,6 @@ export type Booleans = Array<boolean>;
 export type Currencies = Array<Currency>;
 export type TextItems = Array<TextItem>;
 export type LinkItems = Array<LinkItem>;
+export type AnchorItems = Array<AnchorItem>;
 export type ExternalLinkItems = Array<ExternalLinkItem>;
 export type Articles = Array<Article>;

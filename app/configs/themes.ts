@@ -46,14 +46,14 @@ export const rose: ColorScheme = {
   },
 };
 
-export const emerald: ColorScheme = {
-  id: "emerald",
+export const teal: ColorScheme = {
+  id: "teal",
   type: "light",
   colors: {
-    primary: colors.emerald,
-    neutral: colors.zinc,
-    bg: { base: colors.zinc["100"], fill: colors.zinc["100"] },
-    text: { foreground: colors.zinc["900"], muted: colors.zinc["700"] },
+    primary: colors.teal,
+    neutral: colors.gray,
+    bg: { base: colors.gray["100"], fill: colors.gray["100"] },
+    text: { foreground: colors.gray["900"], muted: colors.gray["700"] },
   },
 };
 
@@ -120,7 +120,7 @@ export const white: ColorScheme = {
 };
 
 export const night: ColorScheme = {
-  id: "light",
+  id: "night",
   type: "dark",
   colors: {
     primary: colors.sky,
@@ -156,10 +156,10 @@ export const terminal: ColorScheme = {
   id: "terminal",
   type: "dark",
   colors: {
-    primary: colors.emerald,
-    neutral: colors.zinc,
-    bg: { base: colors.zinc["900"], fill: colors.zinc["900"] },
-    text: { foreground: colors.zinc["100"], muted: colors.zinc["300"] },
+    primary: colors.teal,
+    neutral: colors.gray,
+    bg: { base: colors.gray["900"], fill: colors.gray["900"] },
+    text: { foreground: colors.gray["100"], muted: colors.gray["300"] },
   },
 };
 
@@ -231,9 +231,9 @@ export const black: ColorScheme = {
 export const configThemes = {
   // Light
   day,
+  teal,
   wind,
   rose,
-  emerald,
   amber,
   ash,
   silver,
@@ -241,9 +241,9 @@ export const configThemes = {
 
   // Dark
   night,
+  terminal,
   cool,
   midnight,
-  terminal,
   dawn,
   pale,
   pebble,
@@ -263,6 +263,13 @@ export const configAvailableThemes = [
     backgroundColor: configThemes.day.colors.bg.base,
   },
   {
+    name: "Teal",
+    id: "teal",
+    type: "light",
+    primaryColor: configThemes.teal.colors.primary["500"],
+    backgroundColor: configThemes.teal.colors.bg.base,
+  },
+  {
     name: "Wind",
     id: "wind",
     type: "light",
@@ -275,13 +282,6 @@ export const configAvailableThemes = [
     type: "light",
     primaryColor: configThemes.rose.colors.primary["500"],
     backgroundColor: configThemes.rose.colors.bg.base,
-  },
-  {
-    name: "Emerald",
-    id: "emerald",
-    type: "light",
-    primaryColor: configThemes.emerald.colors.primary["500"],
-    backgroundColor: configThemes.emerald.colors.bg.base,
   },
   {
     name: "Amber",
@@ -321,6 +321,13 @@ export const configAvailableThemes = [
     backgroundColor: configThemes.night.colors.bg.base,
   },
   {
+    name: "Terminal",
+    id: "terminal",
+    type: "dark",
+    primaryColor: configThemes.terminal.colors.primary["500"],
+    backgroundColor: configThemes.terminal.colors.bg.base,
+  },
+  {
     name: "Cool",
     id: "cool",
     type: "dark",
@@ -333,13 +340,6 @@ export const configAvailableThemes = [
     type: "dark",
     primaryColor: configThemes.midnight.colors.primary["500"],
     backgroundColor: configThemes.midnight.colors.bg.base,
-  },
-  {
-    name: "Terminal",
-    id: "terminal",
-    type: "dark",
-    primaryColor: configThemes.terminal.colors.primary["500"],
-    backgroundColor: configThemes.terminal.colors.bg.base,
   },
   {
     name: "Dawn",

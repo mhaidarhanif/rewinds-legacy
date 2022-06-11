@@ -9,7 +9,7 @@ export const LayoutLarge = ({ children }: HTMLElementProps) => {
 
       <div className="layout-container">
         <div className="layout-center">
-          <main className="layout-main large">{children}</main>
+          <main className="layout-content large">{children}</main>
         </div>
       </div>
 

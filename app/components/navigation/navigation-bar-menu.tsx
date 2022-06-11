@@ -3,7 +3,7 @@ import { NavLink } from "@remix-run/react";
 import { Button, Divider } from "@vechaiui/react";
 import { Fragment } from "react";
 
-import { VechaiIcon } from "~/components";
+import { IconVechai } from "~/components";
 import { configNavigationMenu } from "~/configs";
 import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
@@ -25,7 +25,7 @@ export const NavigationBarMenu = ({
           variant="solid"
           color="primary"
           leftIcon={
-            <VechaiIcon as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
+            <IconVechai as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
           }
           className="menu-button"
         >

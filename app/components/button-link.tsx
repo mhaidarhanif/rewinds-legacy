@@ -7,11 +7,14 @@ type ButtonLinkProps = ButtonProps & LinkProps;
 
 export const ButtonLink = ({
   to,
-  size,
+  size = "md",
   children,
   color = "primary",
   variant = "solid",
   className,
+  rightIcon,
+  leftIcon,
+  ...props
 }: ButtonLinkProps) => {
   return (
     <RemixLink
@@ -21,8 +24,11 @@ export const ButtonLink = ({
         `btn-${variant} btn btn-${size} rounded-base`,
         className,
       )}
+      {...props}
     >
+      {leftIcon}
       {children}
+      {rightIcon}
     </RemixLink>
   );
 };

@@ -5,6 +5,17 @@ module.exports = {
   content: ["./app/**/*.tsx", "./node_modules/@vechaiui/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
+    screens: {
+      xs: "425px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1600px",
+      "4xl": "2100px",
+      "5xl": "4200px",
+    },
     letterSpacing: {
       tightest: "-.1em",
       tighter: "-.05em",
@@ -159,7 +170,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/aspect-ratio"),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         { "text-shadow": (value) => ({ textShadow: value }) },
