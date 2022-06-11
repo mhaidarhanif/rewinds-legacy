@@ -7,7 +7,9 @@
 **/node_modules/
 **/tests/__snapshots/
 api/
+commitlint.config.js
 LICENSE
+lint-staged.config.js
 node_modules/
 postcss.config.js
 public/
@@ -15,4 +17,3 @@ remix.config.js
 server.js
 styles/
 tailwind.config.js
-commitlint.config.js

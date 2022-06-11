@@ -14,7 +14,11 @@ interface BlogArticleLinkProps {
 
 export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
   return (
-    <RemixLink to={`/blog/${article.slug}`} className="bg-focusable">
+    <RemixLink
+      prefetch="intent"
+      to={`/blog/${article.slug}`}
+      className="bg-focusable"
+    >
       <article className="stack-v sm:stack-h justify-between gap-5">
         <LazyLoad height={270} once>
           <img
@@ -52,10 +56,12 @@ export const BlogArticle = ({ article, content }: BlogArticleProps) => {
         <div className="max-w-screen-sm">
           <Breadcrumb id="breadcrumb" className="stack-v container-high gap-4">
             <Breadcrumb.Item>
-              <RemixLink to="/blog">Blog</RemixLink>
+              <RemixLink prefetch="intent" to="/blog">
+                Blog
+              </RemixLink>
             </Breadcrumb.Item>
             <Breadcrumb.Item currentPage>
-              <RemixLink to={`/blog/${article.slug}`}>
+              <RemixLink prefetch="intent" to={`/blog/${article.slug}`}>
                 {article.title}
               </RemixLink>
             </Breadcrumb.Item>

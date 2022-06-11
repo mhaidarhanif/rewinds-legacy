@@ -14,6 +14,7 @@ export const RemixNavLink = ({
 }: NavLinkProps) => {
   return (
     <NavLink
+      prefetch="intent"
       to={to}
       end={end}
       className={({ isActive }) => {

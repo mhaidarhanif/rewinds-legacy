@@ -189,6 +189,7 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `.editorconfig`
   - `.eslintignore`
   - `.eslintrc`
+  - `.lintstagedrc`
   - `.npmrc`
   - `.nvmrc`
   - `.prettierignore`

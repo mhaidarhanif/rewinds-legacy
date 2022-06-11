@@ -18,6 +18,7 @@ export const ButtonLink = ({
 }: ButtonLinkProps) => {
   return (
     <RemixLink
+      prefetch="intent"
       to={to}
       data-color={color}
       className={classx(

@@ -12,8 +12,11 @@ export const HomeIntro = () => {
         </h1>
         <p>
           Rewinds is a Remix starter kit with Tailwind family of libraries. You
-          can read more on <RemixLink to="/about">the about page</RemixLink>.
-          Below are the quick examples on the UI components.
+          can read more on{" "}
+          <RemixLink prefetch="intent" to="/about">
+            the about page
+          </RemixLink>
+          . Below are the quick examples on the UI components.
         </p>
       </div>
 

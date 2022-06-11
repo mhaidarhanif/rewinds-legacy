@@ -40,7 +40,9 @@ export default function Examples() {
           {examples.map((item: LinkItem) => {
             return (
               <li key={item.text}>
-                <RemixLink to={item.to}>{item.text}</RemixLink>
+                <RemixLink prefetch="intent" to={item.to}>
+                  {item.text}
+                </RemixLink>
               </li>
             );
           })}

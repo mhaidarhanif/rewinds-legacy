@@ -1,0 +1,13 @@
+{
+  "**/*.css": [
+    "stylelint --fix",
+    "prettier --write"
+  ],
+  "**/*.{ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "**/*.ts?(x)": [
+    "bash -c 'npm run typecheck'"
+  ]
+}

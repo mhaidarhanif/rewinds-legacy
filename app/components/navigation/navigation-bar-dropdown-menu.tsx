@@ -42,7 +42,7 @@ export const NavigationBarDropdownMenu = () => {
           {configNavigationDropdownMenuItems.map(
             ({ to, text, icon, shortcut }) => {
               return (
-                <RemixLink key={to} to={to as string}>
+                <RemixLink prefetch="intent" key={to} to={to as string}>
                   <DropdownMenuItem>
                     {icon}
                     <span className="flex-grow">{text}</span>
@@ -56,21 +56,21 @@ export const NavigationBarDropdownMenu = () => {
           <DropdownMenuSeparator />
 
           <DropdownMenuLabel>Auth</DropdownMenuLabel>
-          <RemixLink to="/signup">
+          <RemixLink prefetch="intent" to="/signup">
             <DropdownMenuItem>
               <IconSignUp className="dropdown-menu-icon" />
               <span className="flex-grow">Sign Up</span>
               <Shortcut>⌘+⇧+U</Shortcut>
             </DropdownMenuItem>
           </RemixLink>
-          <RemixLink to="/signin">
+          <RemixLink prefetch="intent" to="/signin">
             <DropdownMenuItem>
               <IconSignIn className="dropdown-menu-icon" />
               <span className="flex-grow">Sign In</span>
               <Shortcut>⌘+⇧+I</Shortcut>
             </DropdownMenuItem>
           </RemixLink>
-          <RemixLink to="/signout">
+          <RemixLink prefetch="intent" to="/signout">
             <DropdownMenuItem>
               <IconSignOut className="dropdown-menu-icon" />
               <span className="flex-grow">Sign Out</span>
@@ -88,7 +88,7 @@ export const NavigationBarDropdownMenu = () => {
             <DropdownMenuSubContent>
               {configNavigationExamples1.map(({ to, text }) => {
                 return (
-                  <RemixLink key={to} to={to as string}>
+                  <RemixLink prefetch="intent" key={to} to={to as string}>
                     <DropdownMenuItem>{text}</DropdownMenuItem>
                   </RemixLink>
                 );
@@ -104,7 +104,7 @@ export const NavigationBarDropdownMenu = () => {
             <DropdownMenuSubContent>
               {configNavigationExamples2.map(({ to, text }) => {
                 return (
-                  <RemixLink key={to} to={to as string}>
+                  <RemixLink prefetch="intent" key={to} to={to as string}>
                     <DropdownMenuItem>{text}</DropdownMenuItem>
                   </RemixLink>
                 );
@@ -120,7 +120,7 @@ export const NavigationBarDropdownMenu = () => {
             <DropdownMenuSubContent>
               {configNavigationExamples3.map(({ to, text }) => {
                 return (
-                  <RemixLink key={to} to={to as string}>
+                  <RemixLink prefetch="intent" key={to} to={to as string}>
                     <DropdownMenuItem>{text}</DropdownMenuItem>
                   </RemixLink>
                 );

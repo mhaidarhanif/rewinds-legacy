@@ -25,7 +25,7 @@ export const FooterComplex = () => {
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:gap-8">
           <div className="space-y-5 text-neutral-900 dark:text-neutral-100">
-            <RemixLink to="/" className="flex">
+            <RemixLink prefetch="intent" to="/" className="flex">
               <Logo />
             </RemixLink>
             <ExternalLinks />
@@ -57,7 +57,11 @@ export const FooterComplexSitemap = () => {
               {item.links &&
                 item.links.map((subItem) => {
                   return (
-                    <RemixLink key={subItem.text} to={subItem.to}>
+                    <RemixLink
+                      prefetch="intent"
+                      key={subItem.text}
+                      to={subItem.to}
+                    >
                       {subItem.text}
                     </RemixLink>
                   );
@@ -84,9 +88,15 @@ export const FooterComplexBottomTexts = () => {
       <FooterCopyrightText className="text-left text-sm text-gray-400" />
 
       <nav className="container-low flex justify-start gap-4 text-sm text-gray-400 md:justify-end">
-        <RemixLink to="/terms">Terms &amp; Conditions</RemixLink>
-        <RemixLink to="/privacy">Privacy Policy</RemixLink>
-        <RemixLink to="/cookies">Cookies</RemixLink>
+        <RemixLink prefetch="intent" to="/terms">
+          Terms &amp; Conditions
+        </RemixLink>
+        <RemixLink prefetch="intent" to="/privacy">
+          Privacy Policy
+        </RemixLink>
+        <RemixLink prefetch="intent" to="/cookies">
+          Cookies
+        </RemixLink>
       </nav>
     </div>
   );
