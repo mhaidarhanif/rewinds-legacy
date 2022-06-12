@@ -373,7 +373,7 @@
   }
 
   .scroll-area-scrollbar {
-    @apply flex touch-none select-none bg-primary-800/20 p-[2px] transition-all duration-200 ease-out hover:bg-primary-800/30;
+    @apply flex touch-none select-none bg-primary-800/20 p-[2px] transition-all duration-300 ease-in-out hover:bg-primary-800/30;
   }
 
   .scroll-area-scrollbar[data-orientation="vertical"] {
@@ -524,6 +524,7 @@
 
   .bg-focusable {
     @apply rounded-base p-2;
+    @apply transition-colors duration-300 ease-in-out;
     @apply hover:bg-neutral-50/80 hover:dark:bg-neutral-800/20;
     @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
   }
@@ -593,7 +594,7 @@
   .text-underline-left-right {
     @apply after:bg-primary-500 dark:after:bg-primary-300;
     @apply after:-bottom-0.5 after:left-0 after:h-[2px];
-    @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0  after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+    @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
   }
 
   .text-shimmer {

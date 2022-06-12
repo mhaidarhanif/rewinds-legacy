@@ -1,8 +1,8 @@
 import { gql } from "~/libs";
 
-export const AllArticles = gql`
+export const QueryAllArticles = gql`
   query AllArticles {
-    articles {
+    articles(orderBy: date_DESC) {
       id
       slug
       title
@@ -22,7 +22,7 @@ export const AllArticles = gql`
   }
 `;
 
-export const OneArticleBySlug = gql`
+export const QueryOneArticleBySlug = gql`
   query OneArticleBySlug($slug: String!) {
     article(where: { slug: $slug }) {
       id

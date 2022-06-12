@@ -41,13 +41,13 @@ export const getCompleteDate = (date: DateTime) => {
 };
 
 export const getCompleteDateUS = (date: DateTime) => {
-  return dayjs(date).format("MMMM D, YYYY");
+  return dayjs(date).format("dddd, MMMM D, YYYY");
 };
 
 export const getCompleteDateTime = (date: DateTime) => {
   return dayjs(date).format("D MMMM YYYY HH:mm");
 };
 
-export const getRelativePublishedDate = (date: DateTime) => {
+export const getRelativeTime = (date: DateTime) => {
   return dayjs().to(dayjs(date));
 };

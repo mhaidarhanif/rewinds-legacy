@@ -18,10 +18,10 @@ import type {
 } from "~/types";
 
 /**
- * Navigation Bar Nav Menu
+ * Navigation Bar Navigation Menu
  *
- * Used in Navigation Bar
- * Radix UI Navigation Menu with Trigger Buttons and Viewport
+ * Used in the Navigation Bar
+ * Using Radix UI Navigation Menu with Trigger Buttons and Viewport
  * Named like this because RadixNavigationMenu is already used by Radix UI
  */
 
@@ -350,7 +350,7 @@ export const NavigationMenuViewport = ({ ...props }: HTMLElementProps) => {
 export const NavigationMenuNavLink = ({
   children,
   to,
-  end,
+  end = true,
   className,
 }: RemixNavLinkProps) => {
   const resolved = useResolvedPath(to);
