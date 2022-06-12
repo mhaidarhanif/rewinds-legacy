@@ -54,8 +54,9 @@ export type ExternalLinkItem = {
 };
 
 export type StackItem = {
-  name: string;
   url: string;
+  name: string;
+  isChecked?: boolean;
   description?: string;
 };
 

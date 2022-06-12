@@ -24,10 +24,12 @@ Visit the live demo and repo:
 
 ## What's inside
 
-The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about). While the complete examples are listed in [the examples page](https://rewinds.mhaidarhanif.com/examples)
+More into what we can do or what you get. The complete features are listed in [the about page](https://rewinds.mhaidarhanif.com/about). While the complete examples are listed in [the examples page](https://rewinds.mhaidarhanif.com/examples).
 
-- [x] Remix as the React framework
-- [x] Tailwind CSS using Vechai UI as primary components
+- [x] Remix as the web framework
+- [x] React as the UI library
+- [x] TypeScript as the programming language
+- [x] Tailwind CSS using Vechai UI as the base components
 - [x] Multiple themes switcher and persist theme with a session cookie
   - [ ] Not yet with system theme auto detect
 - [x] Commonly used pages/routes with contents
@@ -43,7 +45,7 @@ The complete features are listed in [the about page](https://rewinds.mhaidarhani
 
 ## Stacks
 
-The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about)
+More into what is being used. The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about).
 
 - [x] TypeScript v4.6
   - [x] Type checking is enforced
@@ -62,14 +64,18 @@ The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.
   - Heroicons v1
   - Font Awesome
   - Phospor Icons
-- [x] Styled the unstyled components
-  - Headless UI v1 — Unstyled accessible UI components
-  - Radix UI v0 — Unstyled accessible UI components
+- [x] Styled the headless unstyled components
+  - [x] Headless UI v1 — Unstyled accessible UI components
+  - [x] Radix UI v0 — Unstyled accessible UI components
     - Tailwind Radix
-  - Reach UI v0 — Unstyled accessible UI components
-  - Vechai UI v0 — React Tailwind CSS components
-  - NProgress
-- [x] React Hook Form
+  - [x] Reach UI v0 — Unstyled accessible UI components
+  - [x] Vechai UI v0 — React Tailwind CSS components
+  - [ ] Downshift — Primitives to build simple, flexible, WAI-ARIA compliant React autocomplete/combobox or select dropdown components
+  - [ ] React Aria v3 — Library of React Hooks that provides accessible UI primitives for your design system
+  - [ ] Ariakit (v2) — Toolkit for building accessible web apps with React
+    - [ ] Reakit (v1) — Toolkit for building accessible UIs
+- [x] NProgress — Navigation progress
+- [x] React Hook Form — Complex client side form handling
 - [x] React Lazyload
 - [x] Markdoc for Markdown parser
   - Alternatively you can also use Marked
