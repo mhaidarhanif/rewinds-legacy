@@ -1,14 +1,14 @@
-import { RemixLink } from "~/components";
+import { RemixNavLink } from "~/components";
 import { classx } from "~/utils";
 
-import type { RemixLinksProps, VechaiButtonProps } from "~/types";
+import type { RemixNavLinkProps, VechaiButtonProps } from "~/types";
 
-export type RemixLinkButtonProps = VechaiButtonProps & RemixLinksProps;
+export type RemixNavLinkButtonProps = VechaiButtonProps & RemixNavLinkProps;
 /**
  * Note: interface cannot simultaneously extend types
  */
 
-export const RemixLinkButton = ({
+export const RemixNavLinkButton = ({
   children,
   className,
   color,
@@ -18,9 +18,9 @@ export const RemixLinkButton = ({
   to,
   variant,
   ...props
-}: RemixLinkButtonProps) => {
+}: RemixNavLinkButtonProps) => {
   return (
-    <RemixLink
+    <RemixNavLink
       prefetch="intent"
       to={to || "/"}
       data-color={color || "primary"}
@@ -33,6 +33,6 @@ export const RemixLinkButton = ({
       {leftIcon}
       {children}
       {rightIcon}
-    </RemixLink>
+    </RemixNavLink>
   );
 };

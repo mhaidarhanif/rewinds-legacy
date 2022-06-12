@@ -1,4 +1,4 @@
-import { ButtonAnchor, ButtonGroup, IconVechai } from "~/components";
+import { ButtonAnchor, ButtonGroup, VechaiIcon } from "~/components";
 import { IconCalendar } from "~/libs";
 
 export const ButtonGroupCTA = () => {
@@ -9,7 +9,7 @@ export const ButtonGroupCTA = () => {
         variant="outline"
         href="/demo"
         leftIcon={
-          <IconVechai
+          <VechaiIcon
             as={IconCalendar}
             label="schedule-demo"
             className="ml-1 h-4 w-4"

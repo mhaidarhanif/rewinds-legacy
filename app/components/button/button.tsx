@@ -2,11 +2,11 @@ import { Button as VechaiButton } from "@vechaiui/react";
 
 import { classx } from "~/utils";
 
-import type { ButtonProps, ButtonGroupProps } from "~/types";
+import type { VechaiButtonProps, VechaiButtonGroupProps } from "~/types";
 
 export const Button = VechaiButton;
 
-export const ButtonHTML = ({ children, ...props }: ButtonProps) => {
+export const ButtonHTML = ({ children, ...props }: VechaiButtonProps) => {
   return (
     <button
       type="button"
@@ -24,7 +24,7 @@ export const ButtonGroup = ({
   children,
   className,
   ...props
-}: ButtonGroupProps) => {
+}: VechaiButtonGroupProps) => {
   return (
     <VechaiButton.Group
       attached={attached}

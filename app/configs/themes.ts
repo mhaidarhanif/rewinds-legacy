@@ -1,6 +1,6 @@
 import { configCustomColors } from "~/configs";
 
-import type { ColorScheme } from "~/types";
+import type { VechaiColorScheme } from "~/types";
 
 const colors = require("tailwindcss/colors");
 
@@ -8,12 +8,12 @@ const colors = require("tailwindcss/colors");
  * Config Themes
  * Based on Vechai UI
  *
- * - ColorScheme objects
- * - Exported object of ColorScheme objects, used in the ThemeProvider
+ * - VechaiColorScheme objects
+ * - Exported object of VechaiColorScheme objects, used in the ThemeProvider
  * - Array of available themes, used in the ThemeSwitcher
  */
 
-export const day: ColorScheme = {
+export const day: VechaiColorScheme = {
   id: "day",
   type: "light",
   colors: {
@@ -24,7 +24,7 @@ export const day: ColorScheme = {
   },
 };
 
-export const wind: ColorScheme = {
+export const wind: VechaiColorScheme = {
   id: "wind",
   type: "light",
   colors: {
@@ -35,7 +35,7 @@ export const wind: ColorScheme = {
   },
 };
 
-export const rose: ColorScheme = {
+export const rose: VechaiColorScheme = {
   id: "rose",
   type: "light",
   colors: {
@@ -46,7 +46,7 @@ export const rose: ColorScheme = {
   },
 };
 
-export const teal: ColorScheme = {
+export const teal: VechaiColorScheme = {
   id: "teal",
   type: "light",
   colors: {
@@ -57,7 +57,7 @@ export const teal: ColorScheme = {
   },
 };
 
-export const amber: ColorScheme = {
+export const amber: VechaiColorScheme = {
   id: "amber",
   type: "light",
   colors: {
@@ -68,7 +68,7 @@ export const amber: ColorScheme = {
   },
 };
 
-export const ash: ColorScheme = {
+export const ash: VechaiColorScheme = {
   id: "ash",
   type: "light",
   colors: {
@@ -85,7 +85,7 @@ export const ash: ColorScheme = {
   },
 };
 
-export const silver: ColorScheme = {
+export const silver: VechaiColorScheme = {
   id: "silver",
   type: "light",
   colors: {
@@ -102,7 +102,7 @@ export const silver: ColorScheme = {
   },
 };
 
-export const white: ColorScheme = {
+export const white: VechaiColorScheme = {
   id: "white",
   type: "light",
   colors: {
@@ -119,7 +119,7 @@ export const white: ColorScheme = {
   },
 };
 
-export const night: ColorScheme = {
+export const night: VechaiColorScheme = {
   id: "night",
   type: "dark",
   colors: {
@@ -130,7 +130,7 @@ export const night: ColorScheme = {
   },
 };
 
-export const cool: ColorScheme = {
+export const cool: VechaiColorScheme = {
   id: "cool",
   type: "dark",
   colors: {
@@ -141,7 +141,7 @@ export const cool: ColorScheme = {
   },
 };
 
-export const midnight: ColorScheme = {
+export const midnight: VechaiColorScheme = {
   id: "midnight",
   type: "dark",
   colors: {
@@ -152,7 +152,7 @@ export const midnight: ColorScheme = {
   },
 };
 
-export const terminal: ColorScheme = {
+export const terminal: VechaiColorScheme = {
   id: "terminal",
   type: "dark",
   colors: {
@@ -163,7 +163,7 @@ export const terminal: ColorScheme = {
   },
 };
 
-export const pale: ColorScheme = {
+export const pale: VechaiColorScheme = {
   id: "pale",
   type: "dark",
   colors: {
@@ -174,7 +174,7 @@ export const pale: ColorScheme = {
   },
 };
 
-export const dawn: ColorScheme = {
+export const dawn: VechaiColorScheme = {
   id: "dawn",
   type: "dark",
   colors: {
@@ -191,7 +191,7 @@ export const dawn: ColorScheme = {
   },
 };
 
-export const pebble: ColorScheme = {
+export const pebble: VechaiColorScheme = {
   id: "pebble",
   type: "dark",
   colors: {
@@ -208,7 +208,7 @@ export const pebble: ColorScheme = {
   },
 };
 
-export const black: ColorScheme = {
+export const black: VechaiColorScheme = {
   id: "black",
   type: "dark",
   colors: {
@@ -226,7 +226,7 @@ export const black: ColorScheme = {
 };
 
 /**
- * SpecifiedThemeVechai Provider colors data
+ * VechaiSpecifiedTheme Provider colors data
  */
 export const configThemes = {
   // Light

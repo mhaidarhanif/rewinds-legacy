@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, ButtonLink } from "~/components";
+import { Button, ButtonGroup, RemixLinkButton } from "~/components";
 import { configPricingPlans } from "~/configs";
 import { useState } from "~/hooks";
 
@@ -80,9 +80,13 @@ export const PricingPlans = ({ symbol }: PricingTableProps) => {
 
             <div>
               {plan.button?.to ? (
-                <ButtonLink to={plan.button.to} size="lg" className="w-full">
+                <RemixLinkButton
+                  to={plan.button.to}
+                  size="lg"
+                  className="w-full"
+                >
                   {plan.button.text}
-                </ButtonLink>
+                </RemixLinkButton>
               ) : (
                 <Button disabled size="lg" className="w-full">
                   Coming Soon

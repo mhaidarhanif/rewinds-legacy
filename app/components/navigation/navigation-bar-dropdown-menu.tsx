@@ -2,7 +2,7 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CaretRightIcon, FileIcon } from "@radix-ui/react-icons";
 
-import { RemixLink, IconVechai } from "~/components";
+import { RemixLink, VechaiIcon } from "~/components";
 import {
   configNavigationDropdownMenuItems,
   configNavigationExamples1,
@@ -24,7 +24,7 @@ export const NavigationBarDropdownMenu = () => {
             data-color="primary"
             className="var(--vc-cursor) btn-solid btn btn-md flex rounded-base"
           >
-            <IconVechai as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
+            <VechaiIcon as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
             Menu
           </button>
         </DropdownMenu.Trigger>

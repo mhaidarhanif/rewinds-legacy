@@ -19,10 +19,10 @@ import { IconGear } from "~/libs";
 import { classx } from "~/utils";
 
 import type { ThemeContextType } from "~/components";
-import type { ButtonProps } from "~/types";
+import type { VechaiButtonProps } from "~/types";
 
 interface ThemeSwitcherButtonProps {
-  variant?: ButtonProps["variant"];
+  variant?: VechaiButtonProps["variant"];
 }
 
 export const ThemeSwitcherButton = ({
@@ -36,7 +36,7 @@ export const ThemeSwitcherButton = ({
 };
 
 interface ThemeSwitcherProps {
-  variant?: ButtonProps["variant"];
+  variant?: VechaiButtonProps["variant"];
   inNavbar?: boolean;
   isGroup?: boolean;
 }

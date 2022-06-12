@@ -1,4 +1,4 @@
-import type { ToastVechai, SpecifiedThemeVechai } from "~/types";
+import type { VechaiToast, VechaiSpecifiedTheme } from "~/types";
 
 /**
  * Config Style
@@ -22,8 +22,8 @@ export const configStyle: ConfigStyle = {
 };
 
 export type ConfigStyle = {
-  theme: SpecifiedThemeVechai;
-  toast: ToastVechai;
-  notification: ToastVechai;
+  theme: VechaiSpecifiedTheme;
+  toast: VechaiToast;
+  notification: VechaiToast;
   navigationBar: "simple" | "complex";
 };

@@ -8,7 +8,7 @@ import type {
   ActionFunction,
   LoaderDataSession,
   LoaderFunction,
-  SpecifiedThemeVechai,
+  VechaiSpecifiedTheme,
 } from "~/types";
 
 const currentDate = Date.now();
@@ -40,7 +40,7 @@ export const loaderSession: LoaderFunction = async ({ request }) => {
   const themeFromSession = await session.get("theme");
 
   // Only parse if theme string exist
-  const themeParsed: SpecifiedThemeVechai = themeFromSession
+  const themeParsed: VechaiSpecifiedTheme = themeFromSession
     ? JSON.parse(themeFromSession)
     : configStyle?.theme;
 

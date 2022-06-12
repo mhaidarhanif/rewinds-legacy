@@ -17,8 +17,6 @@ export * from "./logo";
 export * from "./nprogress";
 export * from "./pre";
 export * from "./react";
-export * from "./remix-link";
-export * from "./remix";
 export * from "./scroll-area";
 export * from "./span";
 export * from "./transition";

@@ -3,7 +3,7 @@ import {
   ButtonAnchor,
   ButtonGroup,
   ButtonHTML,
-  ButtonLink,
+  RemixLinkButton,
   RemixLink,
 } from "~/components";
 import { MessageBackReloadButtons } from "~/contents";
@@ -149,7 +149,7 @@ export const ExampleButtons = () => {
           <code>RemixLink</code> element
         </h4>
         <ButtonGroup>
-          <ButtonLink to=".">Button Remix Link</ButtonLink>
+          <RemixLinkButton to=".">Button Remix Link</RemixLinkButton>
           <RemixLink
             to="/about"
             className="btn btn-md btn-solid rounded-full"

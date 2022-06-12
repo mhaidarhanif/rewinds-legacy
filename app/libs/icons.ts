@@ -2,7 +2,6 @@ import { AdjustmentsIcon as IconAdjustments } from "@heroicons/react/solid";
 import {
   // General
   CalendarBlank as IconCalendar,
-  CaretDown as IconCaretDown,
   Chats as IconMessage,
   Check as IconCheck,
   CheckCircle as IconCheckCircle,
@@ -17,6 +16,8 @@ import {
   LockSimpleOpen as IconSignIn,
   Rewind as IconRewind,
   Timer as IconTimer,
+  CaretUp as IconCaretUp,
+  CaretDown as IconCaretDown,
   // External
   // DiscordLogo as IconDiscord,
   // GithubLogo as IconGitHub,
@@ -49,6 +50,7 @@ export {
   IconAdjustments,
   IconCalendar,
   IconCaretDown,
+  IconCaretUp,
   IconCheck,
   IconCheckCircle,
   IconCircle,

@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-
 const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./app/**/*.tsx", "./node_modules/@vechaiui/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",

@@ -223,6 +223,13 @@ Make sure that it can build just fine:
 npm run build
 ```
 
+For more complementing the build:
+
+```sh
+npm run build
+npm run lint
+```
+
 ## Lint
 
 Make sure to lint the code with both ESLint and Stylelint:
@@ -235,17 +242,8 @@ Or individually:
 
 ```sh
 npm run eslint
-```
-
-```sh
 npm run stylelint
-```
-
-```sh
 npm run prettier
-```
-
-```sh
 npm run typecheck
 ```
 

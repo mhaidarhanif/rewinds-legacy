@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, ButtonLink } from "~/components";
+import { Button, ButtonGroup, RemixLinkButton } from "~/components";
 import { useNavigate, useParams } from "~/hooks";
 
 import type { HTMLElementProps } from "~/types";
@@ -132,9 +132,9 @@ export const MessageBackReloadButtons = ({
   if (isThemed) {
     return (
       <ButtonGroup className={className}>
-        <ButtonLink variant="solid" to="/">
+        <RemixLinkButton variant="solid" to="/">
           Back to home page
-        </ButtonLink>
+        </RemixLinkButton>
         <Button onClick={handleBackToPrevious}>Back to previous page</Button>
         <Button onClick={handleReload}>Reload page</Button>
       </ButtonGroup>

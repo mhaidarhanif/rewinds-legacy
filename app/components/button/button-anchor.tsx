@@ -1,29 +1,29 @@
 import { classx } from "~/utils";
 
-import type { ButtonProps } from "~/types";
+import type { VechaiButtonProps } from "~/types";
 
-interface ButtonAnchorProps extends ButtonProps {
+interface ButtonAnchorProps extends VechaiButtonProps {
   href: string;
 }
 
 export const ButtonAnchor = ({
   href,
   children,
-  color = "primary",
-  variant = "solid",
-  size = "md",
+  color,
+  variant,
+  size,
   leftIcon,
   rightIcon,
   className,
 }: ButtonAnchorProps) => {
   return (
     <a
-      href={href}
-      data-color={color}
+      href={href || "#"}
+      data-color={color || "primary"}
       target="_blank"
       rel="noreferrer"
       className={classx(
-        `btn-${variant} btn btn-${size} rounded-base`,
+        `btn-${variant || "solid"} btn btn-${size || "md"} rounded-base`,
         className,
       )}
     >
