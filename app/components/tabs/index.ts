@@ -1,3 +1,3 @@
-export * from "./tab-headless";
-export * from "./tab-radix";
-export * from "./tab-simple";
+export * from "./tabs-headlessui";
+export * from "./tabs-radixui";
+export * from "./tabs";

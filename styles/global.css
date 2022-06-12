@@ -495,6 +495,10 @@
     @apply dark:ring-offset-primary-500/80 dark:focus:ring-primary-500/80;
   }
 
+  .focus-ring-within {
+    @apply focus-within:ring focus-within:ring-primary-400/80 focus:outline-none;
+  }
+
   /* Background Color */
 
   .bg-primary {

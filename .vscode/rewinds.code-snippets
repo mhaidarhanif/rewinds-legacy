@@ -5,6 +5,21 @@
     "description": "React component"
   },
 
+  "Rewinds React PropTypes": {
+    "prefix": "rrp",
+    "body": [
+      "$1.propTypes = {",
+      "  $2: PropTypes.node",
+      "};",
+      "",
+      "$1.defaultProps = {",
+      "  $2: \"\"",
+      "};",
+      ""
+    ],
+    "description": "React component"
+  },
+
   "Rewinds Remix Route": {
     "prefix": "rrr",
     "body": [

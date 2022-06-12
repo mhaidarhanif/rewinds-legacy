@@ -1,6 +1,6 @@
 import {
   TabHeadlessExample,
-  TabRadixExample,
+  RadixTabsExample,
   TabSimpleExample,
 } from "~/components";
 
@@ -14,7 +14,7 @@ export const ExampleTabs = () => {
 
       <h2>Radix UI</h2>
       <div className="example">
-        <TabRadixExample />
+        <RadixTabsExample />
       </div>
 
       <h2>Headless UI</h2>

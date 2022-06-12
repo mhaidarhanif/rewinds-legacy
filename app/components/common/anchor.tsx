@@ -1,3 +1,5 @@
+import { PropTypes } from "~/libs";
+
 import type { HTMLAnchorElementProps } from "~/types";
 
 interface AnchorProps extends HTMLAnchorElementProps {
@@ -14,4 +16,9 @@ export const Anchor = ({
       {children}
     </a>
   );
+};
+
+Anchor.propTypes = {
+  children: PropTypes.element.isRequired,
+  "data-color": PropTypes.string,
 };

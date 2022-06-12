@@ -1,10 +1,10 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
-const TabsRadix = Tabs;
+const RadixTabs = Tabs;
 
-export { TabsRadix };
+export { RadixTabs };
 
-export const TabRadixExample = () => {
+export const RadixTabsExample = () => {
   const tabs = [
     {
       value: "tab1",

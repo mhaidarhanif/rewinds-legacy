@@ -8,13 +8,7 @@ import {
   ThemeToggle,
   useTheme,
 } from "~/components";
-import {
-  configAvailableThemes,
-  configAvailableRadiuses,
-  configStyle,
-  configFeatures,
-} from "~/configs";
-import { useToast } from "~/hooks";
+import { configAvailableThemes, configAvailableRadiuses } from "~/configs";
 import { IconGear } from "~/libs";
 import { classx } from "~/utils";
 
@@ -56,16 +50,9 @@ export const ThemeSwitcher = ({
     setDensity,
     density,
   } = useTheme();
-  const toast = useToast();
 
   const changeColorScheme = (value: string) => {
     setColorScheme(value);
-    if (configFeatures.toast) {
-      toast({
-        message: `Changed theme to ${value}`,
-        position: configStyle.toast.position,
-      });
-    }
   };
 
   return (
