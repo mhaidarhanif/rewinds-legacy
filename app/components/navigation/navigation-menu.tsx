@@ -342,7 +342,7 @@ export const NavigationMenuViewport = ({ ...props }: HTMLElementProps) => {
 };
 
 /**
- * need-fix: issue with React.forwardRef() and reading 'focus'
+ * FIX: issue with React.forwardRef() and reading 'focus'
  *
  * https://www.radix-ui.com/docs/primitives/components/navigation-menu#with-router-links
  */

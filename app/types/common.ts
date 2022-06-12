@@ -86,6 +86,16 @@ export type Article = {
   excerpt?: string;
   content?: RichText;
   coverImage?: Asset;
+  authors?: Author[];
+};
+
+export type Author = {
+  id?: string;
+  name?: string;
+  title?: string;
+  bio?: string;
+  picture?: Asset;
+  articles?: Article[];
 };
 
 export type Strings = Array<string>;

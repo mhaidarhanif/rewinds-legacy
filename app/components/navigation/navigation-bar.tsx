@@ -9,14 +9,11 @@ import {
   ThemeSwitcher,
 } from "~/components";
 import { configStyle, configNavigationBarLinks } from "~/configs";
-import { classx, packageJson } from "~/utils";
+import { packageJson } from "~/utils";
 
 export const NavigationBar = () => {
   return (
-    <nav
-      id="navigation-bar"
-      className={classx("navigation-bar navigation-bar-blur")}
-    >
+    <nav id="navigation-bar" className="navigation-bar navigation-bar-blur">
       <div className="flex items-center justify-between">
         <div className="flex gap-2 sm:gap-4">
           <NavigationBarLogo />

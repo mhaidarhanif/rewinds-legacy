@@ -1,4 +1,5 @@
 import type {
+  AvatarProps as VechaiAvatarProps,
   ButtonGroupProps as VechaiButtonGroupProps,
   ButtonProps as VechaiButtonProps,
   CodeProps as VechaiCodeProps,
@@ -11,6 +12,7 @@ import type {
 import type { Position as VechaiPosition } from "@vechaiui/toasted-notes";
 
 export type {
+  VechaiAvatarProps,
   VechaiButtonGroupProps,
   VechaiButtonProps,
   VechaiCodeProps,

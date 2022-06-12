@@ -1,6 +1,5 @@
 export * from "./alert";
 export * from "./anchor";
-export * from "./avatar";
 export * from "./badge";
 export * from "./breadcrumb";
 export * from "./code-highlight";

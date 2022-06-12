@@ -68,12 +68,12 @@
   /* Headings */
 
   .h0 {
-    @apply mb-10 text-5xl font-black sm:text-6xl;
+    @apply mb-10 text-6xl font-black sm:text-8xl;
   }
 
   h1,
   .h1 {
-    @apply mb-8 text-4xl font-bold sm:text-5xl;
+    @apply mb-8 text-5xl font-bold sm:text-6xl;
   }
 
   h2,
@@ -306,8 +306,16 @@
     @apply stack flex-col;
   }
 
+  .stack-v-center {
+    @apply stack-v justify-center;
+  }
+
   .stack-h {
     @apply stack flex-row;
+  }
+
+  .stack-h-center {
+    @apply stack-h items-center;
   }
 
   /**
@@ -398,7 +406,7 @@
    */
 
   .tabs-radix-trigger {
-    @apply inline-block flex flex-shrink-0 items-center justify-center rounded-base;
+    @apply flex flex-shrink-0 items-center justify-center rounded-base;
     @apply focus-ring -mb-px h-10 cursor-base whitespace-nowrap px-4 py-2 text-center font-bold;
     @apply bg-transparent text-neutral-600;
     @apply hover:text-primary-900;
@@ -523,7 +531,6 @@
   }
 
   .bg-focusable {
-    @apply rounded-base p-2;
     @apply transition-colors duration-300 ease-in-out;
     @apply hover:bg-neutral-50/80 hover:dark:bg-neutral-800/20;
     @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
@@ -585,9 +592,9 @@
 
   /* Relate to text-underline-left-right */
   .prose-a-styles {
-    @apply text-underline-left-right font-bold no-underline;
-    @apply text-primary-500 dark:text-primary-300;
-    @apply visited:text-primary-700 visited:dark:text-primary-500;
+    @apply font-bold no-underline transition-colors duration-300 ease-in-out;
+    @apply text-primary-700 dark:text-primary-400;
+    @apply hover:text-primary-500 hover:dark:text-primary-200;
   }
 
   /* Relate to prose-a-styles */
@@ -595,6 +602,10 @@
     @apply after:bg-primary-500 dark:after:bg-primary-300;
     @apply after:-bottom-0.5 after:left-0 after:h-[2px];
     @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
+  .text-visited {
+    @apply visited:text-primary-900 visited:dark:text-primary-100;
   }
 
   .text-shimmer {
