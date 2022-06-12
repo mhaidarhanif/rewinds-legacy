@@ -20,12 +20,12 @@ export const HomeIntro = () => {
         </p>
       </div>
 
-      <div>
+      <div className="space-y-3">
         <div className="font-tertiary">
           <p className="font-bold">Play around with them!</p>
-          <p>Try the theme switcher too</p>
+          <p>Try the theme switcher here</p>
         </div>
-        <ThemeSwitcher variant="solid" />
+        <ThemeSwitcher variant="solid" isGroup />
       </div>
     </header>
   );

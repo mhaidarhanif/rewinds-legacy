@@ -8,9 +8,9 @@
   "scripts": {
     "postinstall": "remix setup node",
     "prepare": "husky install",
-    "start": "doppler run -- npm run dev",
-    "d": "npm-run-all -p build:css dev:remix",
     "dev": "npm-run-all -p dev:*",
+    "d": "npm-run-all -p build:css dev:remix",
+    "dev:doppler": "doppler run -- npm run dev",
     "dev:css": "tailwindcss -w -i ./styles/global.css -o app/styles/out.css",
     "dev:remix": "remix dev",
     "build": "npm-run-all -s build:css build:remix",

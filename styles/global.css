@@ -272,7 +272,7 @@
     @apply border-b border-transparent;
   }
 
-  .navigation-bar-scrolled {
+  .navigation-bar-blur {
     @apply bg-secondary-blur border-secondary;
   }
 
@@ -514,8 +514,8 @@
   }
 
   .bg-secondary-blur {
-    @apply bg-neutral-50/90 dark:bg-neutral-800/90;
-    @apply backdrop-blur;
+    @apply bg-neutral-50/80 dark:bg-neutral-800/80;
+    @apply backdrop-blur-md;
   }
 
   .bg-separator {

@@ -33,12 +33,14 @@ interface ThemeSwitcherProps {
   variant?: VechaiButtonProps["variant"];
   inNavbar?: boolean;
   isGroup?: boolean;
+  attached?: boolean;
 }
 
 export const ThemeSwitcher = ({
   variant = "solid",
   inNavbar = false,
   isGroup = false,
+  attached = true,
 }: ThemeSwitcherProps) => {
   const {
     colorScheme,
@@ -61,9 +63,9 @@ export const ThemeSwitcher = ({
         return (
           <>
             {isGroup ? (
-              <ButtonGroup attached variant={variant}>
+              <ButtonGroup attached={attached} variant={variant}>
                 <ThemeToggle />
-                <ThemeSwitcherButton />
+                <ThemeSwitcherButton variant={variant} />
               </ButtonGroup>
             ) : (
               <ThemeSwitcherButton variant={variant} />

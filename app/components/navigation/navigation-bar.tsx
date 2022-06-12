@@ -15,7 +15,7 @@ export const NavigationBar = () => {
   return (
     <nav
       id="navigation-bar"
-      className={classx("navigation-bar navigation-bar-scrolled")}
+      className={classx("navigation-bar navigation-bar-blur")}
     >
       <div className="flex items-center justify-between">
         <div className="flex gap-2 sm:gap-4">
@@ -33,7 +33,7 @@ export const NavigationBar = () => {
             <ExternalLinks />
           </div>
 
-          <ThemeSwitcher inNavbar variant="ghost" />
+          <ThemeSwitcher variant="ghost" inNavbar isGroup attached={false} />
 
           <div className="hidden xl:flex">
             <NavigationBarAuth />

@@ -1,7 +1,13 @@
 import { VechaiButtonIcon, Icon, useTheme } from "~/components";
 import { configThemes } from "~/configs";
 
-export const ThemeToggle = () => {
+import type { VechaiButtonProps } from "~/types";
+
+interface ThemeToggleProps {
+  variant?: VechaiButtonProps["variant"];
+}
+
+export const ThemeToggle = ({ variant }: ThemeToggleProps) => {
   const { isLight, setColorScheme } = useTheme();
   const lightTheme = configThemes.day.id;
   const darkTheme = configThemes.night.id;
@@ -13,7 +19,7 @@ export const ThemeToggle = () => {
   return (
     <VechaiButtonIcon
       color="primary"
-      variant="solid"
+      variant={variant}
       onClick={toggleColorScheme}
     >
       <Icon name={isLight ? "dark" : "light"} />

@@ -24,8 +24,12 @@ export const NavigationBarDropdownMenu = () => {
             data-color="primary"
             className="var(--vc-cursor) btn-solid btn btn-md flex rounded-base"
           >
-            <VechaiIcon as={IconMenu} label="Menu" className="mr-1 h-4 w-4" />
-            Menu
+            <VechaiIcon
+              as={IconMenu}
+              label="Menu"
+              className={classx("h-4 w-4 xs:mr-1")}
+            />
+            <span className={classx("hidden xs:block")}>Menu</span>
           </button>
         </DropdownMenu.Trigger>
 

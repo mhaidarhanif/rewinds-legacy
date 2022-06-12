@@ -153,18 +153,16 @@ Note if you're used to using the `vercel dev` command provided by [Vercel CLI](h
 
 ### Environment variables using Doppler
 
-If you want to use [Doppler](https://doppler.com) to manage the env variables, use the `start` script. Therefore this won't need the `.env` file to be edited manually.
+If you want to use [Doppler](https://doppler.com) to manage the environment variables, use the `dev:doppler` script. Therefore you won't need the `.env` file to be edited manually.
 
 ```sh
-npm run start
+npm run dev:doppler
 # doppler run -- npm run dev
 ```
 
 ### Project structure
 
 Keep in mind that the structure is designed for scalability for medium-large project. If your project scope is too simple or too small, Rewinds might be a bit too much to handle.
-
-> There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` (Use Search in your editor) and other things like `site.webmanifest`.
 
 - `.husky`
 - `.vscode`
@@ -214,6 +212,17 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `remix.env.d.ts`
   - `tsconfig.json`
 - `server.js`
+
+There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` (Use Search in your editor) and other things like `site.webmanifest`.
+
+Also when using this starter kit, you might want to remove most of the code in:
+
+- `app`
+  - `data`: custom data
+  - `contents`: custom contents
+  - `routes`: custom routes
+
+Other than those you might want to keep them.
 
 ## Build
 
