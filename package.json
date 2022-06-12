@@ -77,7 +77,6 @@
     "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
     "@tanem/react-nprogress": "5.0.2",
-    "@types/tailwindcss": "3.0.10",
     "@urql/core": "2.5.0",
     "@vechaiui/core": "0.6.0",
     "@vechaiui/react": "0.2.2",

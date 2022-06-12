@@ -26,6 +26,7 @@
     "stylelint.vscode-stylelint",
     "vincaslt.highlight-matching-tag",
     "yzhang.markdown-all-in-one",
-    "zh9528.file-size"
+    "zh9528.file-size",
+    "bradlc.vscode-tailwindcss"
   ]
 }

@@ -280,10 +280,6 @@ After:
 import { json, redirect } from "@remix-run/node";
 ```
 
-### Tailwind CSS
-
-Note that [Tailwind CSS IntelliSense extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) might currently not work with `tailwindcss@3.0.24` at the moment.
-
 ### Vechai UI
 
 Edit `tailwind.config.js` to remove custom colors to reduce the stylesheet build size. `cssBase` is still required to get the default Tailwind CSS colors into Vechai UI themes.
