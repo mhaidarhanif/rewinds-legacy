@@ -1,5 +1,5 @@
 import { Dialog } from "@reach/dialog";
-import "@reach/dialog/styles.css";
+// import "@reach/dialog/styles.css";
 import VisuallyHidden from "@reach/visually-hidden";
 
 import { useState } from "~/hooks";

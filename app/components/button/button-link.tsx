@@ -1,9 +1,7 @@
 import { RemixLink } from "~/components";
 import { classx } from "~/utils";
 
-import type { ButtonProps, LinkProps } from "~/types";
-
-type ButtonLinkProps = ButtonProps & LinkProps;
+import type { ButtonLinkProps } from "~/types";
 
 export const ButtonLink = ({
   to,

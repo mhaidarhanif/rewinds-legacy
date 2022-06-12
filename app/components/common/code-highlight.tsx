@@ -3,8 +3,7 @@ import PrismHighlight, { defaultProps } from "prism-react-renderer";
 import themeNightOwl from "prism-react-renderer/themes/nightOwl";
 import themeNightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 
-import { useTheme } from "./themes";
-
+import { useTheme } from "~/components";
 import { classx } from "~/utils";
 
 import type { Language, PrismTheme } from "prism-react-renderer";

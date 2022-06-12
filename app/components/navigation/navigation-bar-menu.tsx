@@ -1,9 +1,8 @@
 import { Menu, Transition } from "@headlessui/react";
-import { NavLink } from "@remix-run/react";
 import { Button, Divider } from "@vechaiui/react";
 import { Fragment } from "react";
 
-import { IconVechai } from "~/components";
+import { RemixNavLink, IconVechai } from "~/components";
 import { configNavigationMenu } from "~/configs";
 import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
@@ -92,7 +91,7 @@ export const MenuItem = ({ link }: MenuItemProps) => {
     <Menu.Item>
       {({ active, disabled }) => {
         return (
-          <NavLink
+          <RemixNavLink
             end
             to={link.to}
             className={({ isActive }) => {
@@ -105,7 +104,7 @@ export const MenuItem = ({ link }: MenuItemProps) => {
             }}
           >
             {link.text}
-          </NavLink>
+          </RemixNavLink>
         );
       }}
     </Menu.Item>

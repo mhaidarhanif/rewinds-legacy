@@ -5,7 +5,7 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  Input,
+  VechaiInput,
   Button,
 } from "~/components";
 
@@ -53,7 +53,7 @@ export const SubscribeForm = ({
                 </span>
               )}
             </FormLabel>
-            <Input
+            <VechaiInput
               name="firstName"
               type="text"
               placeholder={defaultPlaceholderText.firstName}
@@ -70,7 +70,7 @@ export const SubscribeForm = ({
                 </span>
               )}
             </FormLabel>
-            <Input
+            <VechaiInput
               name="email"
               type="email"
               placeholder={defaultPlaceholderText.email}

@@ -5,7 +5,6 @@ export {
   FormLabel,
   FormHelperText,
   FormErrorMessage,
-  Input,
   RequiredIndicator,
   Select,
   Textarea,

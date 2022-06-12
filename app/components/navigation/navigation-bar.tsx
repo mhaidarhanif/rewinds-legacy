@@ -1,12 +1,12 @@
 import {
+  Badge,
   ExternalLinks,
   Logo,
+  NavigationBarDropdownMenu,
+  NavigationBarNavMenu,
   RemixLink,
   RemixNavLink,
   ThemeSwitcher,
-  Badge,
-  NavigationBarNavMenu,
-  NavigationBarDropdownMenu,
 } from "~/components";
 import { configStyle, configNavigationBarLinks } from "~/configs";
 import { classx, packageJson } from "~/utils";

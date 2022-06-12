@@ -1,26 +1,28 @@
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { useResolvedPath, NavLink } from "@remix-run/react";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useMatch } from "react-router-dom";
+import * as RadixNavigationMenu from "@radix-ui/react-navigation-menu";
 
+import { RemixNavLink } from "~/components";
 import {
   configNavigationExamples1,
   configNavigationExamples2,
   configNavigationExamples3,
   configNavigationPages,
 } from "~/configs";
+import { useResolvedPath, useMatch } from "~/hooks";
 import { IconCaretDown } from "~/libs";
 import { classx } from "~/utils";
 
-import type { NavLinkProps } from "@remix-run/react";
-import type { HTMLAnchorElementProps, HTMLElementProps } from "~/types";
+import type {
+  RemixNavLinkProps,
+  HTMLAnchorElementProps,
+  HTMLElementProps,
+} from "~/types";
 
 /**
  * Navigation Bar Nav Menu
  *
  * Used in Navigation Bar
  * Radix UI Navigation Menu with Trigger Buttons and Viewport
- * Named like this because NavigationMenu is already used by Radix UI
+ * Named like this because RadixNavigationMenu is already used by Radix UI
  */
 
 // EDITME
@@ -158,11 +160,11 @@ export const NavigationMenuRoot = ({
   className,
 }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Root
+    <RadixNavigationMenu.Root
       className={classx("nav-menu-root", "relative hidden xl:flex", className)}
     >
       {children}
-    </NavigationMenu.Root>
+    </RadixNavigationMenu.Root>
   );
 };
 
@@ -171,7 +173,7 @@ export const NavigationMenuList = ({
   className,
 }: HTMLElementProps) => {
   return (
-    <NavigationMenu.List
+    <RadixNavigationMenu.List
       className={classx(
         "nav-menu-list",
         "flex flex-row items-center gap-1 rounded-lg font-medium",
@@ -179,7 +181,7 @@ export const NavigationMenuList = ({
       )}
     >
       {children}
-    </NavigationMenu.List>
+    </RadixNavigationMenu.List>
   );
 };
 
@@ -188,11 +190,11 @@ export const NavigationMenuItem = ({
   className,
 }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Item
+    <RadixNavigationMenu.Item
       className={classx("nav-menu-item", "flex items-center", className)}
     >
       {children}
-    </NavigationMenu.Item>
+    </RadixNavigationMenu.Item>
   );
 };
 
@@ -206,7 +208,7 @@ export const NavigationMenuTrigger = ({
   ...props
 }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Trigger
+    <RadixNavigationMenu.Trigger
       className={classx(
         "nav-menu-trigger",
         "navlink focus-visible:focus-ring focus:outline-none",
@@ -217,7 +219,7 @@ export const NavigationMenuTrigger = ({
     >
       {children}
       <IconCaretDown aria-hidden size={12} weight="bold" />
-    </NavigationMenu.Trigger>
+    </RadixNavigationMenu.Trigger>
   );
 };
 
@@ -226,7 +228,7 @@ export const NavigationMenuContent = ({
   className,
 }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Content
+    <RadixNavigationMenu.Content
       className={classx(
         "nav-menu-content",
         "absolute top-0 left-0 w-auto rounded-lg",
@@ -238,7 +240,7 @@ export const NavigationMenuContent = ({
       )}
     >
       {children}
-    </NavigationMenu.Content>
+    </RadixNavigationMenu.Content>
   );
 };
 
@@ -254,13 +256,13 @@ export const NavigationMenuLink = ({
   children,
 }: NavigationMenuLinkProps) => {
   return (
-    <NavigationMenu.Link
+    <RadixNavigationMenu.Link
       href={href}
       asChild={asChild}
       className={classx("nav-menu-link", className)}
     >
       {children}
-    </NavigationMenu.Link>
+    </RadixNavigationMenu.Link>
   );
 };
 
@@ -271,20 +273,20 @@ export const NavigationMenuAnchor = ({
   children,
 }: HTMLAnchorElementProps) => {
   return (
-    <NavigationMenu.Link
+    <RadixNavigationMenu.Link
       href={href}
       target="_blank"
       rel="noreferrer"
       className={classx("nav-menu-link", className)}
     >
       {children}
-    </NavigationMenu.Link>
+    </RadixNavigationMenu.Link>
   );
 };
 
 export const NavigationMenuIndicator = ({ className }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Indicator
+    <RadixNavigationMenu.Indicator
       className={classx(
         "nav-menu-indicator",
         "shadow-panel overflow-hidden",
@@ -297,7 +299,7 @@ export const NavigationMenuIndicator = ({ className }: HTMLElementProps) => {
       )}
     >
       <div className={classx("bg-panel", "relative top-2 h-3 w-3 rotate-45")} />
-    </NavigationMenu.Indicator>
+    </RadixNavigationMenu.Indicator>
   );
 };
 
@@ -322,7 +324,7 @@ export const NavigationMenuViewportPosition = ({
 
 export const NavigationMenuViewport = ({ ...props }: HTMLElementProps) => {
   return (
-    <NavigationMenu.Viewport
+    <RadixNavigationMenu.Viewport
       className={classx(
         "nav-menu-viewport",
         "z-40",
@@ -350,14 +352,14 @@ export const NavigationMenuNavLink = ({
   to,
   end,
   className,
-}: NavLinkProps) => {
+}: RemixNavLinkProps) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
   const isActive = Boolean(match);
 
   return (
-    <NavigationMenu.Link active={isActive} asChild>
-      <NavLink
+    <RadixNavigationMenu.Link active={isActive} asChild>
+      <RemixNavLink
         to={to}
         end={end}
         className={classx(
@@ -368,7 +370,7 @@ export const NavigationMenuNavLink = ({
         )}
       >
         {children}
-      </NavLink>
-    </NavigationMenu.Link>
+      </RemixNavLink>
+    </RadixNavigationMenu.Link>
   );
 };

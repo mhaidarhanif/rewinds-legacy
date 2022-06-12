@@ -3,7 +3,7 @@ import {
   FormLabel,
   FormHelperText,
   FormErrorMessage,
-  Input,
+  VechaiInput,
   RequiredIndicator,
   Button,
   Select,
@@ -55,7 +55,7 @@ export const ExampleForms = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <FormControl invalid={Boolean(errors.email)}>
             <FormLabel>Email address</FormLabel>
-            <Input
+            <VechaiInput
               {...register("email", { required: true })}
               name="email"
               type="email"
@@ -75,7 +75,7 @@ export const ExampleForms = () => {
               Username
               <RequiredIndicator />
             </FormLabel>
-            <Input
+            <VechaiInput
               {...register("username", { required: true })}
               placeholder="Enter your username"
               size="lg"
@@ -90,13 +90,13 @@ export const ExampleForms = () => {
               Password
               <RequiredIndicator />
             </FormLabel>
-            <Input.Group size="lg">
-              <Input
+            <VechaiInput.Group size="lg">
+              <VechaiInput
                 {...register("password", { required: true })}
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
               />
-              <Input.RightElement className="mr-1 w-16">
+              <VechaiInput.RightElement className="mr-1 w-16">
                 <Button
                   type="button"
                   size="xs"
@@ -105,8 +105,8 @@ export const ExampleForms = () => {
                 >
                   {showPassword ? "Hide" : "Show"}
                 </Button>
-              </Input.RightElement>
-            </Input.Group>
+              </VechaiInput.RightElement>
+            </VechaiInput.Group>
             {errors.password && errors.password.type === "required" && (
               <FormErrorMessage>Password is required</FormErrorMessage>
             )}

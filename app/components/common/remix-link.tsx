@@ -2,7 +2,7 @@ import { NavLink } from "@remix-run/react";
 
 import { classx } from "~/utils";
 
-import type { NavLinkProps } from "~/types";
+import type { RemixNavLinkProps } from "~/types";
 
 export { Link as RemixLink } from "@remix-run/react";
 
@@ -11,7 +11,7 @@ export const RemixNavLink = ({
   end,
   to,
   className,
-}: NavLinkProps) => {
+}: RemixNavLinkProps) => {
   return (
     <NavLink
       prefetch="intent"

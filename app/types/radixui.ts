@@ -2,7 +2,7 @@
  * Used for Radix UI components
  */
 
-export type RadixUIMenuItem = {
+export type RadixMenuItem = {
   label: string;
   shortcut?: string;
   icon?: React.ReactNode;
@@ -15,5 +15,5 @@ export type RadixDropdownMenuItem = {
   icon?: React.ReactNode;
 };
 
-export type RadixUIMenuItems = Array<RadixUIMenuItem>;
+export type RadixMenuItems = Array<RadixMenuItem>;
 export type RadixDropdownMenuItems = Array<RadixDropdownMenuItem>;

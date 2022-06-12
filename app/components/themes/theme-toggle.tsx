@@ -1,12 +1,12 @@
-import { ButtonIcon, Icon, useTheme } from "~/components";
+import { VechaiButtonIcon, Icon, useTheme } from "~/components";
 import { configFeatures, configStyle, configThemes } from "~/configs";
 import { useToast } from "~/hooks";
 
 export const ThemeToggle = () => {
+  const toast = useToast();
   const { isLight, setColorScheme } = useTheme();
   const lightTheme = configThemes.day.id;
   const darkTheme = configThemes.night.id;
-  const toast = useToast();
 
   const toggleColorScheme = () => {
     setColorScheme(isLight ? darkTheme : lightTheme);
@@ -20,8 +20,12 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <ButtonIcon color="primary" variant="solid" onClick={toggleColorScheme}>
+    <VechaiButtonIcon
+      color="primary"
+      variant="solid"
+      onClick={toggleColorScheme}
+    >
       <Icon name={isLight ? "dark" : "light"} />
-    </ButtonIcon>
+    </VechaiButtonIcon>
   );
 };

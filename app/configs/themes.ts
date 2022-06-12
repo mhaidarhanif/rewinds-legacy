@@ -226,7 +226,7 @@ export const black: ColorScheme = {
 };
 
 /**
- * SpecifiedTheme Provider colors data
+ * SpecifiedThemeVechai Provider colors data
  */
 export const configThemes = {
   // Light

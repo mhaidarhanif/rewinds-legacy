@@ -1,4 +1,10 @@
-import { Anchor, Button, FormControl, FormLabel, Input } from "~/components";
+import {
+  Anchor,
+  Button,
+  FormControl,
+  FormLabel,
+  VechaiInput,
+} from "~/components";
 import { configMeta, configStyle } from "~/configs";
 import { convertkitSubscribeClient } from "~/features";
 import { useEffect, useForm, useNotification, useState } from "~/hooks";
@@ -85,7 +91,7 @@ export const FooterComplexFormSubscribe = () => {
               <FormLabel htmlFor="firstName" className="sr-only">
                 Your Name
               </FormLabel>
-              <Input
+              <VechaiInput
                 {...register("firstName", { required: true })}
                 name="firstName"
                 type="text"
@@ -99,7 +105,7 @@ export const FooterComplexFormSubscribe = () => {
               <FormLabel htmlFor="email" className="sr-only">
                 Your Email
               </FormLabel>
-              <Input
+              <VechaiInput
                 {...register("email", { required: true })}
                 name="email"
                 type="email"

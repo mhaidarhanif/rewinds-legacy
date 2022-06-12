@@ -1,21 +1,41 @@
-import type { Position } from "@vechaiui/toasted-notes";
-
-export type {
-  ColorScheme,
-  VechaiTheme,
+import type {
+  ButtonGroupProps,
   ButtonProps,
   CodeProps,
-  ButtonGroupProps,
+  ColorHues,
+  ColorScheme,
+  IconButtonProps,
+  LinkProps as VechaiLinkProps,
+  VechaiTheme,
 } from "@vechaiui/react";
+import type { Position as VechaiPosition } from "@vechaiui/toasted-notes";
+import type { RemixLinksProps } from "~/types";
 
-export type SpecifiedTheme = {
+export type {
+  ButtonGroupProps,
+  ButtonProps,
+  CodeProps,
+  ColorHues,
+  ColorScheme,
+  IconButtonProps,
+  VechaiPosition,
+  VechaiLinkProps,
+  VechaiTheme,
+};
+
+export type ButtonLinkProps = ButtonProps & RemixLinksProps;
+/**
+ * Note: interface cannot simultaneously extend types
+ */
+
+export type SpecifiedThemeVechai = {
   colorScheme: string;
   density: "compact" | "comfortable" | "unset";
   radius: string;
   cursorPointer: boolean;
 };
 
-export interface IToast {
+export interface ToastVechai {
   title?: string;
   closeable?: boolean;
   onClose?: () => void;
@@ -23,7 +43,7 @@ export interface IToast {
   description?: string;
   undoText?: string;
   duration?: number | null;
-  position?: keyof typeof Position;
+  position?: keyof typeof VechaiPosition;
   message?: string;
   status?: "info" | "success" | "error" | "warning";
   icon?: React.ElementType;
