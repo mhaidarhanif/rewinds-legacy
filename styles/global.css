@@ -524,7 +524,7 @@
 
   .bg-focusable {
     @apply rounded-base p-2;
-    @apply hover:bg-neutral-200/80 hover:dark:bg-neutral-800/20;
+    @apply hover:bg-neutral-50/80 hover:dark:bg-neutral-800/20;
     @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
   }
 
