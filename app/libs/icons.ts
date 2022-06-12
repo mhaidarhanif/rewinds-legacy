@@ -1,7 +1,14 @@
 import { AdjustmentsIcon as IconAdjustments } from "@heroicons/react/solid";
 import {
-  // General
+  // GithubLogo as IconGitHub,
+  // LinkedinLogo as IconLinkedIn,
+  // MediumLogo as IconMedium,
+  // TelegramLogo as IconTelegram,
+  // TwitterLogo as IconTwitter,
+  // YoutubeLogo as IconYouTube,
   CalendarBlank as IconCalendar,
+  CaretDown as IconCaretDown,
+  CaretUp as IconCaretUp,
   Chats as IconMessage,
   Check as IconCheck,
   CheckCircle as IconCheckCircle,
@@ -16,34 +23,22 @@ import {
   LockSimpleOpen as IconSignIn,
   Rewind as IconRewind,
   Timer as IconTimer,
-  CaretUp as IconCaretUp,
-  CaretDown as IconCaretDown,
-  // External
-  // DiscordLogo as IconDiscord,
-  // GithubLogo as IconGitHub,
-  // LinkedinLogo as IconLinkedIn,
-  // MediumLogo as IconMedium,
-  // TelegramLogo as IconTelegram,
-  // TwitterLogo as IconTwitter,
-  // YoutubeLogo as IconYouTube,
 } from "phosphor-react";
 import {
-  // General
   FaCircle as IconCircle,
-  FaGlobe as IconWebsite,
-  FaMoon as IconLight,
-  FaSun as IconDark,
-
-  // External
   FaDev as IconDev,
   FaDiscord as IconDiscord,
   FaGithub as IconGitHub,
+  FaGlobe as IconWebsite,
   FaLinkedin as IconLinkedIn,
   FaMedium as IconMedium,
+  FaMoon as IconLightTheme,
+  FaProductHunt as IconProductHunt,
+  FaStarHalf as IconSystemTheme,
+  FaSun as IconDarkTheme,
   FaTelegram as IconTelegram,
   FaTwitter as IconTwitter,
   FaYoutube as IconYouTube,
-  FaProductHunt as IconProductHunt,
 } from "react-icons/fa";
 
 export {
@@ -54,7 +49,7 @@ export {
   IconCheck,
   IconCheckCircle,
   IconCircle,
-  IconDark,
+  IconDarkTheme,
   IconDatabase,
   IconDev,
   IconDiscord,
@@ -62,7 +57,7 @@ export {
   IconGear,
   IconGitHub,
   IconKey,
-  IconLight,
+  IconLightTheme,
   IconLinkedIn,
   IconMedium,
   IconMenu,
@@ -73,6 +68,7 @@ export {
   IconSignOut,
   IconSignUp,
   IconStorage,
+  IconSystemTheme,
   IconTelegram,
   IconTimer,
   IconTwitter,
