@@ -1,7 +1,7 @@
 import Prism from "prismjs";
 import * as React from "react";
 
-export function PrismCodeBlock({ children, language }: CodeBlockProps) {
+export function PrismCodeBlock({ children, language }: PrismCodeBlockProps) {
   const ref = React.useRef(null);
 
   React.useEffect(() => {
@@ -16,7 +16,8 @@ export function PrismCodeBlock({ children, language }: CodeBlockProps) {
     </div>
   );
 }
-interface CodeBlockProps {
+
+interface PrismCodeBlockProps {
   children?: any;
   language?: any;
 }

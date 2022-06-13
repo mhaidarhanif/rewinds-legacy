@@ -1,26 +1,31 @@
 import Markdoc from "@markdoc/markdoc";
-import React from "react";
 
-// import { Fence } from "~/components";
-
-import type { Node, Tag, RenderableTreeNode } from "~/types";
-
-export const markdocConfig = {
-  tags: {},
-  nodes: {},
-  variables: {},
-};
-
-export const markdocComponents = {};
+import type { Node } from "~/types";
 
 /**
- * Markdoc
+ * Markdoc Server
+ *
+ * Examples:
+ * https://markdoc.io/docs/examples#syntax-highlighting
  *
  * Allow indentation:
  * https://markdoc.io/docs/faq#indentation
  */
+
+const fence = {
+  render: "Fence",
+  attributes: {
+    language: {
+      type: String,
+      description:
+        "The programming language of the code block. Place it after the backticks.",
+    },
+  },
+};
+
 export const markdocParse = (doc: string) => {
   const ast = Markdoc.parse(doc);
+
   return ast;
 
   // If want to use indent-based code blocks, not only fenced code blocks
@@ -31,21 +36,15 @@ export const markdocParse = (doc: string) => {
 };
 
 export const markdocTransform = (ast: Node) => {
-  const content = Markdoc.transform(ast);
+  const content = Markdoc.transform(ast, {
+    nodes: {
+      fence,
+    },
+  });
+
   return content;
 };
 
 export const markdocParseTransform = (doc: string) => {
   return markdocTransform(markdocParse(doc));
-};
-
-export const markdocRenderHTML = (content: Tag) => {
-  const html = Markdoc.renderers.html(content);
-  return html;
-};
-
-export const markdocRenderReact = (content: RenderableTreeNode) => {
-  // console.log(content?.children[3]);
-  const reactComponent = Markdoc.renderers.react(content, React);
-  return reactComponent;
 };

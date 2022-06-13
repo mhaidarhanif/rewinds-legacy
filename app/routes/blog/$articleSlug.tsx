@@ -60,15 +60,18 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw json("Not Found", { status: 404 });
   }
 
-  // Use this if want to use Markdoc to render content
+  // Use this if want to prioritize Markdoc to render content
   if (article?.markdown) {
     const content = markdocParseTransform(article?.markdown);
     return json<LoaderDataBlogArticle>({ params, article, content });
   }
 
-  // Use this if want to use GraphCMS RichText to render content
-  const content = markdocParseTransform(article?.content?.markdown);
-  return json<LoaderDataBlogArticle>({ params, article, content });
+  // Use this if want to prioritize GraphCMS RichText to render content
+  if (article?.content?.raw) {
+    return json<LoaderDataBlogArticle>({ params, article });
+  }
+
+  return json<LoaderDataBlogArticle>({ params, article });
 };
 
 /**

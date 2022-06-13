@@ -76,9 +76,7 @@ export const QueryOneArticleBySlug = gql`
       excerpt
       content {
         markdown
-        # html
-        # text
-        # raw
+        raw
       }
       markdown
       coverImage {
