@@ -2,7 +2,7 @@ import { json } from "@remix-run/node";
 
 import { BlogArticle } from "~/contents";
 import { useCatch, useLoaderData, useParams } from "~/hooks";
-import { invariant, markdocParse, markdocTransform } from "~/libs";
+import { invariant, markdocParseTransform } from "~/libs";
 import { getArticleBySlug } from "~/models";
 import { createMetaData, stringifyJSON } from "~/utils";
 
@@ -60,8 +60,14 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw json("Not Found", { status: 404 });
   }
 
-  const content = markdocTransform(markdocParse(article?.content?.markdown));
+  // Use this if want to use Markdoc to render content
+  if (article?.markdown) {
+    const content = markdocParseTransform(article?.markdown);
+    return json<LoaderDataBlogArticle>({ params, article, content });
+  }
 
+  // Use this if want to use GraphCMS RichText to render content
+  const content = markdocParseTransform(article?.content?.markdown);
   return json<LoaderDataBlogArticle>({ params, article, content });
 };
 

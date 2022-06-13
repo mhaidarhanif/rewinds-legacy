@@ -1,9 +1,8 @@
-import { dayjs, relativeTime } from "~/libs";
+import { dayjs } from "~/libs";
 
 import type { DateTime, Locale } from "~/types";
 
 dayjs().format();
-dayjs.extend(relativeTime);
 
 export const getCurrentYear = () => {
   const now = new Date();
@@ -41,7 +40,7 @@ export const getCompleteDate = (date: DateTime) => {
 };
 
 export const getCompleteDateUS = (date: DateTime) => {
-  return dayjs(date).format("dddd, MMMM D, YYYY");
+  return dayjs(date).format("dddd, MMMM Do, YYYY");
 };
 
 export const getCompleteDateTime = (date: DateTime) => {

@@ -6,6 +6,7 @@ import type {
   StackItems,
   Strings,
   TextItems,
+  UserInfo,
 } from "~/types";
 import type { getEnv } from "~/utils";
 
@@ -39,12 +40,7 @@ export type LoaderDataBlog = {
 export type LoaderDataBlogArticle = {
   params: Params<string>;
   article: Article;
-  content: any;
-};
-
-export type UserInfo = {
-  email?: string | null;
-  firstName?: string | null;
+  content?: any;
 };
 
 export type ActionDataSubscribe =

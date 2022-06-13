@@ -72,10 +72,10 @@ export type Asset = {
 };
 
 export type RichText = {
-  html?: string;
   markdown?: string;
-  raw?: string;
+  html?: string;
   text?: string;
+  raw?: any;
 };
 
 export type Article = {
@@ -84,9 +84,10 @@ export type Article = {
   title?: string;
   date?: string;
   excerpt?: string;
-  content?: RichText;
   coverImage?: Asset;
-  authors?: Author[];
+  content?: RichText;
+  markdown?: string;
+  authors?: Array<Author>;
 };
 
 export type Author = {
@@ -95,7 +96,12 @@ export type Author = {
   title?: string;
   bio?: string;
   picture?: Asset;
-  articles?: Article[];
+  articles?: Array<Article>;
+};
+
+export type UserInfo = {
+  email?: string | null;
+  firstName?: string | null;
 };
 
 export type Strings = Array<string>;

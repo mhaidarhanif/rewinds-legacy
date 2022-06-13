@@ -10,9 +10,14 @@ Visit the live demo and repo:
 - [rewinds.vercel.app](https://rewinds.vercel.app)
 - [mhaidarhanif/rewinds](https://github.com/mhaidarhanif/rewinds)
 
-> ⚠️ The repo is ongoing active development so thing might quickly change at the moment.
+You can deploy this yourself. Just remember to [setup the environment variables](#environment-variables) on Vercel. Depending on your configuration, the app might need GraphCMS.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mhaidarhanif/rewinds/tree/main)
+[![Clone project](https://graphcms.com/button)](https://app.graphcms.com/clone/573c72908a25476eaf3373c7fe105233)
 
 ## Screenshots
+
+> ⚠️ The repo is ongoing active development so a lot of things might change quickly.
 
 <div style="max-width: 720px;">
 
@@ -78,11 +83,13 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] React Hook Form — Complex client side form handling
 - [x] React Lazyload
 - [x] Markdoc for Markdown parser
-  - Alternatively you can also use Marked
+  - [x] For other RichText, can also use RichText from GraphCMS
+  - [ ] Can also use Marked
 - [x] Prism.js for code syntax highlighting
 - [x] CSS classname utility with `clsx` or `cx` aliased as `classx`
 - [x] GraphQL query/mutate with `graphql-request` and `urql`
 - [x] REST API request with `fetch` and `axios`
+- [ ] Internationalization with i18next
 - [x] ESLint v8
   - [x] `eslint-config-airbnb`
   - [x] `eslint-config-prettier`
@@ -259,6 +266,8 @@ npm run typecheck
 ## Deployment
 
 After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+
+Or you can click the buttons in the introduction.
 
 If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
 

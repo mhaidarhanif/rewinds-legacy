@@ -1,5 +1,11 @@
-import { Breadcrumb, LazyLoad, RemixLink, VechaiAvatar } from "~/components";
-import { markdocRenderReact } from "~/libs";
+import {
+  Breadcrumb,
+  LazyLoad,
+  RemixLink,
+  VechaiAvatar,
+  GraphCMSRichText,
+  MarkdocRichText,
+} from "~/components";
 import { getCompleteDateUS, getRelativeTime } from "~/utils";
 
 import type { Article, RenderableTreeNode } from "~/types";
@@ -84,7 +90,7 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
   return (
     <article>
       <header className="stack-v items-center">
-        <div className="w-full max-w-screen-sm">
+        <div className="layout-content small w-full">
           <Breadcrumb id="breadcrumb" className="stack-v container-high gap-4">
             <Breadcrumb.Item>
               <RemixLink prefetch="intent" to="/blog">
@@ -167,13 +173,18 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
         </LazyLoad>
       )}
 
-      {content && (
-        <section className="stack-v mt-10 items-center">
-          <div className="prose-config max-w-screen-sm">
-            {markdocRenderReact(content)}
+      <section className="stack-v mt-10 items-center">
+        {content && !article?.content?.raw && (
+          <div className="prose-config article-content layout-content small">
+            {content && <MarkdocRichText content={content} />}
           </div>
-        </section>
-      )}
+        )}
+        {!content && article?.content?.raw && (
+          <div className="prose-config article-content layout-content small">
+            <GraphCMSRichText content={article.content.raw} />
+          </div>
+        )}
+      </section>
     </article>
   );
 };

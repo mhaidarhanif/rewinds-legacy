@@ -1,4 +1,4 @@
-export const stringifyJSON = (data: object) => {
+export const stringifyJSON = (data: unknown) => {
   return JSON.stringify(data, null, 2);
 };
 

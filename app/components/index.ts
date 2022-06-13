@@ -9,5 +9,6 @@ export * from "./icon";
 export * from "./input";
 export * from "./navigation";
 export * from "./remix";
+export * from "./rich-text";
 export * from "./tabs";
 export * from "./themes";

@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "1.0.2",
+    "@graphcms/rich-text-react-renderer": "0.5.0",
     "@headlessui/react": "1.6.4",
     "@heroicons/react": "1.0.6",
     "@june-so/analytics-next": "1.36.3",

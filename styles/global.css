@@ -162,7 +162,7 @@
   }
 
   .layout-content.small {
-    @apply max-w-screen-sm;
+    @apply max-w-screen-md;
   }
 
   .layout-content.medium {
@@ -319,16 +319,38 @@
   }
 
   /**
-   * Headless UI - Menu
+   * Article
+   *
+   * Similar with prose but more specific
+   * Because prose still can be anywhere
    */
 
+  .article-content blockquote {
+    @apply flex min-h-[30px];
+  }
+
+  .article-content blockquote p {
+    @apply text-quote-dropcaps;
+  }
+
+  .article-content > p:first-of-type {
+    @apply text-dropcaps;
+  }
+
   /**
-   * Similar with `navlink` but without `hover` selector
+   * Headless UI - Menu
+   *
+   * `menu-active` is similar with `navlink` but without `hover` selector
    * Because Menu.Item has `active` props to handle the hover/selected state
    */
+
   .navlink-menu-active {
     @apply bg-primary-200 dark:bg-primary-900;
   }
+
+  /**
+   * Headless UI - Tabs
+   */
 
   .tab-pill {
     @apply cursor-base whitespace-nowrap font-bold;
@@ -421,7 +443,7 @@
   }
 
   /**
-   * PrismJS Code Highlight
+   * Prism.js Code Highlight
    */
 
   .code-highlight {
@@ -576,9 +598,11 @@
   /* Prose */
 
   .prose-config {
-    @apply prose dark:prose-invert md:prose-lg;
+    @apply prose prose-lg dark:prose-invert xs:prose-xl;
     @apply prose-a:prose-a-styles;
-    @apply prose-ul:prose-ul-styles;
+    @apply prose-ul:prose-marker-styles;
+    @apply prose-ol:prose-marker-styles;
+    @apply prose-h1:prose-h1-styles;
     @apply prose-img:m-0;
   }
 
@@ -586,8 +610,13 @@
     @apply lg:prose-xl;
   }
 
-  .prose-ul-styles {
-    @apply space-y-3 pl-5 marker:text-primary-500;
+  .prose-marker-styles {
+    @apply space-y-2 pl-5;
+    @apply marker:text-primary-700 dark:marker:text-primary-300;
+  }
+
+  .prose-h1-styles {
+    @apply mt-12;
   }
 
   /* Relate to text-underline-left-right */
@@ -602,6 +631,14 @@
     @apply after:bg-primary-500 dark:after:bg-primary-300;
     @apply after:-bottom-0.5 after:left-0 after:h-[2px];
     @apply relative after:absolute after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
+  .text-dropcaps {
+    @apply first-letter:font-primary first-letter:float-left first-letter:pt-1 first-letter:pr-5 first-letter:text-8xl first-letter:font-bold first-letter:text-primary-500;
+  }
+
+  .text-quote-dropcaps {
+    @apply first-letter:font-primary first-letter:float-left first-letter:pr-3 first-letter:text-3xl first-letter:font-bold first-letter:text-primary-500;
   }
 
   .text-visited {

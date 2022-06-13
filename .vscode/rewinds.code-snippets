@@ -1,4 +1,10 @@
 {
+  "Rewinds Console": {
+    "prefix": "c",
+    "body": ["console.log({ $1 });"],
+    "description": "Console log"
+  },
+
   "Rewinds React Component": {
     "prefix": "rrc",
     "body": ["export const $1 = () => {", "  return <div>$1</div>;", "};", ""],
