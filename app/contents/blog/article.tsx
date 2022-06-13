@@ -1,10 +1,10 @@
 import {
   Breadcrumb,
+  GraphCMSRichText,
   LazyLoad,
+  MarkdocRichText,
   RemixLink,
   VechaiAvatar,
-  GraphCMSRichText,
-  MarkdocRichText,
 } from "~/components";
 import { getCompleteDateUS, getRelativeTime } from "~/utils";
 
@@ -28,7 +28,7 @@ export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
       to={`/blog/${article.slug}`}
       className="bg-focusable rounded-base md:max-w-full md:p-2"
     >
-      <article className="stack-v md:stack-h justify-between gap-5 md:max-w-full">
+      <article className="stack-v md:stack-h gap-5 md:grid md:max-w-full md:grid-cols-2">
         {article?.coverImage?.url && (
           <LazyLoad
             once
@@ -38,7 +38,7 @@ export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
             }
           >
             <img
-              className="aspect-video w-full rounded-base"
+              className="aspect-video w-full rounded-base object-cover"
               src={article.coverImage.url}
               alt={article.title}
             />
@@ -87,6 +87,10 @@ interface BlogArticleProps {
 }
 
 export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
+  // Prioritize Markdoc render over GraphCMS render
+  const hasContent = content;
+  const hasContentRaw = !content && article?.content?.raw;
+
   return (
     <article>
       <header className="stack-v items-center">
@@ -166,7 +170,7 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
           }
         >
           <img
-            className="aspect-video w-full rounded-base"
+            className="w-full rounded-base"
             src={article.coverImage.url}
             alt={article.title}
           />
@@ -174,14 +178,15 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
       )}
 
       <section className="stack-v mt-10 items-center">
-        {content && !article?.content?.raw && (
+        {hasContent && (
           <div className="prose-config article-content layout-content small">
-            {content && <MarkdocRichText content={content} />}
+            <MarkdocRichText content={content} />
           </div>
         )}
-        {!content && article?.content?.raw && (
+
+        {hasContentRaw && (
           <div className="prose-config article-content layout-content small">
-            <GraphCMSRichText content={article.content.raw} />
+            <GraphCMSRichText content={article?.content?.raw} />
           </div>
         )}
       </section>

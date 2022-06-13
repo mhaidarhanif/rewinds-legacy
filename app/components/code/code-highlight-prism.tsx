@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import PrismHighlight, { defaultProps } from "prism-react-renderer";
+import Highlight, { defaultProps } from "prism-react-renderer";
 import themeNightOwl from "prism-react-renderer/themes/nightOwl";
 import themeNightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 
@@ -10,7 +10,6 @@ import type { Language, PrismTheme } from "prism-react-renderer";
 
 const defaultThemeDark = themeNightOwl;
 const defaultThemeLight = themeNightOwlLight;
-const defaultLanguage = "jsx";
 
 const defaultExampleCode = `
 import React, { useState } from "react";
@@ -29,21 +28,15 @@ function Example() {
 }
 `.trim();
 
-interface CodeHighlightProps {
-  theme?: PrismTheme;
-  language?: Language;
-  code?: string;
-}
-
-export const CodeHighlight = ({
+export const PrismCodeHighlight = ({
   theme,
-  language = defaultLanguage,
+  language = "jsx",
   code = defaultExampleCode,
-}: CodeHighlightProps) => {
+}: PrismCodeHighlightProps) => {
   const { isLight } = useTheme();
 
   return (
-    <PrismHighlight
+    <Highlight
       {...defaultProps}
       theme={theme || isLight ? defaultThemeLight : defaultThemeDark}
       language={language}
@@ -69,6 +62,12 @@ export const CodeHighlight = ({
           </pre>
         );
       }}
-    </PrismHighlight>
+    </Highlight>
   );
 };
+
+interface PrismCodeHighlightProps {
+  theme?: PrismTheme;
+  language?: Language;
+  code?: string;
+}

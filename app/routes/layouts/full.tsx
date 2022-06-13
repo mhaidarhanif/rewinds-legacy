@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 
-import { Code, Image } from "~/components";
+import { Image, VechaiCode } from "~/components";
 import { dataImages } from "~/data";
 import { useLoaderData } from "~/hooks";
 import { Layout } from "~/layouts";
@@ -22,7 +22,7 @@ export default function LayoutFull() {
         <h1>Layout: Full</h1>
         <p>
           Full width layout example without any padding with{" "}
-          <Code>{`<Layout variant="full" />`}</Code>
+          <VechaiCode>{`<Layout variant="full" />`}</VechaiCode>
         </p>
       </header>
 

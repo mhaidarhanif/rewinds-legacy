@@ -634,7 +634,7 @@
   }
 
   .text-dropcaps {
-    @apply first-letter:font-primary first-letter:float-left first-letter:pt-1 first-letter:pr-5 first-letter:text-8xl first-letter:font-bold first-letter:text-primary-500;
+    @apply first-letter:font-primary first-letter:float-left first-letter:pr-5 first-letter:text-8xl first-letter:font-bold first-letter:text-primary-500;
   }
 
   .text-quote-dropcaps {

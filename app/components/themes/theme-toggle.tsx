@@ -9,11 +9,11 @@ interface ThemeToggleProps {
 
 export const ThemeToggle = ({ variant }: ThemeToggleProps) => {
   const { isLight, setColorScheme } = useTheme();
-  const lightTheme = configThemes.day.id;
-  const darkTheme = configThemes.night.id;
+  const defaultThemeLight = configThemes.day.id;
+  const defaultThemeDark = configThemes.night.id;
 
   const toggleColorScheme = () => {
-    setColorScheme(isLight ? darkTheme : lightTheme);
+    setColorScheme(isLight ? defaultThemeDark : defaultThemeLight);
   };
 
   return (
