@@ -1,7 +1,17 @@
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
 
+// import { Fence } from "~/components";
+
 import type { Node, Tag, RenderableTreeNode } from "~/types";
+
+export const markdocConfig = {
+  tags: {},
+  nodes: {},
+  variables: {},
+};
+
+export const markdocComponents = {};
 
 /**
  * Markdoc
@@ -35,7 +45,7 @@ export const markdocRenderHTML = (content: Tag) => {
 };
 
 export const markdocRenderReact = (content: RenderableTreeNode) => {
-  // console.log(content?.children[3]?.children);
+  // console.log(content?.children[3]);
   const reactComponent = Markdoc.renderers.react(content, React);
   return reactComponent;
 };

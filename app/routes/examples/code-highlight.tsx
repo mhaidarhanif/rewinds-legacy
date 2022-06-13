@@ -1,4 +1,4 @@
-import { CodeHighlight } from "~/components";
+import { PrismCodeHighlight } from "~/components";
 import { Layout } from "~/layouts";
 
 export default function ExampleCodeHighlight() {
@@ -10,7 +10,7 @@ export default function ExampleCodeHighlight() {
       </header>
 
       <article className="example">
-        <CodeHighlight />
+        <PrismCodeHighlight language="jsx" />
       </article>
     </Layout>
   );
