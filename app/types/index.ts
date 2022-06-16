@@ -1,5 +1,4 @@
 export * from "./common";
-export * from "./config";
 export * from "./data";
 export * from "./headlessui";
 export * from "./markdoc";

@@ -33,17 +33,21 @@ export type TextItem = {
 };
 
 export type LinkItem = {
+  text: string;
   to: string;
-  text: string;
-  isEnabled?: boolean;
-};
-
-export type AnchorItem = {
-  href: string;
-  text: string;
   isEnabled?: boolean;
   isDisabled?: boolean;
 };
+
+export type AnchorItem = {
+  text: string;
+  href: string;
+  isEnabled?: boolean;
+  isDisabled?: boolean;
+};
+
+export type LinkOrAnchorItem = LinkItem | AnchorItem;
+export type LinkAndAnchorItem = LinkItem & AnchorItem;
 
 export type ExternalLinkItem = {
   slug: string;
@@ -52,6 +56,11 @@ export type ExternalLinkItem = {
   isEnabled?: boolean;
   isDisabled?: boolean;
 };
+
+export type ConfigNavigation = Array<{
+  name: string;
+  items?: LinkOrAnchorItems;
+}>;
 
 export type StackItem = {
   url: string;
@@ -111,5 +120,7 @@ export type Currencies = Array<Currency>;
 export type TextItems = Array<TextItem>;
 export type LinkItems = Array<LinkItem>;
 export type AnchorItems = Array<AnchorItem>;
+export type LinkOrAnchorItems = Array<LinkOrAnchorItem>;
+export type LinkAndAnchorItems = Array<LinkAndAnchorItem>;
 export type ExternalLinkItems = Array<ExternalLinkItem>;
 export type Articles = Array<Article>;

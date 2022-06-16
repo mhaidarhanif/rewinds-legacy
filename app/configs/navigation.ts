@@ -1,7 +1,12 @@
-import type { ConfigNavigation, LinkItem, LinkItems } from "~/types";
+import type {
+  ConfigNavigation,
+  LinkItem,
+  LinkItems,
+  LinkOrAnchorItems,
+} from "~/types";
 
 /**
- * Config Navigation Links
+ * Config Navigation Items (Links or Anchors)
  *
  * Used in:
  * - Multiple purpose for other navigation components
@@ -32,8 +37,11 @@ export const configNavigationEducation: LinkItems = [
   { to: "/discussions", text: "Discussions" },
 ];
 
-export const configNavigationCareer: LinkItems = [
-  { to: "/work", text: "Work" },
+export const configNavigationMisc: LinkOrAnchorItems = [
+  {
+    href: "https://app.splitbee.io/projects/rewinds.mhaidarhanif.com",
+    text: "Splitbee Analytics",
+  },
   { to: "/companies", text: "Companies" },
   { to: "/jobs", text: "Jobs" },
   { to: "/freelance", text: "Freelance" },
@@ -76,9 +84,11 @@ export const configNavigationExamples: LinkItems = [
 ];
 
 export const configNavigationLayouts: LinkItems = [
-  { to: "/layouts/common", text: "Common" },
+  { to: "/layouts", text: "Layouts" },
+  { to: "/layouts/small", text: "Small" },
+  { to: "/layouts/medium", text: "Medium" },
+  { to: "/layouts/large", text: "Large" },
   { to: "/layouts/full", text: "Full" },
-  { to: "/layouts/wide", text: "Wide" },
   { to: "/layouts/boundary", text: "Boundary" },
 ];
 
@@ -109,7 +119,7 @@ export const configNavigationBarLinks: LinkItems = [
 export const configNavigationMenu: ConfigNavigation = [
   {
     name: "Pages",
-    links: [configNavigationHome, ...configNavigationPages],
+    items: [configNavigationHome, ...configNavigationPages],
   },
   // In small screen, the auth links are in the Dropdown Menu or User Menu
   // {
@@ -127,22 +137,22 @@ export const configNavigationMenu: ConfigNavigation = [
 export const configNavigationSitemap: ConfigNavigation = [
   {
     name: "Pages",
-    links: [configNavigationHome, ...configNavigationPages],
+    items: [configNavigationHome, ...configNavigationPages],
   },
   {
     name: "Account",
-    links: [...configNavigationAuth],
+    items: [...configNavigationAuth],
   },
   {
     name: "Education",
-    links: [...configNavigationEducation],
+    items: [...configNavigationEducation],
   },
   {
-    name: "Career",
-    links: [...configNavigationCareer],
+    name: "Misc",
+    items: [...configNavigationMisc],
   },
   {
     name: "Examples",
-    links: [...configNavigationExamples1, ...configNavigationExamples2],
+    items: [...configNavigationExamples1, ...configNavigationExamples2],
   },
 ];

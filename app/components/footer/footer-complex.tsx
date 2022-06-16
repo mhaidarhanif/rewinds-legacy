@@ -54,25 +54,29 @@ export const FooterComplexSitemap = () => {
           >
             <h4 className="font-bold uppercase tracking-wider">{item.name}</h4>
             <nav className="text-md mt-6 flex flex-col space-y-2">
-              {item.links &&
-                item.links.map((subItem) => {
-                  return (
-                    <RemixLink
-                      prefetch="intent"
-                      key={subItem.text}
-                      to={subItem.to}
-                    >
-                      {subItem.text}
-                    </RemixLink>
-                  );
-                })}
-              {item.anchors &&
-                item.anchors.map((subItem) => {
-                  return (
-                    <Anchor key={subItem.text} href={subItem.href}>
-                      {subItem.text}
-                    </Anchor>
-                  );
+              {item.items &&
+                item.items.map((subItem) => {
+                  if ("to" in subItem) {
+                    return (
+                      <RemixLink
+                        prefetch="intent"
+                        key={subItem.text}
+                        to={subItem.to}
+                      >
+                        {subItem.text}
+                      </RemixLink>
+                    );
+                  }
+
+                  if ("href" in subItem) {
+                    return (
+                      <Anchor key={subItem.text} href={subItem.href}>
+                        {subItem.text}
+                      </Anchor>
+                    );
+                  }
+
+                  return <span key={subItem["text"]}>{subItem["text"]}</span>;
                 })}
             </nav>
           </div>

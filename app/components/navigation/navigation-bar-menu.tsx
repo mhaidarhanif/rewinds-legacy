@@ -2,12 +2,12 @@ import { Menu, Transition } from "@headlessui/react";
 import { Button, Divider } from "@vechaiui/react";
 import { Fragment } from "react";
 
-import { RemixNavLink, VechaiIcon } from "~/components";
+import { Anchor, RemixNavLink, VechaiIcon } from "~/components";
 import { configNavigationMenu } from "~/configs";
 import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
 
-import type { LinkItem } from "~/types";
+import type { LinkOrAnchorItem } from "~/types";
 
 export { Menu } from "@headlessui/react";
 
@@ -64,10 +64,11 @@ export const MenuItemsContent = () => {
         {configNavigationMenu.map((group, index) => {
           return (
             <div role="group" key={group.name}>
-              {group?.links &&
-                group.links.map((link) => {
-                  return <MenuItem key={link.text} link={link} />;
+              {group?.items &&
+                group.items.map((item) => {
+                  return <MenuItem key={item.text} item={item} />;
                 })}
+
               {configNavigationMenu?.length !== index + 1 && (
                 <Divider
                   orientation="horizontal"
@@ -83,29 +84,48 @@ export const MenuItemsContent = () => {
 };
 
 interface MenuItemProps {
-  link: LinkItem;
+  item: LinkOrAnchorItem;
 }
 
-export const MenuItem = ({ link }: MenuItemProps) => {
+export const MenuItem = ({ item }: MenuItemProps) => {
   return (
     <Menu.Item>
       {({ active, disabled }) => {
-        return (
-          <RemixNavLink
-            end
-            to={link.to}
-            className={({ isActive }) => {
-              return classx(
-                "flex h-8 w-full flex-shrink-0 cursor-base items-center rounded-base p-2 px-3 text-left text-sm font-bold transition focus:outline-none",
-                isActive && "navlink-active", // REMIX
-                active && "navlink-menu-active", // HUI
+        if ("to" in item) {
+          return (
+            <RemixNavLink
+              end
+              to={item.to}
+              className={({ isActive }) => {
+                return classx(
+                  "menu-item",
+                  isActive && "navlink-active", // Remix NavLink
+                  active && "navlink-menu-active", // Headless UI
+                  disabled && "disabled:cursor-not-allowed disabled:opacity-60",
+                );
+              }}
+            >
+              {item.text}
+            </RemixNavLink>
+          );
+        }
+
+        if ("href" in item) {
+          return (
+            <Anchor
+              href={item.href}
+              className={classx(
+                "menu-item",
+                active && "navlink-menu-active", // Headless UI
                 disabled && "disabled:cursor-not-allowed disabled:opacity-60",
-              );
-            }}
-          >
-            {link.text}
-          </RemixNavLink>
-        );
+              )}
+            >
+              {item.text}
+            </Anchor>
+          );
+        }
+
+        return <span className="menu-item">{item["text"]}</span>;
       }}
     </Menu.Item>
   );

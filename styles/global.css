@@ -344,6 +344,10 @@
    * Because Menu.Item has `active` props to handle the hover/selected state
    */
 
+  .menu-item {
+    @apply flex h-8 w-full flex-shrink-0 cursor-base items-center rounded-base p-2 px-3 text-left text-sm font-bold transition focus:outline-none;
+  }
+
   .navlink-menu-active {
     @apply bg-primary-200 dark:bg-primary-900;
   }
