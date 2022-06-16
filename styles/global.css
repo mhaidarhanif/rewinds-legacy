@@ -603,7 +603,6 @@
     @apply prose-ul:prose-marker-styles;
     @apply prose-ol:prose-marker-styles;
     @apply prose-h1:prose-h1-styles;
-    @apply prose-img:m-0;
   }
 
   .prose-config.extralarge {

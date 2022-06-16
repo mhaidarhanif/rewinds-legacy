@@ -135,6 +135,16 @@ cp .env.example .env
 
 > ⚠️ Make sure to setup the environment variables here, on Vercel, or on your preferred deployment target. Otherwise the app will break.
 
+Important variables:
+
+- `SESSION_SECRET`
+  - Session secret for persisting the themes on browser sessions
+  - You can use `openssl rand -base64 32` to generate a secret/key and use it
+- `REST_ENDPOINT`
+  - Primary REST API endpoint to be used with `fetch` or `axios`
+- `GRAPHQL_ENDPOINT`
+  - Primary GraphQL API endpoint to be used with `graphql-request` or `urql`
+
 If you don't need some of these, you can remove them in the `.env`, `app/utils/env.server.ts`, and all `getEnvServer()` function calls.
 
 Afterwards, run the Remix development server with the `dev` script. This will watch and compile for both the Tailwind styles and Remix app.

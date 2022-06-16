@@ -24,10 +24,6 @@
     "prettier": "prettier --write .",
     "commit": "cz",
     "typecheck": "tsc --noEmit",
-    "release": "standard-version",
-    "release:major": "standard-version --release-as major",
-    "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch",
     "ncu": "ncu --reject react,react-dom,@types/react,@types/react-dom",
     "ncu:u": "ncu -u --reject react,react-dom,@types/react,@types/react-dom"
   },
@@ -38,12 +34,6 @@
   },
   "prisma": {
     "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
-  },
-  "standard-version": {
-    "skip": {
-      "commit": true,
-      "tag": true
-    }
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "1.0.2",
@@ -140,7 +130,6 @@
     "postcss": "8.4.14",
     "prettier": "2.7.0",
     "prettier-plugin-tailwindcss": "0.1.11",
-    "standard-version": "9.5.0",
     "stylelint": "14.9.1",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "26.0.0",

@@ -179,7 +179,7 @@ export default function About() {
           <p>
             If you need more resources, check out{" "}
             <Anchor href="https://github.com/aniftyco/awesome-tailwindcss">
-              awesome-tailwindcss
+              <code>awesome-tailwindcss</code>
             </Anchor>
           </p>
         </section>
