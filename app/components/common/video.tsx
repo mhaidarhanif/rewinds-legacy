@@ -1,9 +1,17 @@
-interface VideoYouTubeProps {
+/**
+ * Video YouTube iframe is straightforward
+ * But the load could be very slow
+ */
+
+interface VideoYouTubeIframeProps {
   title: string;
   embedId: string;
 }
 
-export const VideoYouTube = ({ title, embedId }: VideoYouTubeProps) => {
+export const VideoYouTubeIframe = ({
+  title,
+  embedId,
+}: VideoYouTubeIframeProps) => {
   return (
     <iframe
       className="aspect-video w-full rounded-lg shadow-lg"
@@ -16,8 +24,8 @@ export const VideoYouTube = ({ title, embedId }: VideoYouTubeProps) => {
   );
 };
 
-export const VideoYouTubeExample = () => {
+export const VideoYouTubeIframeExample = () => {
   <div className="relative overflow-auto rounded-base">
-    <VideoYouTube title="Rick Roll" embedId="dQw4w9WgXcQ" />
+    <VideoYouTubeIframe title="Rick Roll" embedId="dQw4w9WgXcQ" />
   </div>;
 };

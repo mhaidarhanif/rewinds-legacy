@@ -21,7 +21,7 @@ export default function Search() {
     <Layout variant="medium">
       <header>
         <h1>Search</h1>
-        <h2>This is the search you're looking for.</h2>
+        <h2>This is the search you're looking for</h2>
       </header>
     </Layout>
   );

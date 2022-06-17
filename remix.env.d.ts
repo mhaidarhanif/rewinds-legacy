@@ -7,6 +7,10 @@ declare global {
   const ENV: ReturnType<typeof getEnv>;
   interface Window {
     ENV: ReturnType<typeof getEnv>;
+
+    // Remove these if you don't use Crisp chat
+    $crisp: Array<any>;
+    CRISP_WEBSITE_ID: string;
   }
 }
 

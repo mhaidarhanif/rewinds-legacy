@@ -19,7 +19,7 @@ export default function ExampleButton() {
         <div className="space-y-5">
           <h2>Theme Toggle</h2>
           <p>Only between 2 color schemes.</p>
-          <ThemeToggle />
+          <ThemeToggle variant="solid" />
         </div>
 
         <div className="space-y-5">

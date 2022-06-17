@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
   NProgress,
   ThemeProvider,
+  CrispChat,
 } from "~/components";
 import { configDocumentLinks } from "~/configs";
 import { MessageCatch, MessageError } from "~/contents";
@@ -104,6 +105,7 @@ export const Document = ({ title, children }: DocumentProps) => {
             }}
           />
         )}
+        <CrispChat />
       </body>
     </html>
   );

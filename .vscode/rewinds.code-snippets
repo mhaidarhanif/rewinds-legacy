@@ -222,7 +222,7 @@
       "",
       "      // all of these are optional",
       "      domain: \"${2:remix.run}\",",
-      "      expires: new Date(Date.now() + 60),",
+      "      maxAge: 3000000,",
       "      httpOnly: true,",
       "      maxAge: 60,",
       "      path: \"/\",",

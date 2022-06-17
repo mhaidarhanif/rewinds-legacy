@@ -11,10 +11,12 @@ import type {
   VechaiSpecifiedTheme,
 } from "~/types";
 
-const currentDate = Date.now();
 const expiryInDays = 30;
-const expiryInSeconds = dateFns.daysToSeconds(expiryInDays);
-const expiryDate = dateFns.addDays(currentDate, expiryInDays);
+const expiryInSeconds = dateFns.daysToSeconds(expiryInDays); // 3000000
+
+// Use on `expires` config
+// const currentDate = Date.now();
+// const expiryDate = dateFns.addDays(currentDate, expiryInDays);
 
 export const { getSession, commitSession, destroySession } =
   createCookieSessionStorage({
@@ -25,8 +27,8 @@ export const { getSession, commitSession, destroySession } =
 
       // all of these are optional
       // domain: "mhaidarhanif.com",
+      // expires: expiryDate,
       maxAge: expiryInSeconds, // precede `expires`
-      expires: expiryDate,
       httpOnly: true,
       path: "/",
       sameSite: "lax",

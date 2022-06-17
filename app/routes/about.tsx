@@ -81,6 +81,10 @@ export default function About() {
           testing.
         </p>
 
+        <p className="font-tertiary">
+          Try clicking the images below to change the theme
+        </p>
+
         <Image
           src="/assets/screenshots/home-light.png"
           alt="Screenshot Home Light"
