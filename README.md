@@ -241,6 +241,18 @@ Also when using this starter kit, you might want to remove most of the code in:
 
 Other than those you might want to keep them.
 
+### Configuration for SEO
+
+Kalau mau agak cepet di-refresh cache-nya, biasanya bisa pakai tools validator tergantung platform-nya:
+Segala macam terkait sitemap.xml dan robots.txt: Google Search Console
+
+- Facebook: Open Graph Sharing Debugger
+- Telegram: Webpage Bot
+- Twitter: Twitter Card Validator
+- LinkedIn: LinkedIn Post Inspector
+- Untuk Discord dan website lainnya kayaknya tergantung masing-masing (?)
+
+
 ## Build
 
 Make sure that it can build just fine:
