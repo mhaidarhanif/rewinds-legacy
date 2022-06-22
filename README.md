@@ -2,15 +2,18 @@
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries. This is an example demo to combine the best Tailwind-related ecosystem such as Tailwind CSS, Headless UI, Radix UI, Reach UI, Vechai UI, and more. Using TypeScript too!
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries and the TypeScript ecosystem. This is an example demo to combine the best Tailwind-related ecosystem such as [Tailwind CSS](https://tailwindcss.com), [Headless UI](https://headlessui.dev), [Radix UI](https://radix-ui.com) + [`tailwindcss-radix`](https://tailwindcss-radix.vercel.app), [Reach UI](https://reach.tech), [Vechai UI](https://vechaiui.com), and more. For recommended and alternative stack selections, they are mostly listed and detailed in [the Catamyst Stack](https://a.catamyst.com/stack) documentation.
 
-Visit the live demo and repo:
+Check out the repo and visit the live demo:
 
+- [mhaidarhanif/rewinds](https://github.com/mhaidarhanif/rewinds)
 - [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
 - [rewinds.vercel.app](https://rewinds.vercel.app)
-- [mhaidarhanif/rewinds](https://github.com/mhaidarhanif/rewinds)
+- [rewinds.dev](https://rewinds.dev) (Soon)
 
-You can deploy this yourself. Just remember to [setup the environment variables](#environment-variables) on Vercel. Depending on your configuration, the app might need GraphCMS.
+You can deploy this yourself. Just put attention to [setup the environment variables](#environment-variables) on Vercel or any of the deployment target you choose beforehand.
+
+Depending on your configuration, the app might need [GraphCMS](https://graphcms.com) to serve the content for [the blog articles example](https://rewinds.mhaidarhanif.com/blog). Otherwise you can remove or swap the blog content source from anywhere else.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mhaidarhanif/rewinds/tree/main)
 [![Clone project](https://graphcms.com/button)](https://app.graphcms.com/clone/573c72908a25476eaf3373c7fe105233)
@@ -52,12 +55,13 @@ More into what we can do or what you get. The complete features are listed in [t
 
 More into what is being used. The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about).
 
-- [x] TypeScript v4.6
-  - [x] Type checking is enforced
+- [x] TypeScript v4.7
+  - [x] Type checking is enforced after type inference
 - [x] Node.js v14-v17
 - [x] npm v8
   - Not Yarn because v1 & v2 difference
 - [x] React v17
+  - Not v18 because of incompatibility with Remix at the moment
 - [x] Remix v1.5
 - [x] Tailwind CSS v3
 - [x] PostCSS v8
@@ -251,7 +255,6 @@ Segala macam terkait sitemap.xml dan robots.txt: Google Search Console
 - Twitter: Twitter Card Validator
 - LinkedIn: LinkedIn Post Inspector
 - Untuk Discord dan website lainnya kayaknya tergantung masing-masing (?)
-
 
 ## Build
 

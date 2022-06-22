@@ -13,6 +13,12 @@ import type {
   Transition,
 } from "~/types";
 
+/**
+ * EDITME
+ *
+ * Setup if you want a subscribe to newsletter feature
+ */
+
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
     return [{ route: `/subscribe`, priority: 0.9 }];
@@ -28,7 +34,6 @@ export const meta: MetaFunction = () => {
 
 export const action: ActionFunction = actionSubscribe;
 
-// EDITME
 export default function Subscribe() {
   const transition = useTransition() as Transition;
   const actionData = useActionData() as ActionDataSubscribe;

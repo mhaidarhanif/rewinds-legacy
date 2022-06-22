@@ -12,6 +12,8 @@ import {
 import type { ActionDataSubscribe, Transition } from "~/types";
 
 /**
+ * EDITME
+ *
  * Subscribe Form
  *
  * Using native browser form behavior with Remix Form component
@@ -22,7 +24,6 @@ interface SubscribeFormProps {
   actionData: ActionDataSubscribe;
 }
 
-// EDITME
 export const SubscribeForm = ({
   transition,
   actionData,

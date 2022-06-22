@@ -1,10 +1,11 @@
 /**
+ * EDITME
+ *
  * Config Meta
  *
  * Meta data mostly for information and SEO purpose
  */
 
-// EDITME
 const domain = "rewinds.mhaidarhanif.com";
 
 export const configMeta = {
@@ -27,6 +28,10 @@ export const configMeta = {
   author: {
     name: "M Haidar Hanif",
     url: "https://mhaidarhanif.com",
+    company: {
+      name: "Catamyst",
+      url: "https://catamyst.com",
+    },
   },
   mailingListName: "M Haidar Hanif Newsletter",
 };

@@ -18,6 +18,8 @@ import type {
 } from "~/types";
 
 /**
+ * EDITME
+ *
  * Navigation Bar Navigation Menu
  *
  * Used in the Navigation Bar
@@ -25,7 +27,6 @@ import type {
  * Named like this because RadixNavigationMenu is already used by Radix UI
  */
 
-// EDITME
 export const NavigationBarNavMenu = () => {
   const withIndicator = false;
 
@@ -36,13 +37,17 @@ export const NavigationBarNavMenu = () => {
         <NavigationMenuItemExamples />
 
         <NavigationMenuItem>
-          <NavigationMenuNavLink to="/subscribe">
-            Subscribe
-          </NavigationMenuNavLink>
+          <NavigationMenuNavLink to="/blog">Blog</NavigationMenuNavLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuNavLink to="/pricing">Pricing</NavigationMenuNavLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuNavLink to="/subscribe">
+            Subscribe
+          </NavigationMenuNavLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>

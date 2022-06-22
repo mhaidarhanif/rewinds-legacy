@@ -17,13 +17,20 @@ export const meta: MetaFunction = () => {
   });
 };
 
+/**
+ * EDITME
+ *
+ * What could be improved further is to use currency converter API
+ * then round the numbers automatically
+ */
+
 export default function Pricing() {
   return (
     <Layout variant="large">
       <header className="header-center">
         <h1>Pricing</h1>
         <h2>Choose what's the best plan for you</h2>
-        <p>(Rewinds is totally free. This is just a demo though)</p>
+        <p>Rewinds is totally free. This is just a demo example.</p>
       </header>
 
       <PricingContent />

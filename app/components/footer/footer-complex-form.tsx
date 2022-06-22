@@ -75,8 +75,10 @@ export const FooterComplexFormSubscribe = () => {
         <h2 className="m-0 text-2xl font-bold">Get some updates</h2>
         <p className="max-w-[53ch]">
           {configMeta.description} made by{" "}
-          <Anchor className="whitespace-nowrap" href={configMeta.author.url}>
-            {configMeta.author.name}
+          <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>{" "}
+          from{" "}
+          <Anchor href={configMeta.author.company.url}>
+            {configMeta.author.company.name}
           </Anchor>
         </p>
       </div>

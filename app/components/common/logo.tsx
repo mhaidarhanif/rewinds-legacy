@@ -3,6 +3,12 @@ import { classx } from "~/utils";
 
 import type { HTMLSpanElementProps } from "~/types";
 
+/**
+ * EDITME
+ *
+ * This example logo consist of an icon and a span text
+ */
+
 export const Logo = () => {
   return (
     <div
@@ -26,7 +32,6 @@ export const LogoIcon = () => {
   );
 };
 
-// EDITME
 export const LogoSpan = ({ className }: HTMLSpanElementProps) => {
   return (
     <span

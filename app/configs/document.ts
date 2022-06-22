@@ -1,6 +1,8 @@
 import styles from "~/styles/out.css";
 
 /**
+ * EDITME
+ *
  * Config Document Links
  *
  * Favicons
@@ -11,7 +13,12 @@ import styles from "~/styles/out.css";
  * Please also check styles/global.css
  */
 
-// EDITME
+export const fontApiUrl = `https://fontbit.io`;
+/**
+ * Fontbit is a simple and privacy-friendly Google Fonts proxy
+ * Alternative to https://fonts.googleapis.com
+ */
+
 export const fontFamilies = [
   `family=Archivo:wght@400;700`,
   `family=Public+Sans`,
@@ -19,7 +26,9 @@ export const fontFamilies = [
 ].join("&");
 
 export const faviconLinks = [
-  // Use this if you want to change the favicon quickly using emoji
+  /**
+   * Use this if you want to change the favicon quickly using emoji
+   */
   // {
   //   rel: "shortcut icon",
   //   href: "https://fav.farm/⏪",
@@ -48,6 +57,11 @@ export const faviconLinks = [
 ];
 
 const manifestLinks = [
+  /**
+   * Remember to edit the manifest
+   * Alternatively this can also be generated from a Remix route
+   * Like in `app/other-root-routes.server.ts`
+   */
   {
     rel: "manifest",
     href: "/site.webmanifest",
@@ -56,11 +70,11 @@ const manifestLinks = [
 
 const fontLinks = [
   {
-    href: "https://fontbit.io",
+    href: fontApiUrl,
     rel: "preconnect",
   },
   {
-    href: `https://fontbit.io/css2?${fontFamilies}&display=swap`,
+    href: `${fontApiUrl}/css2?${fontFamilies}&display=swap`,
     rel: "stylesheet",
   },
 ];

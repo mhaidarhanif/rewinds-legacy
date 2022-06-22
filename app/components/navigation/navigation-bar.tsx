@@ -46,6 +46,11 @@ export const NavigationBar = () => {
 };
 
 export const NavigationBarLogo = () => {
+  /**
+   * EDITME
+   *
+   * Or remove it as you wish
+   */
   const badgeText = `v${packageJson.version}`;
 
   return (

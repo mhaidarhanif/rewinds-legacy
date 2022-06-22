@@ -2,12 +2,19 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 import { Anchor, Image, useTheme } from "~/components";
+import { configMeta } from "~/configs";
 import { dataMainStacks, dataReferenceStacks, dataFeatures } from "~/data";
 import { Layout } from "~/layouts";
 import { createMetaData } from "~/utils";
 
 import type { LoaderFunction } from "@remix-run/node";
 import type { LoaderDataAbout, SEOHandle, MetaFunction } from "~/types";
+
+/**
+ * EDITME
+ *
+ * Put anything you want
+ */
 
 export const handle: SEOHandle = {
   getSitemapEntries: () => {
@@ -30,7 +37,6 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-// EDITME
 export default function About() {
   const { features, mainStacks, referenceStacks } =
     useLoaderData() as LoaderDataAbout;
@@ -62,11 +68,13 @@ export default function About() {
             use this template
           </Anchor>{" "}
           as your own repo. Made by{" "}
-          <Anchor href="https://mhaidarhanif.com">
-            <span className="whitespace-nowrap">M Haidar Hanif</span>
-          </Anchor>{" "}
+          <Anchor href={configMeta.author.url}>{configMeta.author.name}</Anchor>{" "}
           (<Anchor href="https://github.com/mhaidarhanif">@mhaidarhanif</Anchor>
-          ).
+          ) from{" "}
+          <Anchor href={configMeta.author.company.url}>
+            {configMeta.author.company.name}
+          </Anchor>
+          .
         </p>
         <p>
           The goal is to have several examples and demos to combine the best
@@ -79,6 +87,14 @@ export default function About() {
           collect as much as design practices as it can. Focusing more on the
           styling only instead of the integration with backend, database, and
           testing.
+        </p>
+        <p>
+          For recommended and alternative stack selections, they are mostly
+          listed and detailed in{" "}
+          <Anchor href="https://a.catamyst.com/stack">
+            the Catamyst Stack
+          </Anchor>{" "}
+          documentation.
         </p>
 
         <p className="font-tertiary">

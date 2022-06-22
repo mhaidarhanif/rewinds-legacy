@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* EDITME */
-
 /**
+ * EDITME
+ *
  * CSS Variables
  *
- * Please also check app/configs/document.ts
+ * Please also check `app/configs/document.ts`
  * To import more font families
  */
 
@@ -111,7 +111,7 @@
   }
 
   header p {
-    @apply text-base sm:text-lg;
+    @apply text-base xs:text-lg sm:text-xl sm:leading-8;
   }
 
   header p a {
@@ -602,15 +602,11 @@
   /* Prose */
 
   .prose-config {
-    @apply prose prose-lg dark:prose-invert xs:prose-xl;
+    @apply prose dark:prose-invert xs:prose-lg sm:prose-xl;
     @apply prose-a:prose-a-styles;
     @apply prose-ul:prose-marker-styles;
     @apply prose-ol:prose-marker-styles;
     @apply prose-h1:prose-h1-styles;
-  }
-
-  .prose-config.extralarge {
-    @apply lg:prose-xl;
   }
 
   .prose-marker-styles {
@@ -637,7 +633,9 @@
   }
 
   .text-dropcaps {
-    @apply first-letter:font-primary first-letter:float-left first-letter:pr-5 first-letter:text-8xl first-letter:font-bold first-letter:text-primary-500;
+    @apply first-letter:font-primary first-letter:float-left   first-letter:font-bold first-letter:text-primary-500;
+    @apply first-letter:pr-2 xs:first-letter:pr-5;
+    @apply first-letter:text-6xl xs:first-letter:text-8xl;
   }
 
   .text-quote-dropcaps {

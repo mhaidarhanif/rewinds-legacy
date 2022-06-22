@@ -1,7 +1,12 @@
-import { LogoSpan, RemixLink, ThemeSwitcher } from "~/components";
+import { Anchor, LogoSpan, RemixLink, ThemeSwitcher } from "~/components";
 import { classx } from "~/utils";
 
-// EDITME
+/**
+ * EDITME
+ *
+ * Introduce your product or project
+ */
+
 export const HomeIntro = () => {
   return (
     <header className="space-y-5">
@@ -16,7 +21,13 @@ export const HomeIntro = () => {
           <RemixLink prefetch="intent" to="/about">
             the about page
           </RemixLink>
-          . Below are the quick examples on the UI components.
+          . Below are the quick examples on the UI components. This template is
+          originally made by{" "}
+          <Anchor href="https://github.com/mhaidarhanif">M Haidar Hanif</Anchor>{" "}
+          in conjunction with{" "}
+          <Anchor href="https://catamyst.com">Catamyst</Anchor> and{" "}
+          <Anchor href="https://a.catamyst.com/stack">its tech stack</Anchor>{" "}
+          for various projects.
         </p>
       </div>
 
