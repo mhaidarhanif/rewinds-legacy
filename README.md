@@ -60,10 +60,11 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] Node.js v14-v17
 - [x] npm v8
   - Not Yarn because v1 & v2 difference
+  - Not pnpm just because of familiarity
 - [x] React v17
   - Not v18 because of incompatibility with Remix at the moment
-- [x] Remix v1.5
-- [x] Tailwind CSS v3
+- [x] Remix v1.6
+- [x] Tailwind CSS v3.1
 - [x] PostCSS v8
 - [x] Fonts
   - Google Fonts
@@ -74,7 +75,7 @@ More into what is being used. The complete stacks are listed in [the about page]
   - Font Awesome
   - Phospor Icons
 - [x] Styled the headless unstyled components
-  - [x] Headless UI v1 — Unstyled accessible UI components
+  - [x] Headless UI v1.6 — Unstyled accessible UI components
   - [x] Radix UI v0 — Unstyled accessible UI components
     - Tailwind Radix
   - [x] Reach UI v0 — Unstyled accessible UI components
@@ -234,7 +235,12 @@ Keep in mind that the structure is designed for scalability for medium-large pro
   - `tsconfig.json`
 - `server.js`
 
-There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` (Use Search in your editor) and other things like `site.webmanifest`.
+There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` by using search in your editor.
+
+Especially these files:
+
+- `LICENSE`
+- `site.webmanifest`.
 
 Also when using this starter kit, you might want to remove most of the code in:
 

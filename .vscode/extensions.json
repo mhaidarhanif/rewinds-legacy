@@ -5,6 +5,7 @@
     "antfu.smart-clicks",
     "artdiniz.quitcontrol-vscode",
     "austenc.tailwind-docs",
+    "bradlc.vscode-tailwindcss",
     "burkeholland.simple-react-snippets",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
@@ -14,6 +15,7 @@
     "johnpapa.vscode-peacock",
     "kisstkondoros.vscode-gutter-preview",
     "knisterpeter.vscode-commitizen",
+    "Lokalise.i18n-ally",
     "mikestead.dotenv",
     "naumovs.color-highlight",
     "pkief.material-icon-theme",
@@ -26,7 +28,6 @@
     "stylelint.vscode-stylelint",
     "vincaslt.highlight-matching-tag",
     "yzhang.markdown-all-in-one",
-    "zh9528.file-size",
-    "bradlc.vscode-tailwindcss"
+    "zh9528.file-size"
   ]
 }

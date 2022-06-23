@@ -44,6 +44,9 @@
     "typescript",
     "typescriptreact"
   ],
+  "files.associations": {
+    "*.css": "postcss"
+  },
   "files.exclude": {
     ".cache": true,
     ".vercel": false,
@@ -60,6 +63,10 @@
     "package-lock.json": true,
     "public/build": true
   },
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.sourceLanguage": "en",
   "peacock.color": "#0ea5e9",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#37b9f3",
