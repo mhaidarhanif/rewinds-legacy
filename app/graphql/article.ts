@@ -44,7 +44,7 @@ export const QueryAllArticles = gql`
         id
         url(
           transformation: {
-            image: { resize: { width: 500, height: 300, fit: clip } }
+            image: { resize: { width: 1000, height: 600, fit: clip } }
             validateOptions: true
           }
         )
@@ -82,7 +82,7 @@ export const QueryOneArticleBySlug = gql`
       coverImage {
         url(
           transformation: {
-            image: { resize: { width: 1200, height: 600, fit: clip } }
+            image: { resize: { width: 2400, height: 1200, fit: clip } }
             validateOptions: true
           }
         )

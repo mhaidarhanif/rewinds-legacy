@@ -549,9 +549,9 @@
   }
 
   .bg-focusable {
-    @apply transition-colors duration-300 ease-in-out;
-    @apply hover:bg-neutral-50/80 hover:dark:bg-neutral-800/20;
-    @apply focus:bg-primary-100/80 focus:dark:bg-primary-900/20;
+    @apply transition-[background] duration-300 ease-in-out;
+    @apply hover:bg-neutral-50 hover:dark:bg-neutral-800;
+    @apply focus:bg-primary-100 focus:dark:bg-primary-900;
   }
 
   .bg-conic-gradient {
@@ -602,8 +602,7 @@
   }
 
   .prose-marker-styles {
-    @apply space-y-2 pl-10;
-    @apply marker:text-primary-700 dark:marker:text-primary-300;
+    @apply marker:text-base marker:text-primary-700 dark:marker:text-primary-300;
   }
 
   .prose-h1-styles {
