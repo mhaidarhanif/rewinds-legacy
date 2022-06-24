@@ -6,7 +6,11 @@ import {
   RemixLink,
   VechaiAvatar,
 } from "~/components";
-import { getCompleteDateUS, getRelativeTime } from "~/utils";
+import {
+  getCompleteDateDayUS,
+  getCompleteDateUS,
+  getRelativeTime,
+} from "~/utils";
 
 import type { Article, RenderableTreeNode } from "~/types";
 
@@ -114,7 +118,7 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
             {article?.date && (
               <div className="stack-h-center gap-3">
                 <time className="text-dim" dateTime={article.date}>
-                  {getCompleteDateUS(article.date)}
+                  {getCompleteDateDayUS(article.date)}
                 </time>
                 <time
                   className="text-dim hidden text-xs"
@@ -142,12 +146,15 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
             </div>
 
             {article?.authors && (
-              <div className="stack-h mt-10 w-full flex-wrap gap-5">
+              <div className="stack-h mt-10 w-full flex-wrap gap-3 sm:gap-5">
                 {article.authors.map((author) => {
                   return (
-                    <div key={author.id} className="stack-h-center gap-3">
+                    <div
+                      key={author.id}
+                      className="stack-h-center gap-2 sm:gap-3"
+                    >
                       <VechaiAvatar
-                        size="xl"
+                        className="h-8 w-8 sm:h-10 sm:w-10"
                         name={author.name}
                         src={author.picture?.url}
                       />

@@ -40,6 +40,10 @@ export const getCompleteDate = (date: DateTime) => {
 };
 
 export const getCompleteDateUS = (date: DateTime) => {
+  return dayjs(date).format("MMMM Do, YYYY");
+};
+
+export const getCompleteDateDayUS = (date: DateTime) => {
   return dayjs(date).format("dddd, MMMM Do, YYYY");
 };
 

@@ -73,32 +73,32 @@
 
   h1,
   .h1 {
-    @apply mb-8 text-4xl font-bold xs:text-5xl sm:text-6xl;
+    @apply mb-8 text-3xl font-bold xs:text-4xl sm:text-5xl;
   }
 
   h2,
   .h2 {
-    @apply my-6 text-3xl font-bold xs:text-4xl sm:text-5xl;
+    @apply my-6 text-2xl font-bold xs:text-3xl sm:text-4xl;
   }
 
   h3,
   .h3 {
-    @apply my-3 text-2xl font-bold xs:text-3xl;
+    @apply my-3 text-xl font-bold xs:text-2xl;
   }
 
   h4,
   .h4 {
-    @apply my-2 text-xl font-bold xs:text-2xl;
+    @apply my-2 text-lg font-bold xs:text-xl;
   }
 
   h5,
   .h5 {
-    @apply my-1 text-lg font-bold xs:text-xl;
+    @apply my-1 font-bold uppercase tracking-wide xs:text-lg;
   }
 
   h6,
   .h6 {
-    @apply my-1 font-bold;
+    @apply my-1 font-bold uppercase;
   }
 
   p a,
