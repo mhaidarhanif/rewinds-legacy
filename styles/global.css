@@ -68,32 +68,32 @@
   /* Headings */
 
   .h0 {
-    @apply mb-10 text-6xl font-black sm:text-8xl;
+    @apply mb-10 text-5xl font-black xs:text-6xl sm:text-8xl;
   }
 
   h1,
   .h1 {
-    @apply mb-8 text-5xl font-bold sm:text-6xl;
+    @apply mb-8 text-4xl font-bold xs:text-5xl sm:text-6xl;
   }
 
   h2,
   .h2 {
-    @apply my-6 text-3xl font-bold;
+    @apply my-6 text-3xl font-bold xs:text-4xl sm:text-5xl;
   }
 
   h3,
   .h3 {
-    @apply my-3 text-2xl font-bold;
+    @apply my-3 text-2xl font-bold xs:text-3xl;
   }
 
   h4,
   .h4 {
-    @apply my-2 text-xl font-bold;
+    @apply my-2 text-xl font-bold xs:text-2xl;
   }
 
   h5,
   .h5 {
-    @apply my-1 text-lg font-bold;
+    @apply my-1 text-lg font-bold xs:text-xl;
   }
 
   h6,
@@ -451,7 +451,7 @@
    */
 
   .code-highlight {
-    @apply my-4 overflow-scroll p-2 text-left;
+    @apply my-5 overflow-scroll p-5 text-left;
   }
 
   .code-highlight .token-line {
@@ -610,7 +610,7 @@
   }
 
   .prose-marker-styles {
-    @apply space-y-2 pl-5;
+    @apply space-y-2 pl-10;
     @apply marker:text-primary-700 dark:marker:text-primary-300;
   }
 

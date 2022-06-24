@@ -48,7 +48,7 @@ export const BlogArticleLink = ({ article }: BlogArticleLinkProps) => {
         <div className="stack-v gap-5">
           <section className="stack-v w-full max-w-lg gap-2">
             <h2 className="m-0">{article.title}</h2>
-            <p className="text-lg">{article.excerpt}</p>
+            <p>{article.excerpt}</p>
             <time className="text-dim" dateTime={article.date}>
               {getCompleteDateUS(article.date)}
             </time>
@@ -132,7 +132,7 @@ export const BlogArticle = ({ slug, article, content }: BlogArticleProps) => {
             )}
 
             <div>
-              {article?.excerpt && <p className="text-xl">{article.excerpt}</p>}
+              {article?.excerpt && <p>{article.excerpt}</p>}
               {!article && (
                 <p>
                   Sorry, article with the slug <code>`{slug}`</code> is not

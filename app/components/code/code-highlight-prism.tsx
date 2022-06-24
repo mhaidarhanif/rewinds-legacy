@@ -1,54 +1,54 @@
 /* eslint-disable react/no-array-index-key */
-import Highlight, { defaultProps } from "prism-react-renderer";
-import themeNightOwl from "prism-react-renderer/themes/nightOwl";
-import themeNightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 
 import { useTheme } from "~/components";
+import {
+  prismDefaultExampleCodeReact,
+  prismDefaultProps,
+  prismDefaultThemeDark,
+  prismDefaultThemeLight,
+  PrismHighlight,
+} from "~/libs";
 import { classx } from "~/utils";
 
-import type { Language, PrismTheme } from "prism-react-renderer";
+import type { PrismTheme, PrismLanguage } from "~/libs";
 
-const defaultThemeDark = themeNightOwl;
-const defaultThemeLight = themeNightOwlLight;
+/**
+ * Using `prism-react-renderer`
+ */
 
-const defaultExampleCode = `
-import React, { useState } from "react";
-
-function Example() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+interface PrismCodeHighlightProps {
+  children?: string;
+  code?: string;
+  theme?: PrismTheme;
+  language?: PrismLanguage;
+  withLineNo?: boolean;
 }
-`.trim();
 
 export const PrismCodeHighlight = ({
   theme,
   language = "jsx",
-  code = defaultExampleCode,
+  withLineNo = false,
+  code = prismDefaultExampleCodeReact,
 }: PrismCodeHighlightProps) => {
   const { isLight } = useTheme();
 
   return (
-    <Highlight
-      {...defaultProps}
-      theme={theme || isLight ? defaultThemeLight : defaultThemeDark}
+    <PrismHighlight
+      {...prismDefaultProps}
       language={language}
       code={code}
+      theme={isLight ? prismDefaultThemeLight : prismDefaultThemeDark || theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
-          <pre className={classx("code-highlight", className)} style={style}>
+          <pre
+            className={classx("code-highlight rounded-base", className)}
+            style={style}
+          >
             {tokens.map((line, index) => {
               return (
                 <div key={index} {...getLineProps({ line, key: index })}>
-                  <span className="line-no">{index + 1}</span>
+                  {withLineNo && <span className="line-no">{index + 1}</span>}
                   <span className="line-content">
                     {line.map((token, key) => {
                       return (
@@ -62,12 +62,6 @@ export const PrismCodeHighlight = ({
           </pre>
         );
       }}
-    </Highlight>
+    </PrismHighlight>
   );
 };
-
-interface PrismCodeHighlightProps {
-  theme?: PrismTheme;
-  language?: Language;
-  code?: string;
-}

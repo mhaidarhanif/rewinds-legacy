@@ -37,7 +37,10 @@ More into what we can do or what you get. The complete features are listed in [t
 - [x] Remix as the web framework
 - [x] React as the UI library
 - [x] TypeScript as the programming language
+  - [x] Absolute import such as `~/components`, `~/configs`, `~/libs`, `~/types`, `~/utils`
+  - [x] Auto order import with Prettier and ESLint
 - [x] Tailwind CSS using Vechai UI as the base components
+  - [x] Various examples that use Headless UI and Radix UI
 - [x] Multiple themes switcher and persist theme with a session cookie
   - [ ] Not yet with system theme auto detect
 - [x] Commonly used pages/routes with contents
@@ -47,14 +50,17 @@ More into what we can do or what you get. The complete features are listed in [t
 - [x] Nested routes use cases
 - [ ] Optimistic UI on form submit
 - [ ] Storybook for components development
+- [x] VS Code recommended settings, extensions, and snippets
+- [x] GitHub template for issues and pull requests
 - [x] Only focus on the frontend styling and project structure, without particular in testing and database
-  - Just a bit of backend integration through Remix loader
-  - For the full stack integration with database and testing, check out the official Remix Stacks instead: https://remix.run/stacks
+  - Just a bit of backend integration through Remix loader for REST API and GraphQL
+  - For the full stack integration with database and testing, check out the official [Remix Stacks](ttps://remix.run/stacks) instead.
 
 ## Stacks
 
 More into what is being used. The complete stacks are listed in [the about page](https://rewinds.mhaidarhanif.com/about).
 
+- [x] VS Code
 - [x] TypeScript v4.7
   - [x] Type checking is enforced after type inference
 - [x] Node.js v14-v17
@@ -67,17 +73,18 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] Tailwind CSS v3.1
 - [x] PostCSS v8
 - [x] Fonts
-  - Google Fonts
-  - Fontbit CDN
+  - [x] Google Fonts
+  - [x] Fontbit CDN
 - [x] Icons
-  - React Icons
-  - Heroicons v1
-  - Font Awesome
-  - Phospor Icons
+  - [x] React Icons
+  - [x] Heroicons v1
+  - [x] Font Awesome
+  - [x] Phospor Icons
+  - [ ] Iconify
 - [x] Styled the headless unstyled components
   - [x] Headless UI v1.6 — Unstyled accessible UI components
   - [x] Radix UI v0 — Unstyled accessible UI components
-    - Tailwind Radix
+    - [x] Tailwind Radix
   - [x] Reach UI v0 — Unstyled accessible UI components
   - [x] Vechai UI v0 — React Tailwind CSS components
   - [ ] Downshift — Primitives to build simple, flexible, WAI-ARIA compliant React autocomplete/combobox or select dropdown components
@@ -88,13 +95,13 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] React Hook Form — Complex client side form handling
 - [x] React Lazyload
 - [x] Markdoc for Markdown parser
-  - [x] For other RichText, can also use RichText from GraphCMS
-  - [ ] Can also use Marked
+  - [x] For other RichText, can also use [RichText from GraphCMS](app/components/rich-text/rich-text-graphcms.tsx)
+  - [ ] Alternatively can also use Marked
 - [x] Prism.js for code syntax highlighting
-- [x] CSS classname utility with `clsx` or `cx` aliased as `classx`
+  - [ ] Alternatively can also use Highlight.js
+- [x] CSS classname utility with `clsx` or `cx`, aliased as `classx`
 - [x] GraphQL query/mutate with `graphql-request` and `urql`
 - [x] REST API request with `fetch` and `axios`
-- [ ] Internationalization with i18next
 - [x] ESLint v8
   - [x] `eslint-config-airbnb`
   - [x] `eslint-config-prettier`
@@ -102,8 +109,9 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] Prettier v2
   - [x] `prettier-plugin-tailwindcss`
 - [x] Git hooks with Husky to lint staged files
-  - eslint, stylelint, prettier, typecheck
+  - [x] `eslint`, `stylelint`, `prettier`, `typecheck`
 - [x] Deployment to Vercel
+- [ ] Internationalization with i18next
 
 > ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
 
@@ -111,14 +119,20 @@ More into what is being used. The complete stacks are listed in [the about page]
 
 ### Clone repo
 
-Click [Use this template button](https://github.com/mhaidarhanif/rewinds/generate).
+Choose either way:
+
+a. Click [Use this template button on GitHub](https://github.com/mhaidarhanif/rewinds/generate).
+
+b. Clone directly:
 
 ```
-git clone https://github.com/mhaidarhanif/rewinds rewinds-project
+git clone https://github.com/mhaidarhanif/rewinds my-rewinds-project
 ```
 
+c. Clone with a clean Git history:
+
 ```
-npx degit https://github.com/mhaidarhanif/rewinds rewinds-project
+npx degit https://github.com/mhaidarhanif/rewinds my-rewinds-project
 ```
 
 ### Install dependencies
@@ -138,7 +152,7 @@ cp .env.example .env
 # Edit .env as you prefer
 ```
 
-> ⚠️ Make sure to setup the environment variables here, on Vercel, or on your preferred deployment target. Otherwise the app will break.
+> ⚠️ Make sure to setup the environment variables here, on Vercel, or on your preferred deployment target. Otherwise the app will break on production. That's why I already put some preset strings in the `.env.example` which you can copy directly.
 
 Important variables:
 
@@ -237,10 +251,13 @@ Keep in mind that the structure is designed for scalability for medium-large pro
 
 There are also some code you can customize with your own branding by editing all the things that commented with `EDITME` by using search in your editor.
 
-Especially these files:
+Especially:
 
+- `README.md`
 - `LICENSE`
-- `site.webmanifest`.
+- `package.json`
+- `.github` and its contents
+- `site.webmanifest`
 
 Also when using this starter kit, you might want to remove most of the code in:
 

@@ -1,27 +1,72 @@
 /* eslint-disable react/no-array-index-key */
 import Markdoc from "@markdoc/markdoc";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import themeNightOwl from "prism-react-renderer/themes/nightOwl";
-import React from "react";
+import React, { useEffect } from "react";
 
-import type { Language } from "prism-react-renderer";
+import { useState } from "~/hooks";
+import {
+  prismDefaultProps,
+  prismDefaultThemeDark,
+  prismDefaultThemeLight,
+  PrismHighlight,
+  useSsr,
+} from "~/libs";
+
+import type { PrismLanguage, PrismTheme } from "~/libs";
 import type { Tag, RenderableTreeNode } from "~/types";
 
-export const Fence = ({ language, children }: FenceProps) => {
+/**
+ * `Fence` is similar with `PrismCodeHighlight`
+ * In here `children` is being passed from Markdoc for the `code` prop
+ */
+
+interface FenceProps {
+  theme?: PrismTheme;
+  language: PrismLanguage;
+  children: string;
+  withLineNo: boolean;
+}
+
+export const Fence = ({
+  children,
+  language,
+  theme = prismDefaultThemeDark,
+  withLineNo = false,
+}: FenceProps) => {
+  /**
+   * Temporary workaround only in the browser, not server
+   * This is the current limitation because we cannot use `useTheme` yet
+   * The issue is during `Markdoc.transform()`
+   */
+
+  const { isBrowser } = useSsr();
+  const [currentTheme, setTheme] = useState("");
+
+  useEffect(() => {
+    if (isBrowser) {
+      const htmlClass = document.getElementsByTagName("html")[0].className;
+      const themeType = htmlClass === "dark" ? "dark" : "light";
+      setTheme(themeType);
+    }
+  }, [isBrowser]);
+
   return (
-    <Highlight
-      {...defaultProps}
-      theme={themeNightOwl}
+    <PrismHighlight
+      {...prismDefaultProps}
       language={language}
       code={children.trim()}
+      theme={
+        currentTheme === "light"
+          ? prismDefaultThemeLight
+          : prismDefaultThemeDark || theme
+      }
     >
       {({ style, tokens, getLineProps, getTokenProps }) => {
         return (
-          <pre className="code-highlight" style={style}>
+          <pre className="code-highlight rounded-base" style={style}>
             {tokens.map((line, index) => {
               return (
                 <div key={index} {...getLineProps({ line, key: index })}>
-                  <span className="line-no">{index + 1}</span>
+                  {withLineNo && <span className="line-no">{index + 1}</span>}
                   <span className="line-content">
                     {line.map((token, key) => {
                       return (
@@ -35,14 +80,9 @@ export const Fence = ({ language, children }: FenceProps) => {
           </pre>
         );
       }}
-    </Highlight>
+    </PrismHighlight>
   );
 };
-
-interface FenceProps {
-  language: Language;
-  children: string;
-}
 
 /**
  * Markdoc Client

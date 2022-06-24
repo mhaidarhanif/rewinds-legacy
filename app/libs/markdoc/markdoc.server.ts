@@ -25,10 +25,11 @@ const fence = {
 
 export const markdocParse = (doc: string) => {
   const ast = Markdoc.parse(doc);
-
   return ast;
 
-  // If want to use indent-based code blocks, not only fenced code blocks
+  /**
+   * If want to use indent-based code blocks, not only fenced code blocks
+   */
   // const tokenizer = new Markdoc.Tokenizer({ allowIndentation: true });
   // const tokens = tokenizer.tokenize(doc);
   // const ast = Markdoc.parse(tokens);

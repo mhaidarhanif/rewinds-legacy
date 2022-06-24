@@ -7,12 +7,13 @@
 import { configFeatures } from "~/configs";
 import { useEffect } from "~/hooks";
 import { useSsr } from "~/libs";
+import { isProductionAllowed } from "~/utils";
 
 export const useCrispChat = () => {
   const { isBrowser } = useSsr();
 
   useEffect(() => {
-    if (configFeatures.crisp && isBrowser) {
+    if (configFeatures.crisp && isBrowser && isProductionAllowed) {
       window.$crisp = [];
       window.CRISP_WEBSITE_ID = window.ENV.CRISP_WEBSITE_ID as string;
       (() => {

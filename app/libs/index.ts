@@ -12,6 +12,7 @@ export * from "./invariant";
 export * from "./markdoc";
 export * from "./posthog.client";
 export * from "./posthog.server";
+export * from "./prism";
 export * from "./prop-types";
 export * from "./remix-utils";
 export * from "./sentry.client";
