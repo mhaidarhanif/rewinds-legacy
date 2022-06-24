@@ -1,5 +1,6 @@
 import Prism from "prismjs";
-import * as React from "react";
+
+import { useEffect, useRef } from "~/hooks";
 
 /**
  * Using plain `prismjs`
@@ -11,9 +12,9 @@ interface PrismCodeBlockProps {
 }
 
 export function PrismCodeBlock({ children, language }: PrismCodeBlockProps) {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (ref.current) Prism.highlightElement(ref.current, false);
   }, [children]);
 

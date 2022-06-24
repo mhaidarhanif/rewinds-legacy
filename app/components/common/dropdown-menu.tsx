@@ -14,8 +14,8 @@ import {
   PersonIcon,
   TransparencyGridIcon,
 } from "@radix-ui/react-icons";
-import { useState } from "react";
 
+import { useState } from "~/hooks";
 import { classx } from "~/utils";
 
 type RadixMenuItem = {

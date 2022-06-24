@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "~/hooks";
 
 // eslint-disable-next-line react/prop-types
 export const TabSimpleExample = () => {

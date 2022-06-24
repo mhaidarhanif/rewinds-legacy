@@ -1,8 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import Markdoc from "@markdoc/markdoc";
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useState } from "~/hooks";
+import { useState, useEffect } from "~/hooks";
 import {
   prismDefaultProps,
   prismDefaultThemeDark,

@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
 
-import { Button } from "~/components";
+import { Fragment, Button } from "~/components";
+import { useState } from "~/hooks";
 
 const DialogHeadless = Dialog;
 

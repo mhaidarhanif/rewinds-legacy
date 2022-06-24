@@ -1,8 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Button, Divider } from "@vechaiui/react";
-import { Fragment } from "react";
 
-import { Anchor, RemixNavLink, VechaiIcon } from "~/components";
+import { Fragment, Anchor, RemixNavLink, VechaiIcon } from "~/components";
 import { configNavigationMenu } from "~/configs";
 import { IconMenu } from "~/libs";
 import { classx } from "~/utils";
