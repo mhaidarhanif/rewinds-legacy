@@ -145,16 +145,19 @@ To run your Remix app locally, make sure your project's local dependencies are i
 
 ```sh
 npm install
+# Can still use yarn or pnpm, just be aware of the lock file
 ```
 
 ### Environment variables
 
-Copy the `.env.example` into `.env`:
+If you've run `npm install`, the `postinstall` script should copy the example `.env` automatically. Otherwise you can manually copy the `.env.example` into `.env`:
 
 ```sh
-cp .env.example .env
-# Edit .env as you prefer
+cp -i .env.example .env
+# `-i` or `--interactive` will prompt before overwrite
 ```
+
+Then edit `.env` as you prefer.
 
 > ⚠️ Make sure to setup the environment variables here, on Vercel, or on your preferred deployment target. Otherwise the app will break on production. That's why I already put some preset strings in the `.env.example` which you can copy directly.
 

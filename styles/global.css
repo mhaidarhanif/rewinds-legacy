@@ -26,8 +26,6 @@
  */
 
 @layer base {
-  /* Mostly fonts */
-
   html {
     @apply font-secondary;
 
