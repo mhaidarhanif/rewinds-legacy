@@ -128,14 +128,15 @@ export const dataMainStacks: StackItems = [
     url: "https://www.downshift-js.com",
     name: "Downshift",
     isChecked: true,
-    description: "",
+    description:
+      "Primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox, or select dropdown components.",
   },
   {
     url: "https://react-spectrum.adobe.com/react-aria",
     name: "React Aria v3",
     isChecked: false,
     description:
-      "React Aria v3 — Library of React Hooks that provides accessible UI primitives for your design system",
+      "Library of React Hooks that provides accessible UI primitives for your design system",
   },
   {
     url: "https://ariakit.org",
