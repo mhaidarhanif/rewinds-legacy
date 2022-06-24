@@ -5,6 +5,14 @@ import type { VechaiToast, VechaiSpecifiedTheme } from "~/types";
  * Used for themes and components
  */
 
+export type ConfigStyle = {
+  theme: VechaiSpecifiedTheme;
+  toast: VechaiToast;
+  notification: VechaiToast;
+  navigationBar: "simple" | "complex";
+  footer: "simple" | "complex";
+};
+
 export const configStyle: ConfigStyle = {
   theme: {
     colorScheme: "day",
@@ -19,11 +27,5 @@ export const configStyle: ConfigStyle = {
     position: "bottom-right",
   },
   navigationBar: "complex",
-};
-
-export type ConfigStyle = {
-  theme: VechaiSpecifiedTheme;
-  toast: VechaiToast;
-  notification: VechaiToast;
-  navigationBar: "simple" | "complex";
+  footer: "complex",
 };

@@ -229,14 +229,6 @@
     @apply mt-32;
   }
 
-  .footer-common {
-    @apply flex justify-center;
-  }
-
-  .footer-complex {
-    @apply bg-secondary border-secondary border-t;
-  }
-
   /**
    * Special Case Button
    * When Vechai UI is not available

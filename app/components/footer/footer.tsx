@@ -1,5 +1,5 @@
-import { FooterCommon, FooterComplex, Anchor } from "~/components";
-import { configMeta } from "~/configs";
+import { FooterSimple, FooterComplex, Anchor } from "~/components";
+import { configMeta, configStyle } from "~/configs";
 import { classx, getCurrentYear } from "~/utils";
 
 import type { HTMLElementProps } from "~/types";
@@ -9,12 +9,14 @@ import type { HTMLElementProps } from "~/types";
  */
 
 interface FooterProps {
-  variant?: "common" | "complex";
+  variant?: "simple" | "complex";
 }
 
-export const Footer = ({ variant = "complex" }: FooterProps) => {
-  if (variant === "common") {
-    return <FooterCommon />;
+export const Footer = ({
+  variant = configStyle.footer || "complex",
+}: FooterProps) => {
+  if (variant === "simple") {
+    return <FooterSimple />;
   }
 
   if (variant === "complex") {

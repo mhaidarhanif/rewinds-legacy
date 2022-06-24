@@ -11,17 +11,21 @@ import {
 import { configStyle, configNavigationBarLinks } from "~/configs";
 import { packageJson } from "~/utils";
 
-export const NavigationBar = () => {
+interface NavigationBarProps {
+  variant?: "simple" | "complex";
+}
+
+export const NavigationBar = ({
+  variant = configStyle.navigationBar || "complex",
+}: NavigationBarProps) => {
   return (
     <nav id="navigation-bar" className="navigation-bar navigation-bar-blur">
       <div className="flex items-center justify-between">
         <div className="flex gap-2 sm:gap-4">
           <NavigationBarLogo />
           <div className="flex gap-1">
-            {configStyle.navigationBar === "simple" && <NavigationBarLinks />}
-            {configStyle.navigationBar === "complex" && (
-              <NavigationBarNavMenu />
-            )}
+            {variant === "simple" && <NavigationBarLinks />}
+            {variant === "complex" && <NavigationBarNavMenu />}
           </div>
         </div>
 
@@ -68,11 +72,16 @@ export const NavigationBarLogo = () => {
   );
 };
 
+/**
+ * For simple variant of the NavigationBar
+ * Only get 7 links
+ */
+
 export const NavigationBarLinks = () => {
   return (
     <div className="hidden w-auto items-center justify-between xl:flex">
       <ul className="text-md flex flex-row gap-1 font-medium">
-        {configNavigationBarLinks.map((navItem) => {
+        {configNavigationBarLinks.slice(0, 7).map((navItem) => {
           return (
             <li key={navItem.text}>
               <RemixNavLink end to={navItem.to}>

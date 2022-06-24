@@ -2,7 +2,9 @@
 
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
-Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries and the TypeScript ecosystem. This is an example demo to combine the best Tailwind-related ecosystem such as [Tailwind CSS](https://tailwindcss.com), [Headless UI](https://headlessui.dev), [Radix UI](https://radix-ui.com) + [`tailwindcss-radix`](https://tailwindcss-radix.vercel.app), [Reach UI](https://reach.tech), [Vechai UI](https://vechaiui.com), and more. For recommended and alternative stack selections, they are mostly listed and detailed in [the Catamyst Stack](https://a.catamyst.com/stack) documentation.
+Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries and the TypeScript ecosystem.
+
+This is an example demo to combine the best Tailwind-related ecosystem such as [Tailwind CSS](https://tailwindcss.com), [Headless UI](https://headlessui.dev), [Radix UI](https://radix-ui.com) + [`tailwindcss-radix`](https://tailwindcss-radix.vercel.app), [Reach UI](https://reach.tech), [Vechai UI](https://vechaiui.com), and more. Therefore this repo is kind of over-engineered to have high flexibility and cover a lot of use cases for different projects/products.
 
 Check out the repo and visit the live demo:
 
@@ -12,6 +14,8 @@ Check out the repo and visit the live demo:
 - [rewinds.dev](https://rewinds.dev) (Soon)
 
 You can deploy this yourself. Just put attention to [setup the environment variables](#environment-variables) on Vercel or any of the deployment target you choose beforehand.
+
+For recommended and alternative stack selections, they are mostly listed and detailed in [the Catamyst Stack](https://a.catamyst.com/stack) documentation.
 
 Depending on your configuration, the app might need [GraphCMS](https://graphcms.com) to serve the content for [the blog articles example](https://rewinds.mhaidarhanif.com/blog). Otherwise you can remove or swap the blog content source from anywhere else.
 
