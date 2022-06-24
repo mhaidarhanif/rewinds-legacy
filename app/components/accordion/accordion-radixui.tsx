@@ -3,6 +3,11 @@ import * as RadixAccordionPrimitive from "@radix-ui/react-accordion";
 import { IconCaretDown, PropTypes } from "~/libs";
 import { classx } from "~/utils";
 
+/**
+ * Radix UI Accordion
+ * https://radix-ui.com/docs/primitives/components/accordion
+ */
+
 export const RadixAccordion = ({ type, items }: RadixAccordionProps) => {
   return (
     <RadixAccordionPrimitive.Root type={type} className={classx("space-y-4")}>

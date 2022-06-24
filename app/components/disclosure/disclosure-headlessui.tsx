@@ -15,7 +15,7 @@ export const HeadlessDisclosureExample = () => {
                 <Disclosure.Button
                   className={classx(
                     "flex w-full cursor-base items-center justify-between rounded-base px-4 py-2 focus:outline-none",
-                    "bg-primary-50 text-primary-800 dark:bg-primary-200 dark:bg-opacity-15 dark:text-primary-200",
+                    "bg-primary-50 text-primary-800 dark:bg-primary-200/15 dark:text-primary-200",
                   )}
                 >
                   <span>What is Lorem Ipsum?</span>
@@ -45,7 +45,7 @@ export const HeadlessDisclosureExample = () => {
                 <Disclosure.Button
                   className={classx(
                     "flex w-full cursor-base items-center justify-between rounded-base px-4 py-2 focus:outline-none",
-                    "bg-primary-50 text-primary-800 dark:bg-primary-200 dark:bg-opacity-15 dark:text-primary-200",
+                    "bg-primary-50 text-primary-800 dark:bg-primary-200/15  dark:text-primary-200",
                   )}
                 >
                   <span>Where does it come from?</span>
