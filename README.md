@@ -119,7 +119,7 @@ More into what is being used. The complete stacks are listed in [the about page]
 - [x] Deployment to Vercel
 - [ ] Internationalization with i18next
 
-> ⚠️ Make sure to not using React v18 yet as there's an issue with Tailwind CSS and Vechai UI.
+> ⚠️ Make sure to not using React v18 yet as there's an issue with Vechai UI and Reach UI. Unless you want to remove them for now.
 
 ## Development
 
@@ -131,13 +131,13 @@ a. Click [Use this template button on GitHub](https://github.com/mhaidarhanif/re
 
 b. Clone directly:
 
-```
+```sh
 git clone https://github.com/mhaidarhanif/rewinds my-rewinds-project
 ```
 
 c. Clone with a clean Git history:
 
-```
+```sh
 npx degit https://github.com/mhaidarhanif/rewinds my-rewinds-project
 ```
 
