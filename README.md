@@ -72,9 +72,11 @@ More into what is being used. The complete stacks are listed in [the about page]
   - Not Yarn because v1 & v2 difference
   - Not pnpm just because of familiarity
 - [x] React v17
-  - Not v18 because of incompatibility with Remix at the moment
-- [x] Remix v1.6
-- [x] Tailwind CSS v3.1
+  - Not v18 yet because of incompatibility with Vechai UI at the moment
+  - Might upgrade to v18 soon after checking with Remix and solve the issue with Vechai UI
+  - Otherwise if you don't need Vechai UI for handling multiple themes of Tailwind CSS, you can use React v18 with Remix v1.6.8
+- [x] Remix v1.6.x
+- [x] Tailwind CSS v3.1.x
 - [x] PostCSS v8
 - [x] Fonts
   - [x] Google Fonts
