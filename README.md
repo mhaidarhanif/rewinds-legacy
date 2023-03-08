@@ -1,5 +1,7 @@
 # ⏪ Rewinds — Remix Tailwind Starter Kit
 
+> ⚠️ The repo will be rebuilt later using slightly different configuration.
+
 ![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
 
 Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries and the TypeScript ecosystem.
@@ -23,8 +25,6 @@ Depending on your configuration, the app might need [GraphCMS](https://graphcms.
 [![Clone project](https://graphcms.com/button)](https://app.graphcms.com/clone/573c72908a25476eaf3373c7fe105233)
 
 ## Screenshots
-
-> ⚠️ The repo is ongoing active development so a lot of things might change quickly.
 
 <div style="max-width: 720px;">
 
