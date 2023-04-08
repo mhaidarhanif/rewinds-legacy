@@ -1,8 +1,7 @@
-# ⏪ Rewinds — Remix Tailwind Starter Kit
+# ⏪ Rewinds Stack
 
-> ⚠️ The repo will be rebuilt later using slightly different configuration.
-
-![tailwindcss v3](https://img.shields.io/badge/tailwindcss-v3-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)
+> ⚠️ New repo: https://github.com/mhaidarhanif/rewinds
+> because this repo is no longer updated
 
 Rewinds is a Remix starter kit with Tailwind CSS v3 family of libraries and the TypeScript ecosystem.
 
